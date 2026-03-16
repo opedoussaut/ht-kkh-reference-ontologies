@@ -1,0 +1,466 @@
+@prefix htref: <http://gen7.hightech.org/ontology/reference-ontologies#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+<http://gen7.hightech.org/ontology/reference-ontologies> rdf:type owl:Ontology .
+<http://gen7.hightech.org/ontology/reference-ontologies> rdfs:label "HTKKH REF ONTOLOGIES MAP" .
+<http://gen7.hightech.org/ontology/reference-ontologies> owl:versionInfo "3.0.0" .
+
+htref:OntologyReference rdf:type owl:Class .
+htref:OntologyCategory rdf:type owl:Class .
+htref:EndObject rdf:type owl:Class .
+htref:IMD rdf:type owl:Class .
+htref:StandardsOrganization rdf:type owl:Class .
+htref:LifecycleStatus rdf:type owl:Class .
+
+htref:hasCategory rdf:type owl:ObjectProperty .
+htref:relevantForEndObject rdf:type owl:ObjectProperty .
+htref:relevantForIMD rdf:type owl:ObjectProperty .
+htref:documentationPage rdf:type owl:DatatypeProperty .
+htref:officialSource rdf:type owl:DatatypeProperty .
+htref:publishedBy rdf:type owl:ObjectProperty .
+htref:status rdf:type owl:ObjectProperty .
+htref:description rdf:type owl:DatatypeProperty .
+htref:parentOntologyLabel rdf:type owl:DatatypeProperty .
+
+htref:ThreeDSFoundational rdf:type htref:OntologyCategory .
+htref:ThreeDSFoundational rdfs:label "3DS Foundational" .
+htref:RegulatoryNormative rdf:type htref:OntologyCategory .
+htref:RegulatoryNormative rdfs:label "Regulatory / Normative" .
+htref:CircularitySustainability rdf:type htref:OntologyCategory .
+htref:CircularitySustainability rdfs:label "Circularity / Sustainability" .
+htref:HighTech rdf:type htref:OntologyCategory .
+htref:HighTech rdfs:label "High-Tech" .
+htref:AIFactory rdf:type htref:OntologyCategory .
+htref:AIFactory rdfs:label "AI Factory" .
+htref:Semiconductors rdf:type htref:OntologyCategory .
+htref:Semiconductors rdfs:label "Semiconductors" .
+htref:PersonalElectronics rdf:type htref:OntologyCategory .
+htref:PersonalElectronics rdfs:label "Personal Electronics" .
+htref:GeneralPurposeRobotics rdf:type htref:OntologyCategory .
+htref:GeneralPurposeRobotics rdfs:label "General Purpose Robotics" .
+
+htref:AIFactories rdf:type htref:EndObject .
+htref:AIFactories rdfs:label "AI Factories" .
+htref:Semiconductors rdf:type htref:EndObject .
+htref:Semiconductors rdfs:label "Semiconductors" .
+htref:PersonalElectronics rdf:type htref:EndObject .
+htref:PersonalElectronics rdfs:label "Personal Electronics" .
+htref:GeneralPurposeRobotics rdf:type htref:EndObject .
+htref:GeneralPurposeRobotics rdfs:label "General Purpose Robotics" .
+
+htref:Circular_Design rdf:type htref:IMD .
+htref:Circular_Design rdfs:label "Circular Design" .
+htref:Compute_Performance_Sustainability rdf:type htref:IMD .
+htref:Compute_Performance_Sustainability rdfs:label "Compute Performance & Sustainability" .
+htref:Cross_domain_semantics rdf:type htref:IMD .
+htref:Cross_domain_semantics rdfs:label "Cross-domain semantics" .
+htref:Humanoid_Robots rdf:type htref:IMD .
+htref:Humanoid_Robots rdfs:label "Humanoid Robots" .
+htref:Infrastructure_System_Architecture rdf:type htref:IMD .
+htref:Infrastructure_System_Architecture rdfs:label "Infrastructure System Architecture" .
+htref:Regulatory_Knowledge rdf:type htref:IMD .
+htref:Regulatory_Knowledge rdfs:label "Regulatory Knowledge" .
+htref:Robot_AI_Control rdf:type htref:IMD .
+htref:Robot_AI_Control rdfs:label "Robot AI Control" .
+htref:Robot_MBSE_Simulation rdf:type htref:IMD .
+htref:Robot_MBSE_Simulation rdfs:label "Robot MBSE Simulation" .
+
+htref:Candidate rdf:type htref:LifecycleStatus .
+htref:Candidate rdfs:label "candidate" .
+htref:Monitored rdf:type htref:LifecycleStatus .
+htref:Monitored rdfs:label "monitored" .
+htref:Recommended rdf:type htref:LifecycleStatus .
+htref:Recommended rdfs:label "recommended" .
+htref:Validated rdf:type htref:LifecycleStatus .
+htref:Validated rdfs:label "validated" .
+
+htref:Brick_Consortium rdf:type htref:StandardsOrganization .
+htref:Brick_Consortium rdfs:label "Brick Consortium" .
+htref:Dublin_Core_Metadata_Initiative rdf:type htref:StandardsOrganization .
+htref:Dublin_Core_Metadata_Initiative rdfs:label "Dublin Core Metadata Initiative" .
+htref:ECLASS_e_V rdf:type htref:StandardsOrganization .
+htref:ECLASS_e_V rdfs:label "ECLASS e.V." .
+htref:ETSI rdf:type htref:StandardsOrganization .
+htref:ETSI rdfs:label "ETSI" .
+htref:GS1 rdf:type htref:StandardsOrganization .
+htref:GS1 rdfs:label "GS1" .
+htref:IEC rdf:type htref:StandardsOrganization .
+htref:IEC rdfs:label "IEC" .
+htref:IEEE_Research_Community rdf:type htref:StandardsOrganization .
+htref:IEEE_Research_Community rdfs:label "IEEE / Research Community" .
+htref:IEEE_Teknowledge rdf:type htref:StandardsOrganization .
+htref:IEEE_Teknowledge rdfs:label "IEEE / Teknowledge" .
+htref:Industrial_Digital_Twin_Association rdf:type htref:StandardsOrganization .
+htref:Industrial_Digital_Twin_Association rdfs:label "Industrial Digital Twin Association" .
+htref:OGC rdf:type htref:StandardsOrganization .
+htref:OGC rdfs:label "OGC" .
+htref:Publications_Office_of_the_European_Union rdf:type htref:StandardsOrganization .
+htref:Publications_Office_of_the_European_Union rdfs:label "Publications Office of the European Union" .
+htref:QUDT rdf:type htref:StandardsOrganization .
+htref:QUDT rdfs:label "QUDT" .
+htref:Research_Community rdf:type htref:StandardsOrganization .
+htref:Research_Community rdfs:label "Research / Community" .
+htref:W3C rdf:type htref:StandardsOrganization .
+htref:W3C rdfs:label "W3C" .
+htref:W3C_OGC rdf:type htref:StandardsOrganization .
+htref:W3C_OGC rdfs:label "W3C/OGC" .
+htref:Web_Commerce_Community rdf:type htref:StandardsOrganization .
+htref:Web_Commerce_Community rdfs:label "Web Commerce Community" .
+
+htref:ELI_Ontology rdf:type htref:OntologyReference .
+htref:ELI_Ontology rdfs:label "ELI Ontology" .
+htref:ELI_Ontology htref:hasCategory htref:RegulatoryNormative .
+htref:ELI_Ontology htref:relevantForEndObject htref:AI_Factories .
+htref:ELI_Ontology htref:relevantForEndObject htref:Semiconductors .
+htref:ELI_Ontology htref:relevantForEndObject htref:Personal_Electronics .
+htref:ELI_Ontology htref:relevantForEndObject htref:General_Purpose_Robotics .
+htref:ELI_Ontology htref:relevantForIMD htref:Regulatory_Knowledge .
+htref:ELI_Ontology htref:publishedBy htref:Publications_Office_of_the_European_Union .
+htref:ELI_Ontology htref:status htref:Validated .
+htref:ELI_Ontology htref:description "Ontology for identifying and describing legal resources and legislation metadata." .
+htref:ELI_Ontology htref:documentationPage "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:H-CG-70vTy2MNfwuhQL_PA" .
+htref:ELI_Ontology htref:officialSource "https://op.europa.eu/en/web/eu-vocabularies/eli" .
+htref:ELI_Ontology htref:parentOntologyLabel "Regulatory / Normative (Core Ontology)" .
+
+htref:ORIONT rdf:type htref:OntologyReference .
+htref:ORIONT rdfs:label "ORIONT" .
+htref:ORIONT htref:hasCategory htref:CircularitySustainability .
+htref:ORIONT htref:relevantForEndObject htref:AI_Factories .
+htref:ORIONT htref:relevantForEndObject htref:Semiconductors .
+htref:ORIONT htref:relevantForEndObject htref:Personal_Electronics .
+htref:ORIONT htref:relevantForEndObject htref:General_Purpose_Robotics .
+htref:ORIONT htref:relevantForIMD htref:Circular_Design .
+htref:ORIONT htref:publishedBy htref:Research_Community .
+htref:ORIONT htref:status htref:Candidate .
+htref:ORIONT htref:description "ORIENTING provides a structured ontology for Life Cycle Sustainability Assessment. It formalizes concepts related to environmental, social, and economic impacts across lifecycle stages. The ontology supports interoperability of LCSA data, impact indicators, system boundaries, and sustainability modeling workflows." .
+htref:ORIONT htref:documentationPage "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:zmTUJGTVSSeV6oolo9UT_w" .
+htref:ORIONT htref:parentOntologyLabel "Circularity / Sustainability (Core Ontology)" .
+
+htref:PROV_O rdf:type htref:OntologyReference .
+htref:PROV_O rdfs:label "PROV-O" .
+htref:PROV_O htref:hasCategory htref:CircularitySustainability .
+htref:PROV_O htref:relevantForEndObject htref:AI_Factories .
+htref:PROV_O htref:relevantForEndObject htref:Semiconductors .
+htref:PROV_O htref:relevantForEndObject htref:Personal_Electronics .
+htref:PROV_O htref:relevantForEndObject htref:General_Purpose_Robotics .
+htref:PROV_O htref:relevantForIMD htref:Circular_Design .
+htref:PROV_O htref:publishedBy htref:W3C .
+htref:PROV_O htref:status htref:Recommended .
+htref:PROV_O htref:description "Provenance ontology for entities, activities, agents, and derivation relationships." .
+htref:PROV_O htref:documentationPage "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:GzCec8zyTD-McvzxZA61WA" .
+htref:PROV_O htref:officialSource "https://www.w3.org/TR/prov-o/" .
+htref:PROV_O htref:parentOntologyLabel "Circularity / Sustainability (Core Ontology)" .
+
+htref:AAS rdf:type htref:OntologyReference .
+htref:AAS rdfs:label "AAS" .
+htref:AAS htref:hasCategory htref:HighTech .
+htref:AAS htref:relevantForEndObject htref:AI_Factories .
+htref:AAS htref:relevantForEndObject htref:Semiconductors .
+htref:AAS htref:relevantForEndObject htref:Personal_Electronics .
+htref:AAS htref:relevantForEndObject htref:General_Purpose_Robotics .
+htref:AAS htref:relevantForIMD htref:Cross_domain_semantics .
+htref:AAS htref:publishedBy htref:Industrial_Digital_Twin_Association .
+htref:AAS htref:status htref:Recommended .
+htref:AAS htref:description "Asset Administration Shell meta-model for interoperable digital twins." .
+htref:AAS htref:documentationPage "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:3aG-8Yk4Se6Zf-bhrbfGuQ" .
+htref:AAS htref:officialSource "https://industrialdigitaltwin.org/en/content-hub/aas" .
+htref:AAS htref:parentOntologyLabel "High-Tech (Core Ontology)" .
+
+htref:DCTERMS rdf:type htref:OntologyReference .
+htref:DCTERMS rdfs:label "DCTERMS" .
+htref:DCTERMS htref:hasCategory htref:HighTech .
+htref:DCTERMS htref:relevantForEndObject htref:AI_Factories .
+htref:DCTERMS htref:relevantForEndObject htref:Semiconductors .
+htref:DCTERMS htref:relevantForEndObject htref:Personal_Electronics .
+htref:DCTERMS htref:relevantForEndObject htref:General_Purpose_Robotics .
+htref:DCTERMS htref:relevantForIMD htref:Cross_domain_semantics .
+htref:DCTERMS htref:publishedBy htref:Dublin_Core_Metadata_Initiative .
+htref:DCTERMS htref:status htref:Recommended .
+htref:DCTERMS htref:description "Widely used metadata terms for title, creator, subject, date, and provenance-like description." .
+htref:DCTERMS htref:documentationPage "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:g4QdGWmMQampNp_mzHxwXQ" .
+htref:DCTERMS htref:officialSource "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/" .
+htref:DCTERMS htref:parentOntologyLabel "High-Tech (Core Ontology)" .
+
+htref:ECLASS_Ontology rdf:type htref:OntologyReference .
+htref:ECLASS_Ontology rdfs:label "ECLASS Ontology" .
+htref:ECLASS_Ontology htref:hasCategory htref:HighTech .
+htref:ECLASS_Ontology htref:relevantForEndObject htref:AI_Factories .
+htref:ECLASS_Ontology htref:relevantForEndObject htref:Semiconductors .
+htref:ECLASS_Ontology htref:relevantForEndObject htref:Personal_Electronics .
+htref:ECLASS_Ontology htref:relevantForEndObject htref:General_Purpose_Robotics .
+htref:ECLASS_Ontology htref:relevantForIMD htref:Cross_domain_semantics .
+htref:ECLASS_Ontology htref:publishedBy htref:ECLASS_e_V .
+htref:ECLASS_Ontology htref:status htref:Monitored .
+htref:ECLASS_Ontology htref:description "Classification ontology for products, properties, and industrial semantics." .
+htref:ECLASS_Ontology htref:documentationPage "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:6Vw8NYO_SQKFAsz0h8d7pg" .
+htref:ECLASS_Ontology htref:officialSource "https://www.eclass.eu/" .
+htref:ECLASS_Ontology htref:parentOntologyLabel "High-Tech (Core Ontology)" .
+
+htref:GeoSPARQL rdf:type htref:OntologyReference .
+htref:GeoSPARQL rdfs:label "GeoSPARQL" .
+htref:GeoSPARQL htref:hasCategory htref:HighTech .
+htref:GeoSPARQL htref:relevantForEndObject htref:AI_Factories .
+htref:GeoSPARQL htref:relevantForEndObject htref:Semiconductors .
+htref:GeoSPARQL htref:relevantForEndObject htref:Personal_Electronics .
+htref:GeoSPARQL htref:relevantForEndObject htref:General_Purpose_Robotics .
+htref:GeoSPARQL htref:relevantForIMD htref:Cross_domain_semantics .
+htref:GeoSPARQL htref:publishedBy htref:OGC .
+htref:GeoSPARQL htref:status htref:Recommended .
+htref:GeoSPARQL htref:description "Standard for spatial RDF representation and geospatial querying." .
+htref:GeoSPARQL htref:documentationPage "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:r2w1_UqQSK--02C8andxvQ" .
+htref:GeoSPARQL htref:officialSource "https://opengeospatial.github.io/ogc-geosparql/" .
+htref:GeoSPARQL htref:parentOntologyLabel "High-Tech (Core Ontology)" .
+
+htref:GoodRelations rdf:type htref:OntologyReference .
+htref:GoodRelations rdfs:label "GoodRelations" .
+htref:GoodRelations htref:hasCategory htref:HighTech .
+htref:GoodRelations htref:relevantForEndObject htref:AI_Factories .
+htref:GoodRelations htref:relevantForEndObject htref:Semiconductors .
+htref:GoodRelations htref:relevantForEndObject htref:Personal_Electronics .
+htref:GoodRelations htref:relevantForEndObject htref:General_Purpose_Robotics .
+htref:GoodRelations htref:relevantForIMD htref:Cross_domain_semantics .
+htref:GoodRelations htref:publishedBy htref:Web_Commerce_Community .
+htref:GoodRelations htref:status htref:Monitored .
+htref:GoodRelations htref:description "Ontology for products, offers, prices, and business entities." .
+htref:GoodRelations htref:documentationPage "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:Vn0zSv7IRGSe6Lep8ojrtw" .
+htref:GoodRelations htref:officialSource "http://www.heppnetz.de/projects/goodrelations/" .
+htref:GoodRelations htref:parentOntologyLabel "High-Tech (Core Ontology)" .
+
+htref:GS1_WebVoc rdf:type htref:OntologyReference .
+htref:GS1_WebVoc rdfs:label "GS1 WebVoc" .
+htref:GS1_WebVoc htref:hasCategory htref:HighTech .
+htref:GS1_WebVoc htref:relevantForEndObject htref:AI_Factories .
+htref:GS1_WebVoc htref:relevantForEndObject htref:Semiconductors .
+htref:GS1_WebVoc htref:relevantForEndObject htref:Personal_Electronics .
+htref:GS1_WebVoc htref:relevantForEndObject htref:General_Purpose_Robotics .
+htref:GS1_WebVoc htref:relevantForIMD htref:Cross_domain_semantics .
+htref:GS1_WebVoc htref:publishedBy htref:GS1 .
+htref:GS1_WebVoc htref:status htref:Monitored .
+htref:GS1_WebVoc htref:description "GS1 web vocabulary for product, organization, and identification semantics." .
+htref:GS1_WebVoc htref:documentationPage "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:DuqSyAdOQkCM3D2sNj83zQ" .
+htref:GS1_WebVoc htref:officialSource "https://www.gs1.org/voc/" .
+htref:GS1_WebVoc htref:parentOntologyLabel "High-Tech (Core Ontology)" .
+
+htref:OWL_time rdf:type htref:OntologyReference .
+htref:OWL_time rdfs:label "OWL-time" .
+htref:OWL_time htref:hasCategory htref:HighTech .
+htref:OWL_time htref:relevantForEndObject htref:AI_Factories .
+htref:OWL_time htref:relevantForEndObject htref:Semiconductors .
+htref:OWL_time htref:relevantForEndObject htref:Personal_Electronics .
+htref:OWL_time htref:relevantForEndObject htref:General_Purpose_Robotics .
+htref:OWL_time htref:relevantForIMD htref:Cross_domain_semantics .
+htref:OWL_time htref:publishedBy htref:W3C .
+htref:OWL_time htref:status htref:Recommended .
+htref:OWL_time htref:description "Ontology of temporal concepts including intervals, instants, durations, and relations." .
+htref:OWL_time htref:documentationPage "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:vn5OZUanRdC6yQBwEdhxbg" .
+htref:OWL_time htref:officialSource "https://www.w3.org/TR/owl-time/" .
+htref:OWL_time htref:parentOntologyLabel "High-Tech (Core Ontology)" .
+
+htref:QUDT rdf:type htref:OntologyReference .
+htref:QUDT rdfs:label "QUDT" .
+htref:QUDT htref:hasCategory htref:HighTech .
+htref:QUDT htref:relevantForEndObject htref:AI_Factories .
+htref:QUDT htref:relevantForEndObject htref:Semiconductors .
+htref:QUDT htref:relevantForEndObject htref:Personal_Electronics .
+htref:QUDT htref:relevantForEndObject htref:General_Purpose_Robotics .
+htref:QUDT htref:relevantForIMD htref:Cross_domain_semantics .
+htref:QUDT htref:publishedBy htref:QUDT .
+htref:QUDT htref:status htref:Recommended .
+htref:QUDT htref:description "Ontology for quantities, units, dimensions, and datatypes." .
+htref:QUDT htref:documentationPage "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:U7CIlZJUR-CmhXerXedNsw" .
+htref:QUDT htref:officialSource "https://qudt.org/" .
+htref:QUDT htref:parentOntologyLabel "High-Tech (Core Ontology)" .
+
+htref:SAREF_Core rdf:type htref:OntologyReference .
+htref:SAREF_Core rdfs:label "SAREF Core" .
+htref:SAREF_Core htref:hasCategory htref:HighTech .
+htref:SAREF_Core htref:relevantForEndObject htref:AI_Factories .
+htref:SAREF_Core htref:relevantForEndObject htref:Semiconductors .
+htref:SAREF_Core htref:relevantForEndObject htref:Personal_Electronics .
+htref:SAREF_Core htref:relevantForEndObject htref:General_Purpose_Robotics .
+htref:SAREF_Core htref:relevantForIMD htref:Cross_domain_semantics .
+htref:SAREF_Core htref:publishedBy htref:ETSI .
+htref:SAREF_Core htref:status htref:Recommended .
+htref:SAREF_Core htref:description "Smart Applications REFerence ontology for interoperable devices and services." .
+htref:SAREF_Core htref:documentationPage "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:ZKZ4ztldRvy0NF-5fb9iVQ" .
+htref:SAREF_Core htref:officialSource "https://saref.etsi.org/" .
+htref:SAREF_Core htref:parentOntologyLabel "High-Tech (Core Ontology)" .
+
+htref:SOSA rdf:type htref:OntologyReference .
+htref:SOSA rdfs:label "SOSA" .
+htref:SOSA htref:hasCategory htref:HighTech .
+htref:SOSA htref:relevantForEndObject htref:AI_Factories .
+htref:SOSA htref:relevantForEndObject htref:Semiconductors .
+htref:SOSA htref:relevantForEndObject htref:Personal_Electronics .
+htref:SOSA htref:relevantForEndObject htref:General_Purpose_Robotics .
+htref:SOSA htref:relevantForIMD htref:Cross_domain_semantics .
+htref:SOSA htref:publishedBy htref:W3C_OGC .
+htref:SOSA htref:status htref:Recommended .
+htref:SOSA htref:description "Lightweight core for sensors, observations, samples, and actuators." .
+htref:SOSA htref:documentationPage "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:nQW5FfTQSHO9062warOnoQ" .
+htref:SOSA htref:officialSource "https://www.w3.org/TR/vocab-ssn/" .
+htref:SOSA htref:parentOntologyLabel "High-Tech (Core Ontology)" .
+
+htref:SSN rdf:type htref:OntologyReference .
+htref:SSN rdfs:label "SSN" .
+htref:SSN htref:hasCategory htref:HighTech .
+htref:SSN htref:relevantForEndObject htref:AI_Factories .
+htref:SSN htref:relevantForEndObject htref:Semiconductors .
+htref:SSN htref:relevantForEndObject htref:Personal_Electronics .
+htref:SSN htref:relevantForEndObject htref:General_Purpose_Robotics .
+htref:SSN htref:relevantForIMD htref:Cross_domain_semantics .
+htref:SSN htref:publishedBy htref:W3C_OGC .
+htref:SSN htref:status htref:Recommended .
+htref:SSN htref:description "Semantic Sensor Network ontology for sensors, observations, and systems." .
+htref:SSN htref:documentationPage "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:5RCMfzLNSlSIb46cfvCDzA" .
+htref:SSN htref:officialSource "https://www.w3.org/TR/vocab-ssn/" .
+htref:SSN htref:parentOntologyLabel "High-Tech (Core Ontology)" .
+
+htref:SUMO rdf:type htref:OntologyReference .
+htref:SUMO rdfs:label "SUMO" .
+htref:SUMO htref:hasCategory htref:HighTech .
+htref:SUMO htref:relevantForEndObject htref:AI_Factories .
+htref:SUMO htref:relevantForEndObject htref:Semiconductors .
+htref:SUMO htref:relevantForEndObject htref:Personal_Electronics .
+htref:SUMO htref:relevantForEndObject htref:General_Purpose_Robotics .
+htref:SUMO htref:relevantForIMD htref:Cross_domain_semantics .
+htref:SUMO htref:publishedBy htref:IEEE_Teknowledge .
+htref:SUMO htref:status htref:Monitored .
+htref:SUMO htref:description "Suggested Upper Merged Ontology for broad upper-level semantic grounding." .
+htref:SUMO htref:documentationPage "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:v-Hoheh0T9KZ2BIASSmCnw" .
+htref:SUMO htref:officialSource "https://www.ontologyportal.org/" .
+htref:SUMO htref:parentOntologyLabel "High-Tech (Core Ontology)" .
+
+htref:Brick_Schema rdf:type htref:OntologyReference .
+htref:Brick_Schema rdfs:label "Brick Schema" .
+htref:Brick_Schema htref:hasCategory htref:AIFactory .
+htref:Brick_Schema htref:relevantForEndObject htref:AI_Factories .
+htref:Brick_Schema htref:relevantForIMD htref:Infrastructure_System_Architecture .
+htref:Brick_Schema htref:relevantForIMD htref:Compute_Performance_Sustainability .
+htref:Brick_Schema htref:publishedBy htref:Brick_Consortium .
+htref:Brick_Schema htref:status htref:Recommended .
+htref:Brick_Schema htref:description "Brick Schema is an open OWL ontology for modeling buildings, infrastructure, and their systems, including spaces, equipment, power distribution, cooling, HVAC, and sensors. It provides a formal semantic foundation to represent and reason over the physical and infrastructural structure of AI factories and data centers." .
+htref:Brick_Schema htref:documentationPage "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:azyjLHMTQoGNkGIy3YENlA" .
+htref:Brick_Schema htref:officialSource "https://brickschema.org/" .
+htref:Brick_Schema htref:parentOntologyLabel "AI Factory (End-Object Ontology)" .
+
+htref:CIM rdf:type htref:OntologyReference .
+htref:CIM rdfs:label "CIM" .
+htref:CIM htref:hasCategory htref:AIFactory .
+htref:CIM htref:relevantForEndObject htref:AI_Factories .
+htref:CIM htref:relevantForIMD htref:Infrastructure_System_Architecture .
+htref:CIM htref:relevantForIMD htref:Compute_Performance_Sustainability .
+htref:CIM htref:publishedBy htref:IEC .
+htref:CIM htref:status htref:Monitored .
+htref:CIM htref:description "The Common Information Model (CIM) is a formal object-oriented schema developed by the Distributed Management Task Force (DMTF) to represent managed elements in IT environments, including computer systems, racks, chassis, processors, memory, power supplies, networking components, and cooling subsystems. CIM provides a strong reference model for AI Factory physical and logical infrastructure components." .
+htref:CIM htref:documentationPage "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:CLVX0LTORSG9cyf_aponEg" .
+htref:CIM htref:officialSource "https://www.iec.ch/standardsdev/publications/" .
+htref:CIM htref:parentOntologyLabel "AI Factory (End-Object Ontology)" .
+
+htref:SAREF4BLDG rdf:type htref:OntologyReference .
+htref:SAREF4BLDG rdfs:label "SAREF4BLDG" .
+htref:SAREF4BLDG htref:hasCategory htref:AIFactory .
+htref:SAREF4BLDG htref:relevantForEndObject htref:AI_Factories .
+htref:SAREF4BLDG htref:relevantForIMD htref:Infrastructure_System_Architecture .
+htref:SAREF4BLDG htref:relevantForIMD htref:Compute_Performance_Sustainability .
+htref:SAREF4BLDG htref:publishedBy htref:ETSI .
+htref:SAREF4BLDG htref:status htref:Recommended .
+htref:SAREF4BLDG htref:description "Building extension of SAREF for spaces, devices, and building systems." .
+htref:SAREF4BLDG htref:documentationPage "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:kkKzLMKZQwufO73ZeHNVGw" .
+htref:SAREF4BLDG htref:officialSource "https://saref.etsi.org/saref4bldg/" .
+htref:SAREF4BLDG htref:parentOntologyLabel "AI Factory (End-Object Ontology)" .
+
+htref:Autonomous_Robotics_AuR rdf:type htref:OntologyReference .
+htref:Autonomous_Robotics_AuR rdfs:label "Autonomous Robotics (AuR)" .
+htref:Autonomous_Robotics_AuR htref:hasCategory htref:GeneralPurposeRobotics .
+htref:Autonomous_Robotics_AuR htref:relevantForEndObject htref:General_Purpose_Robotics .
+htref:Autonomous_Robotics_AuR htref:relevantForIMD htref:Humanoid_Robots .
+htref:Autonomous_Robotics_AuR htref:relevantForIMD htref:Robot_AI_Control .
+htref:Autonomous_Robotics_AuR htref:relevantForIMD htref:Robot_MBSE_Simulation .
+htref:Autonomous_Robotics_AuR htref:publishedBy htref:Research_Community .
+htref:Autonomous_Robotics_AuR htref:status htref:Candidate .
+htref:Autonomous_Robotics_AuR htref:description "Ontology focused on autonomous robotics concepts, capabilities, and behavior." .
+htref:Autonomous_Robotics_AuR htref:documentationPage "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:N-KiFjz1TZieT3fzlNuMKg" .
+htref:Autonomous_Robotics_AuR htref:parentOntologyLabel "General Purpose Robotics (End-Object Ontology)" .
+
+htref:CORA rdf:type htref:OntologyReference .
+htref:CORA rdfs:label "CORA" .
+htref:CORA htref:hasCategory htref:GeneralPurposeRobotics .
+htref:CORA htref:relevantForEndObject htref:General_Purpose_Robotics .
+htref:CORA htref:relevantForIMD htref:Humanoid_Robots .
+htref:CORA htref:relevantForIMD htref:Robot_AI_Control .
+htref:CORA htref:relevantForIMD htref:Robot_MBSE_Simulation .
+htref:CORA htref:publishedBy htref:IEEE_Research_Community .
+htref:CORA htref:status htref:Recommended .
+htref:CORA htref:description "Core ontology for robotics and automation concepts." .
+htref:CORA htref:documentationPage "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:bGIa7mYITemwgBEOc_kMnw" .
+htref:CORA htref:officialSource "https://sites.google.com/site/smartappliancesproject/ontologies/cora" .
+htref:CORA htref:parentOntologyLabel "General Purpose Robotics (End-Object Ontology)" .
+
+htref:CORAX rdf:type htref:OntologyReference .
+htref:CORAX rdfs:label "CORAX" .
+htref:CORAX htref:hasCategory htref:GeneralPurposeRobotics .
+htref:CORAX htref:relevantForEndObject htref:General_Purpose_Robotics .
+htref:CORAX htref:relevantForIMD htref:Humanoid_Robots .
+htref:CORAX htref:relevantForIMD htref:Robot_AI_Control .
+htref:CORAX htref:relevantForIMD htref:Robot_MBSE_Simulation .
+htref:CORAX htref:publishedBy htref:Research_Community .
+htref:CORAX htref:status htref:Candidate .
+htref:CORAX htref:description "Reference ontology in the robotics corpus; kept as a governed candidate pending fuller validation." .
+htref:CORAX htref:documentationPage "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:ChIkKy9aRRyorrT-6UHgdg" .
+htref:CORAX htref:parentOntologyLabel "General Purpose Robotics (End-Object Ontology)" .
+
+htref:POS rdf:type htref:OntologyReference .
+htref:POS rdfs:label "POS" .
+htref:POS htref:hasCategory htref:GeneralPurposeRobotics .
+htref:POS htref:relevantForEndObject htref:General_Purpose_Robotics .
+htref:POS htref:relevantForIMD htref:Humanoid_Robots .
+htref:POS htref:relevantForIMD htref:Robot_AI_Control .
+htref:POS htref:relevantForIMD htref:Robot_MBSE_Simulation .
+htref:POS htref:publishedBy htref:Research_Community .
+htref:POS htref:status htref:Candidate .
+htref:POS htref:description "Ontology used for positional, pose, or planning-oriented semantics in robotics contexts." .
+htref:POS htref:documentationPage "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:rf21jegYTPqRJwpGm0Cpng" .
+htref:POS htref:parentOntologyLabel "General Purpose Robotics (End-Object Ontology)" .
+
+htref:Robot_Task_Representation rdf:type htref:OntologyReference .
+htref:Robot_Task_Representation rdfs:label "Robot Task Representation" .
+htref:Robot_Task_Representation htref:hasCategory htref:GeneralPurposeRobotics .
+htref:Robot_Task_Representation htref:relevantForEndObject htref:General_Purpose_Robotics .
+htref:Robot_Task_Representation htref:relevantForIMD htref:Humanoid_Robots .
+htref:Robot_Task_Representation htref:relevantForIMD htref:Robot_AI_Control .
+htref:Robot_Task_Representation htref:relevantForIMD htref:Robot_MBSE_Simulation .
+htref:Robot_Task_Representation htref:publishedBy htref:Research_Community .
+htref:Robot_Task_Representation htref:status htref:Candidate .
+htref:Robot_Task_Representation htref:description "Ontology for describing robot tasks, actions, parameters, and execution context." .
+htref:Robot_Task_Representation htref:documentationPage "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:KBDIlDH4QFq5i_K01kbS6g" .
+htref:Robot_Task_Representation htref:parentOntologyLabel "General Purpose Robotics (End-Object Ontology)" .
+
+htref:RPARTS rdf:type htref:OntologyReference .
+htref:RPARTS rdfs:label "RPARTS" .
+htref:RPARTS htref:hasCategory htref:GeneralPurposeRobotics .
+htref:RPARTS htref:relevantForEndObject htref:General_Purpose_Robotics .
+htref:RPARTS htref:relevantForIMD htref:Humanoid_Robots .
+htref:RPARTS htref:relevantForIMD htref:Robot_AI_Control .
+htref:RPARTS htref:relevantForIMD htref:Robot_MBSE_Simulation .
+htref:RPARTS htref:publishedBy htref:Research_Community .
+htref:RPARTS htref:status htref:Candidate .
+htref:RPARTS htref:description "Reference ontology related to robot parts and component decomposition." .
+htref:RPARTS htref:documentationPage "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:ee62NLxmT6yvvFC5E7GKrw" .
+htref:RPARTS htref:parentOntologyLabel "General Purpose Robotics (End-Object Ontology)" .
+
+htref:SUMO_CORA rdf:type htref:OntologyReference .
+htref:SUMO_CORA rdfs:label "SUMO-CORA" .
+htref:SUMO_CORA htref:hasCategory htref:GeneralPurposeRobotics .
+htref:SUMO_CORA htref:relevantForEndObject htref:General_Purpose_Robotics .
+htref:SUMO_CORA htref:relevantForIMD htref:Humanoid_Robots .
+htref:SUMO_CORA htref:relevantForIMD htref:Robot_AI_Control .
+htref:SUMO_CORA htref:relevantForIMD htref:Robot_MBSE_Simulation .
+htref:SUMO_CORA htref:publishedBy htref:Research_Community .
+htref:SUMO_CORA htref:status htref:Candidate .
+htref:SUMO_CORA htref:description "Alignment layer between SUMO and CORA for robotics semantics." .
+htref:SUMO_CORA htref:documentationPage "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:R_UEz0okSdC9i1aukoDR3Q" .
+htref:SUMO_CORA htref:parentOntologyLabel "General Purpose Robotics (End-Object Ontology)" .
