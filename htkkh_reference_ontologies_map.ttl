@@ -6,7 +6,7 @@
 
 <http://gen7.hightech.org/ontology/reference-ontologies> rdf:type owl:Ontology .
 <http://gen7.hightech.org/ontology/reference-ontologies> rdfs:label "HTKKH REF ONTOLOGIES MAP" .
-<http://gen7.hightech.org/ontology/reference-ontologies> owl:versionInfo "3.0.0" .
+<http://gen7.hightech.org/ontology/reference-ontologies> owl:versionInfo "3.1.0" .
 
 htref:OntologyReference rdf:type owl:Class .
 htref:OntologyCategory rdf:type owl:Class .
@@ -109,6 +109,9 @@ htref:W3C_OGC rdf:type htref:StandardsOrganization .
 htref:W3C_OGC rdfs:label "W3C/OGC" .
 htref:Web_Commerce_Community rdf:type htref:StandardsOrganization .
 htref:Web_Commerce_Community rdfs:label "Web Commerce Community" .
+
+htref:Linked_Building_Data_Community_Group rdf:type htref:StandardsOrganization .
+htref:Linked_Building_Data_Community_Group rdfs:label "Linked Building Data Community Group" .
 
 htref:ELI_Ontology rdf:type htref:OntologyReference .
 htref:ELI_Ontology rdfs:label "ELI Ontology" .
@@ -464,3 +467,15 @@ htref:SUMO_CORA htref:status htref:Candidate .
 htref:SUMO_CORA htref:description "Alignment layer between SUMO and CORA for robotics semantics." .
 htref:SUMO_CORA htref:documentationPage "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:R_UEz0okSdC9i1aukoDR3Q" .
 htref:SUMO_CORA htref:parentOntologyLabel "General Purpose Robotics (End-Object Ontology)" .
+
+htref:BOT rdf:type htref:OntologyReference .
+htref:BOT rdfs:label "BOT" .
+htref:BOT htref:hasCategory htref:AIFactory .
+htref:BOT htref:relevantForEndObject htref:AIFactories .
+htref:BOT htref:relevantForIMD htref:Infrastructure_System_Architecture .
+htref:BOT htref:publishedBy htref:Linked_Building_Data_Community_Group .
+htref:BOT htref:status htref:Monitored .
+htref:BOT htref:description "Building Topology Ontology (BOT) is a minimal OWL DL ontology for describing the core topological concepts of buildings and relationships between sub-components such as sites, buildings, storeys, spaces, and elements." .
+htref:BOT htref:documentationPage "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:HfyE2lIsRbSRuvToB-YeZw" .
+htref:BOT htref:officialSource "https://w3c-lbd-cg.github.io/lbd/bot/" .
+htref:BOT htref:parentOntologyLabel "AI Factory (End-Object Ontology)" .
