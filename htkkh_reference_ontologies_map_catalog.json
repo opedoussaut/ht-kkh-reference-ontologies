@@ -4,7 +4,6 @@
     "category": "Regulatory / Normative",
     "publisher": "Publications Office of the European Union",
     "official": "https://op.europa.eu/en/web/eu-vocabularies/eli",
-    "status": "validated",
     "endObjects": [
       "AI Factories",
       "Semiconductors",
@@ -16,14 +15,15 @@
     ],
     "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:H-CG-70vTy2MNfwuhQL_PA",
     "description": "Ontology for identifying and describing legal resources and legislation metadata.",
-    "parentOntology": "Regulatory / Normative (Core Ontology)"
+    "parentOntology": "Regulatory / Normative (Core Ontology)",
+    "stabilityStatus": "stable",
+    "adoptionDecision": "adopted"
   },
   {
     "name": "ORIONT",
     "category": "Circularity / Sustainability",
     "publisher": "Research / Community",
     "official": "",
-    "status": "candidate",
     "endObjects": [
       "AI Factories",
       "Semiconductors",
@@ -35,14 +35,15 @@
     ],
     "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:zmTUJGTVSSeV6oolo9UT_w",
     "description": "ORIENTING provides a structured ontology for Life Cycle Sustainability Assessment. It formalizes concepts related to environmental, social, and economic impacts across lifecycle stages. The ontology supports interoperability of LCSA data, impact indicators, system boundaries, and sustainability modeling workflows.",
-    "parentOntology": "Circularity / Sustainability (Core Ontology)"
+    "parentOntology": "Circularity / Sustainability (Core Ontology)",
+    "stabilityStatus": "not stable",
+    "adoptionDecision": "watched"
   },
   {
     "name": "PROV-O",
     "category": "Circularity / Sustainability",
     "publisher": "W3C",
     "official": "https://www.w3.org/TR/prov-o/",
-    "status": "recommended",
     "endObjects": [
       "AI Factories",
       "Semiconductors",
@@ -54,14 +55,15 @@
     ],
     "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:GzCec8zyTD-McvzxZA61WA",
     "description": "Provenance ontology for entities, activities, agents, and derivation relationships.",
-    "parentOntology": "Circularity / Sustainability (Core Ontology)"
+    "parentOntology": "Circularity / Sustainability (Core Ontology)",
+    "stabilityStatus": "stable",
+    "adoptionDecision": "adopted"
   },
   {
     "name": "AAS",
     "category": "High-Tech",
     "publisher": "Industrial Digital Twin Association",
     "official": "https://industrialdigitaltwin.org/en/content-hub/aas",
-    "status": "recommended",
     "endObjects": [
       "AI Factories",
       "Semiconductors",
@@ -73,14 +75,15 @@
     ],
     "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:3aG-8Yk4Se6Zf-bhrbfGuQ",
     "description": "Asset Administration Shell meta-model for interoperable digital twins.",
-    "parentOntology": "High-Tech (Core Ontology)"
+    "parentOntology": "High-Tech (Core Ontology)",
+    "stabilityStatus": "stable",
+    "adoptionDecision": "adopted"
   },
   {
     "name": "DCTERMS",
     "category": "High-Tech",
     "publisher": "Dublin Core Metadata Initiative",
     "official": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/",
-    "status": "recommended",
     "endObjects": [
       "AI Factories",
       "Semiconductors",
@@ -92,14 +95,15 @@
     ],
     "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:g4QdGWmMQampNp_mzHxwXQ",
     "description": "Widely used metadata terms for title, creator, subject, date, and provenance-like description.",
-    "parentOntology": "High-Tech (Core Ontology)"
+    "parentOntology": "High-Tech (Core Ontology)",
+    "stabilityStatus": "stable",
+    "adoptionDecision": "adopted"
   },
   {
     "name": "ECLASS Ontology",
     "category": "High-Tech",
     "publisher": "ECLASS e.V.",
     "official": "https://www.eclass.eu/",
-    "status": "monitored",
     "endObjects": [
       "AI Factories",
       "Semiconductors",
@@ -111,14 +115,15 @@
     ],
     "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:6Vw8NYO_SQKFAsz0h8d7pg",
     "description": "Classification ontology for products, properties, and industrial semantics.",
-    "parentOntology": "High-Tech (Core Ontology)"
+    "parentOntology": "High-Tech (Core Ontology)",
+    "stabilityStatus": "stable",
+    "adoptionDecision": "watched"
   },
   {
     "name": "GeoSPARQL",
     "category": "High-Tech",
     "publisher": "OGC",
     "official": "https://opengeospatial.github.io/ogc-geosparql/",
-    "status": "recommended",
     "endObjects": [
       "AI Factories",
       "Semiconductors",
@@ -130,14 +135,15 @@
     ],
     "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:r2w1_UqQSK--02C8andxvQ",
     "description": "Standard for spatial RDF representation and geospatial querying.",
-    "parentOntology": "High-Tech (Core Ontology)"
+    "parentOntology": "High-Tech (Core Ontology)",
+    "stabilityStatus": "stable",
+    "adoptionDecision": "adopted"
   },
   {
     "name": "GoodRelations",
     "category": "High-Tech",
     "publisher": "Web Commerce Community",
     "official": "http://www.heppnetz.de/projects/goodrelations/",
-    "status": "monitored",
     "endObjects": [
       "AI Factories",
       "Semiconductors",
@@ -149,14 +155,15 @@
     ],
     "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:Vn0zSv7IRGSe6Lep8ojrtw",
     "description": "Ontology for products, offers, prices, and business entities.",
-    "parentOntology": "High-Tech (Core Ontology)"
+    "parentOntology": "High-Tech (Core Ontology)",
+    "stabilityStatus": "stable",
+    "adoptionDecision": "watched"
   },
   {
     "name": "GS1 WebVoc",
     "category": "High-Tech",
     "publisher": "GS1",
     "official": "https://www.gs1.org/voc/",
-    "status": "monitored",
     "endObjects": [
       "AI Factories",
       "Semiconductors",
@@ -168,14 +175,15 @@
     ],
     "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:DuqSyAdOQkCM3D2sNj83zQ",
     "description": "GS1 web vocabulary for product, organization, and identification semantics.",
-    "parentOntology": "High-Tech (Core Ontology)"
+    "parentOntology": "High-Tech (Core Ontology)",
+    "stabilityStatus": "stable",
+    "adoptionDecision": "watched"
   },
   {
     "name": "OWL-time",
     "category": "High-Tech",
     "publisher": "W3C",
     "official": "https://www.w3.org/TR/owl-time/",
-    "status": "recommended",
     "endObjects": [
       "AI Factories",
       "Semiconductors",
@@ -187,14 +195,15 @@
     ],
     "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:vn5OZUanRdC6yQBwEdhxbg",
     "description": "Ontology of temporal concepts including intervals, instants, durations, and relations.",
-    "parentOntology": "High-Tech (Core Ontology)"
+    "parentOntology": "High-Tech (Core Ontology)",
+    "stabilityStatus": "stable",
+    "adoptionDecision": "adopted"
   },
   {
     "name": "QUDT",
     "category": "High-Tech",
     "publisher": "QUDT",
     "official": "https://qudt.org/",
-    "status": "recommended",
     "endObjects": [
       "AI Factories",
       "Semiconductors",
@@ -206,14 +215,15 @@
     ],
     "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:U7CIlZJUR-CmhXerXedNsw",
     "description": "Ontology for quantities, units, dimensions, and datatypes.",
-    "parentOntology": "High-Tech (Core Ontology)"
+    "parentOntology": "High-Tech (Core Ontology)",
+    "stabilityStatus": "stable",
+    "adoptionDecision": "adopted"
   },
   {
     "name": "SAREF Core",
     "category": "High-Tech",
     "publisher": "ETSI",
     "official": "https://saref.etsi.org/",
-    "status": "recommended",
     "endObjects": [
       "AI Factories",
       "Semiconductors",
@@ -225,14 +235,15 @@
     ],
     "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:ZKZ4ztldRvy0NF-5fb9iVQ",
     "description": "Smart Applications REFerence ontology for interoperable devices and services.",
-    "parentOntology": "High-Tech (Core Ontology)"
+    "parentOntology": "High-Tech (Core Ontology)",
+    "stabilityStatus": "stable",
+    "adoptionDecision": "adopted"
   },
   {
     "name": "SOSA",
     "category": "High-Tech",
     "publisher": "W3C/OGC",
     "official": "https://www.w3.org/TR/vocab-ssn/",
-    "status": "recommended",
     "endObjects": [
       "AI Factories",
       "Semiconductors",
@@ -244,14 +255,15 @@
     ],
     "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:nQW5FfTQSHO9062warOnoQ",
     "description": "Lightweight core for sensors, observations, samples, and actuators.",
-    "parentOntology": "High-Tech (Core Ontology)"
+    "parentOntology": "High-Tech (Core Ontology)",
+    "stabilityStatus": "stable",
+    "adoptionDecision": "adopted"
   },
   {
     "name": "SSN",
     "category": "High-Tech",
     "publisher": "W3C/OGC",
     "official": "https://www.w3.org/TR/vocab-ssn/",
-    "status": "recommended",
     "endObjects": [
       "AI Factories",
       "Semiconductors",
@@ -263,14 +275,15 @@
     ],
     "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:5RCMfzLNSlSIb46cfvCDzA",
     "description": "Semantic Sensor Network ontology for sensors, observations, and systems.",
-    "parentOntology": "High-Tech (Core Ontology)"
+    "parentOntology": "High-Tech (Core Ontology)",
+    "stabilityStatus": "stable",
+    "adoptionDecision": "adopted"
   },
   {
     "name": "SUMO",
     "category": "High-Tech",
     "publisher": "IEEE / Teknowledge",
     "official": "https://www.ontologyportal.org/",
-    "status": "monitored",
     "endObjects": [
       "AI Factories",
       "Semiconductors",
@@ -282,14 +295,15 @@
     ],
     "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:v-Hoheh0T9KZ2BIASSmCnw",
     "description": "Suggested Upper Merged Ontology for broad upper-level semantic grounding.",
-    "parentOntology": "High-Tech (Core Ontology)"
+    "parentOntology": "High-Tech (Core Ontology)",
+    "stabilityStatus": "stable",
+    "adoptionDecision": "watched"
   },
   {
     "name": "BOT",
     "category": "AI Factory",
     "publisher": "Linked Building Data Community Group",
-    "official": "official": "https://w3c-lbd-cg.github.io/bot/",
-    "status": "monitored",
+    "official": "https://w3c-lbd-cg.github.io/lbd/bot/",
     "endObjects": [
       "AI Factories"
     ],
@@ -298,14 +312,15 @@
     ],
     "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:HfyE2lIsRbSRuvToB-YeZw",
     "description": "Building Topology Ontology (BOT) is a minimal OWL DL ontology for describing the core topological concepts of buildings and relationships between sub-components such as sites, buildings, storeys, spaces, and elements.",
-    "parentOntology": "AI Factory (End-Object Ontology)"
+    "parentOntology": "AI Factory (End-Object Ontology)",
+    "stabilityStatus": "stable",
+    "adoptionDecision": "adopted"
   },
   {
     "name": "Brick Schema",
     "category": "AI Factory",
     "publisher": "Brick Consortium",
     "official": "https://brickschema.org/",
-    "status": "recommended",
     "endObjects": [
       "AI Factories"
     ],
@@ -315,14 +330,15 @@
     ],
     "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:azyjLHMTQoGNkGIy3YENlA",
     "description": "Brick Schema is an open OWL ontology for modeling buildings, infrastructure, and their systems, including spaces, equipment, power distribution, cooling, HVAC, and sensors. It provides a formal semantic foundation to represent and reason over the physical and infrastructural structure of AI factories and data centers.",
-    "parentOntology": "AI Factory (End-Object Ontology)"
+    "parentOntology": "AI Factory (End-Object Ontology)",
+    "stabilityStatus": "stable",
+    "adoptionDecision": "adopted"
   },
   {
     "name": "CIM",
     "category": "AI Factory",
     "publisher": "IEC",
     "official": "https://www.iec.ch/standardsdev/publications/",
-    "status": "monitored",
     "endObjects": [
       "AI Factories"
     ],
@@ -332,14 +348,15 @@
     ],
     "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:CLVX0LTORSG9cyf_aponEg",
     "description": "The Common Information Model (CIM) is a formal object-oriented schema developed by the Distributed Management Task Force (DMTF) to represent managed elements in IT environments, including computer systems, racks, chassis, processors, memory, power supplies, networking components, and cooling subsystems. CIM provides a strong reference model for AI Factory physical and logical infrastructure components.",
-    "parentOntology": "AI Factory (End-Object Ontology)"
+    "parentOntology": "AI Factory (End-Object Ontology)",
+    "stabilityStatus": "stable",
+    "adoptionDecision": "watched"
   },
   {
     "name": "SAREF4BLDG",
     "category": "AI Factory",
     "publisher": "ETSI",
     "official": "https://saref.etsi.org/saref4bldg/",
-    "status": "recommended",
     "endObjects": [
       "AI Factories"
     ],
@@ -349,14 +366,15 @@
     ],
     "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:kkKzLMKZQwufO73ZeHNVGw",
     "description": "Building extension of SAREF for spaces, devices, and building systems.",
-    "parentOntology": "AI Factory (End-Object Ontology)"
+    "parentOntology": "AI Factory (End-Object Ontology)",
+    "stabilityStatus": "stable",
+    "adoptionDecision": "adopted"
   },
   {
     "name": "Autonomous Robotics (AuR)",
     "category": "General Purpose Robotics",
     "publisher": "Research / Community",
     "official": "",
-    "status": "candidate",
     "endObjects": [
       "General Purpose Robotics"
     ],
@@ -367,14 +385,15 @@
     ],
     "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:N-KiFjz1TZieT3fzlNuMKg",
     "description": "Ontology focused on autonomous robotics concepts, capabilities, and behavior.",
-    "parentOntology": "General Purpose Robotics (End-Object Ontology)"
+    "parentOntology": "General Purpose Robotics (End-Object Ontology)",
+    "stabilityStatus": "not stable",
+    "adoptionDecision": "watched"
   },
   {
     "name": "CORA",
     "category": "General Purpose Robotics",
     "publisher": "IEEE / Research Community",
     "official": "https://sites.google.com/site/smartappliancesproject/ontologies/cora",
-    "status": "recommended",
     "endObjects": [
       "General Purpose Robotics"
     ],
@@ -385,14 +404,15 @@
     ],
     "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:bGIa7mYITemwgBEOc_kMnw",
     "description": "Core ontology for robotics and automation concepts.",
-    "parentOntology": "General Purpose Robotics (End-Object Ontology)"
+    "parentOntology": "General Purpose Robotics (End-Object Ontology)",
+    "stabilityStatus": "stable",
+    "adoptionDecision": "adopted"
   },
   {
     "name": "CORAX",
     "category": "General Purpose Robotics",
     "publisher": "Research / Community",
     "official": "",
-    "status": "candidate",
     "endObjects": [
       "General Purpose Robotics"
     ],
@@ -403,14 +423,15 @@
     ],
     "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:ChIkKy9aRRyorrT-6UHgdg",
     "description": "Reference ontology in the robotics corpus; kept as a governed candidate pending fuller validation.",
-    "parentOntology": "General Purpose Robotics (End-Object Ontology)"
+    "parentOntology": "General Purpose Robotics (End-Object Ontology)",
+    "stabilityStatus": "not stable",
+    "adoptionDecision": "watched"
   },
   {
     "name": "POS",
     "category": "General Purpose Robotics",
     "publisher": "Research / Community",
     "official": "",
-    "status": "candidate",
     "endObjects": [
       "General Purpose Robotics"
     ],
@@ -421,14 +442,15 @@
     ],
     "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:rf21jegYTPqRJwpGm0Cpng",
     "description": "Ontology used for positional, pose, or planning-oriented semantics in robotics contexts.",
-    "parentOntology": "General Purpose Robotics (End-Object Ontology)"
+    "parentOntology": "General Purpose Robotics (End-Object Ontology)",
+    "stabilityStatus": "not stable",
+    "adoptionDecision": "watched"
   },
   {
     "name": "Robot Task Representation",
     "category": "General Purpose Robotics",
     "publisher": "Research / Community",
     "official": "",
-    "status": "candidate",
     "endObjects": [
       "General Purpose Robotics"
     ],
@@ -439,14 +461,15 @@
     ],
     "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:KBDIlDH4QFq5i_K01kbS6g",
     "description": "Ontology for describing robot tasks, actions, parameters, and execution context.",
-    "parentOntology": "General Purpose Robotics (End-Object Ontology)"
+    "parentOntology": "General Purpose Robotics (End-Object Ontology)",
+    "stabilityStatus": "not stable",
+    "adoptionDecision": "watched"
   },
   {
     "name": "RPARTS",
     "category": "General Purpose Robotics",
     "publisher": "Research / Community",
     "official": "",
-    "status": "candidate",
     "endObjects": [
       "General Purpose Robotics"
     ],
@@ -457,14 +480,15 @@
     ],
     "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:ee62NLxmT6yvvFC5E7GKrw",
     "description": "Reference ontology related to robot parts and component decomposition.",
-    "parentOntology": "General Purpose Robotics (End-Object Ontology)"
+    "parentOntology": "General Purpose Robotics (End-Object Ontology)",
+    "stabilityStatus": "not stable",
+    "adoptionDecision": "watched"
   },
   {
     "name": "SUMO-CORA",
     "category": "General Purpose Robotics",
     "publisher": "Research / Community",
     "official": "",
-    "status": "candidate",
     "endObjects": [
       "General Purpose Robotics"
     ],
@@ -475,6 +499,8 @@
     ],
     "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:R_UEz0okSdC9i1aukoDR3Q",
     "description": "Alignment layer between SUMO and CORA for robotics semantics.",
-    "parentOntology": "General Purpose Robotics (End-Object Ontology)"
+    "parentOntology": "General Purpose Robotics (End-Object Ontology)",
+    "stabilityStatus": "not stable",
+    "adoptionDecision": "watched"
   }
 ]
