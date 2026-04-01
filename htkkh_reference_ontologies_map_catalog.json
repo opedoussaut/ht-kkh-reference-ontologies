@@ -285,6 +285,22 @@
     "parentOntology": "High-Tech (Core Ontology)"
   },
   {
+    "name": "BOT",
+    "category": "AI Factory",
+    "publisher": "Linked Building Data Community Group",
+    "official": "https://w3c-lbd-cg.github.io/lbd/bot/",
+    "status": "monitored",
+    "endObjects": [
+      "AI Factories"
+    ],
+    "imds": [
+      "Infrastructure System Architecture"
+    ],
+    "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:HfyE2lIsRbSRuvToB-YeZw",
+    "description": "Building Topology Ontology (BOT) is a minimal OWL DL ontology for describing the core topological concepts of buildings and relationships between sub-components such as sites, buildings, storeys, spaces, and elements.",
+    "parentOntology": "AI Factory (End-Object Ontology)"
+  },
+  {
     "name": "Brick Schema",
     "category": "AI Factory",
     "publisher": "Brick Consortium",
