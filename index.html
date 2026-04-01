@@ -7,124 +7,224 @@
 <title>HT K&amp;KH Reference Ontologies Map</title>
 <style>
   :root {
-    --ds-blue:#0f698f;
-    --ds-blue-dark:#0a5575;
-    --ds-blue-soft:#eaf3f8;
+    --ds-blue:#0b5f8e;
+    --ds-blue-dark:#084c72;
+    --ds-blue-soft:#eaf3f9;
+    --ds-border:#cfd6dd;
+    --ds-border-soft:#dde3e8;
     --ds-bg:#f3f5f7;
     --ds-panel:#ffffff;
-    --ds-border:#d4dbe2;
-    --ds-border-soft:#e7edf2;
     --ds-text:#2f3a45;
     --ds-text-soft:#5f6b76;
-    --ds-label:#5a6976;
+    --ds-label:#50606f;
+    --ds-accent:#f28c18;
+    --ds-accent-bg:#f8f3ec;
     --ds-link:#0b6ea8;
-    --ds-accent:#f39a28;
-    --ds-accent-bg:#fbf4ea;
-    --shadow:0 1px 3px rgba(0,0,0,.08);
-    --radius:4px;
+    --ds-shadow:0 1px 2px rgba(0,0,0,.05);
+    --ds-radius:4px;
   }
-  * { box-sizing:border-box; }
+  * { box-sizing: border-box; }
   body {
     margin:0;
-    font-family: Arial, Helvetica, sans-serif;
     background:var(--ds-bg);
     color:var(--ds-text);
+    font-family: Arial, Helvetica, sans-serif;
     line-height:1.4;
   }
-  .page { padding:6px; }
+  .page { width:100%; margin:0; padding:6px; }
   .header {
-    background:linear-gradient(180deg, var(--ds-blue) 0%, var(--ds-blue-dark) 100%);
+    background:linear-gradient(180deg, #0d6a9c 0%, #0a5985 100%);
     color:#fff;
-    padding:28px 34px;
-    border:1px solid #8aa8ba;
-    box-shadow:var(--shadow);
+    padding:30px 40px;
+    border:1px solid #8ca8ba;
+    box-shadow:var(--ds-shadow);
   }
-  .header h1 { margin:0; font-size:32px; font-weight:700; letter-spacing:.2px; }
+  .header h1 { margin:0; font-size:32px; font-weight:700; letter-spacing:.4px; }
   .notice {
-    margin-top:14px; background:var(--ds-accent-bg); border:1px solid #efd6b4; border-left:5px solid var(--ds-accent);
-    border-radius:var(--radius); padding:14px 18px; color:#87541c; font-size:14px; box-shadow:var(--shadow);
+    margin-top:14px;
+    background:var(--ds-accent-bg);
+    border:1px solid var(--ds-border);
+    border-left:5px solid var(--ds-accent);
+    border-radius:var(--ds-radius);
+    padding:16px 20px;
+    color:#7b4c14;
+    font-size:14px;
   }
-  .notice a { color:#87541c; font-weight:700; text-decoration:underline; }
+  .notice strong { color:#8a5518; }
+  .notice a { color:#8a5518; text-decoration:underline; font-weight:700; }
   .panel {
-    margin-top:14px; background:var(--ds-panel); border:1px solid var(--ds-border); border-radius:var(--radius);
-    padding:18px; box-shadow:var(--shadow);
+    margin-top:14px;
+    background:var(--ds-panel);
+    border:1px solid var(--ds-border);
+    border-radius:var(--ds-radius);
+    padding:22px 22px 18px;
+    box-shadow:var(--ds-shadow);
   }
   .filters {
-    display:grid; grid-template-columns: 1.4fr 1fr 1fr 1.1fr 1fr 1fr auto; gap:14px; align-items:end;
+    display:grid;
+    grid-template-columns: repeat(6, minmax(180px, 1fr));
+    gap:16px;
+    align-items:end;
   }
   .field label {
-    display:block; margin-bottom:8px; font-size:12px; font-weight:700; color:var(--ds-label);
-    text-transform:uppercase; letter-spacing:.7px;
+    display:block;
+    margin-bottom:8px;
+    font-size:12px;
+    font-weight:700;
+    color:var(--ds-label);
+    text-transform:uppercase;
+    letter-spacing:.8px;
   }
   .control {
-    width:100%; height:48px; border:1px solid #c7d0d8; border-radius:var(--radius); background:#fff;
-    color:var(--ds-text); font-size:15px; padding:0 14px; outline:none;
+    width:100%;
+    height:54px;
+    border:1px solid #c7d0d8;
+    border-radius:var(--ds-radius);
+    background:#fff;
+    color:var(--ds-text);
+    font-size:16px;
+    padding:0 16px;
+    outline:none;
   }
-  .control:focus { border-color:#7caecc; box-shadow:0 0 0 2px rgba(11,95,142,.10); }
-  button.control { min-width:148px; background:#f2f5f8; cursor:pointer; }
+  .control:focus {
+    border-color:#7caecc;
+    box-shadow:0 0 0 2px rgba(11,95,142,.10);
+  }
+  button.control {
+    width:auto;
+    min-width:155px;
+    padding:0 22px;
+    cursor:pointer;
+    background:#f3f6f8;
+  }
   button.control:hover { background:#eaf0f4; }
-  .stats { margin-top:14px; color:#55626d; font-size:15px; }
-  .stats strong { color:#2f3a45; font-size:18px; }
+  .stats { margin-top:14px; color:#4f5d69; font-size:15px; }
+  .stats strong { font-size:18px; color:#394650; }
   #results { margin-top:14px; }
   .section {
-    margin-bottom:18px; background:#fff; border:1px solid var(--ds-border); border-radius:var(--radius);
-    box-shadow:var(--shadow); padding:16px;
+    margin-bottom:18px;
+    background:var(--ds-panel);
+    border:1px solid var(--ds-border);
+    border-radius:var(--ds-radius);
+    box-shadow:var(--ds-shadow);
+    padding:16px;
   }
   .section-title {
-    margin:0 0 14px 0; padding-bottom:10px; border-bottom:1px solid var(--ds-border-soft);
-    color:#405564; font-size:20px; font-weight:700;
+    margin:0 0 14px 0;
+    font-size:20px;
+    font-weight:700;
+    color:#395769;
+    padding-bottom:10px;
+    border-bottom:1px solid var(--ds-border-soft);
   }
-  .cards { display:grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap:14px; }
+  .cards {
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap:14px;
+  }
   .card {
-    background:#fff; border:1px solid #d8e0e7; border-radius:var(--radius); padding:14px;
-    box-shadow:0 1px 2px rgba(0,0,0,.05); min-height:286px; display:flex; flex-direction:column;
+    background:#fff;
+    border:1px solid #d6dde3;
+    border-radius:var(--ds-radius);
+    box-shadow:var(--ds-shadow);
+    padding:14px 14px 12px;
+    display:flex;
+    flex-direction:column;
+    min-height:280px;
     transition:border-color .15s ease, box-shadow .15s ease, transform .12s ease;
   }
-  .card:hover { border-color:#9fb8c8; box-shadow:0 4px 10px rgba(0,0,0,.08); transform:translateY(-1px); }
-  .card-head { display:flex; justify-content:space-between; align-items:flex-start; gap:10px; margin-bottom:10px; }
-  .card-title { margin:0; font-size:20px; line-height:1.2; color:var(--ds-link); }
-  .badge-stack { display:flex; flex-wrap:wrap; gap:6px; justify-content:flex-end; }
-  .status {
-    display:inline-block; padding:4px 10px; border-radius:999px; font-size:11px; font-weight:700;
-    text-transform:uppercase; letter-spacing:.45px; border:1px solid transparent; white-space:nowrap;
+  .card:hover {
+    border-color:#9fb8c8;
+    box-shadow:0 3px 8px rgba(0,0,0,.08);
+    transform:translateY(-1px);
   }
-  .stable { background:#e7f4ec; color:#256944; border-color:#bfdcc9; }
-  .not-stable { background:#fcebea; color:#8a2d2d; border-color:#f2c7c4; }
-  .adopted { background:#e9f1fb; color:#205989; border-color:#c9dbee; }
-  .watched { background:#fff6e8; color:#8a611a; border-color:#ecd49f; }
-  .rejected { background:#f3f4f6; color:#5f6368; border-color:#dadde1; }
-  .meta { margin:0 0 8px 0; font-size:13px; color:var(--ds-text-soft); }
-  .meta strong { color:#4a5864; }
-  .desc { margin:4px 0 12px; font-size:14px; color:#394650; flex:1 1 auto; }
+  .card-top {
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:10px;
+    margin-bottom:8px;
+  }
+  .card-title {
+    margin:0;
+    font-size:20px;
+    font-weight:700;
+    color:var(--ds-link);
+    line-height:1.2;
+  }
+  .status-row {
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+    justify-content:flex-end;
+  }
+  .status {
+    display:inline-block;
+    padding:4px 10px;
+    border-radius:999px;
+    font-size:11px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+    border:1px solid transparent;
+    white-space:nowrap;
+  }
+  .status-stable { background:#e9f5ee; color:#246847; border-color:#bfdcc9; }
+  .status-not-stable { background:#fdecea; color:#7a2a2a; border-color:#f3c1c1; }
+  .status-open { background:#edf5fb; color:#225f88; border-color:#c7ddec; }
+  .status-licensed { background:#fff6e8; color:#8a611a; border-color:#ecd49f; }
+  .status-restricted { background:#f6eef9; color:#6a3d84; border-color:#dcc7ea; }
+  .meta { margin:0 0 8px 0; color:var(--ds-text-soft); font-size:13px; }
+  .meta strong { color:#46535f; }
+  .desc { font-size:14px; color:#37424c; margin:6px 0 12px; flex:1 1 auto; }
   .group { margin-bottom:10px; }
   .group-label {
-    display:block; margin-bottom:6px; font-size:11px; font-weight:700; color:var(--ds-label);
-    text-transform:uppercase; letter-spacing:.65px;
+    display:block;
+    font-size:11px;
+    font-weight:700;
+    color:var(--ds-label);
+    text-transform:uppercase;
+    letter-spacing:.7px;
+    margin-bottom:6px;
   }
   .badges { display:flex; flex-wrap:wrap; gap:6px; }
-  .chip {
-    display:inline-block; padding:5px 9px; border-radius:999px; background:var(--ds-blue-soft);
-    color:#2d536c; border:1px solid #d0dfeb; font-size:12px;
+  .badge {
+    display:inline-block;
+    padding:5px 9px;
+    font-size:12px;
+    border-radius:999px;
+    background:var(--ds-blue-soft);
+    color:#29506a;
+    border:1px solid #cfe0eb;
   }
   .links {
-    margin-top:auto; padding-top:10px; border-top:1px solid var(--ds-border-soft);
-    display:flex; flex-wrap:wrap; gap:12px;
+    margin-top:auto;
+    padding-top:10px;
+    border-top:1px solid #e7edf1;
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
   }
-  .links a { color:var(--ds-link); text-decoration:none; font-weight:700; font-size:14px; }
+  .links a { color:var(--ds-link); text-decoration:none; font-size:14px; font-weight:700; }
   .links a:hover { text-decoration:underline; }
   .empty-state {
-    background:#fff; border:1px solid var(--ds-border); border-radius:var(--radius); box-shadow:var(--shadow);
-    padding:18px; color:var(--ds-text-soft);
+    background:#fff;
+    border:1px solid var(--ds-border);
+    border-radius:var(--ds-radius);
+    padding:20px;
+    color:var(--ds-text-soft);
+    box-shadow:var(--ds-shadow);
   }
-  @media (max-width:1600px) {
+  @media (max-width: 1500px) {
     .filters { grid-template-columns: repeat(3, minmax(220px, 1fr)); }
   }
-  @media (max-width:900px) {
+  @media (max-width: 980px) {
     .header { padding:22px 20px; }
     .header h1 { font-size:26px; }
-    .filters { grid-template-columns:1fr; }
+    .panel { padding:16px; }
+    .filters { grid-template-columns: 1fr; }
     button.control { width:100%; }
-    .cards { grid-template-columns:1fr; }
+    .cards { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -133,12 +233,14 @@
   <div class="header">
     <h1>HT K&amp;KH Reference Ontologies Map</h1>
   </div>
+
   <div class="notice">
     <strong>Classification note:</strong>
     this version follows the hierarchy proposed in the
     <a href="https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ" target="_blank" rel="noopener">KKH Wiki</a>:
     Regulatory / Normative, Circularity / Sustainability, High-Tech, AI Factory, Semiconductors, Personal Electronics, and General Purpose Robotics.
   </div>
+
   <div class="panel">
     <div class="filters">
       <div class="field">
@@ -158,12 +260,12 @@
         <select id="publisher" class="control"></select>
       </div>
       <div class="field">
-        <label for="stabilityStatus">Stability</label>
-        <select id="stabilityStatus" class="control"></select>
+        <label for="stability">Stability</label>
+        <select id="stability" class="control"></select>
       </div>
       <div class="field">
-        <label for="adoptionDecision">Adoption</label>
-        <select id="adoptionDecision" class="control"></select>
+        <label for="usage">Usage</label>
+        <select id="usage" class="control"></select>
       </div>
       <div class="field">
         <label>&nbsp;</label>
@@ -172,11 +274,23 @@
     </div>
     <div class="stats" id="stats"></div>
   </div>
+
   <div id="results"></div>
 </div>
+
 <script>
-var DATA = [{"name": "ELI Ontology", "category": "Regulatory / Normative", "publisher": "Publications Office of the European Union", "official": "https://op.europa.eu/en/web/eu-vocabularies/eli", "endObjects": ["AI Factories", "Semiconductors", "Personal Electronics", "General Purpose Robotics"], "imds": ["Regulatory Knowledge"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:H-CG-70vTy2MNfwuhQL_PA", "description": "Ontology for identifying and describing legal resources and legislation metadata.", "parentOntology": "Regulatory / Normative (Core Ontology)", "stabilityStatus": "stable", "adoptionDecision": "adopted"}, {"name": "ORIONT", "category": "Circularity / Sustainability", "publisher": "Research / Community", "official": "", "endObjects": ["AI Factories", "Semiconductors", "Personal Electronics", "General Purpose Robotics"], "imds": ["Circular Design"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:zmTUJGTVSSeV6oolo9UT_w", "description": "ORIENTING provides a structured ontology for Life Cycle Sustainability Assessment. It formalizes concepts related to environmental, social, and economic impacts across lifecycle stages. The ontology supports interoperability of LCSA data, impact indicators, system boundaries, and sustainability modeling workflows.", "parentOntology": "Circularity / Sustainability (Core Ontology)", "stabilityStatus": "not stable", "adoptionDecision": "watched"}, {"name": "PROV-O", "category": "Circularity / Sustainability", "publisher": "W3C", "official": "https://www.w3.org/TR/prov-o/", "endObjects": ["AI Factories", "Semiconductors", "Personal Electronics", "General Purpose Robotics"], "imds": ["Circular Design"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:GzCec8zyTD-McvzxZA61WA", "description": "Provenance ontology for entities, activities, agents, and derivation relationships.", "parentOntology": "Circularity / Sustainability (Core Ontology)", "stabilityStatus": "stable", "adoptionDecision": "adopted"}, {"name": "AAS", "category": "High-Tech", "publisher": "Industrial Digital Twin Association", "official": "https://industrialdigitaltwin.org/en/content-hub/aas", "endObjects": ["AI Factories", "Semiconductors", "Personal Electronics", "General Purpose Robotics"], "imds": ["Cross-domain semantics"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:3aG-8Yk4Se6Zf-bhrbfGuQ", "description": "Asset Administration Shell meta-model for interoperable digital twins.", "parentOntology": "High-Tech (Core Ontology)", "stabilityStatus": "stable", "adoptionDecision": "adopted"}, {"name": "DCTERMS", "category": "High-Tech", "publisher": "Dublin Core Metadata Initiative", "official": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/", "endObjects": ["AI Factories", "Semiconductors", "Personal Electronics", "General Purpose Robotics"], "imds": ["Cross-domain semantics"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:g4QdGWmMQampNp_mzHxwXQ", "description": "Widely used metadata terms for title, creator, subject, date, and provenance-like description.", "parentOntology": "High-Tech (Core Ontology)", "stabilityStatus": "stable", "adoptionDecision": "adopted"}, {"name": "ECLASS Ontology", "category": "High-Tech", "publisher": "ECLASS e.V.", "official": "https://www.eclass.eu/", "endObjects": ["AI Factories", "Semiconductors", "Personal Electronics", "General Purpose Robotics"], "imds": ["Cross-domain semantics"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:6Vw8NYO_SQKFAsz0h8d7pg", "description": "Classification ontology for products, properties, and industrial semantics.", "parentOntology": "High-Tech (Core Ontology)", "stabilityStatus": "stable", "adoptionDecision": "watched"}, {"name": "GeoSPARQL", "category": "High-Tech", "publisher": "OGC", "official": "https://opengeospatial.github.io/ogc-geosparql/", "endObjects": ["AI Factories", "Semiconductors", "Personal Electronics", "General Purpose Robotics"], "imds": ["Cross-domain semantics"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:r2w1_UqQSK--02C8andxvQ", "description": "Standard for spatial RDF representation and geospatial querying.", "parentOntology": "High-Tech (Core Ontology)", "stabilityStatus": "stable", "adoptionDecision": "adopted"}, {"name": "GoodRelations", "category": "High-Tech", "publisher": "Web Commerce Community", "official": "http://www.heppnetz.de/projects/goodrelations/", "endObjects": ["AI Factories", "Semiconductors", "Personal Electronics", "General Purpose Robotics"], "imds": ["Cross-domain semantics"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:Vn0zSv7IRGSe6Lep8ojrtw", "description": "Ontology for products, offers, prices, and business entities.", "parentOntology": "High-Tech (Core Ontology)", "stabilityStatus": "stable", "adoptionDecision": "watched"}, {"name": "GS1 WebVoc", "category": "High-Tech", "publisher": "GS1", "official": "https://www.gs1.org/voc/", "endObjects": ["AI Factories", "Semiconductors", "Personal Electronics", "General Purpose Robotics"], "imds": ["Cross-domain semantics"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:DuqSyAdOQkCM3D2sNj83zQ", "description": "GS1 web vocabulary for product, organization, and identification semantics.", "parentOntology": "High-Tech (Core Ontology)", "stabilityStatus": "stable", "adoptionDecision": "watched"}, {"name": "OWL-time", "category": "High-Tech", "publisher": "W3C", "official": "https://www.w3.org/TR/owl-time/", "endObjects": ["AI Factories", "Semiconductors", "Personal Electronics", "General Purpose Robotics"], "imds": ["Cross-domain semantics"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:vn5OZUanRdC6yQBwEdhxbg", "description": "Ontology of temporal concepts including intervals, instants, durations, and relations.", "parentOntology": "High-Tech (Core Ontology)", "stabilityStatus": "stable", "adoptionDecision": "adopted"}, {"name": "QUDT", "category": "High-Tech", "publisher": "QUDT", "official": "https://qudt.org/", "endObjects": ["AI Factories", "Semiconductors", "Personal Electronics", "General Purpose Robotics"], "imds": ["Cross-domain semantics"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:U7CIlZJUR-CmhXerXedNsw", "description": "Ontology for quantities, units, dimensions, and datatypes.", "parentOntology": "High-Tech (Core Ontology)", "stabilityStatus": "stable", "adoptionDecision": "adopted"}, {"name": "SAREF Core", "category": "High-Tech", "publisher": "ETSI", "official": "https://saref.etsi.org/", "endObjects": ["AI Factories", "Semiconductors", "Personal Electronics", "General Purpose Robotics"], "imds": ["Cross-domain semantics"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:ZKZ4ztldRvy0NF-5fb9iVQ", "description": "Smart Applications REFerence ontology for interoperable devices and services.", "parentOntology": "High-Tech (Core Ontology)", "stabilityStatus": "stable", "adoptionDecision": "adopted"}, {"name": "SOSA", "category": "High-Tech", "publisher": "W3C/OGC", "official": "https://www.w3.org/TR/vocab-ssn/", "endObjects": ["AI Factories", "Semiconductors", "Personal Electronics", "General Purpose Robotics"], "imds": ["Cross-domain semantics"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:nQW5FfTQSHO9062warOnoQ", "description": "Lightweight core for sensors, observations, samples, and actuators.", "parentOntology": "High-Tech (Core Ontology)", "stabilityStatus": "stable", "adoptionDecision": "adopted"}, {"name": "SSN", "category": "High-Tech", "publisher": "W3C/OGC", "official": "https://www.w3.org/TR/vocab-ssn/", "endObjects": ["AI Factories", "Semiconductors", "Personal Electronics", "General Purpose Robotics"], "imds": ["Cross-domain semantics"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:5RCMfzLNSlSIb46cfvCDzA", "description": "Semantic Sensor Network ontology for sensors, observations, and systems.", "parentOntology": "High-Tech (Core Ontology)", "stabilityStatus": "stable", "adoptionDecision": "adopted"}, {"name": "SUMO", "category": "High-Tech", "publisher": "IEEE / Teknowledge", "official": "https://www.ontologyportal.org/", "endObjects": ["AI Factories", "Semiconductors", "Personal Electronics", "General Purpose Robotics"], "imds": ["Cross-domain semantics"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:v-Hoheh0T9KZ2BIASSmCnw", "description": "Suggested Upper Merged Ontology for broad upper-level semantic grounding.", "parentOntology": "High-Tech (Core Ontology)", "stabilityStatus": "stable", "adoptionDecision": "watched"}, {"name": "BOT", "category": "AI Factory", "publisher": "Linked Building Data Community Group", "official": "https://w3c-lbd-cg.github.io/lbd/bot/", "endObjects": ["AI Factories"], "imds": ["Infrastructure System Architecture"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:HfyE2lIsRbSRuvToB-YeZw", "description": "Building Topology Ontology (BOT) is a minimal OWL DL ontology for describing the core topological concepts of buildings and relationships between sub-components such as sites, buildings, storeys, spaces, and elements.", "parentOntology": "AI Factory (End-Object Ontology)", "stabilityStatus": "stable", "adoptionDecision": "adopted"}, {"name": "Brick Schema", "category": "AI Factory", "publisher": "Brick Consortium", "official": "https://brickschema.org/", "endObjects": ["AI Factories"], "imds": ["Infrastructure System Architecture", "Compute Performance & Sustainability"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:azyjLHMTQoGNkGIy3YENlA", "description": "Brick Schema is an open OWL ontology for modeling buildings, infrastructure, and their systems, including spaces, equipment, power distribution, cooling, HVAC, and sensors. It provides a formal semantic foundation to represent and reason over the physical and infrastructural structure of AI factories and data centers.", "parentOntology": "AI Factory (End-Object Ontology)", "stabilityStatus": "stable", "adoptionDecision": "adopted"}, {"name": "CIM", "category": "AI Factory", "publisher": "IEC", "official": "https://www.iec.ch/standardsdev/publications/", "endObjects": ["AI Factories"], "imds": ["Infrastructure System Architecture", "Compute Performance & Sustainability"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:CLVX0LTORSG9cyf_aponEg", "description": "The Common Information Model (CIM) is a formal object-oriented schema developed by the Distributed Management Task Force (DMTF) to represent managed elements in IT environments, including computer systems, racks, chassis, processors, memory, power supplies, networking components, and cooling subsystems. CIM provides a strong reference model for AI Factory physical and logical infrastructure components.", "parentOntology": "AI Factory (End-Object Ontology)", "stabilityStatus": "stable", "adoptionDecision": "watched"}, {"name": "SAREF4BLDG", "category": "AI Factory", "publisher": "ETSI", "official": "https://saref.etsi.org/saref4bldg/", "endObjects": ["AI Factories"], "imds": ["Infrastructure System Architecture", "Compute Performance & Sustainability"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:kkKzLMKZQwufO73ZeHNVGw", "description": "Building extension of SAREF for spaces, devices, and building systems.", "parentOntology": "AI Factory (End-Object Ontology)", "stabilityStatus": "stable", "adoptionDecision": "adopted"}, {"name": "Autonomous Robotics (AuR)", "category": "General Purpose Robotics", "publisher": "Research / Community", "official": "", "endObjects": ["General Purpose Robotics"], "imds": ["Humanoid Robots", "Robot AI Control", "Robot MBSE Simulation"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:N-KiFjz1TZieT3fzlNuMKg", "description": "Ontology focused on autonomous robotics concepts, capabilities, and behavior.", "parentOntology": "General Purpose Robotics (End-Object Ontology)", "stabilityStatus": "not stable", "adoptionDecision": "watched"}, {"name": "CORA", "category": "General Purpose Robotics", "publisher": "IEEE / Research Community", "official": "https://sites.google.com/site/smartappliancesproject/ontologies/cora", "endObjects": ["General Purpose Robotics"], "imds": ["Humanoid Robots", "Robot AI Control", "Robot MBSE Simulation"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:bGIa7mYITemwgBEOc_kMnw", "description": "Core ontology for robotics and automation concepts.", "parentOntology": "General Purpose Robotics (End-Object Ontology)", "stabilityStatus": "stable", "adoptionDecision": "adopted"}, {"name": "CORAX", "category": "General Purpose Robotics", "publisher": "Research / Community", "official": "", "endObjects": ["General Purpose Robotics"], "imds": ["Humanoid Robots", "Robot AI Control", "Robot MBSE Simulation"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:ChIkKy9aRRyorrT-6UHgdg", "description": "Reference ontology in the robotics corpus; kept as a governed candidate pending fuller validation.", "parentOntology": "General Purpose Robotics (End-Object Ontology)", "stabilityStatus": "not stable", "adoptionDecision": "watched"}, {"name": "POS", "category": "General Purpose Robotics", "publisher": "Research / Community", "official": "", "endObjects": ["General Purpose Robotics"], "imds": ["Humanoid Robots", "Robot AI Control", "Robot MBSE Simulation"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:rf21jegYTPqRJwpGm0Cpng", "description": "Ontology used for positional, pose, or planning-oriented semantics in robotics contexts.", "parentOntology": "General Purpose Robotics (End-Object Ontology)", "stabilityStatus": "not stable", "adoptionDecision": "watched"}, {"name": "Robot Task Representation", "category": "General Purpose Robotics", "publisher": "Research / Community", "official": "", "endObjects": ["General Purpose Robotics"], "imds": ["Humanoid Robots", "Robot AI Control", "Robot MBSE Simulation"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:KBDIlDH4QFq5i_K01kbS6g", "description": "Ontology for describing robot tasks, actions, parameters, and execution context.", "parentOntology": "General Purpose Robotics (End-Object Ontology)", "stabilityStatus": "not stable", "adoptionDecision": "watched"}, {"name": "RPARTS", "category": "General Purpose Robotics", "publisher": "Research / Community", "official": "", "endObjects": ["General Purpose Robotics"], "imds": ["Humanoid Robots", "Robot AI Control", "Robot MBSE Simulation"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:ee62NLxmT6yvvFC5E7GKrw", "description": "Reference ontology related to robot parts and component decomposition.", "parentOntology": "General Purpose Robotics (End-Object Ontology)", "stabilityStatus": "not stable", "adoptionDecision": "watched"}, {"name": "SUMO-CORA", "category": "General Purpose Robotics", "publisher": "Research / Community", "official": "", "endObjects": ["General Purpose Robotics"], "imds": ["Humanoid Robots", "Robot AI Control", "Robot MBSE Simulation"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:R_UEz0okSdC9i1aukoDR3Q", "description": "Alignment layer between SUMO and CORA for robotics semantics.", "parentOntology": "General Purpose Robotics (End-Object Ontology)", "stabilityStatus": "not stable", "adoptionDecision": "watched"}];
-var CATEGORY_ORDER = ["3DS Foundational", "Regulatory / Normative", "Circularity / Sustainability", "High-Tech", "AI Factory", "Semiconductors", "Personal Electronics", "General Purpose Robotics"];
+var DATA = [{"name": "ELI Ontology", "category": "Regulatory / Normative", "publisher": "Publications Office of the European Union", "official": "https://op.europa.eu/en/web/eu-vocabularies/eli", "endObjects": ["AI Factories", "Semiconductors", "Personal Electronics", "General Purpose Robotics"], "imds": ["Regulatory Knowledge"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:H-CG-70vTy2MNfwuhQL_PA", "description": "Ontology for identifying and describing legal resources and legislation metadata.", "parentOntology": "Regulatory / Normative (Core Ontology)", "stabilityStatus": "stable", "usageStatus": "open"}, {"name": "ORIONT", "category": "Circularity / Sustainability", "publisher": "Research / Community", "official": "", "endObjects": ["AI Factories", "Semiconductors", "Personal Electronics", "General Purpose Robotics"], "imds": ["Circular Design"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:zmTUJGTVSSeV6oolo9UT_w", "description": "ORIENTING provides a structured ontology for Life Cycle Sustainability Assessment. It formalizes concepts related to environmental, social, and economic impacts across lifecycle stages. The ontology supports interoperability of LCSA data, impact indicators, system boundaries, and sustainability modeling workflows.", "parentOntology": "Circularity / Sustainability (Core Ontology)", "stabilityStatus": "not stable", "usageStatus": "restricted"}, {"name": "PROV-O", "category": "Circularity / Sustainability", "publisher": "W3C", "official": "https://www.w3.org/TR/prov-o/", "endObjects": ["AI Factories", "Semiconductors", "Personal Electronics", "General Purpose Robotics"], "imds": ["Circular Design"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:GzCec8zyTD-McvzxZA61WA", "description": "Provenance ontology for entities, activities, agents, and derivation relationships.", "parentOntology": "Circularity / Sustainability (Core Ontology)", "stabilityStatus": "stable", "usageStatus": "open"}, {"name": "AAS", "category": "High-Tech", "publisher": "Industrial Digital Twin Association", "official": "https://industrialdigitaltwin.org/en/content-hub/aas", "endObjects": ["AI Factories", "Semiconductors", "Personal Electronics", "General Purpose Robotics"], "imds": ["Cross-domain semantics"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:3aG-8Yk4Se6Zf-bhrbfGuQ", "description": "Asset Administration Shell meta-model for interoperable digital twins.", "parentOntology": "High-Tech (Core Ontology)", "stabilityStatus": "stable", "usageStatus": "open"}, {"name": "DCTERMS", "category": "High-Tech", "publisher": "Dublin Core Metadata Initiative", "official": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/", "endObjects": ["AI Factories", "Semiconductors", "Personal Electronics", "General Purpose Robotics"], "imds": ["Cross-domain semantics"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:g4QdGWmMQampNp_mzHxwXQ", "description": "Widely used metadata terms for title, creator, subject, date, and provenance-like description.", "parentOntology": "High-Tech (Core Ontology)", "stabilityStatus": "stable", "usageStatus": "open"}, {"name": "ECLASS Ontology", "category": "High-Tech", "publisher": "ECLASS e.V.", "official": "https://www.eclass.eu/", "endObjects": ["AI Factories", "Semiconductors", "Personal Electronics", "General Purpose Robotics"], "imds": ["Cross-domain semantics"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:6Vw8NYO_SQKFAsz0h8d7pg", "description": "Classification ontology for products, properties, and industrial semantics.", "parentOntology": "High-Tech (Core Ontology)", "stabilityStatus": "stable", "usageStatus": "licensed"}, {"name": "GeoSPARQL", "category": "High-Tech", "publisher": "OGC", "official": "https://opengeospatial.github.io/ogc-geosparql/", "endObjects": ["AI Factories", "Semiconductors", "Personal Electronics", "General Purpose Robotics"], "imds": ["Cross-domain semantics"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:r2w1_UqQSK--02C8andxvQ", "description": "Standard for spatial RDF representation and geospatial querying.", "parentOntology": "High-Tech (Core Ontology)", "stabilityStatus": "stable", "usageStatus": "open"}, {"name": "GoodRelations", "category": "High-Tech", "publisher": "Web Commerce Community", "official": "http://www.heppnetz.de/projects/goodrelations/", "endObjects": ["AI Factories", "Semiconductors", "Personal Electronics", "General Purpose Robotics"], "imds": ["Cross-domain semantics"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:Vn0zSv7IRGSe6Lep8ojrtw", "description": "Ontology for products, offers, prices, and business entities.", "parentOntology": "High-Tech (Core Ontology)", "stabilityStatus": "stable", "usageStatus": "open"}, {"name": "GS1 WebVoc", "category": "High-Tech", "publisher": "GS1", "official": "https://www.gs1.org/voc/", "endObjects": ["AI Factories", "Semiconductors", "Personal Electronics", "General Purpose Robotics"], "imds": ["Cross-domain semantics"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:DuqSyAdOQkCM3D2sNj83zQ", "description": "GS1 web vocabulary for product, organization, and identification semantics.", "parentOntology": "High-Tech (Core Ontology)", "stabilityStatus": "stable", "usageStatus": "licensed"}, {"name": "OWL-time", "category": "High-Tech", "publisher": "W3C", "official": "https://www.w3.org/TR/owl-time/", "endObjects": ["AI Factories", "Semiconductors", "Personal Electronics", "General Purpose Robotics"], "imds": ["Cross-domain semantics"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:vn5OZUanRdC6yQBwEdhxbg", "description": "Ontology of temporal concepts including intervals, instants, durations, and relations.", "parentOntology": "High-Tech (Core Ontology)", "stabilityStatus": "stable", "usageStatus": "open"}, {"name": "QUDT", "category": "High-Tech", "publisher": "QUDT", "official": "https://qudt.org/", "endObjects": ["AI Factories", "Semiconductors", "Personal Electronics", "General Purpose Robotics"], "imds": ["Cross-domain semantics"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:U7CIlZJUR-CmhXerXedNsw", "description": "Ontology for quantities, units, dimensions, and datatypes.", "parentOntology": "High-Tech (Core Ontology)", "stabilityStatus": "stable", "usageStatus": "open"}, {"name": "SAREF Core", "category": "High-Tech", "publisher": "ETSI", "official": "https://saref.etsi.org/", "endObjects": ["AI Factories", "Semiconductors", "Personal Electronics", "General Purpose Robotics"], "imds": ["Cross-domain semantics"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:ZKZ4ztldRvy0NF-5fb9iVQ", "description": "Smart Applications REFerence ontology for interoperable devices and services.", "parentOntology": "High-Tech (Core Ontology)", "stabilityStatus": "stable", "usageStatus": "open"}, {"name": "SOSA", "category": "High-Tech", "publisher": "W3C/OGC", "official": "https://www.w3.org/TR/vocab-ssn/", "endObjects": ["AI Factories", "Semiconductors", "Personal Electronics", "General Purpose Robotics"], "imds": ["Cross-domain semantics"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:nQW5FfTQSHO9062warOnoQ", "description": "Lightweight core for sensors, observations, samples, and actuators.", "parentOntology": "High-Tech (Core Ontology)", "stabilityStatus": "stable", "usageStatus": "open"}, {"name": "SSN", "category": "High-Tech", "publisher": "W3C/OGC", "official": "https://www.w3.org/TR/vocab-ssn/", "endObjects": ["AI Factories", "Semiconductors", "Personal Electronics", "General Purpose Robotics"], "imds": ["Cross-domain semantics"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:5RCMfzLNSlSIb46cfvCDzA", "description": "Semantic Sensor Network ontology for sensors, observations, and systems.", "parentOntology": "High-Tech (Core Ontology)", "stabilityStatus": "stable", "usageStatus": "open"}, {"name": "SUMO", "category": "High-Tech", "publisher": "IEEE / Teknowledge", "official": "https://www.ontologyportal.org/", "endObjects": ["AI Factories", "Semiconductors", "Personal Electronics", "General Purpose Robotics"], "imds": ["Cross-domain semantics"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:v-Hoheh0T9KZ2BIASSmCnw", "description": "Suggested Upper Merged Ontology for broad upper-level semantic grounding.", "parentOntology": "High-Tech (Core Ontology)", "stabilityStatus": "stable", "usageStatus": "open"}, {"name": "BOT", "category": "AI Factory", "publisher": "Linked Building Data Community Group", "official": "https://w3c-lbd-cg.github.io/bot/", "endObjects": ["AI Factories"], "imds": ["Infrastructure System Architecture"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:HfyE2lIsRbSRuvToB-YeZw", "description": "Building Topology Ontology (BOT) is a minimal OWL DL ontology for describing the core topological concepts of buildings and relationships between sub-components such as sites, buildings, storeys, spaces, and elements.", "parentOntology": "AI Factory (End-Object Ontology)", "stabilityStatus": "stable", "usageStatus": "open"}, {"name": "Brick Schema", "category": "AI Factory", "publisher": "Brick Consortium", "official": "https://brickschema.org/", "endObjects": ["AI Factories"], "imds": ["Infrastructure System Architecture", "Compute Performance & Sustainability"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:azyjLHMTQoGNkGIy3YENlA", "description": "Brick Schema is an open OWL ontology for modeling buildings, infrastructure, and their systems, including spaces, equipment, power distribution, cooling, HVAC, and sensors. It provides a formal semantic foundation to represent and reason over the physical and infrastructural structure of AI factories and data centers.", "parentOntology": "AI Factory (End-Object Ontology)", "stabilityStatus": "stable", "usageStatus": "open"}, {"name": "CIM", "category": "AI Factory", "publisher": "IEC", "official": "https://www.iec.ch/standardsdev/publications/", "endObjects": ["AI Factories"], "imds": ["Infrastructure System Architecture", "Compute Performance & Sustainability"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:CLVX0LTORSG9cyf_aponEg", "description": "The Common Information Model (CIM) is a formal object-oriented schema developed by the Distributed Management Task Force (DMTF) to represent managed elements in IT environments, including computer systems, racks, chassis, processors, memory, power supplies, networking components, and cooling subsystems. CIM provides a strong reference model for AI Factory physical and logical infrastructure components.", "parentOntology": "AI Factory (End-Object Ontology)", "stabilityStatus": "stable", "usageStatus": "licensed"}, {"name": "SAREF4BLDG", "category": "AI Factory", "publisher": "ETSI", "official": "https://saref.etsi.org/saref4bldg/", "endObjects": ["AI Factories"], "imds": ["Infrastructure System Architecture", "Compute Performance & Sustainability"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:kkKzLMKZQwufO73ZeHNVGw", "description": "Building extension of SAREF for spaces, devices, and building systems.", "parentOntology": "AI Factory (End-Object Ontology)", "stabilityStatus": "stable", "usageStatus": "open"}, {"name": "Autonomous Robotics (AuR)", "category": "General Purpose Robotics", "publisher": "Research / Community", "official": "", "endObjects": ["General Purpose Robotics"], "imds": ["Humanoid Robots", "Robot AI Control", "Robot MBSE Simulation"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:N-KiFjz1TZieT3fzlNuMKg", "description": "Ontology focused on autonomous robotics concepts, capabilities, and behavior.", "parentOntology": "General Purpose Robotics (End-Object Ontology)", "stabilityStatus": "not stable", "usageStatus": "restricted"}, {"name": "CORA", "category": "General Purpose Robotics", "publisher": "IEEE / Research Community", "official": "https://sites.google.com/site/smartappliancesproject/ontologies/cora", "endObjects": ["General Purpose Robotics"], "imds": ["Humanoid Robots", "Robot AI Control", "Robot MBSE Simulation"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:bGIa7mYITemwgBEOc_kMnw", "description": "Core ontology for robotics and automation concepts.", "parentOntology": "General Purpose Robotics (End-Object Ontology)", "stabilityStatus": "stable", "usageStatus": "restricted"}, {"name": "CORAX", "category": "General Purpose Robotics", "publisher": "Research / Community", "official": "", "endObjects": ["General Purpose Robotics"], "imds": ["Humanoid Robots", "Robot AI Control", "Robot MBSE Simulation"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:ChIkKy9aRRyorrT-6UHgdg", "description": "Reference ontology in the robotics corpus; kept as a governed candidate pending fuller validation.", "parentOntology": "General Purpose Robotics (End-Object Ontology)", "stabilityStatus": "not stable", "usageStatus": "restricted"}, {"name": "POS", "category": "General Purpose Robotics", "publisher": "Research / Community", "official": "", "endObjects": ["General Purpose Robotics"], "imds": ["Humanoid Robots", "Robot AI Control", "Robot MBSE Simulation"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:rf21jegYTPqRJwpGm0Cpng", "description": "Ontology used for positional, pose, or planning-oriented semantics in robotics contexts.", "parentOntology": "General Purpose Robotics (End-Object Ontology)", "stabilityStatus": "not stable", "usageStatus": "restricted"}, {"name": "Robot Task Representation", "category": "General Purpose Robotics", "publisher": "Research / Community", "official": "", "endObjects": ["General Purpose Robotics"], "imds": ["Humanoid Robots", "Robot AI Control", "Robot MBSE Simulation"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:KBDIlDH4QFq5i_K01kbS6g", "description": "Ontology for describing robot tasks, actions, parameters, and execution context.", "parentOntology": "General Purpose Robotics (End-Object Ontology)", "stabilityStatus": "not stable", "usageStatus": "restricted"}, {"name": "RPARTS", "category": "General Purpose Robotics", "publisher": "Research / Community", "official": "", "endObjects": ["General Purpose Robotics"], "imds": ["Humanoid Robots", "Robot AI Control", "Robot MBSE Simulation"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:ee62NLxmT6yvvFC5E7GKrw", "description": "Reference ontology related to robot parts and component decomposition.", "parentOntology": "General Purpose Robotics (End-Object Ontology)", "stabilityStatus": "not stable", "usageStatus": "restricted"}, {"name": "SUMO-CORA", "category": "General Purpose Robotics", "publisher": "Research / Community", "official": "", "endObjects": ["General Purpose Robotics"], "imds": ["Humanoid Robots", "Robot AI Control", "Robot MBSE Simulation"], "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:R_UEz0okSdC9i1aukoDR3Q", "description": "Alignment layer between SUMO and CORA for robotics semantics.", "parentOntology": "General Purpose Robotics (End-Object Ontology)", "stabilityStatus": "not stable", "usageStatus": "restricted"}];
+
+var CATEGORY_ORDER = [
+  "3DS Foundational",
+  "Regulatory / Normative",
+  "Circularity / Sustainability",
+  "High-Tech",
+  "AI Factory",
+  "Semiconductors",
+  "Personal Electronics",
+  "General Purpose Robotics"
+];
 
 function uniq(values) {
   var seen = {};
@@ -193,7 +307,11 @@ function uniq(values) {
 }
 
 function esc(s) {
-  return String(s || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  return String(s || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
 }
 
 function fillSelect(id, values, allLabel) {
@@ -215,8 +333,8 @@ function initFilters() {
   fillSelect("category", uniq(DATA.map(function(d){ return d.category; })), "All categories");
   fillSelect("endObject", uniq([].concat.apply([], DATA.map(function(d){ return d.endObjects || []; }))), "All end objects");
   fillSelect("publisher", uniq(DATA.map(function(d){ return d.publisher; })), "All publishers");
-  fillSelect("stabilityStatus", uniq(DATA.map(function(d){ return d.stabilityStatus; })), "All stability values");
-  fillSelect("adoptionDecision", uniq(DATA.map(function(d){ return d.adoptionDecision; })), "All adoption decisions");
+  fillSelect("stability", uniq(DATA.map(function(d){ return d.stabilityStatus; })), "All stability levels");
+  fillSelect("usage", uniq(DATA.map(function(d){ return d.usageStatus; })), "All usage levels");
 }
 
 function containsText(haystack, needle) {
@@ -225,84 +343,110 @@ function containsText(haystack, needle) {
 
 function matches(d, state) {
   if (state.search) {
-    var blob = [d.name || "", d.description || "", d.publisher || "", d.category || "", d.parentOntology || "",
-      d.stabilityStatus || "", d.adoptionDecision || "", (d.imds || []).join(" "), (d.endObjects || []).join(" ")].join(" ");
+    var blob = [
+      d.name || "",
+      d.description || "",
+      d.publisher || "",
+      (d.imds || []).join(" "),
+      (d.endObjects || []).join(" "),
+      d.category || "",
+      d.parentOntology || ""
+    ].join(" ");
     if (!containsText(blob, state.search)) return false;
   }
   if (state.category && d.category !== state.category) return false;
-  if (state.publisher && d.publisher !== state.publisher) return false;
-  if (state.stabilityStatus && d.stabilityStatus !== state.stabilityStatus) return false;
-  if (state.adoptionDecision && d.adoptionDecision !== state.adoptionDecision) return false;
   if (state.endObject) {
     var eos = d.endObjects || [];
-    var ok = false;
+    var foundEndObject = false;
     for (var i = 0; i < eos.length; i++) {
-      if (eos[i] === state.endObject) { ok = true; break; }
+      if (eos[i] === state.endObject) {
+        foundEndObject = true;
+        break;
+      }
     }
-    if (!ok) return false;
+    if (!foundEndObject) return false;
   }
+  if (state.publisher && d.publisher !== state.publisher) return false;
+  if (state.stability && d.stabilityStatus !== state.stability) return false;
+  if (state.usage && d.usageStatus !== state.usage) return false;
   return true;
 }
 
-function statusClass(value, kind) {
-  if (kind === "stability") return value === "stable" ? "stable" : "not-stable";
-  if (kind === "adoption") {
-    if (value === "adopted") return "adopted";
-    if (value === "watched") return "watched";
-    return "rejected";
-  }
-  return "";
+function getStabilityClass(value) {
+  return value === "stable" ? "status-stable" : "status-not-stable";
+}
+
+function getUsageClass(value) {
+  if (value === "open") return "status-open";
+  if (value === "licensed") return "status-licensed";
+  return "status-restricted";
 }
 
 function renderCard(d) {
   var endObjects = "";
   var imds = "";
-  for (var i = 0; i < (d.endObjects || []).length; i++) endObjects += '<span class="chip">' + esc(d.endObjects[i]) + '</span>';
-  for (var j = 0; j < (d.imds || []).length; j++) imds += '<span class="chip">' + esc(d.imds[j]) + '</span>';
-
+  for (var i = 0; i < (d.endObjects || []).length; i++) {
+    endObjects += '<span class="badge">' + esc(d.endObjects[i]) + '</span>';
+  }
+  for (var j = 0; j < (d.imds || []).length; j++) {
+    imds += '<span class="badge">' + esc(d.imds[j]) + '</span>';
+  }
   var links = "";
   if (d.wiki) links += '<a href="' + esc(d.wiki) + '" target="_blank" rel="noopener">Wiki page</a>';
   if (d.official) links += '<a href="' + esc(d.official) + '" target="_blank" rel="noopener">Official source</a>';
-
-  return '<article class="card">' +
-      '<div class="card-head">' +
+  return '' +
+    '<div class="card">' +
+      '<div class="card-top">' +
         '<h3 class="card-title">' + esc(d.name) + '</h3>' +
-        '<div class="badge-stack">' +
-          '<span class="status ' + statusClass(d.stabilityStatus, "stability") + '">' + esc(d.stabilityStatus) + '</span>' +
-          '<span class="status ' + statusClass(d.adoptionDecision, "adoption") + '">' + esc(d.adoptionDecision) + '</span>' +
+        '<div class="status-row">' +
+          '<span class="status ' + getStabilityClass(d.stabilityStatus) + '">' + esc(d.stabilityStatus) + '</span>' +
+          '<span class="status ' + getUsageClass(d.usageStatus) + '">' + esc(d.usageStatus) + '</span>' +
         '</div>' +
       '</div>' +
       '<p class="meta"><strong>Publisher:</strong> ' + esc(d.publisher || "") + '</p>' +
       '<p class="meta"><strong>Parent ontology:</strong> ' + esc(d.parentOntology || "") + '</p>' +
       '<div class="desc">' + esc(d.description || "") + '</div>' +
-      '<div class="group"><span class="group-label">End Objects</span><div class="badges">' + endObjects + '</div></div>' +
-      '<div class="group"><span class="group-label">IMDs</span><div class="badges">' + imds + '</div></div>' +
+      '<div class="group">' +
+        '<span class="group-label">End Objects</span>' +
+        '<div class="badges">' + endObjects + '</div>' +
+      '</div>' +
+      '<div class="group">' +
+        '<span class="group-label">IMDs</span>' +
+        '<div class="badges">' + imds + '</div>' +
+      '</div>' +
       '<div class="links">' + links + '</div>' +
-    '</article>';
+    '</div>';
 }
 
 function render() {
   var state = {
-    search: document.getElementById("search").value.trim(),
+    search: document.getElementById("search").value.replace(/^\s+|\s+$/g, ""),
     category: document.getElementById("category").value,
     endObject: document.getElementById("endObject").value,
     publisher: document.getElementById("publisher").value,
-    stabilityStatus: document.getElementById("stabilityStatus").value,
-    adoptionDecision: document.getElementById("adoptionDecision").value
+    stability: document.getElementById("stability").value,
+    usage: document.getElementById("usage").value
   };
-  var filtered = [];
-  for (var i = 0; i < DATA.length; i++) if (matches(DATA[i], state)) filtered.push(DATA[i]);
 
-  document.getElementById("stats").innerHTML = "<strong>" + filtered.length + "</strong> ontology reference(s) matching the current filters.";
+  var filtered = [];
+  for (var i = 0; i < DATA.length; i++) {
+    if (matches(DATA[i], state)) filtered.push(DATA[i]);
+  }
+
+  document.getElementById("stats").innerHTML =
+    "<strong>" + filtered.length + "</strong> ontology reference(s) matching the current filters.";
 
   var results = document.getElementById("results");
   results.innerHTML = "";
+
   var renderedSectionCount = 0;
 
   for (var c = 0; c < CATEGORY_ORDER.length; c++) {
     var cat = CATEGORY_ORDER[c];
     var items = [];
-    for (var j = 0; j < filtered.length; j++) if (filtered[j].category === cat) items.push(filtered[j]);
+    for (var j = 0; j < filtered.length; j++) {
+      if (filtered[j].category === cat) items.push(filtered[j]);
+    }
     if (!items.length) continue;
 
     renderedSectionCount++;
@@ -315,9 +459,11 @@ function render() {
 
     var cards = document.createElement("div");
     cards.className = "cards";
-    var html = "";
-    for (var k = 0; k < items.length; k++) html += renderCard(items[k]);
-    cards.innerHTML = html;
+    var cardsHtml = "";
+    for (var k = 0; k < items.length; k++) {
+      cardsHtml += renderCard(items[k]);
+    }
+    cards.innerHTML = cardsHtml;
     section.appendChild(cards);
     results.appendChild(section);
   }
@@ -331,7 +477,7 @@ function render() {
 }
 
 function bind() {
-  var ids = ["search","category","endObject","publisher","stabilityStatus","adoptionDecision"];
+  var ids = ["search", "category", "endObject", "publisher", "stability", "usage"];
   for (var i = 0; i < ids.length; i++) {
     document.getElementById(ids[i]).addEventListener("input", render);
     document.getElementById(ids[i]).addEventListener("change", render);
@@ -341,8 +487,8 @@ function bind() {
     document.getElementById("category").value = "";
     document.getElementById("endObject").value = "";
     document.getElementById("publisher").value = "";
-    document.getElementById("stabilityStatus").value = "";
-    document.getElementById("adoptionDecision").value = "";
+    document.getElementById("stability").value = "";
+    document.getElementById("usage").value = "";
     render();
   });
 }
