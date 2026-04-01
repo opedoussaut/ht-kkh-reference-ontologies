@@ -288,7 +288,7 @@
     "name": "BOT",
     "category": "AI Factory",
     "publisher": "Linked Building Data Community Group",
-    "official": "https://w3c-lbd-cg.github.io/lbd/bot/",
+    "official": "official": "https://w3c-lbd-cg.github.io/bot/",
     "status": "monitored",
     "endObjects": [
       "AI Factories"
