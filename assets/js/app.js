@@ -96,7 +96,16 @@ function viewHome() {
     [sectorIndustries().length, 'industries'],
   ];
   return html`
-  <section class="hero">
+  <section class="atlas-cover" aria-label="Reference Ontology Atlas illustrated cover">
+    <img src="assets/images/reference-ontology-atlas-cover.png"
+         alt="Reference Ontology Atlas — Updated & Enriched. A connected globe links aerospace, energy, biology, manufacturing, infrastructure and other engineering domains."
+         width="1536" height="864" fetchpriority="high" decoding="async">
+    <div class="atlas-cover-mobile-title" aria-hidden="true">
+      <strong>REFERENCE<br>ONTOLOGY ATLAS</strong>
+      <span>Updated &amp; Enriched</span>
+    </div>
+  </section>
+  <section class="hero hero-with-cover">
     <p class="eyebrow">Reference Ontology Atlas</p>
     <h1>Public semantic standards,<br><span class="grad">mapped for engineering.</span></h1>
     <p class="lead">A curated, cited atlas of public reference ontologies and semantic standards across industries. Each record shows its version, licence and sources.</p>

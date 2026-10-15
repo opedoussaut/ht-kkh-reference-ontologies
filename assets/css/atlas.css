@@ -116,6 +116,19 @@ kbd { font: 12px var(--mono); border: 1px solid var(--line-strong); border-botto
 
 main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px 96px; min-height: 70vh; outline: none; }
 
+/* Atlas illustrated cover — prominent on desktop, readable on mobile. */
+.atlas-cover {
+  position: relative; margin: 0 calc(50% - 50vw);
+  background: var(--navy-950); overflow: hidden; isolation: isolate;
+}
+.atlas-cover img {
+  display: block; width: 100%; height: auto; max-height: 680px;
+  object-fit: cover; object-position: center;
+}
+.atlas-cover-mobile-title { display: none; }
+.hero-with-cover { padding-top: 54px; }
+.hero-with-cover .eyebrow { display: none; }
+
 /* Hero (full-bleed navy) */
 .hero {
   position: relative; text-align: center; padding: 96px 24px 72px;
@@ -412,6 +425,20 @@ select { font: inherit; font-size: 13.5px; color: var(--fg); background: var(--b
   main { padding: 0 16px 64px; }
   .nav-inner { padding: 0 16px; }
   .hero { padding: 64px 16px 44px; }
+  .atlas-cover img { height: 320px; max-height: none; object-fit: cover; object-position: right center; }
+  .atlas-cover::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(90deg, rgba(3, 12, 26, .97), rgba(3, 12, 26, .64) 52%, rgba(3, 12, 26, .08));
+  }
+  .atlas-cover-mobile-title {
+    display: flex; flex-direction: column; gap: 12px; position: absolute;
+    z-index: 1; left: 18px; right: 16px; top: 50%; transform: translateY(-50%);
+    color: #fff; text-shadow: 0 2px 16px rgba(0, 0, 0, .5); pointer-events: none;
+  }
+  .atlas-cover-mobile-title strong { font-size: clamp(28px, 7.4vw, 40px); line-height: 1.03; letter-spacing: -.04em; }
+  .atlas-cover-mobile-title span { font-size: clamp(18px, 5vw, 25px); color: #12d5ed; font-weight: 700; }
+  .hero-with-cover { padding-top: 40px; }
+
   .hero-search { padding-left: 14px; }
   .hero-search .btn { padding: 8px 14px; }
   .ind-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }

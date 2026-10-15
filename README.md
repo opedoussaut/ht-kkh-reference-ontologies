@@ -1,5 +1,7 @@
 # Reference Ontology Atlas
 
+![Reference Ontology Atlas — Updated & Enriched](assets/images/reference-ontology-atlas-cover.png)
+
 An evidence-based, cross-industry atlas of **public** reference ontologies and semantic standards for engineering.
 
 **→ https://opedoussaut.github.io/ht-kkh-reference-ontologies/**
