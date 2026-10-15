@@ -1,5 +1,4 @@
 {
-  "publicEvidence": [],
   "id": "skos",
   "name": "SKOS",
   "fullName": "Simple Knowledge Organization System",
@@ -36,18 +35,6 @@
     "cross-industry"
   ],
   "useCases": [],
-  "brandRelevance": [
-    {
-      "brand": "netvibes",
-      "strength": "high",
-      "rationale": "Taxonomy and thesaurus management."
-    },
-    {
-      "brand": "enovia",
-      "strength": "medium",
-      "rationale": "Classification libraries."
-    }
-  ],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",

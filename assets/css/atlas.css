@@ -180,9 +180,6 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 22px 80px; min-height:
 .a-open-with-terms { background: var(--teal-bg); color: var(--teal); }
 .a-licensed { background: var(--warn-bg); color: var(--warn); }
 .a-unknown { background: var(--line); color: var(--fg-3); }
-.rel-potential { background: var(--violet-bg); color: var(--violet); }
-.rel-potential.s-medium { opacity: .8; }
-.rel-evidence { background: var(--ok-bg); color: var(--ok); }
 .pill-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0; }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .chip { display: inline-flex; align-items: center; font-size: 13px; padding: 5px 12px; border-radius: 999px; background: var(--bg-elev); border: 1px solid var(--line-strong); color: var(--fg); text-decoration: none !important; cursor: pointer; font-family: inherit; }
@@ -229,7 +226,6 @@ select { font: inherit; font-size: 14px; color: var(--fg); background: var(--bg-
 .card-meta { font-size: 13px; color: var(--fg-2); margin: 4px 0 12px; }
 .card-foot { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; border-top: 1px solid var(--line); padding-top: 12px; }
 .card-publisher { margin-left: auto; font-size: 12.5px; color: var(--fg-3); text-align: right; }
-.card-evidence { font-size: 12px; font-weight: 600; color: var(--ok); }
 
 /* Detail */
 .detail-hero { padding: 26px 0 28px; }
@@ -252,13 +248,7 @@ select { font: inherit; font-size: 14px; color: var(--fg); background: var(--bg-
 .facts.compact .fact { font-size: 14px; padding: 7px 0; }
 .ext::after { content: " ↗"; font-size: .85em; }
 .sources { padding-left: 20px; margin: 0; font-size: 14px; display: grid; gap: 6px; }
-.evidence, .brand-list, .rels, .corrections, .bullets { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; font-size: 15px; }
-.brand-list li { display: grid; gap: 4px; }
-.evidence li { line-height: 1.5; }
-.evidence li .muted { display: block; font-size: 13.5px; margin-top: 2px; }
-.brand-list li { grid-template-columns: auto auto 1fr; align-items: baseline; column-gap: 10px; }
-.brand-list li .muted { grid-column: 1 / -1; font-size: 14px; }
-.brand-name { font-weight: 600; }
+.rels, .corrections, .bullets { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; font-size: 15px; }
 .rel { display: grid; gap: 4px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
 .rel:last-child { border-bottom: 0; }
 .rel-type { font-family: var(--mono); font-size: 12.5px; color: var(--violet); background: var(--violet-bg); padding: 1px 7px; border-radius: 6px; }
@@ -278,21 +268,6 @@ select { font: inherit; font-size: 14px; color: var(--fg); background: var(--bg-
 .stack-body h3 { font-size: 17px; margin-bottom: 4px; }
 
 /* Brands */
-.brand-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-bottom: 14px; }
-.brand-card { background: var(--bg-elev); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow); color: var(--fg); text-decoration: none !important; transition: transform .2s, box-shadow .2s; }
-.brand-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
-.brand-card h3 { font-size: 19px; letter-spacing: 0.02em; }
-.brand-nums { display: flex; gap: 14px; font-size: 13px; color: var(--fg-3); }
-.brand-nums strong { color: var(--fg); font-size: 16px; }
-.matrix-wrap { overflow: auto; background: var(--bg-elev); border-radius: var(--radius); box-shadow: var(--shadow); max-height: 70vh; }
-.matrix { border-collapse: separate; border-spacing: 0; width: 100%; font-size: 13.5px; }
-.matrix th, .matrix td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: center; white-space: nowrap; }
-.matrix thead th { position: sticky; top: 0; background: var(--bg-elev); z-index: 1; font-size: 12px; letter-spacing: .04em; }
-.matrix tbody th { text-align: left; position: sticky; left: 0; background: var(--bg-elev); font-weight: 500; }
-.matrix td.m-high { color: var(--violet); font-size: 15px; }
-.matrix td.m-medium { color: var(--violet); opacity: .7; }
-.matrix td.m-ev { color: var(--ok); font-size: 15px; background: var(--ok-bg); }
-.matrix tbody tr:hover th, .matrix tbody tr:hover td { background: var(--bg-soft); }
 
 /* Graph */
 .graph-wrap { background: var(--bg-elev); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }

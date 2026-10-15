@@ -42,24 +42,6 @@
     "general-purpose-robotics",
     "sustainability"
   ],
-  "brandRelevance": [
-    {
-      "brand": "enovia",
-      "strength": "high",
-      "rationale": "Lifecycle traceability maps naturally to entities, activities and agents."
-    },
-    {
-      "brand": "netvibes",
-      "strength": "high",
-      "rationale": "Knowledge-graph lineage and data provenance."
-    },
-    {
-      "brand": "simulia",
-      "strength": "medium",
-      "rationale": "Simulation process and data lineage (inputs, runs, results)."
-    }
-  ],
-  "publicEvidence": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",

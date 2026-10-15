@@ -45,24 +45,6 @@
     "personal-electronics",
     "general-purpose-robotics"
   ],
-  "brandRelevance": [
-    {
-      "brand": "enovia",
-      "strength": "high",
-      "rationale": "Part classification and standard attributes in the product lifecycle."
-    },
-    {
-      "brand": "delmia",
-      "strength": "medium",
-      "rationale": "Procurement and supply-chain master data."
-    },
-    {
-      "brand": "catia",
-      "strength": "medium",
-      "rationale": "Standard parts and component properties."
-    }
-  ],
-  "publicEvidence": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",

@@ -4,8 +4,8 @@ Thank you for helping keep the atlas accurate. Two rules come first:
 
 1. **Public information only.** Cite a public source for every fact. Never include confidential, internal, customer or
    login-only material, including internal community or wiki links.
-2. **Potential relevance is not adoption.** Only claim that a brand supports or uses something when a public source
-   says so.
+2. **Vendor-neutral.** The atlas describes ontologies and standards, not software products. Do not add vendor, product
+   or brand mappings or adoption claims.
 
 ## Ways to contribute
 
@@ -30,8 +30,6 @@ Thank you for helping keep the atlas accurate. Two rules come first:
    | `license` | `name`, `access` (`open`, `open-with-terms`, `licensed`, `unknown`), `url` |
    | `links` | `official` (required, may be `null`), optional `specification`, `repository`, `namespace`, `related` |
    | `industries`, `useCases` | ids from `data/taxonomy/` |
-   | `brandRelevance` | `{brand, strength: high or medium, rationale}`: editorial **potential** only |
-   | `publicEvidence` | `{kind, brands, statement, source: {url, title, type: official or third-party}}` |
    | `verification` | `status` (`verified`, `partially-verified`, `unverified`), `checkedOn`, `sources[]`, `notes` |
    | `origin` | `v2` for new records |
 
@@ -54,12 +52,13 @@ in `corrections[]` (`field`, `from`, `to`, `reason`, `source`) and change the cu
 CI (`.github/workflows/ci.yml`) runs `npm run validate` and `npm test` on every pull request:
 
 - JSON Schema validation of every record
-- referential integrity (industries, use cases, brands, relation endpoints, use-case stacks)
+- referential integrity (industries, use cases, relation endpoints, use-case stacks)
 - unique ids that match their file names
 - every v1 record preserved verbatim
 - every relation has an evidence URL
 - no internal-platform hosts or markers in any published file
 - generated files are up to date
+- no vendor, product or brand mappings
 
 ## Review and publishing
 

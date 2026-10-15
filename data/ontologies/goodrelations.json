@@ -42,14 +42,6 @@
     "personal-electronics",
     "general-purpose-robotics"
   ],
-  "brandRelevance": [
-    {
-      "brand": "3dexcite",
-      "strength": "medium",
-      "rationale": "Product-offer data behind online 3D product experiences."
-    }
-  ],
-  "publicEvidence": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",

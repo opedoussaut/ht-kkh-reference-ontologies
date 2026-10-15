@@ -42,24 +42,6 @@
     "personal-electronics",
     "general-purpose-robotics"
   ],
-  "brandRelevance": [
-    {
-      "brand": "simulia",
-      "strength": "medium",
-      "rationale": "Linking physical test and sensor data with virtual models."
-    },
-    {
-      "brand": "delmia",
-      "strength": "medium",
-      "rationale": "Shop-floor sensing and operations data."
-    },
-    {
-      "brand": "netvibes",
-      "strength": "medium",
-      "rationale": "IoT data in knowledge graphs."
-    }
-  ],
-  "publicEvidence": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",

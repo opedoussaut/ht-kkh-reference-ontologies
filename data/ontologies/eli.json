@@ -43,19 +43,6 @@
     "general-purpose-robotics",
     "sustainability"
   ],
-  "brandRelevance": [
-    {
-      "brand": "enovia",
-      "strength": "medium",
-      "rationale": "Compliance requirements in the product lifecycle can reference legal acts by ELI."
-    },
-    {
-      "brand": "netvibes",
-      "strength": "medium",
-      "rationale": "Regulatory intelligence and knowledge graphs can link to legislation identifiers."
-    }
-  ],
-  "publicEvidence": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "partially-verified",

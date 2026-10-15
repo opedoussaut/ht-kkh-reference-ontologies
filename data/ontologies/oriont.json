@@ -39,19 +39,6 @@
     "general-purpose-robotics",
     "sustainability"
   ],
-  "brandRelevance": [
-    {
-      "brand": "catia",
-      "strength": "medium",
-      "rationale": "Eco-design in product definition needs LCSA concepts."
-    },
-    {
-      "brand": "enovia",
-      "strength": "medium",
-      "rationale": "Lifecycle data management could carry sustainability indicators."
-    }
-  ],
-  "publicEvidence": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "unverified",

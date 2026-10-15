@@ -1,5 +1,4 @@
 {
-  "publicEvidence": [],
   "id": "bfo",
   "name": "BFO",
   "fullName": "Basic Formal Ontology (BFO 2020)",
@@ -44,18 +43,6 @@
   ],
   "useCases": [
     "semiconductors"
-  ],
-  "brandRelevance": [
-    {
-      "brand": "netvibes",
-      "strength": "high",
-      "rationale": "Formal upper ontology for enterprise knowledge graphs."
-    },
-    {
-      "brand": "biovia",
-      "strength": "medium",
-      "rationale": "Life-science ontologies (OBO) build on BFO."
-    }
   ],
   "verification": {
     "checkedOn": "2026-10-15",

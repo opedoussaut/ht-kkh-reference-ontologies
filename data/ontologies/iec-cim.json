@@ -1,5 +1,4 @@
 {
-  "publicEvidence": [],
   "id": "iec-cim",
   "name": "IEC CIM",
   "fullName": "IEC Common Information Model for power systems (IEC 61970 / 61968 / 62325)",
@@ -39,18 +38,6 @@
   "useCases": [
     "ai-factories",
     "sustainability"
-  ],
-  "brandRelevance": [
-    {
-      "brand": "netvibes",
-      "strength": "medium",
-      "rationale": "Grid data in energy knowledge graphs."
-    },
-    {
-      "brand": "simulia",
-      "strength": "medium",
-      "rationale": "Power-system digital twins."
-    }
   ],
   "verification": {
     "checkedOn": "2026-10-15",

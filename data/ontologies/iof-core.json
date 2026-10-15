@@ -1,5 +1,4 @@
 {
-  "publicEvidence": [],
   "id": "iof-core",
   "name": "IOF Core",
   "fullName": "Industrial Ontologies Foundry — Core Ontology",
@@ -42,23 +41,6 @@
   "useCases": [
     "semiconductors",
     "general-purpose-robotics"
-  ],
-  "brandRelevance": [
-    {
-      "brand": "delmia",
-      "strength": "high",
-      "rationale": "Production planning, maintenance and supply-chain semantics."
-    },
-    {
-      "brand": "enovia",
-      "strength": "high",
-      "rationale": "Product lifecycle concepts with formal grounding."
-    },
-    {
-      "brand": "catia",
-      "strength": "medium",
-      "rationale": "Design artefacts and requirements."
-    }
   ],
   "verification": {
     "checkedOn": "2026-10-15",

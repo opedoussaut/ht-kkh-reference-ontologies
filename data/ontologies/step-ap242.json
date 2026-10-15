@@ -1,30 +1,4 @@
 {
-  "publicEvidence": [
-    {
-      "kind": "product-support",
-      "brands": [
-        "solidworks"
-      ],
-      "statement": "SOLIDWORKS documents a \"Publish to STEP 242\" command for model-based definition data.",
-      "source": {
-        "url": "https://help.solidworks.com/2025/English/SolidWorks/sldworks/r_publish_step242.htm",
-        "title": "SOLIDWORKS Help — Publish to STEP242 PropertyManager",
-        "type": "official"
-      }
-    },
-    {
-      "kind": "product-support",
-      "brands": [
-        "catia"
-      ],
-      "statement": "A reseller tutorial shows CATIA V5 exporting parts with PMI to STEP AP242.",
-      "source": {
-        "url": "https://www.cati.com/blog/export-catia-v5-parts-with-pmi-using-step-ap242/",
-        "title": "CATI — Export CATIA V5 parts with PMI using STEP AP242",
-        "type": "third-party"
-      }
-    }
-  ],
   "id": "step-ap242",
   "name": "STEP AP242",
   "fullName": "ISO 10303-242 Managed model-based 3D engineering",
@@ -66,23 +40,6 @@
   ],
   "useCases": [
     "general-purpose-robotics"
-  ],
-  "brandRelevance": [
-    {
-      "brand": "catia",
-      "strength": "high",
-      "rationale": "3D master data exchange."
-    },
-    {
-      "brand": "solidworks",
-      "strength": "high",
-      "rationale": "Model-based definition export."
-    },
-    {
-      "brand": "enovia",
-      "strength": "medium",
-      "rationale": "PDM and configuration exchange."
-    }
   ],
   "verification": {
     "checkedOn": "2026-10-15",

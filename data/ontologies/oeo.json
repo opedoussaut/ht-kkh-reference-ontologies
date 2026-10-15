@@ -1,5 +1,4 @@
 {
-  "publicEvidence": [],
   "id": "oeo",
   "name": "OEO",
   "fullName": "Open Energy Ontology",
@@ -38,18 +37,6 @@
   "useCases": [
     "ai-factories",
     "sustainability"
-  ],
-  "brandRelevance": [
-    {
-      "brand": "netvibes",
-      "strength": "medium",
-      "rationale": "Energy scenario knowledge graphs."
-    },
-    {
-      "brand": "geovia",
-      "strength": "medium",
-      "rationale": "Energy resource modelling."
-    }
   ],
   "verification": {
     "checkedOn": "2026-10-15",

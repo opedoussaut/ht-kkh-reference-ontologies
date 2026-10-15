@@ -9,10 +9,9 @@
       "relations": 18,
       "industries": 9,
       "useCases": 5,
-      "brands": 9,
       "legacyRecords": 26
     },
-    "disclaimer": "Public information only. Brand relevance is an editorial assessment of potential fit unless a public evidence entry is cited. Not an official Dassault Systèmes publication."
+    "disclaimer": "Public information only. Every fact is backed by a cited public source; verification status and date are shown on each record."
   },
   "ontologies": [
     {
@@ -63,35 +62,6 @@
         "personal-electronics",
         "general-purpose-robotics",
         "sustainability"
-      ],
-      "brandRelevance": [
-        {
-          "brand": "delmia",
-          "strength": "high",
-          "rationale": "Shop-floor assets and operations exchange data through AAS submodels."
-        },
-        {
-          "brand": "enovia",
-          "strength": "high",
-          "rationale": "Product and asset lifecycle data could be published as AAS."
-        },
-        {
-          "brand": "catia",
-          "strength": "medium",
-          "rationale": "Engineering data handed over as digital nameplates and technical data submodels."
-        }
-      ],
-      "publicEvidence": [
-        {
-          "kind": "standards-membership",
-          "brands": [],
-          "statement": "Dassault Systèmes announced it joined the Industrial Digital Twin Association (IDTA), which maintains the AAS specifications.",
-          "source": {
-            "url": "https://www.3ds.com/de/newsroom/media-alerts/dassault-systemes-joins-the-industrial-digital-twin-association",
-            "title": "Dassault Systèmes newsroom (DE): joins the Industrial Digital Twin Association",
-            "type": "official"
-          }
-        }
       ],
       "verification": {
         "checkedOn": "2026-10-15",
@@ -169,24 +139,6 @@
       "useCases": [
         "general-purpose-robotics"
       ],
-      "brandRelevance": [
-        {
-          "brand": "catia",
-          "strength": "high",
-          "rationale": "Robot product and systems architecture could reuse a standard robot vocabulary."
-        },
-        {
-          "brand": "delmia",
-          "strength": "high",
-          "rationale": "Robot programming and cell simulation work with robot parts, poses and tasks."
-        },
-        {
-          "brand": "simulia",
-          "strength": "medium",
-          "rationale": "Multibody and control simulation could bind models to standard robot concepts."
-        }
-      ],
-      "publicEvidence": [],
       "verification": {
         "checkedOn": "2026-10-15",
         "status": "verified",
@@ -236,7 +188,6 @@
       }
     },
     {
-      "publicEvidence": [],
       "id": "bfo",
       "name": "BFO",
       "fullName": "Basic Formal Ontology (BFO 2020)",
@@ -281,18 +232,6 @@
       ],
       "useCases": [
         "semiconductors"
-      ],
-      "brandRelevance": [
-        {
-          "brand": "netvibes",
-          "strength": "high",
-          "rationale": "Formal upper ontology for enterprise knowledge graphs."
-        },
-        {
-          "brand": "biovia",
-          "strength": "medium",
-          "rationale": "Life-science ontologies (OBO) build on BFO."
-        }
       ],
       "verification": {
         "checkedOn": "2026-10-15",
@@ -352,19 +291,6 @@
       "useCases": [
         "ai-factories"
       ],
-      "brandRelevance": [
-        {
-          "brand": "catia",
-          "strength": "medium",
-          "rationale": "Facility layout and building topology for data-centre design."
-        },
-        {
-          "brand": "delmia",
-          "strength": "medium",
-          "rationale": "Facility and plant layout."
-        }
-      ],
-      "publicEvidence": [],
       "verification": {
         "checkedOn": "2026-10-15",
         "status": "partially-verified",
@@ -440,19 +366,6 @@
       "useCases": [
         "ai-factories"
       ],
-      "brandRelevance": [
-        {
-          "brand": "simulia",
-          "strength": "medium",
-          "rationale": "Thermal and airflow simulation of cooling systems."
-        },
-        {
-          "brand": "netvibes",
-          "strength": "medium",
-          "rationale": "Facility telemetry analytics."
-        }
-      ],
-      "publicEvidence": [],
       "verification": {
         "checkedOn": "2026-10-15",
         "status": "verified",
@@ -489,7 +402,6 @@
       }
     },
     {
-      "publicEvidence": [],
       "id": "cco",
       "name": "CCO",
       "fullName": "Common Core Ontologies",
@@ -528,18 +440,6 @@
         "cross-industry"
       ],
       "useCases": [],
-      "brandRelevance": [
-        {
-          "brand": "netvibes",
-          "strength": "high",
-          "rationale": "Mid-level semantics for intelligence and knowledge graphs."
-        },
-        {
-          "brand": "catia",
-          "strength": "medium",
-          "rationale": "Artefact and function concepts for systems engineering."
-        }
-      ],
       "verification": {
         "checkedOn": "2026-10-15",
         "status": "verified",
@@ -594,24 +494,6 @@
       "useCases": [
         "general-purpose-robotics"
       ],
-      "brandRelevance": [
-        {
-          "brand": "catia",
-          "strength": "high",
-          "rationale": "Robot product and systems architecture could reuse a standard robot vocabulary."
-        },
-        {
-          "brand": "delmia",
-          "strength": "high",
-          "rationale": "Robot programming and cell simulation work with robot parts, poses and tasks."
-        },
-        {
-          "brand": "simulia",
-          "strength": "medium",
-          "rationale": "Multibody and control simulation could bind models to standard robot concepts."
-        }
-      ],
-      "publicEvidence": [],
       "verification": {
         "checkedOn": "2026-10-15",
         "status": "verified",
@@ -708,24 +590,6 @@
       "useCases": [
         "general-purpose-robotics"
       ],
-      "brandRelevance": [
-        {
-          "brand": "catia",
-          "strength": "high",
-          "rationale": "Robot product and systems architecture could reuse a standard robot vocabulary."
-        },
-        {
-          "brand": "delmia",
-          "strength": "high",
-          "rationale": "Robot programming and cell simulation work with robot parts, poses and tasks."
-        },
-        {
-          "brand": "simulia",
-          "strength": "medium",
-          "rationale": "Multibody and control simulation could bind models to standard robot concepts."
-        }
-      ],
-      "publicEvidence": [],
       "verification": {
         "checkedOn": "2026-10-15",
         "status": "verified",
@@ -775,7 +639,6 @@
       }
     },
     {
-      "publicEvidence": [],
       "id": "dcat",
       "name": "DCAT",
       "fullName": "Data Catalog Vocabulary (DCAT) Version 3",
@@ -814,18 +677,6 @@
       "useCases": [
         "ai-factories",
         "sustainability"
-      ],
-      "brandRelevance": [
-        {
-          "brand": "netvibes",
-          "strength": "high",
-          "rationale": "Dataset cataloguing and discovery."
-        },
-        {
-          "brand": "enovia",
-          "strength": "medium",
-          "rationale": "Exposing engineering datasets to data spaces."
-        }
       ],
       "verification": {
         "checkedOn": "2026-10-15",
@@ -884,19 +735,6 @@
         "personal-electronics",
         "general-purpose-robotics"
       ],
-      "brandRelevance": [
-        {
-          "brand": "enovia",
-          "strength": "high",
-          "rationale": "Document and object metadata (title, creator, dates)."
-        },
-        {
-          "brand": "netvibes",
-          "strength": "high",
-          "rationale": "Generic metadata for indexed content."
-        }
-      ],
-      "publicEvidence": [],
       "verification": {
         "checkedOn": "2026-10-15",
         "status": "verified",
@@ -931,7 +769,6 @@
       }
     },
     {
-      "publicEvidence": [],
       "id": "digital-reference",
       "name": "Digital Reference (DR)",
       "fullName": "Digital Reference — semiconductor supply-chain ontology",
@@ -969,18 +806,6 @@
       ],
       "useCases": [
         "semiconductors"
-      ],
-      "brandRelevance": [
-        {
-          "brand": "delmia",
-          "strength": "high",
-          "rationale": "Semiconductor supply-chain planning."
-        },
-        {
-          "brand": "netvibes",
-          "strength": "medium",
-          "rationale": "Supply-chain intelligence."
-        }
       ],
       "verification": {
         "checkedOn": "2026-10-15",
@@ -1040,19 +865,6 @@
       "useCases": [
         "ai-factories"
       ],
-      "brandRelevance": [
-        {
-          "brand": "delmia",
-          "strength": "medium",
-          "rationale": "Operations of IT infrastructure assets."
-        },
-        {
-          "brand": "netvibes",
-          "strength": "medium",
-          "rationale": "Inventory and telemetry analytics for compute assets."
-        }
-      ],
-      "publicEvidence": [],
       "verification": {
         "checkedOn": "2026-10-15",
         "status": "verified",
@@ -1151,24 +963,6 @@
         "personal-electronics",
         "general-purpose-robotics"
       ],
-      "brandRelevance": [
-        {
-          "brand": "enovia",
-          "strength": "high",
-          "rationale": "Part classification and standard attributes in the product lifecycle."
-        },
-        {
-          "brand": "delmia",
-          "strength": "medium",
-          "rationale": "Procurement and supply-chain master data."
-        },
-        {
-          "brand": "catia",
-          "strength": "medium",
-          "rationale": "Standard parts and component properties."
-        }
-      ],
-      "publicEvidence": [],
       "verification": {
         "checkedOn": "2026-10-15",
         "status": "verified",
@@ -1255,19 +1049,6 @@
         "general-purpose-robotics",
         "sustainability"
       ],
-      "brandRelevance": [
-        {
-          "brand": "enovia",
-          "strength": "medium",
-          "rationale": "Compliance requirements in the product lifecycle can reference legal acts by ELI."
-        },
-        {
-          "brand": "netvibes",
-          "strength": "medium",
-          "rationale": "Regulatory intelligence and knowledge graphs can link to legislation identifiers."
-        }
-      ],
-      "publicEvidence": [],
       "verification": {
         "checkedOn": "2026-10-15",
         "status": "partially-verified",
@@ -1306,7 +1087,6 @@
       }
     },
     {
-      "publicEvidence": [],
       "id": "emmo",
       "name": "EMMO",
       "fullName": "Elementary Multiperspective Material Ontology",
@@ -1350,18 +1130,6 @@
       "useCases": [
         "semiconductors",
         "sustainability"
-      ],
-      "brandRelevance": [
-        {
-          "brand": "biovia",
-          "strength": "high",
-          "rationale": "Materials modelling and characterisation data."
-        },
-        {
-          "brand": "simulia",
-          "strength": "high",
-          "rationale": "Material models used in simulation."
-        }
       ],
       "verification": {
         "checkedOn": "2026-10-15",
@@ -1429,19 +1197,6 @@
         "general-purpose-robotics",
         "sustainability"
       ],
-      "brandRelevance": [
-        {
-          "brand": "geovia",
-          "strength": "high",
-          "rationale": "Geospatial modelling of sites and natural resources."
-        },
-        {
-          "brand": "netvibes",
-          "strength": "medium",
-          "rationale": "Spatial queries in knowledge graphs."
-        }
-      ],
-      "publicEvidence": [],
       "verification": {
         "checkedOn": "2026-10-15",
         "status": "verified",
@@ -1523,14 +1278,6 @@
         "personal-electronics",
         "general-purpose-robotics"
       ],
-      "brandRelevance": [
-        {
-          "brand": "3dexcite",
-          "strength": "medium",
-          "rationale": "Product-offer data behind online 3D product experiences."
-        }
-      ],
-      "publicEvidence": [],
       "verification": {
         "checkedOn": "2026-10-15",
         "status": "verified",
@@ -1615,24 +1362,6 @@
         "general-purpose-robotics",
         "sustainability"
       ],
-      "brandRelevance": [
-        {
-          "brand": "enovia",
-          "strength": "medium",
-          "rationale": "Product identification across the lifecycle."
-        },
-        {
-          "brand": "3dexcite",
-          "strength": "medium",
-          "rationale": "Rich product data for commerce experiences."
-        },
-        {
-          "brand": "delmia",
-          "strength": "medium",
-          "rationale": "Supply-chain identification and traceability."
-        }
-      ],
-      "publicEvidence": [],
       "verification": {
         "checkedOn": "2026-10-15",
         "status": "verified",
@@ -1684,7 +1413,6 @@
       }
     },
     {
-      "publicEvidence": [],
       "id": "iec-cim",
       "name": "IEC CIM",
       "fullName": "IEC Common Information Model for power systems (IEC 61970 / 61968 / 62325)",
@@ -1725,18 +1453,6 @@
         "ai-factories",
         "sustainability"
       ],
-      "brandRelevance": [
-        {
-          "brand": "netvibes",
-          "strength": "medium",
-          "rationale": "Grid data in energy knowledge graphs."
-        },
-        {
-          "brand": "simulia",
-          "strength": "medium",
-          "rationale": "Power-system digital twins."
-        }
-      ],
       "verification": {
         "checkedOn": "2026-10-15",
         "status": "partially-verified",
@@ -1755,7 +1471,6 @@
       "origin": "v2"
     },
     {
-      "publicEvidence": [],
       "id": "ifcowl",
       "name": "ifcOWL",
       "fullName": "ifcOWL — OWL representation of IFC",
@@ -1796,13 +1511,6 @@
       "useCases": [
         "ai-factories"
       ],
-      "brandRelevance": [
-        {
-          "brand": "catia",
-          "strength": "medium",
-          "rationale": "AEC design data interoperability."
-        }
-      ],
       "verification": {
         "checkedOn": "2026-10-15",
         "status": "verified",
@@ -1821,7 +1529,6 @@
       "origin": "v2"
     },
     {
-      "publicEvidence": [],
       "id": "iof-core",
       "name": "IOF Core",
       "fullName": "Industrial Ontologies Foundry — Core Ontology",
@@ -1865,23 +1572,6 @@
         "semiconductors",
         "general-purpose-robotics"
       ],
-      "brandRelevance": [
-        {
-          "brand": "delmia",
-          "strength": "high",
-          "rationale": "Production planning, maintenance and supply-chain semantics."
-        },
-        {
-          "brand": "enovia",
-          "strength": "high",
-          "rationale": "Product lifecycle concepts with formal grounding."
-        },
-        {
-          "brand": "catia",
-          "strength": "medium",
-          "rationale": "Design artefacts and requirements."
-        }
-      ],
       "verification": {
         "checkedOn": "2026-10-15",
         "status": "verified",
@@ -1900,7 +1590,6 @@
       "origin": "v2"
     },
     {
-      "publicEvidence": [],
       "id": "iso-15926-14",
       "name": "ISO 15926-14",
       "fullName": "ISO 15926-14 — OWL 2 ontology for process-plant lifecycle data",
@@ -1936,18 +1625,6 @@
         "energy-materials"
       ],
       "useCases": [],
-      "brandRelevance": [
-        {
-          "brand": "enovia",
-          "strength": "medium",
-          "rationale": "Plant asset lifecycle information handover."
-        },
-        {
-          "brand": "delmia",
-          "strength": "medium",
-          "rationale": "Plant operations and maintenance."
-        }
-      ],
       "verification": {
         "checkedOn": "2026-10-15",
         "status": "partially-verified",
@@ -1966,7 +1643,6 @@
       "origin": "v2"
     },
     {
-      "publicEvidence": [],
       "id": "oeo",
       "name": "OEO",
       "fullName": "Open Energy Ontology",
@@ -2005,18 +1681,6 @@
       "useCases": [
         "ai-factories",
         "sustainability"
-      ],
-      "brandRelevance": [
-        {
-          "brand": "netvibes",
-          "strength": "medium",
-          "rationale": "Energy scenario knowledge graphs."
-        },
-        {
-          "brand": "geovia",
-          "strength": "medium",
-          "rationale": "Energy resource modelling."
-        }
       ],
       "verification": {
         "checkedOn": "2026-10-15",
@@ -2076,19 +1740,6 @@
         "general-purpose-robotics",
         "sustainability"
       ],
-      "brandRelevance": [
-        {
-          "brand": "catia",
-          "strength": "medium",
-          "rationale": "Eco-design in product definition needs LCSA concepts."
-        },
-        {
-          "brand": "enovia",
-          "strength": "medium",
-          "rationale": "Lifecycle data management could carry sustainability indicators."
-        }
-      ],
-      "publicEvidence": [],
       "verification": {
         "checkedOn": "2026-10-15",
         "status": "unverified",
@@ -2167,19 +1818,6 @@
         "personal-electronics",
         "general-purpose-robotics"
       ],
-      "brandRelevance": [
-        {
-          "brand": "delmia",
-          "strength": "medium",
-          "rationale": "Schedules, shifts and operation durations."
-        },
-        {
-          "brand": "netvibes",
-          "strength": "medium",
-          "rationale": "Temporal reasoning in knowledge graphs."
-        }
-      ],
-      "publicEvidence": [],
       "verification": {
         "checkedOn": "2026-10-15",
         "status": "verified",
@@ -2254,24 +1892,6 @@
       "useCases": [
         "general-purpose-robotics"
       ],
-      "brandRelevance": [
-        {
-          "brand": "catia",
-          "strength": "high",
-          "rationale": "Robot product and systems architecture could reuse a standard robot vocabulary."
-        },
-        {
-          "brand": "delmia",
-          "strength": "high",
-          "rationale": "Robot programming and cell simulation work with robot parts, poses and tasks."
-        },
-        {
-          "brand": "simulia",
-          "strength": "medium",
-          "rationale": "Multibody and control simulation could bind models to standard robot concepts."
-        }
-      ],
-      "publicEvidence": [],
       "verification": {
         "checkedOn": "2026-10-15",
         "status": "verified",
@@ -2364,24 +1984,6 @@
         "general-purpose-robotics",
         "sustainability"
       ],
-      "brandRelevance": [
-        {
-          "brand": "enovia",
-          "strength": "high",
-          "rationale": "Lifecycle traceability maps naturally to entities, activities and agents."
-        },
-        {
-          "brand": "netvibes",
-          "strength": "high",
-          "rationale": "Knowledge-graph lineage and data provenance."
-        },
-        {
-          "brand": "simulia",
-          "strength": "medium",
-          "rationale": "Simulation process and data lineage (inputs, runs, results)."
-        }
-      ],
-      "publicEvidence": [],
       "verification": {
         "checkedOn": "2026-10-15",
         "status": "verified",
@@ -2461,24 +2063,6 @@
         "general-purpose-robotics",
         "sustainability"
       ],
-      "brandRelevance": [
-        {
-          "brand": "simulia",
-          "strength": "high",
-          "rationale": "Unit-consistent simulation inputs and results."
-        },
-        {
-          "brand": "catia",
-          "strength": "medium",
-          "rationale": "Parameters and engineering quantities."
-        },
-        {
-          "brand": "biovia",
-          "strength": "medium",
-          "rationale": "Scientific measurements and material properties."
-        }
-      ],
-      "publicEvidence": [],
       "verification": {
         "checkedOn": "2026-10-15",
         "status": "verified",
@@ -2555,24 +2139,6 @@
       "useCases": [
         "general-purpose-robotics"
       ],
-      "brandRelevance": [
-        {
-          "brand": "catia",
-          "strength": "high",
-          "rationale": "Robot product and systems architecture could reuse a standard robot vocabulary."
-        },
-        {
-          "brand": "delmia",
-          "strength": "high",
-          "rationale": "Robot programming and cell simulation work with robot parts, poses and tasks."
-        },
-        {
-          "brand": "simulia",
-          "strength": "medium",
-          "rationale": "Multibody and control simulation could bind models to standard robot concepts."
-        }
-      ],
-      "publicEvidence": [],
       "verification": {
         "checkedOn": "2026-10-15",
         "status": "verified",
@@ -2661,24 +2227,6 @@
       "useCases": [
         "general-purpose-robotics"
       ],
-      "brandRelevance": [
-        {
-          "brand": "catia",
-          "strength": "high",
-          "rationale": "Robot product and systems architecture could reuse a standard robot vocabulary."
-        },
-        {
-          "brand": "delmia",
-          "strength": "high",
-          "rationale": "Robot programming and cell simulation work with robot parts, poses and tasks."
-        },
-        {
-          "brand": "simulia",
-          "strength": "medium",
-          "rationale": "Multibody and control simulation could bind models to standard robot concepts."
-        }
-      ],
-      "publicEvidence": [],
       "verification": {
         "checkedOn": "2026-10-15",
         "status": "verified",
@@ -2775,19 +2323,6 @@
         "personal-electronics",
         "general-purpose-robotics"
       ],
-      "brandRelevance": [
-        {
-          "brand": "catia",
-          "strength": "medium",
-          "rationale": "Functional descriptions of connected products."
-        },
-        {
-          "brand": "netvibes",
-          "strength": "medium",
-          "rationale": "Device data in knowledge graphs."
-        }
-      ],
-      "publicEvidence": [],
       "verification": {
         "checkedOn": "2026-10-15",
         "status": "verified",
@@ -2862,14 +2397,6 @@
       "useCases": [
         "ai-factories"
       ],
-      "brandRelevance": [
-        {
-          "brand": "catia",
-          "strength": "medium",
-          "rationale": "Building equipment definitions aligned with IFC."
-        }
-      ],
-      "publicEvidence": [],
       "verification": {
         "checkedOn": "2026-10-15",
         "status": "verified",
@@ -2902,7 +2429,6 @@
       }
     },
     {
-      "publicEvidence": [],
       "id": "saref4ener",
       "name": "SAREF4ENER",
       "fullName": "SAREF extension for Energy",
@@ -2945,18 +2471,6 @@
         "ai-factories",
         "sustainability"
       ],
-      "brandRelevance": [
-        {
-          "brand": "netvibes",
-          "strength": "medium",
-          "rationale": "Energy analytics and flexibility."
-        },
-        {
-          "brand": "delmia",
-          "strength": "medium",
-          "rationale": "Energy-aware operations planning."
-        }
-      ],
       "verification": {
         "checkedOn": "2026-10-15",
         "status": "verified",
@@ -2971,7 +2485,6 @@
       "origin": "v2"
     },
     {
-      "publicEvidence": [],
       "id": "schema-org",
       "name": "Schema.org",
       "fullName": "Schema.org vocabulary",
@@ -3017,18 +2530,6 @@
         "semiconductors",
         "sustainability"
       ],
-      "brandRelevance": [
-        {
-          "brand": "3dexcite",
-          "strength": "high",
-          "rationale": "Product content published to the web."
-        },
-        {
-          "brand": "netvibes",
-          "strength": "medium",
-          "rationale": "Web-scale entity data."
-        }
-      ],
       "verification": {
         "checkedOn": "2026-10-15",
         "status": "verified",
@@ -3047,7 +2548,6 @@
       "origin": "v2"
     },
     {
-      "publicEvidence": [],
       "id": "skos",
       "name": "SKOS",
       "fullName": "Simple Knowledge Organization System",
@@ -3084,18 +2584,6 @@
         "cross-industry"
       ],
       "useCases": [],
-      "brandRelevance": [
-        {
-          "brand": "netvibes",
-          "strength": "high",
-          "rationale": "Taxonomy and thesaurus management."
-        },
-        {
-          "brand": "enovia",
-          "strength": "medium",
-          "rationale": "Classification libraries."
-        }
-      ],
       "verification": {
         "checkedOn": "2026-10-15",
         "status": "verified",
@@ -3153,24 +2641,6 @@
         "personal-electronics",
         "general-purpose-robotics"
       ],
-      "brandRelevance": [
-        {
-          "brand": "simulia",
-          "strength": "medium",
-          "rationale": "Linking physical test and sensor data with virtual models."
-        },
-        {
-          "brand": "delmia",
-          "strength": "medium",
-          "rationale": "Shop-floor sensing and operations data."
-        },
-        {
-          "brand": "netvibes",
-          "strength": "medium",
-          "rationale": "IoT data in knowledge graphs."
-        }
-      ],
-      "publicEvidence": [],
       "verification": {
         "checkedOn": "2026-10-15",
         "status": "verified",
@@ -3248,19 +2718,6 @@
         "personal-electronics",
         "general-purpose-robotics"
       ],
-      "brandRelevance": [
-        {
-          "brand": "simulia",
-          "strength": "medium",
-          "rationale": "System capabilities and operating ranges of sensing systems."
-        },
-        {
-          "brand": "delmia",
-          "strength": "medium",
-          "rationale": "Sensor deployments in operations."
-        }
-      ],
-      "publicEvidence": [],
       "verification": {
         "checkedOn": "2026-10-15",
         "status": "verified",
@@ -3295,32 +2752,6 @@
       }
     },
     {
-      "publicEvidence": [
-        {
-          "kind": "product-support",
-          "brands": [
-            "solidworks"
-          ],
-          "statement": "SOLIDWORKS documents a \"Publish to STEP 242\" command for model-based definition data.",
-          "source": {
-            "url": "https://help.solidworks.com/2025/English/SolidWorks/sldworks/r_publish_step242.htm",
-            "title": "SOLIDWORKS Help — Publish to STEP242 PropertyManager",
-            "type": "official"
-          }
-        },
-        {
-          "kind": "product-support",
-          "brands": [
-            "catia"
-          ],
-          "statement": "A reseller tutorial shows CATIA V5 exporting parts with PMI to STEP AP242.",
-          "source": {
-            "url": "https://www.cati.com/blog/export-catia-v5-parts-with-pmi-using-step-ap242/",
-            "title": "CATI — Export CATIA V5 parts with PMI using STEP AP242",
-            "type": "third-party"
-          }
-        }
-      ],
       "id": "step-ap242",
       "name": "STEP AP242",
       "fullName": "ISO 10303-242 Managed model-based 3D engineering",
@@ -3362,23 +2793,6 @@
       ],
       "useCases": [
         "general-purpose-robotics"
-      ],
-      "brandRelevance": [
-        {
-          "brand": "catia",
-          "strength": "high",
-          "rationale": "3D master data exchange."
-        },
-        {
-          "brand": "solidworks",
-          "strength": "high",
-          "rationale": "Model-based definition export."
-        },
-        {
-          "brand": "enovia",
-          "strength": "medium",
-          "rationale": "PDM and configuration exchange."
-        }
       ],
       "verification": {
         "checkedOn": "2026-10-15",
@@ -3441,14 +2855,6 @@
         "personal-electronics",
         "general-purpose-robotics"
       ],
-      "brandRelevance": [
-        {
-          "brand": "netvibes",
-          "strength": "medium",
-          "rationale": "Upper-level grounding for semantic reasoning."
-        }
-      ],
-      "publicEvidence": [],
       "verification": {
         "checkedOn": "2026-10-15",
         "status": "verified",
@@ -3526,14 +2932,6 @@
       "useCases": [
         "general-purpose-robotics"
       ],
-      "brandRelevance": [
-        {
-          "brand": "netvibes",
-          "strength": "medium",
-          "rationale": "Formal grounding for reasoning over robotics knowledge."
-        }
-      ],
-      "publicEvidence": [],
       "verification": {
         "checkedOn": "2026-10-15",
         "status": "partially-verified",
@@ -3576,20 +2974,6 @@
       }
     },
     {
-      "publicEvidence": [
-        {
-          "kind": "product-support",
-          "brands": [
-            "catia"
-          ],
-          "statement": "Dassault Systèmes markets CATIA SysML v2 (CATIA Magic) as a SysML v2 modelling solution.",
-          "source": {
-            "url": "https://www.3ds.com/products/catia/catia-magic/sysmlv2",
-            "title": "CATIA SysML v2 product page",
-            "type": "official"
-          }
-        }
-      ],
       "id": "sysml-v2",
       "name": "SysML v2 / KerML",
       "fullName": "OMG Systems Modeling Language v2 and Kernel Modeling Language",
@@ -3635,23 +3019,6 @@
         "general-purpose-robotics",
         "ai-factories"
       ],
-      "brandRelevance": [
-        {
-          "brand": "catia",
-          "strength": "high",
-          "rationale": "Systems engineering and MBSE."
-        },
-        {
-          "brand": "simulia",
-          "strength": "medium",
-          "rationale": "Linking system models to simulation."
-        },
-        {
-          "brand": "enovia",
-          "strength": "medium",
-          "rationale": "Configuration management of system models."
-        }
-      ],
       "verification": {
         "checkedOn": "2026-10-15",
         "status": "verified",
@@ -3670,7 +3037,6 @@
       "origin": "v2"
     },
     {
-      "publicEvidence": [],
       "id": "vsso",
       "name": "VSSo",
       "fullName": "Vehicle Signal Specification Ontology",
@@ -3707,13 +3073,6 @@
         "transportation-mobility"
       ],
       "useCases": [],
-      "brandRelevance": [
-        {
-          "brand": "catia",
-          "strength": "medium",
-          "rationale": "Vehicle E/E and signal architecture."
-        }
-      ],
       "verification": {
         "checkedOn": "2026-10-15",
         "status": "verified",
@@ -3773,53 +3132,6 @@
       "id": "cross-industry",
       "name": "Cross-Industry",
       "summary": "Foundational and horizontal ontologies reusable in every industry."
-    }
-  ],
-  "brands": [
-    {
-      "id": "catia",
-      "name": "CATIA",
-      "focus": "Product design, systems engineering and MBSE"
-    },
-    {
-      "id": "simulia",
-      "name": "SIMULIA",
-      "focus": "Multiphysics simulation and virtual testing"
-    },
-    {
-      "id": "enovia",
-      "name": "ENOVIA",
-      "focus": "Collaborative product lifecycle and configuration management"
-    },
-    {
-      "id": "delmia",
-      "name": "DELMIA",
-      "focus": "Manufacturing, operations and supply chain"
-    },
-    {
-      "id": "netvibes",
-      "name": "NETVIBES",
-      "focus": "Information intelligence, knowledge graphs and data science"
-    },
-    {
-      "id": "biovia",
-      "name": "BIOVIA",
-      "focus": "Scientific informatics, chemistry and materials modelling"
-    },
-    {
-      "id": "geovia",
-      "name": "GEOVIA",
-      "focus": "Geospatial and natural-resource modelling"
-    },
-    {
-      "id": "3dexcite",
-      "name": "3DEXCITE",
-      "focus": "3D product experiences for marketing and sales"
-    },
-    {
-      "id": "solidworks",
-      "name": "SOLIDWORKS",
-      "focus": "3D design and engineering for product development teams"
     }
   ],
   "useCases": [
@@ -3886,13 +3198,6 @@
           ],
           "role": "Lineage and cataloguing of datasets and models."
         }
-      ],
-      "brands": [
-        "catia",
-        "simulia",
-        "delmia",
-        "enovia",
-        "netvibes"
       ]
     },
     {
@@ -3962,12 +3267,6 @@
           ],
           "role": "Digital nameplates and standard properties for components."
         }
-      ],
-      "brands": [
-        "catia",
-        "simulia",
-        "delmia",
-        "enovia"
       ]
     },
     {
@@ -4027,13 +3326,6 @@
           ],
           "role": "Lot genealogy, provenance and timing."
         }
-      ],
-      "brands": [
-        "catia",
-        "delmia",
-        "enovia",
-        "biovia",
-        "netvibes"
       ]
     },
     {
@@ -4094,13 +3386,6 @@
           ],
           "role": "Product identifiers and passports."
         }
-      ],
-      "brands": [
-        "catia",
-        "simulia",
-        "enovia",
-        "biovia",
-        "delmia"
       ]
     },
     {
@@ -4143,12 +3428,6 @@
           ],
           "role": "References to applicable legislation."
         }
-      ],
-      "brands": [
-        "catia",
-        "solidworks",
-        "3dexcite",
-        "enovia"
       ]
     }
   ],

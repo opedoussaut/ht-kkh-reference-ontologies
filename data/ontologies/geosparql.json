@@ -47,19 +47,6 @@
     "general-purpose-robotics",
     "sustainability"
   ],
-  "brandRelevance": [
-    {
-      "brand": "geovia",
-      "strength": "high",
-      "rationale": "Geospatial modelling of sites and natural resources."
-    },
-    {
-      "brand": "netvibes",
-      "strength": "medium",
-      "rationale": "Spatial queries in knowledge graphs."
-    }
-  ],
-  "publicEvidence": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",

@@ -44,24 +44,6 @@
     "general-purpose-robotics",
     "sustainability"
   ],
-  "brandRelevance": [
-    {
-      "brand": "simulia",
-      "strength": "high",
-      "rationale": "Unit-consistent simulation inputs and results."
-    },
-    {
-      "brand": "catia",
-      "strength": "medium",
-      "rationale": "Parameters and engineering quantities."
-    },
-    {
-      "brand": "biovia",
-      "strength": "medium",
-      "rationale": "Scientific measurements and material properties."
-    }
-  ],
-  "publicEvidence": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",

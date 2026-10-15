@@ -1,5 +1,4 @@
 {
-  "publicEvidence": [],
   "id": "schema-org",
   "name": "Schema.org",
   "fullName": "Schema.org vocabulary",
@@ -44,18 +43,6 @@
     "personal-electronics",
     "semiconductors",
     "sustainability"
-  ],
-  "brandRelevance": [
-    {
-      "brand": "3dexcite",
-      "strength": "high",
-      "rationale": "Product content published to the web."
-    },
-    {
-      "brand": "netvibes",
-      "strength": "medium",
-      "rationale": "Web-scale entity data."
-    }
   ],
   "verification": {
     "checkedOn": "2026-10-15",

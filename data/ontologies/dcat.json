@@ -1,5 +1,4 @@
 {
-  "publicEvidence": [],
   "id": "dcat",
   "name": "DCAT",
   "fullName": "Data Catalog Vocabulary (DCAT) Version 3",
@@ -38,18 +37,6 @@
   "useCases": [
     "ai-factories",
     "sustainability"
-  ],
-  "brandRelevance": [
-    {
-      "brand": "netvibes",
-      "strength": "high",
-      "rationale": "Dataset cataloguing and discovery."
-    },
-    {
-      "brand": "enovia",
-      "strength": "medium",
-      "rationale": "Exposing engineering datasets to data spaces."
-    }
   ],
   "verification": {
     "checkedOn": "2026-10-15",

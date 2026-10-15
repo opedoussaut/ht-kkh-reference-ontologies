@@ -94,8 +94,6 @@ export function search(index, query) {
 export const FACETS = [
   { key: 'industry', label: 'Industry', get: (o) => o.industries },
   { key: 'useCase', label: 'Use case', get: (o) => o.useCases },
-  { key: 'brand', label: 'Brand relevance', get: (o) => [...new Set([...o.brandRelevance.map((b) => b.brand), ...o.publicEvidence.flatMap((e) => e.brands)])] },
-  { key: 'evidence', label: 'Public evidence', get: (o) => [o.publicEvidence.length ? 'documented' : 'none'] },
   { key: 'layer', label: 'Layer', get: (o) => [o.layer] },
   { key: 'kind', label: 'Artefact type', get: (o) => [o.kind] },
   { key: 'maturity', label: 'Maturity', get: (o) => [o.maturity] },

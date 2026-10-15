@@ -42,14 +42,6 @@
     "personal-electronics",
     "general-purpose-robotics"
   ],
-  "brandRelevance": [
-    {
-      "brand": "netvibes",
-      "strength": "medium",
-      "rationale": "Upper-level grounding for semantic reasoning."
-    }
-  ],
-  "publicEvidence": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",

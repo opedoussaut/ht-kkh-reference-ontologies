@@ -43,19 +43,6 @@
   "useCases": [
     "ai-factories"
   ],
-  "brandRelevance": [
-    {
-      "brand": "simulia",
-      "strength": "medium",
-      "rationale": "Thermal and airflow simulation of cooling systems."
-    },
-    {
-      "brand": "netvibes",
-      "strength": "medium",
-      "rationale": "Facility telemetry analytics."
-    }
-  ],
-  "publicEvidence": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",

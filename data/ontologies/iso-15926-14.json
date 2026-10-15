@@ -1,5 +1,4 @@
 {
-  "publicEvidence": [],
   "id": "iso-15926-14",
   "name": "ISO 15926-14",
   "fullName": "ISO 15926-14 — OWL 2 ontology for process-plant lifecycle data",
@@ -35,18 +34,6 @@
     "energy-materials"
   ],
   "useCases": [],
-  "brandRelevance": [
-    {
-      "brand": "enovia",
-      "strength": "medium",
-      "rationale": "Plant asset lifecycle information handover."
-    },
-    {
-      "brand": "delmia",
-      "strength": "medium",
-      "rationale": "Plant operations and maintenance."
-    }
-  ],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "partially-verified",

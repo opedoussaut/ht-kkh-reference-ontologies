@@ -50,8 +50,6 @@ function fromLegacy(rec) {
     formats: e.formats || [],
     industries: uniq(['high-tech', ...(e.industries || [])]),
     useCases,
-    brandRelevance: e.brandRelevance || [],
-    publicEvidence: e.publicEvidence || [],
     verification: { checkedOn: CHECKED, ...e.verification },
     ...(e.needsReview ? { needsReview: true } : {}),
     ...(corrections.length ? { corrections } : {}),
@@ -64,7 +62,6 @@ function fromLegacy(rec) {
 
 function fromNew(e) {
   return {
-    publicEvidence: [],
     ...e,
     verification: { checkedOn: CHECKED, ...e.verification },
     origin: 'v2',

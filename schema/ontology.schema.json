@@ -4,111 +4,363 @@
   "title": "Reference Ontology Atlas — ontology record",
   "type": "object",
   "additionalProperties": false,
-  "required": ["id", "name", "fullName", "summary", "publisher", "publisherType", "kind", "layer", "topics", "version", "maturity", "license", "links", "formats", "industries", "useCases", "brandRelevance", "publicEvidence", "verification", "origin"],
+  "required": [
+    "id",
+    "name",
+    "fullName",
+    "summary",
+    "publisher",
+    "publisherType",
+    "kind",
+    "layer",
+    "topics",
+    "version",
+    "maturity",
+    "license",
+    "links",
+    "formats",
+    "industries",
+    "useCases",
+    "verification",
+    "origin"
+  ],
   "definitions": {
-    "url": { "type": "string", "pattern": "^https?://[^\\s]+$" },
+    "url": {
+      "type": "string",
+      "pattern": "^https?://[^\\s]+$"
+    },
     "source": {
-      "type": "object", "additionalProperties": false, "required": ["url", "title"],
-      "properties": { "url": { "$ref": "#/definitions/url" }, "title": { "type": "string", "minLength": 3 } }
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "url",
+        "title"
+      ],
+      "properties": {
+        "url": {
+          "$ref": "#/definitions/url"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 3
+        }
+      }
     }
   },
   "properties": {
-    "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
-    "name": { "type": "string", "minLength": 2 },
-    "fullName": { "type": "string", "minLength": 2 },
-    "summary": { "type": "string", "minLength": 20 },
-    "publisher": { "type": "string", "minLength": 2 },
-    "publisherType": { "enum": ["standards-body", "industry-association", "consortium", "research", "government", "industry"] },
-    "kind": { "enum": ["ontology", "vocabulary", "meta-model", "information-model", "modeling-language", "classification"] },
-    "layer": { "enum": ["upper", "mid-level", "cross-domain", "domain"] },
-    "topics": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
-    "standardRef": { "type": "string" },
-    "version": {
-      "type": "object", "additionalProperties": false, "required": ["label", "date", "status"],
-      "properties": {
-        "label": { "type": "string", "minLength": 3 },
-        "date": { "type": ["string", "null"], "pattern": "^\\d{4}(-\\d{2}(-\\d{2})?)?$" },
-        "status": { "enum": ["published", "candidate", "draft", "superseded", "discontinued", "unknown"] }
-      }
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
     },
-    "maturity": { "enum": ["standard", "stable", "emerging", "research", "legacy", "discontinued"] },
-    "license": {
-      "type": "object", "additionalProperties": false, "required": ["name", "access", "url"],
-      "properties": {
-        "name": { "type": "string" },
-        "access": { "enum": ["open", "open-with-terms", "licensed", "unknown"] },
-        "url": { "oneOf": [{ "$ref": "#/definitions/url" }, { "type": "null" }] }
-      }
+    "name": {
+      "type": "string",
+      "minLength": 2
     },
-    "links": {
-      "type": "object", "additionalProperties": false, "required": ["official"],
-      "properties": {
-        "official": { "oneOf": [{ "$ref": "#/definitions/url" }, { "type": "null" }] },
-        "specification": { "$ref": "#/definitions/url" },
-        "repository": { "$ref": "#/definitions/url" },
-        "namespace": { "$ref": "#/definitions/url" },
-        "related": { "$ref": "#/definitions/url" }
-      }
+    "fullName": {
+      "type": "string",
+      "minLength": 2
     },
-    "formats": { "type": "array", "items": { "type": "string" } },
-    "industries": { "type": "array", "items": { "type": "string" }, "minItems": 1, "uniqueItems": true },
-    "useCases": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
-    "brandRelevance": {
+    "summary": {
+      "type": "string",
+      "minLength": 20
+    },
+    "publisher": {
+      "type": "string",
+      "minLength": 2
+    },
+    "publisherType": {
+      "enum": [
+        "standards-body",
+        "industry-association",
+        "consortium",
+        "research",
+        "government",
+        "industry"
+      ]
+    },
+    "kind": {
+      "enum": [
+        "ontology",
+        "vocabulary",
+        "meta-model",
+        "information-model",
+        "modeling-language",
+        "classification"
+      ]
+    },
+    "layer": {
+      "enum": [
+        "upper",
+        "mid-level",
+        "cross-domain",
+        "domain"
+      ]
+    },
+    "topics": {
       "type": "array",
       "items": {
-        "type": "object", "additionalProperties": false, "required": ["brand", "strength", "rationale"],
-        "properties": {
-          "brand": { "type": "string" },
-          "strength": { "enum": ["high", "medium"] },
-          "rationale": { "type": "string", "minLength": 10 }
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "standardRef": {
+      "type": "string"
+    },
+    "version": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "date",
+        "status"
+      ],
+      "properties": {
+        "label": {
+          "type": "string",
+          "minLength": 3
+        },
+        "date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}(-\\d{2}(-\\d{2})?)?$"
+        },
+        "status": {
+          "enum": [
+            "published",
+            "candidate",
+            "draft",
+            "superseded",
+            "discontinued",
+            "unknown"
+          ]
         }
       }
     },
-    "publicEvidence": {
+    "maturity": {
+      "enum": [
+        "standard",
+        "stable",
+        "emerging",
+        "research",
+        "legacy",
+        "discontinued"
+      ]
+    },
+    "license": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "access",
+        "url"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "access": {
+          "enum": [
+            "open",
+            "open-with-terms",
+            "licensed",
+            "unknown"
+          ]
+        },
+        "url": {
+          "oneOf": [
+            {
+              "$ref": "#/definitions/url"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "links": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "official"
+      ],
+      "properties": {
+        "official": {
+          "oneOf": [
+            {
+              "$ref": "#/definitions/url"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "specification": {
+          "$ref": "#/definitions/url"
+        },
+        "repository": {
+          "$ref": "#/definitions/url"
+        },
+        "namespace": {
+          "$ref": "#/definitions/url"
+        },
+        "related": {
+          "$ref": "#/definitions/url"
+        }
+      }
+    },
+    "formats": {
       "type": "array",
       "items": {
-        "type": "object", "additionalProperties": false, "required": ["kind", "brands", "statement", "source"],
+        "type": "string"
+      }
+    },
+    "industries": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "useCases": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "checkedOn",
+        "sources",
+        "notes"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "verified",
+            "partially-verified",
+            "unverified"
+          ]
+        },
+        "checkedOn": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/source"
+          },
+          "minItems": 1
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "needsReview": {
+      "type": "boolean"
+    },
+    "corrections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "field",
+          "from",
+          "to",
+          "reason",
+          "source"
+        ],
         "properties": {
-          "kind": { "enum": ["product-support", "standards-membership", "standards-contribution"] },
-          "brands": { "type": "array", "items": { "type": "string" } },
-          "statement": { "type": "string", "minLength": 10 },
+          "field": {
+            "type": "string"
+          },
+          "from": {
+            "type": "string"
+          },
+          "to": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
           "source": {
-            "type": "object", "additionalProperties": false, "required": ["url", "title", "type"],
-            "properties": { "url": { "$ref": "#/definitions/url" }, "title": { "type": "string" }, "type": { "enum": ["official", "third-party"] } }
+            "$ref": "#/definitions/url"
           }
         }
       }
     },
-    "verification": {
-      "type": "object", "additionalProperties": false, "required": ["status", "checkedOn", "sources", "notes"],
-      "properties": {
-        "status": { "enum": ["verified", "partially-verified", "unverified"] },
-        "checkedOn": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
-        "sources": { "type": "array", "items": { "$ref": "#/definitions/source" }, "minItems": 1 },
-        "notes": { "type": "string" }
-      }
+    "origin": {
+      "enum": [
+        "v1",
+        "v2"
+      ]
     },
-    "needsReview": { "type": "boolean" },
-    "corrections": {
-      "type": "array",
-      "items": {
-        "type": "object", "additionalProperties": false, "required": ["field", "from", "to", "reason", "source"],
-        "properties": {
-          "field": { "type": "string" }, "from": { "type": "string" }, "to": { "type": "string" },
-          "reason": { "type": "string" }, "source": { "$ref": "#/definitions/url" }
-        }
-      }
-    },
-    "origin": { "enum": ["v1", "v2"] },
     "legacy": {
-      "type": "object", "additionalProperties": false,
-      "required": ["name", "category", "publisher", "official", "endObjects", "imds", "description", "parentOntology", "stabilityStatus", "usageStatus", "hasInternalWikiLink"],
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "category",
+        "publisher",
+        "official",
+        "endObjects",
+        "imds",
+        "description",
+        "parentOntology",
+        "stabilityStatus",
+        "usageStatus",
+        "hasInternalWikiLink"
+      ],
       "properties": {
-        "name": { "type": "string" }, "category": { "type": "string" }, "publisher": { "type": "string" },
-        "official": { "type": "string" }, "endObjects": { "type": "array", "items": { "type": "string" } },
-        "imds": { "type": "array", "items": { "type": "string" } }, "description": { "type": "string" },
-        "parentOntology": { "type": "string" }, "stabilityStatus": { "type": "string" },
-        "usageStatus": { "type": "string" }, "hasInternalWikiLink": { "type": "boolean" }
+        "name": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "publisher": {
+          "type": "string"
+        },
+        "official": {
+          "type": "string"
+        },
+        "endObjects": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "imds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "description": {
+          "type": "string"
+        },
+        "parentOntology": {
+          "type": "string"
+        },
+        "stabilityStatus": {
+          "type": "string"
+        },
+        "usageStatus": {
+          "type": "string"
+        },
+        "hasInternalWikiLink": {
+          "type": "boolean"
+        }
       }
     }
   }

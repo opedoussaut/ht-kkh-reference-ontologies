@@ -6,7 +6,6 @@
 const CHECKED = '2026-10-15';
 
 const src = (url, title) => ({ url, title });
-const rel = (brand, strength, rationale) => ({ brand, strength, rationale });
 
 const IEEE_1872 = src('https://standards.ieee.org/standard/1872-2015.html', 'IEEE 1872-2015 Standard Ontologies for Robotics and Automation');
 const IEEE_1872_OWL = src('https://github.com/srfiorini/IEEE1872-owl', 'OWL version of CORA (IEEE 1872-2015), CC BY 4.0');
@@ -26,11 +25,6 @@ const ieee1872Common = {
   links: { official: 'https://standards.ieee.org/standard/1872-2015.html' },
 };
 
-const robotBrands = [
-  rel('catia', 'high', 'Robot product and systems architecture could reuse a standard robot vocabulary.'),
-  rel('delmia', 'high', 'Robot programming and cell simulation work with robot parts, poses and tasks.'),
-  rel('simulia', 'medium', 'Multibody and control simulation could bind models to standard robot concepts.'),
-];
 
 export const LEGACY = {
   'ELI Ontology': {
@@ -47,7 +41,6 @@ export const LEGACY = {
     formats: ['OWL', 'RDF/Turtle'],
     industries: ['cross-industry'],
     useCases: ['sustainability', 'ai-factories', 'semiconductors', 'personal-electronics', 'general-purpose-robotics'],
-    brandRelevance: [rel('enovia', 'medium', 'Compliance requirements in the product lifecycle can reference legal acts by ELI.'), rel('netvibes', 'medium', 'Regulatory intelligence and knowledge graphs can link to legislation identifiers.')],
     verification: { status: 'partially-verified', sources: [src('https://op.europa.eu/en/web/eu-vocabularies/eli', 'EU Vocabularies — ELI'), src('https://interoperable-europe.ec.europa.eu/collection/eli-european-legislation-identifier/solution/eli-ontology/releases', 'Interoperable Europe — ELI ontology releases')], notes: 'Release 1.3 is the latest listed on Interoperable Europe; EU Vocabularies may list newer releases. Confirm the exact licence statement for the ontology files.' },
   },
   ORIONT: {
@@ -64,7 +57,6 @@ export const LEGACY = {
     formats: [],
     industries: ['cross-industry'],
     useCases: ['sustainability'],
-    brandRelevance: [rel('catia', 'medium', 'Eco-design in product definition needs LCSA concepts.'), rel('enovia', 'medium', 'Lifecycle data management could carry sustainability indicators.')],
     verification: { status: 'unverified', sources: [src('https://cordis.europa.eu/project/id/958231', 'CORDIS — ORIENTING project (H2020, 958231)')], notes: 'No public ontology named "ORIONT" was found. The v1 description refers to the ORIENTING H2020 project (LCSA methodology, 2020-2024), whose public outputs do not clearly include a published ontology. Kept as a candidate pending a public source.' },
     needsReview: true,
   },
@@ -82,7 +74,6 @@ export const LEGACY = {
     formats: ['OWL', 'RDF/Turtle'],
     industries: ['cross-industry'],
     useCases: ['sustainability', 'ai-factories', 'semiconductors'],
-    brandRelevance: [rel('enovia', 'high', 'Lifecycle traceability maps naturally to entities, activities and agents.'), rel('netvibes', 'high', 'Knowledge-graph lineage and data provenance.'), rel('simulia', 'medium', 'Simulation process and data lineage (inputs, runs, results).')],
     verification: { status: 'verified', sources: [src('https://www.w3.org/TR/prov-o/', 'W3C PROV-O Recommendation')], notes: '' },
   },
   AAS: {
@@ -100,8 +91,6 @@ export const LEGACY = {
     formats: ['XML', 'JSON', 'RDF'],
     industries: ['industrial-equipment', 'high-tech', 'energy-materials', 'transportation-mobility'],
     useCases: ['ai-factories', 'general-purpose-robotics', 'semiconductors', 'sustainability'],
-    brandRelevance: [rel('delmia', 'high', 'Shop-floor assets and operations exchange data through AAS submodels.'), rel('enovia', 'high', 'Product and asset lifecycle data could be published as AAS.'), rel('catia', 'medium', 'Engineering data handed over as digital nameplates and technical data submodels.')],
-    publicEvidence: [{ kind: 'standards-membership', brands: [], statement: 'Dassault Systèmes announced it joined the Industrial Digital Twin Association (IDTA), which maintains the AAS specifications.', source: { url: 'https://www.3ds.com/de/newsroom/media-alerts/dassault-systemes-joins-the-industrial-digital-twin-association', title: 'Dassault Systèmes newsroom (DE): joins the Industrial Digital Twin Association', type: 'official' } }],
     verification: { status: 'verified', sources: [src('https://industrialdigitaltwin.org/wp-content/uploads/2025/08/IDTA-01001-3-1-1_AAS-Specification_Part1_Metamodel.pdf', 'IDTA-01001-3-1-1 Part 1 Metamodel (PDF)'), src('https://industrialdigitaltwin.org/en/content-hub/aasspecifications', 'IDTA AAS specifications')], notes: 'The IDTA Part 4 Security document (2026) references Part 1 v3.2; confirm whether v3.2 has been released.' },
   },
   DCTERMS: {
@@ -119,7 +108,6 @@ export const LEGACY = {
     formats: ['RDF/Turtle', 'RDF/XML'],
     industries: ['cross-industry'],
     useCases: ['ai-factories', 'semiconductors', 'personal-electronics', 'general-purpose-robotics'],
-    brandRelevance: [rel('enovia', 'high', 'Document and object metadata (title, creator, dates).'), rel('netvibes', 'high', 'Generic metadata for indexed content.')],
     verification: { status: 'verified', sources: [src('https://www.dublincore.org/specifications/dublin-core/dcmi-terms/', 'DCMI Metadata Terms')], notes: '' },
   },
   'ECLASS Ontology': {
@@ -136,7 +124,6 @@ export const LEGACY = {
     formats: ['CSV', 'XML', 'RDF (ECLASS-as-RDF specification)'],
     industries: ['industrial-equipment', 'high-tech', 'energy-materials', 'consumer-goods'],
     useCases: ['semiconductors', 'general-purpose-robotics', 'personal-electronics', 'ai-factories'],
-    brandRelevance: [rel('enovia', 'high', 'Part classification and standard attributes in the product lifecycle.'), rel('delmia', 'medium', 'Procurement and supply-chain master data.'), rel('catia', 'medium', 'Standard parts and component properties.')],
     verification: { status: 'verified', sources: [src('https://eclass.eu/shop/en/product/eclass-15-0', 'ECLASS 15.0 product page'), src('https://eclass.eu/shop/en/product/eclass-16-0', 'ECLASS 16.0 product page'), src('https://eclass.eu/en/news/news/first-eclass-as-rdf-specification', 'ECLASS as RDF specification announcement')], notes: 'ECLASS is primarily a classification system; an RDF serialisation is specified. Commercial licence required.' },
   },
   GeoSPARQL: {
@@ -154,7 +141,6 @@ export const LEGACY = {
     formats: ['OWL', 'RDF/Turtle', 'SHACL'],
     industries: ['infrastructure-cities', 'energy-materials', 'cross-industry'],
     useCases: ['ai-factories', 'sustainability'],
-    brandRelevance: [rel('geovia', 'high', 'Geospatial modelling of sites and natural resources.'), rel('netvibes', 'medium', 'Spatial queries in knowledge graphs.')],
     verification: { status: 'verified', sources: [src('https://www.ogc.org/standard/geosparql/', 'OGC GeoSPARQL standard page'), src('https://lists.w3.org/Archives/Public/public-sdw-wg/2024Feb/0000.html', 'GeoSPARQL 1.1 published (W3C SDW list, Feb 2024)')], notes: 'Licence wording to confirm in document 22-047r1.' },
   },
   GoodRelations: {
@@ -171,7 +157,6 @@ export const LEGACY = {
     formats: ['OWL', 'RDF/XML'],
     industries: ['consumer-goods'],
     useCases: ['personal-electronics'],
-    brandRelevance: [rel('3dexcite', 'medium', 'Product-offer data behind online 3D product experiences.')],
     verification: { status: 'verified', sources: [src('http://www.heppnetz.de/projects/goodrelations/', 'GoodRelations project'), src('https://blog.schema.org/2012/11/08/good-relations-and-schema-org/', 'schema.org blog: GoodRelations integrated into schema.org (2012)')], notes: 'For new work, schema.org is the maintained successor.' },
   },
   'GS1 WebVoc': {
@@ -188,7 +173,6 @@ export const LEGACY = {
     formats: ['JSON-LD', 'RDF/Turtle'],
     industries: ['consumer-goods', 'high-tech', 'life-sciences'],
     useCases: ['semiconductors', 'personal-electronics', 'sustainability'],
-    brandRelevance: [rel('enovia', 'medium', 'Product identification across the lifecycle.'), rel('3dexcite', 'medium', 'Rich product data for commerce experiences.'), rel('delmia', 'medium', 'Supply-chain identification and traceability.')],
     verification: { status: 'verified', sources: [src('https://ref.gs1.org/voc/', 'GS1 Web Vocabulary'), src('https://ref.gs1.org/voc/data/archive', 'GS1 Web Vocabulary archive'), src('https://github.com/gs1/WebVoc', 'GS1 WebVoc on GitHub')], notes: 'v1 marked this as "licensed"; the vocabulary is published under Apache 2.0.' },
   },
   'OWL-time': {
@@ -205,7 +189,6 @@ export const LEGACY = {
     formats: ['OWL', 'RDF/Turtle'],
     industries: ['cross-industry'],
     useCases: ['ai-factories', 'semiconductors', 'general-purpose-robotics'],
-    brandRelevance: [rel('delmia', 'medium', 'Schedules, shifts and operation durations.'), rel('netvibes', 'medium', 'Temporal reasoning in knowledge graphs.')],
     verification: { status: 'verified', sources: [src('https://www.w3.org/TR/owl-time/', 'W3C Time Ontology in OWL')], notes: '' },
   },
   QUDT: {
@@ -222,7 +205,6 @@ export const LEGACY = {
     formats: ['OWL', 'RDF/Turtle', 'SHACL'],
     industries: ['cross-industry'],
     useCases: ['ai-factories', 'semiconductors', 'general-purpose-robotics', 'sustainability'],
-    brandRelevance: [rel('simulia', 'high', 'Unit-consistent simulation inputs and results.'), rel('catia', 'medium', 'Parameters and engineering quantities.'), rel('biovia', 'medium', 'Scientific measurements and material properties.')],
     verification: { status: 'verified', sources: [src('https://qudt.org/', 'QUDT'), src('https://qudt.org/doc/2026/01/DOC_VOCAB-CONSTANTS.html', 'QUDT constants vocabulary, version 3.1.10')], notes: '' },
   },
   'SAREF Core': {
@@ -240,7 +222,6 @@ export const LEGACY = {
     formats: ['OWL', 'RDF/Turtle'],
     industries: ['high-tech', 'infrastructure-cities', 'energy-materials', 'industrial-equipment'],
     useCases: ['ai-factories', 'personal-electronics', 'semiconductors', 'general-purpose-robotics'],
-    brandRelevance: [rel('catia', 'medium', 'Functional descriptions of connected products.'), rel('netvibes', 'medium', 'Device data in knowledge graphs.')],
     verification: { status: 'verified', sources: [src('https://saref.etsi.org/core/', 'ETSI SAREF Core')], notes: '' },
   },
   SOSA: {
@@ -257,7 +238,6 @@ export const LEGACY = {
     formats: ['OWL', 'RDF/Turtle'],
     industries: ['cross-industry'],
     useCases: ['ai-factories', 'general-purpose-robotics', 'personal-electronics'],
-    brandRelevance: [rel('simulia', 'medium', 'Linking physical test and sensor data with virtual models.'), rel('delmia', 'medium', 'Shop-floor sensing and operations data.'), rel('netvibes', 'medium', 'IoT data in knowledge graphs.')],
     verification: { status: 'verified', sources: [src('https://www.w3.org/TR/vocab-ssn/', 'W3C Semantic Sensor Network Ontology')], notes: '' },
   },
   SSN: {
@@ -274,7 +254,6 @@ export const LEGACY = {
     formats: ['OWL', 'RDF/Turtle'],
     industries: ['cross-industry'],
     useCases: ['ai-factories', 'general-purpose-robotics'],
-    brandRelevance: [rel('simulia', 'medium', 'System capabilities and operating ranges of sensing systems.'), rel('delmia', 'medium', 'Sensor deployments in operations.')],
     verification: { status: 'verified', sources: [src('https://www.w3.org/TR/vocab-ssn/', 'W3C Semantic Sensor Network Ontology')], notes: '' },
   },
   SUMO: {
@@ -291,7 +270,6 @@ export const LEGACY = {
     formats: ['SUO-KIF', 'OWL (translation)', 'TPTP'],
     industries: ['cross-industry'],
     useCases: ['general-purpose-robotics'],
-    brandRelevance: [rel('netvibes', 'medium', 'Upper-level grounding for semantic reasoning.')],
     verification: { status: 'verified', sources: [src('https://www.ontologyportal.org/', 'SUMO — ontologyportal.org'), src('https://raw.githubusercontent.com/ontologyportal/sumo/master/Merge.kif', 'Merge.kif licence header')], notes: 'Originally developed by Teknowledge within the IEEE Standard Upper Ontology working group; now maintained by Adam Pease and contributors.' },
   },
   BOT: {
@@ -308,7 +286,6 @@ export const LEGACY = {
     formats: ['OWL', 'RDF/Turtle'],
     industries: ['infrastructure-cities', 'high-tech'],
     useCases: ['ai-factories'],
-    brandRelevance: [rel('catia', 'medium', 'Facility layout and building topology for data-centre design.'), rel('delmia', 'medium', 'Facility and plant layout.')],
     verification: { status: 'partially-verified', sources: [src('https://w3c-lbd-cg.github.io/bot/', 'BOT specification')], notes: 'W3C Community Group reports are not W3C standards. No licence statement is given on the specification page; confirm before redistribution.' },
   },
   'Brick Schema': {
@@ -325,7 +302,6 @@ export const LEGACY = {
     formats: ['OWL', 'RDF/Turtle', 'SHACL'],
     industries: ['infrastructure-cities', 'high-tech', 'energy-materials'],
     useCases: ['ai-factories'],
-    brandRelevance: [rel('simulia', 'medium', 'Thermal and airflow simulation of cooling systems.'), rel('netvibes', 'medium', 'Facility telemetry analytics.')],
     verification: { status: 'verified', sources: [src('https://github.com/BrickSchema/Brick/releases', 'Brick releases'), src('https://brickschema.org/', 'Brick Schema')], notes: '' },
   },
   CIM: {
@@ -344,7 +320,6 @@ export const LEGACY = {
     formats: ['MOF', 'UML', 'XML'],
     industries: ['high-tech'],
     useCases: ['ai-factories'],
-    brandRelevance: [rel('delmia', 'medium', 'Operations of IT infrastructure assets.'), rel('netvibes', 'medium', 'Inventory and telemetry analytics for compute assets.')],
     verification: { status: 'verified', sources: [src('https://dmtf.org/node/3585', 'DMTF releases CIM 2.54'), src('https://www.dmtf.org/sites/default/files/cim/cim_schema_v2541/releasenotes.html', 'CIM 2.54.1 release notes')], notes: 'CIM is a MOF/UML information model, not an OWL ontology.' },
     corrections: [
       { field: 'publisher', from: 'IEC', to: 'DMTF', reason: 'The v1 description (IT racks, chassis, processors) is the DMTF CIM. The IEC power-system CIM (IEC 61970/61968) is a different standard, now catalogued separately as "iec-cim".', source: 'https://www.dmtf.org/standards/cim' },
@@ -366,7 +341,6 @@ export const LEGACY = {
     formats: ['OWL', 'RDF/Turtle'],
     industries: ['infrastructure-cities', 'high-tech'],
     useCases: ['ai-factories'],
-    brandRelevance: [rel('catia', 'medium', 'Building equipment definitions aligned with IFC.')],
     verification: { status: 'verified', sources: [src('https://saref.etsi.org/saref4bldg/', 'ETSI SAREF4BLDG')], notes: '' },
   },
   'Autonomous Robotics (AuR)': {
@@ -379,7 +353,6 @@ export const LEGACY = {
     license: { name: 'IEEE standard (purchase); ontology listed under the IEEE SA Open Source programme (BSD-3-Clause)', access: 'open-with-terms', url: 'https://standards.ieee.org/ieee/1872.2/7094/' },
     links: { official: 'https://standards.ieee.org/ieee/1872.2/7094/' },
     formats: ['OWL'],
-    brandRelevance: robotBrands,
     verification: { status: 'verified', sources: [src('https://standards.ieee.org/ieee/1872.2/7094/', 'IEEE 1872.2-2021')], notes: '' },
     corrections: [
       { field: 'stabilityStatus', from: 'not stable', to: 'standard', reason: 'Published IEEE standard (board approval 2021-09-23).', source: 'https://standards.ieee.org/ieee/1872.2/7094/' },
@@ -392,7 +365,6 @@ export const LEGACY = {
     fullName: 'Core Ontology for Robotics and Automation (CORA)',
     topics: ['robots', 'robotic systems', 'robotic environments'],
     links: { official: 'https://standards.ieee.org/standard/1872-2015.html', repository: 'https://github.com/srfiorini/IEEE1872-owl' },
-    brandRelevance: robotBrands,
     verification: { status: 'verified', sources: [IEEE_1872, IEEE_1872_OWL, IEEE_P1872], notes: 'An OWL conversion of CORA (taxonomy and selected axioms) is published under CC BY 4.0.' },
     corrections: [
       { field: 'official', from: 'https://sites.google.com/site/smartappliancesproject/ontologies/cora', to: 'https://standards.ieee.org/standard/1872-2015.html', reason: 'The v1 link pointed to an unrelated smart-appliances project page.', source: IEEE_1872.url },
@@ -404,7 +376,6 @@ export const LEGACY = {
     id: 'ieee-corax',
     fullName: 'CORAX — CORA auxiliary ontology',
     topics: ['design', 'interaction', 'environment'],
-    brandRelevance: robotBrands,
     verification: { status: 'verified', sources: [IEEE_1872], notes: 'Specified within IEEE 1872-2015 alongside CORA, RPARTS and POS.' },
     corrections: [
       { field: 'publisher', from: 'Research / Community', to: 'IEEE Robotics and Automation Society', reason: 'CORAX is part of IEEE 1872-2015.', source: IEEE_1872.url },
@@ -416,7 +387,6 @@ export const LEGACY = {
     id: 'ieee-pos',
     fullName: 'POS — Position ontology (IEEE 1872-2015)',
     topics: ['position', 'orientation', 'pose', 'coordinate systems'],
-    brandRelevance: robotBrands,
     verification: { status: 'verified', sources: [IEEE_1872], notes: 'Specified within IEEE 1872-2015.' },
     corrections: [
       { field: 'publisher', from: 'Research / Community', to: 'IEEE Robotics and Automation Society', reason: 'POS is part of IEEE 1872-2015.', source: IEEE_1872.url },
@@ -433,7 +403,6 @@ export const LEGACY = {
     license: { name: 'IEEE standard (purchase required for the full text)', access: 'licensed', url: 'https://standards.ieee.org/ieee/1872.1/6993/' },
     links: { official: 'https://standards.ieee.org/ieee/1872.1/6993/' },
     formats: ['OWL'],
-    brandRelevance: robotBrands,
     verification: { status: 'verified', sources: [src('https://standards.ieee.org/ieee/1872.1/6993/', 'IEEE 1872.1-2024')], notes: 'Implementation guide P1872.1.1 is in development.' },
     corrections: [
       { field: 'stabilityStatus', from: 'not stable', to: 'standard', reason: 'Published IEEE standard (approved 2024-02-15).', source: 'https://standards.ieee.org/ieee/1872.1/6993/' },
@@ -445,7 +414,6 @@ export const LEGACY = {
     id: 'ieee-rparts',
     fullName: 'RPARTS — Robot parts ontology (IEEE 1872-2015)',
     topics: ['robot parts', 'components', 'decomposition'],
-    brandRelevance: robotBrands,
     verification: { status: 'verified', sources: [IEEE_1872], notes: 'Specified within IEEE 1872-2015.' },
     corrections: [
       { field: 'publisher', from: 'Research / Community', to: 'IEEE Robotics and Automation Society', reason: 'RPARTS is part of IEEE 1872-2015.', source: IEEE_1872.url },
@@ -458,7 +426,6 @@ export const LEGACY = {
     fullName: 'SUMO–CORA alignment (IEEE 1872-2015)',
     layer: 'upper',
     topics: ['alignment', 'upper ontology', 'robotics'],
-    brandRelevance: [rel('netvibes', 'medium', 'Formal grounding for reasoning over robotics knowledge.')],
     verification: { status: 'partially-verified', sources: [IEEE_1872], notes: 'IEEE 1872-2015 grounds CORA in SUMO. Confirm whether "SUMO-CORA" is published as a separate artefact.' },
     corrections: [
       { field: 'publisher', from: 'Research / Community', to: 'IEEE Robotics and Automation Society', reason: 'Alignment is part of the IEEE 1872-2015 axiomatisation.', source: IEEE_1872.url },
@@ -478,7 +445,6 @@ export const NEW = [
     links: { official: 'https://basic-formal-ontology.org/', repository: 'https://github.com/BFO-ontology/BFO-2020', specification: 'https://webstore.iec.ch/en/publication/72703' },
     formats: ['OWL', 'Common Logic'], industries: ['cross-industry', 'industrial-equipment', 'aerospace-defense', 'life-sciences', 'energy-materials'],
     useCases: ['semiconductors'],
-    brandRelevance: [rel('netvibes', 'high', 'Formal upper ontology for enterprise knowledge graphs.'), rel('biovia', 'medium', 'Life-science ontologies (OBO) build on BFO.')],
     verification: { status: 'verified', sources: [src('https://github.com/BFO-ontology/BFO-2020', 'BFO-2020 repository (CC BY 4.0)'), src('https://webstore.iec.ch/en/publication/72703', 'ISO/IEC 21838-2:2021')], notes: '' },
   },
   {
@@ -491,7 +457,6 @@ export const NEW = [
     links: { official: 'https://spec.industrialontologies.org/', specification: 'https://spec.industrialontologies.org/portal/release/202603/core.html' },
     formats: ['OWL', 'RDF/Turtle'], industries: ['industrial-equipment', 'aerospace-defense', 'transportation-mobility', 'life-sciences'],
     useCases: ['semiconductors', 'general-purpose-robotics'],
-    brandRelevance: [rel('delmia', 'high', 'Production planning, maintenance and supply-chain semantics.'), rel('enovia', 'high', 'Product lifecycle concepts with formal grounding.'), rel('catia', 'medium', 'Design artefacts and requirements.')],
     verification: { status: 'verified', sources: [src('https://spec.industrialontologies.org/portal/release/202603/core.html', 'IOF Core, release 202603'), src('https://spec.industrialontologies.org/portal/release/202401/core/CoreOntology.html', 'IOF Core, release 202401')], notes: '' },
   },
   {
@@ -503,7 +468,6 @@ export const NEW = [
     license: { name: 'BSD-3-Clause', access: 'open', url: 'https://github.com/CommonCoreOntology/CommonCoreOntologies' },
     links: { official: 'https://github.com/CommonCoreOntology/CommonCoreOntologies', repository: 'https://github.com/CommonCoreOntology/CommonCoreOntologies' },
     formats: ['OWL', 'RDF/Turtle'], industries: ['aerospace-defense', 'cross-industry'], useCases: [],
-    brandRelevance: [rel('netvibes', 'high', 'Mid-level semantics for intelligence and knowledge graphs.'), rel('catia', 'medium', 'Artefact and function concepts for systems engineering.')],
     verification: { status: 'verified', sources: [src('https://github.com/CommonCoreOntology/CommonCoreOntologies', 'Common Core Ontologies repository')], notes: '' },
   },
   {
@@ -516,7 +480,6 @@ export const NEW = [
     links: { official: 'https://github.com/emmo-repo/EMMO', repository: 'https://github.com/emmo-repo/EMMO', namespace: 'https://w3id.org/emmo#' },
     formats: ['OWL', 'RDF/Turtle'], industries: ['energy-materials', 'high-tech', 'transportation-mobility', 'life-sciences'],
     useCases: ['semiconductors', 'sustainability'],
-    brandRelevance: [rel('biovia', 'high', 'Materials modelling and characterisation data.'), rel('simulia', 'high', 'Material models used in simulation.')],
     verification: { status: 'verified', sources: [src('https://github.com/emmo-repo/EMMO', 'EMMO repository'), src('https://zenodo.org/records/8318236', 'EMMO 1.0 on Zenodo')], notes: 'Domain modules continue to evolve after 1.0.0.' },
   },
   {
@@ -529,8 +492,6 @@ export const NEW = [
     links: { official: 'https://www.omg.org/sysml/', repository: 'https://github.com/Systems-Modeling/SysML-v2-Release' },
     formats: ['SysML v2 textual', 'JSON (API)', 'XMI'], industries: ['aerospace-defense', 'transportation-mobility', 'industrial-equipment', 'high-tech'],
     useCases: ['general-purpose-robotics', 'ai-factories'],
-    brandRelevance: [rel('catia', 'high', 'Systems engineering and MBSE.'), rel('simulia', 'medium', 'Linking system models to simulation.'), rel('enovia', 'medium', 'Configuration management of system models.')],
-    publicEvidence: [{ kind: 'product-support', brands: ['catia'], statement: 'Dassault Systèmes markets CATIA SysML v2 (CATIA Magic) as a SysML v2 modelling solution.', source: { url: 'https://www.3ds.com/products/catia/catia-magic/sysmlv2', title: 'CATIA SysML v2 product page', type: 'official' } }],
     verification: { status: 'verified', sources: [src('https://github.com/Systems-Modeling/SysML-v2-Release', 'SysML v2 release repository'), src('https://www.omg.org/sysml/sst_aiaa_award.htm', 'OMG SysML Submission Team page')], notes: 'A modelling language with formal semantics rather than an OWL ontology.' },
   },
   {
@@ -544,11 +505,6 @@ export const NEW = [
     links: { official: 'https://www.iso.org/standard/84300.html' },
     formats: ['EXPRESS', 'STEP Part 21', 'XML'], industries: ['aerospace-defense', 'transportation-mobility', 'industrial-equipment'],
     useCases: ['general-purpose-robotics'],
-    brandRelevance: [rel('catia', 'high', '3D master data exchange.'), rel('solidworks', 'high', 'Model-based definition export.'), rel('enovia', 'medium', 'PDM and configuration exchange.')],
-    publicEvidence: [
-      { kind: 'product-support', brands: ['solidworks'], statement: 'SOLIDWORKS documents a "Publish to STEP 242" command for model-based definition data.', source: { url: 'https://help.solidworks.com/2025/English/SolidWorks/sldworks/r_publish_step242.htm', title: 'SOLIDWORKS Help — Publish to STEP242 PropertyManager', type: 'official' } },
-      { kind: 'product-support', brands: ['catia'], statement: 'A reseller tutorial shows CATIA V5 exporting parts with PMI to STEP AP242.', source: { url: 'https://www.cati.com/blog/export-catia-v5-parts-with-pmi-using-step-ap242/', title: 'CATI — Export CATIA V5 parts with PMI using STEP AP242', type: 'third-party' } },
-    ],
     verification: { status: 'verified', sources: [src('https://www.evs.ee/en/iso-10303-242-2025', 'ISO 10303-242:2025 listing'), src('https://online.standard.no/en/iso-10303-242-2025', 'ISO 10303-242:2025 (edition 4)')], notes: 'An information model in EXPRESS, not an OWL ontology. A further revision is at committee-draft stage.' },
   },
   {
@@ -562,7 +518,6 @@ export const NEW = [
     links: { official: 'https://webstore.iec.ch/en/publication/6215' },
     formats: ['UML', 'RDF/XML (IEC 61970-501, CGMES)'], industries: ['energy-materials'],
     useCases: ['ai-factories', 'sustainability'],
-    brandRelevance: [rel('netvibes', 'medium', 'Grid data in energy knowledge graphs.'), rel('simulia', 'medium', 'Power-system digital twins.')],
     verification: { status: 'partially-verified', sources: [src('https://connect.snv.ch/en/iec-61970-301-2013-ed4', 'IEC 61970-301 edition history (SNV)'), src('https://webstore.iec.ch/en/publication/6215', 'IEC webstore')], notes: 'Added in v2 to separate the power-system CIM from the DMTF CIM. Confirm the current CGMES version with ENTSO-E.' },
   },
   {
@@ -576,7 +531,6 @@ export const NEW = [
     links: { official: 'https://saref.etsi.org/saref4ener/', namespace: 'https://saref.etsi.org/saref4ener/' },
     formats: ['OWL', 'RDF/Turtle'], industries: ['energy-materials', 'infrastructure-cities', 'high-tech'],
     useCases: ['ai-factories', 'sustainability'],
-    brandRelevance: [rel('netvibes', 'medium', 'Energy analytics and flexibility.'), rel('delmia', 'medium', 'Energy-aware operations planning.')],
     verification: { status: 'verified', sources: [src('https://saref.etsi.org/saref4ener/', 'ETSI SAREF4ENER')], notes: '' },
   },
   {
@@ -589,7 +543,6 @@ export const NEW = [
     links: { official: 'https://openenergyplatform.org/ontology/', repository: 'https://github.com/OpenEnergyPlatform/ontology' },
     formats: ['OWL (Manchester syntax)'], industries: ['energy-materials'],
     useCases: ['ai-factories', 'sustainability'],
-    brandRelevance: [rel('netvibes', 'medium', 'Energy scenario knowledge graphs.'), rel('geovia', 'medium', 'Energy resource modelling.')],
     verification: { status: 'verified', sources: [src('https://openenergyplatform.org/ontology/', 'OEO on the Open Energy Platform'), src('https://github.com/OpenEnergyPlatform/ontology', 'OEO repository')], notes: '' },
   },
   {
@@ -602,7 +555,6 @@ export const NEW = [
     links: { official: 'https://ifx-dr.github.io/DigitalReference/', repository: 'https://github.com/tibonto/dr' },
     formats: ['OWL', 'RDF/Turtle'], industries: ['high-tech'],
     useCases: ['semiconductors'],
-    brandRelevance: [rel('delmia', 'high', 'Semiconductor supply-chain planning.'), rel('netvibes', 'medium', 'Supply-chain intelligence.')],
     verification: { status: 'partially-verified', sources: [src('https://ifx-dr.github.io/DigitalReference/', 'Digital Reference site'), src('https://www.informs-sim.org/wsc25papers/con142.pdf', 'Winter Simulation Conference 2025 paper using DR')], notes: 'Confirm the licence in the repository before reuse.' },
   },
   {
@@ -614,7 +566,6 @@ export const NEW = [
     license: { name: 'W3C Document License', access: 'open', url: 'https://www.w3.org/TR/vsso-core/' },
     links: { official: 'https://www.w3.org/TR/vsso-core/', repository: 'https://github.com/w3c/vsso' },
     formats: ['OWL', 'RDF/Turtle'], industries: ['transportation-mobility'], useCases: [],
-    brandRelevance: [rel('catia', 'medium', 'Vehicle E/E and signal architecture.')],
     verification: { status: 'verified', sources: [src('https://www.w3.org/TR/vsso-core/', 'VSSo Core (W3C)')], notes: 'Listed for awareness; not maintained.' },
   },
   {
@@ -627,7 +578,6 @@ export const NEW = [
     license: { name: 'ISO standard (purchase required)', access: 'licensed', url: 'https://15926.org/' },
     links: { official: 'https://15926.org/' },
     formats: ['OWL 2'], industries: ['energy-materials'], useCases: [],
-    brandRelevance: [rel('enovia', 'medium', 'Plant asset lifecycle information handover.'), rel('delmia', 'medium', 'Plant operations and maintenance.')],
     verification: { status: 'partially-verified', sources: [src('https://knowledge.bsigroup.com/products/industrial-automation-systems-and-integration-integration-of-life-cycle-data-for-process-plants-including-oil-and-gas-production-facilities-implementation-methods-for-the-integration-of-distributed-systems-web-ontology-language-owl-1', 'BSI listing for ISO 15926-14'), src('https://15926.org/', '15926.org')], notes: 'Confirm the publication year in the ISO catalogue.' },
   },
   {
@@ -640,7 +590,6 @@ export const NEW = [
     links: { official: 'https://schema.org/', specification: 'https://schema.org/docs/releases.html', namespace: 'https://schema.org/' },
     formats: ['RDFa', 'JSON-LD', 'Microdata', 'RDF/Turtle'], industries: ['consumer-goods', 'cross-industry'],
     useCases: ['personal-electronics', 'semiconductors', 'sustainability'],
-    brandRelevance: [rel('3dexcite', 'high', 'Product content published to the web.'), rel('netvibes', 'medium', 'Web-scale entity data.')],
     verification: { status: 'verified', sources: [src('https://schema.org/docs/terms.html', 'Schema.org terms'), src('https://blog.schema.org/2012/11/08/good-relations-and-schema-org/', 'GoodRelations integration announcement')], notes: '' },
   },
   {
@@ -652,7 +601,6 @@ export const NEW = [
     license: { name: 'W3C Document License', access: 'open', url: 'https://www.w3.org/copyright/document-license/' },
     links: { official: 'https://www.w3.org/TR/skos-reference/', namespace: 'http://www.w3.org/2004/02/skos/core#' },
     formats: ['OWL', 'RDF/Turtle'], industries: ['cross-industry'], useCases: [],
-    brandRelevance: [rel('netvibes', 'high', 'Taxonomy and thesaurus management.'), rel('enovia', 'medium', 'Classification libraries.')],
     verification: { status: 'verified', sources: [src('https://www.w3.org/TR/skos-reference/', 'SKOS Reference (W3C Recommendation)')], notes: '' },
   },
   {
@@ -665,7 +613,6 @@ export const NEW = [
     links: { official: 'https://technical.buildingsmart.org/standards/ifc/ifc-formats/ifcowl/', specification: 'https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2/OWL/index.html' },
     formats: ['OWL', 'RDF/Turtle', 'JSON-LD'], industries: ['infrastructure-cities'],
     useCases: ['ai-factories'],
-    brandRelevance: [rel('catia', 'medium', 'AEC design data interoperability.')],
     verification: { status: 'verified', sources: [src('https://technical.buildingsmart.org/standards/ifc/ifc-formats/ifcowl/', 'buildingSMART — What is ifcOWL?'), src('https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2/OWL/index.html', 'ifcOWL IFC4 ADD2')], notes: 'The ifcOWL authors advise against production use; consider bSDD.' },
   },
   {
@@ -678,7 +625,6 @@ export const NEW = [
     links: { official: 'https://www.w3.org/TR/vocab-dcat-3/', namespace: 'http://www.w3.org/ns/dcat#' },
     formats: ['OWL', 'RDF/Turtle'], industries: ['cross-industry'],
     useCases: ['ai-factories', 'sustainability'],
-    brandRelevance: [rel('netvibes', 'high', 'Dataset cataloguing and discovery.'), rel('enovia', 'medium', 'Exposing engineering datasets to data spaces.')],
     verification: { status: 'verified', sources: [src('https://www.w3.org/TR/vocab-dcat-3/', 'DCAT 3 W3C Recommendation')], notes: '' },
   },
 ];

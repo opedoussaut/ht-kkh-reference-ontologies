@@ -1,5 +1,4 @@
 {
-  "publicEvidence": [],
   "id": "cco",
   "name": "CCO",
   "fullName": "Common Core Ontologies",
@@ -38,18 +37,6 @@
     "cross-industry"
   ],
   "useCases": [],
-  "brandRelevance": [
-    {
-      "brand": "netvibes",
-      "strength": "high",
-      "rationale": "Mid-level semantics for intelligence and knowledge graphs."
-    },
-    {
-      "brand": "catia",
-      "strength": "medium",
-      "rationale": "Artefact and function concepts for systems engineering."
-    }
-  ],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",

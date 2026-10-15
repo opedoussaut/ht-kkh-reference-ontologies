@@ -1,5 +1,4 @@
 {
-  "publicEvidence": [],
   "id": "ifcowl",
   "name": "ifcOWL",
   "fullName": "ifcOWL — OWL representation of IFC",
@@ -39,13 +38,6 @@
   ],
   "useCases": [
     "ai-factories"
-  ],
-  "brandRelevance": [
-    {
-      "brand": "catia",
-      "strength": "medium",
-      "rationale": "AEC design data interoperability."
-    }
   ],
   "verification": {
     "checkedOn": "2026-10-15",

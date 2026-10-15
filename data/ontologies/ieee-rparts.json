@@ -38,24 +38,6 @@
   "useCases": [
     "general-purpose-robotics"
   ],
-  "brandRelevance": [
-    {
-      "brand": "catia",
-      "strength": "high",
-      "rationale": "Robot product and systems architecture could reuse a standard robot vocabulary."
-    },
-    {
-      "brand": "delmia",
-      "strength": "high",
-      "rationale": "Robot programming and cell simulation work with robot parts, poses and tasks."
-    },
-    {
-      "brand": "simulia",
-      "strength": "medium",
-      "rationale": "Multibody and control simulation could bind models to standard robot concepts."
-    }
-  ],
-  "publicEvidence": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",

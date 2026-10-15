@@ -42,19 +42,6 @@
     "personal-electronics",
     "general-purpose-robotics"
   ],
-  "brandRelevance": [
-    {
-      "brand": "enovia",
-      "strength": "high",
-      "rationale": "Document and object metadata (title, creator, dates)."
-    },
-    {
-      "brand": "netvibes",
-      "strength": "high",
-      "rationale": "Generic metadata for indexed content."
-    }
-  ],
-  "publicEvidence": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",

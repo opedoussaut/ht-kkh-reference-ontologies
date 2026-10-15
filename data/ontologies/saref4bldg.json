@@ -39,14 +39,6 @@
   "useCases": [
     "ai-factories"
   ],
-  "brandRelevance": [
-    {
-      "brand": "catia",
-      "strength": "medium",
-      "rationale": "Building equipment definitions aligned with IFC."
-    }
-  ],
-  "publicEvidence": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",

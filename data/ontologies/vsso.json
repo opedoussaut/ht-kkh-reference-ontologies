@@ -1,5 +1,4 @@
 {
-  "publicEvidence": [],
   "id": "vsso",
   "name": "VSSo",
   "fullName": "Vehicle Signal Specification Ontology",
@@ -36,13 +35,6 @@
     "transportation-mobility"
   ],
   "useCases": [],
-  "brandRelevance": [
-    {
-      "brand": "catia",
-      "strength": "medium",
-      "rationale": "Vehicle E/E and signal architecture."
-    }
-  ],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",

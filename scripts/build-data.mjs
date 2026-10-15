@@ -38,4 +38,4 @@ for (const [rel, content] of Object.entries(outputs)) {
 }
 if (stale) process.exit(1);
 const c = bundle.meta.counts;
-console.log(`✓ ${c.ontologies} ontologies, ${c.relations} relations, ${c.useCases} use cases, ${c.brands} brands — valid.`);
+console.log(`✓ ${c.ontologies} ontologies, ${c.relations} relations, ${c.useCases} use cases — valid.`);

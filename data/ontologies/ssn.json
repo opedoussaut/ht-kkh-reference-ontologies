@@ -42,19 +42,6 @@
     "personal-electronics",
     "general-purpose-robotics"
   ],
-  "brandRelevance": [
-    {
-      "brand": "simulia",
-      "strength": "medium",
-      "rationale": "System capabilities and operating ranges of sensing systems."
-    },
-    {
-      "brand": "delmia",
-      "strength": "medium",
-      "rationale": "Sensor deployments in operations."
-    }
-  ],
-  "publicEvidence": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",

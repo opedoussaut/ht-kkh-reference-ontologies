@@ -11,8 +11,6 @@ const LABELS = {
   access: { open: 'Open', 'open-with-terms': 'Open with terms', licensed: 'Licensed', unknown: 'Unknown' },
   verification: { verified: 'Verified', 'partially-verified': 'Partially verified', unverified: 'Unverified' },
   publisherType: { 'standards-body': 'Standards body', 'industry-association': 'Industry association', consortium: 'Consortium', research: 'Research', government: 'Government', industry: 'Industry' },
-  evidence: { documented: 'Has public evidence', none: 'No public evidence' },
-  evidenceKind: { 'product-support': 'Product support', 'standards-membership': 'Standards-body membership', 'standards-contribution': 'Standards contribution' },
   status: { published: 'Published', candidate: 'Candidate', draft: 'Draft', superseded: 'Superseded', discontinued: 'Discontinued', unknown: 'Unknown' },
 };
 
@@ -24,13 +22,11 @@ const label = (group, v) => LABELS[group]?.[v] || v;
 const ont = (id) => state.byId.get(id);
 const industryName = (id) => state.maps.industry[id]?.name || id;
 const useCaseName = (id) => state.maps.useCase[id]?.name || id;
-const brandName = (id) => state.maps.brand[id]?.name || id;
 const relLabel = (t) => state.maps.relType[t]?.label || t;
 
 function facetLabel(key, v) {
   if (key === 'industry') return industryName(v);
   if (key === 'useCase') return useCaseName(v);
-  if (key === 'brand') return brandName(v);
   return label(key, v);
 }
 
@@ -52,7 +48,6 @@ function relationsOf(id) {
 
 // ---------- shared components ----------
 function card(o) {
-  const evidence = o.publicEvidence.length ? html`<span class="card-evidence" title="Public evidence of Dassault Systèmes engagement or product support">● Public evidence</span>` : '';
   return html`
   <a class="card" href="#/ontology/${o.id}">
     <div class="card-head">
@@ -68,7 +63,7 @@ function card(o) {
       <span class="mono">${o.version.label}</span>
     </div>
     <div class="card-foot">
-      ${maturityPill(o)} ${accessPill(o)} ${evidence}
+      ${maturityPill(o)} ${accessPill(o)}
       <span class="card-publisher">${o.publisher}</span>
     </div>
   </a>`;
@@ -93,7 +88,7 @@ function viewHome() {
   <section class="hero">
     <p class="eyebrow">Reference Ontology Atlas</p>
     <h1>Public semantic standards,<br><span class="grad">mapped for engineering.</span></h1>
-    <p class="lead">A curated, cited atlas of public reference ontologies and semantic standards across industries. Each record shows its version, licence and sources, and keeps potential relevance apart from proven adoption.</p>
+    <p class="lead">A curated, cited atlas of public reference ontologies and semantic standards across industries. Each record shows its version, licence and sources.</p>
     <form class="hero-search" data-action="hero-search" role="search">
       <svg aria-hidden="true" viewBox="0 0 24 24" class="icon"><path d="M10.5 3a7.5 7.5 0 0 1 5.96 12.06l4.24 4.24-1.4 1.4-4.24-4.24A7.5 7.5 0 1 1 10.5 3Zm0 2a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11Z"/></svg>
       <input name="q" type="search" placeholder="Search ontologies, standards, topics…  e.g. sensors, IEEE 1872, provenance" aria-label="Search the atlas" autocomplete="off">
@@ -132,8 +127,6 @@ function viewHome() {
       <div><h3>${pill('v-verified', 'Verified')}</h3><p>The publisher, version and licence were checked against the official source on the date shown.</p></div>
       <div><h3>${pill('v-partially-verified', 'Partially verified')}</h3><p>The official source was confirmed, but at least one fact (such as the exact version or licence wording) is still open.</p></div>
       <div><h3>${pill('v-unverified', 'Unverified')}</h3><p>A candidate with no authoritative public source yet. Flagged for review.</p></div>
-      <div><h3><span class="pill rel-potential">Potential relevance</span></h3><p>An editorial assessment of where an ontology could help a brand's domain. It does not mean the brand uses it.</p></div>
-      <div><h3><span class="pill rel-evidence">Public evidence</span></h3><p>A cited public source, such as a product page, help documentation or a standards-body membership announcement.</p></div>
       <div><h3><span class="pill">Relationships</span></h3><p>Only links stated by the publisher or a primary source are drawn in the graph, and each one cites its source.</p></div>
     </div>
   </section>`;
@@ -151,10 +144,9 @@ function viewCatalog(params) {
     let values = Object.keys(counts);
     if (f.key === 'industry') values = state.data.industries.map((i) => i.id).filter((v) => counts[v] || s.filters[f.key]?.includes(v));
     else if (f.key === 'useCase') values = state.data.useCases.map((u) => u.id).filter((v) => counts[v] || s.filters[f.key]?.includes(v));
-    else if (f.key === 'brand') values = state.data.brands.map((b) => b.id).filter((v) => counts[v] || s.filters[f.key]?.includes(v));
     else values = Object.keys(LABELS[f.key] || {}).filter((v) => counts[v] || s.filters[f.key]?.includes(v));
     if (!values.length) return '';
-    const open = ['industry', 'useCase', 'brand'].includes(f.key) || s.filters[f.key]?.length;
+    const open = ['industry', 'useCase'].includes(f.key) || s.filters[f.key]?.length;
     return html`
       <details class="facet" ${open ? raw('open') : ''}>
         <summary>${f.label}${s.filters[f.key]?.length ? html` <span class="facet-active">${s.filters[f.key].length}</span>` : ''}</summary>
@@ -205,7 +197,6 @@ function viewOntology(id) {
   if (!o) return viewNotFound();
   setTitle(o.name);
   const { out, inc } = relationsOf(id);
-  const potential = [...o.brandRelevance].sort((a, b) => (a.strength === b.strength ? 0 : a.strength === 'high' ? -1 : 1));
 
   const relItem = (r, dir) => {
     const other = ont(dir === 'out' ? r.target : r.source);
@@ -249,21 +240,6 @@ function viewOntology(id) {
           ${factRow('Related', o.links.related ? ext(o.links.related, o.links.related) : null)}
           ${factRow('Topics', o.topics.join(' · '))}
         </dl>
-      </section>
-
-      <section class="panel">
-        <h2>Brand relevance</h2>
-        <p class="muted small">Potential relevance is an editorial assessment and does not claim adoption. Public evidence lists only cited, public sources.</p>
-        <h3 class="sub">Public evidence</h3>
-        ${o.publicEvidence.length ? html`<ul class="evidence">${o.publicEvidence.map((e) => html`
-          <li><span class="pill rel-evidence">${label('evidenceKind', e.kind)}</span>
-          ${e.brands.length ? html`<strong>${e.brands.map(brandName).join(', ')}</strong> — ` : html`<strong>Dassault Systèmes</strong> — `}${e.statement}
-          <span class="muted">${ext(e.source.url, e.source.title)} · ${e.source.type === 'official' ? 'official source' : 'third-party source'}</span></li>`)}</ul>`
-          : html`<p class="muted">No public evidence recorded.</p>`}
-        <h3 class="sub">Potential relevance</h3>
-        ${potential.length ? html`<ul class="brand-list">${potential.map((b) => html`
-          <li>${link(`#/brands/${b.brand}`, brandName(b.brand), 'brand-name')} <span class="pill rel-potential s-${b.strength}">${b.strength === 'high' ? 'High potential' : 'Medium potential'}</span><span class="muted">${b.rationale}</span></li>`)}</ul>`
-          : html`<p class="muted">None assessed.</p>`}
       </section>
 
       <section class="panel">
@@ -460,86 +436,9 @@ function viewUseCase(id) {
     </div>
     <aside class="detail-side">
       <section class="panel"><h2>Engineering challenges</h2><ul class="bullets">${u.challenges.map((c) => html`<li>${c}</li>`)}</ul></section>
-      <section class="panel"><h2>Potentially relevant brands</h2><p class="muted small">Editorial assessment, not adoption.</p><div class="chips">${u.brands.map((b) => chip(`#/brands/${b}`, brandName(b)))}</div></section>
       <section class="panel"><a class="btn" href="#/catalog?useCase=${u.id}">All ${state.data.ontologies.filter((o) => o.useCases.includes(u.id)).length} mapped ontologies →</a></section>
     </aside>
   </div>`;
-}
-
-function brandStats(bid) {
-  const potential = state.data.ontologies.filter((o) => o.brandRelevance.some((b) => b.brand === bid));
-  const evidence = state.data.ontologies.filter((o) => o.publicEvidence.some((e) => e.brands.includes(bid)));
-  return { potential, evidence };
-}
-
-function viewBrands(params) {
-  setTitle('Brands');
-  const ind = params.get('industry') || '';
-  const list = state.data.ontologies.filter((o) => !ind || o.industries.includes(ind));
-  const brands = state.data.brands;
-  const corporate = state.data.ontologies.filter((o) => o.publicEvidence.some((e) => !e.brands.length));
-  return html`
-  <section class="page-head"><h1>Brand relevance</h1>
-    <p class="lead small">Where public ontologies could matter for each brand's domain. <span class="pill rel-potential">Potential</span> is an editorial assessment. <span class="pill rel-evidence">Evidence</span> is backed by a cited public source, such as product documentation.</p>
-  </section>
-  <div class="brand-grid">
-    ${brands.map((b) => {
-      const s = brandStats(b.id);
-      return html`<a class="brand-card" href="#/brands/${b.id}"><h3>${b.name}</h3><p class="muted small">${b.focus}</p>
-        <div class="brand-nums"><span><strong>${s.potential.length}</strong> potential</span><span><strong>${s.evidence.length}</strong> with evidence</span></div></a>`;
-    })}
-  </div>
-  ${corporate.length ? html`<p class="small muted">Corporate-level public evidence (not tied to one brand): ${corporate.map((o, n) => html`${n ? ', ' : ''}${link(`#/ontology/${o.id}`, o.name)}`)}.</p>` : ''}
-  <section class="section">
-    <div class="section-head"><h2>Relevance matrix</h2>
-      <label class="sort">Industry <select id="matrix-industry"><option value="">All</option>${state.data.industries.map((i) => html`<option value="${i.id}" ${ind === i.id ? raw('selected') : ''}>${i.name}</option>`)}</select></label>
-    </div>
-    <div class="matrix-wrap">
-      <table class="matrix">
-        <thead><tr><th scope="col">Ontology</th>${brands.map((b) => html`<th scope="col"><a href="#/brands/${b.id}">${b.name}</a></th>`)}</tr></thead>
-        <tbody>
-          ${list.map((o) => html`<tr><th scope="row">${link(`#/ontology/${o.id}`, o.name)}</th>${brands.map((b) => {
-            const ev = o.publicEvidence.some((e) => e.brands.includes(b.id));
-            const r = o.brandRelevance.find((x) => x.brand === b.id);
-            const cls = ev ? 'm-ev' : r ? `m-${r.strength}` : '';
-            const t = ev ? 'Public evidence' : r ? `${r.strength} potential: ${r.rationale}` : '';
-            return html`<td class="${cls}" title="${t}">${ev ? '★' : r ? (r.strength === 'high' ? '●' : '○') : ''}</td>`;
-          })}</tr>`)}
-        </tbody>
-      </table>
-    </div>
-    <p class="small muted">★ public evidence · ● high potential · ○ medium potential</p>
-  </section>`;
-}
-
-function viewBrand(id) {
-  const b = state.maps.brand[id];
-  if (!b) return viewNotFound();
-  setTitle(b.name);
-  const { potential, evidence } = brandStats(id);
-  const high = potential.filter((o) => o.brandRelevance.find((x) => x.brand === id).strength === 'high');
-  const medium = potential.filter((o) => o.brandRelevance.find((x) => x.brand === id).strength === 'medium');
-  const row = (o) => {
-    const r = o.brandRelevance.find((x) => x.brand === id);
-    return html`<li>${link(`#/ontology/${o.id}`, o.name, 'brand-name')} <span class="muted">${r ? r.rationale : ''}</span></li>`;
-  };
-  return html`
-  <nav class="crumbs">${link('#/brands', 'Brands')} <span>/</span> ${b.name}</nav>
-  <section class="page-head"><h1>${b.name}</h1><p class="lead small">${b.focus}</p></section>
-  <div class="two-col">
-    <section class="panel">
-      <h2><span class="pill rel-evidence">Public evidence</span></h2>
-      ${evidence.length ? html`<ul class="evidence">${evidence.flatMap((o) => o.publicEvidence.filter((e) => e.brands.includes(id)).map((e) => html`
-        <li>${link(`#/ontology/${o.id}`, o.name, 'brand-name')} — ${e.statement} <span class="muted">${ext(e.source.url, e.source.title)} · ${e.source.type === 'official' ? 'official' : 'third-party'}</span></li>`))}</ul>`
-        : html`<p class="muted">No public evidence recorded for this brand. That does not mean the brand doesn't use these ontologies; it means nothing public is cited here.</p>`}
-    </section>
-    <section class="panel">
-      <h2><span class="pill rel-potential">Potential relevance</span></h2>
-      <h3 class="sub">High</h3>${high.length ? html`<ul class="brand-list">${high.map(row)}</ul>` : html`<p class="muted">—</p>`}
-      <h3 class="sub">Medium</h3>${medium.length ? html`<ul class="brand-list">${medium.map(row)}</ul>` : html`<p class="muted">—</p>`}
-    </section>
-  </div>
-  <p><a class="btn" href="#/catalog?brand=${id}">Open in catalogue →</a></p>`;
 }
 
 function viewAbout() {
@@ -550,8 +449,6 @@ function viewAbout() {
   <div class="prose">
     <h2>Method</h2>
     <p>Each record is checked against the publisher's official pages. The checks cover the publisher, the current version or edition, the licence and access terms, and the official source. Every record lists its sources and the date it was checked. Where a fact could not be confirmed, the record is marked partially verified or unverified and explains why.</p>
-    <h2>Potential relevance vs. proven adoption</h2>
-    <p>Brand mappings are editorial: they suggest where an ontology could fit a brand's domain, and they do not claim the brand uses it. Public evidence entries are different. Each one cites a public source, such as a product page, help documentation or a standards-body membership announcement, and says whether that source is official or third-party.</p>
     <h2>Relationships</h2>
     <p>Only relationships stated by a publisher or primary source are drawn, and each edge carries a citation. Relationship types: ${state.data.relationTypes.map((t) => t.label).join(', ')}.</p>
     <h2>Migration from v1</h2>
@@ -565,7 +462,7 @@ function viewAbout() {
     </ul>
     <h2>Contribute</h2>
     <p>Corrections and new public ontologies are welcome through ${ext(`${REPO}/issues/new/choose`, 'GitHub issues')} or pull requests. See ${ext(`${REPO}/blob/main/CONTRIBUTING.md`, 'CONTRIBUTING.md')}. Please include only public, citable information.</p>
-    <p class="muted small">Dataset generated ${m.generatedOn} · ${m.counts.ontologies} ontologies · ${m.counts.relations} relationships. Product and brand names belong to their respective owners. This is not an official Dassault Systèmes publication.</p>
+    <p class="muted small">Dataset generated ${m.generatedOn} · ${m.counts.ontologies} ontologies · ${m.counts.relations} relationships.</p>
   </div>`;
 }
 
@@ -597,7 +494,6 @@ function route() {
     case 'graph': view = viewGraph(params); break;
     case 'industries': view = id ? viewIndustry(id) : viewIndustries(); break;
     case 'use-cases': view = id ? viewUseCase(id) : viewUseCases(); break;
-    case 'brands': view = id ? viewBrand(id) : viewBrands(params); break;
     case 'about': view = viewAbout(); break;
     default: view = viewNotFound();
   }
@@ -655,7 +551,6 @@ app.addEventListener('change', (e) => {
     });
   } else if (t.id === 'catalog-sort') updateCatalog((s) => { s.sort = t.value; });
   else if (t.dataset.reltype || t.id === 'graph-isolated') updateGraphParams();
-  else if (t.id === 'matrix-industry') { history.replaceState(null, '', `#/brands${t.value ? '?industry=' + t.value : ''}`); route(); }
 });
 app.addEventListener('click', (e) => {
   const rm = e.target.closest('[data-remove]');
@@ -717,7 +612,6 @@ async function boot() {
   state.maps = {
     industry: Object.fromEntries(d.industries.map((x) => [x.id, x])),
     useCase: Object.fromEntries(d.useCases.map((x) => [x.id, x])),
-    brand: Object.fromEntries(d.brands.map((x) => [x.id, x])),
     relType: Object.fromEntries(d.relationTypes.map((x) => [x.id, x])),
   };
   state.index = buildIndex(d.ontologies, d);

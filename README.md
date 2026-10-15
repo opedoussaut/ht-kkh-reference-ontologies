@@ -9,16 +9,13 @@ An evidence-based, cross-industry atlas of **public** reference ontologies and s
   Energy & Materials, Infrastructure & Cities, Life Sciences, Consumer Goods, plus cross-industry foundations.
 - **Engineering use cases**: AI Factories, General Purpose Robotics, Semiconductors, Sustainability & Circularity
   and Personal Electronics, each described as a layered reference semantic stack.
-- **Brand relevance** for CATIA, SIMULIA, ENOVIA, DELMIA, NETVIBES, BIOVIA, GEOVIA, 3DEXCITE and SOLIDWORKS. Editorial
-  *potential relevance* is shown separately from *public evidence*, and each piece of evidence is cited.
 - **Interactive graph** that draws only relationships stated by the publisher or a primary source.
 - **Faceted search** with typo tolerance and shareable URLs; a detail page for every ontology.
 - Downloads: [`data/atlas.json`](data/atlas.json), the v1-compatible
   [`htkkh_reference_ontologies_map_catalog.json`](htkkh_reference_ontologies_map_catalog.json) and
   [`htkkh_reference_ontologies_map.ttl`](htkkh_reference_ontologies_map.ttl).
 
-> Public information only. This is not an official Dassault Systèmes publication. Product and brand names belong to
-> their respective owners.
+> Public information only. Every record cites its sources and the date they were checked.
 
 ## Develop
 

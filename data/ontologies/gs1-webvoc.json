@@ -45,24 +45,6 @@
     "general-purpose-robotics",
     "sustainability"
   ],
-  "brandRelevance": [
-    {
-      "brand": "enovia",
-      "strength": "medium",
-      "rationale": "Product identification across the lifecycle."
-    },
-    {
-      "brand": "3dexcite",
-      "strength": "medium",
-      "rationale": "Rich product data for commerce experiences."
-    },
-    {
-      "brand": "delmia",
-      "strength": "medium",
-      "rationale": "Supply-chain identification and traceability."
-    }
-  ],
-  "publicEvidence": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",

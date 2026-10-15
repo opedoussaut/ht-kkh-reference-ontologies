@@ -1,18 +1,4 @@
 {
-  "publicEvidence": [
-    {
-      "kind": "product-support",
-      "brands": [
-        "catia"
-      ],
-      "statement": "Dassault Systèmes markets CATIA SysML v2 (CATIA Magic) as a SysML v2 modelling solution.",
-      "source": {
-        "url": "https://www.3ds.com/products/catia/catia-magic/sysmlv2",
-        "title": "CATIA SysML v2 product page",
-        "type": "official"
-      }
-    }
-  ],
   "id": "sysml-v2",
   "name": "SysML v2 / KerML",
   "fullName": "OMG Systems Modeling Language v2 and Kernel Modeling Language",
@@ -57,23 +43,6 @@
   "useCases": [
     "general-purpose-robotics",
     "ai-factories"
-  ],
-  "brandRelevance": [
-    {
-      "brand": "catia",
-      "strength": "high",
-      "rationale": "Systems engineering and MBSE."
-    },
-    {
-      "brand": "simulia",
-      "strength": "medium",
-      "rationale": "Linking system models to simulation."
-    },
-    {
-      "brand": "enovia",
-      "strength": "medium",
-      "rationale": "Configuration management of system models."
-    }
   ],
   "verification": {
     "checkedOn": "2026-10-15",

@@ -1,5 +1,4 @@
 {
-  "publicEvidence": [],
   "id": "saref4ener",
   "name": "SAREF4ENER",
   "fullName": "SAREF extension for Energy",
@@ -41,18 +40,6 @@
   "useCases": [
     "ai-factories",
     "sustainability"
-  ],
-  "brandRelevance": [
-    {
-      "brand": "netvibes",
-      "strength": "medium",
-      "rationale": "Energy analytics and flexibility."
-    },
-    {
-      "brand": "delmia",
-      "strength": "medium",
-      "rationale": "Energy-aware operations planning."
-    }
   ],
   "verification": {
     "checkedOn": "2026-10-15",

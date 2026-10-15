@@ -82,18 +82,20 @@ test('legacy JSON export keeps the v1 shape for every record', () => {
   for (const v1 of src.legacy) assert.ok(legacy.some((r) => r.description === bundle.ontologies.find((o) => o.legacy?.name === v1.name).summary));
 });
 
-test('brand evidence is only claimed with a cited source', () => {
-  for (const { record } of src.ontologies) {
-    for (const ev of record.publicEvidence) {
-      assert.match(ev.source.url, /^https:\/\//);
-      assert.ok(['official', 'third-party'].includes(ev.source.type));
-    }
-  }
-});
 
 test('turtle export declares prefixes and one subject per ontology', () => {
   const ttl = readFileSync(join(ROOT, 'htkkh_reference_ontologies_map.ttl'), 'utf8');
   assert.match(ttl, /^@prefix atlas: </m);
   const subjects = ttl.match(/^atlas:\S+ a atlas:ReferenceOntology/gm) || [];
   assert.equal(subjects.length, src.ontologies.length);
+});
+
+test('the atlas is vendor-neutral: no brand fields or vendor product names in the site or data', () => {
+  for (const { file, record } of src.ontologies) {
+    assert.ok(!('brandRelevance' in record) && !('publicEvidence' in record), `${file} has brand fields`);
+  }
+  const vendor = /dassault|3ds\.com|\b(catia|simulia|enovia|delmia|netvibes|biovia|geovia|3dexcite|solidworks)\b/i;
+  const siteFiles = ['index.html', 'data/atlas.json', 'htkkh_reference_ontologies_map_catalog.json', 'htkkh_reference_ontologies_map.ttl'];
+  for (const file of [...walk(join(ROOT, 'assets')), ...walk(join(ROOT, 'data/taxonomy'))]) siteFiles.push(relative(ROOT, file));
+  for (const rel of siteFiles) assert.ok(!vendor.test(readFileSync(join(ROOT, rel), 'utf8')), `${rel} mentions a vendor product`);
 });

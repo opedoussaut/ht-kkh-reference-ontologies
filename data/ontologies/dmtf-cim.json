@@ -39,19 +39,6 @@
   "useCases": [
     "ai-factories"
   ],
-  "brandRelevance": [
-    {
-      "brand": "delmia",
-      "strength": "medium",
-      "rationale": "Operations of IT infrastructure assets."
-    },
-    {
-      "brand": "netvibes",
-      "strength": "medium",
-      "rationale": "Inventory and telemetry analytics for compute assets."
-    }
-  ],
-  "publicEvidence": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",

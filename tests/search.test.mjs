@@ -56,10 +56,6 @@ test('filters: OR within a facet, AND across facets', () => {
   }
 });
 
-test('brand facet includes evidence-only brands', () => {
-  const r = applyFilters(data.ontologies, { brand: ['solidworks'] }).map((o) => o.id);
-  assert.ok(r.includes('step-ap242'));
-});
 
 test('facet counts ignore their own facet selection', () => {
   const counts = facetCounts(data.ontologies, { industry: ['high-tech'] }, 'industry');

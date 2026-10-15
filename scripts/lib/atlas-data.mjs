@@ -29,7 +29,6 @@ export function loadSources(root) {
   return {
     ontologies,
     industries: readJson(join(root, 'data/taxonomy/industries.json')).items,
-    brands: readJson(join(root, 'data/taxonomy/brands.json')).items,
     useCases: readJson(join(root, 'data/taxonomy/use-cases.json')).items,
     relations: readJson(join(root, 'data/taxonomy/relations.json')),
     legacy: readJson(join(root, 'data/legacy/catalog-v1.json')).records,
@@ -47,7 +46,6 @@ export function validate(src) {
 
   const ids = new Set();
   const industryIds = new Set(src.industries.map((i) => i.id));
-  const brandIds = new Set(src.brands.map((b) => b.id));
   const useCaseIds = new Set(src.useCases.map((u) => u.id));
   const relationTypes = new Set(src.relations.types.map((t) => t.id));
 
@@ -61,8 +59,6 @@ export function validate(src) {
     ids.add(r.id);
     for (const i of r.industries) if (!industryIds.has(i)) err(file, `unknown industry "${i}"`);
     for (const u of r.useCases) if (!useCaseIds.has(u)) err(file, `unknown use case "${u}"`);
-    for (const b of r.brandRelevance) if (!brandIds.has(b.brand)) err(file, `unknown brand "${b.brand}"`);
-    for (const ev of r.publicEvidence) for (const b of ev.brands) if (!brandIds.has(b)) err(file, `unknown evidence brand "${b}"`);
     if (r.origin === 'v1' && !r.legacy) err(file, 'v1 records must keep their legacy block');
     if (r.verification.status === 'unverified' && !r.needsReview) err(file, 'unverified records must set needsReview: true');
   }
@@ -79,7 +75,6 @@ export function validate(src) {
   for (const uc of src.useCases) {
     for (const layer of uc.stack) for (const o of layer.ontologies) if (!ids.has(o)) err(`use case ${uc.id}`, `unknown ontology "${o}"`);
     for (const i of uc.industries) if (!industryIds.has(i)) err(`use case ${uc.id}`, `unknown industry "${i}"`);
-    for (const b of uc.brands) if (!brandIds.has(b)) err(`use case ${uc.id}`, `unknown brand "${b}"`);
   }
 
   // Every v1 record must survive the migration, unchanged.
@@ -105,7 +100,6 @@ export function findForbidden(src) {
   };
   for (const { file, record } of src.ontologies) scan(file, record);
   scan('data/taxonomy/industries.json', src.industries);
-  scan('data/taxonomy/brands.json', src.brands);
   scan('data/taxonomy/use-cases.json', src.useCases);
   scan('data/taxonomy/relations.json', src.relations);
   scan('data/legacy/catalog-v1.json', src.legacy);
@@ -125,14 +119,12 @@ export function buildBundle(src, { generatedOn }) {
         relations: src.relations.items.length,
         industries: src.industries.length,
         useCases: src.useCases.length,
-        brands: src.brands.length,
         legacyRecords: src.legacy.length,
       },
-      disclaimer: 'Public information only. Brand relevance is an editorial assessment of potential fit unless a public evidence entry is cited. Not an official Dassault Systèmes publication.',
+      disclaimer: 'Public information only. Every fact is backed by a cited public source; verification status and date are shown on each record.',
     },
     ontologies,
     industries: src.industries,
-    brands: src.brands,
     useCases: src.useCases,
     relationTypes: src.relations.types,
     relations: src.relations.items,

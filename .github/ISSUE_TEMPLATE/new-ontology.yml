@@ -29,11 +29,6 @@ body:
   - type: textarea
     id: why
     attributes: { label: Industries and use cases it serves, description: Which industries and engineering use cases? }
-  - type: textarea
-    id: evidence
-    attributes:
-      label: Public evidence of brand adoption (optional)
-      description: Only cite public sources (product pages, public documentation, press releases). Otherwise leave empty — relevance will be marked as potential.
   - type: checkboxes
     id: confirm
     attributes:

@@ -38,14 +38,6 @@
   "useCases": [
     "general-purpose-robotics"
   ],
-  "brandRelevance": [
-    {
-      "brand": "netvibes",
-      "strength": "medium",
-      "rationale": "Formal grounding for reasoning over robotics knowledge."
-    }
-  ],
-  "publicEvidence": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "partially-verified",

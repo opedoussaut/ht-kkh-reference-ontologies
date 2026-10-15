@@ -42,19 +42,6 @@
     "personal-electronics",
     "general-purpose-robotics"
   ],
-  "brandRelevance": [
-    {
-      "brand": "delmia",
-      "strength": "medium",
-      "rationale": "Schedules, shifts and operation durations."
-    },
-    {
-      "brand": "netvibes",
-      "strength": "medium",
-      "rationale": "Temporal reasoning in knowledge graphs."
-    }
-  ],
-  "publicEvidence": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",

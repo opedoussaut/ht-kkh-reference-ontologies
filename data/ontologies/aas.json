@@ -47,35 +47,6 @@
     "general-purpose-robotics",
     "sustainability"
   ],
-  "brandRelevance": [
-    {
-      "brand": "delmia",
-      "strength": "high",
-      "rationale": "Shop-floor assets and operations exchange data through AAS submodels."
-    },
-    {
-      "brand": "enovia",
-      "strength": "high",
-      "rationale": "Product and asset lifecycle data could be published as AAS."
-    },
-    {
-      "brand": "catia",
-      "strength": "medium",
-      "rationale": "Engineering data handed over as digital nameplates and technical data submodels."
-    }
-  ],
-  "publicEvidence": [
-    {
-      "kind": "standards-membership",
-      "brands": [],
-      "statement": "Dassault Systèmes announced it joined the Industrial Digital Twin Association (IDTA), which maintains the AAS specifications.",
-      "source": {
-        "url": "https://www.3ds.com/de/newsroom/media-alerts/dassault-systemes-joins-the-industrial-digital-twin-association",
-        "title": "Dassault Systèmes newsroom (DE): joins the Industrial Digital Twin Association",
-        "type": "official"
-      }
-    }
-  ],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",

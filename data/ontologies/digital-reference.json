@@ -1,5 +1,4 @@
 {
-  "publicEvidence": [],
   "id": "digital-reference",
   "name": "Digital Reference (DR)",
   "fullName": "Digital Reference — semiconductor supply-chain ontology",
@@ -37,18 +36,6 @@
   ],
   "useCases": [
     "semiconductors"
-  ],
-  "brandRelevance": [
-    {
-      "brand": "delmia",
-      "strength": "high",
-      "rationale": "Semiconductor supply-chain planning."
-    },
-    {
-      "brand": "netvibes",
-      "strength": "medium",
-      "rationale": "Supply-chain intelligence."
-    }
   ],
   "verification": {
     "checkedOn": "2026-10-15",

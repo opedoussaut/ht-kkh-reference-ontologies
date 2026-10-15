@@ -6,7 +6,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 # Reference Ontology Atlas — generated 2026-10-15. Do not edit by hand; run `npm run build`.
-# Public information only. Brand relevance is an editorial assessment of potential fit unless a public evidence entry is cited. Not an official Dassault Systèmes publication.
+# Public information only. Every fact is backed by a cited public source; verification status and date are shown on each record.
 
 atlas:ReferenceOntology a rdfs:Class ; rdfs:label "Reference ontology" .
 atlas:Industry a rdfs:Class ; rdfs:label "Industry" .
