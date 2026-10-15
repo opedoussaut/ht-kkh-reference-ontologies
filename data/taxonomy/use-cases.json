@@ -180,9 +180,10 @@
           "layer": "Manufacturing foundations",
           "ontologies": [
             "iof-core",
-            "bfo"
+            "bfo",
+            "saref4inma"
           ],
-          "role": "Mid-level manufacturing semantics with a formal upper ontology."
+          "role": "Mid-level manufacturing semantics with a formal upper ontology, and equipment-to-product traceability."
         },
         {
           "layer": "Traceability",

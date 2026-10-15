@@ -73,5 +73,9 @@
     "stabilityStatus": "stable",
     "usageStatus": "open",
     "hasInternalWikiLink": true
-  }
+  },
+  "engineeringUses": [
+    "Describing sensing systems, their deployment and operating ranges",
+    "Documenting measurement capabilities of test rigs and instruments"
+  ]
 }

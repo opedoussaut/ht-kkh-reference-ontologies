@@ -83,5 +83,9 @@
     "stabilityStatus": "not stable",
     "usageStatus": "restricted",
     "hasInternalWikiLink": true
-  }
+  },
+  "engineeringUses": [
+    "Describing the architecture and autonomy functions of an autonomous robot in a shared vocabulary",
+    "Comparing autonomous-system designs using common concepts"
+  ]
 }

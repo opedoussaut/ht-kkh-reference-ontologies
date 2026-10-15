@@ -68,5 +68,9 @@
     "stabilityStatus": "stable",
     "usageStatus": "open",
     "hasInternalWikiLink": true
-  }
+  },
+  "engineeringUses": [
+    "Describing building devices, such as sensors and actuators, aligned with IFC element types",
+    "Linking BIM objects to the IoT devices installed in a building"
+  ]
 }

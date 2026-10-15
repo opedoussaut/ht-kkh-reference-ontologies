@@ -47,5 +47,9 @@
     ],
     "notes": ""
   },
-  "origin": "v2"
+  "origin": "v2",
+  "engineeringUses": [
+    "Managing controlled vocabularies, taxonomies and classification schemes",
+    "Mapping between the terminologies used by different teams"
+  ]
 }

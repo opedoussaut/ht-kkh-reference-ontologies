@@ -30,6 +30,7 @@ Thank you for helping keep the atlas accurate. Two rules come first:
    | `license` | `name`, `access` (`open`, `open-with-terms`, `licensed`, `unknown`), `url` |
    | `links` | `official` (required, may be `null`), optional `specification`, `repository`, `namespace`, `related` |
    | `industries`, `useCases` | ids from `data/taxonomy/` |
+   | `engineeringUses` | 1–5 short **editorial** examples of practical engineering use. Shown with an *Editorial* label; never claims of adoption or certification |
    | `verification` | `status` (`verified`, `partially-verified`, `unverified`), `checkedOn`, `sources[]`, `notes` |
    | `origin` | `v2` for new records |
 
@@ -59,6 +60,10 @@ CI (`.github/workflows/ci.yml`) runs `npm run validate` and `npm test` on every 
 - no internal-platform hosts or markers in any published file
 - generated files are up to date
 - no vendor, product or brand mappings
+
+## Before a release
+
+Run `npm run links` to check every external URL in the data. It is not part of CI because some publishers block automated clients: treat 403/429 results as items to check by hand, and fix 404/410 results.
 
 ## Review and publishing
 

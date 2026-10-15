@@ -362,6 +362,15 @@
           "type": "boolean"
         }
       }
+    },
+    "engineeringUses": {
+      "description": "EDITORIAL: practical engineering uses written by atlas editors. Not a claim of adoption.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 20
+      },
+      "maxItems": 5
     }
   }
 }

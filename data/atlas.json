@@ -5,8 +5,8 @@
     "generatedOn": "2026-10-15",
     "site": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/",
     "counts": {
-      "ontologies": 42,
-      "relations": 18,
+      "ontologies": 46,
+      "relations": 21,
       "industries": 13,
       "useCases": 5,
       "legacyRecords": 26
@@ -42,8 +42,8 @@
         "url": "https://industrialdigitaltwin.org/en/content-hub/aasspecifications"
       },
       "links": {
-        "official": "https://industrialdigitaltwin.org/en/content-hub/aas",
-        "specification": "https://industrialdigitaltwin.org/en/content-hub/aasspecifications"
+        "official": "https://industrialdigitaltwin.org/en/content-hub/aasspecifications",
+        "related": "https://industrialdigitaltwin.org/en/technology"
       },
       "formats": [
         "XML",
@@ -99,7 +99,20 @@
         "stabilityStatus": "stable",
         "usageStatus": "open",
         "hasInternalWikiLink": true
-      }
+      },
+      "corrections": [
+        {
+          "field": "official",
+          "from": "https://industrialdigitaltwin.org/en/content-hub/aas",
+          "to": "https://industrialdigitaltwin.org/en/content-hub/aasspecifications",
+          "reason": "The v1 landing page returns 404; the IDTA specification hub is the maintained entry point.",
+          "source": "https://industrialdigitaltwin.org/en/content-hub/aasspecifications"
+        }
+      ],
+      "engineeringUses": [
+        "Publishing a component digital nameplate and technical data alongside a delivered machine",
+        "Exchanging asset information between engineering tools and operations through standard submodels"
+      ]
     },
     {
       "id": "ieee-aur",
@@ -186,7 +199,11 @@
         "stabilityStatus": "not stable",
         "usageStatus": "restricted",
         "hasInternalWikiLink": true
-      }
+      },
+      "engineeringUses": [
+        "Describing the architecture and autonomy functions of an autonomous robot in a shared vocabulary",
+        "Comparing autonomous-system designs using common concepts"
+      ]
     },
     {
       "id": "bfo",
@@ -249,7 +266,11 @@
         ],
         "notes": ""
       },
-      "origin": "v2"
+      "origin": "v2",
+      "engineeringUses": [
+        "Providing a shared top-level structure when integrating ontologies from different engineering domains",
+        "Distinguishing objects, their qualities and the processes they take part in when modelling a system"
+      ]
     },
     {
       "id": "bot",
@@ -320,7 +341,11 @@
         "stabilityStatus": "stable",
         "usageStatus": "open",
         "hasInternalWikiLink": true
-      }
+      },
+      "engineeringUses": [
+        "Describing the site, building, storey and space hierarchy of a facility for a digital twin",
+        "Locating equipment, such as racks or cooling units, within building zones"
+      ]
     },
     {
       "id": "brick",
@@ -400,7 +425,11 @@
         "stabilityStatus": "stable",
         "usageStatus": "open",
         "hasInternalWikiLink": true
-      }
+      },
+      "engineeringUses": [
+        "Describing HVAC, electrical and metering points so analytics can run across buildings",
+        "Linking sensor time series to the equipment and spaces they monitor"
+      ]
     },
     {
       "id": "cco",
@@ -452,7 +481,11 @@
         ],
         "notes": ""
       },
-      "origin": "v2"
+      "origin": "v2",
+      "engineeringUses": [
+        "Modelling artefacts, their functions and the agents that use them in mission or systems analysis",
+        "Extending BFO-based models with mid-level concepts instead of creating them from scratch"
+      ]
     },
     {
       "id": "ieee-cora",
@@ -549,7 +582,11 @@
         "stabilityStatus": "stable",
         "usageStatus": "restricted",
         "hasInternalWikiLink": true
-      }
+      },
+      "engineeringUses": [
+        "Defining what counts as a robot, robotic system and robotic environment in a project glossary",
+        "Giving robotics data and requirements a formal shared vocabulary"
+      ]
     },
     {
       "id": "ieee-corax",
@@ -637,7 +674,11 @@
         "stabilityStatus": "not stable",
         "usageStatus": "restricted",
         "hasInternalWikiLink": true
-      }
+      },
+      "engineeringUses": [
+        "Capturing design and interaction concepts that are shared across robotics sub-domains",
+        "Complementing CORA when describing robot environments and interactions"
+      ]
     },
     {
       "id": "dcat",
@@ -692,7 +733,11 @@
         ],
         "notes": ""
       },
-      "origin": "v2"
+      "origin": "v2",
+      "engineeringUses": [
+        "Publishing a catalogue of engineering datasets with distributions, licences and contact points",
+        "Describing datasets offered in a data space so partners can discover them"
+      ]
     },
     {
       "id": "dcterms",
@@ -770,7 +815,11 @@
         "stabilityStatus": "stable",
         "usageStatus": "open",
         "hasInternalWikiLink": true
-      }
+      },
+      "engineeringUses": [
+        "Adding title, creator, date and licence metadata to documents and models",
+        "Using a common metadata baseline across repositories"
+      ]
     },
     {
       "id": "digital-reference",
@@ -826,7 +875,11 @@
         ],
         "notes": "Confirm the licence in the repository before reuse."
       },
-      "origin": "v2"
+      "origin": "v2",
+      "engineeringUses": [
+        "Describing semiconductor products, production and supply-chain concepts in a shared vocabulary",
+        "Supporting supply-chain data exchange between partners in the semiconductor value chain"
+      ]
     },
     {
       "id": "dmtf-cim",
@@ -918,7 +971,11 @@
         "stabilityStatus": "stable",
         "usageStatus": "licensed",
         "hasInternalWikiLink": true
-      }
+      },
+      "engineeringUses": [
+        "Inventorying servers, chassis, power supplies and cooling devices in a data centre",
+        "Mapping infrastructure management data into a facility or operations model"
+      ]
     },
     {
       "id": "eclass",
@@ -1006,7 +1063,11 @@
         "stabilityStatus": "stable",
         "usageStatus": "licensed",
         "hasInternalWikiLink": true
-      }
+      },
+      "engineeringUses": [
+        "Classifying purchased parts and describing them with standard properties",
+        "Giving AAS submodel elements standardised semantic identifiers (IRDIs)"
+      ]
     },
     {
       "id": "eli",
@@ -1089,7 +1150,11 @@
         "stabilityStatus": "stable",
         "usageStatus": "open",
         "hasInternalWikiLink": true
-      }
+      },
+      "engineeringUses": [
+        "Referencing the exact legal act behind a product requirement or compliance check",
+        "Linking requirements management to the legislation they originate from"
+      ]
     },
     {
       "id": "emmo",
@@ -1151,7 +1216,11 @@
         ],
         "notes": "Domain modules continue to evolve after 1.0.0."
       },
-      "origin": "v2"
+      "origin": "v2",
+      "engineeringUses": [
+        "Structuring materials characterisation and modelling data so it can be reused across tools",
+        "Describing material models used in simulation with their physical quantities"
+      ]
     },
     {
       "id": "geosparql",
@@ -1238,7 +1307,11 @@
         "stabilityStatus": "stable",
         "usageStatus": "open",
         "hasInternalWikiLink": true
-      }
+      },
+      "engineeringUses": [
+        "Representing site footprints, assets and networks with geometries that can be queried spatially",
+        "Running spatial queries such as \"assets within this zone\" over a knowledge graph"
+      ]
     },
     {
       "id": "goodrelations",
@@ -1321,7 +1394,11 @@
         "stabilityStatus": "stable",
         "usageStatus": "open",
         "hasInternalWikiLink": true
-      }
+      },
+      "engineeringUses": [
+        "Interpreting legacy e-commerce product and offer markup",
+        "Understanding the origin of schema.org product and offer terms"
+      ]
     },
     {
       "id": "gs1-webvoc",
@@ -1419,7 +1496,11 @@
         "stabilityStatus": "stable",
         "usageStatus": "licensed",
         "hasInternalWikiLink": true
-      }
+      },
+      "engineeringUses": [
+        "Publishing product master data (identifiers, dimensions, composition) on the web",
+        "Linking product identity (GTIN) to traceability and passport data"
+      ]
     },
     {
       "id": "iec-cim",
@@ -1478,7 +1559,11 @@
         ],
         "notes": "Added in v2 to separate the power-system CIM from the DMTF CIM. Confirm the current CGMES version with ENTSO-E."
       },
-      "origin": "v2"
+      "origin": "v2",
+      "engineeringUses": [
+        "Exchanging power-grid models between transmission and distribution operators (e.g. CGMES)",
+        "Connecting a facility’s grid connection to the utility network model"
+      ]
     },
     {
       "id": "ifcowl",
@@ -1504,11 +1589,11 @@
       "license": {
         "name": "CC BY 3.0",
         "access": "open",
-        "url": "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2/OWL/index.html"
+        "url": "https://technical.buildingsmart.org/standards/ifc/ifc-formats/ifcowl/"
       },
       "links": {
         "official": "https://technical.buildingsmart.org/standards/ifc/ifc-formats/ifcowl/",
-        "specification": "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2/OWL/index.html"
+        "specification": "https://technical.buildingsmart.org/standards/ifc/ifc-schema-specifications/"
       },
       "formats": [
         "OWL",
@@ -1523,20 +1608,24 @@
       ],
       "verification": {
         "checkedOn": "2026-10-15",
-        "status": "verified",
+        "status": "partially-verified",
         "sources": [
           {
             "url": "https://technical.buildingsmart.org/standards/ifc/ifc-formats/ifcowl/",
             "title": "buildingSMART — What is ifcOWL?"
           },
           {
-            "url": "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2/OWL/index.html",
-            "title": "ifcOWL IFC4 ADD2"
+            "url": "https://technical.buildingsmart.org/standards/ifc/ifc-schema-specifications/",
+            "title": "buildingSMART IFC schema specifications"
           }
         ],
-        "notes": "The ifcOWL authors advise against production use; consider bSDD."
+        "notes": "The ifcOWL authors advise against production use; consider bSDD. The former IFC4 ADD2 ontology page (which stated CC BY 3.0) no longer resolves; confirm the licence on the current schema pages."
       },
-      "origin": "v2"
+      "origin": "v2",
+      "engineeringUses": [
+        "Querying IFC building models with SPARQL for research or prototyping",
+        "Linking BIM elements to other linked-data models of a facility"
+      ]
     },
     {
       "id": "iof-core",
@@ -1597,7 +1686,11 @@
         ],
         "notes": ""
       },
-      "origin": "v2"
+      "origin": "v2",
+      "engineeringUses": [
+        "Modelling manufacturing processes, resources and products with a formal mid-level ontology",
+        "Building maintenance or supply-chain ontologies on a shared industrial core"
+      ]
     },
     {
       "id": "iso-15926-14",
@@ -1651,7 +1744,69 @@
         ],
         "notes": "Confirm the publication year in the ISO catalogue."
       },
-      "origin": "v2"
+      "origin": "v2",
+      "engineeringUses": [
+        "Integrating process-plant lifecycle data from design, construction and operations",
+        "Handing over plant information between EPC contractors and owner-operators"
+      ]
+    },
+    {
+      "id": "obi",
+      "name": "OBI",
+      "fullName": "Ontology for Biomedical Investigations",
+      "summary": "Community ontology for describing scientific investigations: assays, devices, protocols, objectives and data transformations. It defines more than 2,500 terms and is used for biomedical and laboratory data integration.",
+      "publisher": "OBI Consortium",
+      "publisherType": "consortium",
+      "kind": "ontology",
+      "layer": "domain",
+      "topics": [
+        "scientific investigations",
+        "assays",
+        "laboratory devices",
+        "protocols"
+      ],
+      "version": {
+        "label": "Continuously released (see repository)",
+        "date": null,
+        "status": "published"
+      },
+      "maturity": "stable",
+      "license": {
+        "name": "CC BY 4.0",
+        "access": "open",
+        "url": "https://github.com/obi-ontology/obi"
+      },
+      "links": {
+        "official": "https://obi-ontology.org/",
+        "repository": "https://github.com/obi-ontology/obi"
+      },
+      "formats": [
+        "OWL"
+      ],
+      "industries": [
+        "life-sciences-healthcare"
+      ],
+      "useCases": [],
+      "verification": {
+        "status": "partially-verified",
+        "checkedOn": "2026-10-15",
+        "sources": [
+          {
+            "url": "https://obi-ontology.org/",
+            "title": "OBI website"
+          },
+          {
+            "url": "https://github.com/obi-ontology/obi",
+            "title": "OBI repository (CC BY 4.0)"
+          }
+        ],
+        "notes": "The current release version is not stated on the website or repository front page."
+      },
+      "origin": "v2",
+      "engineeringUses": [
+        "Describing laboratory assays, instruments and protocols consistently across studies",
+        "Annotating experimental data for integration and reuse"
+      ]
     },
     {
       "id": "oeo",
@@ -1709,7 +1864,11 @@
         ],
         "notes": ""
       },
-      "origin": "v2"
+      "origin": "v2",
+      "engineeringUses": [
+        "Describing energy-system models, scenarios and their assumptions consistently",
+        "Comparing results from different energy-system models"
+      ]
     },
     {
       "id": "oriont",
@@ -1784,7 +1943,10 @@
         "stabilityStatus": "not stable",
         "usageStatus": "restricted",
         "hasInternalWikiLink": true
-      }
+      },
+      "engineeringUses": [
+        "Candidate vocabulary for life-cycle sustainability assessment indicators (pending a public source)"
+      ]
     },
     {
       "id": "owl-time",
@@ -1861,7 +2023,11 @@
         "stabilityStatus": "stable",
         "usageStatus": "open",
         "hasInternalWikiLink": true
-      }
+      },
+      "engineeringUses": [
+        "Representing instants, intervals and durations for schedules and operation logs",
+        "Reasoning about the order and overlap of events"
+      ]
     },
     {
       "id": "ieee-pos",
@@ -1950,7 +2116,11 @@
         "stabilityStatus": "not stable",
         "usageStatus": "restricted",
         "hasInternalWikiLink": true
-      }
+      },
+      "engineeringUses": [
+        "Describing positions, orientations and poses with explicit reference frames",
+        "Exchanging spatial information between perception, planning and simulation components"
+      ]
     },
     {
       "id": "prov-o",
@@ -2028,7 +2198,11 @@
         "stabilityStatus": "stable",
         "usageStatus": "open",
         "hasInternalWikiLink": true
-      }
+      },
+      "engineeringUses": [
+        "Recording which data, tools and people produced a simulation result or report",
+        "Tracing a sustainability or quality claim back to its source data"
+      ]
     },
     {
       "id": "qudt",
@@ -2111,7 +2285,11 @@
         "stabilityStatus": "stable",
         "usageStatus": "open",
         "hasInternalWikiLink": true
-      }
+      },
+      "engineeringUses": [
+        "Attaching units and quantity kinds to engineering parameters to avoid unit errors",
+        "Converting values between unit systems in data pipelines"
+      ]
     },
     {
       "id": "ieee-rtr",
@@ -2198,7 +2376,11 @@
         "stabilityStatus": "not stable",
         "usageStatus": "restricted",
         "hasInternalWikiLink": true
-      }
+      },
+      "engineeringUses": [
+        "Representing tasks, sub-tasks and actions so planners and engineers share one task model",
+        "Documenting robot tasks for reuse across different robot platforms"
+      ]
     },
     {
       "id": "ieee-rparts",
@@ -2286,7 +2468,11 @@
         "stabilityStatus": "not stable",
         "usageStatus": "restricted",
         "hasInternalWikiLink": true
-      }
+      },
+      "engineeringUses": [
+        "Describing a robot’s decomposition into parts such as actuators, sensors and links",
+        "Mapping physical robot components to their functional roles"
+      ]
     },
     {
       "id": "saref-core",
@@ -2368,7 +2554,67 @@
         "stabilityStatus": "stable",
         "usageStatus": "open",
         "hasInternalWikiLink": true
-      }
+      },
+      "engineeringUses": [
+        "Describing what a connected device does, its functions and the commands it accepts",
+        "Making device data from different vendors interoperable"
+      ]
+    },
+    {
+      "id": "saref4auto",
+      "name": "SAREF4AUTO",
+      "fullName": "SAREF extension for the Automotive domain",
+      "summary": "OWL-DL extension of SAREF for the automotive domain. It adapts the ETSI ITS common data dictionary and covers use cases such as platooning and automated valet parking.",
+      "publisher": "ETSI",
+      "publisherType": "standards-body",
+      "kind": "ontology",
+      "layer": "domain",
+      "topics": [
+        "connected vehicles",
+        "ITS",
+        "platooning",
+        "automated parking"
+      ],
+      "standardRef": "ETSI TS 103 410-7",
+      "version": {
+        "label": "SAREF4AUTO v2.1.1 (ETSI TS 103 410-7 V2.1.1)",
+        "date": "2020-07-27",
+        "status": "published"
+      },
+      "maturity": "standard",
+      "license": {
+        "name": "ETSI Software License (BSD-3-Clause style)",
+        "access": "open",
+        "url": "https://forge.etsi.org/etsi-software-license"
+      },
+      "links": {
+        "official": "https://saref.etsi.org/saref4auto/",
+        "namespace": "https://saref.etsi.org/saref4auto/"
+      },
+      "formats": [
+        "OWL",
+        "RDF/Turtle"
+      ],
+      "industries": [
+        "transportation-mobility"
+      ],
+      "useCases": [],
+      "verification": {
+        "status": "verified",
+        "checkedOn": "2026-10-15",
+        "sources": [
+          {
+            "url": "https://saref.etsi.org/saref4auto/",
+            "title": "ETSI SAREF4AUTO"
+          }
+        ],
+        "notes": "First published 2020-07-27; page last modified 2025-04-10."
+      },
+      "origin": "v2",
+      "engineeringUses": [
+        "Describing connected-vehicle data and ITS messages semantically",
+        "Modelling cooperative driving scenarios such as platooning"
+      ]
     },
     {
       "id": "saref4bldg",
@@ -2440,7 +2686,70 @@
         "stabilityStatus": "stable",
         "usageStatus": "open",
         "hasInternalWikiLink": true
-      }
+      },
+      "engineeringUses": [
+        "Describing building devices, such as sensors and actuators, aligned with IFC element types",
+        "Linking BIM objects to the IoT devices installed in a building"
+      ]
+    },
+    {
+      "id": "saref4city",
+      "name": "SAREF4CITY",
+      "fullName": "SAREF extension for Smart Cities",
+      "summary": "OWL-DL extension of SAREF with general concepts for smart-city data in the IoT domain, such as city objects, administrative areas, public services and key performance indicators.",
+      "publisher": "ETSI",
+      "publisherType": "standards-body",
+      "kind": "ontology",
+      "layer": "domain",
+      "topics": [
+        "smart city",
+        "IoT",
+        "public services",
+        "KPIs"
+      ],
+      "standardRef": "ETSI TS 103 410-4",
+      "version": {
+        "label": "SAREF4CITY v2.1.1 (ETSI TS 103 410-4 V2.1.1)",
+        "date": "2020-06-05",
+        "status": "published"
+      },
+      "maturity": "standard",
+      "license": {
+        "name": "ETSI Software License (BSD-3-Clause style)",
+        "access": "open",
+        "url": "https://forge.etsi.org/etsi-software-license"
+      },
+      "links": {
+        "official": "https://saref.etsi.org/saref4city/",
+        "namespace": "https://saref.etsi.org/saref4city/"
+      },
+      "formats": [
+        "OWL",
+        "RDF/Turtle"
+      ],
+      "industries": [
+        "cities-public-services",
+        "infrastructure-energy-materials"
+      ],
+      "useCases": [
+        "sustainability"
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedOn": "2026-10-15",
+        "sources": [
+          {
+            "url": "https://saref.etsi.org/saref4city/",
+            "title": "ETSI SAREF4CITY"
+          }
+        ],
+        "notes": "First published 2020-06-05; page last modified 2025-04-11."
+      },
+      "origin": "v2",
+      "engineeringUses": [
+        "Describing city objects, public services and KPIs for smart-city platforms",
+        "Combining IoT data across city domains"
+      ]
     },
     {
       "id": "saref4ener",
@@ -2497,7 +2806,71 @@
         ],
         "notes": ""
       },
-      "origin": "v2"
+      "origin": "v2",
+      "engineeringUses": [
+        "Exchanging flexibility and power profiles between appliances and energy managers",
+        "Supporting demand response between facilities and the grid"
+      ]
+    },
+    {
+      "id": "saref4inma",
+      "name": "SAREF4INMA",
+      "fullName": "SAREF extension for Industry and Manufacturing",
+      "summary": "SAREF extension for industry and manufacturing. It improves interoperability between production equipment and lets organisations trace produced items back to equipment, batches, materials and production times.",
+      "publisher": "ETSI",
+      "publisherType": "standards-body",
+      "kind": "ontology",
+      "layer": "domain",
+      "topics": [
+        "manufacturing",
+        "production equipment",
+        "traceability",
+        "batches"
+      ],
+      "standardRef": "ETSI TS 103 410-5",
+      "version": {
+        "label": "SAREF4INMA v2.1.1 (ETSI TS 103 410-5 V2.1.1)",
+        "date": "2025-04-25",
+        "status": "published"
+      },
+      "maturity": "standard",
+      "license": {
+        "name": "ETSI Software License (BSD-3-Clause style)",
+        "access": "open",
+        "url": "https://forge.etsi.org/etsi-software-license"
+      },
+      "links": {
+        "official": "https://saref.etsi.org/saref4inma/",
+        "namespace": "https://saref.etsi.org/saref4inma/"
+      },
+      "formats": [
+        "OWL",
+        "RDF/Turtle"
+      ],
+      "industries": [
+        "industrial-equipment",
+        "high-tech"
+      ],
+      "useCases": [
+        "semiconductors",
+        "general-purpose-robotics"
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedOn": "2026-10-15",
+        "sources": [
+          {
+            "url": "https://saref.etsi.org/saref4inma/",
+            "title": "ETSI SAREF4INMA"
+          }
+        ],
+        "notes": ""
+      },
+      "origin": "v2",
+      "engineeringUses": [
+        "Tracing produced items back to the equipment, batch and materials that made them",
+        "Describing production equipment and its measurements in a factory"
+      ]
     },
     {
       "id": "schema-org",
@@ -2562,7 +2935,11 @@
         ],
         "notes": ""
       },
-      "origin": "v2"
+      "origin": "v2",
+      "engineeringUses": [
+        "Publishing product and organisation data as structured data on the web",
+        "Providing broadly understood baseline terms for linked data"
+      ]
     },
     {
       "id": "skos",
@@ -2613,7 +2990,11 @@
         ],
         "notes": ""
       },
-      "origin": "v2"
+      "origin": "v2",
+      "engineeringUses": [
+        "Managing controlled vocabularies, taxonomies and classification schemes",
+        "Mapping between the terminologies used by different teams"
+      ]
     },
     {
       "id": "sosa",
@@ -2690,7 +3071,11 @@
         "stabilityStatus": "stable",
         "usageStatus": "open",
         "hasInternalWikiLink": true
-      }
+      },
+      "engineeringUses": [
+        "Describing sensor observations, the property observed and the feature of interest",
+        "Recording actuations and samples in test or operations data"
+      ]
     },
     {
       "id": "ssn",
@@ -2767,7 +3152,11 @@
         "stabilityStatus": "stable",
         "usageStatus": "open",
         "hasInternalWikiLink": true
-      }
+      },
+      "engineeringUses": [
+        "Describing sensing systems, their deployment and operating ranges",
+        "Documenting measurement capabilities of test rigs and instruments"
+      ]
     },
     {
       "id": "step-ap242",
@@ -2828,7 +3217,11 @@
         ],
         "notes": "An information model in EXPRESS, not an OWL ontology. A further revision is at committee-draft stage."
       },
-      "origin": "v2"
+      "origin": "v2",
+      "engineeringUses": [
+        "Exchanging 3D CAD models with PMI between design and manufacturing partners",
+        "Archiving model-based definition data in a neutral format"
+      ]
     },
     {
       "id": "sumo",
@@ -2909,7 +3302,11 @@
         "stabilityStatus": "stable",
         "usageStatus": "open",
         "hasInternalWikiLink": true
-      }
+      },
+      "engineeringUses": [
+        "Providing formal definitions of general concepts for reasoning systems",
+        "Serving as the upper ontology for the IEEE 1872 robotics ontologies"
+      ]
     },
     {
       "id": "sumo-cora",
@@ -2990,7 +3387,10 @@
         "stabilityStatus": "not stable",
         "usageStatus": "restricted",
         "hasInternalWikiLink": true
-      }
+      },
+      "engineeringUses": [
+        "Grounding robotics concepts in SUMO for formal reasoning"
+      ]
     },
     {
       "id": "sysml-v2",
@@ -3054,7 +3454,11 @@
         ],
         "notes": "A modelling language with formal semantics rather than an OWL ontology."
       },
-      "origin": "v2"
+      "origin": "v2",
+      "engineeringUses": [
+        "Modelling requirements, architecture and behaviour of a system in a standard textual and graphical language",
+        "Exchanging system models between tools through the standard API"
+      ]
     },
     {
       "id": "vsso",
@@ -3104,7 +3508,10 @@
         ],
         "notes": "Listed for awareness; not maintained."
       },
-      "origin": "v2"
+      "origin": "v2",
+      "engineeringUses": [
+        "Understanding semantic modelling of vehicle signals (historical reference; draft discontinued)"
+      ]
     }
   ],
   "industries": [
@@ -3368,9 +3775,10 @@
           "layer": "Manufacturing foundations",
           "ontologies": [
             "iof-core",
-            "bfo"
+            "bfo",
+            "saref4inma"
           ],
-          "role": "Mid-level manufacturing semantics with a formal upper ontology."
+          "role": "Mid-level manufacturing semantics with a formal upper ontology, and equipment-to-product traceability."
         },
         {
           "layer": "Traceability",
@@ -3684,6 +4092,33 @@
       "evidence": {
         "url": "https://saref.etsi.org/saref4bldg/",
         "note": "ETSI states SAREF4BLDG is created based on the Industry Foundation Classes (IFC) standard."
+      }
+    },
+    {
+      "source": "saref4inma",
+      "target": "saref-core",
+      "type": "extends",
+      "evidence": {
+        "url": "https://saref.etsi.org/saref4inma/",
+        "note": "ETSI TS 103 410-5: SAREF extension."
+      }
+    },
+    {
+      "source": "saref4city",
+      "target": "saref-core",
+      "type": "extends",
+      "evidence": {
+        "url": "https://saref.etsi.org/saref4city/",
+        "note": "ETSI TS 103 410-4: SAREF extension."
+      }
+    },
+    {
+      "source": "saref4auto",
+      "target": "saref-core",
+      "type": "extends",
+      "evidence": {
+        "url": "https://saref.etsi.org/saref4auto/",
+        "note": "ETSI TS 103 410-7: SAREF extension."
       }
     }
   ]

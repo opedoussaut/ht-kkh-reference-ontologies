@@ -52,5 +52,9 @@
     ],
     "notes": "Confirm the licence in the repository before reuse."
   },
-  "origin": "v2"
+  "origin": "v2",
+  "engineeringUses": [
+    "Describing semiconductor products, production and supply-chain concepts in a shared vocabulary",
+    "Supporting supply-chain data exchange between partners in the semiconductor value chain"
+  ]
 }

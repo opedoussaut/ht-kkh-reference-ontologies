@@ -73,5 +73,9 @@
     "stabilityStatus": "stable",
     "usageStatus": "open",
     "hasInternalWikiLink": true
-  }
+  },
+  "engineeringUses": [
+    "Describing sensor observations, the property observed and the feature of interest",
+    "Recording actuations and samples in test or operations data"
+  ]
 }

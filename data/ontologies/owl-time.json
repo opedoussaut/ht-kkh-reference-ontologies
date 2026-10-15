@@ -73,5 +73,9 @@
     "stabilityStatus": "stable",
     "usageStatus": "open",
     "hasInternalWikiLink": true
-  }
+  },
+  "engineeringUses": [
+    "Representing instants, intervals and durations for schedules and operation logs",
+    "Reasoning about the order and overlap of events"
+  ]
 }

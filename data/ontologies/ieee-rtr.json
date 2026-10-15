@@ -83,5 +83,9 @@
     "stabilityStatus": "not stable",
     "usageStatus": "restricted",
     "hasInternalWikiLink": true
-  }
+  },
+  "engineeringUses": [
+    "Representing tasks, sub-tasks and actions so planners and engineers share one task model",
+    "Documenting robot tasks for reuse across different robot platforms"
+  ]
 }

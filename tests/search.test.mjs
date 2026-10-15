@@ -72,3 +72,17 @@ test('URL state round-trips', () => {
   const back = stateFromParams(paramsFromState(s));
   assert.deepEqual(back, s);
 });
+
+test('format facet normalises publisher wording into families', async () => {
+  const { formatFamilies } = await import('../assets/js/lib/search.js');
+  const byId = Object.fromEntries(data.ontologies.map((o) => [o.id, o]));
+  assert.deepEqual(formatFamilies(byId['step-ap242']).sort(), ['express', 'xml']);
+  assert.ok(formatFamilies(byId.brick).includes('shacl'));
+  assert.ok(!formatFamilies(byId.dcat).includes('json'), 'JSON-LD is RDF, not plain JSON');
+  const owl = applyFilters(data.ontologies, { format: ['owl'] });
+  assert.ok(owl.length > 20);
+});
+
+test('engineering uses are searchable', () => {
+  assert.ok(ids('demand response').includes('saref4ener'));
+});

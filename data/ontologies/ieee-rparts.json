@@ -84,5 +84,9 @@
     "stabilityStatus": "not stable",
     "usageStatus": "restricted",
     "hasInternalWikiLink": true
-  }
+  },
+  "engineeringUses": [
+    "Describing a robot’s decomposition into parts such as actuators, sensors and links",
+    "Mapping physical robot components to their functional roles"
+  ]
 }

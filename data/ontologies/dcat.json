@@ -51,5 +51,9 @@
     ],
     "notes": ""
   },
-  "origin": "v2"
+  "origin": "v2",
+  "engineeringUses": [
+    "Publishing a catalogue of engineering datasets with distributions, licences and contact points",
+    "Describing datasets offered in a data space so partners can discover them"
+  ]
 }

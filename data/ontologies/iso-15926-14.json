@@ -50,5 +50,9 @@
     ],
     "notes": "Confirm the publication year in the ISO catalogue."
   },
-  "origin": "v2"
+  "origin": "v2",
+  "engineeringUses": [
+    "Integrating process-plant lifecycle data from design, construction and operations",
+    "Handing over plant information between EPC contractors and owner-operators"
+  ]
 }

@@ -79,5 +79,9 @@
     "stabilityStatus": "stable",
     "usageStatus": "open",
     "hasInternalWikiLink": true
-  }
+  },
+  "engineeringUses": [
+    "Attaching units and quantity kinds to engineering parameters to avoid unit errors",
+    "Converting values between unit systems in data pipelines"
+  ]
 }

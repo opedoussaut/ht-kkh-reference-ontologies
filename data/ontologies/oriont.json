@@ -71,5 +71,8 @@
     "stabilityStatus": "not stable",
     "usageStatus": "restricted",
     "hasInternalWikiLink": true
-  }
+  },
+  "engineeringUses": [
+    "Candidate vocabulary for life-cycle sustainability assessment indicators (pending a public source)"
+  ]
 }

@@ -79,5 +79,9 @@
     "stabilityStatus": "stable",
     "usageStatus": "open",
     "hasInternalWikiLink": true
-  }
+  },
+  "engineeringUses": [
+    "Interpreting legacy e-commerce product and offer markup",
+    "Understanding the origin of schema.org product and offer terms"
+  ]
 }

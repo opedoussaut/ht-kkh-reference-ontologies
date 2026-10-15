@@ -78,5 +78,9 @@
     "stabilityStatus": "stable",
     "usageStatus": "open",
     "hasInternalWikiLink": true
-  }
+  },
+  "engineeringUses": [
+    "Describing what a connected device does, its functions and the commands it accepts",
+    "Making device data from different vendors interoperable"
+  ]
 }

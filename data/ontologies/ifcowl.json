@@ -22,11 +22,11 @@
   "license": {
     "name": "CC BY 3.0",
     "access": "open",
-    "url": "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2/OWL/index.html"
+    "url": "https://technical.buildingsmart.org/standards/ifc/ifc-formats/ifcowl/"
   },
   "links": {
     "official": "https://technical.buildingsmart.org/standards/ifc/ifc-formats/ifcowl/",
-    "specification": "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2/OWL/index.html"
+    "specification": "https://technical.buildingsmart.org/standards/ifc/ifc-schema-specifications/"
   },
   "formats": [
     "OWL",
@@ -41,18 +41,22 @@
   ],
   "verification": {
     "checkedOn": "2026-10-15",
-    "status": "verified",
+    "status": "partially-verified",
     "sources": [
       {
         "url": "https://technical.buildingsmart.org/standards/ifc/ifc-formats/ifcowl/",
         "title": "buildingSMART — What is ifcOWL?"
       },
       {
-        "url": "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2/OWL/index.html",
-        "title": "ifcOWL IFC4 ADD2"
+        "url": "https://technical.buildingsmart.org/standards/ifc/ifc-schema-specifications/",
+        "title": "buildingSMART IFC schema specifications"
       }
     ],
-    "notes": "The ifcOWL authors advise against production use; consider bSDD."
+    "notes": "The ifcOWL authors advise against production use; consider bSDD. The former IFC4 ADD2 ontology page (which stated CC BY 3.0) no longer resolves; confirm the licence on the current schema pages."
   },
-  "origin": "v2"
+  "origin": "v2",
+  "engineeringUses": [
+    "Querying IFC building models with SPARQL for research or prototyping",
+    "Linking BIM elements to other linked-data models of a facility"
+  ]
 }

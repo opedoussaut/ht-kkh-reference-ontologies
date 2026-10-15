@@ -77,5 +77,8 @@
     "stabilityStatus": "not stable",
     "usageStatus": "restricted",
     "hasInternalWikiLink": true
-  }
+  },
+  "engineeringUses": [
+    "Grounding robotics concepts in SUMO for formal reasoning"
+  ]
 }

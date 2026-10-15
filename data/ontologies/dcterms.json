@@ -74,5 +74,9 @@
     "stabilityStatus": "stable",
     "usageStatus": "open",
     "hasInternalWikiLink": true
-  }
+  },
+  "engineeringUses": [
+    "Adding title, creator, date and licence metadata to documents and models",
+    "Using a common metadata baseline across repositories"
+  ]
 }

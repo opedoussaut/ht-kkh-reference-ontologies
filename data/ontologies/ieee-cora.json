@@ -93,5 +93,9 @@
     "stabilityStatus": "stable",
     "usageStatus": "restricted",
     "hasInternalWikiLink": true
-  }
+  },
+  "engineeringUses": [
+    "Defining what counts as a robot, robotic system and robotic environment in a project glossary",
+    "Giving robotics data and requirements a formal shared vocabulary"
+  ]
 }

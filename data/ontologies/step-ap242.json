@@ -57,5 +57,9 @@
     ],
     "notes": "An information model in EXPRESS, not an OWL ontology. A further revision is at committee-draft stage."
   },
-  "origin": "v2"
+  "origin": "v2",
+  "engineeringUses": [
+    "Exchanging 3D CAD models with PMI between design and manufacturing partners",
+    "Archiving model-based definition data in a neutral format"
+  ]
 }

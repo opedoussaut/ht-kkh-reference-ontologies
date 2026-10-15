@@ -84,5 +84,9 @@
     "stabilityStatus": "stable",
     "usageStatus": "licensed",
     "hasInternalWikiLink": true
-  }
+  },
+  "engineeringUses": [
+    "Classifying purchased parts and describing them with standard properties",
+    "Giving AAS submodel elements standardised semantic identifiers (IRDIs)"
+  ]
 }

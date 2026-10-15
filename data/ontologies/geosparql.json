@@ -83,5 +83,9 @@
     "stabilityStatus": "stable",
     "usageStatus": "open",
     "hasInternalWikiLink": true
-  }
+  },
+  "engineeringUses": [
+    "Representing site footprints, assets and networks with geometries that can be queried spatially",
+    "Running spatial queries such as \"assets within this zone\" over a knowledge graph"
+  ]
 }

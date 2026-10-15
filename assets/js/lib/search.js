@@ -39,7 +39,7 @@ export function buildIndex(ontologies, lookups = {}) {
         ...o.useCases.map((u) => ucName[u] || u),
         o.kind, o.layer, o.maturity, ...o.formats,
       ].join(' '),
-      summary: o.summary,
+      summary: [o.summary, ...(o.engineeringUses || [])].join(' '),
     };
     const tokens = {};
     for (const [f] of FIELDS) tokens[f] = tokenize(fields[f]);
@@ -91,11 +91,29 @@ export function search(index, query) {
   return results.sort((a, b) => b.score - a.score || a.id.localeCompare(b.id));
 }
 
+// Normalised format families for the Format facet (records keep the publisher's wording in `formats`).
+const FORMAT_FAMILIES = [
+  ['owl', /\bOWL\b/i],
+  ['rdf', /RDF|Turtle|JSON-LD|N-Triples|RDFa|Microdata/i],
+  ['shacl', /SHACL/i],
+  ['xml', /\bXML\b|XMI/i],
+  ['json', /\bJSON\b(?!-LD)/i],
+  ['uml', /UML|MOF/i],
+  ['express', /EXPRESS|Part 21/i],
+  ['logic', /SUO-KIF|Common Logic|TPTP/i],
+  ['csv', /CSV/i],
+];
+export function formatFamilies(o) {
+  const text = o.formats.join(' | ');
+  return FORMAT_FAMILIES.filter(([, re]) => re.test(text)).map(([k]) => k);
+}
+
 export const FACETS = [
   { key: 'industry', label: 'Industry', get: (o) => o.industries },
   { key: 'useCase', label: 'Use case', get: (o) => o.useCases },
   { key: 'layer', label: 'Layer', get: (o) => [o.layer] },
   { key: 'kind', label: 'Artefact type', get: (o) => [o.kind] },
+  { key: 'format', label: 'Format', get: formatFamilies },
   { key: 'maturity', label: 'Maturity', get: (o) => [o.maturity] },
   { key: 'access', label: 'Licence access', get: (o) => [o.license.access] },
   { key: 'verification', label: 'Verification', get: (o) => [o.verification.status] },

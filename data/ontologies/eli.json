@@ -79,5 +79,9 @@
     "stabilityStatus": "stable",
     "usageStatus": "open",
     "hasInternalWikiLink": true
-  }
+  },
+  "engineeringUses": [
+    "Referencing the exact legal act behind a product requirement or compliance check",
+    "Linking requirements management to the legislation they originate from"
+  ]
 }

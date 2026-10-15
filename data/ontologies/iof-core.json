@@ -57,5 +57,9 @@
     ],
     "notes": ""
   },
-  "origin": "v2"
+  "origin": "v2",
+  "engineeringUses": [
+    "Modelling manufacturing processes, resources and products with a formal mid-level ontology",
+    "Building maintenance or supply-chain ontologies on a shared industrial core"
+  ]
 }

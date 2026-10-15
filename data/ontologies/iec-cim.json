@@ -55,5 +55,9 @@
     ],
     "notes": "Added in v2 to separate the power-system CIM from the DMTF CIM. Confirm the current CGMES version with ENTSO-E."
   },
-  "origin": "v2"
+  "origin": "v2",
+  "engineeringUses": [
+    "Exchanging power-grid models between transmission and distribution operators (e.g. CGMES)",
+    "Connecting a facility’s grid connection to the utility network model"
+  ]
 }

@@ -74,5 +74,9 @@
     "stabilityStatus": "stable",
     "usageStatus": "open",
     "hasInternalWikiLink": true
-  }
+  },
+  "engineeringUses": [
+    "Recording which data, tools and people produced a simulation result or report",
+    "Tracing a sustainability or quality claim back to its source data"
+  ]
 }

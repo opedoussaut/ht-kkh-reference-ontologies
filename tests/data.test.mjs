@@ -96,6 +96,28 @@ test('the atlas is vendor-neutral: no brand fields or vendor product names in th
   }
   const vendor = /dassault|3ds\.com|\b(catia|simulia|enovia|delmia|netvibes|biovia|geovia|3dexcite|solidworks)\b/i;
   const siteFiles = ['index.html', 'data/atlas.json', 'htkkh_reference_ontologies_map_catalog.json', 'htkkh_reference_ontologies_map.ttl'];
-  for (const file of [...walk(join(ROOT, 'assets')), ...walk(join(ROOT, 'data/taxonomy'))]) siteFiles.push(relative(ROOT, file));
+  for (const file of [...walk(join(ROOT, 'assets')), ...walk(join(ROOT, 'data/taxonomy'))]) if (/\.(js|css|json|svg|html)$/.test(file)) siteFiles.push(relative(ROOT, file));
   for (const rel of siteFiles) assert.ok(!vendor.test(readFileSync(join(ROOT, rel), 'utf8')), `${rel} mentions a vendor product`);
+});
+
+test('no duplicate ontology names or official links', () => {
+  const recs = src.ontologies.map((o) => o.record);
+  const names = recs.map((r) => r.name.toLowerCase());
+  assert.equal(new Set(names).size, names.length, 'duplicate names');
+  // Shared official pages are allowed only for modules of one standard (IEEE 1872, W3C SSN/SOSA).
+  const allowShared = new Set(['ieee-cora', 'ieee-corax', 'ieee-pos', 'ieee-rparts', 'sumo-cora', 'sosa', 'ssn']);
+  const seen = new Map();
+  for (const r of recs) {
+    if (!r.links.official || allowShared.has(r.id)) continue;
+    assert.ok(!seen.has(r.links.official), `${r.id} duplicates the official link of ${seen.get(r.links.official)}`);
+    seen.set(r.links.official, r.id);
+  }
+});
+
+test('editorial engineering uses exist for every record and stay out of verified fields', () => {
+  for (const { record } of src.ontologies) {
+    assert.ok(record.engineeringUses?.length >= 1, `${record.id} lacks engineeringUses`);
+    for (const u of record.engineeringUses) assert.ok(!/certif|endorse|guarantee/i.test(u), `${record.id}: editorial text must not imply certification`);
+  }
+  assert.match(src.schema.properties.engineeringUses.description, /EDITORIAL/);
 });

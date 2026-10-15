@@ -85,5 +85,9 @@
     "stabilityStatus": "not stable",
     "usageStatus": "restricted",
     "hasInternalWikiLink": true
-  }
+  },
+  "engineeringUses": [
+    "Describing positions, orientations and poses with explicit reference frames",
+    "Exchanging spatial information between perception, planning and simulation components"
+  ]
 }

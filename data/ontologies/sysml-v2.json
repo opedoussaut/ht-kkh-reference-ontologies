@@ -60,5 +60,9 @@
     ],
     "notes": "A modelling language with formal semantics rather than an OWL ontology."
   },
-  "origin": "v2"
+  "origin": "v2",
+  "engineeringUses": [
+    "Modelling requirements, architecture and behaviour of a system in a standard textual and graphical language",
+    "Exchanging system models between tools through the standard API"
+  ]
 }

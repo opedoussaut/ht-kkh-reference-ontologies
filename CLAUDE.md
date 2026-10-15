@@ -22,9 +22,11 @@ discovery, engineering use cases and a verified relationship graph.
    primary source states it; include `evidence.url` and a short note.
 4. **Never drop v1 records.** The 26 records of catalogue v1 live on as `origin: "v1"` with their `legacy` block
    byte-identical to `data/legacy/catalog-v1.json`. Corrections go in `corrections[]`, not by editing `legacy`.
-5. **Don't guess versions or licences.** If you cannot confirm a fact, say so in `verification.notes`, use
+5. **Facts vs. editorial.** Verified facts live in the standard fields with `verification.sources`. Editorial content
+   (`engineeringUses`, use-case stacks, "used together" groupings) must be labelled as editorial in the UI.
+6. **Don't guess versions or licences.** If you cannot confirm a fact, say so in `verification.notes`, use
    `partially-verified` / `unverified`, and set `needsReview: true` when unverified.
-6. **Git workflow.** Work on a `dev/*` branch. Do not merge to `main` or deploy (GitHub Pages publishes `main`)
+7. **Git workflow.** Work on a `dev/*` or `feature/*` branch. Do not merge to `main` or deploy (GitHub Pages publishes `main`)
    without the owner's explicit approval. Do not rewrite history without approval.
 
 ## Layout
@@ -38,6 +40,7 @@ assets/js/lib/graph.js     Dependency-free force layout + SVG renderer
 assets/js/lib/html.js      Escaping template helper — always use html`` for markup
 data/ontologies/<id>.json  SOURCE OF TRUTH — one record per ontology
 data/taxonomy/*.json       industries, use cases, relations (+ relation types)
+docs/ROADMAP.md            Phased enrichment plan (Physical AI perspective, asset types, confidence labels)
 data/legacy/catalog-v1.json  Sanitised snapshot of the 26 v1 records (do not edit)
 schema/ontology.schema.json  JSON Schema for records
 scripts/build-data.mjs     Validate + generate outputs
@@ -57,6 +60,7 @@ npm run build        # validate + regenerate data/atlas.json and the exports
 npm run validate     # validate + fail if generated files are stale (CI)
 npm test             # node:test suites
 npm run check        # validate + test
+npm run links        # check all external URLs (network; not in CI)
 npm run serve        # http://localhost:8080 (the app fetches data/atlas.json, so file:// won't work)
 ```
 

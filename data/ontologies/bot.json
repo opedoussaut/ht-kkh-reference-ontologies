@@ -67,5 +67,9 @@
     "stabilityStatus": "stable",
     "usageStatus": "open",
     "hasInternalWikiLink": true
-  }
+  },
+  "engineeringUses": [
+    "Describing the site, building, storey and space hierarchy of a facility for a digital twin",
+    "Locating equipment, such as racks or cooling units, within building zones"
+  ]
 }

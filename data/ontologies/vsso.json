@@ -46,5 +46,8 @@
     ],
     "notes": "Listed for awareness; not maintained."
   },
-  "origin": "v2"
+  "origin": "v2",
+  "engineeringUses": [
+    "Understanding semantic modelling of vehicle signals (historical reference; draft discontinued)"
+  ]
 }

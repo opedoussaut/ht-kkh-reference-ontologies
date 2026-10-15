@@ -76,5 +76,9 @@
     "stabilityStatus": "stable",
     "usageStatus": "open",
     "hasInternalWikiLink": true
-  }
+  },
+  "engineeringUses": [
+    "Describing HVAC, electrical and metering points so analytics can run across buildings",
+    "Linking sensor time series to the equipment and spaces they monitor"
+  ]
 }

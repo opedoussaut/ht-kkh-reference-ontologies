@@ -59,5 +59,9 @@
     ],
     "notes": ""
   },
-  "origin": "v2"
+  "origin": "v2",
+  "engineeringUses": [
+    "Providing a shared top-level structure when integrating ontologies from different engineering domains",
+    "Distinguishing objects, their qualities and the processes they take part in when modelling a system"
+  ]
 }

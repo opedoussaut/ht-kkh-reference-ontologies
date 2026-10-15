@@ -11,6 +11,7 @@ const LABELS = {
   maturity: { standard: 'Standard', stable: 'Stable', emerging: 'Emerging', research: 'Research', legacy: 'Legacy', discontinued: 'Discontinued' },
   access: { open: 'Open', 'open-with-terms': 'Open with terms', licensed: 'Licensed', unknown: 'Unknown' },
   verification: { verified: 'Verified', 'partially-verified': 'Partially verified', unverified: 'Unverified' },
+  format: { owl: 'OWL', rdf: 'RDF / JSON-LD', shacl: 'SHACL', xml: 'XML / XMI', json: 'JSON', uml: 'UML / MOF', express: 'EXPRESS / STEP', logic: 'Logic (KIF, CL)', csv: 'CSV' },
   publisherType: { 'standards-body': 'Standards body', 'industry-association': 'Industry association', consortium: 'Consortium', research: 'Research', government: 'Government', industry: 'Industry' },
   status: { published: 'Published', candidate: 'Candidate', draft: 'Draft', superseded: 'Superseded', discontinued: 'Discontinued', unknown: 'Unknown' },
 };
@@ -40,6 +41,18 @@ const link = (hash, text, cls = '') => html`<a href="${hash}" class="${cls}">${t
 const chip = (hash, text) => html`<a class="chip" href="${hash}">${text}</a>`;
 
 function setTitle(t) { document.title = t ? `${t} · Reference Ontology Atlas` : 'Reference Ontology Atlas'; }
+
+// Derived cross-references: ontologies that share a use-case stack with this one (editorial grouping, not a relation).
+function usedTogether(id) {
+  const byUc = [];
+  for (const u of state.data.useCases) {
+    const layers = u.stack.filter((s) => s.ontologies.includes(id));
+    if (!layers.length) continue;
+    const peers = [...new Set(u.stack.flatMap((s) => s.ontologies))].filter((x) => x !== id);
+    byUc.push({ u, layers: layers.map((l) => l.layer), peers });
+  }
+  return byUc;
+}
 
 function relationsOf(id) {
   const out = state.data.relations.filter((r) => r.source === id);
@@ -142,6 +155,7 @@ function viewHome() {
       <div><h3>${pill('v-verified', 'Verified')}</h3><p>The publisher, version and licence were checked against the official source on the date shown.</p></div>
       <div><h3>${pill('v-partially-verified', 'Partially verified')}</h3><p>The official source was confirmed, but at least one fact (such as the exact version or licence wording) is still open.</p></div>
       <div><h3>${pill('v-unverified', 'Unverified')}</h3><p>A candidate with no authoritative public source yet. Flagged for review.</p></div>
+      <div><h3><span class="pill editorial">Editorial</span></h3><p>Practical uses and use-case stacks written by atlas editors. They are kept apart from verified facts. See ${link('#/about', 'label criteria')}.</p></div>
       <div><h3><span class="pill">Relationships</span></h3><p>Only links stated by the publisher or a primary source are drawn in the graph, and each one cites its source.</p></div>
     </div>
   </section>`;
@@ -257,9 +271,21 @@ function viewOntology(id) {
         </dl>
       </section>
 
+      ${o.engineeringUses?.length ? html`
+      <section class="panel">
+        <h2>Practical engineering uses <span class="pill editorial" title="Written by atlas editors to illustrate typical uses. Not a claim of adoption.">Editorial</span></h2>
+        <ul class="bullets">${o.engineeringUses.map((x) => html`<li>${x}</li>`)}</ul>
+      </section>` : ''}
+
       <section class="panel">
         <h2>Relationships</h2>
         ${out.length + inc.length ? html`<ul class="rels">${out.map((r) => relItem(r, 'out'))}${inc.map((r) => relItem(r, 'in'))}</ul>` : html`<p class="muted">No evidence-backed relationships recorded yet.</p>`}
+        ${usedTogether(o.id).length ? html`
+        <h3 class="sub">Used together in reference stacks</h3>
+        <p class="muted small">Grouped by the atlas use cases (editorial architecture suggestions), not stated by the publishers.</p>
+        <div class="together">${usedTogether(o.id).map(({ u, layers, peers }) => html`
+          <div class="together-row"><div>${link(`#/use-cases/${u.id}`, u.name, 'rel-name')} <span class="muted small">· ${layers.join(', ')}</span></div>
+          <div class="chips">${peers.map((pid) => html`<a class="chip chip-ont" href="#/ontology/${pid}">${ont(pid).name}</a>`)}</div></div>`)}</div>` : ''}
       </section>
 
       ${o.corrections?.length ? html`
@@ -462,6 +488,20 @@ function viewAbout() {
   <div class="prose">
     <h2>Method</h2>
     <p>Each record is checked against the publisher's official pages. The checks cover the publisher, the current version or edition, the licence and access terms, and the official source. Every record lists its sources and the date it was checked. Where a fact could not be confirmed, the record is marked partially verified or unverified and explains why.</p>
+    <h2>Label criteria</h2>
+    <p>Labels describe what a resource is and how well the atlas has checked it. They are not certifications or endorsements.</p>
+    <dl class="facts criteria">
+      ${[['standard', 'Published by a recognised standards body (ISO, IEC, IEEE, W3C, OGC, ETSI, OMG, DCMI).'],
+        ['stable', 'Versioned public releases from a maintained community or consortium.'],
+        ['emerging', 'Public and active, but without stable releases or broad uptake yet.'],
+        ['research', 'Described mainly in research publications or project outputs.'],
+        ['legacy', 'Superseded by another resource, according to its publisher.'],
+        ['discontinued', 'No longer maintained, according to its publisher.']].map(([k, v]) => factRow(pill(`m-${k}`, label('maturity', k)), v))}
+      ${[['verified', 'Publisher, version and licence confirmed on official pages on the date shown.'],
+        ['partially-verified', 'Official source confirmed, with at least one fact still open (explained on the record).'],
+        ['unverified', 'No authoritative public source yet; flagged for review.']].map(([k, v]) => factRow(pill(`v-${k}`, label('verification', k)), v))}
+      ${factRow(html`<span class="pill editorial">Editorial</span>`, 'Content written by atlas editors, such as practical engineering uses and use-case stacks. It illustrates typical uses and does not state facts about adoption.')}
+    </dl>
     <h2>Relationships</h2>
     <p>Only relationships stated by a publisher or primary source are drawn, and each edge carries a citation. Relationship types: ${state.data.relationTypes.map((t) => t.label).join(', ')}.</p>
     <h2>Migration from v1</h2>

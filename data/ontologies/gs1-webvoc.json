@@ -94,5 +94,9 @@
     "stabilityStatus": "stable",
     "usageStatus": "licensed",
     "hasInternalWikiLink": true
-  }
+  },
+  "engineeringUses": [
+    "Publishing product master data (identifiers, dimensions, composition) on the web",
+    "Linking product identity (GTIN) to traceability and passport data"
+  ]
 }

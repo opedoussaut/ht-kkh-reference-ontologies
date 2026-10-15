@@ -58,5 +58,9 @@
     ],
     "notes": "Domain modules continue to evolve after 1.0.0."
   },
-  "origin": "v2"
+  "origin": "v2",
+  "engineeringUses": [
+    "Structuring materials characterisation and modelling data so it can be reused across tools",
+    "Describing material models used in simulation with their physical quantities"
+  ]
 }

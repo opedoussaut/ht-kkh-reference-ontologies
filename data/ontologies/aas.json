@@ -26,8 +26,8 @@
     "url": "https://industrialdigitaltwin.org/en/content-hub/aasspecifications"
   },
   "links": {
-    "official": "https://industrialdigitaltwin.org/en/content-hub/aas",
-    "specification": "https://industrialdigitaltwin.org/en/content-hub/aasspecifications"
+    "official": "https://industrialdigitaltwin.org/en/content-hub/aasspecifications",
+    "related": "https://industrialdigitaltwin.org/en/technology"
   },
   "formats": [
     "XML",
@@ -83,5 +83,18 @@
     "stabilityStatus": "stable",
     "usageStatus": "open",
     "hasInternalWikiLink": true
-  }
+  },
+  "corrections": [
+    {
+      "field": "official",
+      "from": "https://industrialdigitaltwin.org/en/content-hub/aas",
+      "to": "https://industrialdigitaltwin.org/en/content-hub/aasspecifications",
+      "reason": "The v1 landing page returns 404; the IDTA specification hub is the maintained entry point.",
+      "source": "https://industrialdigitaltwin.org/en/content-hub/aasspecifications"
+    }
+  ],
+  "engineeringUses": [
+    "Publishing a component digital nameplate and technical data alongside a delivered machine",
+    "Exchanging asset information between engineering tools and operations through standard submodels"
+  ]
 }

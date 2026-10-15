@@ -61,5 +61,9 @@
     ],
     "notes": ""
   },
-  "origin": "v2"
+  "origin": "v2",
+  "engineeringUses": [
+    "Publishing product and organisation data as structured data on the web",
+    "Providing broadly understood baseline terms for linked data"
+  ]
 }

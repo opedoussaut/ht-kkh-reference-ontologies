@@ -88,5 +88,9 @@
     "stabilityStatus": "stable",
     "usageStatus": "licensed",
     "hasInternalWikiLink": true
-  }
+  },
+  "engineeringUses": [
+    "Inventorying servers, chassis, power supplies and cooling devices in a data centre",
+    "Mapping infrastructure management data into a facility or operations model"
+  ]
 }

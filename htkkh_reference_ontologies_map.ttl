@@ -56,7 +56,7 @@ atlas:aas a atlas:ReferenceOntology ;
     skos:altLabel "Asset Administration Shell (AAS)" ;
     dcterms:description "Asset Administration Shell meta-model for interoperable digital twins." ;
     atlas:publisher "Industrial Digital Twin Association" ;
-    atlas:officialSource <https://industrialdigitaltwin.org/en/content-hub/aas> ;
+    atlas:officialSource <https://industrialdigitaltwin.org/en/content-hub/aasspecifications> ;
     atlas:versionLabel "IDTA-01001 Part 1 Metamodel v3.1.1 (later IDTA documents reference v3.2)" ;
     atlas:licenseName "Specifications published openly by IDTA (see licence in each document)" ;
     atlas:licenseAccess "open" ;
@@ -530,7 +530,7 @@ atlas:ifcowl a atlas:ReferenceOntology ;
     atlas:maturity "legacy" ;
     atlas:layer "domain" ;
     atlas:kind "ontology" ;
-    atlas:verificationStatus "verified" ;
+    atlas:verificationStatus "partially-verified" ;
     atlas:topic "BIM" ;
     atlas:topic "IFC" ;
     atlas:topic "buildings" ;
@@ -583,6 +583,26 @@ atlas:iso-15926-14 a atlas:ReferenceOntology ;
     atlas:industry atlas:industry-marine-offshore ;
     atlas:industry atlas:industry-infrastructure-energy-materials ;
     rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/iso-15926-14> .
+
+atlas:obi a atlas:ReferenceOntology ;
+    dcterms:title "OBI" ;
+    skos:altLabel "Ontology for Biomedical Investigations" ;
+    dcterms:description "Community ontology for describing scientific investigations: assays, devices, protocols, objectives and data transformations. It defines more than 2,500 terms and is used for biomedical and laboratory data integration." ;
+    atlas:publisher "OBI Consortium" ;
+    atlas:officialSource <https://obi-ontology.org/> ;
+    atlas:versionLabel "Continuously released (see repository)" ;
+    atlas:licenseName "CC BY 4.0" ;
+    atlas:licenseAccess "open" ;
+    atlas:maturity "stable" ;
+    atlas:layer "domain" ;
+    atlas:kind "ontology" ;
+    atlas:verificationStatus "partially-verified" ;
+    atlas:topic "scientific investigations" ;
+    atlas:topic "assays" ;
+    atlas:topic "laboratory devices" ;
+    atlas:topic "protocols" ;
+    atlas:industry atlas:industry-life-sciences-healthcare ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/obi> .
 
 atlas:oeo a atlas:ReferenceOntology ;
     dcterms:title "OEO" ;
@@ -804,6 +824,27 @@ atlas:saref-core a atlas:ReferenceOntology ;
     atlas:useCase atlas:usecase-general-purpose-robotics ;
     rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/saref-core> .
 
+atlas:saref4auto a atlas:ReferenceOntology ;
+    dcterms:title "SAREF4AUTO" ;
+    skos:altLabel "SAREF extension for the Automotive domain" ;
+    dcterms:description "OWL-DL extension of SAREF for the automotive domain. It adapts the ETSI ITS common data dictionary and covers use cases such as platooning and automated valet parking." ;
+    atlas:publisher "ETSI" ;
+    atlas:officialSource <https://saref.etsi.org/saref4auto/> ;
+    atlas:namespaceIri <https://saref.etsi.org/saref4auto/> ;
+    atlas:versionLabel "SAREF4AUTO v2.1.1 (ETSI TS 103 410-7 V2.1.1)" ;
+    atlas:licenseName "ETSI Software License (BSD-3-Clause style)" ;
+    atlas:licenseAccess "open" ;
+    atlas:maturity "standard" ;
+    atlas:layer "domain" ;
+    atlas:kind "ontology" ;
+    atlas:verificationStatus "verified" ;
+    atlas:topic "connected vehicles" ;
+    atlas:topic "ITS" ;
+    atlas:topic "platooning" ;
+    atlas:topic "automated parking" ;
+    atlas:industry atlas:industry-transportation-mobility ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/saref4auto> .
+
 atlas:saref4bldg a atlas:ReferenceOntology ;
     dcterms:title "SAREF4BLDG" ;
     skos:altLabel "SAREF extension for Buildings" ;
@@ -825,6 +866,29 @@ atlas:saref4bldg a atlas:ReferenceOntology ;
     atlas:industry atlas:industry-architecture-engineering-construction ;
     atlas:useCase atlas:usecase-ai-factories ;
     rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/saref4bldg> .
+
+atlas:saref4city a atlas:ReferenceOntology ;
+    dcterms:title "SAREF4CITY" ;
+    skos:altLabel "SAREF extension for Smart Cities" ;
+    dcterms:description "OWL-DL extension of SAREF with general concepts for smart-city data in the IoT domain, such as city objects, administrative areas, public services and key performance indicators." ;
+    atlas:publisher "ETSI" ;
+    atlas:officialSource <https://saref.etsi.org/saref4city/> ;
+    atlas:namespaceIri <https://saref.etsi.org/saref4city/> ;
+    atlas:versionLabel "SAREF4CITY v2.1.1 (ETSI TS 103 410-4 V2.1.1)" ;
+    atlas:licenseName "ETSI Software License (BSD-3-Clause style)" ;
+    atlas:licenseAccess "open" ;
+    atlas:maturity "standard" ;
+    atlas:layer "domain" ;
+    atlas:kind "ontology" ;
+    atlas:verificationStatus "verified" ;
+    atlas:topic "smart city" ;
+    atlas:topic "IoT" ;
+    atlas:topic "public services" ;
+    atlas:topic "KPIs" ;
+    atlas:industry atlas:industry-cities-public-services ;
+    atlas:industry atlas:industry-infrastructure-energy-materials ;
+    atlas:useCase atlas:usecase-sustainability ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/saref4city> .
 
 atlas:saref4ener a atlas:ReferenceOntology ;
     dcterms:title "SAREF4ENER" ;
@@ -850,6 +914,30 @@ atlas:saref4ener a atlas:ReferenceOntology ;
     atlas:useCase atlas:usecase-ai-factories ;
     atlas:useCase atlas:usecase-sustainability ;
     rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/saref4ener> .
+
+atlas:saref4inma a atlas:ReferenceOntology ;
+    dcterms:title "SAREF4INMA" ;
+    skos:altLabel "SAREF extension for Industry and Manufacturing" ;
+    dcterms:description "SAREF extension for industry and manufacturing. It improves interoperability between production equipment and lets organisations trace produced items back to equipment, batches, materials and production times." ;
+    atlas:publisher "ETSI" ;
+    atlas:officialSource <https://saref.etsi.org/saref4inma/> ;
+    atlas:namespaceIri <https://saref.etsi.org/saref4inma/> ;
+    atlas:versionLabel "SAREF4INMA v2.1.1 (ETSI TS 103 410-5 V2.1.1)" ;
+    atlas:licenseName "ETSI Software License (BSD-3-Clause style)" ;
+    atlas:licenseAccess "open" ;
+    atlas:maturity "standard" ;
+    atlas:layer "domain" ;
+    atlas:kind "ontology" ;
+    atlas:verificationStatus "verified" ;
+    atlas:topic "manufacturing" ;
+    atlas:topic "production equipment" ;
+    atlas:topic "traceability" ;
+    atlas:topic "batches" ;
+    atlas:industry atlas:industry-industrial-equipment ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:useCase atlas:usecase-semiconductors ;
+    atlas:useCase atlas:usecase-general-purpose-robotics ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/saref4inma> .
 
 atlas:schema-org a atlas:ReferenceOntology ;
     dcterms:title "Schema.org" ;
@@ -1084,3 +1172,6 @@ atlas:gs1-webvoc atlas:extends atlas:schema-org .
 atlas:vsso atlas:follows_pattern_of atlas:sosa .
 atlas:aas atlas:references atlas:eclass .
 atlas:saref4bldg atlas:aligns_with atlas:ifcowl .
+atlas:saref4inma atlas:extends atlas:saref-core .
+atlas:saref4city atlas:extends atlas:saref-core .
+atlas:saref4auto atlas:extends atlas:saref-core .

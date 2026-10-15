@@ -451,3 +451,10 @@ select { font: inherit; font-size: 13.5px; color: var(--fg); background: var(--b
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
 }
+
+/* Phase 1 additions */
+.pill.editorial { background: var(--violet-bg); color: var(--violet); border-color: transparent; vertical-align: 3px; margin-left: 6px; }
+.together { display: grid; gap: 12px; }
+.together-row { display: grid; gap: 6px; padding: 12px 14px; border-radius: 12px; background: var(--bg-soft); border: 1px solid var(--line); }
+.criteria .fact { grid-template-columns: 170px 1fr; align-items: center; }
+@media (max-width: 560px) { .criteria .fact { grid-template-columns: 1fr; } }

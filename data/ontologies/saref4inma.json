@@ -1,0 +1,60 @@
+{
+  "id": "saref4inma",
+  "name": "SAREF4INMA",
+  "fullName": "SAREF extension for Industry and Manufacturing",
+  "summary": "SAREF extension for industry and manufacturing. It improves interoperability between production equipment and lets organisations trace produced items back to equipment, batches, materials and production times.",
+  "publisher": "ETSI",
+  "publisherType": "standards-body",
+  "kind": "ontology",
+  "layer": "domain",
+  "topics": [
+    "manufacturing",
+    "production equipment",
+    "traceability",
+    "batches"
+  ],
+  "standardRef": "ETSI TS 103 410-5",
+  "version": {
+    "label": "SAREF4INMA v2.1.1 (ETSI TS 103 410-5 V2.1.1)",
+    "date": "2025-04-25",
+    "status": "published"
+  },
+  "maturity": "standard",
+  "license": {
+    "name": "ETSI Software License (BSD-3-Clause style)",
+    "access": "open",
+    "url": "https://forge.etsi.org/etsi-software-license"
+  },
+  "links": {
+    "official": "https://saref.etsi.org/saref4inma/",
+    "namespace": "https://saref.etsi.org/saref4inma/"
+  },
+  "formats": [
+    "OWL",
+    "RDF/Turtle"
+  ],
+  "industries": [
+    "industrial-equipment",
+    "high-tech"
+  ],
+  "useCases": [
+    "semiconductors",
+    "general-purpose-robotics"
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedOn": "2026-10-15",
+    "sources": [
+      {
+        "url": "https://saref.etsi.org/saref4inma/",
+        "title": "ETSI SAREF4INMA"
+      }
+    ],
+    "notes": ""
+  },
+  "origin": "v2",
+  "engineeringUses": [
+    "Tracing produced items back to the equipment, batch and materials that made them",
+    "Describing production equipment and its measurements in a factory"
+  ]
+}

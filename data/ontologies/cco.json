@@ -48,5 +48,9 @@
     ],
     "notes": ""
   },
-  "origin": "v2"
+  "origin": "v2",
+  "engineeringUses": [
+    "Modelling artefacts, their functions and the agents that use them in mission or systems analysis",
+    "Extending BFO-based models with mid-level concepts instead of creating them from scratch"
+  ]
 }

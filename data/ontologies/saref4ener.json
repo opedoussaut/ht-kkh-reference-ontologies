@@ -53,5 +53,9 @@
     ],
     "notes": ""
   },
-  "origin": "v2"
+  "origin": "v2",
+  "engineeringUses": [
+    "Exchanging flexibility and power profiles between appliances and energy managers",
+    "Supporting demand response between facilities and the grid"
+  ]
 }
