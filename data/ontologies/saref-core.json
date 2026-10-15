@@ -1,0 +1,94 @@
+{
+  "id": "saref-core",
+  "name": "SAREF Core",
+  "fullName": "Smart Applications REFerence ontology (SAREF) — Core",
+  "summary": "Smart Applications REFerence ontology for interoperable devices and services.",
+  "publisher": "ETSI",
+  "publisherType": "standards-body",
+  "kind": "ontology",
+  "layer": "domain",
+  "topics": [
+    "IoT",
+    "devices",
+    "functions",
+    "commands",
+    "measurements"
+  ],
+  "standardRef": "ETSI TS 103 264",
+  "version": {
+    "label": "SAREF Core v4.1.1 (ETSI TS 103 264 V4.1.1)",
+    "date": "2024-10-31",
+    "status": "published"
+  },
+  "maturity": "standard",
+  "license": {
+    "name": "ETSI Software License (BSD-3-Clause style)",
+    "access": "open",
+    "url": "https://forge.etsi.org/etsi-software-license"
+  },
+  "links": {
+    "official": "https://saref.etsi.org/core/",
+    "namespace": "https://saref.etsi.org/core/"
+  },
+  "formats": [
+    "OWL",
+    "RDF/Turtle"
+  ],
+  "industries": [
+    "high-tech",
+    "infrastructure-cities",
+    "energy-materials",
+    "industrial-equipment"
+  ],
+  "useCases": [
+    "ai-factories",
+    "semiconductors",
+    "personal-electronics",
+    "general-purpose-robotics"
+  ],
+  "brandRelevance": [
+    {
+      "brand": "catia",
+      "strength": "medium",
+      "rationale": "Functional descriptions of connected products."
+    },
+    {
+      "brand": "netvibes",
+      "strength": "medium",
+      "rationale": "Device data in knowledge graphs."
+    }
+  ],
+  "publicEvidence": [],
+  "verification": {
+    "checkedOn": "2026-10-15",
+    "status": "verified",
+    "sources": [
+      {
+        "url": "https://saref.etsi.org/core/",
+        "title": "ETSI SAREF Core"
+      }
+    ],
+    "notes": ""
+  },
+  "origin": "v1",
+  "legacy": {
+    "name": "SAREF Core",
+    "category": "High-Tech",
+    "publisher": "ETSI",
+    "official": "https://saref.etsi.org/",
+    "endObjects": [
+      "AI Factories",
+      "Semiconductors",
+      "Personal Electronics",
+      "General Purpose Robotics"
+    ],
+    "imds": [
+      "Cross-domain semantics"
+    ],
+    "description": "Smart Applications REFerence ontology for interoperable devices and services.",
+    "parentOntology": "High-Tech (Core Ontology)",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "hasInternalWikiLink": true
+  }
+}

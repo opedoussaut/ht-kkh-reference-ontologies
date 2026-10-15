@@ -1,0 +1,14 @@
+{
+  "_note": "Industry segments used for cross-industry discovery. Labels follow publicly listed industry names; descriptions are editorial.",
+  "items": [
+    { "id": "high-tech", "name": "High-Tech", "summary": "Electronics, semiconductors, computing, data centres and connected devices." },
+    { "id": "industrial-equipment", "name": "Industrial Equipment", "summary": "Machinery, automation, robotics and industrial asset lifecycles." },
+    { "id": "aerospace-defense", "name": "Aerospace & Defense", "summary": "Aircraft, space systems and defence programmes driven by systems engineering and certification." },
+    { "id": "transportation-mobility", "name": "Transportation & Mobility", "summary": "Automotive, rail and mobility systems, including software-defined vehicles." },
+    { "id": "energy-materials", "name": "Energy & Materials", "summary": "Power generation, grids, process plants, oil & gas, chemicals and materials." },
+    { "id": "infrastructure-cities", "name": "Infrastructure & Cities", "summary": "Buildings, construction, facilities and the built environment." },
+    { "id": "life-sciences", "name": "Life Sciences & Healthcare", "summary": "Pharma, biotech, medical devices and scientific research." },
+    { "id": "consumer-goods", "name": "Consumer Goods & Retail", "summary": "Consumer products, packaging, retail and product data exchange." },
+    { "id": "cross-industry", "name": "Cross-Industry", "summary": "Foundational and horizontal ontologies reusable in every industry." }
+  ]
+}

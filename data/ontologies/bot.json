@@ -1,0 +1,84 @@
+{
+  "id": "bot",
+  "name": "BOT",
+  "fullName": "Building Topology Ontology",
+  "summary": "Building Topology Ontology (BOT) is a minimal OWL DL ontology for describing the core topological concepts of buildings and relationships between sub-components such as sites, buildings, storeys, spaces, and elements.",
+  "publisher": "Linked Building Data Community Group",
+  "publisherType": "consortium",
+  "kind": "ontology",
+  "layer": "domain",
+  "topics": [
+    "buildings",
+    "topology",
+    "spaces",
+    "storeys"
+  ],
+  "version": {
+    "label": "v0.3.2 — W3C LBD Community Group public draft",
+    "date": null,
+    "status": "draft"
+  },
+  "maturity": "stable",
+  "license": {
+    "name": "Not stated on the specification page (community group draft)",
+    "access": "open-with-terms",
+    "url": "https://w3c-lbd-cg.github.io/bot/"
+  },
+  "links": {
+    "official": "https://w3c-lbd-cg.github.io/bot/",
+    "namespace": "https://w3id.org/bot#"
+  },
+  "formats": [
+    "OWL",
+    "RDF/Turtle"
+  ],
+  "industries": [
+    "high-tech",
+    "infrastructure-cities"
+  ],
+  "useCases": [
+    "ai-factories"
+  ],
+  "brandRelevance": [
+    {
+      "brand": "catia",
+      "strength": "medium",
+      "rationale": "Facility layout and building topology for data-centre design."
+    },
+    {
+      "brand": "delmia",
+      "strength": "medium",
+      "rationale": "Facility and plant layout."
+    }
+  ],
+  "publicEvidence": [],
+  "verification": {
+    "checkedOn": "2026-10-15",
+    "status": "partially-verified",
+    "sources": [
+      {
+        "url": "https://w3c-lbd-cg.github.io/bot/",
+        "title": "BOT specification"
+      }
+    ],
+    "notes": "W3C Community Group reports are not W3C standards. No licence statement is given on the specification page; confirm before redistribution."
+  },
+  "origin": "v1",
+  "legacy": {
+    "name": "BOT",
+    "category": "AI Factory",
+    "publisher": "Linked Building Data Community Group",
+    "official": "https://w3c-lbd-cg.github.io/bot/",
+    "endObjects": [
+      "AI Factories"
+    ],
+    "imds": [
+      "Infrastructure System Architecture"
+    ],
+    "description": "Building Topology Ontology (BOT) is a minimal OWL DL ontology for describing the core topological concepts of buildings and relationships between sub-components such as sites, buildings, storeys, spaces, and elements.",
+    "parentOntology": "AI Factory (End-Object Ontology)",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "hasInternalWikiLink": true
+  }
+}

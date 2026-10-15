@@ -1,0 +1,89 @@
+{
+  "id": "goodrelations",
+  "name": "GoodRelations",
+  "fullName": "GoodRelations Web Vocabulary for E-Commerce",
+  "summary": "Ontology for products, offers, prices, and business entities.",
+  "publisher": "Web Commerce Community",
+  "publisherType": "research",
+  "kind": "vocabulary",
+  "layer": "domain",
+  "topics": [
+    "e-commerce",
+    "offers",
+    "products",
+    "business entities"
+  ],
+  "version": {
+    "label": "GoodRelations 1.0 (integrated into schema.org in 2012)",
+    "date": null,
+    "status": "superseded"
+  },
+  "maturity": "legacy",
+  "license": {
+    "name": "Open (see project site)",
+    "access": "open",
+    "url": "http://www.heppnetz.de/projects/goodrelations/"
+  },
+  "links": {
+    "official": "http://www.heppnetz.de/projects/goodrelations/",
+    "namespace": "http://purl.org/goodrelations/v1#"
+  },
+  "formats": [
+    "OWL",
+    "RDF/XML"
+  ],
+  "industries": [
+    "high-tech",
+    "consumer-goods"
+  ],
+  "useCases": [
+    "ai-factories",
+    "semiconductors",
+    "personal-electronics",
+    "general-purpose-robotics"
+  ],
+  "brandRelevance": [
+    {
+      "brand": "3dexcite",
+      "strength": "medium",
+      "rationale": "Product-offer data behind online 3D product experiences."
+    }
+  ],
+  "publicEvidence": [],
+  "verification": {
+    "checkedOn": "2026-10-15",
+    "status": "verified",
+    "sources": [
+      {
+        "url": "http://www.heppnetz.de/projects/goodrelations/",
+        "title": "GoodRelations project"
+      },
+      {
+        "url": "https://blog.schema.org/2012/11/08/good-relations-and-schema-org/",
+        "title": "schema.org blog: GoodRelations integrated into schema.org (2012)"
+      }
+    ],
+    "notes": "For new work, schema.org is the maintained successor."
+  },
+  "origin": "v1",
+  "legacy": {
+    "name": "GoodRelations",
+    "category": "High-Tech",
+    "publisher": "Web Commerce Community",
+    "official": "http://www.heppnetz.de/projects/goodrelations/",
+    "endObjects": [
+      "AI Factories",
+      "Semiconductors",
+      "Personal Electronics",
+      "General Purpose Robotics"
+    ],
+    "imds": [
+      "Cross-domain semantics"
+    ],
+    "description": "Ontology for products, offers, prices, and business entities.",
+    "parentOntology": "High-Tech (Core Ontology)",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "hasInternalWikiLink": true
+  }
+}

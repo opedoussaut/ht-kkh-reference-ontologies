@@ -1,0 +1,107 @@
+{
+  "id": "ieee-pos",
+  "name": "POS",
+  "fullName": "POS — Position ontology (IEEE 1872-2015)",
+  "summary": "Ontology used for positional, pose, or planning-oriented semantics in robotics contexts.",
+  "publisher": "IEEE Robotics and Automation Society",
+  "publisherType": "standards-body",
+  "kind": "ontology",
+  "layer": "domain",
+  "topics": [
+    "position",
+    "orientation",
+    "pose",
+    "coordinate systems"
+  ],
+  "standardRef": "IEEE 1872-2015",
+  "version": {
+    "label": "IEEE 1872-2015 (revision P1872 in progress)",
+    "date": "2015",
+    "status": "published"
+  },
+  "maturity": "standard",
+  "license": {
+    "name": "IEEE standard (purchase required for the full text)",
+    "access": "licensed",
+    "url": "https://standards.ieee.org/standard/1872-2015.html"
+  },
+  "links": {
+    "official": "https://standards.ieee.org/standard/1872-2015.html"
+  },
+  "formats": [
+    "SUO-KIF",
+    "OWL (community conversion)"
+  ],
+  "industries": [
+    "high-tech",
+    "industrial-equipment"
+  ],
+  "useCases": [
+    "general-purpose-robotics"
+  ],
+  "brandRelevance": [
+    {
+      "brand": "catia",
+      "strength": "high",
+      "rationale": "Robot product and systems architecture could reuse a standard robot vocabulary."
+    },
+    {
+      "brand": "delmia",
+      "strength": "high",
+      "rationale": "Robot programming and cell simulation work with robot parts, poses and tasks."
+    },
+    {
+      "brand": "simulia",
+      "strength": "medium",
+      "rationale": "Multibody and control simulation could bind models to standard robot concepts."
+    }
+  ],
+  "publicEvidence": [],
+  "verification": {
+    "checkedOn": "2026-10-15",
+    "status": "verified",
+    "sources": [
+      {
+        "url": "https://standards.ieee.org/standard/1872-2015.html",
+        "title": "IEEE 1872-2015 Standard Ontologies for Robotics and Automation"
+      }
+    ],
+    "notes": "Specified within IEEE 1872-2015."
+  },
+  "corrections": [
+    {
+      "field": "publisher",
+      "from": "Research / Community",
+      "to": "IEEE Robotics and Automation Society",
+      "reason": "POS is part of IEEE 1872-2015.",
+      "source": "https://standards.ieee.org/standard/1872-2015.html"
+    },
+    {
+      "field": "stabilityStatus",
+      "from": "not stable",
+      "to": "standard",
+      "reason": "Published as part of an IEEE standard.",
+      "source": "https://standards.ieee.org/standard/1872-2015.html"
+    }
+  ],
+  "origin": "v1",
+  "legacy": {
+    "name": "POS",
+    "category": "General Purpose Robotics",
+    "publisher": "Research / Community",
+    "official": "",
+    "endObjects": [
+      "General Purpose Robotics"
+    ],
+    "imds": [
+      "Humanoid Robots",
+      "Robot AI Control",
+      "Robot MBSE Simulation"
+    ],
+    "description": "Ontology used for positional, pose, or planning-oriented semantics in robotics contexts.",
+    "parentOntology": "General Purpose Robotics (End-Object Ontology)",
+    "stabilityStatus": "not stable",
+    "usageStatus": "restricted",
+    "hasInternalWikiLink": true
+  }
+}

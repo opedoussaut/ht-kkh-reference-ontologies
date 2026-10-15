@@ -1,0 +1,93 @@
+{
+  "id": "brick",
+  "name": "Brick Schema",
+  "fullName": "Brick Schema",
+  "summary": "Brick Schema is an open OWL ontology for modeling buildings, infrastructure, and their systems, including spaces, equipment, power distribution, cooling, HVAC, and sensors. It provides a formal semantic foundation to represent and reason over the physical and infrastructural structure of AI factories and data centers.",
+  "publisher": "Brick Consortium",
+  "publisherType": "consortium",
+  "kind": "ontology",
+  "layer": "domain",
+  "topics": [
+    "building systems",
+    "HVAC",
+    "electrical",
+    "points",
+    "telemetry"
+  ],
+  "version": {
+    "label": "Brick v1.4.4 (v1.5.0 release candidates in progress)",
+    "date": null,
+    "status": "published"
+  },
+  "maturity": "stable",
+  "license": {
+    "name": "BSD-3-Clause",
+    "access": "open",
+    "url": "https://github.com/BrickSchema/Brick"
+  },
+  "links": {
+    "official": "https://brickschema.org/",
+    "repository": "https://github.com/BrickSchema/Brick",
+    "namespace": "https://brickschema.org/schema/Brick#"
+  },
+  "formats": [
+    "OWL",
+    "RDF/Turtle",
+    "SHACL"
+  ],
+  "industries": [
+    "high-tech",
+    "infrastructure-cities",
+    "energy-materials"
+  ],
+  "useCases": [
+    "ai-factories"
+  ],
+  "brandRelevance": [
+    {
+      "brand": "simulia",
+      "strength": "medium",
+      "rationale": "Thermal and airflow simulation of cooling systems."
+    },
+    {
+      "brand": "netvibes",
+      "strength": "medium",
+      "rationale": "Facility telemetry analytics."
+    }
+  ],
+  "publicEvidence": [],
+  "verification": {
+    "checkedOn": "2026-10-15",
+    "status": "verified",
+    "sources": [
+      {
+        "url": "https://github.com/BrickSchema/Brick/releases",
+        "title": "Brick releases"
+      },
+      {
+        "url": "https://brickschema.org/",
+        "title": "Brick Schema"
+      }
+    ],
+    "notes": ""
+  },
+  "origin": "v1",
+  "legacy": {
+    "name": "Brick Schema",
+    "category": "AI Factory",
+    "publisher": "Brick Consortium",
+    "official": "https://brickschema.org/",
+    "endObjects": [
+      "AI Factories"
+    ],
+    "imds": [
+      "Infrastructure System Architecture",
+      "Compute Performance & Sustainability"
+    ],
+    "description": "Brick Schema is an open OWL ontology for modeling buildings, infrastructure, and their systems, including spaces, equipment, power distribution, cooling, HVAC, and sensors. It provides a formal semantic foundation to represent and reason over the physical and infrastructural structure of AI factories and data centers.",
+    "parentOntology": "AI Factory (End-Object Ontology)",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "hasInternalWikiLink": true
+  }
+}

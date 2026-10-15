@@ -1,0 +1,105 @@
+{
+  "id": "dmtf-cim",
+  "name": "DMTF CIM",
+  "fullName": "DMTF Common Information Model (CIM) Schema",
+  "summary": "The Common Information Model (CIM) is a formal object-oriented schema developed by the Distributed Management Task Force (DMTF) to represent managed elements in IT environments, including computer systems, racks, chassis, processors, memory, power supplies, networking components, and cooling subsystems. CIM provides a strong reference model for AI Factory physical and logical infrastructure components.",
+  "publisher": "DMTF (Distributed Management Task Force)",
+  "publisherType": "standards-body",
+  "kind": "information-model",
+  "layer": "domain",
+  "topics": [
+    "IT management",
+    "servers",
+    "racks",
+    "power supplies",
+    "cooling"
+  ],
+  "version": {
+    "label": "CIM Schema 2.54.1 (2.54.0 released October 2020)",
+    "date": null,
+    "status": "published"
+  },
+  "maturity": "stable",
+  "license": {
+    "name": "Free download under DMTF terms",
+    "access": "open-with-terms",
+    "url": "https://www.dmtf.org/standards/cim"
+  },
+  "links": {
+    "official": "https://www.dmtf.org/standards/cim"
+  },
+  "formats": [
+    "MOF",
+    "UML",
+    "XML"
+  ],
+  "industries": [
+    "high-tech"
+  ],
+  "useCases": [
+    "ai-factories"
+  ],
+  "brandRelevance": [
+    {
+      "brand": "delmia",
+      "strength": "medium",
+      "rationale": "Operations of IT infrastructure assets."
+    },
+    {
+      "brand": "netvibes",
+      "strength": "medium",
+      "rationale": "Inventory and telemetry analytics for compute assets."
+    }
+  ],
+  "publicEvidence": [],
+  "verification": {
+    "checkedOn": "2026-10-15",
+    "status": "verified",
+    "sources": [
+      {
+        "url": "https://dmtf.org/node/3585",
+        "title": "DMTF releases CIM 2.54"
+      },
+      {
+        "url": "https://www.dmtf.org/sites/default/files/cim/cim_schema_v2541/releasenotes.html",
+        "title": "CIM 2.54.1 release notes"
+      }
+    ],
+    "notes": "CIM is a MOF/UML information model, not an OWL ontology."
+  },
+  "corrections": [
+    {
+      "field": "publisher",
+      "from": "IEC",
+      "to": "DMTF",
+      "reason": "The v1 description (IT racks, chassis, processors) is the DMTF CIM. The IEC power-system CIM (IEC 61970/61968) is a different standard, now catalogued separately as \"iec-cim\".",
+      "source": "https://www.dmtf.org/standards/cim"
+    },
+    {
+      "field": "official",
+      "from": "https://www.iec.ch/standardsdev/publications/",
+      "to": "https://www.dmtf.org/standards/cim",
+      "reason": "Points to the publisher of the model described.",
+      "source": "https://www.dmtf.org/standards/cim"
+    }
+  ],
+  "origin": "v1",
+  "legacy": {
+    "name": "CIM",
+    "category": "AI Factory",
+    "publisher": "IEC",
+    "official": "https://www.iec.ch/standardsdev/publications/",
+    "endObjects": [
+      "AI Factories"
+    ],
+    "imds": [
+      "Infrastructure System Architecture",
+      "Compute Performance & Sustainability"
+    ],
+    "description": "The Common Information Model (CIM) is a formal object-oriented schema developed by the Distributed Management Task Force (DMTF) to represent managed elements in IT environments, including computer systems, racks, chassis, processors, memory, power supplies, networking components, and cooling subsystems. CIM provides a strong reference model for AI Factory physical and logical infrastructure components.",
+    "parentOntology": "AI Factory (End-Object Ontology)",
+    "stabilityStatus": "stable",
+    "usageStatus": "licensed",
+    "hasInternalWikiLink": true
+  }
+}

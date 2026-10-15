@@ -1,0 +1,106 @@
+{
+  "id": "eclass",
+  "name": "ECLASS Ontology",
+  "fullName": "ECLASS classification and product description standard",
+  "summary": "Classification ontology for products, properties, and industrial semantics.",
+  "publisher": "ECLASS e.V.",
+  "publisherType": "industry-association",
+  "kind": "classification",
+  "layer": "domain",
+  "topics": [
+    "product classification",
+    "properties",
+    "IRDI",
+    "master data"
+  ],
+  "version": {
+    "label": "ECLASS 16.0 (listed in the ECLASS shop); 15.0 released 2024-11-29",
+    "date": null,
+    "status": "published"
+  },
+  "maturity": "standard",
+  "license": {
+    "name": "Commercial ECLASS licence",
+    "access": "licensed",
+    "url": "https://eclass.eu/shop/en/products"
+  },
+  "links": {
+    "official": "https://eclass.eu/",
+    "specification": "https://eclass.eu/en/news/news/first-eclass-as-rdf-specification"
+  },
+  "formats": [
+    "CSV",
+    "XML",
+    "RDF (ECLASS-as-RDF specification)"
+  ],
+  "industries": [
+    "high-tech",
+    "industrial-equipment",
+    "energy-materials",
+    "consumer-goods"
+  ],
+  "useCases": [
+    "ai-factories",
+    "semiconductors",
+    "personal-electronics",
+    "general-purpose-robotics"
+  ],
+  "brandRelevance": [
+    {
+      "brand": "enovia",
+      "strength": "high",
+      "rationale": "Part classification and standard attributes in the product lifecycle."
+    },
+    {
+      "brand": "delmia",
+      "strength": "medium",
+      "rationale": "Procurement and supply-chain master data."
+    },
+    {
+      "brand": "catia",
+      "strength": "medium",
+      "rationale": "Standard parts and component properties."
+    }
+  ],
+  "publicEvidence": [],
+  "verification": {
+    "checkedOn": "2026-10-15",
+    "status": "verified",
+    "sources": [
+      {
+        "url": "https://eclass.eu/shop/en/product/eclass-15-0",
+        "title": "ECLASS 15.0 product page"
+      },
+      {
+        "url": "https://eclass.eu/shop/en/product/eclass-16-0",
+        "title": "ECLASS 16.0 product page"
+      },
+      {
+        "url": "https://eclass.eu/en/news/news/first-eclass-as-rdf-specification",
+        "title": "ECLASS as RDF specification announcement"
+      }
+    ],
+    "notes": "ECLASS is primarily a classification system; an RDF serialisation is specified. Commercial licence required."
+  },
+  "origin": "v1",
+  "legacy": {
+    "name": "ECLASS Ontology",
+    "category": "High-Tech",
+    "publisher": "ECLASS e.V.",
+    "official": "https://www.eclass.eu/",
+    "endObjects": [
+      "AI Factories",
+      "Semiconductors",
+      "Personal Electronics",
+      "General Purpose Robotics"
+    ],
+    "imds": [
+      "Cross-domain semantics"
+    ],
+    "description": "Classification ontology for products, properties, and industrial semantics.",
+    "parentOntology": "High-Tech (Core Ontology)",
+    "stabilityStatus": "stable",
+    "usageStatus": "licensed",
+    "hasInternalWikiLink": true
+  }
+}

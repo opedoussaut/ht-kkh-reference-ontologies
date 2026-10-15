@@ -1,0 +1,63 @@
+{
+  "publicEvidence": [],
+  "id": "skos",
+  "name": "SKOS",
+  "fullName": "Simple Knowledge Organization System",
+  "publisher": "W3C",
+  "publisherType": "standards-body",
+  "summary": "W3C standard for thesauri, taxonomies and classification schemes on the web: concepts, labels and broader/narrower relations.",
+  "kind": "vocabulary",
+  "layer": "cross-domain",
+  "topics": [
+    "taxonomies",
+    "thesauri",
+    "classification schemes"
+  ],
+  "version": {
+    "label": "W3C Recommendation",
+    "date": "2009-08-18",
+    "status": "published"
+  },
+  "maturity": "standard",
+  "license": {
+    "name": "W3C Document License",
+    "access": "open",
+    "url": "https://www.w3.org/copyright/document-license/"
+  },
+  "links": {
+    "official": "https://www.w3.org/TR/skos-reference/",
+    "namespace": "http://www.w3.org/2004/02/skos/core#"
+  },
+  "formats": [
+    "OWL",
+    "RDF/Turtle"
+  ],
+  "industries": [
+    "cross-industry"
+  ],
+  "useCases": [],
+  "brandRelevance": [
+    {
+      "brand": "netvibes",
+      "strength": "high",
+      "rationale": "Taxonomy and thesaurus management."
+    },
+    {
+      "brand": "enovia",
+      "strength": "medium",
+      "rationale": "Classification libraries."
+    }
+  ],
+  "verification": {
+    "checkedOn": "2026-10-15",
+    "status": "verified",
+    "sources": [
+      {
+        "url": "https://www.w3.org/TR/skos-reference/",
+        "title": "SKOS Reference (W3C Recommendation)"
+      }
+    ],
+    "notes": ""
+  },
+  "origin": "v2"
+}

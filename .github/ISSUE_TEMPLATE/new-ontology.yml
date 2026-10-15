@@ -1,0 +1,43 @@
+name: Propose an ontology
+description: Suggest a public reference ontology or semantic standard for the atlas.
+title: "[New ontology] "
+labels: [new-ontology]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Only **public** ontologies and **publicly citable** information can be included.
+        Do not paste confidential, internal or customer information.
+  - type: input
+    id: name
+    attributes: { label: Name and acronym, placeholder: "e.g. SAREF4INMA" }
+    validations: { required: true }
+  - type: input
+    id: official
+    attributes: { label: Official source URL, description: Publisher page, specification or repository. }
+    validations: { required: true }
+  - type: input
+    id: publisher
+    attributes: { label: Publisher }
+    validations: { required: true }
+  - type: input
+    id: version
+    attributes: { label: Current version / edition and date }
+  - type: input
+    id: license
+    attributes: { label: Licence (with link) }
+  - type: textarea
+    id: why
+    attributes: { label: Industries and use cases it serves, description: Which industries and engineering use cases? }
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Public evidence of brand adoption (optional)
+      description: Only cite public sources (product pages, public documentation, press releases). Otherwise leave empty — relevance will be marked as potential.
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: All information above is public and can be cited.
+          required: true

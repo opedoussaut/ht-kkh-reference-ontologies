@@ -1,0 +1,101 @@
+{
+  "id": "qudt",
+  "name": "QUDT",
+  "fullName": "Quantities, Units, Dimensions and Data Types",
+  "summary": "Ontology for quantities, units, dimensions, and datatypes.",
+  "publisher": "QUDT",
+  "publisherType": "consortium",
+  "kind": "ontology",
+  "layer": "cross-domain",
+  "topics": [
+    "units of measure",
+    "quantity kinds",
+    "dimensions"
+  ],
+  "version": {
+    "label": "QUDT 3.1.x (3.1.10 published January 2026)",
+    "date": "2026-01",
+    "status": "published"
+  },
+  "maturity": "stable",
+  "license": {
+    "name": "CC BY 4.0",
+    "access": "open",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "links": {
+    "official": "https://qudt.org/",
+    "repository": "https://github.com/qudt/qudt-public-repo",
+    "namespace": "http://qudt.org/schema/qudt/"
+  },
+  "formats": [
+    "OWL",
+    "RDF/Turtle",
+    "SHACL"
+  ],
+  "industries": [
+    "high-tech",
+    "cross-industry"
+  ],
+  "useCases": [
+    "ai-factories",
+    "semiconductors",
+    "personal-electronics",
+    "general-purpose-robotics",
+    "sustainability"
+  ],
+  "brandRelevance": [
+    {
+      "brand": "simulia",
+      "strength": "high",
+      "rationale": "Unit-consistent simulation inputs and results."
+    },
+    {
+      "brand": "catia",
+      "strength": "medium",
+      "rationale": "Parameters and engineering quantities."
+    },
+    {
+      "brand": "biovia",
+      "strength": "medium",
+      "rationale": "Scientific measurements and material properties."
+    }
+  ],
+  "publicEvidence": [],
+  "verification": {
+    "checkedOn": "2026-10-15",
+    "status": "verified",
+    "sources": [
+      {
+        "url": "https://qudt.org/",
+        "title": "QUDT"
+      },
+      {
+        "url": "https://qudt.org/doc/2026/01/DOC_VOCAB-CONSTANTS.html",
+        "title": "QUDT constants vocabulary, version 3.1.10"
+      }
+    ],
+    "notes": ""
+  },
+  "origin": "v1",
+  "legacy": {
+    "name": "QUDT",
+    "category": "High-Tech",
+    "publisher": "QUDT",
+    "official": "https://qudt.org/",
+    "endObjects": [
+      "AI Factories",
+      "Semiconductors",
+      "Personal Electronics",
+      "General Purpose Robotics"
+    ],
+    "imds": [
+      "Cross-domain semantics"
+    ],
+    "description": "Ontology for quantities, units, dimensions, and datatypes.",
+    "parentOntology": "High-Tech (Core Ontology)",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "hasInternalWikiLink": true
+  }
+}

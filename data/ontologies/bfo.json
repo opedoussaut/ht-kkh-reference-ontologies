@@ -1,0 +1,76 @@
+{
+  "publicEvidence": [],
+  "id": "bfo",
+  "name": "BFO",
+  "fullName": "Basic Formal Ontology (BFO 2020)",
+  "publisher": "ISO/IEC JTC 1 · BFO maintainers",
+  "publisherType": "standards-body",
+  "summary": "Top-level ontology standardised as ISO/IEC 21838-2. Provides the formal backbone for the IOF, CCO, OEO and many OBO ontologies.",
+  "kind": "ontology",
+  "layer": "upper",
+  "topics": [
+    "upper ontology",
+    "continuants",
+    "occurrents",
+    "formal relations"
+  ],
+  "standardRef": "ISO/IEC 21838-2:2021",
+  "version": {
+    "label": "BFO 2020 (ISO/IEC 21838-2:2021)",
+    "date": "2021",
+    "status": "published"
+  },
+  "maturity": "standard",
+  "license": {
+    "name": "BFO OWL files CC BY 4.0; ISO text licensed",
+    "access": "open",
+    "url": "https://github.com/BFO-ontology/BFO-2020"
+  },
+  "links": {
+    "official": "https://basic-formal-ontology.org/",
+    "repository": "https://github.com/BFO-ontology/BFO-2020",
+    "specification": "https://webstore.iec.ch/en/publication/72703"
+  },
+  "formats": [
+    "OWL",
+    "Common Logic"
+  ],
+  "industries": [
+    "cross-industry",
+    "industrial-equipment",
+    "aerospace-defense",
+    "life-sciences",
+    "energy-materials"
+  ],
+  "useCases": [
+    "semiconductors"
+  ],
+  "brandRelevance": [
+    {
+      "brand": "netvibes",
+      "strength": "high",
+      "rationale": "Formal upper ontology for enterprise knowledge graphs."
+    },
+    {
+      "brand": "biovia",
+      "strength": "medium",
+      "rationale": "Life-science ontologies (OBO) build on BFO."
+    }
+  ],
+  "verification": {
+    "checkedOn": "2026-10-15",
+    "status": "verified",
+    "sources": [
+      {
+        "url": "https://github.com/BFO-ontology/BFO-2020",
+        "title": "BFO-2020 repository (CC BY 4.0)"
+      },
+      {
+        "url": "https://webstore.iec.ch/en/publication/72703",
+        "title": "ISO/IEC 21838-2:2021"
+      }
+    ],
+    "notes": ""
+  },
+  "origin": "v2"
+}

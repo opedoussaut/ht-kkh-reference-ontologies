@@ -1,0 +1,95 @@
+{
+  "id": "prov-o",
+  "name": "PROV-O",
+  "fullName": "PROV Ontology",
+  "summary": "Provenance ontology for entities, activities, agents, and derivation relationships.",
+  "publisher": "W3C",
+  "publisherType": "standards-body",
+  "kind": "ontology",
+  "layer": "cross-domain",
+  "topics": [
+    "provenance",
+    "lineage",
+    "traceability"
+  ],
+  "version": {
+    "label": "W3C Recommendation",
+    "date": "2013-04-30",
+    "status": "published"
+  },
+  "maturity": "standard",
+  "license": {
+    "name": "W3C Document License",
+    "access": "open",
+    "url": "https://www.w3.org/copyright/document-license/"
+  },
+  "links": {
+    "official": "https://www.w3.org/TR/prov-o/",
+    "namespace": "http://www.w3.org/ns/prov#"
+  },
+  "formats": [
+    "OWL",
+    "RDF/Turtle"
+  ],
+  "industries": [
+    "high-tech",
+    "cross-industry"
+  ],
+  "useCases": [
+    "ai-factories",
+    "semiconductors",
+    "personal-electronics",
+    "general-purpose-robotics",
+    "sustainability"
+  ],
+  "brandRelevance": [
+    {
+      "brand": "enovia",
+      "strength": "high",
+      "rationale": "Lifecycle traceability maps naturally to entities, activities and agents."
+    },
+    {
+      "brand": "netvibes",
+      "strength": "high",
+      "rationale": "Knowledge-graph lineage and data provenance."
+    },
+    {
+      "brand": "simulia",
+      "strength": "medium",
+      "rationale": "Simulation process and data lineage (inputs, runs, results)."
+    }
+  ],
+  "publicEvidence": [],
+  "verification": {
+    "checkedOn": "2026-10-15",
+    "status": "verified",
+    "sources": [
+      {
+        "url": "https://www.w3.org/TR/prov-o/",
+        "title": "W3C PROV-O Recommendation"
+      }
+    ],
+    "notes": ""
+  },
+  "origin": "v1",
+  "legacy": {
+    "name": "PROV-O",
+    "category": "Circularity / Sustainability",
+    "publisher": "W3C",
+    "official": "https://www.w3.org/TR/prov-o/",
+    "endObjects": [
+      "AI Factories",
+      "Semiconductors",
+      "Personal Electronics",
+      "General Purpose Robotics"
+    ],
+    "imds": [
+      "Circular Design"
+    ],
+    "description": "Provenance ontology for entities, activities, agents, and derivation relationships.",
+    "parentOntology": "Circularity / Sustainability (Core Ontology)",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "hasInternalWikiLink": true
+  }
+}

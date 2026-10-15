@@ -1,408 +1,1062 @@
-@prefix htkkh: <https://www.goodcompany.com/ontologies/htkkh-reference-map#> .
+@prefix atlas: <https://opedoussaut.github.io/ht-kkh-reference-ontologies/ns#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-htkkh:ReferenceOntology a rdfs:Class .
-htkkh:stabilityStatus a rdf:Property .
-htkkh:usageStatus a rdf:Property .
-htkkh:category a rdf:Property .
-htkkh:publisher a rdf:Property .
-htkkh:officialSource a rdf:Property .
-htkkh:wikiPage a rdf:Property .
-htkkh:parentOntology a rdf:Property .
-htkkh:endObject a rdf:Property .
-htkkh:imd a rdf:Property .
+# Reference Ontology Atlas — generated 2026-10-15. Do not edit by hand; run `npm run build`.
+# Public information only. Brand relevance is an editorial assessment of potential fit unless a public evidence entry is cited. Not an official Dassault Systèmes publication.
 
-htkkh:ELI_Ontology a htkkh:ReferenceOntology ;
-    dcterms:title "ELI Ontology" ;
-    htkkh:category "Regulatory / Normative" ;
-    htkkh:publisher "Publications Office of the European Union" ;
-    htkkh:officialSource <https://op.europa.eu/en/web/eu-vocabularies/eli> ;
-    htkkh:wikiPage <https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:H-CG-70vTy2MNfwuhQL_PA> ;
-    htkkh:parentOntology "Regulatory / Normative (Core Ontology)" ;
-    htkkh:stabilityStatus "stable" ;
-    htkkh:usageStatus "open" ;
-    htkkh:endObject "AI Factories" ;
-    htkkh:endObject "Semiconductors" ;
-    htkkh:endObject "Personal Electronics" ;
-    htkkh:endObject "General Purpose Robotics" ;
-    htkkh:imd "Regulatory Knowledge" ;
-    dcterms:description "Ontology for identifying and describing legal resources and legislation metadata." .
+atlas:ReferenceOntology a rdfs:Class ; rdfs:label "Reference ontology" .
+atlas:Industry a rdfs:Class ; rdfs:label "Industry" .
+atlas:UseCase a rdfs:Class ; rdfs:label "Engineering use case" .
+atlas:publisher a rdf:Property .
+atlas:officialSource a rdf:Property .
+atlas:namespaceIri a rdf:Property .
+atlas:versionLabel a rdf:Property .
+atlas:licenseName a rdf:Property .
+atlas:licenseAccess a rdf:Property .
+atlas:maturity a rdf:Property .
+atlas:layer a rdf:Property .
+atlas:kind a rdf:Property .
+atlas:industry a rdf:Property .
+atlas:useCase a rdf:Property .
+atlas:verificationStatus a rdf:Property .
+atlas:topic a rdf:Property .
+atlas:extends a owl:ObjectProperty ; rdfs:label "extends" ; rdfs:comment "Specialises or builds on the target's concepts." .
+atlas:imports a owl:ObjectProperty ; rdfs:label "imports" ; rdfs:comment "Formally imports the target ontology." .
+atlas:part_of a owl:ObjectProperty ; rdfs:label "part of" ; rdfs:comment "Published as a module of the same standard or suite." .
+atlas:aligns_with a owl:ObjectProperty ; rdfs:label "aligns with" ; rdfs:comment "Provides an alignment or mapping to the target." .
+atlas:superseded_by a owl:ObjectProperty ; rdfs:label "integrated into" ; rdfs:comment "Content was integrated into, or is continued by, the target." .
+atlas:references a owl:ObjectProperty ; rdfs:label "references" ; rdfs:comment "Uses identifiers or terms from the target." .
+atlas:follows_pattern_of a owl:ObjectProperty ; rdfs:label "follows pattern of" ; rdfs:comment "Reuses the target's design pattern." .
 
-htkkh:ORIONT a htkkh:ReferenceOntology ;
-    dcterms:title "ORIONT" ;
-    htkkh:category "Circularity / Sustainability" ;
-    htkkh:publisher "Research / Community" ;
-    htkkh:wikiPage <https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:zmTUJGTVSSeV6oolo9UT_w> ;
-    htkkh:parentOntology "Circularity / Sustainability (Core Ontology)" ;
-    htkkh:stabilityStatus "not stable" ;
-    htkkh:usageStatus "restricted" ;
-    htkkh:endObject "AI Factories" ;
-    htkkh:endObject "Semiconductors" ;
-    htkkh:endObject "Personal Electronics" ;
-    htkkh:endObject "General Purpose Robotics" ;
-    htkkh:imd "Circular Design" ;
-    dcterms:description "ORIENTING provides a structured ontology for Life Cycle Sustainability Assessment. It formalizes concepts related to environmental, social, and economic impacts across lifecycle stages. The ontology supports interoperability of LCSA data, impact indicators, system boundaries, and sustainability modeling workflows." .
+atlas:industry-high-tech a atlas:Industry ; skos:prefLabel "High-Tech" ; dcterms:description "Electronics, semiconductors, computing, data centres and connected devices." .
+atlas:industry-industrial-equipment a atlas:Industry ; skos:prefLabel "Industrial Equipment" ; dcterms:description "Machinery, automation, robotics and industrial asset lifecycles." .
+atlas:industry-aerospace-defense a atlas:Industry ; skos:prefLabel "Aerospace & Defense" ; dcterms:description "Aircraft, space systems and defence programmes driven by systems engineering and certification." .
+atlas:industry-transportation-mobility a atlas:Industry ; skos:prefLabel "Transportation & Mobility" ; dcterms:description "Automotive, rail and mobility systems, including software-defined vehicles." .
+atlas:industry-energy-materials a atlas:Industry ; skos:prefLabel "Energy & Materials" ; dcterms:description "Power generation, grids, process plants, oil & gas, chemicals and materials." .
+atlas:industry-infrastructure-cities a atlas:Industry ; skos:prefLabel "Infrastructure & Cities" ; dcterms:description "Buildings, construction, facilities and the built environment." .
+atlas:industry-life-sciences a atlas:Industry ; skos:prefLabel "Life Sciences & Healthcare" ; dcterms:description "Pharma, biotech, medical devices and scientific research." .
+atlas:industry-consumer-goods a atlas:Industry ; skos:prefLabel "Consumer Goods & Retail" ; dcterms:description "Consumer products, packaging, retail and product data exchange." .
+atlas:industry-cross-industry a atlas:Industry ; skos:prefLabel "Cross-Industry" ; dcterms:description "Foundational and horizontal ontologies reusable in every industry." .
+atlas:usecase-ai-factories a atlas:UseCase ; skos:prefLabel "AI Factories" ; dcterms:description "AI factories combine dense GPU compute with power distribution, liquid cooling and building systems. Getting the facility, IT equipment and energy models to share one semantic backbone makes capacity planning, energy optimisation and digital-twin operations possible." .
+atlas:usecase-general-purpose-robotics a atlas:UseCase ; skos:prefLabel "General Purpose Robotics" ; dcterms:description "General-purpose robots need shared definitions of robot parts, poses, capabilities and tasks so that design, simulation, AI control and certification work from the same model. The IEEE 1872 family gives a standardised backbone on top of an upper ontology." .
+atlas:usecase-semiconductors a atlas:UseCase ; skos:prefLabel "Semiconductors" ; dcterms:description "Semiconductor value chains span design, front-end fabrication, back-end assembly and test, and highly distributed supply chains. Public ontologies cover supply-chain semantics, product classification, materials and units; fab-equipment standards are still mostly non-semantic." .
+atlas:usecase-sustainability a atlas:UseCase ; skos:prefLabel "Sustainability & Circularity" ; dcterms:description "Sustainability engineering needs consistent lifecycle data, traceable provenance and links to regulation. Ontologies help connect product structures with impact indicators, materials, energy and legal requirements such as digital product passports." .
+atlas:usecase-personal-electronics a atlas:UseCase ; skos:prefLabel "Personal Electronics" ; dcterms:description "Smart devices combine hardware, firmware and services. Device and product-data ontologies support interoperability, commerce and compliance." .
 
-htkkh:PROV_O a htkkh:ReferenceOntology ;
-    dcterms:title "PROV-O" ;
-    htkkh:category "Circularity / Sustainability" ;
-    htkkh:publisher "W3C" ;
-    htkkh:officialSource <https://www.w3.org/TR/prov-o/> ;
-    htkkh:wikiPage <https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:GzCec8zyTD-McvzxZA61WA> ;
-    htkkh:parentOntology "Circularity / Sustainability (Core Ontology)" ;
-    htkkh:stabilityStatus "stable" ;
-    htkkh:usageStatus "open" ;
-    htkkh:endObject "AI Factories" ;
-    htkkh:endObject "Semiconductors" ;
-    htkkh:endObject "Personal Electronics" ;
-    htkkh:endObject "General Purpose Robotics" ;
-    htkkh:imd "Circular Design" ;
-    dcterms:description "Provenance ontology for entities, activities, agents, and derivation relationships." .
-
-htkkh:AAS a htkkh:ReferenceOntology ;
+atlas:aas a atlas:ReferenceOntology ;
     dcterms:title "AAS" ;
-    htkkh:category "High-Tech" ;
-    htkkh:publisher "Industrial Digital Twin Association" ;
-    htkkh:officialSource <https://industrialdigitaltwin.org/en/content-hub/aas> ;
-    htkkh:wikiPage <https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:3aG-8Yk4Se6Zf-bhrbfGuQ> ;
-    htkkh:parentOntology "High-Tech (Core Ontology)" ;
-    htkkh:stabilityStatus "stable" ;
-    htkkh:usageStatus "open" ;
-    htkkh:endObject "AI Factories" ;
-    htkkh:endObject "Semiconductors" ;
-    htkkh:endObject "Personal Electronics" ;
-    htkkh:endObject "General Purpose Robotics" ;
-    htkkh:imd "Cross-domain semantics" ;
-    dcterms:description "Asset Administration Shell meta-model for interoperable digital twins." .
+    skos:altLabel "Asset Administration Shell (AAS)" ;
+    dcterms:description "Asset Administration Shell meta-model for interoperable digital twins." ;
+    atlas:publisher "Industrial Digital Twin Association" ;
+    atlas:officialSource <https://industrialdigitaltwin.org/en/content-hub/aas> ;
+    atlas:versionLabel "IDTA-01001 Part 1 Metamodel v3.1.1 (later IDTA documents reference v3.2)" ;
+    atlas:licenseName "Specifications published openly by IDTA (see licence in each document)" ;
+    atlas:licenseAccess "open" ;
+    atlas:maturity "standard" ;
+    atlas:layer "domain" ;
+    atlas:kind "meta-model" ;
+    atlas:verificationStatus "verified" ;
+    atlas:topic "digital twin" ;
+    atlas:topic "industrial assets" ;
+    atlas:topic "submodels" ;
+    atlas:topic "Industry 4.0" ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-industrial-equipment ;
+    atlas:industry atlas:industry-energy-materials ;
+    atlas:industry atlas:industry-transportation-mobility ;
+    atlas:useCase atlas:usecase-ai-factories ;
+    atlas:useCase atlas:usecase-semiconductors ;
+    atlas:useCase atlas:usecase-personal-electronics ;
+    atlas:useCase atlas:usecase-general-purpose-robotics ;
+    atlas:useCase atlas:usecase-sustainability ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/aas> .
 
-htkkh:DCTERMS a htkkh:ReferenceOntology ;
-    dcterms:title "DCTERMS" ;
-    htkkh:category "High-Tech" ;
-    htkkh:publisher "Dublin Core Metadata Initiative" ;
-    htkkh:officialSource <https://www.dublincore.org/specifications/dublin-core/dcmi-terms/> ;
-    htkkh:wikiPage <https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:g4QdGWmMQampNp_mzHxwXQ> ;
-    htkkh:parentOntology "High-Tech (Core Ontology)" ;
-    htkkh:stabilityStatus "stable" ;
-    htkkh:usageStatus "open" ;
-    htkkh:endObject "AI Factories" ;
-    htkkh:endObject "Semiconductors" ;
-    htkkh:endObject "Personal Electronics" ;
-    htkkh:endObject "General Purpose Robotics" ;
-    htkkh:imd "Cross-domain semantics" ;
-    dcterms:description "Widely used metadata terms for title, creator, subject, date, and provenance-like description." .
-
-htkkh:ECLASS_Ontology a htkkh:ReferenceOntology ;
-    dcterms:title "ECLASS Ontology" ;
-    htkkh:category "High-Tech" ;
-    htkkh:publisher "ECLASS e.V." ;
-    htkkh:officialSource <https://www.eclass.eu/> ;
-    htkkh:wikiPage <https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:6Vw8NYO_SQKFAsz0h8d7pg> ;
-    htkkh:parentOntology "High-Tech (Core Ontology)" ;
-    htkkh:stabilityStatus "stable" ;
-    htkkh:usageStatus "licensed" ;
-    htkkh:endObject "AI Factories" ;
-    htkkh:endObject "Semiconductors" ;
-    htkkh:endObject "Personal Electronics" ;
-    htkkh:endObject "General Purpose Robotics" ;
-    htkkh:imd "Cross-domain semantics" ;
-    dcterms:description "Classification ontology for products, properties, and industrial semantics." .
-
-htkkh:GeoSPARQL a htkkh:ReferenceOntology ;
-    dcterms:title "GeoSPARQL" ;
-    htkkh:category "High-Tech" ;
-    htkkh:publisher "OGC" ;
-    htkkh:officialSource <https://opengeospatial.github.io/ogc-geosparql/> ;
-    htkkh:wikiPage <https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:r2w1_UqQSK--02C8andxvQ> ;
-    htkkh:parentOntology "High-Tech (Core Ontology)" ;
-    htkkh:stabilityStatus "stable" ;
-    htkkh:usageStatus "open" ;
-    htkkh:endObject "AI Factories" ;
-    htkkh:endObject "Semiconductors" ;
-    htkkh:endObject "Personal Electronics" ;
-    htkkh:endObject "General Purpose Robotics" ;
-    htkkh:imd "Cross-domain semantics" ;
-    dcterms:description "Standard for spatial RDF representation and geospatial querying." .
-
-htkkh:GoodRelations a htkkh:ReferenceOntology ;
-    dcterms:title "GoodRelations" ;
-    htkkh:category "High-Tech" ;
-    htkkh:publisher "Web Commerce Community" ;
-    htkkh:officialSource <http://www.heppnetz.de/projects/goodrelations/> ;
-    htkkh:wikiPage <https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:Vn0zSv7IRGSe6Lep8ojrtw> ;
-    htkkh:parentOntology "High-Tech (Core Ontology)" ;
-    htkkh:stabilityStatus "stable" ;
-    htkkh:usageStatus "open" ;
-    htkkh:endObject "AI Factories" ;
-    htkkh:endObject "Semiconductors" ;
-    htkkh:endObject "Personal Electronics" ;
-    htkkh:endObject "General Purpose Robotics" ;
-    htkkh:imd "Cross-domain semantics" ;
-    dcterms:description "Ontology for products, offers, prices, and business entities." .
-
-htkkh:GS1_WebVoc a htkkh:ReferenceOntology ;
-    dcterms:title "GS1 WebVoc" ;
-    htkkh:category "High-Tech" ;
-    htkkh:publisher "GS1" ;
-    htkkh:officialSource <https://www.gs1.org/voc/> ;
-    htkkh:wikiPage <https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:DuqSyAdOQkCM3D2sNj83zQ> ;
-    htkkh:parentOntology "High-Tech (Core Ontology)" ;
-    htkkh:stabilityStatus "stable" ;
-    htkkh:usageStatus "licensed" ;
-    htkkh:endObject "AI Factories" ;
-    htkkh:endObject "Semiconductors" ;
-    htkkh:endObject "Personal Electronics" ;
-    htkkh:endObject "General Purpose Robotics" ;
-    htkkh:imd "Cross-domain semantics" ;
-    dcterms:description "GS1 web vocabulary for product, organization, and identification semantics." .
-
-htkkh:OWL_time a htkkh:ReferenceOntology ;
-    dcterms:title "OWL-time" ;
-    htkkh:category "High-Tech" ;
-    htkkh:publisher "W3C" ;
-    htkkh:officialSource <https://www.w3.org/TR/owl-time/> ;
-    htkkh:wikiPage <https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:vn5OZUanRdC6yQBwEdhxbg> ;
-    htkkh:parentOntology "High-Tech (Core Ontology)" ;
-    htkkh:stabilityStatus "stable" ;
-    htkkh:usageStatus "open" ;
-    htkkh:endObject "AI Factories" ;
-    htkkh:endObject "Semiconductors" ;
-    htkkh:endObject "Personal Electronics" ;
-    htkkh:endObject "General Purpose Robotics" ;
-    htkkh:imd "Cross-domain semantics" ;
-    dcterms:description "Ontology of temporal concepts including intervals, instants, durations, and relations." .
-
-htkkh:QUDT a htkkh:ReferenceOntology ;
-    dcterms:title "QUDT" ;
-    htkkh:category "High-Tech" ;
-    htkkh:publisher "QUDT" ;
-    htkkh:officialSource <https://qudt.org/> ;
-    htkkh:wikiPage <https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:U7CIlZJUR-CmhXerXedNsw> ;
-    htkkh:parentOntology "High-Tech (Core Ontology)" ;
-    htkkh:stabilityStatus "stable" ;
-    htkkh:usageStatus "open" ;
-    htkkh:endObject "AI Factories" ;
-    htkkh:endObject "Semiconductors" ;
-    htkkh:endObject "Personal Electronics" ;
-    htkkh:endObject "General Purpose Robotics" ;
-    htkkh:imd "Cross-domain semantics" ;
-    dcterms:description "Ontology for quantities, units, dimensions, and datatypes." .
-
-htkkh:SAREF_Core a htkkh:ReferenceOntology ;
-    dcterms:title "SAREF Core" ;
-    htkkh:category "High-Tech" ;
-    htkkh:publisher "ETSI" ;
-    htkkh:officialSource <https://saref.etsi.org/> ;
-    htkkh:wikiPage <https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:ZKZ4ztldRvy0NF-5fb9iVQ> ;
-    htkkh:parentOntology "High-Tech (Core Ontology)" ;
-    htkkh:stabilityStatus "stable" ;
-    htkkh:usageStatus "open" ;
-    htkkh:endObject "AI Factories" ;
-    htkkh:endObject "Semiconductors" ;
-    htkkh:endObject "Personal Electronics" ;
-    htkkh:endObject "General Purpose Robotics" ;
-    htkkh:imd "Cross-domain semantics" ;
-    dcterms:description "Smart Applications REFerence ontology for interoperable devices and services." .
-
-htkkh:SOSA a htkkh:ReferenceOntology ;
-    dcterms:title "SOSA" ;
-    htkkh:category "High-Tech" ;
-    htkkh:publisher "W3C/OGC" ;
-    htkkh:officialSource <https://www.w3.org/TR/vocab-ssn/> ;
-    htkkh:wikiPage <https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:nQW5FfTQSHO9062warOnoQ> ;
-    htkkh:parentOntology "High-Tech (Core Ontology)" ;
-    htkkh:stabilityStatus "stable" ;
-    htkkh:usageStatus "open" ;
-    htkkh:endObject "AI Factories" ;
-    htkkh:endObject "Semiconductors" ;
-    htkkh:endObject "Personal Electronics" ;
-    htkkh:endObject "General Purpose Robotics" ;
-    htkkh:imd "Cross-domain semantics" ;
-    dcterms:description "Lightweight core for sensors, observations, samples, and actuators." .
-
-htkkh:SSN a htkkh:ReferenceOntology ;
-    dcterms:title "SSN" ;
-    htkkh:category "High-Tech" ;
-    htkkh:publisher "W3C/OGC" ;
-    htkkh:officialSource <https://www.w3.org/TR/vocab-ssn/> ;
-    htkkh:wikiPage <https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:5RCMfzLNSlSIb46cfvCDzA> ;
-    htkkh:parentOntology "High-Tech (Core Ontology)" ;
-    htkkh:stabilityStatus "stable" ;
-    htkkh:usageStatus "open" ;
-    htkkh:endObject "AI Factories" ;
-    htkkh:endObject "Semiconductors" ;
-    htkkh:endObject "Personal Electronics" ;
-    htkkh:endObject "General Purpose Robotics" ;
-    htkkh:imd "Cross-domain semantics" ;
-    dcterms:description "Semantic Sensor Network ontology for sensors, observations, and systems." .
-
-htkkh:SUMO a htkkh:ReferenceOntology ;
-    dcterms:title "SUMO" ;
-    htkkh:category "High-Tech" ;
-    htkkh:publisher "IEEE / Teknowledge" ;
-    htkkh:officialSource <https://www.ontologyportal.org/> ;
-    htkkh:wikiPage <https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:v-Hoheh0T9KZ2BIASSmCnw> ;
-    htkkh:parentOntology "High-Tech (Core Ontology)" ;
-    htkkh:stabilityStatus "stable" ;
-    htkkh:usageStatus "open" ;
-    htkkh:endObject "AI Factories" ;
-    htkkh:endObject "Semiconductors" ;
-    htkkh:endObject "Personal Electronics" ;
-    htkkh:endObject "General Purpose Robotics" ;
-    htkkh:imd "Cross-domain semantics" ;
-    dcterms:description "Suggested Upper Merged Ontology for broad upper-level semantic grounding." .
-
-htkkh:BOT a htkkh:ReferenceOntology ;
-    dcterms:title "BOT" ;
-    htkkh:category "AI Factory" ;
-    htkkh:publisher "Linked Building Data Community Group" ;
-    htkkh:officialSource <https://w3c-lbd-cg.github.io/bot/> ;
-    htkkh:wikiPage <https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:HfyE2lIsRbSRuvToB-YeZw> ;
-    htkkh:parentOntology "AI Factory (End-Object Ontology)" ;
-    htkkh:stabilityStatus "stable" ;
-    htkkh:usageStatus "open" ;
-    htkkh:endObject "AI Factories" ;
-    htkkh:imd "Infrastructure System Architecture" ;
-    dcterms:description "Building Topology Ontology (BOT) is a minimal OWL DL ontology for describing the core topological concepts of buildings and relationships between sub-components such as sites, buildings, storeys, spaces, and elements." .
-
-htkkh:Brick_Schema a htkkh:ReferenceOntology ;
-    dcterms:title "Brick Schema" ;
-    htkkh:category "AI Factory" ;
-    htkkh:publisher "Brick Consortium" ;
-    htkkh:officialSource <https://brickschema.org/> ;
-    htkkh:wikiPage <https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:azyjLHMTQoGNkGIy3YENlA> ;
-    htkkh:parentOntology "AI Factory (End-Object Ontology)" ;
-    htkkh:stabilityStatus "stable" ;
-    htkkh:usageStatus "open" ;
-    htkkh:endObject "AI Factories" ;
-    htkkh:imd "Infrastructure System Architecture" ;
-    htkkh:imd "Compute Performance & Sustainability" ;
-    dcterms:description "Brick Schema is an open OWL ontology for modeling buildings, infrastructure, and their systems, including spaces, equipment, power distribution, cooling, HVAC, and sensors. It provides a formal semantic foundation to represent and reason over the physical and infrastructural structure of AI factories and data centers." .
-
-htkkh:CIM a htkkh:ReferenceOntology ;
-    dcterms:title "CIM" ;
-    htkkh:category "AI Factory" ;
-    htkkh:publisher "IEC" ;
-    htkkh:officialSource <https://www.iec.ch/standardsdev/publications/> ;
-    htkkh:wikiPage <https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:CLVX0LTORSG9cyf_aponEg> ;
-    htkkh:parentOntology "AI Factory (End-Object Ontology)" ;
-    htkkh:stabilityStatus "stable" ;
-    htkkh:usageStatus "licensed" ;
-    htkkh:endObject "AI Factories" ;
-    htkkh:imd "Infrastructure System Architecture" ;
-    htkkh:imd "Compute Performance & Sustainability" ;
-    dcterms:description "The Common Information Model (CIM) is a formal object-oriented schema developed by the Distributed Management Task Force (DMTF) to represent managed elements in IT environments, including computer systems, racks, chassis, processors, memory, power supplies, networking components, and cooling subsystems. CIM provides a strong reference model for AI Factory physical and logical infrastructure components." .
-
-htkkh:SAREF4BLDG a htkkh:ReferenceOntology ;
-    dcterms:title "SAREF4BLDG" ;
-    htkkh:category "AI Factory" ;
-    htkkh:publisher "ETSI" ;
-    htkkh:officialSource <https://saref.etsi.org/saref4bldg/> ;
-    htkkh:wikiPage <https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:kkKzLMKZQwufO73ZeHNVGw> ;
-    htkkh:parentOntology "AI Factory (End-Object Ontology)" ;
-    htkkh:stabilityStatus "stable" ;
-    htkkh:usageStatus "open" ;
-    htkkh:endObject "AI Factories" ;
-    htkkh:imd "Infrastructure System Architecture" ;
-    htkkh:imd "Compute Performance & Sustainability" ;
-    dcterms:description "Building extension of SAREF for spaces, devices, and building systems." .
-
-htkkh:Autonomous_Robotics_AuR a htkkh:ReferenceOntology ;
+atlas:ieee-aur a atlas:ReferenceOntology ;
     dcterms:title "Autonomous Robotics (AuR)" ;
-    htkkh:category "General Purpose Robotics" ;
-    htkkh:publisher "Research / Community" ;
-    htkkh:wikiPage <https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:N-KiFjz1TZieT3fzlNuMKg> ;
-    htkkh:parentOntology "General Purpose Robotics (End-Object Ontology)" ;
-    htkkh:stabilityStatus "not stable" ;
-    htkkh:usageStatus "restricted" ;
-    htkkh:endObject "General Purpose Robotics" ;
-    htkkh:imd "Humanoid Robots" ;
-    htkkh:imd "Robot AI Control" ;
-    htkkh:imd "Robot MBSE Simulation" ;
-    dcterms:description "Ontology focused on autonomous robotics concepts, capabilities, and behavior." .
+    skos:altLabel "IEEE 1872.2 Autonomous Robotics (AuR) Ontology" ;
+    dcterms:description "Ontology focused on autonomous robotics concepts, capabilities, and behavior." ;
+    atlas:publisher "IEEE Robotics and Automation Society" ;
+    atlas:officialSource <https://standards.ieee.org/ieee/1872.2/7094/> ;
+    atlas:versionLabel "IEEE 1872.2-2021 (published 2022-05-12)" ;
+    atlas:licenseName "IEEE standard (purchase); ontology listed under the IEEE SA Open Source programme (BSD-3-Clause)" ;
+    atlas:licenseAccess "open-with-terms" ;
+    atlas:maturity "standard" ;
+    atlas:layer "domain" ;
+    atlas:kind "ontology" ;
+    atlas:verificationStatus "verified" ;
+    atlas:topic "autonomy" ;
+    atlas:topic "autonomous robots" ;
+    atlas:topic "design patterns" ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-industrial-equipment ;
+    atlas:useCase atlas:usecase-general-purpose-robotics ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/ieee-aur> .
 
-htkkh:CORA a htkkh:ReferenceOntology ;
+atlas:bfo a atlas:ReferenceOntology ;
+    dcterms:title "BFO" ;
+    skos:altLabel "Basic Formal Ontology (BFO 2020)" ;
+    dcterms:description "Top-level ontology standardised as ISO/IEC 21838-2. Provides the formal backbone for the IOF, CCO, OEO and many OBO ontologies." ;
+    atlas:publisher "ISO/IEC JTC 1 · BFO maintainers" ;
+    atlas:officialSource <https://basic-formal-ontology.org/> ;
+    atlas:versionLabel "BFO 2020 (ISO/IEC 21838-2:2021)" ;
+    atlas:licenseName "BFO OWL files CC BY 4.0; ISO text licensed" ;
+    atlas:licenseAccess "open" ;
+    atlas:maturity "standard" ;
+    atlas:layer "upper" ;
+    atlas:kind "ontology" ;
+    atlas:verificationStatus "verified" ;
+    atlas:topic "upper ontology" ;
+    atlas:topic "continuants" ;
+    atlas:topic "occurrents" ;
+    atlas:topic "formal relations" ;
+    atlas:industry atlas:industry-cross-industry ;
+    atlas:industry atlas:industry-industrial-equipment ;
+    atlas:industry atlas:industry-aerospace-defense ;
+    atlas:industry atlas:industry-life-sciences ;
+    atlas:industry atlas:industry-energy-materials ;
+    atlas:useCase atlas:usecase-semiconductors ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/bfo> .
+
+atlas:bot a atlas:ReferenceOntology ;
+    dcterms:title "BOT" ;
+    skos:altLabel "Building Topology Ontology" ;
+    dcterms:description "Building Topology Ontology (BOT) is a minimal OWL DL ontology for describing the core topological concepts of buildings and relationships between sub-components such as sites, buildings, storeys, spaces, and elements." ;
+    atlas:publisher "Linked Building Data Community Group" ;
+    atlas:officialSource <https://w3c-lbd-cg.github.io/bot/> ;
+    atlas:namespaceIri <https://w3id.org/bot#> ;
+    atlas:versionLabel "v0.3.2 — W3C LBD Community Group public draft" ;
+    atlas:licenseName "Not stated on the specification page (community group draft)" ;
+    atlas:licenseAccess "open-with-terms" ;
+    atlas:maturity "stable" ;
+    atlas:layer "domain" ;
+    atlas:kind "ontology" ;
+    atlas:verificationStatus "partially-verified" ;
+    atlas:topic "buildings" ;
+    atlas:topic "topology" ;
+    atlas:topic "spaces" ;
+    atlas:topic "storeys" ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-infrastructure-cities ;
+    atlas:useCase atlas:usecase-ai-factories ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/bot> .
+
+atlas:brick a atlas:ReferenceOntology ;
+    dcterms:title "Brick Schema" ;
+    skos:altLabel "Brick Schema" ;
+    dcterms:description "Brick Schema is an open OWL ontology for modeling buildings, infrastructure, and their systems, including spaces, equipment, power distribution, cooling, HVAC, and sensors. It provides a formal semantic foundation to represent and reason over the physical and infrastructural structure of AI factories and data centers." ;
+    atlas:publisher "Brick Consortium" ;
+    atlas:officialSource <https://brickschema.org/> ;
+    atlas:namespaceIri <https://brickschema.org/schema/Brick#> ;
+    atlas:versionLabel "Brick v1.4.4 (v1.5.0 release candidates in progress)" ;
+    atlas:licenseName "BSD-3-Clause" ;
+    atlas:licenseAccess "open" ;
+    atlas:maturity "stable" ;
+    atlas:layer "domain" ;
+    atlas:kind "ontology" ;
+    atlas:verificationStatus "verified" ;
+    atlas:topic "building systems" ;
+    atlas:topic "HVAC" ;
+    atlas:topic "electrical" ;
+    atlas:topic "points" ;
+    atlas:topic "telemetry" ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-infrastructure-cities ;
+    atlas:industry atlas:industry-energy-materials ;
+    atlas:useCase atlas:usecase-ai-factories ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/brick> .
+
+atlas:cco a atlas:ReferenceOntology ;
+    dcterms:title "CCO" ;
+    skos:altLabel "Common Core Ontologies" ;
+    dcterms:description "Suite of mid-level ontologies that extend BFO, covering agents, artefacts, events, information and qualities. Widely used in defence and intelligence programmes." ;
+    atlas:publisher "CCO Governance Board" ;
+    atlas:officialSource <https://github.com/CommonCoreOntology/CommonCoreOntologies> ;
+    atlas:versionLabel "Modernisation in progress (v3.0 planned by end 2026, v4.0 mid-2027)" ;
+    atlas:licenseName "BSD-3-Clause" ;
+    atlas:licenseAccess "open" ;
+    atlas:maturity "stable" ;
+    atlas:layer "mid-level" ;
+    atlas:kind "ontology" ;
+    atlas:verificationStatus "verified" ;
+    atlas:topic "artefacts" ;
+    atlas:topic "agents" ;
+    atlas:topic "events" ;
+    atlas:topic "information entities" ;
+    atlas:industry atlas:industry-aerospace-defense ;
+    atlas:industry atlas:industry-cross-industry ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/cco> .
+
+atlas:ieee-cora a atlas:ReferenceOntology ;
     dcterms:title "CORA" ;
-    htkkh:category "General Purpose Robotics" ;
-    htkkh:publisher "IEEE / Research Community" ;
-    htkkh:officialSource <https://sites.google.com/site/smartappliancesproject/ontologies/cora> ;
-    htkkh:wikiPage <https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:bGIa7mYITemwgBEOc_kMnw> ;
-    htkkh:parentOntology "General Purpose Robotics (End-Object Ontology)" ;
-    htkkh:stabilityStatus "stable" ;
-    htkkh:usageStatus "restricted" ;
-    htkkh:endObject "General Purpose Robotics" ;
-    htkkh:imd "Humanoid Robots" ;
-    htkkh:imd "Robot AI Control" ;
-    htkkh:imd "Robot MBSE Simulation" ;
-    dcterms:description "Core ontology for robotics and automation concepts." .
+    skos:altLabel "Core Ontology for Robotics and Automation (CORA)" ;
+    dcterms:description "Core ontology for robotics and automation concepts." ;
+    atlas:publisher "IEEE Robotics and Automation Society" ;
+    atlas:officialSource <https://standards.ieee.org/standard/1872-2015.html> ;
+    atlas:versionLabel "IEEE 1872-2015 (revision P1872 in progress)" ;
+    atlas:licenseName "IEEE standard (purchase required for the full text)" ;
+    atlas:licenseAccess "licensed" ;
+    atlas:maturity "standard" ;
+    atlas:layer "domain" ;
+    atlas:kind "ontology" ;
+    atlas:verificationStatus "verified" ;
+    atlas:topic "robots" ;
+    atlas:topic "robotic systems" ;
+    atlas:topic "robotic environments" ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-industrial-equipment ;
+    atlas:useCase atlas:usecase-general-purpose-robotics ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/ieee-cora> .
 
-htkkh:CORAX a htkkh:ReferenceOntology ;
+atlas:ieee-corax a atlas:ReferenceOntology ;
     dcterms:title "CORAX" ;
-    htkkh:category "General Purpose Robotics" ;
-    htkkh:publisher "Research / Community" ;
-    htkkh:wikiPage <https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:ChIkKy9aRRyorrT-6UHgdg> ;
-    htkkh:parentOntology "General Purpose Robotics (End-Object Ontology)" ;
-    htkkh:stabilityStatus "not stable" ;
-    htkkh:usageStatus "restricted" ;
-    htkkh:endObject "General Purpose Robotics" ;
-    htkkh:imd "Humanoid Robots" ;
-    htkkh:imd "Robot AI Control" ;
-    htkkh:imd "Robot MBSE Simulation" ;
-    dcterms:description "Reference ontology in the robotics corpus; kept as a governed candidate pending fuller validation." .
+    skos:altLabel "CORAX — CORA auxiliary ontology" ;
+    dcterms:description "Reference ontology in the robotics corpus; kept as a governed candidate pending fuller validation." ;
+    atlas:publisher "IEEE Robotics and Automation Society" ;
+    atlas:officialSource <https://standards.ieee.org/standard/1872-2015.html> ;
+    atlas:versionLabel "IEEE 1872-2015 (revision P1872 in progress)" ;
+    atlas:licenseName "IEEE standard (purchase required for the full text)" ;
+    atlas:licenseAccess "licensed" ;
+    atlas:maturity "standard" ;
+    atlas:layer "domain" ;
+    atlas:kind "ontology" ;
+    atlas:verificationStatus "verified" ;
+    atlas:topic "design" ;
+    atlas:topic "interaction" ;
+    atlas:topic "environment" ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-industrial-equipment ;
+    atlas:useCase atlas:usecase-general-purpose-robotics ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/ieee-corax> .
 
-htkkh:POS a htkkh:ReferenceOntology ;
+atlas:dcat a atlas:ReferenceOntology ;
+    dcterms:title "DCAT" ;
+    skos:altLabel "Data Catalog Vocabulary (DCAT) Version 3" ;
+    dcterms:description "W3C vocabulary for describing datasets, data services and catalogues, the basis of many data-space and open-data catalogues." ;
+    atlas:publisher "W3C" ;
+    atlas:officialSource <https://www.w3.org/TR/vocab-dcat-3/> ;
+    atlas:namespaceIri <http://www.w3.org/ns/dcat#> ;
+    atlas:versionLabel "DCAT 3 — W3C Recommendation" ;
+    atlas:licenseName "W3C Document License" ;
+    atlas:licenseAccess "open" ;
+    atlas:maturity "standard" ;
+    atlas:layer "cross-domain" ;
+    atlas:kind "vocabulary" ;
+    atlas:verificationStatus "verified" ;
+    atlas:topic "data catalogues" ;
+    atlas:topic "datasets" ;
+    atlas:topic "data spaces" ;
+    atlas:industry atlas:industry-cross-industry ;
+    atlas:useCase atlas:usecase-ai-factories ;
+    atlas:useCase atlas:usecase-sustainability ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/dcat> .
+
+atlas:dcterms a atlas:ReferenceOntology ;
+    dcterms:title "DCTERMS" ;
+    skos:altLabel "DCMI Metadata Terms" ;
+    dcterms:description "Widely used metadata terms for title, creator, subject, date, and provenance-like description." ;
+    atlas:publisher "Dublin Core Metadata Initiative" ;
+    atlas:officialSource <https://www.dublincore.org/specifications/dublin-core/dcmi-terms/> ;
+    atlas:namespaceIri <http://purl.org/dc/terms/> ;
+    atlas:versionLabel "DCMI Metadata Terms" ;
+    atlas:licenseName "CC BY 4.0" ;
+    atlas:licenseAccess "open" ;
+    atlas:maturity "standard" ;
+    atlas:layer "cross-domain" ;
+    atlas:kind "vocabulary" ;
+    atlas:verificationStatus "verified" ;
+    atlas:topic "metadata" ;
+    atlas:topic "documents" ;
+    atlas:topic "cataloguing" ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-cross-industry ;
+    atlas:useCase atlas:usecase-ai-factories ;
+    atlas:useCase atlas:usecase-semiconductors ;
+    atlas:useCase atlas:usecase-personal-electronics ;
+    atlas:useCase atlas:usecase-general-purpose-robotics ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/dcterms> .
+
+atlas:digital-reference a atlas:ReferenceOntology ;
+    dcterms:title "Digital Reference (DR)" ;
+    skos:altLabel "Digital Reference — semiconductor supply-chain ontology" ;
+    dcterms:description "Ontology for the semiconductor industry and its supply chains, organised in thematic \"lobes\" (about 1,200 classes). Introduced in the ECSEL Productive4.0 project." ;
+    atlas:publisher "Infineon Technologies & partners (Productive4.0, SC³)" ;
+    atlas:officialSource <https://ifx-dr.github.io/DigitalReference/> ;
+    atlas:versionLabel "Community-maintained (see repository)" ;
+    atlas:licenseName "See repository" ;
+    atlas:licenseAccess "unknown" ;
+    atlas:maturity "emerging" ;
+    atlas:layer "domain" ;
+    atlas:kind "ontology" ;
+    atlas:verificationStatus "partially-verified" ;
+    atlas:topic "semiconductor supply chain" ;
+    atlas:topic "manufacturing" ;
+    atlas:topic "products" ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:useCase atlas:usecase-semiconductors ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/digital-reference> .
+
+atlas:dmtf-cim a atlas:ReferenceOntology ;
+    dcterms:title "DMTF CIM" ;
+    skos:altLabel "DMTF Common Information Model (CIM) Schema" ;
+    dcterms:description "The Common Information Model (CIM) is a formal object-oriented schema developed by the Distributed Management Task Force (DMTF) to represent managed elements in IT environments, including computer systems, racks, chassis, processors, memory, power supplies, networking components, and cooling subsystems. CIM provides a strong reference model for AI Factory physical and logical infrastructure components." ;
+    atlas:publisher "DMTF (Distributed Management Task Force)" ;
+    atlas:officialSource <https://www.dmtf.org/standards/cim> ;
+    atlas:versionLabel "CIM Schema 2.54.1 (2.54.0 released October 2020)" ;
+    atlas:licenseName "Free download under DMTF terms" ;
+    atlas:licenseAccess "open-with-terms" ;
+    atlas:maturity "stable" ;
+    atlas:layer "domain" ;
+    atlas:kind "information-model" ;
+    atlas:verificationStatus "verified" ;
+    atlas:topic "IT management" ;
+    atlas:topic "servers" ;
+    atlas:topic "racks" ;
+    atlas:topic "power supplies" ;
+    atlas:topic "cooling" ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:useCase atlas:usecase-ai-factories ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/dmtf-cim> .
+
+atlas:eclass a atlas:ReferenceOntology ;
+    dcterms:title "ECLASS Ontology" ;
+    skos:altLabel "ECLASS classification and product description standard" ;
+    dcterms:description "Classification ontology for products, properties, and industrial semantics." ;
+    atlas:publisher "ECLASS e.V." ;
+    atlas:officialSource <https://eclass.eu/> ;
+    atlas:versionLabel "ECLASS 16.0 (listed in the ECLASS shop); 15.0 released 2024-11-29" ;
+    atlas:licenseName "Commercial ECLASS licence" ;
+    atlas:licenseAccess "licensed" ;
+    atlas:maturity "standard" ;
+    atlas:layer "domain" ;
+    atlas:kind "classification" ;
+    atlas:verificationStatus "verified" ;
+    atlas:topic "product classification" ;
+    atlas:topic "properties" ;
+    atlas:topic "IRDI" ;
+    atlas:topic "master data" ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-industrial-equipment ;
+    atlas:industry atlas:industry-energy-materials ;
+    atlas:industry atlas:industry-consumer-goods ;
+    atlas:useCase atlas:usecase-ai-factories ;
+    atlas:useCase atlas:usecase-semiconductors ;
+    atlas:useCase atlas:usecase-personal-electronics ;
+    atlas:useCase atlas:usecase-general-purpose-robotics ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/eclass> .
+
+atlas:eli a atlas:ReferenceOntology ;
+    dcterms:title "ELI Ontology" ;
+    skos:altLabel "European Legislation Identifier (ELI) Ontology" ;
+    dcterms:description "Ontology for identifying and describing legal resources and legislation metadata." ;
+    atlas:publisher "Publications Office of the European Union" ;
+    atlas:officialSource <https://op.europa.eu/en/web/eu-vocabularies/eli> ;
+    atlas:namespaceIri <http://data.europa.eu/eli/ontology#> ;
+    atlas:versionLabel "ELI ontology 1.3 (latest listed on Interoperable Europe)" ;
+    atlas:licenseName "EU Publications Office open reuse terms (confirm per release)" ;
+    atlas:licenseAccess "open" ;
+    atlas:maturity "stable" ;
+    atlas:layer "domain" ;
+    atlas:kind "ontology" ;
+    atlas:verificationStatus "partially-verified" ;
+    atlas:topic "legislation" ;
+    atlas:topic "regulation" ;
+    atlas:topic "metadata" ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-cross-industry ;
+    atlas:useCase atlas:usecase-ai-factories ;
+    atlas:useCase atlas:usecase-semiconductors ;
+    atlas:useCase atlas:usecase-personal-electronics ;
+    atlas:useCase atlas:usecase-general-purpose-robotics ;
+    atlas:useCase atlas:usecase-sustainability ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/eli> .
+
+atlas:emmo a atlas:ReferenceOntology ;
+    dcterms:title "EMMO" ;
+    skos:altLabel "Elementary Multiperspective Material Ontology" ;
+    dcterms:description "Top-down ontology for materials science and engineering, from physical foundations to materials, models and characterisation." ;
+    atlas:publisher "EMMC / EMMO community" ;
+    atlas:officialSource <https://github.com/emmo-repo/EMMO> ;
+    atlas:namespaceIri <https://w3id.org/emmo#> ;
+    atlas:versionLabel "EMMO 1.0.0" ;
+    atlas:licenseName "CC BY 4.0" ;
+    atlas:licenseAccess "open" ;
+    atlas:maturity "stable" ;
+    atlas:layer "upper" ;
+    atlas:kind "ontology" ;
+    atlas:verificationStatus "verified" ;
+    atlas:topic "materials" ;
+    atlas:topic "physics" ;
+    atlas:topic "models" ;
+    atlas:topic "characterisation" ;
+    atlas:industry atlas:industry-energy-materials ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-transportation-mobility ;
+    atlas:industry atlas:industry-life-sciences ;
+    atlas:useCase atlas:usecase-semiconductors ;
+    atlas:useCase atlas:usecase-sustainability ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/emmo> .
+
+atlas:geosparql a atlas:ReferenceOntology ;
+    dcterms:title "GeoSPARQL" ;
+    skos:altLabel "OGC GeoSPARQL — A Geographic Query Language for RDF Data" ;
+    dcterms:description "Standard for spatial RDF representation and geospatial querying." ;
+    atlas:publisher "OGC" ;
+    atlas:officialSource <https://www.ogc.org/standard/geosparql/> ;
+    atlas:namespaceIri <http://www.opengis.net/ont/geosparql#> ;
+    atlas:versionLabel "GeoSPARQL 1.1" ;
+    atlas:licenseName "OGC document licence (royalty-free)" ;
+    atlas:licenseAccess "open" ;
+    atlas:maturity "standard" ;
+    atlas:layer "cross-domain" ;
+    atlas:kind "ontology" ;
+    atlas:verificationStatus "verified" ;
+    atlas:topic "geospatial" ;
+    atlas:topic "spatial reasoning" ;
+    atlas:topic "SPARQL" ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-infrastructure-cities ;
+    atlas:industry atlas:industry-energy-materials ;
+    atlas:industry atlas:industry-cross-industry ;
+    atlas:useCase atlas:usecase-ai-factories ;
+    atlas:useCase atlas:usecase-semiconductors ;
+    atlas:useCase atlas:usecase-personal-electronics ;
+    atlas:useCase atlas:usecase-general-purpose-robotics ;
+    atlas:useCase atlas:usecase-sustainability ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/geosparql> .
+
+atlas:goodrelations a atlas:ReferenceOntology ;
+    dcterms:title "GoodRelations" ;
+    skos:altLabel "GoodRelations Web Vocabulary for E-Commerce" ;
+    dcterms:description "Ontology for products, offers, prices, and business entities." ;
+    atlas:publisher "Web Commerce Community" ;
+    atlas:officialSource <http://www.heppnetz.de/projects/goodrelations/> ;
+    atlas:namespaceIri <http://purl.org/goodrelations/v1#> ;
+    atlas:versionLabel "GoodRelations 1.0 (integrated into schema.org in 2012)" ;
+    atlas:licenseName "Open (see project site)" ;
+    atlas:licenseAccess "open" ;
+    atlas:maturity "legacy" ;
+    atlas:layer "domain" ;
+    atlas:kind "vocabulary" ;
+    atlas:verificationStatus "verified" ;
+    atlas:topic "e-commerce" ;
+    atlas:topic "offers" ;
+    atlas:topic "products" ;
+    atlas:topic "business entities" ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-consumer-goods ;
+    atlas:useCase atlas:usecase-ai-factories ;
+    atlas:useCase atlas:usecase-semiconductors ;
+    atlas:useCase atlas:usecase-personal-electronics ;
+    atlas:useCase atlas:usecase-general-purpose-robotics ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/goodrelations> .
+
+atlas:gs1-webvoc a atlas:ReferenceOntology ;
+    dcterms:title "GS1 WebVoc" ;
+    skos:altLabel "GS1 Web Vocabulary" ;
+    dcterms:description "GS1 web vocabulary for product, organization, and identification semantics." ;
+    atlas:publisher "GS1" ;
+    atlas:officialSource <https://ref.gs1.org/voc/> ;
+    atlas:namespaceIri <https://gs1.org/voc/> ;
+    atlas:versionLabel "Release 1.13.0 (latest immutable release seen)" ;
+    atlas:licenseName "Apache-2.0 (per GS1 WebVoc repository)" ;
+    atlas:licenseAccess "open" ;
+    atlas:maturity "standard" ;
+    atlas:layer "domain" ;
+    atlas:kind "vocabulary" ;
+    atlas:verificationStatus "verified" ;
+    atlas:topic "product identification" ;
+    atlas:topic "GTIN" ;
+    atlas:topic "product master data" ;
+    atlas:topic "digital product passport" ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-consumer-goods ;
+    atlas:industry atlas:industry-life-sciences ;
+    atlas:useCase atlas:usecase-ai-factories ;
+    atlas:useCase atlas:usecase-semiconductors ;
+    atlas:useCase atlas:usecase-personal-electronics ;
+    atlas:useCase atlas:usecase-general-purpose-robotics ;
+    atlas:useCase atlas:usecase-sustainability ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/gs1-webvoc> .
+
+atlas:iec-cim a atlas:ReferenceOntology ;
+    dcterms:title "IEC CIM" ;
+    skos:altLabel "IEC Common Information Model for power systems (IEC 61970 / 61968 / 62325)" ;
+    dcterms:description "UML information model for electric power systems (grid topology, equipment, measurements, markets). Exchanged as RDF through profiles such as ENTSO-E CGMES." ;
+    atlas:publisher "IEC TC 57" ;
+    atlas:officialSource <https://webstore.iec.ch/en/publication/6215> ;
+    atlas:versionLabel "IEC 61970-301:2020 + AMD1:2022" ;
+    atlas:licenseName "IEC standard (purchase required)" ;
+    atlas:licenseAccess "licensed" ;
+    atlas:maturity "standard" ;
+    atlas:layer "domain" ;
+    atlas:kind "information-model" ;
+    atlas:verificationStatus "partially-verified" ;
+    atlas:topic "power grid" ;
+    atlas:topic "transmission" ;
+    atlas:topic "distribution" ;
+    atlas:topic "CGMES" ;
+    atlas:industry atlas:industry-energy-materials ;
+    atlas:useCase atlas:usecase-ai-factories ;
+    atlas:useCase atlas:usecase-sustainability ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/iec-cim> .
+
+atlas:ifcowl a atlas:ReferenceOntology ;
+    dcterms:title "ifcOWL" ;
+    skos:altLabel "ifcOWL — OWL representation of IFC" ;
+    dcterms:description "Direct OWL translation of the IFC EXPRESS schema (ISO 16739). buildingSMART now points semantic-web users to bSDD for most uses." ;
+    atlas:publisher "buildingSMART International" ;
+    atlas:officialSource <https://technical.buildingsmart.org/standards/ifc/ifc-formats/ifcowl/> ;
+    atlas:versionLabel "ifcOWL for IFC4 ADD2" ;
+    atlas:licenseName "CC BY 3.0" ;
+    atlas:licenseAccess "open" ;
+    atlas:maturity "legacy" ;
+    atlas:layer "domain" ;
+    atlas:kind "ontology" ;
+    atlas:verificationStatus "verified" ;
+    atlas:topic "BIM" ;
+    atlas:topic "IFC" ;
+    atlas:topic "buildings" ;
+    atlas:topic "infrastructure" ;
+    atlas:industry atlas:industry-infrastructure-cities ;
+    atlas:useCase atlas:usecase-ai-factories ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/ifcowl> .
+
+atlas:iof-core a atlas:ReferenceOntology ;
+    dcterms:title "IOF Core" ;
+    skos:altLabel "Industrial Ontologies Foundry — Core Ontology" ;
+    dcterms:description "Mid-level industrial ontology grounded in BFO 2020. Shared foundation for IOF domain ontologies such as maintenance, supply chain, production planning and product-service systems." ;
+    atlas:publisher "OAGi Industrial Ontologies Foundry" ;
+    atlas:officialSource <https://spec.industrialontologies.org/> ;
+    atlas:versionLabel "IOF release 202603 (Core first released in 202401)" ;
+    atlas:licenseName "MIT" ;
+    atlas:licenseAccess "open" ;
+    atlas:maturity "stable" ;
+    atlas:layer "mid-level" ;
+    atlas:kind "ontology" ;
+    atlas:verificationStatus "verified" ;
+    atlas:topic "manufacturing" ;
+    atlas:topic "maintenance" ;
+    atlas:topic "supply chain" ;
+    atlas:topic "product lifecycle" ;
+    atlas:industry atlas:industry-industrial-equipment ;
+    atlas:industry atlas:industry-aerospace-defense ;
+    atlas:industry atlas:industry-transportation-mobility ;
+    atlas:industry atlas:industry-life-sciences ;
+    atlas:useCase atlas:usecase-semiconductors ;
+    atlas:useCase atlas:usecase-general-purpose-robotics ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/iof-core> .
+
+atlas:iso-15926-14 a atlas:ReferenceOntology ;
+    dcterms:title "ISO 15926-14" ;
+    skos:altLabel "ISO 15926-14 — OWL 2 ontology for process-plant lifecycle data" ;
+    dcterms:description "OWL 2 implementation of the ISO 15926-2 data model for integrating lifecycle data of process plants, including oil and gas facilities." ;
+    atlas:publisher "ISO TC 184/SC 4" ;
+    atlas:officialSource <https://15926.org/> ;
+    atlas:versionLabel "ISO/TS 15926-14" ;
+    atlas:licenseName "ISO standard (purchase required)" ;
+    atlas:licenseAccess "licensed" ;
+    atlas:maturity "standard" ;
+    atlas:layer "domain" ;
+    atlas:kind "ontology" ;
+    atlas:verificationStatus "partially-verified" ;
+    atlas:topic "process plants" ;
+    atlas:topic "oil and gas" ;
+    atlas:topic "asset lifecycle" ;
+    atlas:industry atlas:industry-energy-materials ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/iso-15926-14> .
+
+atlas:oeo a atlas:ReferenceOntology ;
+    dcterms:title "OEO" ;
+    skos:altLabel "Open Energy Ontology" ;
+    dcterms:description "Community ontology for energy-system modelling (technologies, carriers, scenarios, emissions), built on BFO." ;
+    atlas:publisher "Open Energy Platform community" ;
+    atlas:officialSource <https://openenergyplatform.org/ontology/> ;
+    atlas:versionLabel "OEO 2.13.0" ;
+    atlas:licenseName "CC0-1.0 or MIT (dual)" ;
+    atlas:licenseAccess "open" ;
+    atlas:maturity "stable" ;
+    atlas:layer "domain" ;
+    atlas:kind "ontology" ;
+    atlas:verificationStatus "verified" ;
+    atlas:topic "energy systems" ;
+    atlas:topic "scenarios" ;
+    atlas:topic "emissions" ;
+    atlas:topic "modelling" ;
+    atlas:industry atlas:industry-energy-materials ;
+    atlas:useCase atlas:usecase-ai-factories ;
+    atlas:useCase atlas:usecase-sustainability ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/oeo> .
+
+atlas:oriont a atlas:ReferenceOntology ;
+    dcterms:title "ORIONT" ;
+    skos:altLabel "ORIONT — life-cycle sustainability assessment ontology (candidate)" ;
+    dcterms:description "ORIENTING provides a structured ontology for Life Cycle Sustainability Assessment. It formalizes concepts related to environmental, social, and economic impacts across lifecycle stages. The ontology supports interoperability of LCSA data, impact indicators, system boundaries, and sustainability modeling workflows." ;
+    atlas:publisher "Research / Community" ;
+    atlas:versionLabel "Not publicly identified" ;
+    atlas:licenseName "Unknown" ;
+    atlas:licenseAccess "unknown" ;
+    atlas:maturity "research" ;
+    atlas:layer "domain" ;
+    atlas:kind "ontology" ;
+    atlas:verificationStatus "unverified" ;
+    atlas:topic "life-cycle sustainability assessment" ;
+    atlas:topic "impact indicators" ;
+    atlas:topic "circularity" ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-cross-industry ;
+    atlas:useCase atlas:usecase-ai-factories ;
+    atlas:useCase atlas:usecase-semiconductors ;
+    atlas:useCase atlas:usecase-personal-electronics ;
+    atlas:useCase atlas:usecase-general-purpose-robotics ;
+    atlas:useCase atlas:usecase-sustainability ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/oriont> .
+
+atlas:owl-time a atlas:ReferenceOntology ;
+    dcterms:title "OWL-time" ;
+    skos:altLabel "Time Ontology in OWL" ;
+    dcterms:description "Ontology of temporal concepts including intervals, instants, durations, and relations." ;
+    atlas:publisher "W3C" ;
+    atlas:officialSource <https://www.w3.org/TR/owl-time/> ;
+    atlas:namespaceIri <http://www.w3.org/2006/time#> ;
+    atlas:versionLabel "W3C Candidate Recommendation Draft (revision of the 2017 Recommendation)" ;
+    atlas:licenseName "W3C Document License" ;
+    atlas:licenseAccess "open" ;
+    atlas:maturity "standard" ;
+    atlas:layer "cross-domain" ;
+    atlas:kind "ontology" ;
+    atlas:verificationStatus "verified" ;
+    atlas:topic "time" ;
+    atlas:topic "intervals" ;
+    atlas:topic "durations" ;
+    atlas:topic "temporal relations" ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-cross-industry ;
+    atlas:useCase atlas:usecase-ai-factories ;
+    atlas:useCase atlas:usecase-semiconductors ;
+    atlas:useCase atlas:usecase-personal-electronics ;
+    atlas:useCase atlas:usecase-general-purpose-robotics ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/owl-time> .
+
+atlas:ieee-pos a atlas:ReferenceOntology ;
     dcterms:title "POS" ;
-    htkkh:category "General Purpose Robotics" ;
-    htkkh:publisher "Research / Community" ;
-    htkkh:wikiPage <https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:rf21jegYTPqRJwpGm0Cpng> ;
-    htkkh:parentOntology "General Purpose Robotics (End-Object Ontology)" ;
-    htkkh:stabilityStatus "not stable" ;
-    htkkh:usageStatus "restricted" ;
-    htkkh:endObject "General Purpose Robotics" ;
-    htkkh:imd "Humanoid Robots" ;
-    htkkh:imd "Robot AI Control" ;
-    htkkh:imd "Robot MBSE Simulation" ;
-    dcterms:description "Ontology used for positional, pose, or planning-oriented semantics in robotics contexts." .
+    skos:altLabel "POS — Position ontology (IEEE 1872-2015)" ;
+    dcterms:description "Ontology used for positional, pose, or planning-oriented semantics in robotics contexts." ;
+    atlas:publisher "IEEE Robotics and Automation Society" ;
+    atlas:officialSource <https://standards.ieee.org/standard/1872-2015.html> ;
+    atlas:versionLabel "IEEE 1872-2015 (revision P1872 in progress)" ;
+    atlas:licenseName "IEEE standard (purchase required for the full text)" ;
+    atlas:licenseAccess "licensed" ;
+    atlas:maturity "standard" ;
+    atlas:layer "domain" ;
+    atlas:kind "ontology" ;
+    atlas:verificationStatus "verified" ;
+    atlas:topic "position" ;
+    atlas:topic "orientation" ;
+    atlas:topic "pose" ;
+    atlas:topic "coordinate systems" ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-industrial-equipment ;
+    atlas:useCase atlas:usecase-general-purpose-robotics ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/ieee-pos> .
 
-htkkh:Robot_Task_Representation a htkkh:ReferenceOntology ;
+atlas:prov-o a atlas:ReferenceOntology ;
+    dcterms:title "PROV-O" ;
+    skos:altLabel "PROV Ontology" ;
+    dcterms:description "Provenance ontology for entities, activities, agents, and derivation relationships." ;
+    atlas:publisher "W3C" ;
+    atlas:officialSource <https://www.w3.org/TR/prov-o/> ;
+    atlas:namespaceIri <http://www.w3.org/ns/prov#> ;
+    atlas:versionLabel "W3C Recommendation" ;
+    atlas:licenseName "W3C Document License" ;
+    atlas:licenseAccess "open" ;
+    atlas:maturity "standard" ;
+    atlas:layer "cross-domain" ;
+    atlas:kind "ontology" ;
+    atlas:verificationStatus "verified" ;
+    atlas:topic "provenance" ;
+    atlas:topic "lineage" ;
+    atlas:topic "traceability" ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-cross-industry ;
+    atlas:useCase atlas:usecase-ai-factories ;
+    atlas:useCase atlas:usecase-semiconductors ;
+    atlas:useCase atlas:usecase-personal-electronics ;
+    atlas:useCase atlas:usecase-general-purpose-robotics ;
+    atlas:useCase atlas:usecase-sustainability ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/prov-o> .
+
+atlas:qudt a atlas:ReferenceOntology ;
+    dcterms:title "QUDT" ;
+    skos:altLabel "Quantities, Units, Dimensions and Data Types" ;
+    dcterms:description "Ontology for quantities, units, dimensions, and datatypes." ;
+    atlas:publisher "QUDT" ;
+    atlas:officialSource <https://qudt.org/> ;
+    atlas:namespaceIri <http://qudt.org/schema/qudt/> ;
+    atlas:versionLabel "QUDT 3.1.x (3.1.10 published January 2026)" ;
+    atlas:licenseName "CC BY 4.0" ;
+    atlas:licenseAccess "open" ;
+    atlas:maturity "stable" ;
+    atlas:layer "cross-domain" ;
+    atlas:kind "ontology" ;
+    atlas:verificationStatus "verified" ;
+    atlas:topic "units of measure" ;
+    atlas:topic "quantity kinds" ;
+    atlas:topic "dimensions" ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-cross-industry ;
+    atlas:useCase atlas:usecase-ai-factories ;
+    atlas:useCase atlas:usecase-semiconductors ;
+    atlas:useCase atlas:usecase-personal-electronics ;
+    atlas:useCase atlas:usecase-general-purpose-robotics ;
+    atlas:useCase atlas:usecase-sustainability ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/qudt> .
+
+atlas:ieee-rtr a atlas:ReferenceOntology ;
     dcterms:title "Robot Task Representation" ;
-    htkkh:category "General Purpose Robotics" ;
-    htkkh:publisher "Research / Community" ;
-    htkkh:wikiPage <https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:KBDIlDH4QFq5i_K01kbS6g> ;
-    htkkh:parentOntology "General Purpose Robotics (End-Object Ontology)" ;
-    htkkh:stabilityStatus "not stable" ;
-    htkkh:usageStatus "restricted" ;
-    htkkh:endObject "General Purpose Robotics" ;
-    htkkh:imd "Humanoid Robots" ;
-    htkkh:imd "Robot AI Control" ;
-    htkkh:imd "Robot MBSE Simulation" ;
-    dcterms:description "Ontology for describing robot tasks, actions, parameters, and execution context." .
+    skos:altLabel "IEEE 1872.1 Robot Task Representation" ;
+    dcterms:description "Ontology for describing robot tasks, actions, parameters, and execution context." ;
+    atlas:publisher "IEEE Robotics and Automation Society" ;
+    atlas:officialSource <https://standards.ieee.org/ieee/1872.1/6993/> ;
+    atlas:versionLabel "IEEE 1872.1-2024 (published 2024-06-18)" ;
+    atlas:licenseName "IEEE standard (purchase required for the full text)" ;
+    atlas:licenseAccess "licensed" ;
+    atlas:maturity "standard" ;
+    atlas:layer "domain" ;
+    atlas:kind "ontology" ;
+    atlas:verificationStatus "verified" ;
+    atlas:topic "tasks" ;
+    atlas:topic "planning" ;
+    atlas:topic "hierarchical task knowledge" ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-industrial-equipment ;
+    atlas:useCase atlas:usecase-general-purpose-robotics ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/ieee-rtr> .
 
-htkkh:RPARTS a htkkh:ReferenceOntology ;
+atlas:ieee-rparts a atlas:ReferenceOntology ;
     dcterms:title "RPARTS" ;
-    htkkh:category "General Purpose Robotics" ;
-    htkkh:publisher "Research / Community" ;
-    htkkh:wikiPage <https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:ee62NLxmT6yvvFC5E7GKrw> ;
-    htkkh:parentOntology "General Purpose Robotics (End-Object Ontology)" ;
-    htkkh:stabilityStatus "not stable" ;
-    htkkh:usageStatus "restricted" ;
-    htkkh:endObject "General Purpose Robotics" ;
-    htkkh:imd "Humanoid Robots" ;
-    htkkh:imd "Robot AI Control" ;
-    htkkh:imd "Robot MBSE Simulation" ;
-    dcterms:description "Reference ontology related to robot parts and component decomposition." .
+    skos:altLabel "RPARTS — Robot parts ontology (IEEE 1872-2015)" ;
+    dcterms:description "Reference ontology related to robot parts and component decomposition." ;
+    atlas:publisher "IEEE Robotics and Automation Society" ;
+    atlas:officialSource <https://standards.ieee.org/standard/1872-2015.html> ;
+    atlas:versionLabel "IEEE 1872-2015 (revision P1872 in progress)" ;
+    atlas:licenseName "IEEE standard (purchase required for the full text)" ;
+    atlas:licenseAccess "licensed" ;
+    atlas:maturity "standard" ;
+    atlas:layer "domain" ;
+    atlas:kind "ontology" ;
+    atlas:verificationStatus "verified" ;
+    atlas:topic "robot parts" ;
+    atlas:topic "components" ;
+    atlas:topic "decomposition" ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-industrial-equipment ;
+    atlas:useCase atlas:usecase-general-purpose-robotics ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/ieee-rparts> .
 
-htkkh:SUMO_CORA a htkkh:ReferenceOntology ;
+atlas:saref-core a atlas:ReferenceOntology ;
+    dcterms:title "SAREF Core" ;
+    skos:altLabel "Smart Applications REFerence ontology (SAREF) — Core" ;
+    dcterms:description "Smart Applications REFerence ontology for interoperable devices and services." ;
+    atlas:publisher "ETSI" ;
+    atlas:officialSource <https://saref.etsi.org/core/> ;
+    atlas:namespaceIri <https://saref.etsi.org/core/> ;
+    atlas:versionLabel "SAREF Core v4.1.1 (ETSI TS 103 264 V4.1.1)" ;
+    atlas:licenseName "ETSI Software License (BSD-3-Clause style)" ;
+    atlas:licenseAccess "open" ;
+    atlas:maturity "standard" ;
+    atlas:layer "domain" ;
+    atlas:kind "ontology" ;
+    atlas:verificationStatus "verified" ;
+    atlas:topic "IoT" ;
+    atlas:topic "devices" ;
+    atlas:topic "functions" ;
+    atlas:topic "commands" ;
+    atlas:topic "measurements" ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-infrastructure-cities ;
+    atlas:industry atlas:industry-energy-materials ;
+    atlas:industry atlas:industry-industrial-equipment ;
+    atlas:useCase atlas:usecase-ai-factories ;
+    atlas:useCase atlas:usecase-semiconductors ;
+    atlas:useCase atlas:usecase-personal-electronics ;
+    atlas:useCase atlas:usecase-general-purpose-robotics ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/saref-core> .
+
+atlas:saref4bldg a atlas:ReferenceOntology ;
+    dcterms:title "SAREF4BLDG" ;
+    skos:altLabel "SAREF extension for Buildings" ;
+    dcterms:description "Building extension of SAREF for spaces, devices, and building systems." ;
+    atlas:publisher "ETSI" ;
+    atlas:officialSource <https://saref.etsi.org/saref4bldg/> ;
+    atlas:namespaceIri <https://saref.etsi.org/saref4bldg/> ;
+    atlas:versionLabel "SAREF4BLDG v2.1.1 (ETSI TS 103 410-3 V2.1.1)" ;
+    atlas:licenseName "ETSI Software License (BSD-3-Clause style)" ;
+    atlas:licenseAccess "open" ;
+    atlas:maturity "standard" ;
+    atlas:layer "domain" ;
+    atlas:kind "ontology" ;
+    atlas:verificationStatus "verified" ;
+    atlas:topic "buildings" ;
+    atlas:topic "building devices" ;
+    atlas:topic "IFC" ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-infrastructure-cities ;
+    atlas:useCase atlas:usecase-ai-factories ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/saref4bldg> .
+
+atlas:saref4ener a atlas:ReferenceOntology ;
+    dcterms:title "SAREF4ENER" ;
+    skos:altLabel "SAREF extension for Energy" ;
+    dcterms:description "SAREF extension for energy flexibility and demand response between smart devices, energy managers and the grid." ;
+    atlas:publisher "ETSI" ;
+    atlas:officialSource <https://saref.etsi.org/saref4ener/> ;
+    atlas:namespaceIri <https://saref.etsi.org/saref4ener/> ;
+    atlas:versionLabel "SAREF4ENER v2.1.1 (ETSI TS 103 410-1 V2.1.1)" ;
+    atlas:licenseName "ETSI Software License (BSD-3-Clause style)" ;
+    atlas:licenseAccess "open" ;
+    atlas:maturity "standard" ;
+    atlas:layer "domain" ;
+    atlas:kind "ontology" ;
+    atlas:verificationStatus "verified" ;
+    atlas:topic "energy flexibility" ;
+    atlas:topic "demand response" ;
+    atlas:topic "power profiles" ;
+    atlas:industry atlas:industry-energy-materials ;
+    atlas:industry atlas:industry-infrastructure-cities ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:useCase atlas:usecase-ai-factories ;
+    atlas:useCase atlas:usecase-sustainability ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/saref4ener> .
+
+atlas:schema-org a atlas:ReferenceOntology ;
+    dcterms:title "Schema.org" ;
+    skos:altLabel "Schema.org vocabulary" ;
+    dcterms:description "Widely deployed vocabulary for structured data on the web: products, offers, organisations, events and more. Absorbed GoodRelations in 2012." ;
+    atlas:publisher "Schema.org community (W3C Community Group)" ;
+    atlas:officialSource <https://schema.org/> ;
+    atlas:namespaceIri <https://schema.org/> ;
+    atlas:versionLabel "Continuously released (see release log)" ;
+    atlas:licenseName "CC BY-SA 3.0" ;
+    atlas:licenseAccess "open" ;
+    atlas:maturity "stable" ;
+    atlas:layer "cross-domain" ;
+    atlas:kind "vocabulary" ;
+    atlas:verificationStatus "verified" ;
+    atlas:topic "web data" ;
+    atlas:topic "products" ;
+    atlas:topic "organisations" ;
+    atlas:topic "offers" ;
+    atlas:industry atlas:industry-consumer-goods ;
+    atlas:industry atlas:industry-cross-industry ;
+    atlas:useCase atlas:usecase-personal-electronics ;
+    atlas:useCase atlas:usecase-semiconductors ;
+    atlas:useCase atlas:usecase-sustainability ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/schema-org> .
+
+atlas:skos a atlas:ReferenceOntology ;
+    dcterms:title "SKOS" ;
+    skos:altLabel "Simple Knowledge Organization System" ;
+    dcterms:description "W3C standard for thesauri, taxonomies and classification schemes on the web: concepts, labels and broader/narrower relations." ;
+    atlas:publisher "W3C" ;
+    atlas:officialSource <https://www.w3.org/TR/skos-reference/> ;
+    atlas:namespaceIri <http://www.w3.org/2004/02/skos/core#> ;
+    atlas:versionLabel "W3C Recommendation" ;
+    atlas:licenseName "W3C Document License" ;
+    atlas:licenseAccess "open" ;
+    atlas:maturity "standard" ;
+    atlas:layer "cross-domain" ;
+    atlas:kind "vocabulary" ;
+    atlas:verificationStatus "verified" ;
+    atlas:topic "taxonomies" ;
+    atlas:topic "thesauri" ;
+    atlas:topic "classification schemes" ;
+    atlas:industry atlas:industry-cross-industry ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/skos> .
+
+atlas:sosa a atlas:ReferenceOntology ;
+    dcterms:title "SOSA" ;
+    skos:altLabel "Sensor, Observation, Sample, and Actuator (SOSA)" ;
+    dcterms:description "Lightweight core for sensors, observations, samples, and actuators." ;
+    atlas:publisher "W3C/OGC" ;
+    atlas:officialSource <https://www.w3.org/TR/vocab-ssn/> ;
+    atlas:namespaceIri <http://www.w3.org/ns/sosa/> ;
+    atlas:versionLabel "W3C Recommendation / OGC 16-079" ;
+    atlas:licenseName "W3C Document License" ;
+    atlas:licenseAccess "open" ;
+    atlas:maturity "standard" ;
+    atlas:layer "cross-domain" ;
+    atlas:kind "ontology" ;
+    atlas:verificationStatus "verified" ;
+    atlas:topic "sensors" ;
+    atlas:topic "observations" ;
+    atlas:topic "actuation" ;
+    atlas:topic "sampling" ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-cross-industry ;
+    atlas:useCase atlas:usecase-ai-factories ;
+    atlas:useCase atlas:usecase-semiconductors ;
+    atlas:useCase atlas:usecase-personal-electronics ;
+    atlas:useCase atlas:usecase-general-purpose-robotics ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/sosa> .
+
+atlas:ssn a atlas:ReferenceOntology ;
+    dcterms:title "SSN" ;
+    skos:altLabel "Semantic Sensor Network Ontology" ;
+    dcterms:description "Semantic Sensor Network ontology for sensors, observations, and systems." ;
+    atlas:publisher "W3C/OGC" ;
+    atlas:officialSource <https://www.w3.org/TR/vocab-ssn/> ;
+    atlas:namespaceIri <http://www.w3.org/ns/ssn/> ;
+    atlas:versionLabel "W3C Recommendation / OGC 16-079" ;
+    atlas:licenseName "W3C Document License" ;
+    atlas:licenseAccess "open" ;
+    atlas:maturity "standard" ;
+    atlas:layer "cross-domain" ;
+    atlas:kind "ontology" ;
+    atlas:verificationStatus "verified" ;
+    atlas:topic "sensors" ;
+    atlas:topic "systems" ;
+    atlas:topic "deployments" ;
+    atlas:topic "capabilities" ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-cross-industry ;
+    atlas:useCase atlas:usecase-ai-factories ;
+    atlas:useCase atlas:usecase-semiconductors ;
+    atlas:useCase atlas:usecase-personal-electronics ;
+    atlas:useCase atlas:usecase-general-purpose-robotics ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/ssn> .
+
+atlas:step-ap242 a atlas:ReferenceOntology ;
+    dcterms:title "STEP AP242" ;
+    skos:altLabel "ISO 10303-242 Managed model-based 3D engineering" ;
+    dcterms:description "STEP application protocol for exchanging 3D product data, PMI, PDM data and configuration. Defined in EXPRESS; the reference information model for model-based definition." ;
+    atlas:publisher "ISO TC 184/SC 4" ;
+    atlas:officialSource <https://www.iso.org/standard/84300.html> ;
+    atlas:versionLabel "ISO 10303-242:2025 (edition 4)" ;
+    atlas:licenseName "ISO standard (purchase required)" ;
+    atlas:licenseAccess "licensed" ;
+    atlas:maturity "standard" ;
+    atlas:layer "domain" ;
+    atlas:kind "information-model" ;
+    atlas:verificationStatus "verified" ;
+    atlas:topic "CAD exchange" ;
+    atlas:topic "PMI" ;
+    atlas:topic "model-based definition" ;
+    atlas:topic "PDM" ;
+    atlas:industry atlas:industry-aerospace-defense ;
+    atlas:industry atlas:industry-transportation-mobility ;
+    atlas:industry atlas:industry-industrial-equipment ;
+    atlas:useCase atlas:usecase-general-purpose-robotics ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/step-ap242> .
+
+atlas:sumo a atlas:ReferenceOntology ;
+    dcterms:title "SUMO" ;
+    skos:altLabel "Suggested Upper Merged Ontology" ;
+    dcterms:description "Suggested Upper Merged Ontology for broad upper-level semantic grounding." ;
+    atlas:publisher "IEEE / Teknowledge" ;
+    atlas:officialSource <https://www.ontologyportal.org/> ;
+    atlas:versionLabel "Continuously maintained (ontologyportal/sumo)" ;
+    atlas:licenseName "Free under the IEEE licence in the source files; extensions under GNU GPL" ;
+    atlas:licenseAccess "open-with-terms" ;
+    atlas:maturity "stable" ;
+    atlas:layer "upper" ;
+    atlas:kind "ontology" ;
+    atlas:verificationStatus "verified" ;
+    atlas:topic "upper ontology" ;
+    atlas:topic "common-sense knowledge" ;
+    atlas:topic "formal logic" ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-cross-industry ;
+    atlas:useCase atlas:usecase-ai-factories ;
+    atlas:useCase atlas:usecase-semiconductors ;
+    atlas:useCase atlas:usecase-personal-electronics ;
+    atlas:useCase atlas:usecase-general-purpose-robotics ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/sumo> .
+
+atlas:sumo-cora a atlas:ReferenceOntology ;
     dcterms:title "SUMO-CORA" ;
-    htkkh:category "General Purpose Robotics" ;
-    htkkh:publisher "Research / Community" ;
-    htkkh:wikiPage <https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:R_UEz0okSdC9i1aukoDR3Q> ;
-    htkkh:parentOntology "General Purpose Robotics (End-Object Ontology)" ;
-    htkkh:stabilityStatus "not stable" ;
-    htkkh:usageStatus "restricted" ;
-    htkkh:endObject "General Purpose Robotics" ;
-    htkkh:imd "Humanoid Robots" ;
-    htkkh:imd "Robot AI Control" ;
-    htkkh:imd "Robot MBSE Simulation" ;
-    dcterms:description "Alignment layer between SUMO and CORA for robotics semantics." .
+    skos:altLabel "SUMO–CORA alignment (IEEE 1872-2015)" ;
+    dcterms:description "Alignment layer between SUMO and CORA for robotics semantics." ;
+    atlas:publisher "IEEE Robotics and Automation Society" ;
+    atlas:officialSource <https://standards.ieee.org/standard/1872-2015.html> ;
+    atlas:versionLabel "IEEE 1872-2015 (revision P1872 in progress)" ;
+    atlas:licenseName "IEEE standard (purchase required for the full text)" ;
+    atlas:licenseAccess "licensed" ;
+    atlas:maturity "standard" ;
+    atlas:layer "upper" ;
+    atlas:kind "ontology" ;
+    atlas:verificationStatus "partially-verified" ;
+    atlas:topic "alignment" ;
+    atlas:topic "upper ontology" ;
+    atlas:topic "robotics" ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-industrial-equipment ;
+    atlas:useCase atlas:usecase-general-purpose-robotics ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/sumo-cora> .
+
+atlas:sysml-v2 a atlas:ReferenceOntology ;
+    dcterms:title "SysML v2 / KerML" ;
+    skos:altLabel "OMG Systems Modeling Language v2 and Kernel Modeling Language" ;
+    dcterms:description "Next-generation MBSE language. KerML provides a formal semantic core and SysML v2 adds systems-engineering constructs, a textual notation and a standard API." ;
+    atlas:publisher "Object Management Group (OMG)" ;
+    atlas:officialSource <https://www.omg.org/sysml/> ;
+    atlas:versionLabel "KerML 1.0, SysML 2.0, Systems Modeling API 1.0 — formally adopted" ;
+    atlas:licenseName "OMG specification (freely available)" ;
+    atlas:licenseAccess "open" ;
+    atlas:maturity "standard" ;
+    atlas:layer "domain" ;
+    atlas:kind "modeling-language" ;
+    atlas:verificationStatus "verified" ;
+    atlas:topic "MBSE" ;
+    atlas:topic "requirements" ;
+    atlas:topic "architecture" ;
+    atlas:topic "behaviour" ;
+    atlas:topic "formal semantics" ;
+    atlas:industry atlas:industry-aerospace-defense ;
+    atlas:industry atlas:industry-transportation-mobility ;
+    atlas:industry atlas:industry-industrial-equipment ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:useCase atlas:usecase-general-purpose-robotics ;
+    atlas:useCase atlas:usecase-ai-factories ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/sysml-v2> .
+
+atlas:vsso a atlas:ReferenceOntology ;
+    dcterms:title "VSSo" ;
+    skos:altLabel "Vehicle Signal Specification Ontology" ;
+    dcterms:description "OWL ontology for COVESA Vehicle Signal Specification signals, following the SOSA/SSN pattern. The W3C draft was later discontinued." ;
+    atlas:publisher "W3C Automotive WG / COVESA" ;
+    atlas:officialSource <https://www.w3.org/TR/vsso-core/> ;
+    atlas:versionLabel "W3C Discontinued Draft (FPWD 2022-03-03)" ;
+    atlas:licenseName "W3C Document License" ;
+    atlas:licenseAccess "open" ;
+    atlas:maturity "discontinued" ;
+    atlas:layer "domain" ;
+    atlas:kind "ontology" ;
+    atlas:verificationStatus "verified" ;
+    atlas:topic "vehicle signals" ;
+    atlas:topic "automotive" ;
+    atlas:topic "software-defined vehicle" ;
+    atlas:industry atlas:industry-transportation-mobility ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/vsso> .
+
+atlas:ssn atlas:imports atlas:sosa .
+atlas:saref4bldg atlas:extends atlas:saref-core .
+atlas:saref4ener atlas:extends atlas:saref-core .
+atlas:ieee-cora atlas:extends atlas:sumo .
+atlas:sumo-cora atlas:aligns_with atlas:sumo .
+atlas:sumo-cora atlas:aligns_with atlas:ieee-cora .
+atlas:ieee-corax atlas:part_of atlas:ieee-cora .
+atlas:ieee-rparts atlas:part_of atlas:ieee-cora .
+atlas:ieee-pos atlas:part_of atlas:ieee-cora .
+atlas:ieee-aur atlas:extends atlas:ieee-cora .
+atlas:iof-core atlas:imports atlas:bfo .
+atlas:cco atlas:extends atlas:bfo .
+atlas:oeo atlas:imports atlas:bfo .
+atlas:goodrelations atlas:superseded_by atlas:schema-org .
+atlas:gs1-webvoc atlas:extends atlas:schema-org .
+atlas:vsso atlas:follows_pattern_of atlas:sosa .
+atlas:aas atlas:references atlas:eclass .
+atlas:saref4bldg atlas:aligns_with atlas:ifcowl .

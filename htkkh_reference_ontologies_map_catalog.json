@@ -1,65 +1,6 @@
 [
   {
-    "name": "ELI Ontology",
-    "category": "Regulatory / Normative",
-    "publisher": "Publications Office of the European Union",
-    "official": "https://op.europa.eu/en/web/eu-vocabularies/eli",
-    "endObjects": [
-      "AI Factories",
-      "Semiconductors",
-      "Personal Electronics",
-      "General Purpose Robotics"
-    ],
-    "imds": [
-      "Regulatory Knowledge"
-    ],
-    "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:H-CG-70vTy2MNfwuhQL_PA",
-    "description": "Ontology for identifying and describing legal resources and legislation metadata.",
-    "parentOntology": "Regulatory / Normative (Core Ontology)",
-    "stabilityStatus": "stable",
-    "usageStatus": "open"
-  },
-  {
-    "name": "ORIONT",
-    "category": "Circularity / Sustainability",
-    "publisher": "Research / Community",
-    "official": "",
-    "endObjects": [
-      "AI Factories",
-      "Semiconductors",
-      "Personal Electronics",
-      "General Purpose Robotics"
-    ],
-    "imds": [
-      "Circular Design"
-    ],
-    "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:zmTUJGTVSSeV6oolo9UT_w",
-    "description": "ORIENTING provides a structured ontology for Life Cycle Sustainability Assessment. It formalizes concepts related to environmental, social, and economic impacts across lifecycle stages. The ontology supports interoperability of LCSA data, impact indicators, system boundaries, and sustainability modeling workflows.",
-    "parentOntology": "Circularity / Sustainability (Core Ontology)",
-    "stabilityStatus": "not stable",
-    "usageStatus": "restricted"
-  },
-  {
-    "name": "PROV-O",
-    "category": "Circularity / Sustainability",
-    "publisher": "W3C",
-    "official": "https://www.w3.org/TR/prov-o/",
-    "endObjects": [
-      "AI Factories",
-      "Semiconductors",
-      "Personal Electronics",
-      "General Purpose Robotics"
-    ],
-    "imds": [
-      "Circular Design"
-    ],
-    "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:GzCec8zyTD-McvzxZA61WA",
-    "description": "Provenance ontology for entities, activities, agents, and derivation relationships.",
-    "parentOntology": "Circularity / Sustainability (Core Ontology)",
-    "stabilityStatus": "stable",
-    "usageStatus": "open"
-  },
-  {
+    "id": "aas",
     "name": "AAS",
     "category": "High-Tech",
     "publisher": "Industrial Digital Twin Association",
@@ -73,13 +14,190 @@
     "imds": [
       "Cross-domain semantics"
     ],
-    "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:3aG-8Yk4Se6Zf-bhrbfGuQ",
     "description": "Asset Administration Shell meta-model for interoperable digital twins.",
     "parentOntology": "High-Tech (Core Ontology)",
     "stabilityStatus": "stable",
-    "usageStatus": "open"
+    "usageStatus": "open",
+    "version": "IDTA-01001 Part 1 Metamodel v3.1.1 (later IDTA documents reference v3.2)",
+    "license": "Specifications published openly by IDTA (see licence in each document)",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/aas"
   },
   {
+    "id": "ieee-aur",
+    "name": "Autonomous Robotics (AuR)",
+    "category": "General Purpose Robotics",
+    "publisher": "IEEE Robotics and Automation Society",
+    "official": "https://standards.ieee.org/ieee/1872.2/7094/",
+    "endObjects": [
+      "General Purpose Robotics"
+    ],
+    "imds": [
+      "Humanoid Robots",
+      "Robot AI Control",
+      "Robot MBSE Simulation"
+    ],
+    "description": "Ontology focused on autonomous robotics concepts, capabilities, and behavior.",
+    "parentOntology": "General Purpose Robotics (End-Object Ontology)",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "version": "IEEE 1872.2-2021 (published 2022-05-12)",
+    "license": "IEEE standard (purchase); ontology listed under the IEEE SA Open Source programme (BSD-3-Clause)",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/ieee-aur"
+  },
+  {
+    "id": "bfo",
+    "name": "BFO",
+    "category": "Cross-Industry",
+    "publisher": "ISO/IEC JTC 1 · BFO maintainers",
+    "official": "https://basic-formal-ontology.org/",
+    "endObjects": [
+      "Semiconductors"
+    ],
+    "imds": [
+      "upper ontology",
+      "continuants",
+      "occurrents",
+      "formal relations"
+    ],
+    "description": "Top-level ontology standardised as ISO/IEC 21838-2. Provides the formal backbone for the IOF, CCO, OEO and many OBO ontologies.",
+    "parentOntology": "",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "version": "BFO 2020 (ISO/IEC 21838-2:2021)",
+    "license": "BFO OWL files CC BY 4.0; ISO text licensed",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/bfo"
+  },
+  {
+    "id": "bot",
+    "name": "BOT",
+    "category": "AI Factory",
+    "publisher": "Linked Building Data Community Group",
+    "official": "https://w3c-lbd-cg.github.io/bot/",
+    "endObjects": [
+      "AI Factories"
+    ],
+    "imds": [
+      "Infrastructure System Architecture"
+    ],
+    "description": "Building Topology Ontology (BOT) is a minimal OWL DL ontology for describing the core topological concepts of buildings and relationships between sub-components such as sites, buildings, storeys, spaces, and elements.",
+    "parentOntology": "AI Factory (End-Object Ontology)",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "version": "v0.3.2 — W3C LBD Community Group public draft",
+    "license": "Not stated on the specification page (community group draft)",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/bot"
+  },
+  {
+    "id": "brick",
+    "name": "Brick Schema",
+    "category": "AI Factory",
+    "publisher": "Brick Consortium",
+    "official": "https://brickschema.org/",
+    "endObjects": [
+      "AI Factories"
+    ],
+    "imds": [
+      "Infrastructure System Architecture",
+      "Compute Performance & Sustainability"
+    ],
+    "description": "Brick Schema is an open OWL ontology for modeling buildings, infrastructure, and their systems, including spaces, equipment, power distribution, cooling, HVAC, and sensors. It provides a formal semantic foundation to represent and reason over the physical and infrastructural structure of AI factories and data centers.",
+    "parentOntology": "AI Factory (End-Object Ontology)",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "version": "Brick v1.4.4 (v1.5.0 release candidates in progress)",
+    "license": "BSD-3-Clause",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/brick"
+  },
+  {
+    "id": "cco",
+    "name": "CCO",
+    "category": "Aerospace & Defense",
+    "publisher": "CCO Governance Board",
+    "official": "https://github.com/CommonCoreOntology/CommonCoreOntologies",
+    "endObjects": [],
+    "imds": [
+      "artefacts",
+      "agents",
+      "events",
+      "information entities"
+    ],
+    "description": "Suite of mid-level ontologies that extend BFO, covering agents, artefacts, events, information and qualities. Widely used in defence and intelligence programmes.",
+    "parentOntology": "",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "version": "Modernisation in progress (v3.0 planned by end 2026, v4.0 mid-2027)",
+    "license": "BSD-3-Clause",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/cco"
+  },
+  {
+    "id": "ieee-cora",
+    "name": "CORA",
+    "category": "General Purpose Robotics",
+    "publisher": "IEEE Robotics and Automation Society",
+    "official": "https://standards.ieee.org/standard/1872-2015.html",
+    "endObjects": [
+      "General Purpose Robotics"
+    ],
+    "imds": [
+      "Humanoid Robots",
+      "Robot AI Control",
+      "Robot MBSE Simulation"
+    ],
+    "description": "Core ontology for robotics and automation concepts.",
+    "parentOntology": "General Purpose Robotics (End-Object Ontology)",
+    "stabilityStatus": "stable",
+    "usageStatus": "licensed",
+    "version": "IEEE 1872-2015 (revision P1872 in progress)",
+    "license": "IEEE standard (purchase required for the full text)",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/ieee-cora"
+  },
+  {
+    "id": "ieee-corax",
+    "name": "CORAX",
+    "category": "General Purpose Robotics",
+    "publisher": "IEEE Robotics and Automation Society",
+    "official": "https://standards.ieee.org/standard/1872-2015.html",
+    "endObjects": [
+      "General Purpose Robotics"
+    ],
+    "imds": [
+      "Humanoid Robots",
+      "Robot AI Control",
+      "Robot MBSE Simulation"
+    ],
+    "description": "Reference ontology in the robotics corpus; kept as a governed candidate pending fuller validation.",
+    "parentOntology": "General Purpose Robotics (End-Object Ontology)",
+    "stabilityStatus": "stable",
+    "usageStatus": "licensed",
+    "version": "IEEE 1872-2015 (revision P1872 in progress)",
+    "license": "IEEE standard (purchase required for the full text)",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/ieee-corax"
+  },
+  {
+    "id": "dcat",
+    "name": "DCAT",
+    "category": "Cross-Industry",
+    "publisher": "W3C",
+    "official": "https://www.w3.org/TR/vocab-dcat-3/",
+    "endObjects": [
+      "AI Factories",
+      "Sustainability & Circularity"
+    ],
+    "imds": [
+      "data catalogues",
+      "datasets",
+      "data spaces"
+    ],
+    "description": "W3C vocabulary for describing datasets, data services and catalogues, the basis of many data-space and open-data catalogues.",
+    "parentOntology": "",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "version": "DCAT 3 — W3C Recommendation",
+    "license": "W3C Document License",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/dcat"
+  },
+  {
+    "id": "dcterms",
     "name": "DCTERMS",
     "category": "High-Tech",
     "publisher": "Dublin Core Metadata Initiative",
@@ -93,17 +211,63 @@
     "imds": [
       "Cross-domain semantics"
     ],
-    "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:g4QdGWmMQampNp_mzHxwXQ",
     "description": "Widely used metadata terms for title, creator, subject, date, and provenance-like description.",
     "parentOntology": "High-Tech (Core Ontology)",
     "stabilityStatus": "stable",
-    "usageStatus": "open"
+    "usageStatus": "open",
+    "version": "DCMI Metadata Terms",
+    "license": "CC BY 4.0",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/dcterms"
   },
   {
+    "id": "digital-reference",
+    "name": "Digital Reference (DR)",
+    "category": "High-Tech",
+    "publisher": "Infineon Technologies & partners (Productive4.0, SC³)",
+    "official": "https://ifx-dr.github.io/DigitalReference/",
+    "endObjects": [
+      "Semiconductors"
+    ],
+    "imds": [
+      "semiconductor supply chain",
+      "manufacturing",
+      "products"
+    ],
+    "description": "Ontology for the semiconductor industry and its supply chains, organised in thematic \"lobes\" (about 1,200 classes). Introduced in the ECSEL Productive4.0 project.",
+    "parentOntology": "",
+    "stabilityStatus": "not stable",
+    "usageStatus": "restricted",
+    "version": "Community-maintained (see repository)",
+    "license": "See repository",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/digital-reference"
+  },
+  {
+    "id": "dmtf-cim",
+    "name": "DMTF CIM",
+    "category": "AI Factory",
+    "publisher": "DMTF (Distributed Management Task Force)",
+    "official": "https://www.dmtf.org/standards/cim",
+    "endObjects": [
+      "AI Factories"
+    ],
+    "imds": [
+      "Infrastructure System Architecture",
+      "Compute Performance & Sustainability"
+    ],
+    "description": "The Common Information Model (CIM) is a formal object-oriented schema developed by the Distributed Management Task Force (DMTF) to represent managed elements in IT environments, including computer systems, racks, chassis, processors, memory, power supplies, networking components, and cooling subsystems. CIM provides a strong reference model for AI Factory physical and logical infrastructure components.",
+    "parentOntology": "AI Factory (End-Object Ontology)",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "version": "CIM Schema 2.54.1 (2.54.0 released October 2020)",
+    "license": "Free download under DMTF terms",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/dmtf-cim"
+  },
+  {
+    "id": "eclass",
     "name": "ECLASS Ontology",
     "category": "High-Tech",
     "publisher": "ECLASS e.V.",
-    "official": "https://www.eclass.eu/",
+    "official": "https://eclass.eu/",
     "endObjects": [
       "AI Factories",
       "Semiconductors",
@@ -113,17 +277,67 @@
     "imds": [
       "Cross-domain semantics"
     ],
-    "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:6Vw8NYO_SQKFAsz0h8d7pg",
     "description": "Classification ontology for products, properties, and industrial semantics.",
     "parentOntology": "High-Tech (Core Ontology)",
     "stabilityStatus": "stable",
-    "usageStatus": "licensed"
+    "usageStatus": "licensed",
+    "version": "ECLASS 16.0 (listed in the ECLASS shop); 15.0 released 2024-11-29",
+    "license": "Commercial ECLASS licence",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/eclass"
   },
   {
+    "id": "eli",
+    "name": "ELI Ontology",
+    "category": "Regulatory / Normative",
+    "publisher": "Publications Office of the European Union",
+    "official": "https://op.europa.eu/en/web/eu-vocabularies/eli",
+    "endObjects": [
+      "AI Factories",
+      "Semiconductors",
+      "Personal Electronics",
+      "General Purpose Robotics"
+    ],
+    "imds": [
+      "Regulatory Knowledge"
+    ],
+    "description": "Ontology for identifying and describing legal resources and legislation metadata.",
+    "parentOntology": "Regulatory / Normative (Core Ontology)",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "version": "ELI ontology 1.3 (latest listed on Interoperable Europe)",
+    "license": "EU Publications Office open reuse terms (confirm per release)",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/eli"
+  },
+  {
+    "id": "emmo",
+    "name": "EMMO",
+    "category": "Energy & Materials",
+    "publisher": "EMMC / EMMO community",
+    "official": "https://github.com/emmo-repo/EMMO",
+    "endObjects": [
+      "Semiconductors",
+      "Sustainability & Circularity"
+    ],
+    "imds": [
+      "materials",
+      "physics",
+      "models",
+      "characterisation"
+    ],
+    "description": "Top-down ontology for materials science and engineering, from physical foundations to materials, models and characterisation.",
+    "parentOntology": "",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "version": "EMMO 1.0.0",
+    "license": "CC BY 4.0",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/emmo"
+  },
+  {
+    "id": "geosparql",
     "name": "GeoSPARQL",
     "category": "High-Tech",
     "publisher": "OGC",
-    "official": "https://opengeospatial.github.io/ogc-geosparql/",
+    "official": "https://www.ogc.org/standard/geosparql/",
     "endObjects": [
       "AI Factories",
       "Semiconductors",
@@ -133,13 +347,16 @@
     "imds": [
       "Cross-domain semantics"
     ],
-    "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:r2w1_UqQSK--02C8andxvQ",
     "description": "Standard for spatial RDF representation and geospatial querying.",
     "parentOntology": "High-Tech (Core Ontology)",
     "stabilityStatus": "stable",
-    "usageStatus": "open"
+    "usageStatus": "open",
+    "version": "GeoSPARQL 1.1",
+    "license": "OGC document licence (royalty-free)",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/geosparql"
   },
   {
+    "id": "goodrelations",
     "name": "GoodRelations",
     "category": "High-Tech",
     "publisher": "Web Commerce Community",
@@ -153,17 +370,20 @@
     "imds": [
       "Cross-domain semantics"
     ],
-    "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:Vn0zSv7IRGSe6Lep8ojrtw",
     "description": "Ontology for products, offers, prices, and business entities.",
     "parentOntology": "High-Tech (Core Ontology)",
-    "stabilityStatus": "stable",
-    "usageStatus": "open"
+    "stabilityStatus": "not stable",
+    "usageStatus": "open",
+    "version": "GoodRelations 1.0 (integrated into schema.org in 2012)",
+    "license": "Open (see project site)",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/goodrelations"
   },
   {
+    "id": "gs1-webvoc",
     "name": "GS1 WebVoc",
     "category": "High-Tech",
     "publisher": "GS1",
-    "official": "https://www.gs1.org/voc/",
+    "official": "https://ref.gs1.org/voc/",
     "endObjects": [
       "AI Factories",
       "Semiconductors",
@@ -173,13 +393,154 @@
     "imds": [
       "Cross-domain semantics"
     ],
-    "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:DuqSyAdOQkCM3D2sNj83zQ",
     "description": "GS1 web vocabulary for product, organization, and identification semantics.",
     "parentOntology": "High-Tech (Core Ontology)",
     "stabilityStatus": "stable",
-    "usageStatus": "licensed"
+    "usageStatus": "open",
+    "version": "Release 1.13.0 (latest immutable release seen)",
+    "license": "Apache-2.0 (per GS1 WebVoc repository)",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/gs1-webvoc"
   },
   {
+    "id": "iec-cim",
+    "name": "IEC CIM",
+    "category": "Energy & Materials",
+    "publisher": "IEC TC 57",
+    "official": "https://webstore.iec.ch/en/publication/6215",
+    "endObjects": [
+      "AI Factories",
+      "Sustainability & Circularity"
+    ],
+    "imds": [
+      "power grid",
+      "transmission",
+      "distribution",
+      "CGMES"
+    ],
+    "description": "UML information model for electric power systems (grid topology, equipment, measurements, markets). Exchanged as RDF through profiles such as ENTSO-E CGMES.",
+    "parentOntology": "",
+    "stabilityStatus": "stable",
+    "usageStatus": "licensed",
+    "version": "IEC 61970-301:2020 + AMD1:2022",
+    "license": "IEC standard (purchase required)",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/iec-cim"
+  },
+  {
+    "id": "ifcowl",
+    "name": "ifcOWL",
+    "category": "Infrastructure & Cities",
+    "publisher": "buildingSMART International",
+    "official": "https://technical.buildingsmart.org/standards/ifc/ifc-formats/ifcowl/",
+    "endObjects": [
+      "AI Factories"
+    ],
+    "imds": [
+      "BIM",
+      "IFC",
+      "buildings",
+      "infrastructure"
+    ],
+    "description": "Direct OWL translation of the IFC EXPRESS schema (ISO 16739). buildingSMART now points semantic-web users to bSDD for most uses.",
+    "parentOntology": "",
+    "stabilityStatus": "not stable",
+    "usageStatus": "open",
+    "version": "ifcOWL for IFC4 ADD2",
+    "license": "CC BY 3.0",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/ifcowl"
+  },
+  {
+    "id": "iof-core",
+    "name": "IOF Core",
+    "category": "Industrial Equipment",
+    "publisher": "OAGi Industrial Ontologies Foundry",
+    "official": "https://spec.industrialontologies.org/",
+    "endObjects": [
+      "Semiconductors",
+      "General Purpose Robotics"
+    ],
+    "imds": [
+      "manufacturing",
+      "maintenance",
+      "supply chain",
+      "product lifecycle"
+    ],
+    "description": "Mid-level industrial ontology grounded in BFO 2020. Shared foundation for IOF domain ontologies such as maintenance, supply chain, production planning and product-service systems.",
+    "parentOntology": "",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "version": "IOF release 202603 (Core first released in 202401)",
+    "license": "MIT",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/iof-core"
+  },
+  {
+    "id": "iso-15926-14",
+    "name": "ISO 15926-14",
+    "category": "Energy & Materials",
+    "publisher": "ISO TC 184/SC 4",
+    "official": "https://15926.org/",
+    "endObjects": [],
+    "imds": [
+      "process plants",
+      "oil and gas",
+      "asset lifecycle"
+    ],
+    "description": "OWL 2 implementation of the ISO 15926-2 data model for integrating lifecycle data of process plants, including oil and gas facilities.",
+    "parentOntology": "",
+    "stabilityStatus": "stable",
+    "usageStatus": "licensed",
+    "version": "ISO/TS 15926-14",
+    "license": "ISO standard (purchase required)",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/iso-15926-14"
+  },
+  {
+    "id": "oeo",
+    "name": "OEO",
+    "category": "Energy & Materials",
+    "publisher": "Open Energy Platform community",
+    "official": "https://openenergyplatform.org/ontology/",
+    "endObjects": [
+      "AI Factories",
+      "Sustainability & Circularity"
+    ],
+    "imds": [
+      "energy systems",
+      "scenarios",
+      "emissions",
+      "modelling"
+    ],
+    "description": "Community ontology for energy-system modelling (technologies, carriers, scenarios, emissions), built on BFO.",
+    "parentOntology": "",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "version": "OEO 2.13.0",
+    "license": "CC0-1.0 or MIT (dual)",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/oeo"
+  },
+  {
+    "id": "oriont",
+    "name": "ORIONT",
+    "category": "Circularity / Sustainability",
+    "publisher": "Research / Community",
+    "official": "",
+    "endObjects": [
+      "AI Factories",
+      "Semiconductors",
+      "Personal Electronics",
+      "General Purpose Robotics"
+    ],
+    "imds": [
+      "Circular Design"
+    ],
+    "description": "ORIENTING provides a structured ontology for Life Cycle Sustainability Assessment. It formalizes concepts related to environmental, social, and economic impacts across lifecycle stages. The ontology supports interoperability of LCSA data, impact indicators, system boundaries, and sustainability modeling workflows.",
+    "parentOntology": "Circularity / Sustainability (Core Ontology)",
+    "stabilityStatus": "not stable",
+    "usageStatus": "restricted",
+    "version": "Not publicly identified",
+    "license": "Unknown",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/oriont"
+  },
+  {
+    "id": "owl-time",
     "name": "OWL-time",
     "category": "High-Tech",
     "publisher": "W3C",
@@ -193,13 +554,61 @@
     "imds": [
       "Cross-domain semantics"
     ],
-    "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:vn5OZUanRdC6yQBwEdhxbg",
     "description": "Ontology of temporal concepts including intervals, instants, durations, and relations.",
     "parentOntology": "High-Tech (Core Ontology)",
     "stabilityStatus": "stable",
-    "usageStatus": "open"
+    "usageStatus": "open",
+    "version": "W3C Candidate Recommendation Draft (revision of the 2017 Recommendation)",
+    "license": "W3C Document License",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/owl-time"
   },
   {
+    "id": "ieee-pos",
+    "name": "POS",
+    "category": "General Purpose Robotics",
+    "publisher": "IEEE Robotics and Automation Society",
+    "official": "https://standards.ieee.org/standard/1872-2015.html",
+    "endObjects": [
+      "General Purpose Robotics"
+    ],
+    "imds": [
+      "Humanoid Robots",
+      "Robot AI Control",
+      "Robot MBSE Simulation"
+    ],
+    "description": "Ontology used for positional, pose, or planning-oriented semantics in robotics contexts.",
+    "parentOntology": "General Purpose Robotics (End-Object Ontology)",
+    "stabilityStatus": "stable",
+    "usageStatus": "licensed",
+    "version": "IEEE 1872-2015 (revision P1872 in progress)",
+    "license": "IEEE standard (purchase required for the full text)",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/ieee-pos"
+  },
+  {
+    "id": "prov-o",
+    "name": "PROV-O",
+    "category": "Circularity / Sustainability",
+    "publisher": "W3C",
+    "official": "https://www.w3.org/TR/prov-o/",
+    "endObjects": [
+      "AI Factories",
+      "Semiconductors",
+      "Personal Electronics",
+      "General Purpose Robotics"
+    ],
+    "imds": [
+      "Circular Design"
+    ],
+    "description": "Provenance ontology for entities, activities, agents, and derivation relationships.",
+    "parentOntology": "Circularity / Sustainability (Core Ontology)",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "version": "W3C Recommendation",
+    "license": "W3C Document License",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/prov-o"
+  },
+  {
+    "id": "qudt",
     "name": "QUDT",
     "category": "High-Tech",
     "publisher": "QUDT",
@@ -213,17 +622,64 @@
     "imds": [
       "Cross-domain semantics"
     ],
-    "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:U7CIlZJUR-CmhXerXedNsw",
     "description": "Ontology for quantities, units, dimensions, and datatypes.",
     "parentOntology": "High-Tech (Core Ontology)",
     "stabilityStatus": "stable",
-    "usageStatus": "open"
+    "usageStatus": "open",
+    "version": "QUDT 3.1.x (3.1.10 published January 2026)",
+    "license": "CC BY 4.0",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/qudt"
   },
   {
+    "id": "ieee-rtr",
+    "name": "Robot Task Representation",
+    "category": "General Purpose Robotics",
+    "publisher": "IEEE Robotics and Automation Society",
+    "official": "https://standards.ieee.org/ieee/1872.1/6993/",
+    "endObjects": [
+      "General Purpose Robotics"
+    ],
+    "imds": [
+      "Humanoid Robots",
+      "Robot AI Control",
+      "Robot MBSE Simulation"
+    ],
+    "description": "Ontology for describing robot tasks, actions, parameters, and execution context.",
+    "parentOntology": "General Purpose Robotics (End-Object Ontology)",
+    "stabilityStatus": "stable",
+    "usageStatus": "licensed",
+    "version": "IEEE 1872.1-2024 (published 2024-06-18)",
+    "license": "IEEE standard (purchase required for the full text)",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/ieee-rtr"
+  },
+  {
+    "id": "ieee-rparts",
+    "name": "RPARTS",
+    "category": "General Purpose Robotics",
+    "publisher": "IEEE Robotics and Automation Society",
+    "official": "https://standards.ieee.org/standard/1872-2015.html",
+    "endObjects": [
+      "General Purpose Robotics"
+    ],
+    "imds": [
+      "Humanoid Robots",
+      "Robot AI Control",
+      "Robot MBSE Simulation"
+    ],
+    "description": "Reference ontology related to robot parts and component decomposition.",
+    "parentOntology": "General Purpose Robotics (End-Object Ontology)",
+    "stabilityStatus": "stable",
+    "usageStatus": "licensed",
+    "version": "IEEE 1872-2015 (revision P1872 in progress)",
+    "license": "IEEE standard (purchase required for the full text)",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/ieee-rparts"
+  },
+  {
+    "id": "saref-core",
     "name": "SAREF Core",
     "category": "High-Tech",
     "publisher": "ETSI",
-    "official": "https://saref.etsi.org/",
+    "official": "https://saref.etsi.org/core/",
     "endObjects": [
       "AI Factories",
       "Semiconductors",
@@ -233,13 +689,105 @@
     "imds": [
       "Cross-domain semantics"
     ],
-    "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:ZKZ4ztldRvy0NF-5fb9iVQ",
     "description": "Smart Applications REFerence ontology for interoperable devices and services.",
     "parentOntology": "High-Tech (Core Ontology)",
     "stabilityStatus": "stable",
-    "usageStatus": "open"
+    "usageStatus": "open",
+    "version": "SAREF Core v4.1.1 (ETSI TS 103 264 V4.1.1)",
+    "license": "ETSI Software License (BSD-3-Clause style)",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/saref-core"
   },
   {
+    "id": "saref4bldg",
+    "name": "SAREF4BLDG",
+    "category": "AI Factory",
+    "publisher": "ETSI",
+    "official": "https://saref.etsi.org/saref4bldg/",
+    "endObjects": [
+      "AI Factories"
+    ],
+    "imds": [
+      "Infrastructure System Architecture",
+      "Compute Performance & Sustainability"
+    ],
+    "description": "Building extension of SAREF for spaces, devices, and building systems.",
+    "parentOntology": "AI Factory (End-Object Ontology)",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "version": "SAREF4BLDG v2.1.1 (ETSI TS 103 410-3 V2.1.1)",
+    "license": "ETSI Software License (BSD-3-Clause style)",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/saref4bldg"
+  },
+  {
+    "id": "saref4ener",
+    "name": "SAREF4ENER",
+    "category": "Energy & Materials",
+    "publisher": "ETSI",
+    "official": "https://saref.etsi.org/saref4ener/",
+    "endObjects": [
+      "AI Factories",
+      "Sustainability & Circularity"
+    ],
+    "imds": [
+      "energy flexibility",
+      "demand response",
+      "power profiles"
+    ],
+    "description": "SAREF extension for energy flexibility and demand response between smart devices, energy managers and the grid.",
+    "parentOntology": "",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "version": "SAREF4ENER v2.1.1 (ETSI TS 103 410-1 V2.1.1)",
+    "license": "ETSI Software License (BSD-3-Clause style)",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/saref4ener"
+  },
+  {
+    "id": "schema-org",
+    "name": "Schema.org",
+    "category": "Consumer Goods & Retail",
+    "publisher": "Schema.org community (W3C Community Group)",
+    "official": "https://schema.org/",
+    "endObjects": [
+      "Personal Electronics",
+      "Semiconductors",
+      "Sustainability & Circularity"
+    ],
+    "imds": [
+      "web data",
+      "products",
+      "organisations",
+      "offers"
+    ],
+    "description": "Widely deployed vocabulary for structured data on the web: products, offers, organisations, events and more. Absorbed GoodRelations in 2012.",
+    "parentOntology": "",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "version": "Continuously released (see release log)",
+    "license": "CC BY-SA 3.0",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/schema-org"
+  },
+  {
+    "id": "skos",
+    "name": "SKOS",
+    "category": "Cross-Industry",
+    "publisher": "W3C",
+    "official": "https://www.w3.org/TR/skos-reference/",
+    "endObjects": [],
+    "imds": [
+      "taxonomies",
+      "thesauri",
+      "classification schemes"
+    ],
+    "description": "W3C standard for thesauri, taxonomies and classification schemes on the web: concepts, labels and broader/narrower relations.",
+    "parentOntology": "",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "version": "W3C Recommendation",
+    "license": "W3C Document License",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/skos"
+  },
+  {
+    "id": "sosa",
     "name": "SOSA",
     "category": "High-Tech",
     "publisher": "W3C/OGC",
@@ -253,13 +801,16 @@
     "imds": [
       "Cross-domain semantics"
     ],
-    "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:nQW5FfTQSHO9062warOnoQ",
     "description": "Lightweight core for sensors, observations, samples, and actuators.",
     "parentOntology": "High-Tech (Core Ontology)",
     "stabilityStatus": "stable",
-    "usageStatus": "open"
+    "usageStatus": "open",
+    "version": "W3C Recommendation / OGC 16-079",
+    "license": "W3C Document License",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/sosa"
   },
   {
+    "id": "ssn",
     "name": "SSN",
     "category": "High-Tech",
     "publisher": "W3C/OGC",
@@ -273,13 +824,39 @@
     "imds": [
       "Cross-domain semantics"
     ],
-    "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:5RCMfzLNSlSIb46cfvCDzA",
     "description": "Semantic Sensor Network ontology for sensors, observations, and systems.",
     "parentOntology": "High-Tech (Core Ontology)",
     "stabilityStatus": "stable",
-    "usageStatus": "open"
+    "usageStatus": "open",
+    "version": "W3C Recommendation / OGC 16-079",
+    "license": "W3C Document License",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/ssn"
   },
   {
+    "id": "step-ap242",
+    "name": "STEP AP242",
+    "category": "Aerospace & Defense",
+    "publisher": "ISO TC 184/SC 4",
+    "official": "https://www.iso.org/standard/84300.html",
+    "endObjects": [
+      "General Purpose Robotics"
+    ],
+    "imds": [
+      "CAD exchange",
+      "PMI",
+      "model-based definition",
+      "PDM"
+    ],
+    "description": "STEP application protocol for exchanging 3D product data, PMI, PDM data and configuration. Defined in EXPRESS; the reference information model for model-based definition.",
+    "parentOntology": "",
+    "stabilityStatus": "stable",
+    "usageStatus": "licensed",
+    "version": "ISO 10303-242:2025 (edition 4)",
+    "license": "ISO standard (purchase required)",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/step-ap242"
+  },
+  {
+    "id": "sumo",
     "name": "SUMO",
     "category": "High-Tech",
     "publisher": "IEEE / Teknowledge",
@@ -293,202 +870,20 @@
     "imds": [
       "Cross-domain semantics"
     ],
-    "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:v-Hoheh0T9KZ2BIASSmCnw",
     "description": "Suggested Upper Merged Ontology for broad upper-level semantic grounding.",
     "parentOntology": "High-Tech (Core Ontology)",
     "stabilityStatus": "stable",
-    "usageStatus": "open"
+    "usageStatus": "open",
+    "version": "Continuously maintained (ontologyportal/sumo)",
+    "license": "Free under the IEEE licence in the source files; extensions under GNU GPL",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/sumo"
   },
   {
-    "name": "BOT",
-    "category": "AI Factory",
-    "publisher": "Linked Building Data Community Group",
-    "official": "https://w3c-lbd-cg.github.io/bot/",
-    "endObjects": [
-      "AI Factories"
-    ],
-    "imds": [
-      "Infrastructure System Architecture"
-    ],
-    "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:HfyE2lIsRbSRuvToB-YeZw",
-    "description": "Building Topology Ontology (BOT) is a minimal OWL DL ontology for describing the core topological concepts of buildings and relationships between sub-components such as sites, buildings, storeys, spaces, and elements.",
-    "parentOntology": "AI Factory (End-Object Ontology)",
-    "stabilityStatus": "stable",
-    "usageStatus": "open"
-  },
-  {
-    "name": "Brick Schema",
-    "category": "AI Factory",
-    "publisher": "Brick Consortium",
-    "official": "https://brickschema.org/",
-    "endObjects": [
-      "AI Factories"
-    ],
-    "imds": [
-      "Infrastructure System Architecture",
-      "Compute Performance & Sustainability"
-    ],
-    "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:azyjLHMTQoGNkGIy3YENlA",
-    "description": "Brick Schema is an open OWL ontology for modeling buildings, infrastructure, and their systems, including spaces, equipment, power distribution, cooling, HVAC, and sensors. It provides a formal semantic foundation to represent and reason over the physical and infrastructural structure of AI factories and data centers.",
-    "parentOntology": "AI Factory (End-Object Ontology)",
-    "stabilityStatus": "stable",
-    "usageStatus": "open"
-  },
-  {
-    "name": "CIM",
-    "category": "AI Factory",
-    "publisher": "IEC",
-    "official": "https://www.iec.ch/standardsdev/publications/",
-    "endObjects": [
-      "AI Factories"
-    ],
-    "imds": [
-      "Infrastructure System Architecture",
-      "Compute Performance & Sustainability"
-    ],
-    "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:CLVX0LTORSG9cyf_aponEg",
-    "description": "The Common Information Model (CIM) is a formal object-oriented schema developed by the Distributed Management Task Force (DMTF) to represent managed elements in IT environments, including computer systems, racks, chassis, processors, memory, power supplies, networking components, and cooling subsystems. CIM provides a strong reference model for AI Factory physical and logical infrastructure components.",
-    "parentOntology": "AI Factory (End-Object Ontology)",
-    "stabilityStatus": "stable",
-    "usageStatus": "licensed"
-  },
-  {
-    "name": "SAREF4BLDG",
-    "category": "AI Factory",
-    "publisher": "ETSI",
-    "official": "https://saref.etsi.org/saref4bldg/",
-    "endObjects": [
-      "AI Factories"
-    ],
-    "imds": [
-      "Infrastructure System Architecture",
-      "Compute Performance & Sustainability"
-    ],
-    "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:kkKzLMKZQwufO73ZeHNVGw",
-    "description": "Building extension of SAREF for spaces, devices, and building systems.",
-    "parentOntology": "AI Factory (End-Object Ontology)",
-    "stabilityStatus": "stable",
-    "usageStatus": "open"
-  },
-  {
-    "name": "Autonomous Robotics (AuR)",
-    "category": "General Purpose Robotics",
-    "publisher": "Research / Community",
-    "official": "",
-    "endObjects": [
-      "General Purpose Robotics"
-    ],
-    "imds": [
-      "Humanoid Robots",
-      "Robot AI Control",
-      "Robot MBSE Simulation"
-    ],
-    "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:N-KiFjz1TZieT3fzlNuMKg",
-    "description": "Ontology focused on autonomous robotics concepts, capabilities, and behavior.",
-    "parentOntology": "General Purpose Robotics (End-Object Ontology)",
-    "stabilityStatus": "not stable",
-    "usageStatus": "restricted"
-  },
-  {
-    "name": "CORA",
-    "category": "General Purpose Robotics",
-    "publisher": "IEEE / Research Community",
-    "official": "https://sites.google.com/site/smartappliancesproject/ontologies/cora",
-    "endObjects": [
-      "General Purpose Robotics"
-    ],
-    "imds": [
-      "Humanoid Robots",
-      "Robot AI Control",
-      "Robot MBSE Simulation"
-    ],
-    "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:bGIa7mYITemwgBEOc_kMnw",
-    "description": "Core ontology for robotics and automation concepts.",
-    "parentOntology": "General Purpose Robotics (End-Object Ontology)",
-    "stabilityStatus": "stable",
-    "usageStatus": "restricted"
-  },
-  {
-    "name": "CORAX",
-    "category": "General Purpose Robotics",
-    "publisher": "Research / Community",
-    "official": "",
-    "endObjects": [
-      "General Purpose Robotics"
-    ],
-    "imds": [
-      "Humanoid Robots",
-      "Robot AI Control",
-      "Robot MBSE Simulation"
-    ],
-    "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:ChIkKy9aRRyorrT-6UHgdg",
-    "description": "Reference ontology in the robotics corpus; kept as a governed candidate pending fuller validation.",
-    "parentOntology": "General Purpose Robotics (End-Object Ontology)",
-    "stabilityStatus": "not stable",
-    "usageStatus": "restricted"
-  },
-  {
-    "name": "POS",
-    "category": "General Purpose Robotics",
-    "publisher": "Research / Community",
-    "official": "",
-    "endObjects": [
-      "General Purpose Robotics"
-    ],
-    "imds": [
-      "Humanoid Robots",
-      "Robot AI Control",
-      "Robot MBSE Simulation"
-    ],
-    "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:rf21jegYTPqRJwpGm0Cpng",
-    "description": "Ontology used for positional, pose, or planning-oriented semantics in robotics contexts.",
-    "parentOntology": "General Purpose Robotics (End-Object Ontology)",
-    "stabilityStatus": "not stable",
-    "usageStatus": "restricted"
-  },
-  {
-    "name": "Robot Task Representation",
-    "category": "General Purpose Robotics",
-    "publisher": "Research / Community",
-    "official": "",
-    "endObjects": [
-      "General Purpose Robotics"
-    ],
-    "imds": [
-      "Humanoid Robots",
-      "Robot AI Control",
-      "Robot MBSE Simulation"
-    ],
-    "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:KBDIlDH4QFq5i_K01kbS6g",
-    "description": "Ontology for describing robot tasks, actions, parameters, and execution context.",
-    "parentOntology": "General Purpose Robotics (End-Object Ontology)",
-    "stabilityStatus": "not stable",
-    "usageStatus": "restricted"
-  },
-  {
-    "name": "RPARTS",
-    "category": "General Purpose Robotics",
-    "publisher": "Research / Community",
-    "official": "",
-    "endObjects": [
-      "General Purpose Robotics"
-    ],
-    "imds": [
-      "Humanoid Robots",
-      "Robot AI Control",
-      "Robot MBSE Simulation"
-    ],
-    "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:ee62NLxmT6yvvFC5E7GKrw",
-    "description": "Reference ontology related to robot parts and component decomposition.",
-    "parentOntology": "General Purpose Robotics (End-Object Ontology)",
-    "stabilityStatus": "not stable",
-    "usageStatus": "restricted"
-  },
-  {
+    "id": "sumo-cora",
     "name": "SUMO-CORA",
     "category": "General Purpose Robotics",
-    "publisher": "Research / Community",
-    "official": "",
+    "publisher": "IEEE Robotics and Automation Society",
+    "official": "https://standards.ieee.org/standard/1872-2015.html",
     "endObjects": [
       "General Purpose Robotics"
     ],
@@ -497,10 +892,57 @@
       "Robot AI Control",
       "Robot MBSE Simulation"
     ],
-    "wiki": "https://dsext001-eu1-215dsi0708-3dswym.3dexperience.3ds.com/community/swym:215dsi0708:DSEXT001:community:JsMPZSruR1Kj88ZS1muhWQ?content=swym:215dsi0708:DSEXT001:wikitree:R_UEz0okSdC9i1aukoDR3Q",
     "description": "Alignment layer between SUMO and CORA for robotics semantics.",
     "parentOntology": "General Purpose Robotics (End-Object Ontology)",
+    "stabilityStatus": "stable",
+    "usageStatus": "licensed",
+    "version": "IEEE 1872-2015 (revision P1872 in progress)",
+    "license": "IEEE standard (purchase required for the full text)",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/sumo-cora"
+  },
+  {
+    "id": "sysml-v2",
+    "name": "SysML v2 / KerML",
+    "category": "Aerospace & Defense",
+    "publisher": "Object Management Group (OMG)",
+    "official": "https://www.omg.org/sysml/",
+    "endObjects": [
+      "General Purpose Robotics",
+      "AI Factories"
+    ],
+    "imds": [
+      "MBSE",
+      "requirements",
+      "architecture",
+      "behaviour",
+      "formal semantics"
+    ],
+    "description": "Next-generation MBSE language. KerML provides a formal semantic core and SysML v2 adds systems-engineering constructs, a textual notation and a standard API.",
+    "parentOntology": "",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "version": "KerML 1.0, SysML 2.0, Systems Modeling API 1.0 — formally adopted",
+    "license": "OMG specification (freely available)",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/sysml-v2"
+  },
+  {
+    "id": "vsso",
+    "name": "VSSo",
+    "category": "Transportation & Mobility",
+    "publisher": "W3C Automotive WG / COVESA",
+    "official": "https://www.w3.org/TR/vsso-core/",
+    "endObjects": [],
+    "imds": [
+      "vehicle signals",
+      "automotive",
+      "software-defined vehicle"
+    ],
+    "description": "OWL ontology for COVESA Vehicle Signal Specification signals, following the SOSA/SSN pattern. The W3C draft was later discontinued.",
+    "parentOntology": "",
     "stabilityStatus": "not stable",
-    "usageStatus": "restricted"
+    "usageStatus": "open",
+    "version": "W3C Discontinued Draft (FPWD 2022-03-03)",
+    "license": "W3C Document License",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/vsso"
   }
 ]

@@ -1,0 +1,58 @@
+{
+  "publicEvidence": [],
+  "id": "vsso",
+  "name": "VSSo",
+  "fullName": "Vehicle Signal Specification Ontology",
+  "publisher": "W3C Automotive WG / COVESA",
+  "publisherType": "standards-body",
+  "summary": "OWL ontology for COVESA Vehicle Signal Specification signals, following the SOSA/SSN pattern. The W3C draft was later discontinued.",
+  "kind": "ontology",
+  "layer": "domain",
+  "topics": [
+    "vehicle signals",
+    "automotive",
+    "software-defined vehicle"
+  ],
+  "version": {
+    "label": "W3C Discontinued Draft (FPWD 2022-03-03)",
+    "date": "2022-03-03",
+    "status": "discontinued"
+  },
+  "maturity": "discontinued",
+  "license": {
+    "name": "W3C Document License",
+    "access": "open",
+    "url": "https://www.w3.org/TR/vsso-core/"
+  },
+  "links": {
+    "official": "https://www.w3.org/TR/vsso-core/",
+    "repository": "https://github.com/w3c/vsso"
+  },
+  "formats": [
+    "OWL",
+    "RDF/Turtle"
+  ],
+  "industries": [
+    "transportation-mobility"
+  ],
+  "useCases": [],
+  "brandRelevance": [
+    {
+      "brand": "catia",
+      "strength": "medium",
+      "rationale": "Vehicle E/E and signal architecture."
+    }
+  ],
+  "verification": {
+    "checkedOn": "2026-10-15",
+    "status": "verified",
+    "sources": [
+      {
+        "url": "https://www.w3.org/TR/vsso-core/",
+        "title": "VSSo Core (W3C)"
+      }
+    ],
+    "notes": "Listed for awareness; not maintained."
+  },
+  "origin": "v2"
+}

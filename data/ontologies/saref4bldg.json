@@ -1,0 +1,80 @@
+{
+  "id": "saref4bldg",
+  "name": "SAREF4BLDG",
+  "fullName": "SAREF extension for Buildings",
+  "summary": "Building extension of SAREF for spaces, devices, and building systems.",
+  "publisher": "ETSI",
+  "publisherType": "standards-body",
+  "kind": "ontology",
+  "layer": "domain",
+  "topics": [
+    "buildings",
+    "building devices",
+    "IFC"
+  ],
+  "standardRef": "ETSI TS 103 410-3",
+  "version": {
+    "label": "SAREF4BLDG v2.1.1 (ETSI TS 103 410-3 V2.1.1)",
+    "date": "2025-04-24",
+    "status": "published"
+  },
+  "maturity": "standard",
+  "license": {
+    "name": "ETSI Software License (BSD-3-Clause style)",
+    "access": "open",
+    "url": "https://forge.etsi.org/etsi-software-license"
+  },
+  "links": {
+    "official": "https://saref.etsi.org/saref4bldg/",
+    "namespace": "https://saref.etsi.org/saref4bldg/"
+  },
+  "formats": [
+    "OWL",
+    "RDF/Turtle"
+  ],
+  "industries": [
+    "high-tech",
+    "infrastructure-cities"
+  ],
+  "useCases": [
+    "ai-factories"
+  ],
+  "brandRelevance": [
+    {
+      "brand": "catia",
+      "strength": "medium",
+      "rationale": "Building equipment definitions aligned with IFC."
+    }
+  ],
+  "publicEvidence": [],
+  "verification": {
+    "checkedOn": "2026-10-15",
+    "status": "verified",
+    "sources": [
+      {
+        "url": "https://saref.etsi.org/saref4bldg/",
+        "title": "ETSI SAREF4BLDG"
+      }
+    ],
+    "notes": ""
+  },
+  "origin": "v1",
+  "legacy": {
+    "name": "SAREF4BLDG",
+    "category": "AI Factory",
+    "publisher": "ETSI",
+    "official": "https://saref.etsi.org/saref4bldg/",
+    "endObjects": [
+      "AI Factories"
+    ],
+    "imds": [
+      "Infrastructure System Architecture",
+      "Compute Performance & Sustainability"
+    ],
+    "description": "Building extension of SAREF for spaces, devices, and building systems.",
+    "parentOntology": "AI Factory (End-Object Ontology)",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "hasInternalWikiLink": true
+  }
+}

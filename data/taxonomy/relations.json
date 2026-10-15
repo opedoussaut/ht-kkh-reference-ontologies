@@ -1,0 +1,32 @@
+{
+  "_note": "Only relationships stated by the publisher or a primary source are listed. Each edge must cite evidence. Types: extends, imports, part-of, aligns-with, superseded-by, references, follows-pattern-of.",
+  "types": [
+    { "id": "extends", "label": "extends", "description": "Specialises or builds on the target's concepts." },
+    { "id": "imports", "label": "imports", "description": "Formally imports the target ontology." },
+    { "id": "part-of", "label": "part of", "description": "Published as a module of the same standard or suite." },
+    { "id": "aligns-with", "label": "aligns with", "description": "Provides an alignment or mapping to the target." },
+    { "id": "superseded-by", "label": "integrated into", "description": "Content was integrated into, or is continued by, the target." },
+    { "id": "references", "label": "references", "description": "Uses identifiers or terms from the target." },
+    { "id": "follows-pattern-of", "label": "follows pattern of", "description": "Reuses the target's design pattern." }
+  ],
+  "items": [
+    { "source": "ssn", "target": "sosa", "type": "imports", "evidence": { "url": "https://www.w3.org/TR/vocab-ssn/", "note": "The W3C/OGC Recommendation defines SOSA as the lightweight core that SSN builds on and imports." } },
+    { "source": "saref4bldg", "target": "saref-core", "type": "extends", "evidence": { "url": "https://saref.etsi.org/saref4bldg/", "note": "ETSI TS 103 410-3: SAREF extension for buildings." } },
+    { "source": "saref4ener", "target": "saref-core", "type": "extends", "evidence": { "url": "https://saref.etsi.org/saref4ener/", "note": "ETSI TS 103 410-1: SAREF extension for energy." } },
+    { "source": "ieee-cora", "target": "sumo", "type": "extends", "evidence": { "url": "https://standards.ieee.org/standard/1872-2015.html", "note": "IEEE 1872-2015 builds CORA on SUMO as its upper ontology." } },
+    { "source": "sumo-cora", "target": "sumo", "type": "aligns-with", "evidence": { "url": "https://standards.ieee.org/standard/1872-2015.html", "note": "The IEEE 1872-2015 axiomatisation grounds the robotics ontologies in SUMO." } },
+    { "source": "sumo-cora", "target": "ieee-cora", "type": "aligns-with", "evidence": { "url": "https://standards.ieee.org/standard/1872-2015.html", "note": "Alignment layer between SUMO and CORA." } },
+    { "source": "ieee-corax", "target": "ieee-cora", "type": "part-of", "evidence": { "url": "https://standards.ieee.org/standard/1872-2015.html", "note": "CORAX is specified in IEEE 1872-2015 together with CORA." } },
+    { "source": "ieee-rparts", "target": "ieee-cora", "type": "part-of", "evidence": { "url": "https://standards.ieee.org/standard/1872-2015.html", "note": "RPARTS is specified in IEEE 1872-2015." } },
+    { "source": "ieee-pos", "target": "ieee-cora", "type": "part-of", "evidence": { "url": "https://standards.ieee.org/standard/1872-2015.html", "note": "POS (position ontology) is specified in IEEE 1872-2015." } },
+    { "source": "ieee-aur", "target": "ieee-cora", "type": "extends", "evidence": { "url": "https://standards.ieee.org/ieee/1872.2/7094/", "note": "IEEE 1872.2-2021 extends CORA with autonomous-robotics ontologies." } },
+    { "source": "iof-core", "target": "bfo", "type": "imports", "evidence": { "url": "https://spec.industrialontologies.org/portal/release/202401/core/CoreOntology.html", "note": "All IOF ontologies are grounded in BFO 2020." } },
+    { "source": "cco", "target": "bfo", "type": "extends", "evidence": { "url": "https://github.com/CommonCoreOntology/CommonCoreOntologies", "note": "The Common Core Ontologies are a mid-level extension of BFO." } },
+    { "source": "oeo", "target": "bfo", "type": "imports", "evidence": { "url": "https://github.com/OpenEnergyPlatform/ontology", "note": "The OEO README states that the ontology makes use of, and follows the principles of, the Basic Formal Ontology." } },
+    { "source": "goodrelations", "target": "schema-org", "type": "superseded-by", "evidence": { "url": "https://blog.schema.org/2012/11/08/good-relations-and-schema-org/", "note": "GoodRelations was integrated into schema.org in 2012." } },
+    { "source": "gs1-webvoc", "target": "schema-org", "type": "extends", "evidence": { "url": "https://ref.gs1.org/voc/", "note": "The GS1 Web Vocabulary is designed as an extension of schema.org product terms." } },
+    { "source": "vsso", "target": "sosa", "type": "follows-pattern-of", "evidence": { "url": "https://www.w3.org/TR/vsso-core/", "note": "VSSo follows the SOSA/SSN pattern for observations and actuations." } },
+    { "source": "aas", "target": "eclass", "type": "references", "evidence": { "url": "https://industrialdigitaltwin.org/en/content-hub/aasspecifications", "note": "AAS semantic IDs commonly reference ECLASS IRDIs; see the AAS metamodel specification." } },
+    { "source": "saref4bldg", "target": "ifcowl", "type": "aligns-with", "evidence": { "url": "https://saref.etsi.org/saref4bldg/", "note": "ETSI states SAREF4BLDG is created based on the Industry Foundation Classes (IFC) standard." } }
+  ]
+}

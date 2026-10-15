@@ -1,0 +1,70 @@
+{
+  "publicEvidence": [],
+  "id": "oeo",
+  "name": "OEO",
+  "fullName": "Open Energy Ontology",
+  "publisher": "Open Energy Platform community",
+  "publisherType": "research",
+  "summary": "Community ontology for energy-system modelling (technologies, carriers, scenarios, emissions), built on BFO.",
+  "kind": "ontology",
+  "layer": "domain",
+  "topics": [
+    "energy systems",
+    "scenarios",
+    "emissions",
+    "modelling"
+  ],
+  "version": {
+    "label": "OEO 2.13.0",
+    "date": null,
+    "status": "published"
+  },
+  "maturity": "stable",
+  "license": {
+    "name": "CC0-1.0 or MIT (dual)",
+    "access": "open",
+    "url": "https://github.com/OpenEnergyPlatform/ontology"
+  },
+  "links": {
+    "official": "https://openenergyplatform.org/ontology/",
+    "repository": "https://github.com/OpenEnergyPlatform/ontology"
+  },
+  "formats": [
+    "OWL (Manchester syntax)"
+  ],
+  "industries": [
+    "energy-materials"
+  ],
+  "useCases": [
+    "ai-factories",
+    "sustainability"
+  ],
+  "brandRelevance": [
+    {
+      "brand": "netvibes",
+      "strength": "medium",
+      "rationale": "Energy scenario knowledge graphs."
+    },
+    {
+      "brand": "geovia",
+      "strength": "medium",
+      "rationale": "Energy resource modelling."
+    }
+  ],
+  "verification": {
+    "checkedOn": "2026-10-15",
+    "status": "verified",
+    "sources": [
+      {
+        "url": "https://openenergyplatform.org/ontology/",
+        "title": "OEO on the Open Energy Platform"
+      },
+      {
+        "url": "https://github.com/OpenEnergyPlatform/ontology",
+        "title": "OEO repository"
+      }
+    ],
+    "notes": ""
+  },
+  "origin": "v2"
+}

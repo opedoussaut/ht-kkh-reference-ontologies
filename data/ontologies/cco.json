@@ -1,0 +1,65 @@
+{
+  "publicEvidence": [],
+  "id": "cco",
+  "name": "CCO",
+  "fullName": "Common Core Ontologies",
+  "publisher": "CCO Governance Board",
+  "publisherType": "consortium",
+  "summary": "Suite of mid-level ontologies that extend BFO, covering agents, artefacts, events, information and qualities. Widely used in defence and intelligence programmes.",
+  "kind": "ontology",
+  "layer": "mid-level",
+  "topics": [
+    "artefacts",
+    "agents",
+    "events",
+    "information entities"
+  ],
+  "version": {
+    "label": "Modernisation in progress (v3.0 planned by end 2026, v4.0 mid-2027)",
+    "date": null,
+    "status": "published"
+  },
+  "maturity": "stable",
+  "license": {
+    "name": "BSD-3-Clause",
+    "access": "open",
+    "url": "https://github.com/CommonCoreOntology/CommonCoreOntologies"
+  },
+  "links": {
+    "official": "https://github.com/CommonCoreOntology/CommonCoreOntologies",
+    "repository": "https://github.com/CommonCoreOntology/CommonCoreOntologies"
+  },
+  "formats": [
+    "OWL",
+    "RDF/Turtle"
+  ],
+  "industries": [
+    "aerospace-defense",
+    "cross-industry"
+  ],
+  "useCases": [],
+  "brandRelevance": [
+    {
+      "brand": "netvibes",
+      "strength": "high",
+      "rationale": "Mid-level semantics for intelligence and knowledge graphs."
+    },
+    {
+      "brand": "catia",
+      "strength": "medium",
+      "rationale": "Artefact and function concepts for systems engineering."
+    }
+  ],
+  "verification": {
+    "checkedOn": "2026-10-15",
+    "status": "verified",
+    "sources": [
+      {
+        "url": "https://github.com/CommonCoreOntology/CommonCoreOntologies",
+        "title": "Common Core Ontologies repository"
+      }
+    ],
+    "notes": ""
+  },
+  "origin": "v2"
+}

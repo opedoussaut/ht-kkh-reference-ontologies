@@ -1,0 +1,99 @@
+{
+  "id": "geosparql",
+  "name": "GeoSPARQL",
+  "fullName": "OGC GeoSPARQL — A Geographic Query Language for RDF Data",
+  "summary": "Standard for spatial RDF representation and geospatial querying.",
+  "publisher": "OGC",
+  "publisherType": "standards-body",
+  "kind": "ontology",
+  "layer": "cross-domain",
+  "topics": [
+    "geospatial",
+    "spatial reasoning",
+    "SPARQL"
+  ],
+  "standardRef": "OGC 22-047r1",
+  "version": {
+    "label": "GeoSPARQL 1.1",
+    "date": "2024-02",
+    "status": "published"
+  },
+  "maturity": "standard",
+  "license": {
+    "name": "OGC document licence (royalty-free)",
+    "access": "open",
+    "url": "https://www.ogc.org/standard/geosparql/"
+  },
+  "links": {
+    "official": "https://www.ogc.org/standard/geosparql/",
+    "specification": "https://opengeospatial.github.io/ogc-geosparql/",
+    "namespace": "http://www.opengis.net/ont/geosparql#"
+  },
+  "formats": [
+    "OWL",
+    "RDF/Turtle",
+    "SHACL"
+  ],
+  "industries": [
+    "high-tech",
+    "infrastructure-cities",
+    "energy-materials",
+    "cross-industry"
+  ],
+  "useCases": [
+    "ai-factories",
+    "semiconductors",
+    "personal-electronics",
+    "general-purpose-robotics",
+    "sustainability"
+  ],
+  "brandRelevance": [
+    {
+      "brand": "geovia",
+      "strength": "high",
+      "rationale": "Geospatial modelling of sites and natural resources."
+    },
+    {
+      "brand": "netvibes",
+      "strength": "medium",
+      "rationale": "Spatial queries in knowledge graphs."
+    }
+  ],
+  "publicEvidence": [],
+  "verification": {
+    "checkedOn": "2026-10-15",
+    "status": "verified",
+    "sources": [
+      {
+        "url": "https://www.ogc.org/standard/geosparql/",
+        "title": "OGC GeoSPARQL standard page"
+      },
+      {
+        "url": "https://lists.w3.org/Archives/Public/public-sdw-wg/2024Feb/0000.html",
+        "title": "GeoSPARQL 1.1 published (W3C SDW list, Feb 2024)"
+      }
+    ],
+    "notes": "Licence wording to confirm in document 22-047r1."
+  },
+  "origin": "v1",
+  "legacy": {
+    "name": "GeoSPARQL",
+    "category": "High-Tech",
+    "publisher": "OGC",
+    "official": "https://opengeospatial.github.io/ogc-geosparql/",
+    "endObjects": [
+      "AI Factories",
+      "Semiconductors",
+      "Personal Electronics",
+      "General Purpose Robotics"
+    ],
+    "imds": [
+      "Cross-domain semantics"
+    ],
+    "description": "Standard for spatial RDF representation and geospatial querying.",
+    "parentOntology": "High-Tech (Core Ontology)",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "hasInternalWikiLink": true
+  }
+}

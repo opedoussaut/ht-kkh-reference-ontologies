@@ -1,0 +1,21 @@
+{
+  "name": "reference-ontology-atlas",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Evidence-based, cross-industry Reference Ontology Atlas (public sources only).",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-data.mjs",
+    "validate": "node scripts/build-data.mjs --check",
+    "test": "node --test \"tests/*.test.mjs\"",
+    "check": "npm run validate && npm test",
+    "serve": "node scripts/serve.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "id": "oriont",
+  "name": "ORIONT",
+  "fullName": "ORIONT — life-cycle sustainability assessment ontology (candidate)",
+  "summary": "ORIENTING provides a structured ontology for Life Cycle Sustainability Assessment. It formalizes concepts related to environmental, social, and economic impacts across lifecycle stages. The ontology supports interoperability of LCSA data, impact indicators, system boundaries, and sustainability modeling workflows.",
+  "publisher": "Research / Community",
+  "publisherType": "research",
+  "kind": "ontology",
+  "layer": "domain",
+  "topics": [
+    "life-cycle sustainability assessment",
+    "impact indicators",
+    "circularity"
+  ],
+  "version": {
+    "label": "Not publicly identified",
+    "date": null,
+    "status": "unknown"
+  },
+  "maturity": "research",
+  "license": {
+    "name": "Unknown",
+    "access": "unknown",
+    "url": null
+  },
+  "links": {
+    "official": null,
+    "related": "https://cordis.europa.eu/project/id/958231"
+  },
+  "formats": [],
+  "industries": [
+    "high-tech",
+    "cross-industry"
+  ],
+  "useCases": [
+    "ai-factories",
+    "semiconductors",
+    "personal-electronics",
+    "general-purpose-robotics",
+    "sustainability"
+  ],
+  "brandRelevance": [
+    {
+      "brand": "catia",
+      "strength": "medium",
+      "rationale": "Eco-design in product definition needs LCSA concepts."
+    },
+    {
+      "brand": "enovia",
+      "strength": "medium",
+      "rationale": "Lifecycle data management could carry sustainability indicators."
+    }
+  ],
+  "publicEvidence": [],
+  "verification": {
+    "checkedOn": "2026-10-15",
+    "status": "unverified",
+    "sources": [
+      {
+        "url": "https://cordis.europa.eu/project/id/958231",
+        "title": "CORDIS — ORIENTING project (H2020, 958231)"
+      }
+    ],
+    "notes": "No public ontology named \"ORIONT\" was found. The v1 description refers to the ORIENTING H2020 project (LCSA methodology, 2020-2024), whose public outputs do not clearly include a published ontology. Kept as a candidate pending a public source."
+  },
+  "needsReview": true,
+  "origin": "v1",
+  "legacy": {
+    "name": "ORIONT",
+    "category": "Circularity / Sustainability",
+    "publisher": "Research / Community",
+    "official": "",
+    "endObjects": [
+      "AI Factories",
+      "Semiconductors",
+      "Personal Electronics",
+      "General Purpose Robotics"
+    ],
+    "imds": [
+      "Circular Design"
+    ],
+    "description": "ORIENTING provides a structured ontology for Life Cycle Sustainability Assessment. It formalizes concepts related to environmental, social, and economic impacts across lifecycle stages. The ontology supports interoperability of LCSA data, impact indicators, system boundaries, and sustainability modeling workflows.",
+    "parentOntology": "Circularity / Sustainability (Core Ontology)",
+    "stabilityStatus": "not stable",
+    "usageStatus": "restricted",
+    "hasInternalWikiLink": true
+  }
+}

@@ -1,0 +1,4356 @@
+{
+  "meta": {
+    "title": "Reference Ontology Atlas",
+    "version": "2.0.0",
+    "generatedOn": "2026-10-15",
+    "site": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/",
+    "counts": {
+      "ontologies": 42,
+      "relations": 18,
+      "industries": 9,
+      "useCases": 5,
+      "brands": 9,
+      "legacyRecords": 26
+    },
+    "disclaimer": "Public information only. Brand relevance is an editorial assessment of potential fit unless a public evidence entry is cited. Not an official Dassault Systèmes publication."
+  },
+  "ontologies": [
+    {
+      "id": "aas",
+      "name": "AAS",
+      "fullName": "Asset Administration Shell (AAS)",
+      "summary": "Asset Administration Shell meta-model for interoperable digital twins.",
+      "publisher": "Industrial Digital Twin Association",
+      "publisherType": "industry-association",
+      "kind": "meta-model",
+      "layer": "domain",
+      "topics": [
+        "digital twin",
+        "industrial assets",
+        "submodels",
+        "Industry 4.0"
+      ],
+      "standardRef": "IDTA-01001 · IEC 63278-1",
+      "version": {
+        "label": "IDTA-01001 Part 1 Metamodel v3.1.1 (later IDTA documents reference v3.2)",
+        "date": "2025-07",
+        "status": "published"
+      },
+      "maturity": "standard",
+      "license": {
+        "name": "Specifications published openly by IDTA (see licence in each document)",
+        "access": "open",
+        "url": "https://industrialdigitaltwin.org/en/content-hub/aasspecifications"
+      },
+      "links": {
+        "official": "https://industrialdigitaltwin.org/en/content-hub/aas",
+        "specification": "https://industrialdigitaltwin.org/en/content-hub/aasspecifications"
+      },
+      "formats": [
+        "XML",
+        "JSON",
+        "RDF"
+      ],
+      "industries": [
+        "high-tech",
+        "industrial-equipment",
+        "energy-materials",
+        "transportation-mobility"
+      ],
+      "useCases": [
+        "ai-factories",
+        "semiconductors",
+        "personal-electronics",
+        "general-purpose-robotics",
+        "sustainability"
+      ],
+      "brandRelevance": [
+        {
+          "brand": "delmia",
+          "strength": "high",
+          "rationale": "Shop-floor assets and operations exchange data through AAS submodels."
+        },
+        {
+          "brand": "enovia",
+          "strength": "high",
+          "rationale": "Product and asset lifecycle data could be published as AAS."
+        },
+        {
+          "brand": "catia",
+          "strength": "medium",
+          "rationale": "Engineering data handed over as digital nameplates and technical data submodels."
+        }
+      ],
+      "publicEvidence": [
+        {
+          "kind": "standards-membership",
+          "brands": [],
+          "statement": "Dassault Systèmes announced it joined the Industrial Digital Twin Association (IDTA), which maintains the AAS specifications.",
+          "source": {
+            "url": "https://www.3ds.com/de/newsroom/media-alerts/dassault-systemes-joins-the-industrial-digital-twin-association",
+            "title": "Dassault Systèmes newsroom (DE): joins the Industrial Digital Twin Association",
+            "type": "official"
+          }
+        }
+      ],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "verified",
+        "sources": [
+          {
+            "url": "https://industrialdigitaltwin.org/wp-content/uploads/2025/08/IDTA-01001-3-1-1_AAS-Specification_Part1_Metamodel.pdf",
+            "title": "IDTA-01001-3-1-1 Part 1 Metamodel (PDF)"
+          },
+          {
+            "url": "https://industrialdigitaltwin.org/en/content-hub/aasspecifications",
+            "title": "IDTA AAS specifications"
+          }
+        ],
+        "notes": "The IDTA Part 4 Security document (2026) references Part 1 v3.2; confirm whether v3.2 has been released."
+      },
+      "origin": "v1",
+      "legacy": {
+        "name": "AAS",
+        "category": "High-Tech",
+        "publisher": "Industrial Digital Twin Association",
+        "official": "https://industrialdigitaltwin.org/en/content-hub/aas",
+        "endObjects": [
+          "AI Factories",
+          "Semiconductors",
+          "Personal Electronics",
+          "General Purpose Robotics"
+        ],
+        "imds": [
+          "Cross-domain semantics"
+        ],
+        "description": "Asset Administration Shell meta-model for interoperable digital twins.",
+        "parentOntology": "High-Tech (Core Ontology)",
+        "stabilityStatus": "stable",
+        "usageStatus": "open",
+        "hasInternalWikiLink": true
+      }
+    },
+    {
+      "id": "ieee-aur",
+      "name": "Autonomous Robotics (AuR)",
+      "fullName": "IEEE 1872.2 Autonomous Robotics (AuR) Ontology",
+      "summary": "Ontology focused on autonomous robotics concepts, capabilities, and behavior.",
+      "publisher": "IEEE Robotics and Automation Society",
+      "publisherType": "standards-body",
+      "kind": "ontology",
+      "layer": "domain",
+      "topics": [
+        "autonomy",
+        "autonomous robots",
+        "design patterns"
+      ],
+      "standardRef": "IEEE 1872.2-2021",
+      "version": {
+        "label": "IEEE 1872.2-2021 (published 2022-05-12)",
+        "date": "2022-05-12",
+        "status": "published"
+      },
+      "maturity": "standard",
+      "license": {
+        "name": "IEEE standard (purchase); ontology listed under the IEEE SA Open Source programme (BSD-3-Clause)",
+        "access": "open-with-terms",
+        "url": "https://standards.ieee.org/ieee/1872.2/7094/"
+      },
+      "links": {
+        "official": "https://standards.ieee.org/ieee/1872.2/7094/"
+      },
+      "formats": [
+        "OWL"
+      ],
+      "industries": [
+        "high-tech",
+        "industrial-equipment"
+      ],
+      "useCases": [
+        "general-purpose-robotics"
+      ],
+      "brandRelevance": [
+        {
+          "brand": "catia",
+          "strength": "high",
+          "rationale": "Robot product and systems architecture could reuse a standard robot vocabulary."
+        },
+        {
+          "brand": "delmia",
+          "strength": "high",
+          "rationale": "Robot programming and cell simulation work with robot parts, poses and tasks."
+        },
+        {
+          "brand": "simulia",
+          "strength": "medium",
+          "rationale": "Multibody and control simulation could bind models to standard robot concepts."
+        }
+      ],
+      "publicEvidence": [],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "verified",
+        "sources": [
+          {
+            "url": "https://standards.ieee.org/ieee/1872.2/7094/",
+            "title": "IEEE 1872.2-2021"
+          }
+        ],
+        "notes": ""
+      },
+      "corrections": [
+        {
+          "field": "stabilityStatus",
+          "from": "not stable",
+          "to": "standard",
+          "reason": "Published IEEE standard (board approval 2021-09-23).",
+          "source": "https://standards.ieee.org/ieee/1872.2/7094/"
+        },
+        {
+          "field": "publisher",
+          "from": "Research / Community",
+          "to": "IEEE Robotics and Automation Society",
+          "reason": "Sponsored by the IEEE RAS Standing Committee for Standards.",
+          "source": "https://standards.ieee.org/ieee/1872.2/7094/"
+        }
+      ],
+      "origin": "v1",
+      "legacy": {
+        "name": "Autonomous Robotics (AuR)",
+        "category": "General Purpose Robotics",
+        "publisher": "Research / Community",
+        "official": "",
+        "endObjects": [
+          "General Purpose Robotics"
+        ],
+        "imds": [
+          "Humanoid Robots",
+          "Robot AI Control",
+          "Robot MBSE Simulation"
+        ],
+        "description": "Ontology focused on autonomous robotics concepts, capabilities, and behavior.",
+        "parentOntology": "General Purpose Robotics (End-Object Ontology)",
+        "stabilityStatus": "not stable",
+        "usageStatus": "restricted",
+        "hasInternalWikiLink": true
+      }
+    },
+    {
+      "publicEvidence": [],
+      "id": "bfo",
+      "name": "BFO",
+      "fullName": "Basic Formal Ontology (BFO 2020)",
+      "publisher": "ISO/IEC JTC 1 · BFO maintainers",
+      "publisherType": "standards-body",
+      "summary": "Top-level ontology standardised as ISO/IEC 21838-2. Provides the formal backbone for the IOF, CCO, OEO and many OBO ontologies.",
+      "kind": "ontology",
+      "layer": "upper",
+      "topics": [
+        "upper ontology",
+        "continuants",
+        "occurrents",
+        "formal relations"
+      ],
+      "standardRef": "ISO/IEC 21838-2:2021",
+      "version": {
+        "label": "BFO 2020 (ISO/IEC 21838-2:2021)",
+        "date": "2021",
+        "status": "published"
+      },
+      "maturity": "standard",
+      "license": {
+        "name": "BFO OWL files CC BY 4.0; ISO text licensed",
+        "access": "open",
+        "url": "https://github.com/BFO-ontology/BFO-2020"
+      },
+      "links": {
+        "official": "https://basic-formal-ontology.org/",
+        "repository": "https://github.com/BFO-ontology/BFO-2020",
+        "specification": "https://webstore.iec.ch/en/publication/72703"
+      },
+      "formats": [
+        "OWL",
+        "Common Logic"
+      ],
+      "industries": [
+        "cross-industry",
+        "industrial-equipment",
+        "aerospace-defense",
+        "life-sciences",
+        "energy-materials"
+      ],
+      "useCases": [
+        "semiconductors"
+      ],
+      "brandRelevance": [
+        {
+          "brand": "netvibes",
+          "strength": "high",
+          "rationale": "Formal upper ontology for enterprise knowledge graphs."
+        },
+        {
+          "brand": "biovia",
+          "strength": "medium",
+          "rationale": "Life-science ontologies (OBO) build on BFO."
+        }
+      ],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "verified",
+        "sources": [
+          {
+            "url": "https://github.com/BFO-ontology/BFO-2020",
+            "title": "BFO-2020 repository (CC BY 4.0)"
+          },
+          {
+            "url": "https://webstore.iec.ch/en/publication/72703",
+            "title": "ISO/IEC 21838-2:2021"
+          }
+        ],
+        "notes": ""
+      },
+      "origin": "v2"
+    },
+    {
+      "id": "bot",
+      "name": "BOT",
+      "fullName": "Building Topology Ontology",
+      "summary": "Building Topology Ontology (BOT) is a minimal OWL DL ontology for describing the core topological concepts of buildings and relationships between sub-components such as sites, buildings, storeys, spaces, and elements.",
+      "publisher": "Linked Building Data Community Group",
+      "publisherType": "consortium",
+      "kind": "ontology",
+      "layer": "domain",
+      "topics": [
+        "buildings",
+        "topology",
+        "spaces",
+        "storeys"
+      ],
+      "version": {
+        "label": "v0.3.2 — W3C LBD Community Group public draft",
+        "date": null,
+        "status": "draft"
+      },
+      "maturity": "stable",
+      "license": {
+        "name": "Not stated on the specification page (community group draft)",
+        "access": "open-with-terms",
+        "url": "https://w3c-lbd-cg.github.io/bot/"
+      },
+      "links": {
+        "official": "https://w3c-lbd-cg.github.io/bot/",
+        "namespace": "https://w3id.org/bot#"
+      },
+      "formats": [
+        "OWL",
+        "RDF/Turtle"
+      ],
+      "industries": [
+        "high-tech",
+        "infrastructure-cities"
+      ],
+      "useCases": [
+        "ai-factories"
+      ],
+      "brandRelevance": [
+        {
+          "brand": "catia",
+          "strength": "medium",
+          "rationale": "Facility layout and building topology for data-centre design."
+        },
+        {
+          "brand": "delmia",
+          "strength": "medium",
+          "rationale": "Facility and plant layout."
+        }
+      ],
+      "publicEvidence": [],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "partially-verified",
+        "sources": [
+          {
+            "url": "https://w3c-lbd-cg.github.io/bot/",
+            "title": "BOT specification"
+          }
+        ],
+        "notes": "W3C Community Group reports are not W3C standards. No licence statement is given on the specification page; confirm before redistribution."
+      },
+      "origin": "v1",
+      "legacy": {
+        "name": "BOT",
+        "category": "AI Factory",
+        "publisher": "Linked Building Data Community Group",
+        "official": "https://w3c-lbd-cg.github.io/bot/",
+        "endObjects": [
+          "AI Factories"
+        ],
+        "imds": [
+          "Infrastructure System Architecture"
+        ],
+        "description": "Building Topology Ontology (BOT) is a minimal OWL DL ontology for describing the core topological concepts of buildings and relationships between sub-components such as sites, buildings, storeys, spaces, and elements.",
+        "parentOntology": "AI Factory (End-Object Ontology)",
+        "stabilityStatus": "stable",
+        "usageStatus": "open",
+        "hasInternalWikiLink": true
+      }
+    },
+    {
+      "id": "brick",
+      "name": "Brick Schema",
+      "fullName": "Brick Schema",
+      "summary": "Brick Schema is an open OWL ontology for modeling buildings, infrastructure, and their systems, including spaces, equipment, power distribution, cooling, HVAC, and sensors. It provides a formal semantic foundation to represent and reason over the physical and infrastructural structure of AI factories and data centers.",
+      "publisher": "Brick Consortium",
+      "publisherType": "consortium",
+      "kind": "ontology",
+      "layer": "domain",
+      "topics": [
+        "building systems",
+        "HVAC",
+        "electrical",
+        "points",
+        "telemetry"
+      ],
+      "version": {
+        "label": "Brick v1.4.4 (v1.5.0 release candidates in progress)",
+        "date": null,
+        "status": "published"
+      },
+      "maturity": "stable",
+      "license": {
+        "name": "BSD-3-Clause",
+        "access": "open",
+        "url": "https://github.com/BrickSchema/Brick"
+      },
+      "links": {
+        "official": "https://brickschema.org/",
+        "repository": "https://github.com/BrickSchema/Brick",
+        "namespace": "https://brickschema.org/schema/Brick#"
+      },
+      "formats": [
+        "OWL",
+        "RDF/Turtle",
+        "SHACL"
+      ],
+      "industries": [
+        "high-tech",
+        "infrastructure-cities",
+        "energy-materials"
+      ],
+      "useCases": [
+        "ai-factories"
+      ],
+      "brandRelevance": [
+        {
+          "brand": "simulia",
+          "strength": "medium",
+          "rationale": "Thermal and airflow simulation of cooling systems."
+        },
+        {
+          "brand": "netvibes",
+          "strength": "medium",
+          "rationale": "Facility telemetry analytics."
+        }
+      ],
+      "publicEvidence": [],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "verified",
+        "sources": [
+          {
+            "url": "https://github.com/BrickSchema/Brick/releases",
+            "title": "Brick releases"
+          },
+          {
+            "url": "https://brickschema.org/",
+            "title": "Brick Schema"
+          }
+        ],
+        "notes": ""
+      },
+      "origin": "v1",
+      "legacy": {
+        "name": "Brick Schema",
+        "category": "AI Factory",
+        "publisher": "Brick Consortium",
+        "official": "https://brickschema.org/",
+        "endObjects": [
+          "AI Factories"
+        ],
+        "imds": [
+          "Infrastructure System Architecture",
+          "Compute Performance & Sustainability"
+        ],
+        "description": "Brick Schema is an open OWL ontology for modeling buildings, infrastructure, and their systems, including spaces, equipment, power distribution, cooling, HVAC, and sensors. It provides a formal semantic foundation to represent and reason over the physical and infrastructural structure of AI factories and data centers.",
+        "parentOntology": "AI Factory (End-Object Ontology)",
+        "stabilityStatus": "stable",
+        "usageStatus": "open",
+        "hasInternalWikiLink": true
+      }
+    },
+    {
+      "publicEvidence": [],
+      "id": "cco",
+      "name": "CCO",
+      "fullName": "Common Core Ontologies",
+      "publisher": "CCO Governance Board",
+      "publisherType": "consortium",
+      "summary": "Suite of mid-level ontologies that extend BFO, covering agents, artefacts, events, information and qualities. Widely used in defence and intelligence programmes.",
+      "kind": "ontology",
+      "layer": "mid-level",
+      "topics": [
+        "artefacts",
+        "agents",
+        "events",
+        "information entities"
+      ],
+      "version": {
+        "label": "Modernisation in progress (v3.0 planned by end 2026, v4.0 mid-2027)",
+        "date": null,
+        "status": "published"
+      },
+      "maturity": "stable",
+      "license": {
+        "name": "BSD-3-Clause",
+        "access": "open",
+        "url": "https://github.com/CommonCoreOntology/CommonCoreOntologies"
+      },
+      "links": {
+        "official": "https://github.com/CommonCoreOntology/CommonCoreOntologies",
+        "repository": "https://github.com/CommonCoreOntology/CommonCoreOntologies"
+      },
+      "formats": [
+        "OWL",
+        "RDF/Turtle"
+      ],
+      "industries": [
+        "aerospace-defense",
+        "cross-industry"
+      ],
+      "useCases": [],
+      "brandRelevance": [
+        {
+          "brand": "netvibes",
+          "strength": "high",
+          "rationale": "Mid-level semantics for intelligence and knowledge graphs."
+        },
+        {
+          "brand": "catia",
+          "strength": "medium",
+          "rationale": "Artefact and function concepts for systems engineering."
+        }
+      ],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "verified",
+        "sources": [
+          {
+            "url": "https://github.com/CommonCoreOntology/CommonCoreOntologies",
+            "title": "Common Core Ontologies repository"
+          }
+        ],
+        "notes": ""
+      },
+      "origin": "v2"
+    },
+    {
+      "id": "ieee-cora",
+      "name": "CORA",
+      "fullName": "Core Ontology for Robotics and Automation (CORA)",
+      "summary": "Core ontology for robotics and automation concepts.",
+      "publisher": "IEEE Robotics and Automation Society",
+      "publisherType": "standards-body",
+      "kind": "ontology",
+      "layer": "domain",
+      "topics": [
+        "robots",
+        "robotic systems",
+        "robotic environments"
+      ],
+      "standardRef": "IEEE 1872-2015",
+      "version": {
+        "label": "IEEE 1872-2015 (revision P1872 in progress)",
+        "date": "2015",
+        "status": "published"
+      },
+      "maturity": "standard",
+      "license": {
+        "name": "IEEE standard (purchase required for the full text)",
+        "access": "licensed",
+        "url": "https://standards.ieee.org/standard/1872-2015.html"
+      },
+      "links": {
+        "official": "https://standards.ieee.org/standard/1872-2015.html",
+        "repository": "https://github.com/srfiorini/IEEE1872-owl"
+      },
+      "formats": [
+        "SUO-KIF",
+        "OWL (community conversion)"
+      ],
+      "industries": [
+        "high-tech",
+        "industrial-equipment"
+      ],
+      "useCases": [
+        "general-purpose-robotics"
+      ],
+      "brandRelevance": [
+        {
+          "brand": "catia",
+          "strength": "high",
+          "rationale": "Robot product and systems architecture could reuse a standard robot vocabulary."
+        },
+        {
+          "brand": "delmia",
+          "strength": "high",
+          "rationale": "Robot programming and cell simulation work with robot parts, poses and tasks."
+        },
+        {
+          "brand": "simulia",
+          "strength": "medium",
+          "rationale": "Multibody and control simulation could bind models to standard robot concepts."
+        }
+      ],
+      "publicEvidence": [],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "verified",
+        "sources": [
+          {
+            "url": "https://standards.ieee.org/standard/1872-2015.html",
+            "title": "IEEE 1872-2015 Standard Ontologies for Robotics and Automation"
+          },
+          {
+            "url": "https://github.com/srfiorini/IEEE1872-owl",
+            "title": "OWL version of CORA (IEEE 1872-2015), CC BY 4.0"
+          },
+          {
+            "url": "https://standards.ieee.org/ieee/1872/12250",
+            "title": "IEEE P1872 revision project (active PAR)"
+          }
+        ],
+        "notes": "An OWL conversion of CORA (taxonomy and selected axioms) is published under CC BY 4.0."
+      },
+      "corrections": [
+        {
+          "field": "official",
+          "from": "https://sites.google.com/site/smartappliancesproject/ontologies/cora",
+          "to": "https://standards.ieee.org/standard/1872-2015.html",
+          "reason": "The v1 link pointed to an unrelated smart-appliances project page.",
+          "source": "https://standards.ieee.org/standard/1872-2015.html"
+        },
+        {
+          "field": "publisher",
+          "from": "IEEE / Research Community",
+          "to": "IEEE Robotics and Automation Society",
+          "reason": "Standard sponsor.",
+          "source": "https://standards.ieee.org/standard/1872-2015.html"
+        }
+      ],
+      "origin": "v1",
+      "legacy": {
+        "name": "CORA",
+        "category": "General Purpose Robotics",
+        "publisher": "IEEE / Research Community",
+        "official": "https://sites.google.com/site/smartappliancesproject/ontologies/cora",
+        "endObjects": [
+          "General Purpose Robotics"
+        ],
+        "imds": [
+          "Humanoid Robots",
+          "Robot AI Control",
+          "Robot MBSE Simulation"
+        ],
+        "description": "Core ontology for robotics and automation concepts.",
+        "parentOntology": "General Purpose Robotics (End-Object Ontology)",
+        "stabilityStatus": "stable",
+        "usageStatus": "restricted",
+        "hasInternalWikiLink": true
+      }
+    },
+    {
+      "id": "ieee-corax",
+      "name": "CORAX",
+      "fullName": "CORAX — CORA auxiliary ontology",
+      "summary": "Reference ontology in the robotics corpus; kept as a governed candidate pending fuller validation.",
+      "publisher": "IEEE Robotics and Automation Society",
+      "publisherType": "standards-body",
+      "kind": "ontology",
+      "layer": "domain",
+      "topics": [
+        "design",
+        "interaction",
+        "environment"
+      ],
+      "standardRef": "IEEE 1872-2015",
+      "version": {
+        "label": "IEEE 1872-2015 (revision P1872 in progress)",
+        "date": "2015",
+        "status": "published"
+      },
+      "maturity": "standard",
+      "license": {
+        "name": "IEEE standard (purchase required for the full text)",
+        "access": "licensed",
+        "url": "https://standards.ieee.org/standard/1872-2015.html"
+      },
+      "links": {
+        "official": "https://standards.ieee.org/standard/1872-2015.html"
+      },
+      "formats": [
+        "SUO-KIF",
+        "OWL (community conversion)"
+      ],
+      "industries": [
+        "high-tech",
+        "industrial-equipment"
+      ],
+      "useCases": [
+        "general-purpose-robotics"
+      ],
+      "brandRelevance": [
+        {
+          "brand": "catia",
+          "strength": "high",
+          "rationale": "Robot product and systems architecture could reuse a standard robot vocabulary."
+        },
+        {
+          "brand": "delmia",
+          "strength": "high",
+          "rationale": "Robot programming and cell simulation work with robot parts, poses and tasks."
+        },
+        {
+          "brand": "simulia",
+          "strength": "medium",
+          "rationale": "Multibody and control simulation could bind models to standard robot concepts."
+        }
+      ],
+      "publicEvidence": [],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "verified",
+        "sources": [
+          {
+            "url": "https://standards.ieee.org/standard/1872-2015.html",
+            "title": "IEEE 1872-2015 Standard Ontologies for Robotics and Automation"
+          }
+        ],
+        "notes": "Specified within IEEE 1872-2015 alongside CORA, RPARTS and POS."
+      },
+      "corrections": [
+        {
+          "field": "publisher",
+          "from": "Research / Community",
+          "to": "IEEE Robotics and Automation Society",
+          "reason": "CORAX is part of IEEE 1872-2015.",
+          "source": "https://standards.ieee.org/standard/1872-2015.html"
+        },
+        {
+          "field": "stabilityStatus",
+          "from": "not stable",
+          "to": "standard",
+          "reason": "Published as part of an IEEE standard.",
+          "source": "https://standards.ieee.org/standard/1872-2015.html"
+        }
+      ],
+      "origin": "v1",
+      "legacy": {
+        "name": "CORAX",
+        "category": "General Purpose Robotics",
+        "publisher": "Research / Community",
+        "official": "",
+        "endObjects": [
+          "General Purpose Robotics"
+        ],
+        "imds": [
+          "Humanoid Robots",
+          "Robot AI Control",
+          "Robot MBSE Simulation"
+        ],
+        "description": "Reference ontology in the robotics corpus; kept as a governed candidate pending fuller validation.",
+        "parentOntology": "General Purpose Robotics (End-Object Ontology)",
+        "stabilityStatus": "not stable",
+        "usageStatus": "restricted",
+        "hasInternalWikiLink": true
+      }
+    },
+    {
+      "publicEvidence": [],
+      "id": "dcat",
+      "name": "DCAT",
+      "fullName": "Data Catalog Vocabulary (DCAT) Version 3",
+      "publisher": "W3C",
+      "publisherType": "standards-body",
+      "summary": "W3C vocabulary for describing datasets, data services and catalogues, the basis of many data-space and open-data catalogues.",
+      "kind": "vocabulary",
+      "layer": "cross-domain",
+      "topics": [
+        "data catalogues",
+        "datasets",
+        "data spaces"
+      ],
+      "version": {
+        "label": "DCAT 3 — W3C Recommendation",
+        "date": "2024-08-22",
+        "status": "published"
+      },
+      "maturity": "standard",
+      "license": {
+        "name": "W3C Document License",
+        "access": "open",
+        "url": "https://www.w3.org/copyright/document-license/"
+      },
+      "links": {
+        "official": "https://www.w3.org/TR/vocab-dcat-3/",
+        "namespace": "http://www.w3.org/ns/dcat#"
+      },
+      "formats": [
+        "OWL",
+        "RDF/Turtle"
+      ],
+      "industries": [
+        "cross-industry"
+      ],
+      "useCases": [
+        "ai-factories",
+        "sustainability"
+      ],
+      "brandRelevance": [
+        {
+          "brand": "netvibes",
+          "strength": "high",
+          "rationale": "Dataset cataloguing and discovery."
+        },
+        {
+          "brand": "enovia",
+          "strength": "medium",
+          "rationale": "Exposing engineering datasets to data spaces."
+        }
+      ],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "verified",
+        "sources": [
+          {
+            "url": "https://www.w3.org/TR/vocab-dcat-3/",
+            "title": "DCAT 3 W3C Recommendation"
+          }
+        ],
+        "notes": ""
+      },
+      "origin": "v2"
+    },
+    {
+      "id": "dcterms",
+      "name": "DCTERMS",
+      "fullName": "DCMI Metadata Terms",
+      "summary": "Widely used metadata terms for title, creator, subject, date, and provenance-like description.",
+      "publisher": "Dublin Core Metadata Initiative",
+      "publisherType": "standards-body",
+      "kind": "vocabulary",
+      "layer": "cross-domain",
+      "topics": [
+        "metadata",
+        "documents",
+        "cataloguing"
+      ],
+      "standardRef": "ISO 15836-2",
+      "version": {
+        "label": "DCMI Metadata Terms",
+        "date": "2020-01-20",
+        "status": "published"
+      },
+      "maturity": "standard",
+      "license": {
+        "name": "CC BY 4.0",
+        "access": "open",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "links": {
+        "official": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/",
+        "namespace": "http://purl.org/dc/terms/"
+      },
+      "formats": [
+        "RDF/Turtle",
+        "RDF/XML"
+      ],
+      "industries": [
+        "high-tech",
+        "cross-industry"
+      ],
+      "useCases": [
+        "ai-factories",
+        "semiconductors",
+        "personal-electronics",
+        "general-purpose-robotics"
+      ],
+      "brandRelevance": [
+        {
+          "brand": "enovia",
+          "strength": "high",
+          "rationale": "Document and object metadata (title, creator, dates)."
+        },
+        {
+          "brand": "netvibes",
+          "strength": "high",
+          "rationale": "Generic metadata for indexed content."
+        }
+      ],
+      "publicEvidence": [],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "verified",
+        "sources": [
+          {
+            "url": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/",
+            "title": "DCMI Metadata Terms"
+          }
+        ],
+        "notes": ""
+      },
+      "origin": "v1",
+      "legacy": {
+        "name": "DCTERMS",
+        "category": "High-Tech",
+        "publisher": "Dublin Core Metadata Initiative",
+        "official": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/",
+        "endObjects": [
+          "AI Factories",
+          "Semiconductors",
+          "Personal Electronics",
+          "General Purpose Robotics"
+        ],
+        "imds": [
+          "Cross-domain semantics"
+        ],
+        "description": "Widely used metadata terms for title, creator, subject, date, and provenance-like description.",
+        "parentOntology": "High-Tech (Core Ontology)",
+        "stabilityStatus": "stable",
+        "usageStatus": "open",
+        "hasInternalWikiLink": true
+      }
+    },
+    {
+      "publicEvidence": [],
+      "id": "digital-reference",
+      "name": "Digital Reference (DR)",
+      "fullName": "Digital Reference — semiconductor supply-chain ontology",
+      "publisher": "Infineon Technologies & partners (Productive4.0, SC³)",
+      "publisherType": "industry",
+      "summary": "Ontology for the semiconductor industry and its supply chains, organised in thematic \"lobes\" (about 1,200 classes). Introduced in the ECSEL Productive4.0 project.",
+      "kind": "ontology",
+      "layer": "domain",
+      "topics": [
+        "semiconductor supply chain",
+        "manufacturing",
+        "products"
+      ],
+      "version": {
+        "label": "Community-maintained (see repository)",
+        "date": null,
+        "status": "published"
+      },
+      "maturity": "emerging",
+      "license": {
+        "name": "See repository",
+        "access": "unknown",
+        "url": "https://github.com/tibonto/dr"
+      },
+      "links": {
+        "official": "https://ifx-dr.github.io/DigitalReference/",
+        "repository": "https://github.com/tibonto/dr"
+      },
+      "formats": [
+        "OWL",
+        "RDF/Turtle"
+      ],
+      "industries": [
+        "high-tech"
+      ],
+      "useCases": [
+        "semiconductors"
+      ],
+      "brandRelevance": [
+        {
+          "brand": "delmia",
+          "strength": "high",
+          "rationale": "Semiconductor supply-chain planning."
+        },
+        {
+          "brand": "netvibes",
+          "strength": "medium",
+          "rationale": "Supply-chain intelligence."
+        }
+      ],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "partially-verified",
+        "sources": [
+          {
+            "url": "https://ifx-dr.github.io/DigitalReference/",
+            "title": "Digital Reference site"
+          },
+          {
+            "url": "https://www.informs-sim.org/wsc25papers/con142.pdf",
+            "title": "Winter Simulation Conference 2025 paper using DR"
+          }
+        ],
+        "notes": "Confirm the licence in the repository before reuse."
+      },
+      "origin": "v2"
+    },
+    {
+      "id": "dmtf-cim",
+      "name": "DMTF CIM",
+      "fullName": "DMTF Common Information Model (CIM) Schema",
+      "summary": "The Common Information Model (CIM) is a formal object-oriented schema developed by the Distributed Management Task Force (DMTF) to represent managed elements in IT environments, including computer systems, racks, chassis, processors, memory, power supplies, networking components, and cooling subsystems. CIM provides a strong reference model for AI Factory physical and logical infrastructure components.",
+      "publisher": "DMTF (Distributed Management Task Force)",
+      "publisherType": "standards-body",
+      "kind": "information-model",
+      "layer": "domain",
+      "topics": [
+        "IT management",
+        "servers",
+        "racks",
+        "power supplies",
+        "cooling"
+      ],
+      "version": {
+        "label": "CIM Schema 2.54.1 (2.54.0 released October 2020)",
+        "date": null,
+        "status": "published"
+      },
+      "maturity": "stable",
+      "license": {
+        "name": "Free download under DMTF terms",
+        "access": "open-with-terms",
+        "url": "https://www.dmtf.org/standards/cim"
+      },
+      "links": {
+        "official": "https://www.dmtf.org/standards/cim"
+      },
+      "formats": [
+        "MOF",
+        "UML",
+        "XML"
+      ],
+      "industries": [
+        "high-tech"
+      ],
+      "useCases": [
+        "ai-factories"
+      ],
+      "brandRelevance": [
+        {
+          "brand": "delmia",
+          "strength": "medium",
+          "rationale": "Operations of IT infrastructure assets."
+        },
+        {
+          "brand": "netvibes",
+          "strength": "medium",
+          "rationale": "Inventory and telemetry analytics for compute assets."
+        }
+      ],
+      "publicEvidence": [],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "verified",
+        "sources": [
+          {
+            "url": "https://dmtf.org/node/3585",
+            "title": "DMTF releases CIM 2.54"
+          },
+          {
+            "url": "https://www.dmtf.org/sites/default/files/cim/cim_schema_v2541/releasenotes.html",
+            "title": "CIM 2.54.1 release notes"
+          }
+        ],
+        "notes": "CIM is a MOF/UML information model, not an OWL ontology."
+      },
+      "corrections": [
+        {
+          "field": "publisher",
+          "from": "IEC",
+          "to": "DMTF",
+          "reason": "The v1 description (IT racks, chassis, processors) is the DMTF CIM. The IEC power-system CIM (IEC 61970/61968) is a different standard, now catalogued separately as \"iec-cim\".",
+          "source": "https://www.dmtf.org/standards/cim"
+        },
+        {
+          "field": "official",
+          "from": "https://www.iec.ch/standardsdev/publications/",
+          "to": "https://www.dmtf.org/standards/cim",
+          "reason": "Points to the publisher of the model described.",
+          "source": "https://www.dmtf.org/standards/cim"
+        }
+      ],
+      "origin": "v1",
+      "legacy": {
+        "name": "CIM",
+        "category": "AI Factory",
+        "publisher": "IEC",
+        "official": "https://www.iec.ch/standardsdev/publications/",
+        "endObjects": [
+          "AI Factories"
+        ],
+        "imds": [
+          "Infrastructure System Architecture",
+          "Compute Performance & Sustainability"
+        ],
+        "description": "The Common Information Model (CIM) is a formal object-oriented schema developed by the Distributed Management Task Force (DMTF) to represent managed elements in IT environments, including computer systems, racks, chassis, processors, memory, power supplies, networking components, and cooling subsystems. CIM provides a strong reference model for AI Factory physical and logical infrastructure components.",
+        "parentOntology": "AI Factory (End-Object Ontology)",
+        "stabilityStatus": "stable",
+        "usageStatus": "licensed",
+        "hasInternalWikiLink": true
+      }
+    },
+    {
+      "id": "eclass",
+      "name": "ECLASS Ontology",
+      "fullName": "ECLASS classification and product description standard",
+      "summary": "Classification ontology for products, properties, and industrial semantics.",
+      "publisher": "ECLASS e.V.",
+      "publisherType": "industry-association",
+      "kind": "classification",
+      "layer": "domain",
+      "topics": [
+        "product classification",
+        "properties",
+        "IRDI",
+        "master data"
+      ],
+      "version": {
+        "label": "ECLASS 16.0 (listed in the ECLASS shop); 15.0 released 2024-11-29",
+        "date": null,
+        "status": "published"
+      },
+      "maturity": "standard",
+      "license": {
+        "name": "Commercial ECLASS licence",
+        "access": "licensed",
+        "url": "https://eclass.eu/shop/en/products"
+      },
+      "links": {
+        "official": "https://eclass.eu/",
+        "specification": "https://eclass.eu/en/news/news/first-eclass-as-rdf-specification"
+      },
+      "formats": [
+        "CSV",
+        "XML",
+        "RDF (ECLASS-as-RDF specification)"
+      ],
+      "industries": [
+        "high-tech",
+        "industrial-equipment",
+        "energy-materials",
+        "consumer-goods"
+      ],
+      "useCases": [
+        "ai-factories",
+        "semiconductors",
+        "personal-electronics",
+        "general-purpose-robotics"
+      ],
+      "brandRelevance": [
+        {
+          "brand": "enovia",
+          "strength": "high",
+          "rationale": "Part classification and standard attributes in the product lifecycle."
+        },
+        {
+          "brand": "delmia",
+          "strength": "medium",
+          "rationale": "Procurement and supply-chain master data."
+        },
+        {
+          "brand": "catia",
+          "strength": "medium",
+          "rationale": "Standard parts and component properties."
+        }
+      ],
+      "publicEvidence": [],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "verified",
+        "sources": [
+          {
+            "url": "https://eclass.eu/shop/en/product/eclass-15-0",
+            "title": "ECLASS 15.0 product page"
+          },
+          {
+            "url": "https://eclass.eu/shop/en/product/eclass-16-0",
+            "title": "ECLASS 16.0 product page"
+          },
+          {
+            "url": "https://eclass.eu/en/news/news/first-eclass-as-rdf-specification",
+            "title": "ECLASS as RDF specification announcement"
+          }
+        ],
+        "notes": "ECLASS is primarily a classification system; an RDF serialisation is specified. Commercial licence required."
+      },
+      "origin": "v1",
+      "legacy": {
+        "name": "ECLASS Ontology",
+        "category": "High-Tech",
+        "publisher": "ECLASS e.V.",
+        "official": "https://www.eclass.eu/",
+        "endObjects": [
+          "AI Factories",
+          "Semiconductors",
+          "Personal Electronics",
+          "General Purpose Robotics"
+        ],
+        "imds": [
+          "Cross-domain semantics"
+        ],
+        "description": "Classification ontology for products, properties, and industrial semantics.",
+        "parentOntology": "High-Tech (Core Ontology)",
+        "stabilityStatus": "stable",
+        "usageStatus": "licensed",
+        "hasInternalWikiLink": true
+      }
+    },
+    {
+      "id": "eli",
+      "name": "ELI Ontology",
+      "fullName": "European Legislation Identifier (ELI) Ontology",
+      "summary": "Ontology for identifying and describing legal resources and legislation metadata.",
+      "publisher": "Publications Office of the European Union",
+      "publisherType": "government",
+      "kind": "ontology",
+      "layer": "domain",
+      "topics": [
+        "legislation",
+        "regulation",
+        "metadata"
+      ],
+      "version": {
+        "label": "ELI ontology 1.3 (latest listed on Interoperable Europe)",
+        "date": null,
+        "status": "published"
+      },
+      "maturity": "stable",
+      "license": {
+        "name": "EU Publications Office open reuse terms (confirm per release)",
+        "access": "open",
+        "url": "https://op.europa.eu/en/web/eu-vocabularies/eli"
+      },
+      "links": {
+        "official": "https://op.europa.eu/en/web/eu-vocabularies/eli",
+        "specification": "https://interoperable-europe.ec.europa.eu/collection/eli-european-legislation-identifier/solution/eli-ontology/releases",
+        "namespace": "http://data.europa.eu/eli/ontology#"
+      },
+      "formats": [
+        "OWL",
+        "RDF/Turtle"
+      ],
+      "industries": [
+        "high-tech",
+        "cross-industry"
+      ],
+      "useCases": [
+        "ai-factories",
+        "semiconductors",
+        "personal-electronics",
+        "general-purpose-robotics",
+        "sustainability"
+      ],
+      "brandRelevance": [
+        {
+          "brand": "enovia",
+          "strength": "medium",
+          "rationale": "Compliance requirements in the product lifecycle can reference legal acts by ELI."
+        },
+        {
+          "brand": "netvibes",
+          "strength": "medium",
+          "rationale": "Regulatory intelligence and knowledge graphs can link to legislation identifiers."
+        }
+      ],
+      "publicEvidence": [],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "partially-verified",
+        "sources": [
+          {
+            "url": "https://op.europa.eu/en/web/eu-vocabularies/eli",
+            "title": "EU Vocabularies — ELI"
+          },
+          {
+            "url": "https://interoperable-europe.ec.europa.eu/collection/eli-european-legislation-identifier/solution/eli-ontology/releases",
+            "title": "Interoperable Europe — ELI ontology releases"
+          }
+        ],
+        "notes": "Release 1.3 is the latest listed on Interoperable Europe; EU Vocabularies may list newer releases. Confirm the exact licence statement for the ontology files."
+      },
+      "origin": "v1",
+      "legacy": {
+        "name": "ELI Ontology",
+        "category": "Regulatory / Normative",
+        "publisher": "Publications Office of the European Union",
+        "official": "https://op.europa.eu/en/web/eu-vocabularies/eli",
+        "endObjects": [
+          "AI Factories",
+          "Semiconductors",
+          "Personal Electronics",
+          "General Purpose Robotics"
+        ],
+        "imds": [
+          "Regulatory Knowledge"
+        ],
+        "description": "Ontology for identifying and describing legal resources and legislation metadata.",
+        "parentOntology": "Regulatory / Normative (Core Ontology)",
+        "stabilityStatus": "stable",
+        "usageStatus": "open",
+        "hasInternalWikiLink": true
+      }
+    },
+    {
+      "publicEvidence": [],
+      "id": "emmo",
+      "name": "EMMO",
+      "fullName": "Elementary Multiperspective Material Ontology",
+      "publisher": "EMMC / EMMO community",
+      "publisherType": "consortium",
+      "summary": "Top-down ontology for materials science and engineering, from physical foundations to materials, models and characterisation.",
+      "kind": "ontology",
+      "layer": "upper",
+      "topics": [
+        "materials",
+        "physics",
+        "models",
+        "characterisation"
+      ],
+      "version": {
+        "label": "EMMO 1.0.0",
+        "date": "2023",
+        "status": "published"
+      },
+      "maturity": "stable",
+      "license": {
+        "name": "CC BY 4.0",
+        "access": "open",
+        "url": "https://github.com/emmo-repo/EMMO"
+      },
+      "links": {
+        "official": "https://github.com/emmo-repo/EMMO",
+        "repository": "https://github.com/emmo-repo/EMMO",
+        "namespace": "https://w3id.org/emmo#"
+      },
+      "formats": [
+        "OWL",
+        "RDF/Turtle"
+      ],
+      "industries": [
+        "energy-materials",
+        "high-tech",
+        "transportation-mobility",
+        "life-sciences"
+      ],
+      "useCases": [
+        "semiconductors",
+        "sustainability"
+      ],
+      "brandRelevance": [
+        {
+          "brand": "biovia",
+          "strength": "high",
+          "rationale": "Materials modelling and characterisation data."
+        },
+        {
+          "brand": "simulia",
+          "strength": "high",
+          "rationale": "Material models used in simulation."
+        }
+      ],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "verified",
+        "sources": [
+          {
+            "url": "https://github.com/emmo-repo/EMMO",
+            "title": "EMMO repository"
+          },
+          {
+            "url": "https://zenodo.org/records/8318236",
+            "title": "EMMO 1.0 on Zenodo"
+          }
+        ],
+        "notes": "Domain modules continue to evolve after 1.0.0."
+      },
+      "origin": "v2"
+    },
+    {
+      "id": "geosparql",
+      "name": "GeoSPARQL",
+      "fullName": "OGC GeoSPARQL — A Geographic Query Language for RDF Data",
+      "summary": "Standard for spatial RDF representation and geospatial querying.",
+      "publisher": "OGC",
+      "publisherType": "standards-body",
+      "kind": "ontology",
+      "layer": "cross-domain",
+      "topics": [
+        "geospatial",
+        "spatial reasoning",
+        "SPARQL"
+      ],
+      "standardRef": "OGC 22-047r1",
+      "version": {
+        "label": "GeoSPARQL 1.1",
+        "date": "2024-02",
+        "status": "published"
+      },
+      "maturity": "standard",
+      "license": {
+        "name": "OGC document licence (royalty-free)",
+        "access": "open",
+        "url": "https://www.ogc.org/standard/geosparql/"
+      },
+      "links": {
+        "official": "https://www.ogc.org/standard/geosparql/",
+        "specification": "https://opengeospatial.github.io/ogc-geosparql/",
+        "namespace": "http://www.opengis.net/ont/geosparql#"
+      },
+      "formats": [
+        "OWL",
+        "RDF/Turtle",
+        "SHACL"
+      ],
+      "industries": [
+        "high-tech",
+        "infrastructure-cities",
+        "energy-materials",
+        "cross-industry"
+      ],
+      "useCases": [
+        "ai-factories",
+        "semiconductors",
+        "personal-electronics",
+        "general-purpose-robotics",
+        "sustainability"
+      ],
+      "brandRelevance": [
+        {
+          "brand": "geovia",
+          "strength": "high",
+          "rationale": "Geospatial modelling of sites and natural resources."
+        },
+        {
+          "brand": "netvibes",
+          "strength": "medium",
+          "rationale": "Spatial queries in knowledge graphs."
+        }
+      ],
+      "publicEvidence": [],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "verified",
+        "sources": [
+          {
+            "url": "https://www.ogc.org/standard/geosparql/",
+            "title": "OGC GeoSPARQL standard page"
+          },
+          {
+            "url": "https://lists.w3.org/Archives/Public/public-sdw-wg/2024Feb/0000.html",
+            "title": "GeoSPARQL 1.1 published (W3C SDW list, Feb 2024)"
+          }
+        ],
+        "notes": "Licence wording to confirm in document 22-047r1."
+      },
+      "origin": "v1",
+      "legacy": {
+        "name": "GeoSPARQL",
+        "category": "High-Tech",
+        "publisher": "OGC",
+        "official": "https://opengeospatial.github.io/ogc-geosparql/",
+        "endObjects": [
+          "AI Factories",
+          "Semiconductors",
+          "Personal Electronics",
+          "General Purpose Robotics"
+        ],
+        "imds": [
+          "Cross-domain semantics"
+        ],
+        "description": "Standard for spatial RDF representation and geospatial querying.",
+        "parentOntology": "High-Tech (Core Ontology)",
+        "stabilityStatus": "stable",
+        "usageStatus": "open",
+        "hasInternalWikiLink": true
+      }
+    },
+    {
+      "id": "goodrelations",
+      "name": "GoodRelations",
+      "fullName": "GoodRelations Web Vocabulary for E-Commerce",
+      "summary": "Ontology for products, offers, prices, and business entities.",
+      "publisher": "Web Commerce Community",
+      "publisherType": "research",
+      "kind": "vocabulary",
+      "layer": "domain",
+      "topics": [
+        "e-commerce",
+        "offers",
+        "products",
+        "business entities"
+      ],
+      "version": {
+        "label": "GoodRelations 1.0 (integrated into schema.org in 2012)",
+        "date": null,
+        "status": "superseded"
+      },
+      "maturity": "legacy",
+      "license": {
+        "name": "Open (see project site)",
+        "access": "open",
+        "url": "http://www.heppnetz.de/projects/goodrelations/"
+      },
+      "links": {
+        "official": "http://www.heppnetz.de/projects/goodrelations/",
+        "namespace": "http://purl.org/goodrelations/v1#"
+      },
+      "formats": [
+        "OWL",
+        "RDF/XML"
+      ],
+      "industries": [
+        "high-tech",
+        "consumer-goods"
+      ],
+      "useCases": [
+        "ai-factories",
+        "semiconductors",
+        "personal-electronics",
+        "general-purpose-robotics"
+      ],
+      "brandRelevance": [
+        {
+          "brand": "3dexcite",
+          "strength": "medium",
+          "rationale": "Product-offer data behind online 3D product experiences."
+        }
+      ],
+      "publicEvidence": [],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "verified",
+        "sources": [
+          {
+            "url": "http://www.heppnetz.de/projects/goodrelations/",
+            "title": "GoodRelations project"
+          },
+          {
+            "url": "https://blog.schema.org/2012/11/08/good-relations-and-schema-org/",
+            "title": "schema.org blog: GoodRelations integrated into schema.org (2012)"
+          }
+        ],
+        "notes": "For new work, schema.org is the maintained successor."
+      },
+      "origin": "v1",
+      "legacy": {
+        "name": "GoodRelations",
+        "category": "High-Tech",
+        "publisher": "Web Commerce Community",
+        "official": "http://www.heppnetz.de/projects/goodrelations/",
+        "endObjects": [
+          "AI Factories",
+          "Semiconductors",
+          "Personal Electronics",
+          "General Purpose Robotics"
+        ],
+        "imds": [
+          "Cross-domain semantics"
+        ],
+        "description": "Ontology for products, offers, prices, and business entities.",
+        "parentOntology": "High-Tech (Core Ontology)",
+        "stabilityStatus": "stable",
+        "usageStatus": "open",
+        "hasInternalWikiLink": true
+      }
+    },
+    {
+      "id": "gs1-webvoc",
+      "name": "GS1 WebVoc",
+      "fullName": "GS1 Web Vocabulary",
+      "summary": "GS1 web vocabulary for product, organization, and identification semantics.",
+      "publisher": "GS1",
+      "publisherType": "standards-body",
+      "kind": "vocabulary",
+      "layer": "domain",
+      "topics": [
+        "product identification",
+        "GTIN",
+        "product master data",
+        "digital product passport"
+      ],
+      "version": {
+        "label": "Release 1.13.0 (latest immutable release seen)",
+        "date": "2025-01-13",
+        "status": "published"
+      },
+      "maturity": "standard",
+      "license": {
+        "name": "Apache-2.0 (per GS1 WebVoc repository)",
+        "access": "open",
+        "url": "https://github.com/gs1/WebVoc"
+      },
+      "links": {
+        "official": "https://ref.gs1.org/voc/",
+        "repository": "https://github.com/gs1/WebVoc",
+        "namespace": "https://gs1.org/voc/"
+      },
+      "formats": [
+        "JSON-LD",
+        "RDF/Turtle"
+      ],
+      "industries": [
+        "high-tech",
+        "consumer-goods",
+        "life-sciences"
+      ],
+      "useCases": [
+        "ai-factories",
+        "semiconductors",
+        "personal-electronics",
+        "general-purpose-robotics",
+        "sustainability"
+      ],
+      "brandRelevance": [
+        {
+          "brand": "enovia",
+          "strength": "medium",
+          "rationale": "Product identification across the lifecycle."
+        },
+        {
+          "brand": "3dexcite",
+          "strength": "medium",
+          "rationale": "Rich product data for commerce experiences."
+        },
+        {
+          "brand": "delmia",
+          "strength": "medium",
+          "rationale": "Supply-chain identification and traceability."
+        }
+      ],
+      "publicEvidence": [],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "verified",
+        "sources": [
+          {
+            "url": "https://ref.gs1.org/voc/",
+            "title": "GS1 Web Vocabulary"
+          },
+          {
+            "url": "https://ref.gs1.org/voc/data/archive",
+            "title": "GS1 Web Vocabulary archive"
+          },
+          {
+            "url": "https://github.com/gs1/WebVoc",
+            "title": "GS1 WebVoc on GitHub"
+          }
+        ],
+        "notes": "v1 marked this as \"licensed\"; the vocabulary is published under Apache 2.0."
+      },
+      "corrections": [
+        {
+          "field": "usageStatus",
+          "from": "licensed",
+          "to": "open",
+          "reason": "The GS1 Web Vocabulary is published under Apache 2.0.",
+          "source": "https://github.com/gs1/WebVoc"
+        }
+      ],
+      "origin": "v1",
+      "legacy": {
+        "name": "GS1 WebVoc",
+        "category": "High-Tech",
+        "publisher": "GS1",
+        "official": "https://www.gs1.org/voc/",
+        "endObjects": [
+          "AI Factories",
+          "Semiconductors",
+          "Personal Electronics",
+          "General Purpose Robotics"
+        ],
+        "imds": [
+          "Cross-domain semantics"
+        ],
+        "description": "GS1 web vocabulary for product, organization, and identification semantics.",
+        "parentOntology": "High-Tech (Core Ontology)",
+        "stabilityStatus": "stable",
+        "usageStatus": "licensed",
+        "hasInternalWikiLink": true
+      }
+    },
+    {
+      "publicEvidence": [],
+      "id": "iec-cim",
+      "name": "IEC CIM",
+      "fullName": "IEC Common Information Model for power systems (IEC 61970 / 61968 / 62325)",
+      "publisher": "IEC TC 57",
+      "publisherType": "standards-body",
+      "summary": "UML information model for electric power systems (grid topology, equipment, measurements, markets). Exchanged as RDF through profiles such as ENTSO-E CGMES.",
+      "kind": "information-model",
+      "layer": "domain",
+      "topics": [
+        "power grid",
+        "transmission",
+        "distribution",
+        "CGMES"
+      ],
+      "standardRef": "IEC 61970-301:2020+AMD1:2022",
+      "version": {
+        "label": "IEC 61970-301:2020 + AMD1:2022",
+        "date": "2022",
+        "status": "published"
+      },
+      "maturity": "standard",
+      "license": {
+        "name": "IEC standard (purchase required)",
+        "access": "licensed",
+        "url": "https://webstore.iec.ch/en/publication/6215"
+      },
+      "links": {
+        "official": "https://webstore.iec.ch/en/publication/6215"
+      },
+      "formats": [
+        "UML",
+        "RDF/XML (IEC 61970-501, CGMES)"
+      ],
+      "industries": [
+        "energy-materials"
+      ],
+      "useCases": [
+        "ai-factories",
+        "sustainability"
+      ],
+      "brandRelevance": [
+        {
+          "brand": "netvibes",
+          "strength": "medium",
+          "rationale": "Grid data in energy knowledge graphs."
+        },
+        {
+          "brand": "simulia",
+          "strength": "medium",
+          "rationale": "Power-system digital twins."
+        }
+      ],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "partially-verified",
+        "sources": [
+          {
+            "url": "https://connect.snv.ch/en/iec-61970-301-2013-ed4",
+            "title": "IEC 61970-301 edition history (SNV)"
+          },
+          {
+            "url": "https://webstore.iec.ch/en/publication/6215",
+            "title": "IEC webstore"
+          }
+        ],
+        "notes": "Added in v2 to separate the power-system CIM from the DMTF CIM. Confirm the current CGMES version with ENTSO-E."
+      },
+      "origin": "v2"
+    },
+    {
+      "publicEvidence": [],
+      "id": "ifcowl",
+      "name": "ifcOWL",
+      "fullName": "ifcOWL — OWL representation of IFC",
+      "publisher": "buildingSMART International",
+      "publisherType": "standards-body",
+      "summary": "Direct OWL translation of the IFC EXPRESS schema (ISO 16739). buildingSMART now points semantic-web users to bSDD for most uses.",
+      "kind": "ontology",
+      "layer": "domain",
+      "topics": [
+        "BIM",
+        "IFC",
+        "buildings",
+        "infrastructure"
+      ],
+      "version": {
+        "label": "ifcOWL for IFC4 ADD2",
+        "date": "2019-02",
+        "status": "published"
+      },
+      "maturity": "legacy",
+      "license": {
+        "name": "CC BY 3.0",
+        "access": "open",
+        "url": "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2/OWL/index.html"
+      },
+      "links": {
+        "official": "https://technical.buildingsmart.org/standards/ifc/ifc-formats/ifcowl/",
+        "specification": "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2/OWL/index.html"
+      },
+      "formats": [
+        "OWL",
+        "RDF/Turtle",
+        "JSON-LD"
+      ],
+      "industries": [
+        "infrastructure-cities"
+      ],
+      "useCases": [
+        "ai-factories"
+      ],
+      "brandRelevance": [
+        {
+          "brand": "catia",
+          "strength": "medium",
+          "rationale": "AEC design data interoperability."
+        }
+      ],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "verified",
+        "sources": [
+          {
+            "url": "https://technical.buildingsmart.org/standards/ifc/ifc-formats/ifcowl/",
+            "title": "buildingSMART — What is ifcOWL?"
+          },
+          {
+            "url": "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2/OWL/index.html",
+            "title": "ifcOWL IFC4 ADD2"
+          }
+        ],
+        "notes": "The ifcOWL authors advise against production use; consider bSDD."
+      },
+      "origin": "v2"
+    },
+    {
+      "publicEvidence": [],
+      "id": "iof-core",
+      "name": "IOF Core",
+      "fullName": "Industrial Ontologies Foundry — Core Ontology",
+      "publisher": "OAGi Industrial Ontologies Foundry",
+      "publisherType": "consortium",
+      "summary": "Mid-level industrial ontology grounded in BFO 2020. Shared foundation for IOF domain ontologies such as maintenance, supply chain, production planning and product-service systems.",
+      "kind": "ontology",
+      "layer": "mid-level",
+      "topics": [
+        "manufacturing",
+        "maintenance",
+        "supply chain",
+        "product lifecycle"
+      ],
+      "version": {
+        "label": "IOF release 202603 (Core first released in 202401)",
+        "date": "2026-03",
+        "status": "published"
+      },
+      "maturity": "stable",
+      "license": {
+        "name": "MIT",
+        "access": "open",
+        "url": "https://spec.industrialontologies.org/"
+      },
+      "links": {
+        "official": "https://spec.industrialontologies.org/",
+        "specification": "https://spec.industrialontologies.org/portal/release/202603/core.html"
+      },
+      "formats": [
+        "OWL",
+        "RDF/Turtle"
+      ],
+      "industries": [
+        "industrial-equipment",
+        "aerospace-defense",
+        "transportation-mobility",
+        "life-sciences"
+      ],
+      "useCases": [
+        "semiconductors",
+        "general-purpose-robotics"
+      ],
+      "brandRelevance": [
+        {
+          "brand": "delmia",
+          "strength": "high",
+          "rationale": "Production planning, maintenance and supply-chain semantics."
+        },
+        {
+          "brand": "enovia",
+          "strength": "high",
+          "rationale": "Product lifecycle concepts with formal grounding."
+        },
+        {
+          "brand": "catia",
+          "strength": "medium",
+          "rationale": "Design artefacts and requirements."
+        }
+      ],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "verified",
+        "sources": [
+          {
+            "url": "https://spec.industrialontologies.org/portal/release/202603/core.html",
+            "title": "IOF Core, release 202603"
+          },
+          {
+            "url": "https://spec.industrialontologies.org/portal/release/202401/core/CoreOntology.html",
+            "title": "IOF Core, release 202401"
+          }
+        ],
+        "notes": ""
+      },
+      "origin": "v2"
+    },
+    {
+      "publicEvidence": [],
+      "id": "iso-15926-14",
+      "name": "ISO 15926-14",
+      "fullName": "ISO 15926-14 — OWL 2 ontology for process-plant lifecycle data",
+      "publisher": "ISO TC 184/SC 4",
+      "publisherType": "standards-body",
+      "summary": "OWL 2 implementation of the ISO 15926-2 data model for integrating lifecycle data of process plants, including oil and gas facilities.",
+      "kind": "ontology",
+      "layer": "domain",
+      "topics": [
+        "process plants",
+        "oil and gas",
+        "asset lifecycle"
+      ],
+      "standardRef": "ISO/TS 15926-14",
+      "version": {
+        "label": "ISO/TS 15926-14",
+        "date": null,
+        "status": "published"
+      },
+      "maturity": "standard",
+      "license": {
+        "name": "ISO standard (purchase required)",
+        "access": "licensed",
+        "url": "https://15926.org/"
+      },
+      "links": {
+        "official": "https://15926.org/"
+      },
+      "formats": [
+        "OWL 2"
+      ],
+      "industries": [
+        "energy-materials"
+      ],
+      "useCases": [],
+      "brandRelevance": [
+        {
+          "brand": "enovia",
+          "strength": "medium",
+          "rationale": "Plant asset lifecycle information handover."
+        },
+        {
+          "brand": "delmia",
+          "strength": "medium",
+          "rationale": "Plant operations and maintenance."
+        }
+      ],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "partially-verified",
+        "sources": [
+          {
+            "url": "https://knowledge.bsigroup.com/products/industrial-automation-systems-and-integration-integration-of-life-cycle-data-for-process-plants-including-oil-and-gas-production-facilities-implementation-methods-for-the-integration-of-distributed-systems-web-ontology-language-owl-1",
+            "title": "BSI listing for ISO 15926-14"
+          },
+          {
+            "url": "https://15926.org/",
+            "title": "15926.org"
+          }
+        ],
+        "notes": "Confirm the publication year in the ISO catalogue."
+      },
+      "origin": "v2"
+    },
+    {
+      "publicEvidence": [],
+      "id": "oeo",
+      "name": "OEO",
+      "fullName": "Open Energy Ontology",
+      "publisher": "Open Energy Platform community",
+      "publisherType": "research",
+      "summary": "Community ontology for energy-system modelling (technologies, carriers, scenarios, emissions), built on BFO.",
+      "kind": "ontology",
+      "layer": "domain",
+      "topics": [
+        "energy systems",
+        "scenarios",
+        "emissions",
+        "modelling"
+      ],
+      "version": {
+        "label": "OEO 2.13.0",
+        "date": null,
+        "status": "published"
+      },
+      "maturity": "stable",
+      "license": {
+        "name": "CC0-1.0 or MIT (dual)",
+        "access": "open",
+        "url": "https://github.com/OpenEnergyPlatform/ontology"
+      },
+      "links": {
+        "official": "https://openenergyplatform.org/ontology/",
+        "repository": "https://github.com/OpenEnergyPlatform/ontology"
+      },
+      "formats": [
+        "OWL (Manchester syntax)"
+      ],
+      "industries": [
+        "energy-materials"
+      ],
+      "useCases": [
+        "ai-factories",
+        "sustainability"
+      ],
+      "brandRelevance": [
+        {
+          "brand": "netvibes",
+          "strength": "medium",
+          "rationale": "Energy scenario knowledge graphs."
+        },
+        {
+          "brand": "geovia",
+          "strength": "medium",
+          "rationale": "Energy resource modelling."
+        }
+      ],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "verified",
+        "sources": [
+          {
+            "url": "https://openenergyplatform.org/ontology/",
+            "title": "OEO on the Open Energy Platform"
+          },
+          {
+            "url": "https://github.com/OpenEnergyPlatform/ontology",
+            "title": "OEO repository"
+          }
+        ],
+        "notes": ""
+      },
+      "origin": "v2"
+    },
+    {
+      "id": "oriont",
+      "name": "ORIONT",
+      "fullName": "ORIONT — life-cycle sustainability assessment ontology (candidate)",
+      "summary": "ORIENTING provides a structured ontology for Life Cycle Sustainability Assessment. It formalizes concepts related to environmental, social, and economic impacts across lifecycle stages. The ontology supports interoperability of LCSA data, impact indicators, system boundaries, and sustainability modeling workflows.",
+      "publisher": "Research / Community",
+      "publisherType": "research",
+      "kind": "ontology",
+      "layer": "domain",
+      "topics": [
+        "life-cycle sustainability assessment",
+        "impact indicators",
+        "circularity"
+      ],
+      "version": {
+        "label": "Not publicly identified",
+        "date": null,
+        "status": "unknown"
+      },
+      "maturity": "research",
+      "license": {
+        "name": "Unknown",
+        "access": "unknown",
+        "url": null
+      },
+      "links": {
+        "official": null,
+        "related": "https://cordis.europa.eu/project/id/958231"
+      },
+      "formats": [],
+      "industries": [
+        "high-tech",
+        "cross-industry"
+      ],
+      "useCases": [
+        "ai-factories",
+        "semiconductors",
+        "personal-electronics",
+        "general-purpose-robotics",
+        "sustainability"
+      ],
+      "brandRelevance": [
+        {
+          "brand": "catia",
+          "strength": "medium",
+          "rationale": "Eco-design in product definition needs LCSA concepts."
+        },
+        {
+          "brand": "enovia",
+          "strength": "medium",
+          "rationale": "Lifecycle data management could carry sustainability indicators."
+        }
+      ],
+      "publicEvidence": [],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "unverified",
+        "sources": [
+          {
+            "url": "https://cordis.europa.eu/project/id/958231",
+            "title": "CORDIS — ORIENTING project (H2020, 958231)"
+          }
+        ],
+        "notes": "No public ontology named \"ORIONT\" was found. The v1 description refers to the ORIENTING H2020 project (LCSA methodology, 2020-2024), whose public outputs do not clearly include a published ontology. Kept as a candidate pending a public source."
+      },
+      "needsReview": true,
+      "origin": "v1",
+      "legacy": {
+        "name": "ORIONT",
+        "category": "Circularity / Sustainability",
+        "publisher": "Research / Community",
+        "official": "",
+        "endObjects": [
+          "AI Factories",
+          "Semiconductors",
+          "Personal Electronics",
+          "General Purpose Robotics"
+        ],
+        "imds": [
+          "Circular Design"
+        ],
+        "description": "ORIENTING provides a structured ontology for Life Cycle Sustainability Assessment. It formalizes concepts related to environmental, social, and economic impacts across lifecycle stages. The ontology supports interoperability of LCSA data, impact indicators, system boundaries, and sustainability modeling workflows.",
+        "parentOntology": "Circularity / Sustainability (Core Ontology)",
+        "stabilityStatus": "not stable",
+        "usageStatus": "restricted",
+        "hasInternalWikiLink": true
+      }
+    },
+    {
+      "id": "owl-time",
+      "name": "OWL-time",
+      "fullName": "Time Ontology in OWL",
+      "summary": "Ontology of temporal concepts including intervals, instants, durations, and relations.",
+      "publisher": "W3C",
+      "publisherType": "standards-body",
+      "kind": "ontology",
+      "layer": "cross-domain",
+      "topics": [
+        "time",
+        "intervals",
+        "durations",
+        "temporal relations"
+      ],
+      "version": {
+        "label": "W3C Candidate Recommendation Draft (revision of the 2017 Recommendation)",
+        "date": "2022-11-15",
+        "status": "candidate"
+      },
+      "maturity": "standard",
+      "license": {
+        "name": "W3C Document License",
+        "access": "open",
+        "url": "https://www.w3.org/copyright/document-license/"
+      },
+      "links": {
+        "official": "https://www.w3.org/TR/owl-time/",
+        "namespace": "http://www.w3.org/2006/time#"
+      },
+      "formats": [
+        "OWL",
+        "RDF/Turtle"
+      ],
+      "industries": [
+        "high-tech",
+        "cross-industry"
+      ],
+      "useCases": [
+        "ai-factories",
+        "semiconductors",
+        "personal-electronics",
+        "general-purpose-robotics"
+      ],
+      "brandRelevance": [
+        {
+          "brand": "delmia",
+          "strength": "medium",
+          "rationale": "Schedules, shifts and operation durations."
+        },
+        {
+          "brand": "netvibes",
+          "strength": "medium",
+          "rationale": "Temporal reasoning in knowledge graphs."
+        }
+      ],
+      "publicEvidence": [],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "verified",
+        "sources": [
+          {
+            "url": "https://www.w3.org/TR/owl-time/",
+            "title": "W3C Time Ontology in OWL"
+          }
+        ],
+        "notes": ""
+      },
+      "origin": "v1",
+      "legacy": {
+        "name": "OWL-time",
+        "category": "High-Tech",
+        "publisher": "W3C",
+        "official": "https://www.w3.org/TR/owl-time/",
+        "endObjects": [
+          "AI Factories",
+          "Semiconductors",
+          "Personal Electronics",
+          "General Purpose Robotics"
+        ],
+        "imds": [
+          "Cross-domain semantics"
+        ],
+        "description": "Ontology of temporal concepts including intervals, instants, durations, and relations.",
+        "parentOntology": "High-Tech (Core Ontology)",
+        "stabilityStatus": "stable",
+        "usageStatus": "open",
+        "hasInternalWikiLink": true
+      }
+    },
+    {
+      "id": "ieee-pos",
+      "name": "POS",
+      "fullName": "POS — Position ontology (IEEE 1872-2015)",
+      "summary": "Ontology used for positional, pose, or planning-oriented semantics in robotics contexts.",
+      "publisher": "IEEE Robotics and Automation Society",
+      "publisherType": "standards-body",
+      "kind": "ontology",
+      "layer": "domain",
+      "topics": [
+        "position",
+        "orientation",
+        "pose",
+        "coordinate systems"
+      ],
+      "standardRef": "IEEE 1872-2015",
+      "version": {
+        "label": "IEEE 1872-2015 (revision P1872 in progress)",
+        "date": "2015",
+        "status": "published"
+      },
+      "maturity": "standard",
+      "license": {
+        "name": "IEEE standard (purchase required for the full text)",
+        "access": "licensed",
+        "url": "https://standards.ieee.org/standard/1872-2015.html"
+      },
+      "links": {
+        "official": "https://standards.ieee.org/standard/1872-2015.html"
+      },
+      "formats": [
+        "SUO-KIF",
+        "OWL (community conversion)"
+      ],
+      "industries": [
+        "high-tech",
+        "industrial-equipment"
+      ],
+      "useCases": [
+        "general-purpose-robotics"
+      ],
+      "brandRelevance": [
+        {
+          "brand": "catia",
+          "strength": "high",
+          "rationale": "Robot product and systems architecture could reuse a standard robot vocabulary."
+        },
+        {
+          "brand": "delmia",
+          "strength": "high",
+          "rationale": "Robot programming and cell simulation work with robot parts, poses and tasks."
+        },
+        {
+          "brand": "simulia",
+          "strength": "medium",
+          "rationale": "Multibody and control simulation could bind models to standard robot concepts."
+        }
+      ],
+      "publicEvidence": [],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "verified",
+        "sources": [
+          {
+            "url": "https://standards.ieee.org/standard/1872-2015.html",
+            "title": "IEEE 1872-2015 Standard Ontologies for Robotics and Automation"
+          }
+        ],
+        "notes": "Specified within IEEE 1872-2015."
+      },
+      "corrections": [
+        {
+          "field": "publisher",
+          "from": "Research / Community",
+          "to": "IEEE Robotics and Automation Society",
+          "reason": "POS is part of IEEE 1872-2015.",
+          "source": "https://standards.ieee.org/standard/1872-2015.html"
+        },
+        {
+          "field": "stabilityStatus",
+          "from": "not stable",
+          "to": "standard",
+          "reason": "Published as part of an IEEE standard.",
+          "source": "https://standards.ieee.org/standard/1872-2015.html"
+        }
+      ],
+      "origin": "v1",
+      "legacy": {
+        "name": "POS",
+        "category": "General Purpose Robotics",
+        "publisher": "Research / Community",
+        "official": "",
+        "endObjects": [
+          "General Purpose Robotics"
+        ],
+        "imds": [
+          "Humanoid Robots",
+          "Robot AI Control",
+          "Robot MBSE Simulation"
+        ],
+        "description": "Ontology used for positional, pose, or planning-oriented semantics in robotics contexts.",
+        "parentOntology": "General Purpose Robotics (End-Object Ontology)",
+        "stabilityStatus": "not stable",
+        "usageStatus": "restricted",
+        "hasInternalWikiLink": true
+      }
+    },
+    {
+      "id": "prov-o",
+      "name": "PROV-O",
+      "fullName": "PROV Ontology",
+      "summary": "Provenance ontology for entities, activities, agents, and derivation relationships.",
+      "publisher": "W3C",
+      "publisherType": "standards-body",
+      "kind": "ontology",
+      "layer": "cross-domain",
+      "topics": [
+        "provenance",
+        "lineage",
+        "traceability"
+      ],
+      "version": {
+        "label": "W3C Recommendation",
+        "date": "2013-04-30",
+        "status": "published"
+      },
+      "maturity": "standard",
+      "license": {
+        "name": "W3C Document License",
+        "access": "open",
+        "url": "https://www.w3.org/copyright/document-license/"
+      },
+      "links": {
+        "official": "https://www.w3.org/TR/prov-o/",
+        "namespace": "http://www.w3.org/ns/prov#"
+      },
+      "formats": [
+        "OWL",
+        "RDF/Turtle"
+      ],
+      "industries": [
+        "high-tech",
+        "cross-industry"
+      ],
+      "useCases": [
+        "ai-factories",
+        "semiconductors",
+        "personal-electronics",
+        "general-purpose-robotics",
+        "sustainability"
+      ],
+      "brandRelevance": [
+        {
+          "brand": "enovia",
+          "strength": "high",
+          "rationale": "Lifecycle traceability maps naturally to entities, activities and agents."
+        },
+        {
+          "brand": "netvibes",
+          "strength": "high",
+          "rationale": "Knowledge-graph lineage and data provenance."
+        },
+        {
+          "brand": "simulia",
+          "strength": "medium",
+          "rationale": "Simulation process and data lineage (inputs, runs, results)."
+        }
+      ],
+      "publicEvidence": [],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "verified",
+        "sources": [
+          {
+            "url": "https://www.w3.org/TR/prov-o/",
+            "title": "W3C PROV-O Recommendation"
+          }
+        ],
+        "notes": ""
+      },
+      "origin": "v1",
+      "legacy": {
+        "name": "PROV-O",
+        "category": "Circularity / Sustainability",
+        "publisher": "W3C",
+        "official": "https://www.w3.org/TR/prov-o/",
+        "endObjects": [
+          "AI Factories",
+          "Semiconductors",
+          "Personal Electronics",
+          "General Purpose Robotics"
+        ],
+        "imds": [
+          "Circular Design"
+        ],
+        "description": "Provenance ontology for entities, activities, agents, and derivation relationships.",
+        "parentOntology": "Circularity / Sustainability (Core Ontology)",
+        "stabilityStatus": "stable",
+        "usageStatus": "open",
+        "hasInternalWikiLink": true
+      }
+    },
+    {
+      "id": "qudt",
+      "name": "QUDT",
+      "fullName": "Quantities, Units, Dimensions and Data Types",
+      "summary": "Ontology for quantities, units, dimensions, and datatypes.",
+      "publisher": "QUDT",
+      "publisherType": "consortium",
+      "kind": "ontology",
+      "layer": "cross-domain",
+      "topics": [
+        "units of measure",
+        "quantity kinds",
+        "dimensions"
+      ],
+      "version": {
+        "label": "QUDT 3.1.x (3.1.10 published January 2026)",
+        "date": "2026-01",
+        "status": "published"
+      },
+      "maturity": "stable",
+      "license": {
+        "name": "CC BY 4.0",
+        "access": "open",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "links": {
+        "official": "https://qudt.org/",
+        "repository": "https://github.com/qudt/qudt-public-repo",
+        "namespace": "http://qudt.org/schema/qudt/"
+      },
+      "formats": [
+        "OWL",
+        "RDF/Turtle",
+        "SHACL"
+      ],
+      "industries": [
+        "high-tech",
+        "cross-industry"
+      ],
+      "useCases": [
+        "ai-factories",
+        "semiconductors",
+        "personal-electronics",
+        "general-purpose-robotics",
+        "sustainability"
+      ],
+      "brandRelevance": [
+        {
+          "brand": "simulia",
+          "strength": "high",
+          "rationale": "Unit-consistent simulation inputs and results."
+        },
+        {
+          "brand": "catia",
+          "strength": "medium",
+          "rationale": "Parameters and engineering quantities."
+        },
+        {
+          "brand": "biovia",
+          "strength": "medium",
+          "rationale": "Scientific measurements and material properties."
+        }
+      ],
+      "publicEvidence": [],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "verified",
+        "sources": [
+          {
+            "url": "https://qudt.org/",
+            "title": "QUDT"
+          },
+          {
+            "url": "https://qudt.org/doc/2026/01/DOC_VOCAB-CONSTANTS.html",
+            "title": "QUDT constants vocabulary, version 3.1.10"
+          }
+        ],
+        "notes": ""
+      },
+      "origin": "v1",
+      "legacy": {
+        "name": "QUDT",
+        "category": "High-Tech",
+        "publisher": "QUDT",
+        "official": "https://qudt.org/",
+        "endObjects": [
+          "AI Factories",
+          "Semiconductors",
+          "Personal Electronics",
+          "General Purpose Robotics"
+        ],
+        "imds": [
+          "Cross-domain semantics"
+        ],
+        "description": "Ontology for quantities, units, dimensions, and datatypes.",
+        "parentOntology": "High-Tech (Core Ontology)",
+        "stabilityStatus": "stable",
+        "usageStatus": "open",
+        "hasInternalWikiLink": true
+      }
+    },
+    {
+      "id": "ieee-rtr",
+      "name": "Robot Task Representation",
+      "fullName": "IEEE 1872.1 Robot Task Representation",
+      "summary": "Ontology for describing robot tasks, actions, parameters, and execution context.",
+      "publisher": "IEEE Robotics and Automation Society",
+      "publisherType": "standards-body",
+      "kind": "ontology",
+      "layer": "domain",
+      "topics": [
+        "tasks",
+        "planning",
+        "hierarchical task knowledge"
+      ],
+      "standardRef": "IEEE 1872.1-2024",
+      "version": {
+        "label": "IEEE 1872.1-2024 (published 2024-06-18)",
+        "date": "2024-06-18",
+        "status": "published"
+      },
+      "maturity": "standard",
+      "license": {
+        "name": "IEEE standard (purchase required for the full text)",
+        "access": "licensed",
+        "url": "https://standards.ieee.org/ieee/1872.1/6993/"
+      },
+      "links": {
+        "official": "https://standards.ieee.org/ieee/1872.1/6993/"
+      },
+      "formats": [
+        "OWL"
+      ],
+      "industries": [
+        "high-tech",
+        "industrial-equipment"
+      ],
+      "useCases": [
+        "general-purpose-robotics"
+      ],
+      "brandRelevance": [
+        {
+          "brand": "catia",
+          "strength": "high",
+          "rationale": "Robot product and systems architecture could reuse a standard robot vocabulary."
+        },
+        {
+          "brand": "delmia",
+          "strength": "high",
+          "rationale": "Robot programming and cell simulation work with robot parts, poses and tasks."
+        },
+        {
+          "brand": "simulia",
+          "strength": "medium",
+          "rationale": "Multibody and control simulation could bind models to standard robot concepts."
+        }
+      ],
+      "publicEvidence": [],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "verified",
+        "sources": [
+          {
+            "url": "https://standards.ieee.org/ieee/1872.1/6993/",
+            "title": "IEEE 1872.1-2024"
+          }
+        ],
+        "notes": "Implementation guide P1872.1.1 is in development."
+      },
+      "corrections": [
+        {
+          "field": "stabilityStatus",
+          "from": "not stable",
+          "to": "standard",
+          "reason": "Published IEEE standard (approved 2024-02-15).",
+          "source": "https://standards.ieee.org/ieee/1872.1/6993/"
+        },
+        {
+          "field": "publisher",
+          "from": "Research / Community",
+          "to": "IEEE Robotics and Automation Society",
+          "reason": "Standard sponsor.",
+          "source": "https://standards.ieee.org/ieee/1872.1/6993/"
+        }
+      ],
+      "origin": "v1",
+      "legacy": {
+        "name": "Robot Task Representation",
+        "category": "General Purpose Robotics",
+        "publisher": "Research / Community",
+        "official": "",
+        "endObjects": [
+          "General Purpose Robotics"
+        ],
+        "imds": [
+          "Humanoid Robots",
+          "Robot AI Control",
+          "Robot MBSE Simulation"
+        ],
+        "description": "Ontology for describing robot tasks, actions, parameters, and execution context.",
+        "parentOntology": "General Purpose Robotics (End-Object Ontology)",
+        "stabilityStatus": "not stable",
+        "usageStatus": "restricted",
+        "hasInternalWikiLink": true
+      }
+    },
+    {
+      "id": "ieee-rparts",
+      "name": "RPARTS",
+      "fullName": "RPARTS — Robot parts ontology (IEEE 1872-2015)",
+      "summary": "Reference ontology related to robot parts and component decomposition.",
+      "publisher": "IEEE Robotics and Automation Society",
+      "publisherType": "standards-body",
+      "kind": "ontology",
+      "layer": "domain",
+      "topics": [
+        "robot parts",
+        "components",
+        "decomposition"
+      ],
+      "standardRef": "IEEE 1872-2015",
+      "version": {
+        "label": "IEEE 1872-2015 (revision P1872 in progress)",
+        "date": "2015",
+        "status": "published"
+      },
+      "maturity": "standard",
+      "license": {
+        "name": "IEEE standard (purchase required for the full text)",
+        "access": "licensed",
+        "url": "https://standards.ieee.org/standard/1872-2015.html"
+      },
+      "links": {
+        "official": "https://standards.ieee.org/standard/1872-2015.html"
+      },
+      "formats": [
+        "SUO-KIF",
+        "OWL (community conversion)"
+      ],
+      "industries": [
+        "high-tech",
+        "industrial-equipment"
+      ],
+      "useCases": [
+        "general-purpose-robotics"
+      ],
+      "brandRelevance": [
+        {
+          "brand": "catia",
+          "strength": "high",
+          "rationale": "Robot product and systems architecture could reuse a standard robot vocabulary."
+        },
+        {
+          "brand": "delmia",
+          "strength": "high",
+          "rationale": "Robot programming and cell simulation work with robot parts, poses and tasks."
+        },
+        {
+          "brand": "simulia",
+          "strength": "medium",
+          "rationale": "Multibody and control simulation could bind models to standard robot concepts."
+        }
+      ],
+      "publicEvidence": [],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "verified",
+        "sources": [
+          {
+            "url": "https://standards.ieee.org/standard/1872-2015.html",
+            "title": "IEEE 1872-2015 Standard Ontologies for Robotics and Automation"
+          }
+        ],
+        "notes": "Specified within IEEE 1872-2015."
+      },
+      "corrections": [
+        {
+          "field": "publisher",
+          "from": "Research / Community",
+          "to": "IEEE Robotics and Automation Society",
+          "reason": "RPARTS is part of IEEE 1872-2015.",
+          "source": "https://standards.ieee.org/standard/1872-2015.html"
+        },
+        {
+          "field": "stabilityStatus",
+          "from": "not stable",
+          "to": "standard",
+          "reason": "Published as part of an IEEE standard.",
+          "source": "https://standards.ieee.org/standard/1872-2015.html"
+        }
+      ],
+      "origin": "v1",
+      "legacy": {
+        "name": "RPARTS",
+        "category": "General Purpose Robotics",
+        "publisher": "Research / Community",
+        "official": "",
+        "endObjects": [
+          "General Purpose Robotics"
+        ],
+        "imds": [
+          "Humanoid Robots",
+          "Robot AI Control",
+          "Robot MBSE Simulation"
+        ],
+        "description": "Reference ontology related to robot parts and component decomposition.",
+        "parentOntology": "General Purpose Robotics (End-Object Ontology)",
+        "stabilityStatus": "not stable",
+        "usageStatus": "restricted",
+        "hasInternalWikiLink": true
+      }
+    },
+    {
+      "id": "saref-core",
+      "name": "SAREF Core",
+      "fullName": "Smart Applications REFerence ontology (SAREF) — Core",
+      "summary": "Smart Applications REFerence ontology for interoperable devices and services.",
+      "publisher": "ETSI",
+      "publisherType": "standards-body",
+      "kind": "ontology",
+      "layer": "domain",
+      "topics": [
+        "IoT",
+        "devices",
+        "functions",
+        "commands",
+        "measurements"
+      ],
+      "standardRef": "ETSI TS 103 264",
+      "version": {
+        "label": "SAREF Core v4.1.1 (ETSI TS 103 264 V4.1.1)",
+        "date": "2024-10-31",
+        "status": "published"
+      },
+      "maturity": "standard",
+      "license": {
+        "name": "ETSI Software License (BSD-3-Clause style)",
+        "access": "open",
+        "url": "https://forge.etsi.org/etsi-software-license"
+      },
+      "links": {
+        "official": "https://saref.etsi.org/core/",
+        "namespace": "https://saref.etsi.org/core/"
+      },
+      "formats": [
+        "OWL",
+        "RDF/Turtle"
+      ],
+      "industries": [
+        "high-tech",
+        "infrastructure-cities",
+        "energy-materials",
+        "industrial-equipment"
+      ],
+      "useCases": [
+        "ai-factories",
+        "semiconductors",
+        "personal-electronics",
+        "general-purpose-robotics"
+      ],
+      "brandRelevance": [
+        {
+          "brand": "catia",
+          "strength": "medium",
+          "rationale": "Functional descriptions of connected products."
+        },
+        {
+          "brand": "netvibes",
+          "strength": "medium",
+          "rationale": "Device data in knowledge graphs."
+        }
+      ],
+      "publicEvidence": [],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "verified",
+        "sources": [
+          {
+            "url": "https://saref.etsi.org/core/",
+            "title": "ETSI SAREF Core"
+          }
+        ],
+        "notes": ""
+      },
+      "origin": "v1",
+      "legacy": {
+        "name": "SAREF Core",
+        "category": "High-Tech",
+        "publisher": "ETSI",
+        "official": "https://saref.etsi.org/",
+        "endObjects": [
+          "AI Factories",
+          "Semiconductors",
+          "Personal Electronics",
+          "General Purpose Robotics"
+        ],
+        "imds": [
+          "Cross-domain semantics"
+        ],
+        "description": "Smart Applications REFerence ontology for interoperable devices and services.",
+        "parentOntology": "High-Tech (Core Ontology)",
+        "stabilityStatus": "stable",
+        "usageStatus": "open",
+        "hasInternalWikiLink": true
+      }
+    },
+    {
+      "id": "saref4bldg",
+      "name": "SAREF4BLDG",
+      "fullName": "SAREF extension for Buildings",
+      "summary": "Building extension of SAREF for spaces, devices, and building systems.",
+      "publisher": "ETSI",
+      "publisherType": "standards-body",
+      "kind": "ontology",
+      "layer": "domain",
+      "topics": [
+        "buildings",
+        "building devices",
+        "IFC"
+      ],
+      "standardRef": "ETSI TS 103 410-3",
+      "version": {
+        "label": "SAREF4BLDG v2.1.1 (ETSI TS 103 410-3 V2.1.1)",
+        "date": "2025-04-24",
+        "status": "published"
+      },
+      "maturity": "standard",
+      "license": {
+        "name": "ETSI Software License (BSD-3-Clause style)",
+        "access": "open",
+        "url": "https://forge.etsi.org/etsi-software-license"
+      },
+      "links": {
+        "official": "https://saref.etsi.org/saref4bldg/",
+        "namespace": "https://saref.etsi.org/saref4bldg/"
+      },
+      "formats": [
+        "OWL",
+        "RDF/Turtle"
+      ],
+      "industries": [
+        "high-tech",
+        "infrastructure-cities"
+      ],
+      "useCases": [
+        "ai-factories"
+      ],
+      "brandRelevance": [
+        {
+          "brand": "catia",
+          "strength": "medium",
+          "rationale": "Building equipment definitions aligned with IFC."
+        }
+      ],
+      "publicEvidence": [],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "verified",
+        "sources": [
+          {
+            "url": "https://saref.etsi.org/saref4bldg/",
+            "title": "ETSI SAREF4BLDG"
+          }
+        ],
+        "notes": ""
+      },
+      "origin": "v1",
+      "legacy": {
+        "name": "SAREF4BLDG",
+        "category": "AI Factory",
+        "publisher": "ETSI",
+        "official": "https://saref.etsi.org/saref4bldg/",
+        "endObjects": [
+          "AI Factories"
+        ],
+        "imds": [
+          "Infrastructure System Architecture",
+          "Compute Performance & Sustainability"
+        ],
+        "description": "Building extension of SAREF for spaces, devices, and building systems.",
+        "parentOntology": "AI Factory (End-Object Ontology)",
+        "stabilityStatus": "stable",
+        "usageStatus": "open",
+        "hasInternalWikiLink": true
+      }
+    },
+    {
+      "publicEvidence": [],
+      "id": "saref4ener",
+      "name": "SAREF4ENER",
+      "fullName": "SAREF extension for Energy",
+      "publisher": "ETSI",
+      "publisherType": "standards-body",
+      "summary": "SAREF extension for energy flexibility and demand response between smart devices, energy managers and the grid.",
+      "kind": "ontology",
+      "layer": "domain",
+      "topics": [
+        "energy flexibility",
+        "demand response",
+        "power profiles"
+      ],
+      "standardRef": "ETSI TS 103 410-1",
+      "version": {
+        "label": "SAREF4ENER v2.1.1 (ETSI TS 103 410-1 V2.1.1)",
+        "date": "2025-06-05",
+        "status": "published"
+      },
+      "maturity": "standard",
+      "license": {
+        "name": "ETSI Software License (BSD-3-Clause style)",
+        "access": "open",
+        "url": "https://forge.etsi.org/etsi-software-license"
+      },
+      "links": {
+        "official": "https://saref.etsi.org/saref4ener/",
+        "namespace": "https://saref.etsi.org/saref4ener/"
+      },
+      "formats": [
+        "OWL",
+        "RDF/Turtle"
+      ],
+      "industries": [
+        "energy-materials",
+        "infrastructure-cities",
+        "high-tech"
+      ],
+      "useCases": [
+        "ai-factories",
+        "sustainability"
+      ],
+      "brandRelevance": [
+        {
+          "brand": "netvibes",
+          "strength": "medium",
+          "rationale": "Energy analytics and flexibility."
+        },
+        {
+          "brand": "delmia",
+          "strength": "medium",
+          "rationale": "Energy-aware operations planning."
+        }
+      ],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "verified",
+        "sources": [
+          {
+            "url": "https://saref.etsi.org/saref4ener/",
+            "title": "ETSI SAREF4ENER"
+          }
+        ],
+        "notes": ""
+      },
+      "origin": "v2"
+    },
+    {
+      "publicEvidence": [],
+      "id": "schema-org",
+      "name": "Schema.org",
+      "fullName": "Schema.org vocabulary",
+      "publisher": "Schema.org community (W3C Community Group)",
+      "publisherType": "consortium",
+      "summary": "Widely deployed vocabulary for structured data on the web: products, offers, organisations, events and more. Absorbed GoodRelations in 2012.",
+      "kind": "vocabulary",
+      "layer": "cross-domain",
+      "topics": [
+        "web data",
+        "products",
+        "organisations",
+        "offers"
+      ],
+      "version": {
+        "label": "Continuously released (see release log)",
+        "date": null,
+        "status": "published"
+      },
+      "maturity": "stable",
+      "license": {
+        "name": "CC BY-SA 3.0",
+        "access": "open",
+        "url": "https://schema.org/docs/terms.html"
+      },
+      "links": {
+        "official": "https://schema.org/",
+        "specification": "https://schema.org/docs/releases.html",
+        "namespace": "https://schema.org/"
+      },
+      "formats": [
+        "RDFa",
+        "JSON-LD",
+        "Microdata",
+        "RDF/Turtle"
+      ],
+      "industries": [
+        "consumer-goods",
+        "cross-industry"
+      ],
+      "useCases": [
+        "personal-electronics",
+        "semiconductors",
+        "sustainability"
+      ],
+      "brandRelevance": [
+        {
+          "brand": "3dexcite",
+          "strength": "high",
+          "rationale": "Product content published to the web."
+        },
+        {
+          "brand": "netvibes",
+          "strength": "medium",
+          "rationale": "Web-scale entity data."
+        }
+      ],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "verified",
+        "sources": [
+          {
+            "url": "https://schema.org/docs/terms.html",
+            "title": "Schema.org terms"
+          },
+          {
+            "url": "https://blog.schema.org/2012/11/08/good-relations-and-schema-org/",
+            "title": "GoodRelations integration announcement"
+          }
+        ],
+        "notes": ""
+      },
+      "origin": "v2"
+    },
+    {
+      "publicEvidence": [],
+      "id": "skos",
+      "name": "SKOS",
+      "fullName": "Simple Knowledge Organization System",
+      "publisher": "W3C",
+      "publisherType": "standards-body",
+      "summary": "W3C standard for thesauri, taxonomies and classification schemes on the web: concepts, labels and broader/narrower relations.",
+      "kind": "vocabulary",
+      "layer": "cross-domain",
+      "topics": [
+        "taxonomies",
+        "thesauri",
+        "classification schemes"
+      ],
+      "version": {
+        "label": "W3C Recommendation",
+        "date": "2009-08-18",
+        "status": "published"
+      },
+      "maturity": "standard",
+      "license": {
+        "name": "W3C Document License",
+        "access": "open",
+        "url": "https://www.w3.org/copyright/document-license/"
+      },
+      "links": {
+        "official": "https://www.w3.org/TR/skos-reference/",
+        "namespace": "http://www.w3.org/2004/02/skos/core#"
+      },
+      "formats": [
+        "OWL",
+        "RDF/Turtle"
+      ],
+      "industries": [
+        "cross-industry"
+      ],
+      "useCases": [],
+      "brandRelevance": [
+        {
+          "brand": "netvibes",
+          "strength": "high",
+          "rationale": "Taxonomy and thesaurus management."
+        },
+        {
+          "brand": "enovia",
+          "strength": "medium",
+          "rationale": "Classification libraries."
+        }
+      ],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "verified",
+        "sources": [
+          {
+            "url": "https://www.w3.org/TR/skos-reference/",
+            "title": "SKOS Reference (W3C Recommendation)"
+          }
+        ],
+        "notes": ""
+      },
+      "origin": "v2"
+    },
+    {
+      "id": "sosa",
+      "name": "SOSA",
+      "fullName": "Sensor, Observation, Sample, and Actuator (SOSA)",
+      "summary": "Lightweight core for sensors, observations, samples, and actuators.",
+      "publisher": "W3C/OGC",
+      "publisherType": "standards-body",
+      "kind": "ontology",
+      "layer": "cross-domain",
+      "topics": [
+        "sensors",
+        "observations",
+        "actuation",
+        "sampling"
+      ],
+      "version": {
+        "label": "W3C Recommendation / OGC 16-079",
+        "date": "2017-10-19",
+        "status": "published"
+      },
+      "maturity": "standard",
+      "license": {
+        "name": "W3C Document License",
+        "access": "open",
+        "url": "https://www.w3.org/copyright/document-license/"
+      },
+      "links": {
+        "official": "https://www.w3.org/TR/vocab-ssn/",
+        "namespace": "http://www.w3.org/ns/sosa/"
+      },
+      "formats": [
+        "OWL",
+        "RDF/Turtle"
+      ],
+      "industries": [
+        "high-tech",
+        "cross-industry"
+      ],
+      "useCases": [
+        "ai-factories",
+        "semiconductors",
+        "personal-electronics",
+        "general-purpose-robotics"
+      ],
+      "brandRelevance": [
+        {
+          "brand": "simulia",
+          "strength": "medium",
+          "rationale": "Linking physical test and sensor data with virtual models."
+        },
+        {
+          "brand": "delmia",
+          "strength": "medium",
+          "rationale": "Shop-floor sensing and operations data."
+        },
+        {
+          "brand": "netvibes",
+          "strength": "medium",
+          "rationale": "IoT data in knowledge graphs."
+        }
+      ],
+      "publicEvidence": [],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "verified",
+        "sources": [
+          {
+            "url": "https://www.w3.org/TR/vocab-ssn/",
+            "title": "W3C Semantic Sensor Network Ontology"
+          }
+        ],
+        "notes": ""
+      },
+      "origin": "v1",
+      "legacy": {
+        "name": "SOSA",
+        "category": "High-Tech",
+        "publisher": "W3C/OGC",
+        "official": "https://www.w3.org/TR/vocab-ssn/",
+        "endObjects": [
+          "AI Factories",
+          "Semiconductors",
+          "Personal Electronics",
+          "General Purpose Robotics"
+        ],
+        "imds": [
+          "Cross-domain semantics"
+        ],
+        "description": "Lightweight core for sensors, observations, samples, and actuators.",
+        "parentOntology": "High-Tech (Core Ontology)",
+        "stabilityStatus": "stable",
+        "usageStatus": "open",
+        "hasInternalWikiLink": true
+      }
+    },
+    {
+      "id": "ssn",
+      "name": "SSN",
+      "fullName": "Semantic Sensor Network Ontology",
+      "summary": "Semantic Sensor Network ontology for sensors, observations, and systems.",
+      "publisher": "W3C/OGC",
+      "publisherType": "standards-body",
+      "kind": "ontology",
+      "layer": "cross-domain",
+      "topics": [
+        "sensors",
+        "systems",
+        "deployments",
+        "capabilities"
+      ],
+      "version": {
+        "label": "W3C Recommendation / OGC 16-079",
+        "date": "2017-10-19",
+        "status": "published"
+      },
+      "maturity": "standard",
+      "license": {
+        "name": "W3C Document License",
+        "access": "open",
+        "url": "https://www.w3.org/copyright/document-license/"
+      },
+      "links": {
+        "official": "https://www.w3.org/TR/vocab-ssn/",
+        "namespace": "http://www.w3.org/ns/ssn/"
+      },
+      "formats": [
+        "OWL",
+        "RDF/Turtle"
+      ],
+      "industries": [
+        "high-tech",
+        "cross-industry"
+      ],
+      "useCases": [
+        "ai-factories",
+        "semiconductors",
+        "personal-electronics",
+        "general-purpose-robotics"
+      ],
+      "brandRelevance": [
+        {
+          "brand": "simulia",
+          "strength": "medium",
+          "rationale": "System capabilities and operating ranges of sensing systems."
+        },
+        {
+          "brand": "delmia",
+          "strength": "medium",
+          "rationale": "Sensor deployments in operations."
+        }
+      ],
+      "publicEvidence": [],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "verified",
+        "sources": [
+          {
+            "url": "https://www.w3.org/TR/vocab-ssn/",
+            "title": "W3C Semantic Sensor Network Ontology"
+          }
+        ],
+        "notes": ""
+      },
+      "origin": "v1",
+      "legacy": {
+        "name": "SSN",
+        "category": "High-Tech",
+        "publisher": "W3C/OGC",
+        "official": "https://www.w3.org/TR/vocab-ssn/",
+        "endObjects": [
+          "AI Factories",
+          "Semiconductors",
+          "Personal Electronics",
+          "General Purpose Robotics"
+        ],
+        "imds": [
+          "Cross-domain semantics"
+        ],
+        "description": "Semantic Sensor Network ontology for sensors, observations, and systems.",
+        "parentOntology": "High-Tech (Core Ontology)",
+        "stabilityStatus": "stable",
+        "usageStatus": "open",
+        "hasInternalWikiLink": true
+      }
+    },
+    {
+      "publicEvidence": [
+        {
+          "kind": "product-support",
+          "brands": [
+            "solidworks"
+          ],
+          "statement": "SOLIDWORKS documents a \"Publish to STEP 242\" command for model-based definition data.",
+          "source": {
+            "url": "https://help.solidworks.com/2025/English/SolidWorks/sldworks/r_publish_step242.htm",
+            "title": "SOLIDWORKS Help — Publish to STEP242 PropertyManager",
+            "type": "official"
+          }
+        },
+        {
+          "kind": "product-support",
+          "brands": [
+            "catia"
+          ],
+          "statement": "A reseller tutorial shows CATIA V5 exporting parts with PMI to STEP AP242.",
+          "source": {
+            "url": "https://www.cati.com/blog/export-catia-v5-parts-with-pmi-using-step-ap242/",
+            "title": "CATI — Export CATIA V5 parts with PMI using STEP AP242",
+            "type": "third-party"
+          }
+        }
+      ],
+      "id": "step-ap242",
+      "name": "STEP AP242",
+      "fullName": "ISO 10303-242 Managed model-based 3D engineering",
+      "publisher": "ISO TC 184/SC 4",
+      "publisherType": "standards-body",
+      "summary": "STEP application protocol for exchanging 3D product data, PMI, PDM data and configuration. Defined in EXPRESS; the reference information model for model-based definition.",
+      "kind": "information-model",
+      "layer": "domain",
+      "topics": [
+        "CAD exchange",
+        "PMI",
+        "model-based definition",
+        "PDM"
+      ],
+      "standardRef": "ISO 10303-242:2025",
+      "version": {
+        "label": "ISO 10303-242:2025 (edition 4)",
+        "date": "2025-08-25",
+        "status": "published"
+      },
+      "maturity": "standard",
+      "license": {
+        "name": "ISO standard (purchase required)",
+        "access": "licensed",
+        "url": "https://www.iso.org/standard/84300.html"
+      },
+      "links": {
+        "official": "https://www.iso.org/standard/84300.html"
+      },
+      "formats": [
+        "EXPRESS",
+        "STEP Part 21",
+        "XML"
+      ],
+      "industries": [
+        "aerospace-defense",
+        "transportation-mobility",
+        "industrial-equipment"
+      ],
+      "useCases": [
+        "general-purpose-robotics"
+      ],
+      "brandRelevance": [
+        {
+          "brand": "catia",
+          "strength": "high",
+          "rationale": "3D master data exchange."
+        },
+        {
+          "brand": "solidworks",
+          "strength": "high",
+          "rationale": "Model-based definition export."
+        },
+        {
+          "brand": "enovia",
+          "strength": "medium",
+          "rationale": "PDM and configuration exchange."
+        }
+      ],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "verified",
+        "sources": [
+          {
+            "url": "https://www.evs.ee/en/iso-10303-242-2025",
+            "title": "ISO 10303-242:2025 listing"
+          },
+          {
+            "url": "https://online.standard.no/en/iso-10303-242-2025",
+            "title": "ISO 10303-242:2025 (edition 4)"
+          }
+        ],
+        "notes": "An information model in EXPRESS, not an OWL ontology. A further revision is at committee-draft stage."
+      },
+      "origin": "v2"
+    },
+    {
+      "id": "sumo",
+      "name": "SUMO",
+      "fullName": "Suggested Upper Merged Ontology",
+      "summary": "Suggested Upper Merged Ontology for broad upper-level semantic grounding.",
+      "publisher": "IEEE / Teknowledge",
+      "publisherType": "research",
+      "kind": "ontology",
+      "layer": "upper",
+      "topics": [
+        "upper ontology",
+        "common-sense knowledge",
+        "formal logic"
+      ],
+      "version": {
+        "label": "Continuously maintained (ontologyportal/sumo)",
+        "date": null,
+        "status": "published"
+      },
+      "maturity": "stable",
+      "license": {
+        "name": "Free under the IEEE licence in the source files; extensions under GNU GPL",
+        "access": "open-with-terms",
+        "url": "https://www.ontologyportal.org/"
+      },
+      "links": {
+        "official": "https://www.ontologyportal.org/",
+        "repository": "https://github.com/ontologyportal/sumo"
+      },
+      "formats": [
+        "SUO-KIF",
+        "OWL (translation)",
+        "TPTP"
+      ],
+      "industries": [
+        "high-tech",
+        "cross-industry"
+      ],
+      "useCases": [
+        "ai-factories",
+        "semiconductors",
+        "personal-electronics",
+        "general-purpose-robotics"
+      ],
+      "brandRelevance": [
+        {
+          "brand": "netvibes",
+          "strength": "medium",
+          "rationale": "Upper-level grounding for semantic reasoning."
+        }
+      ],
+      "publicEvidence": [],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "verified",
+        "sources": [
+          {
+            "url": "https://www.ontologyportal.org/",
+            "title": "SUMO — ontologyportal.org"
+          },
+          {
+            "url": "https://raw.githubusercontent.com/ontologyportal/sumo/master/Merge.kif",
+            "title": "Merge.kif licence header"
+          }
+        ],
+        "notes": "Originally developed by Teknowledge within the IEEE Standard Upper Ontology working group; now maintained by Adam Pease and contributors."
+      },
+      "origin": "v1",
+      "legacy": {
+        "name": "SUMO",
+        "category": "High-Tech",
+        "publisher": "IEEE / Teknowledge",
+        "official": "https://www.ontologyportal.org/",
+        "endObjects": [
+          "AI Factories",
+          "Semiconductors",
+          "Personal Electronics",
+          "General Purpose Robotics"
+        ],
+        "imds": [
+          "Cross-domain semantics"
+        ],
+        "description": "Suggested Upper Merged Ontology for broad upper-level semantic grounding.",
+        "parentOntology": "High-Tech (Core Ontology)",
+        "stabilityStatus": "stable",
+        "usageStatus": "open",
+        "hasInternalWikiLink": true
+      }
+    },
+    {
+      "id": "sumo-cora",
+      "name": "SUMO-CORA",
+      "fullName": "SUMO–CORA alignment (IEEE 1872-2015)",
+      "summary": "Alignment layer between SUMO and CORA for robotics semantics.",
+      "publisher": "IEEE Robotics and Automation Society",
+      "publisherType": "standards-body",
+      "kind": "ontology",
+      "layer": "upper",
+      "topics": [
+        "alignment",
+        "upper ontology",
+        "robotics"
+      ],
+      "standardRef": "IEEE 1872-2015",
+      "version": {
+        "label": "IEEE 1872-2015 (revision P1872 in progress)",
+        "date": "2015",
+        "status": "published"
+      },
+      "maturity": "standard",
+      "license": {
+        "name": "IEEE standard (purchase required for the full text)",
+        "access": "licensed",
+        "url": "https://standards.ieee.org/standard/1872-2015.html"
+      },
+      "links": {
+        "official": "https://standards.ieee.org/standard/1872-2015.html"
+      },
+      "formats": [
+        "SUO-KIF",
+        "OWL (community conversion)"
+      ],
+      "industries": [
+        "high-tech",
+        "industrial-equipment"
+      ],
+      "useCases": [
+        "general-purpose-robotics"
+      ],
+      "brandRelevance": [
+        {
+          "brand": "netvibes",
+          "strength": "medium",
+          "rationale": "Formal grounding for reasoning over robotics knowledge."
+        }
+      ],
+      "publicEvidence": [],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "partially-verified",
+        "sources": [
+          {
+            "url": "https://standards.ieee.org/standard/1872-2015.html",
+            "title": "IEEE 1872-2015 Standard Ontologies for Robotics and Automation"
+          }
+        ],
+        "notes": "IEEE 1872-2015 grounds CORA in SUMO. Confirm whether \"SUMO-CORA\" is published as a separate artefact."
+      },
+      "corrections": [
+        {
+          "field": "publisher",
+          "from": "Research / Community",
+          "to": "IEEE Robotics and Automation Society",
+          "reason": "Alignment is part of the IEEE 1872-2015 axiomatisation.",
+          "source": "https://standards.ieee.org/standard/1872-2015.html"
+        }
+      ],
+      "origin": "v1",
+      "legacy": {
+        "name": "SUMO-CORA",
+        "category": "General Purpose Robotics",
+        "publisher": "Research / Community",
+        "official": "",
+        "endObjects": [
+          "General Purpose Robotics"
+        ],
+        "imds": [
+          "Humanoid Robots",
+          "Robot AI Control",
+          "Robot MBSE Simulation"
+        ],
+        "description": "Alignment layer between SUMO and CORA for robotics semantics.",
+        "parentOntology": "General Purpose Robotics (End-Object Ontology)",
+        "stabilityStatus": "not stable",
+        "usageStatus": "restricted",
+        "hasInternalWikiLink": true
+      }
+    },
+    {
+      "publicEvidence": [
+        {
+          "kind": "product-support",
+          "brands": [
+            "catia"
+          ],
+          "statement": "Dassault Systèmes markets CATIA SysML v2 (CATIA Magic) as a SysML v2 modelling solution.",
+          "source": {
+            "url": "https://www.3ds.com/products/catia/catia-magic/sysmlv2",
+            "title": "CATIA SysML v2 product page",
+            "type": "official"
+          }
+        }
+      ],
+      "id": "sysml-v2",
+      "name": "SysML v2 / KerML",
+      "fullName": "OMG Systems Modeling Language v2 and Kernel Modeling Language",
+      "publisher": "Object Management Group (OMG)",
+      "publisherType": "standards-body",
+      "summary": "Next-generation MBSE language. KerML provides a formal semantic core and SysML v2 adds systems-engineering constructs, a textual notation and a standard API.",
+      "kind": "modeling-language",
+      "layer": "domain",
+      "topics": [
+        "MBSE",
+        "requirements",
+        "architecture",
+        "behaviour",
+        "formal semantics"
+      ],
+      "version": {
+        "label": "KerML 1.0, SysML 2.0, Systems Modeling API 1.0 — formally adopted",
+        "date": "2025-06-30",
+        "status": "published"
+      },
+      "maturity": "standard",
+      "license": {
+        "name": "OMG specification (freely available)",
+        "access": "open",
+        "url": "https://www.omg.org/sysml/"
+      },
+      "links": {
+        "official": "https://www.omg.org/sysml/",
+        "repository": "https://github.com/Systems-Modeling/SysML-v2-Release"
+      },
+      "formats": [
+        "SysML v2 textual",
+        "JSON (API)",
+        "XMI"
+      ],
+      "industries": [
+        "aerospace-defense",
+        "transportation-mobility",
+        "industrial-equipment",
+        "high-tech"
+      ],
+      "useCases": [
+        "general-purpose-robotics",
+        "ai-factories"
+      ],
+      "brandRelevance": [
+        {
+          "brand": "catia",
+          "strength": "high",
+          "rationale": "Systems engineering and MBSE."
+        },
+        {
+          "brand": "simulia",
+          "strength": "medium",
+          "rationale": "Linking system models to simulation."
+        },
+        {
+          "brand": "enovia",
+          "strength": "medium",
+          "rationale": "Configuration management of system models."
+        }
+      ],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "verified",
+        "sources": [
+          {
+            "url": "https://github.com/Systems-Modeling/SysML-v2-Release",
+            "title": "SysML v2 release repository"
+          },
+          {
+            "url": "https://www.omg.org/sysml/sst_aiaa_award.htm",
+            "title": "OMG SysML Submission Team page"
+          }
+        ],
+        "notes": "A modelling language with formal semantics rather than an OWL ontology."
+      },
+      "origin": "v2"
+    },
+    {
+      "publicEvidence": [],
+      "id": "vsso",
+      "name": "VSSo",
+      "fullName": "Vehicle Signal Specification Ontology",
+      "publisher": "W3C Automotive WG / COVESA",
+      "publisherType": "standards-body",
+      "summary": "OWL ontology for COVESA Vehicle Signal Specification signals, following the SOSA/SSN pattern. The W3C draft was later discontinued.",
+      "kind": "ontology",
+      "layer": "domain",
+      "topics": [
+        "vehicle signals",
+        "automotive",
+        "software-defined vehicle"
+      ],
+      "version": {
+        "label": "W3C Discontinued Draft (FPWD 2022-03-03)",
+        "date": "2022-03-03",
+        "status": "discontinued"
+      },
+      "maturity": "discontinued",
+      "license": {
+        "name": "W3C Document License",
+        "access": "open",
+        "url": "https://www.w3.org/TR/vsso-core/"
+      },
+      "links": {
+        "official": "https://www.w3.org/TR/vsso-core/",
+        "repository": "https://github.com/w3c/vsso"
+      },
+      "formats": [
+        "OWL",
+        "RDF/Turtle"
+      ],
+      "industries": [
+        "transportation-mobility"
+      ],
+      "useCases": [],
+      "brandRelevance": [
+        {
+          "brand": "catia",
+          "strength": "medium",
+          "rationale": "Vehicle E/E and signal architecture."
+        }
+      ],
+      "verification": {
+        "checkedOn": "2026-10-15",
+        "status": "verified",
+        "sources": [
+          {
+            "url": "https://www.w3.org/TR/vsso-core/",
+            "title": "VSSo Core (W3C)"
+          }
+        ],
+        "notes": "Listed for awareness; not maintained."
+      },
+      "origin": "v2"
+    }
+  ],
+  "industries": [
+    {
+      "id": "high-tech",
+      "name": "High-Tech",
+      "summary": "Electronics, semiconductors, computing, data centres and connected devices."
+    },
+    {
+      "id": "industrial-equipment",
+      "name": "Industrial Equipment",
+      "summary": "Machinery, automation, robotics and industrial asset lifecycles."
+    },
+    {
+      "id": "aerospace-defense",
+      "name": "Aerospace & Defense",
+      "summary": "Aircraft, space systems and defence programmes driven by systems engineering and certification."
+    },
+    {
+      "id": "transportation-mobility",
+      "name": "Transportation & Mobility",
+      "summary": "Automotive, rail and mobility systems, including software-defined vehicles."
+    },
+    {
+      "id": "energy-materials",
+      "name": "Energy & Materials",
+      "summary": "Power generation, grids, process plants, oil & gas, chemicals and materials."
+    },
+    {
+      "id": "infrastructure-cities",
+      "name": "Infrastructure & Cities",
+      "summary": "Buildings, construction, facilities and the built environment."
+    },
+    {
+      "id": "life-sciences",
+      "name": "Life Sciences & Healthcare",
+      "summary": "Pharma, biotech, medical devices and scientific research."
+    },
+    {
+      "id": "consumer-goods",
+      "name": "Consumer Goods & Retail",
+      "summary": "Consumer products, packaging, retail and product data exchange."
+    },
+    {
+      "id": "cross-industry",
+      "name": "Cross-Industry",
+      "summary": "Foundational and horizontal ontologies reusable in every industry."
+    }
+  ],
+  "brands": [
+    {
+      "id": "catia",
+      "name": "CATIA",
+      "focus": "Product design, systems engineering and MBSE"
+    },
+    {
+      "id": "simulia",
+      "name": "SIMULIA",
+      "focus": "Multiphysics simulation and virtual testing"
+    },
+    {
+      "id": "enovia",
+      "name": "ENOVIA",
+      "focus": "Collaborative product lifecycle and configuration management"
+    },
+    {
+      "id": "delmia",
+      "name": "DELMIA",
+      "focus": "Manufacturing, operations and supply chain"
+    },
+    {
+      "id": "netvibes",
+      "name": "NETVIBES",
+      "focus": "Information intelligence, knowledge graphs and data science"
+    },
+    {
+      "id": "biovia",
+      "name": "BIOVIA",
+      "focus": "Scientific informatics, chemistry and materials modelling"
+    },
+    {
+      "id": "geovia",
+      "name": "GEOVIA",
+      "focus": "Geospatial and natural-resource modelling"
+    },
+    {
+      "id": "3dexcite",
+      "name": "3DEXCITE",
+      "focus": "3D product experiences for marketing and sales"
+    },
+    {
+      "id": "solidworks",
+      "name": "SOLIDWORKS",
+      "focus": "3D design and engineering for product development teams"
+    }
+  ],
+  "useCases": [
+    {
+      "id": "ai-factories",
+      "name": "AI Factories",
+      "legacyEndObject": "AI Factories",
+      "tagline": "Data centres engineered as integrated compute, power and cooling systems.",
+      "summary": "AI factories combine dense GPU compute with power distribution, liquid cooling and building systems. Getting the facility, IT equipment and energy models to share one semantic backbone makes capacity planning, energy optimisation and digital-twin operations possible.",
+      "industries": [
+        "high-tech",
+        "infrastructure-cities",
+        "energy-materials"
+      ],
+      "challenges": [
+        "Linking the building model (spaces, racks, cooling loops) to the IT asset model (servers, accelerators, PDUs)",
+        "Correlating telemetry (power, thermal, utilisation) with the physical topology",
+        "Reporting energy and water usage consistently with grid and sustainability data"
+      ],
+      "stack": [
+        {
+          "layer": "Facility topology",
+          "ontologies": [
+            "bot",
+            "brick",
+            "saref4bldg",
+            "ifcowl"
+          ],
+          "role": "Sites, halls, rooms, equipment and building systems such as HVAC and cooling."
+        },
+        {
+          "layer": "IT & compute assets",
+          "ontologies": [
+            "dmtf-cim",
+            "aas"
+          ],
+          "role": "Managed IT elements (chassis, processors, power supplies) and asset digital twins."
+        },
+        {
+          "layer": "Energy & grid",
+          "ontologies": [
+            "saref4ener",
+            "iec-cim",
+            "oeo"
+          ],
+          "role": "Flexible loads, power-system interfaces and energy-system concepts."
+        },
+        {
+          "layer": "Telemetry",
+          "ontologies": [
+            "sosa",
+            "ssn",
+            "qudt",
+            "owl-time"
+          ],
+          "role": "Observations, sensors, units and timestamps for monitoring data."
+        },
+        {
+          "layer": "Governance",
+          "ontologies": [
+            "prov-o",
+            "dcat",
+            "dcterms"
+          ],
+          "role": "Lineage and cataloguing of datasets and models."
+        }
+      ],
+      "brands": [
+        "catia",
+        "simulia",
+        "delmia",
+        "enovia",
+        "netvibes"
+      ]
+    },
+    {
+      "id": "general-purpose-robotics",
+      "name": "General Purpose Robotics",
+      "legacyEndObject": "General Purpose Robotics",
+      "tagline": "Humanoid and multipurpose robots that reason about parts, positions and tasks.",
+      "summary": "General-purpose robots need shared definitions of robot parts, poses, capabilities and tasks so that design, simulation, AI control and certification work from the same model. The IEEE 1872 family gives a standardised backbone on top of an upper ontology.",
+      "industries": [
+        "industrial-equipment",
+        "high-tech",
+        "transportation-mobility"
+      ],
+      "challenges": [
+        "A shared vocabulary for robot structure, sensing and actuation across design and simulation",
+        "Task representations that both planners and engineers can read",
+        "Tracing behaviour requirements through MBSE models to verification evidence"
+      ],
+      "stack": [
+        {
+          "layer": "Upper & core",
+          "ontologies": [
+            "sumo",
+            "ieee-cora",
+            "ieee-corax",
+            "sumo-cora"
+          ],
+          "role": "Formal grounding for robots, robotic systems and environments."
+        },
+        {
+          "layer": "Structure & position",
+          "ontologies": [
+            "ieee-rparts",
+            "ieee-pos"
+          ],
+          "role": "Robot parts, positions, orientations and poses."
+        },
+        {
+          "layer": "Autonomy & tasks",
+          "ontologies": [
+            "ieee-aur",
+            "ieee-rtr"
+          ],
+          "role": "Autonomous behaviour concepts and hierarchical task knowledge."
+        },
+        {
+          "layer": "Systems engineering",
+          "ontologies": [
+            "sysml-v2"
+          ],
+          "role": "Requirements, architecture and behaviour models with formal semantics."
+        },
+        {
+          "layer": "Sensing",
+          "ontologies": [
+            "sosa",
+            "ssn",
+            "qudt"
+          ],
+          "role": "Sensor observations and units of measure."
+        },
+        {
+          "layer": "Asset integration",
+          "ontologies": [
+            "aas",
+            "eclass"
+          ],
+          "role": "Digital nameplates and standard properties for components."
+        }
+      ],
+      "brands": [
+        "catia",
+        "simulia",
+        "delmia",
+        "enovia"
+      ]
+    },
+    {
+      "id": "semiconductors",
+      "name": "Semiconductors",
+      "legacyEndObject": "Semiconductors",
+      "tagline": "From wafer fabrication to supply-chain resilience.",
+      "summary": "Semiconductor value chains span design, front-end fabrication, back-end assembly and test, and highly distributed supply chains. Public ontologies cover supply-chain semantics, product classification, materials and units; fab-equipment standards are still mostly non-semantic.",
+      "industries": [
+        "high-tech",
+        "energy-materials"
+      ],
+      "challenges": [
+        "Interoperable supply-chain data (products, lots, capacities, lead times)",
+        "Standard product and property classification for components",
+        "Linking materials and process data to quality and provenance records"
+      ],
+      "stack": [
+        {
+          "layer": "Supply chain",
+          "ontologies": [
+            "digital-reference",
+            "gs1-webvoc",
+            "schema-org"
+          ],
+          "role": "Semiconductor supply-chain concepts and product identification."
+        },
+        {
+          "layer": "Classification",
+          "ontologies": [
+            "eclass",
+            "aas"
+          ],
+          "role": "Standard properties and digital nameplates for components and equipment."
+        },
+        {
+          "layer": "Materials & process",
+          "ontologies": [
+            "emmo",
+            "qudt"
+          ],
+          "role": "Materials characterisation and quantities."
+        },
+        {
+          "layer": "Manufacturing foundations",
+          "ontologies": [
+            "iof-core",
+            "bfo"
+          ],
+          "role": "Mid-level manufacturing semantics with a formal upper ontology."
+        },
+        {
+          "layer": "Traceability",
+          "ontologies": [
+            "prov-o",
+            "owl-time"
+          ],
+          "role": "Lot genealogy, provenance and timing."
+        }
+      ],
+      "brands": [
+        "catia",
+        "delmia",
+        "enovia",
+        "biovia",
+        "netvibes"
+      ]
+    },
+    {
+      "id": "sustainability",
+      "name": "Sustainability & Circularity",
+      "legacyEndObject": null,
+      "tagline": "Lifecycle impact, circular design and regulatory traceability.",
+      "summary": "Sustainability engineering needs consistent lifecycle data, traceable provenance and links to regulation. Ontologies help connect product structures with impact indicators, materials, energy and legal requirements such as digital product passports.",
+      "industries": [
+        "cross-industry",
+        "consumer-goods",
+        "energy-materials",
+        "high-tech"
+      ],
+      "challenges": [
+        "Linking bills of materials to materials and lifecycle-assessment data",
+        "Provenance of environmental claims and calculations",
+        "Mapping requirements from legislation to product data"
+      ],
+      "stack": [
+        {
+          "layer": "Lifecycle assessment",
+          "ontologies": [
+            "oriont"
+          ],
+          "role": "LCSA concepts (candidate; public source pending)."
+        },
+        {
+          "layer": "Materials",
+          "ontologies": [
+            "emmo"
+          ],
+          "role": "Materials and their properties."
+        },
+        {
+          "layer": "Energy",
+          "ontologies": [
+            "oeo",
+            "saref4ener"
+          ],
+          "role": "Energy carriers, systems and flexibility."
+        },
+        {
+          "layer": "Provenance & regulation",
+          "ontologies": [
+            "prov-o",
+            "eli",
+            "dcat"
+          ],
+          "role": "Evidence trails and links to legal acts."
+        },
+        {
+          "layer": "Product identity",
+          "ontologies": [
+            "gs1-webvoc",
+            "schema-org",
+            "aas"
+          ],
+          "role": "Product identifiers and passports."
+        }
+      ],
+      "brands": [
+        "catia",
+        "simulia",
+        "enovia",
+        "biovia",
+        "delmia"
+      ]
+    },
+    {
+      "id": "personal-electronics",
+      "name": "Personal Electronics",
+      "legacyEndObject": "Personal Electronics",
+      "tagline": "Connected consumer devices and their product data.",
+      "summary": "Smart devices combine hardware, firmware and services. Device and product-data ontologies support interoperability, commerce and compliance.",
+      "industries": [
+        "high-tech",
+        "consumer-goods"
+      ],
+      "challenges": [
+        "Device capability descriptions across ecosystems",
+        "Rich product data for commerce and regulatory labelling"
+      ],
+      "stack": [
+        {
+          "layer": "Devices",
+          "ontologies": [
+            "saref-core",
+            "sosa"
+          ],
+          "role": "Devices, functions, commands and measurements."
+        },
+        {
+          "layer": "Product data",
+          "ontologies": [
+            "gs1-webvoc",
+            "schema-org",
+            "goodrelations",
+            "eclass"
+          ],
+          "role": "Product identification, offers and classification."
+        },
+        {
+          "layer": "Regulation",
+          "ontologies": [
+            "eli"
+          ],
+          "role": "References to applicable legislation."
+        }
+      ],
+      "brands": [
+        "catia",
+        "solidworks",
+        "3dexcite",
+        "enovia"
+      ]
+    }
+  ],
+  "relationTypes": [
+    {
+      "id": "extends",
+      "label": "extends",
+      "description": "Specialises or builds on the target's concepts."
+    },
+    {
+      "id": "imports",
+      "label": "imports",
+      "description": "Formally imports the target ontology."
+    },
+    {
+      "id": "part-of",
+      "label": "part of",
+      "description": "Published as a module of the same standard or suite."
+    },
+    {
+      "id": "aligns-with",
+      "label": "aligns with",
+      "description": "Provides an alignment or mapping to the target."
+    },
+    {
+      "id": "superseded-by",
+      "label": "integrated into",
+      "description": "Content was integrated into, or is continued by, the target."
+    },
+    {
+      "id": "references",
+      "label": "references",
+      "description": "Uses identifiers or terms from the target."
+    },
+    {
+      "id": "follows-pattern-of",
+      "label": "follows pattern of",
+      "description": "Reuses the target's design pattern."
+    }
+  ],
+  "relations": [
+    {
+      "source": "ssn",
+      "target": "sosa",
+      "type": "imports",
+      "evidence": {
+        "url": "https://www.w3.org/TR/vocab-ssn/",
+        "note": "The W3C/OGC Recommendation defines SOSA as the lightweight core that SSN builds on and imports."
+      }
+    },
+    {
+      "source": "saref4bldg",
+      "target": "saref-core",
+      "type": "extends",
+      "evidence": {
+        "url": "https://saref.etsi.org/saref4bldg/",
+        "note": "ETSI TS 103 410-3: SAREF extension for buildings."
+      }
+    },
+    {
+      "source": "saref4ener",
+      "target": "saref-core",
+      "type": "extends",
+      "evidence": {
+        "url": "https://saref.etsi.org/saref4ener/",
+        "note": "ETSI TS 103 410-1: SAREF extension for energy."
+      }
+    },
+    {
+      "source": "ieee-cora",
+      "target": "sumo",
+      "type": "extends",
+      "evidence": {
+        "url": "https://standards.ieee.org/standard/1872-2015.html",
+        "note": "IEEE 1872-2015 builds CORA on SUMO as its upper ontology."
+      }
+    },
+    {
+      "source": "sumo-cora",
+      "target": "sumo",
+      "type": "aligns-with",
+      "evidence": {
+        "url": "https://standards.ieee.org/standard/1872-2015.html",
+        "note": "The IEEE 1872-2015 axiomatisation grounds the robotics ontologies in SUMO."
+      }
+    },
+    {
+      "source": "sumo-cora",
+      "target": "ieee-cora",
+      "type": "aligns-with",
+      "evidence": {
+        "url": "https://standards.ieee.org/standard/1872-2015.html",
+        "note": "Alignment layer between SUMO and CORA."
+      }
+    },
+    {
+      "source": "ieee-corax",
+      "target": "ieee-cora",
+      "type": "part-of",
+      "evidence": {
+        "url": "https://standards.ieee.org/standard/1872-2015.html",
+        "note": "CORAX is specified in IEEE 1872-2015 together with CORA."
+      }
+    },
+    {
+      "source": "ieee-rparts",
+      "target": "ieee-cora",
+      "type": "part-of",
+      "evidence": {
+        "url": "https://standards.ieee.org/standard/1872-2015.html",
+        "note": "RPARTS is specified in IEEE 1872-2015."
+      }
+    },
+    {
+      "source": "ieee-pos",
+      "target": "ieee-cora",
+      "type": "part-of",
+      "evidence": {
+        "url": "https://standards.ieee.org/standard/1872-2015.html",
+        "note": "POS (position ontology) is specified in IEEE 1872-2015."
+      }
+    },
+    {
+      "source": "ieee-aur",
+      "target": "ieee-cora",
+      "type": "extends",
+      "evidence": {
+        "url": "https://standards.ieee.org/ieee/1872.2/7094/",
+        "note": "IEEE 1872.2-2021 extends CORA with autonomous-robotics ontologies."
+      }
+    },
+    {
+      "source": "iof-core",
+      "target": "bfo",
+      "type": "imports",
+      "evidence": {
+        "url": "https://spec.industrialontologies.org/portal/release/202401/core/CoreOntology.html",
+        "note": "All IOF ontologies are grounded in BFO 2020."
+      }
+    },
+    {
+      "source": "cco",
+      "target": "bfo",
+      "type": "extends",
+      "evidence": {
+        "url": "https://github.com/CommonCoreOntology/CommonCoreOntologies",
+        "note": "The Common Core Ontologies are a mid-level extension of BFO."
+      }
+    },
+    {
+      "source": "oeo",
+      "target": "bfo",
+      "type": "imports",
+      "evidence": {
+        "url": "https://github.com/OpenEnergyPlatform/ontology",
+        "note": "The OEO README states that the ontology makes use of, and follows the principles of, the Basic Formal Ontology."
+      }
+    },
+    {
+      "source": "goodrelations",
+      "target": "schema-org",
+      "type": "superseded-by",
+      "evidence": {
+        "url": "https://blog.schema.org/2012/11/08/good-relations-and-schema-org/",
+        "note": "GoodRelations was integrated into schema.org in 2012."
+      }
+    },
+    {
+      "source": "gs1-webvoc",
+      "target": "schema-org",
+      "type": "extends",
+      "evidence": {
+        "url": "https://ref.gs1.org/voc/",
+        "note": "The GS1 Web Vocabulary is designed as an extension of schema.org product terms."
+      }
+    },
+    {
+      "source": "vsso",
+      "target": "sosa",
+      "type": "follows-pattern-of",
+      "evidence": {
+        "url": "https://www.w3.org/TR/vsso-core/",
+        "note": "VSSo follows the SOSA/SSN pattern for observations and actuations."
+      }
+    },
+    {
+      "source": "aas",
+      "target": "eclass",
+      "type": "references",
+      "evidence": {
+        "url": "https://industrialdigitaltwin.org/en/content-hub/aasspecifications",
+        "note": "AAS semantic IDs commonly reference ECLASS IRDIs; see the AAS metamodel specification."
+      }
+    },
+    {
+      "source": "saref4bldg",
+      "target": "ifcowl",
+      "type": "aligns-with",
+      "evidence": {
+        "url": "https://saref.etsi.org/saref4bldg/",
+        "note": "ETSI states SAREF4BLDG is created based on the Industry Foundation Classes (IFC) standard."
+      }
+    }
+  ]
+}

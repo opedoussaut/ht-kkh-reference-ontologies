@@ -1,0 +1,108 @@
+{
+  "_note": "Engineering use cases. Each stack layer names public ontologies and the role they could play. Roles are editorial architecture suggestions, not statements of adoption.",
+  "items": [
+    {
+      "id": "ai-factories",
+      "name": "AI Factories",
+      "legacyEndObject": "AI Factories",
+      "tagline": "Data centres engineered as integrated compute, power and cooling systems.",
+      "summary": "AI factories combine dense GPU compute with power distribution, liquid cooling and building systems. Getting the facility, IT equipment and energy models to share one semantic backbone makes capacity planning, energy optimisation and digital-twin operations possible.",
+      "industries": ["high-tech", "infrastructure-cities", "energy-materials"],
+      "challenges": [
+        "Linking the building model (spaces, racks, cooling loops) to the IT asset model (servers, accelerators, PDUs)",
+        "Correlating telemetry (power, thermal, utilisation) with the physical topology",
+        "Reporting energy and water usage consistently with grid and sustainability data"
+      ],
+      "stack": [
+        { "layer": "Facility topology", "ontologies": ["bot", "brick", "saref4bldg", "ifcowl"], "role": "Sites, halls, rooms, equipment and building systems such as HVAC and cooling." },
+        { "layer": "IT & compute assets", "ontologies": ["dmtf-cim", "aas"], "role": "Managed IT elements (chassis, processors, power supplies) and asset digital twins." },
+        { "layer": "Energy & grid", "ontologies": ["saref4ener", "iec-cim", "oeo"], "role": "Flexible loads, power-system interfaces and energy-system concepts." },
+        { "layer": "Telemetry", "ontologies": ["sosa", "ssn", "qudt", "owl-time"], "role": "Observations, sensors, units and timestamps for monitoring data." },
+        { "layer": "Governance", "ontologies": ["prov-o", "dcat", "dcterms"], "role": "Lineage and cataloguing of datasets and models." }
+      ],
+      "brands": ["catia", "simulia", "delmia", "enovia", "netvibes"]
+    },
+    {
+      "id": "general-purpose-robotics",
+      "name": "General Purpose Robotics",
+      "legacyEndObject": "General Purpose Robotics",
+      "tagline": "Humanoid and multipurpose robots that reason about parts, positions and tasks.",
+      "summary": "General-purpose robots need shared definitions of robot parts, poses, capabilities and tasks so that design, simulation, AI control and certification work from the same model. The IEEE 1872 family gives a standardised backbone on top of an upper ontology.",
+      "industries": ["industrial-equipment", "high-tech", "transportation-mobility"],
+      "challenges": [
+        "A shared vocabulary for robot structure, sensing and actuation across design and simulation",
+        "Task representations that both planners and engineers can read",
+        "Tracing behaviour requirements through MBSE models to verification evidence"
+      ],
+      "stack": [
+        { "layer": "Upper & core", "ontologies": ["sumo", "ieee-cora", "ieee-corax", "sumo-cora"], "role": "Formal grounding for robots, robotic systems and environments." },
+        { "layer": "Structure & position", "ontologies": ["ieee-rparts", "ieee-pos"], "role": "Robot parts, positions, orientations and poses." },
+        { "layer": "Autonomy & tasks", "ontologies": ["ieee-aur", "ieee-rtr"], "role": "Autonomous behaviour concepts and hierarchical task knowledge." },
+        { "layer": "Systems engineering", "ontologies": ["sysml-v2"], "role": "Requirements, architecture and behaviour models with formal semantics." },
+        { "layer": "Sensing", "ontologies": ["sosa", "ssn", "qudt"], "role": "Sensor observations and units of measure." },
+        { "layer": "Asset integration", "ontologies": ["aas", "eclass"], "role": "Digital nameplates and standard properties for components." }
+      ],
+      "brands": ["catia", "simulia", "delmia", "enovia"]
+    },
+    {
+      "id": "semiconductors",
+      "name": "Semiconductors",
+      "legacyEndObject": "Semiconductors",
+      "tagline": "From wafer fabrication to supply-chain resilience.",
+      "summary": "Semiconductor value chains span design, front-end fabrication, back-end assembly and test, and highly distributed supply chains. Public ontologies cover supply-chain semantics, product classification, materials and units; fab-equipment standards are still mostly non-semantic.",
+      "industries": ["high-tech", "energy-materials"],
+      "challenges": [
+        "Interoperable supply-chain data (products, lots, capacities, lead times)",
+        "Standard product and property classification for components",
+        "Linking materials and process data to quality and provenance records"
+      ],
+      "stack": [
+        { "layer": "Supply chain", "ontologies": ["digital-reference", "gs1-webvoc", "schema-org"], "role": "Semiconductor supply-chain concepts and product identification." },
+        { "layer": "Classification", "ontologies": ["eclass", "aas"], "role": "Standard properties and digital nameplates for components and equipment." },
+        { "layer": "Materials & process", "ontologies": ["emmo", "qudt"], "role": "Materials characterisation and quantities." },
+        { "layer": "Manufacturing foundations", "ontologies": ["iof-core", "bfo"], "role": "Mid-level manufacturing semantics with a formal upper ontology." },
+        { "layer": "Traceability", "ontologies": ["prov-o", "owl-time"], "role": "Lot genealogy, provenance and timing." }
+      ],
+      "brands": ["catia", "delmia", "enovia", "biovia", "netvibes"]
+    },
+    {
+      "id": "sustainability",
+      "name": "Sustainability & Circularity",
+      "legacyEndObject": null,
+      "tagline": "Lifecycle impact, circular design and regulatory traceability.",
+      "summary": "Sustainability engineering needs consistent lifecycle data, traceable provenance and links to regulation. Ontologies help connect product structures with impact indicators, materials, energy and legal requirements such as digital product passports.",
+      "industries": ["cross-industry", "consumer-goods", "energy-materials", "high-tech"],
+      "challenges": [
+        "Linking bills of materials to materials and lifecycle-assessment data",
+        "Provenance of environmental claims and calculations",
+        "Mapping requirements from legislation to product data"
+      ],
+      "stack": [
+        { "layer": "Lifecycle assessment", "ontologies": ["oriont"], "role": "LCSA concepts (candidate; public source pending)." },
+        { "layer": "Materials", "ontologies": ["emmo"], "role": "Materials and their properties." },
+        { "layer": "Energy", "ontologies": ["oeo", "saref4ener"], "role": "Energy carriers, systems and flexibility." },
+        { "layer": "Provenance & regulation", "ontologies": ["prov-o", "eli", "dcat"], "role": "Evidence trails and links to legal acts." },
+        { "layer": "Product identity", "ontologies": ["gs1-webvoc", "schema-org", "aas"], "role": "Product identifiers and passports." }
+      ],
+      "brands": ["catia", "simulia", "enovia", "biovia", "delmia"]
+    },
+    {
+      "id": "personal-electronics",
+      "name": "Personal Electronics",
+      "legacyEndObject": "Personal Electronics",
+      "tagline": "Connected consumer devices and their product data.",
+      "summary": "Smart devices combine hardware, firmware and services. Device and product-data ontologies support interoperability, commerce and compliance.",
+      "industries": ["high-tech", "consumer-goods"],
+      "challenges": [
+        "Device capability descriptions across ecosystems",
+        "Rich product data for commerce and regulatory labelling"
+      ],
+      "stack": [
+        { "layer": "Devices", "ontologies": ["saref-core", "sosa"], "role": "Devices, functions, commands and measurements." },
+        { "layer": "Product data", "ontologies": ["gs1-webvoc", "schema-org", "goodrelations", "eclass"], "role": "Product identification, offers and classification." },
+        { "layer": "Regulation", "ontologies": ["eli"], "role": "References to applicable legislation." }
+      ],
+      "brands": ["catia", "solidworks", "3dexcite", "enovia"]
+    }
+  ]
+}

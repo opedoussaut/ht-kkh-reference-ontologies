@@ -1,0 +1,24 @@
+name: Correct a record
+description: Report an outdated version, wrong licence, broken link or other error.
+title: "[Correction] "
+labels: [correction]
+body:
+  - type: input
+    id: record
+    attributes: { label: Ontology, placeholder: "Name or id, e.g. qudt" }
+    validations: { required: true }
+  - type: textarea
+    id: what
+    attributes: { label: What is wrong and what should it be? }
+    validations: { required: true }
+  - type: input
+    id: source
+    attributes: { label: Public source supporting the correction }
+    validations: { required: true }
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: The source is public.
+          required: true

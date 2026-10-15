@@ -1,0 +1,115 @@
+{
+  "id": "aas",
+  "name": "AAS",
+  "fullName": "Asset Administration Shell (AAS)",
+  "summary": "Asset Administration Shell meta-model for interoperable digital twins.",
+  "publisher": "Industrial Digital Twin Association",
+  "publisherType": "industry-association",
+  "kind": "meta-model",
+  "layer": "domain",
+  "topics": [
+    "digital twin",
+    "industrial assets",
+    "submodels",
+    "Industry 4.0"
+  ],
+  "standardRef": "IDTA-01001 · IEC 63278-1",
+  "version": {
+    "label": "IDTA-01001 Part 1 Metamodel v3.1.1 (later IDTA documents reference v3.2)",
+    "date": "2025-07",
+    "status": "published"
+  },
+  "maturity": "standard",
+  "license": {
+    "name": "Specifications published openly by IDTA (see licence in each document)",
+    "access": "open",
+    "url": "https://industrialdigitaltwin.org/en/content-hub/aasspecifications"
+  },
+  "links": {
+    "official": "https://industrialdigitaltwin.org/en/content-hub/aas",
+    "specification": "https://industrialdigitaltwin.org/en/content-hub/aasspecifications"
+  },
+  "formats": [
+    "XML",
+    "JSON",
+    "RDF"
+  ],
+  "industries": [
+    "high-tech",
+    "industrial-equipment",
+    "energy-materials",
+    "transportation-mobility"
+  ],
+  "useCases": [
+    "ai-factories",
+    "semiconductors",
+    "personal-electronics",
+    "general-purpose-robotics",
+    "sustainability"
+  ],
+  "brandRelevance": [
+    {
+      "brand": "delmia",
+      "strength": "high",
+      "rationale": "Shop-floor assets and operations exchange data through AAS submodels."
+    },
+    {
+      "brand": "enovia",
+      "strength": "high",
+      "rationale": "Product and asset lifecycle data could be published as AAS."
+    },
+    {
+      "brand": "catia",
+      "strength": "medium",
+      "rationale": "Engineering data handed over as digital nameplates and technical data submodels."
+    }
+  ],
+  "publicEvidence": [
+    {
+      "kind": "standards-membership",
+      "brands": [],
+      "statement": "Dassault Systèmes announced it joined the Industrial Digital Twin Association (IDTA), which maintains the AAS specifications.",
+      "source": {
+        "url": "https://www.3ds.com/de/newsroom/media-alerts/dassault-systemes-joins-the-industrial-digital-twin-association",
+        "title": "Dassault Systèmes newsroom (DE): joins the Industrial Digital Twin Association",
+        "type": "official"
+      }
+    }
+  ],
+  "verification": {
+    "checkedOn": "2026-10-15",
+    "status": "verified",
+    "sources": [
+      {
+        "url": "https://industrialdigitaltwin.org/wp-content/uploads/2025/08/IDTA-01001-3-1-1_AAS-Specification_Part1_Metamodel.pdf",
+        "title": "IDTA-01001-3-1-1 Part 1 Metamodel (PDF)"
+      },
+      {
+        "url": "https://industrialdigitaltwin.org/en/content-hub/aasspecifications",
+        "title": "IDTA AAS specifications"
+      }
+    ],
+    "notes": "The IDTA Part 4 Security document (2026) references Part 1 v3.2; confirm whether v3.2 has been released."
+  },
+  "origin": "v1",
+  "legacy": {
+    "name": "AAS",
+    "category": "High-Tech",
+    "publisher": "Industrial Digital Twin Association",
+    "official": "https://industrialdigitaltwin.org/en/content-hub/aas",
+    "endObjects": [
+      "AI Factories",
+      "Semiconductors",
+      "Personal Electronics",
+      "General Purpose Robotics"
+    ],
+    "imds": [
+      "Cross-domain semantics"
+    ],
+    "description": "Asset Administration Shell meta-model for interoperable digital twins.",
+    "parentOntology": "High-Tech (Core Ontology)",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "hasInternalWikiLink": true
+  }
+}

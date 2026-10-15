@@ -1,0 +1,115 @@
+{
+  "id": "ieee-cora",
+  "name": "CORA",
+  "fullName": "Core Ontology for Robotics and Automation (CORA)",
+  "summary": "Core ontology for robotics and automation concepts.",
+  "publisher": "IEEE Robotics and Automation Society",
+  "publisherType": "standards-body",
+  "kind": "ontology",
+  "layer": "domain",
+  "topics": [
+    "robots",
+    "robotic systems",
+    "robotic environments"
+  ],
+  "standardRef": "IEEE 1872-2015",
+  "version": {
+    "label": "IEEE 1872-2015 (revision P1872 in progress)",
+    "date": "2015",
+    "status": "published"
+  },
+  "maturity": "standard",
+  "license": {
+    "name": "IEEE standard (purchase required for the full text)",
+    "access": "licensed",
+    "url": "https://standards.ieee.org/standard/1872-2015.html"
+  },
+  "links": {
+    "official": "https://standards.ieee.org/standard/1872-2015.html",
+    "repository": "https://github.com/srfiorini/IEEE1872-owl"
+  },
+  "formats": [
+    "SUO-KIF",
+    "OWL (community conversion)"
+  ],
+  "industries": [
+    "high-tech",
+    "industrial-equipment"
+  ],
+  "useCases": [
+    "general-purpose-robotics"
+  ],
+  "brandRelevance": [
+    {
+      "brand": "catia",
+      "strength": "high",
+      "rationale": "Robot product and systems architecture could reuse a standard robot vocabulary."
+    },
+    {
+      "brand": "delmia",
+      "strength": "high",
+      "rationale": "Robot programming and cell simulation work with robot parts, poses and tasks."
+    },
+    {
+      "brand": "simulia",
+      "strength": "medium",
+      "rationale": "Multibody and control simulation could bind models to standard robot concepts."
+    }
+  ],
+  "publicEvidence": [],
+  "verification": {
+    "checkedOn": "2026-10-15",
+    "status": "verified",
+    "sources": [
+      {
+        "url": "https://standards.ieee.org/standard/1872-2015.html",
+        "title": "IEEE 1872-2015 Standard Ontologies for Robotics and Automation"
+      },
+      {
+        "url": "https://github.com/srfiorini/IEEE1872-owl",
+        "title": "OWL version of CORA (IEEE 1872-2015), CC BY 4.0"
+      },
+      {
+        "url": "https://standards.ieee.org/ieee/1872/12250",
+        "title": "IEEE P1872 revision project (active PAR)"
+      }
+    ],
+    "notes": "An OWL conversion of CORA (taxonomy and selected axioms) is published under CC BY 4.0."
+  },
+  "corrections": [
+    {
+      "field": "official",
+      "from": "https://sites.google.com/site/smartappliancesproject/ontologies/cora",
+      "to": "https://standards.ieee.org/standard/1872-2015.html",
+      "reason": "The v1 link pointed to an unrelated smart-appliances project page.",
+      "source": "https://standards.ieee.org/standard/1872-2015.html"
+    },
+    {
+      "field": "publisher",
+      "from": "IEEE / Research Community",
+      "to": "IEEE Robotics and Automation Society",
+      "reason": "Standard sponsor.",
+      "source": "https://standards.ieee.org/standard/1872-2015.html"
+    }
+  ],
+  "origin": "v1",
+  "legacy": {
+    "name": "CORA",
+    "category": "General Purpose Robotics",
+    "publisher": "IEEE / Research Community",
+    "official": "https://sites.google.com/site/smartappliancesproject/ontologies/cora",
+    "endObjects": [
+      "General Purpose Robotics"
+    ],
+    "imds": [
+      "Humanoid Robots",
+      "Robot AI Control",
+      "Robot MBSE Simulation"
+    ],
+    "description": "Core ontology for robotics and automation concepts.",
+    "parentOntology": "General Purpose Robotics (End-Object Ontology)",
+    "stabilityStatus": "stable",
+    "usageStatus": "restricted",
+    "hasInternalWikiLink": true
+  }
+}

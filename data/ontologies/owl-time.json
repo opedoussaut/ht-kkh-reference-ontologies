@@ -1,0 +1,90 @@
+{
+  "id": "owl-time",
+  "name": "OWL-time",
+  "fullName": "Time Ontology in OWL",
+  "summary": "Ontology of temporal concepts including intervals, instants, durations, and relations.",
+  "publisher": "W3C",
+  "publisherType": "standards-body",
+  "kind": "ontology",
+  "layer": "cross-domain",
+  "topics": [
+    "time",
+    "intervals",
+    "durations",
+    "temporal relations"
+  ],
+  "version": {
+    "label": "W3C Candidate Recommendation Draft (revision of the 2017 Recommendation)",
+    "date": "2022-11-15",
+    "status": "candidate"
+  },
+  "maturity": "standard",
+  "license": {
+    "name": "W3C Document License",
+    "access": "open",
+    "url": "https://www.w3.org/copyright/document-license/"
+  },
+  "links": {
+    "official": "https://www.w3.org/TR/owl-time/",
+    "namespace": "http://www.w3.org/2006/time#"
+  },
+  "formats": [
+    "OWL",
+    "RDF/Turtle"
+  ],
+  "industries": [
+    "high-tech",
+    "cross-industry"
+  ],
+  "useCases": [
+    "ai-factories",
+    "semiconductors",
+    "personal-electronics",
+    "general-purpose-robotics"
+  ],
+  "brandRelevance": [
+    {
+      "brand": "delmia",
+      "strength": "medium",
+      "rationale": "Schedules, shifts and operation durations."
+    },
+    {
+      "brand": "netvibes",
+      "strength": "medium",
+      "rationale": "Temporal reasoning in knowledge graphs."
+    }
+  ],
+  "publicEvidence": [],
+  "verification": {
+    "checkedOn": "2026-10-15",
+    "status": "verified",
+    "sources": [
+      {
+        "url": "https://www.w3.org/TR/owl-time/",
+        "title": "W3C Time Ontology in OWL"
+      }
+    ],
+    "notes": ""
+  },
+  "origin": "v1",
+  "legacy": {
+    "name": "OWL-time",
+    "category": "High-Tech",
+    "publisher": "W3C",
+    "official": "https://www.w3.org/TR/owl-time/",
+    "endObjects": [
+      "AI Factories",
+      "Semiconductors",
+      "Personal Electronics",
+      "General Purpose Robotics"
+    ],
+    "imds": [
+      "Cross-domain semantics"
+    ],
+    "description": "Ontology of temporal concepts including intervals, instants, durations, and relations.",
+    "parentOntology": "High-Tech (Core Ontology)",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "hasInternalWikiLink": true
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "id": "eli",
+  "name": "ELI Ontology",
+  "fullName": "European Legislation Identifier (ELI) Ontology",
+  "summary": "Ontology for identifying and describing legal resources and legislation metadata.",
+  "publisher": "Publications Office of the European Union",
+  "publisherType": "government",
+  "kind": "ontology",
+  "layer": "domain",
+  "topics": [
+    "legislation",
+    "regulation",
+    "metadata"
+  ],
+  "version": {
+    "label": "ELI ontology 1.3 (latest listed on Interoperable Europe)",
+    "date": null,
+    "status": "published"
+  },
+  "maturity": "stable",
+  "license": {
+    "name": "EU Publications Office open reuse terms (confirm per release)",
+    "access": "open",
+    "url": "https://op.europa.eu/en/web/eu-vocabularies/eli"
+  },
+  "links": {
+    "official": "https://op.europa.eu/en/web/eu-vocabularies/eli",
+    "specification": "https://interoperable-europe.ec.europa.eu/collection/eli-european-legislation-identifier/solution/eli-ontology/releases",
+    "namespace": "http://data.europa.eu/eli/ontology#"
+  },
+  "formats": [
+    "OWL",
+    "RDF/Turtle"
+  ],
+  "industries": [
+    "high-tech",
+    "cross-industry"
+  ],
+  "useCases": [
+    "ai-factories",
+    "semiconductors",
+    "personal-electronics",
+    "general-purpose-robotics",
+    "sustainability"
+  ],
+  "brandRelevance": [
+    {
+      "brand": "enovia",
+      "strength": "medium",
+      "rationale": "Compliance requirements in the product lifecycle can reference legal acts by ELI."
+    },
+    {
+      "brand": "netvibes",
+      "strength": "medium",
+      "rationale": "Regulatory intelligence and knowledge graphs can link to legislation identifiers."
+    }
+  ],
+  "publicEvidence": [],
+  "verification": {
+    "checkedOn": "2026-10-15",
+    "status": "partially-verified",
+    "sources": [
+      {
+        "url": "https://op.europa.eu/en/web/eu-vocabularies/eli",
+        "title": "EU Vocabularies — ELI"
+      },
+      {
+        "url": "https://interoperable-europe.ec.europa.eu/collection/eli-european-legislation-identifier/solution/eli-ontology/releases",
+        "title": "Interoperable Europe — ELI ontology releases"
+      }
+    ],
+    "notes": "Release 1.3 is the latest listed on Interoperable Europe; EU Vocabularies may list newer releases. Confirm the exact licence statement for the ontology files."
+  },
+  "origin": "v1",
+  "legacy": {
+    "name": "ELI Ontology",
+    "category": "Regulatory / Normative",
+    "publisher": "Publications Office of the European Union",
+    "official": "https://op.europa.eu/en/web/eu-vocabularies/eli",
+    "endObjects": [
+      "AI Factories",
+      "Semiconductors",
+      "Personal Electronics",
+      "General Purpose Robotics"
+    ],
+    "imds": [
+      "Regulatory Knowledge"
+    ],
+    "description": "Ontology for identifying and describing legal resources and legislation metadata.",
+    "parentOntology": "Regulatory / Normative (Core Ontology)",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "hasInternalWikiLink": true
+  }
+}

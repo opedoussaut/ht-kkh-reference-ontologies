@@ -1,0 +1,94 @@
+{
+  "publicEvidence": [
+    {
+      "kind": "product-support",
+      "brands": [
+        "catia"
+      ],
+      "statement": "Dassault Systèmes markets CATIA SysML v2 (CATIA Magic) as a SysML v2 modelling solution.",
+      "source": {
+        "url": "https://www.3ds.com/products/catia/catia-magic/sysmlv2",
+        "title": "CATIA SysML v2 product page",
+        "type": "official"
+      }
+    }
+  ],
+  "id": "sysml-v2",
+  "name": "SysML v2 / KerML",
+  "fullName": "OMG Systems Modeling Language v2 and Kernel Modeling Language",
+  "publisher": "Object Management Group (OMG)",
+  "publisherType": "standards-body",
+  "summary": "Next-generation MBSE language. KerML provides a formal semantic core and SysML v2 adds systems-engineering constructs, a textual notation and a standard API.",
+  "kind": "modeling-language",
+  "layer": "domain",
+  "topics": [
+    "MBSE",
+    "requirements",
+    "architecture",
+    "behaviour",
+    "formal semantics"
+  ],
+  "version": {
+    "label": "KerML 1.0, SysML 2.0, Systems Modeling API 1.0 — formally adopted",
+    "date": "2025-06-30",
+    "status": "published"
+  },
+  "maturity": "standard",
+  "license": {
+    "name": "OMG specification (freely available)",
+    "access": "open",
+    "url": "https://www.omg.org/sysml/"
+  },
+  "links": {
+    "official": "https://www.omg.org/sysml/",
+    "repository": "https://github.com/Systems-Modeling/SysML-v2-Release"
+  },
+  "formats": [
+    "SysML v2 textual",
+    "JSON (API)",
+    "XMI"
+  ],
+  "industries": [
+    "aerospace-defense",
+    "transportation-mobility",
+    "industrial-equipment",
+    "high-tech"
+  ],
+  "useCases": [
+    "general-purpose-robotics",
+    "ai-factories"
+  ],
+  "brandRelevance": [
+    {
+      "brand": "catia",
+      "strength": "high",
+      "rationale": "Systems engineering and MBSE."
+    },
+    {
+      "brand": "simulia",
+      "strength": "medium",
+      "rationale": "Linking system models to simulation."
+    },
+    {
+      "brand": "enovia",
+      "strength": "medium",
+      "rationale": "Configuration management of system models."
+    }
+  ],
+  "verification": {
+    "checkedOn": "2026-10-15",
+    "status": "verified",
+    "sources": [
+      {
+        "url": "https://github.com/Systems-Modeling/SysML-v2-Release",
+        "title": "SysML v2 release repository"
+      },
+      {
+        "url": "https://www.omg.org/sysml/sst_aiaa_award.htm",
+        "title": "OMG SysML Submission Team page"
+      }
+    ],
+    "notes": "A modelling language with formal semantics rather than an OWL ontology."
+  },
+  "origin": "v2"
+}

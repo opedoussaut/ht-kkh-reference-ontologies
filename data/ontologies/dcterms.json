@@ -1,0 +1,90 @@
+{
+  "id": "dcterms",
+  "name": "DCTERMS",
+  "fullName": "DCMI Metadata Terms",
+  "summary": "Widely used metadata terms for title, creator, subject, date, and provenance-like description.",
+  "publisher": "Dublin Core Metadata Initiative",
+  "publisherType": "standards-body",
+  "kind": "vocabulary",
+  "layer": "cross-domain",
+  "topics": [
+    "metadata",
+    "documents",
+    "cataloguing"
+  ],
+  "standardRef": "ISO 15836-2",
+  "version": {
+    "label": "DCMI Metadata Terms",
+    "date": "2020-01-20",
+    "status": "published"
+  },
+  "maturity": "standard",
+  "license": {
+    "name": "CC BY 4.0",
+    "access": "open",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "links": {
+    "official": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/",
+    "namespace": "http://purl.org/dc/terms/"
+  },
+  "formats": [
+    "RDF/Turtle",
+    "RDF/XML"
+  ],
+  "industries": [
+    "high-tech",
+    "cross-industry"
+  ],
+  "useCases": [
+    "ai-factories",
+    "semiconductors",
+    "personal-electronics",
+    "general-purpose-robotics"
+  ],
+  "brandRelevance": [
+    {
+      "brand": "enovia",
+      "strength": "high",
+      "rationale": "Document and object metadata (title, creator, dates)."
+    },
+    {
+      "brand": "netvibes",
+      "strength": "high",
+      "rationale": "Generic metadata for indexed content."
+    }
+  ],
+  "publicEvidence": [],
+  "verification": {
+    "checkedOn": "2026-10-15",
+    "status": "verified",
+    "sources": [
+      {
+        "url": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/",
+        "title": "DCMI Metadata Terms"
+      }
+    ],
+    "notes": ""
+  },
+  "origin": "v1",
+  "legacy": {
+    "name": "DCTERMS",
+    "category": "High-Tech",
+    "publisher": "Dublin Core Metadata Initiative",
+    "official": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/",
+    "endObjects": [
+      "AI Factories",
+      "Semiconductors",
+      "Personal Electronics",
+      "General Purpose Robotics"
+    ],
+    "imds": [
+      "Cross-domain semantics"
+    ],
+    "description": "Widely used metadata terms for title, creator, subject, date, and provenance-like description.",
+    "parentOntology": "High-Tech (Core Ontology)",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "hasInternalWikiLink": true
+  }
+}

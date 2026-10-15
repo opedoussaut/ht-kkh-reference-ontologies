@@ -1,0 +1,76 @@
+{
+  "publicEvidence": [],
+  "id": "schema-org",
+  "name": "Schema.org",
+  "fullName": "Schema.org vocabulary",
+  "publisher": "Schema.org community (W3C Community Group)",
+  "publisherType": "consortium",
+  "summary": "Widely deployed vocabulary for structured data on the web: products, offers, organisations, events and more. Absorbed GoodRelations in 2012.",
+  "kind": "vocabulary",
+  "layer": "cross-domain",
+  "topics": [
+    "web data",
+    "products",
+    "organisations",
+    "offers"
+  ],
+  "version": {
+    "label": "Continuously released (see release log)",
+    "date": null,
+    "status": "published"
+  },
+  "maturity": "stable",
+  "license": {
+    "name": "CC BY-SA 3.0",
+    "access": "open",
+    "url": "https://schema.org/docs/terms.html"
+  },
+  "links": {
+    "official": "https://schema.org/",
+    "specification": "https://schema.org/docs/releases.html",
+    "namespace": "https://schema.org/"
+  },
+  "formats": [
+    "RDFa",
+    "JSON-LD",
+    "Microdata",
+    "RDF/Turtle"
+  ],
+  "industries": [
+    "consumer-goods",
+    "cross-industry"
+  ],
+  "useCases": [
+    "personal-electronics",
+    "semiconductors",
+    "sustainability"
+  ],
+  "brandRelevance": [
+    {
+      "brand": "3dexcite",
+      "strength": "high",
+      "rationale": "Product content published to the web."
+    },
+    {
+      "brand": "netvibes",
+      "strength": "medium",
+      "rationale": "Web-scale entity data."
+    }
+  ],
+  "verification": {
+    "checkedOn": "2026-10-15",
+    "status": "verified",
+    "sources": [
+      {
+        "url": "https://schema.org/docs/terms.html",
+        "title": "Schema.org terms"
+      },
+      {
+        "url": "https://blog.schema.org/2012/11/08/good-relations-and-schema-org/",
+        "title": "GoodRelations integration announcement"
+      }
+    ],
+    "notes": ""
+  },
+  "origin": "v2"
+}

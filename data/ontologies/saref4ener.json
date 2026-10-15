@@ -1,0 +1,69 @@
+{
+  "publicEvidence": [],
+  "id": "saref4ener",
+  "name": "SAREF4ENER",
+  "fullName": "SAREF extension for Energy",
+  "publisher": "ETSI",
+  "publisherType": "standards-body",
+  "summary": "SAREF extension for energy flexibility and demand response between smart devices, energy managers and the grid.",
+  "kind": "ontology",
+  "layer": "domain",
+  "topics": [
+    "energy flexibility",
+    "demand response",
+    "power profiles"
+  ],
+  "standardRef": "ETSI TS 103 410-1",
+  "version": {
+    "label": "SAREF4ENER v2.1.1 (ETSI TS 103 410-1 V2.1.1)",
+    "date": "2025-06-05",
+    "status": "published"
+  },
+  "maturity": "standard",
+  "license": {
+    "name": "ETSI Software License (BSD-3-Clause style)",
+    "access": "open",
+    "url": "https://forge.etsi.org/etsi-software-license"
+  },
+  "links": {
+    "official": "https://saref.etsi.org/saref4ener/",
+    "namespace": "https://saref.etsi.org/saref4ener/"
+  },
+  "formats": [
+    "OWL",
+    "RDF/Turtle"
+  ],
+  "industries": [
+    "energy-materials",
+    "infrastructure-cities",
+    "high-tech"
+  ],
+  "useCases": [
+    "ai-factories",
+    "sustainability"
+  ],
+  "brandRelevance": [
+    {
+      "brand": "netvibes",
+      "strength": "medium",
+      "rationale": "Energy analytics and flexibility."
+    },
+    {
+      "brand": "delmia",
+      "strength": "medium",
+      "rationale": "Energy-aware operations planning."
+    }
+  ],
+  "verification": {
+    "checkedOn": "2026-10-15",
+    "status": "verified",
+    "sources": [
+      {
+        "url": "https://saref.etsi.org/saref4ener/",
+        "title": "ETSI SAREF4ENER"
+      }
+    ],
+    "notes": ""
+  },
+  "origin": "v2"
+}

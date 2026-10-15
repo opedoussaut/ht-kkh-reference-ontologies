@@ -1,0 +1,66 @@
+{
+  "publicEvidence": [],
+  "id": "dcat",
+  "name": "DCAT",
+  "fullName": "Data Catalog Vocabulary (DCAT) Version 3",
+  "publisher": "W3C",
+  "publisherType": "standards-body",
+  "summary": "W3C vocabulary for describing datasets, data services and catalogues, the basis of many data-space and open-data catalogues.",
+  "kind": "vocabulary",
+  "layer": "cross-domain",
+  "topics": [
+    "data catalogues",
+    "datasets",
+    "data spaces"
+  ],
+  "version": {
+    "label": "DCAT 3 — W3C Recommendation",
+    "date": "2024-08-22",
+    "status": "published"
+  },
+  "maturity": "standard",
+  "license": {
+    "name": "W3C Document License",
+    "access": "open",
+    "url": "https://www.w3.org/copyright/document-license/"
+  },
+  "links": {
+    "official": "https://www.w3.org/TR/vocab-dcat-3/",
+    "namespace": "http://www.w3.org/ns/dcat#"
+  },
+  "formats": [
+    "OWL",
+    "RDF/Turtle"
+  ],
+  "industries": [
+    "cross-industry"
+  ],
+  "useCases": [
+    "ai-factories",
+    "sustainability"
+  ],
+  "brandRelevance": [
+    {
+      "brand": "netvibes",
+      "strength": "high",
+      "rationale": "Dataset cataloguing and discovery."
+    },
+    {
+      "brand": "enovia",
+      "strength": "medium",
+      "rationale": "Exposing engineering datasets to data spaces."
+    }
+  ],
+  "verification": {
+    "checkedOn": "2026-10-15",
+    "status": "verified",
+    "sources": [
+      {
+        "url": "https://www.w3.org/TR/vocab-dcat-3/",
+        "title": "DCAT 3 W3C Recommendation"
+      }
+    ],
+    "notes": ""
+  },
+  "origin": "v2"
+}

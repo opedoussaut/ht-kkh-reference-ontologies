@@ -1,0 +1,69 @@
+{
+  "publicEvidence": [],
+  "id": "digital-reference",
+  "name": "Digital Reference (DR)",
+  "fullName": "Digital Reference — semiconductor supply-chain ontology",
+  "publisher": "Infineon Technologies & partners (Productive4.0, SC³)",
+  "publisherType": "industry",
+  "summary": "Ontology for the semiconductor industry and its supply chains, organised in thematic \"lobes\" (about 1,200 classes). Introduced in the ECSEL Productive4.0 project.",
+  "kind": "ontology",
+  "layer": "domain",
+  "topics": [
+    "semiconductor supply chain",
+    "manufacturing",
+    "products"
+  ],
+  "version": {
+    "label": "Community-maintained (see repository)",
+    "date": null,
+    "status": "published"
+  },
+  "maturity": "emerging",
+  "license": {
+    "name": "See repository",
+    "access": "unknown",
+    "url": "https://github.com/tibonto/dr"
+  },
+  "links": {
+    "official": "https://ifx-dr.github.io/DigitalReference/",
+    "repository": "https://github.com/tibonto/dr"
+  },
+  "formats": [
+    "OWL",
+    "RDF/Turtle"
+  ],
+  "industries": [
+    "high-tech"
+  ],
+  "useCases": [
+    "semiconductors"
+  ],
+  "brandRelevance": [
+    {
+      "brand": "delmia",
+      "strength": "high",
+      "rationale": "Semiconductor supply-chain planning."
+    },
+    {
+      "brand": "netvibes",
+      "strength": "medium",
+      "rationale": "Supply-chain intelligence."
+    }
+  ],
+  "verification": {
+    "checkedOn": "2026-10-15",
+    "status": "partially-verified",
+    "sources": [
+      {
+        "url": "https://ifx-dr.github.io/DigitalReference/",
+        "title": "Digital Reference site"
+      },
+      {
+        "url": "https://www.informs-sim.org/wsc25papers/con142.pdf",
+        "title": "Winter Simulation Conference 2025 paper using DR"
+      }
+    ],
+    "notes": "Confirm the licence in the repository before reuse."
+  },
+  "origin": "v2"
+}

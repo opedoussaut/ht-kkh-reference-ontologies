@@ -1,0 +1,66 @@
+{
+  "publicEvidence": [],
+  "id": "ifcowl",
+  "name": "ifcOWL",
+  "fullName": "ifcOWL — OWL representation of IFC",
+  "publisher": "buildingSMART International",
+  "publisherType": "standards-body",
+  "summary": "Direct OWL translation of the IFC EXPRESS schema (ISO 16739). buildingSMART now points semantic-web users to bSDD for most uses.",
+  "kind": "ontology",
+  "layer": "domain",
+  "topics": [
+    "BIM",
+    "IFC",
+    "buildings",
+    "infrastructure"
+  ],
+  "version": {
+    "label": "ifcOWL for IFC4 ADD2",
+    "date": "2019-02",
+    "status": "published"
+  },
+  "maturity": "legacy",
+  "license": {
+    "name": "CC BY 3.0",
+    "access": "open",
+    "url": "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2/OWL/index.html"
+  },
+  "links": {
+    "official": "https://technical.buildingsmart.org/standards/ifc/ifc-formats/ifcowl/",
+    "specification": "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2/OWL/index.html"
+  },
+  "formats": [
+    "OWL",
+    "RDF/Turtle",
+    "JSON-LD"
+  ],
+  "industries": [
+    "infrastructure-cities"
+  ],
+  "useCases": [
+    "ai-factories"
+  ],
+  "brandRelevance": [
+    {
+      "brand": "catia",
+      "strength": "medium",
+      "rationale": "AEC design data interoperability."
+    }
+  ],
+  "verification": {
+    "checkedOn": "2026-10-15",
+    "status": "verified",
+    "sources": [
+      {
+        "url": "https://technical.buildingsmart.org/standards/ifc/ifc-formats/ifcowl/",
+        "title": "buildingSMART — What is ifcOWL?"
+      },
+      {
+        "url": "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2/OWL/index.html",
+        "title": "ifcOWL IFC4 ADD2"
+      }
+    ],
+    "notes": "The ifcOWL authors advise against production use; consider bSDD."
+  },
+  "origin": "v2"
+}

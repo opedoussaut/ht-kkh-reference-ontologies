@@ -1,0 +1,115 @@
+{
+  "id": "gs1-webvoc",
+  "name": "GS1 WebVoc",
+  "fullName": "GS1 Web Vocabulary",
+  "summary": "GS1 web vocabulary for product, organization, and identification semantics.",
+  "publisher": "GS1",
+  "publisherType": "standards-body",
+  "kind": "vocabulary",
+  "layer": "domain",
+  "topics": [
+    "product identification",
+    "GTIN",
+    "product master data",
+    "digital product passport"
+  ],
+  "version": {
+    "label": "Release 1.13.0 (latest immutable release seen)",
+    "date": "2025-01-13",
+    "status": "published"
+  },
+  "maturity": "standard",
+  "license": {
+    "name": "Apache-2.0 (per GS1 WebVoc repository)",
+    "access": "open",
+    "url": "https://github.com/gs1/WebVoc"
+  },
+  "links": {
+    "official": "https://ref.gs1.org/voc/",
+    "repository": "https://github.com/gs1/WebVoc",
+    "namespace": "https://gs1.org/voc/"
+  },
+  "formats": [
+    "JSON-LD",
+    "RDF/Turtle"
+  ],
+  "industries": [
+    "high-tech",
+    "consumer-goods",
+    "life-sciences"
+  ],
+  "useCases": [
+    "ai-factories",
+    "semiconductors",
+    "personal-electronics",
+    "general-purpose-robotics",
+    "sustainability"
+  ],
+  "brandRelevance": [
+    {
+      "brand": "enovia",
+      "strength": "medium",
+      "rationale": "Product identification across the lifecycle."
+    },
+    {
+      "brand": "3dexcite",
+      "strength": "medium",
+      "rationale": "Rich product data for commerce experiences."
+    },
+    {
+      "brand": "delmia",
+      "strength": "medium",
+      "rationale": "Supply-chain identification and traceability."
+    }
+  ],
+  "publicEvidence": [],
+  "verification": {
+    "checkedOn": "2026-10-15",
+    "status": "verified",
+    "sources": [
+      {
+        "url": "https://ref.gs1.org/voc/",
+        "title": "GS1 Web Vocabulary"
+      },
+      {
+        "url": "https://ref.gs1.org/voc/data/archive",
+        "title": "GS1 Web Vocabulary archive"
+      },
+      {
+        "url": "https://github.com/gs1/WebVoc",
+        "title": "GS1 WebVoc on GitHub"
+      }
+    ],
+    "notes": "v1 marked this as \"licensed\"; the vocabulary is published under Apache 2.0."
+  },
+  "corrections": [
+    {
+      "field": "usageStatus",
+      "from": "licensed",
+      "to": "open",
+      "reason": "The GS1 Web Vocabulary is published under Apache 2.0.",
+      "source": "https://github.com/gs1/WebVoc"
+    }
+  ],
+  "origin": "v1",
+  "legacy": {
+    "name": "GS1 WebVoc",
+    "category": "High-Tech",
+    "publisher": "GS1",
+    "official": "https://www.gs1.org/voc/",
+    "endObjects": [
+      "AI Factories",
+      "Semiconductors",
+      "Personal Electronics",
+      "General Purpose Robotics"
+    ],
+    "imds": [
+      "Cross-domain semantics"
+    ],
+    "description": "GS1 web vocabulary for product, organization, and identification semantics.",
+    "parentOntology": "High-Tech (Core Ontology)",
+    "stabilityStatus": "stable",
+    "usageStatus": "licensed",
+    "hasInternalWikiLink": true
+  }
+}

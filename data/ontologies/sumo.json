@@ -1,0 +1,89 @@
+{
+  "id": "sumo",
+  "name": "SUMO",
+  "fullName": "Suggested Upper Merged Ontology",
+  "summary": "Suggested Upper Merged Ontology for broad upper-level semantic grounding.",
+  "publisher": "IEEE / Teknowledge",
+  "publisherType": "research",
+  "kind": "ontology",
+  "layer": "upper",
+  "topics": [
+    "upper ontology",
+    "common-sense knowledge",
+    "formal logic"
+  ],
+  "version": {
+    "label": "Continuously maintained (ontologyportal/sumo)",
+    "date": null,
+    "status": "published"
+  },
+  "maturity": "stable",
+  "license": {
+    "name": "Free under the IEEE licence in the source files; extensions under GNU GPL",
+    "access": "open-with-terms",
+    "url": "https://www.ontologyportal.org/"
+  },
+  "links": {
+    "official": "https://www.ontologyportal.org/",
+    "repository": "https://github.com/ontologyportal/sumo"
+  },
+  "formats": [
+    "SUO-KIF",
+    "OWL (translation)",
+    "TPTP"
+  ],
+  "industries": [
+    "high-tech",
+    "cross-industry"
+  ],
+  "useCases": [
+    "ai-factories",
+    "semiconductors",
+    "personal-electronics",
+    "general-purpose-robotics"
+  ],
+  "brandRelevance": [
+    {
+      "brand": "netvibes",
+      "strength": "medium",
+      "rationale": "Upper-level grounding for semantic reasoning."
+    }
+  ],
+  "publicEvidence": [],
+  "verification": {
+    "checkedOn": "2026-10-15",
+    "status": "verified",
+    "sources": [
+      {
+        "url": "https://www.ontologyportal.org/",
+        "title": "SUMO — ontologyportal.org"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ontologyportal/sumo/master/Merge.kif",
+        "title": "Merge.kif licence header"
+      }
+    ],
+    "notes": "Originally developed by Teknowledge within the IEEE Standard Upper Ontology working group; now maintained by Adam Pease and contributors."
+  },
+  "origin": "v1",
+  "legacy": {
+    "name": "SUMO",
+    "category": "High-Tech",
+    "publisher": "IEEE / Teknowledge",
+    "official": "https://www.ontologyportal.org/",
+    "endObjects": [
+      "AI Factories",
+      "Semiconductors",
+      "Personal Electronics",
+      "General Purpose Robotics"
+    ],
+    "imds": [
+      "Cross-domain semantics"
+    ],
+    "description": "Suggested Upper Merged Ontology for broad upper-level semantic grounding.",
+    "parentOntology": "High-Tech (Core Ontology)",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "hasInternalWikiLink": true
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "id": "ieee-rtr",
+  "name": "Robot Task Representation",
+  "fullName": "IEEE 1872.1 Robot Task Representation",
+  "summary": "Ontology for describing robot tasks, actions, parameters, and execution context.",
+  "publisher": "IEEE Robotics and Automation Society",
+  "publisherType": "standards-body",
+  "kind": "ontology",
+  "layer": "domain",
+  "topics": [
+    "tasks",
+    "planning",
+    "hierarchical task knowledge"
+  ],
+  "standardRef": "IEEE 1872.1-2024",
+  "version": {
+    "label": "IEEE 1872.1-2024 (published 2024-06-18)",
+    "date": "2024-06-18",
+    "status": "published"
+  },
+  "maturity": "standard",
+  "license": {
+    "name": "IEEE standard (purchase required for the full text)",
+    "access": "licensed",
+    "url": "https://standards.ieee.org/ieee/1872.1/6993/"
+  },
+  "links": {
+    "official": "https://standards.ieee.org/ieee/1872.1/6993/"
+  },
+  "formats": [
+    "OWL"
+  ],
+  "industries": [
+    "high-tech",
+    "industrial-equipment"
+  ],
+  "useCases": [
+    "general-purpose-robotics"
+  ],
+  "brandRelevance": [
+    {
+      "brand": "catia",
+      "strength": "high",
+      "rationale": "Robot product and systems architecture could reuse a standard robot vocabulary."
+    },
+    {
+      "brand": "delmia",
+      "strength": "high",
+      "rationale": "Robot programming and cell simulation work with robot parts, poses and tasks."
+    },
+    {
+      "brand": "simulia",
+      "strength": "medium",
+      "rationale": "Multibody and control simulation could bind models to standard robot concepts."
+    }
+  ],
+  "publicEvidence": [],
+  "verification": {
+    "checkedOn": "2026-10-15",
+    "status": "verified",
+    "sources": [
+      {
+        "url": "https://standards.ieee.org/ieee/1872.1/6993/",
+        "title": "IEEE 1872.1-2024"
+      }
+    ],
+    "notes": "Implementation guide P1872.1.1 is in development."
+  },
+  "corrections": [
+    {
+      "field": "stabilityStatus",
+      "from": "not stable",
+      "to": "standard",
+      "reason": "Published IEEE standard (approved 2024-02-15).",
+      "source": "https://standards.ieee.org/ieee/1872.1/6993/"
+    },
+    {
+      "field": "publisher",
+      "from": "Research / Community",
+      "to": "IEEE Robotics and Automation Society",
+      "reason": "Standard sponsor.",
+      "source": "https://standards.ieee.org/ieee/1872.1/6993/"
+    }
+  ],
+  "origin": "v1",
+  "legacy": {
+    "name": "Robot Task Representation",
+    "category": "General Purpose Robotics",
+    "publisher": "Research / Community",
+    "official": "",
+    "endObjects": [
+      "General Purpose Robotics"
+    ],
+    "imds": [
+      "Humanoid Robots",
+      "Robot AI Control",
+      "Robot MBSE Simulation"
+    ],
+    "description": "Ontology for describing robot tasks, actions, parameters, and execution context.",
+    "parentOntology": "General Purpose Robotics (End-Object Ontology)",
+    "stabilityStatus": "not stable",
+    "usageStatus": "restricted",
+    "hasInternalWikiLink": true
+  }
+}

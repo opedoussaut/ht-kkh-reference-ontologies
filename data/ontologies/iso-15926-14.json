@@ -1,0 +1,66 @@
+{
+  "publicEvidence": [],
+  "id": "iso-15926-14",
+  "name": "ISO 15926-14",
+  "fullName": "ISO 15926-14 — OWL 2 ontology for process-plant lifecycle data",
+  "publisher": "ISO TC 184/SC 4",
+  "publisherType": "standards-body",
+  "summary": "OWL 2 implementation of the ISO 15926-2 data model for integrating lifecycle data of process plants, including oil and gas facilities.",
+  "kind": "ontology",
+  "layer": "domain",
+  "topics": [
+    "process plants",
+    "oil and gas",
+    "asset lifecycle"
+  ],
+  "standardRef": "ISO/TS 15926-14",
+  "version": {
+    "label": "ISO/TS 15926-14",
+    "date": null,
+    "status": "published"
+  },
+  "maturity": "standard",
+  "license": {
+    "name": "ISO standard (purchase required)",
+    "access": "licensed",
+    "url": "https://15926.org/"
+  },
+  "links": {
+    "official": "https://15926.org/"
+  },
+  "formats": [
+    "OWL 2"
+  ],
+  "industries": [
+    "energy-materials"
+  ],
+  "useCases": [],
+  "brandRelevance": [
+    {
+      "brand": "enovia",
+      "strength": "medium",
+      "rationale": "Plant asset lifecycle information handover."
+    },
+    {
+      "brand": "delmia",
+      "strength": "medium",
+      "rationale": "Plant operations and maintenance."
+    }
+  ],
+  "verification": {
+    "checkedOn": "2026-10-15",
+    "status": "partially-verified",
+    "sources": [
+      {
+        "url": "https://knowledge.bsigroup.com/products/industrial-automation-systems-and-integration-integration-of-life-cycle-data-for-process-plants-including-oil-and-gas-production-facilities-implementation-methods-for-the-integration-of-distributed-systems-web-ontology-language-owl-1",
+        "title": "BSI listing for ISO 15926-14"
+      },
+      {
+        "url": "https://15926.org/",
+        "title": "15926.org"
+      }
+    ],
+    "notes": "Confirm the publication year in the ISO catalogue."
+  },
+  "origin": "v2"
+}

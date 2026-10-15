@@ -1,0 +1,90 @@
+{
+  "id": "ssn",
+  "name": "SSN",
+  "fullName": "Semantic Sensor Network Ontology",
+  "summary": "Semantic Sensor Network ontology for sensors, observations, and systems.",
+  "publisher": "W3C/OGC",
+  "publisherType": "standards-body",
+  "kind": "ontology",
+  "layer": "cross-domain",
+  "topics": [
+    "sensors",
+    "systems",
+    "deployments",
+    "capabilities"
+  ],
+  "version": {
+    "label": "W3C Recommendation / OGC 16-079",
+    "date": "2017-10-19",
+    "status": "published"
+  },
+  "maturity": "standard",
+  "license": {
+    "name": "W3C Document License",
+    "access": "open",
+    "url": "https://www.w3.org/copyright/document-license/"
+  },
+  "links": {
+    "official": "https://www.w3.org/TR/vocab-ssn/",
+    "namespace": "http://www.w3.org/ns/ssn/"
+  },
+  "formats": [
+    "OWL",
+    "RDF/Turtle"
+  ],
+  "industries": [
+    "high-tech",
+    "cross-industry"
+  ],
+  "useCases": [
+    "ai-factories",
+    "semiconductors",
+    "personal-electronics",
+    "general-purpose-robotics"
+  ],
+  "brandRelevance": [
+    {
+      "brand": "simulia",
+      "strength": "medium",
+      "rationale": "System capabilities and operating ranges of sensing systems."
+    },
+    {
+      "brand": "delmia",
+      "strength": "medium",
+      "rationale": "Sensor deployments in operations."
+    }
+  ],
+  "publicEvidence": [],
+  "verification": {
+    "checkedOn": "2026-10-15",
+    "status": "verified",
+    "sources": [
+      {
+        "url": "https://www.w3.org/TR/vocab-ssn/",
+        "title": "W3C Semantic Sensor Network Ontology"
+      }
+    ],
+    "notes": ""
+  },
+  "origin": "v1",
+  "legacy": {
+    "name": "SSN",
+    "category": "High-Tech",
+    "publisher": "W3C/OGC",
+    "official": "https://www.w3.org/TR/vocab-ssn/",
+    "endObjects": [
+      "AI Factories",
+      "Semiconductors",
+      "Personal Electronics",
+      "General Purpose Robotics"
+    ],
+    "imds": [
+      "Cross-domain semantics"
+    ],
+    "description": "Semantic Sensor Network ontology for sensors, observations, and systems.",
+    "parentOntology": "High-Tech (Core Ontology)",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "hasInternalWikiLink": true
+  }
+}

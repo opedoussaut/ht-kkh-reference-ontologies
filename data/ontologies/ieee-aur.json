@@ -1,0 +1,105 @@
+{
+  "id": "ieee-aur",
+  "name": "Autonomous Robotics (AuR)",
+  "fullName": "IEEE 1872.2 Autonomous Robotics (AuR) Ontology",
+  "summary": "Ontology focused on autonomous robotics concepts, capabilities, and behavior.",
+  "publisher": "IEEE Robotics and Automation Society",
+  "publisherType": "standards-body",
+  "kind": "ontology",
+  "layer": "domain",
+  "topics": [
+    "autonomy",
+    "autonomous robots",
+    "design patterns"
+  ],
+  "standardRef": "IEEE 1872.2-2021",
+  "version": {
+    "label": "IEEE 1872.2-2021 (published 2022-05-12)",
+    "date": "2022-05-12",
+    "status": "published"
+  },
+  "maturity": "standard",
+  "license": {
+    "name": "IEEE standard (purchase); ontology listed under the IEEE SA Open Source programme (BSD-3-Clause)",
+    "access": "open-with-terms",
+    "url": "https://standards.ieee.org/ieee/1872.2/7094/"
+  },
+  "links": {
+    "official": "https://standards.ieee.org/ieee/1872.2/7094/"
+  },
+  "formats": [
+    "OWL"
+  ],
+  "industries": [
+    "high-tech",
+    "industrial-equipment"
+  ],
+  "useCases": [
+    "general-purpose-robotics"
+  ],
+  "brandRelevance": [
+    {
+      "brand": "catia",
+      "strength": "high",
+      "rationale": "Robot product and systems architecture could reuse a standard robot vocabulary."
+    },
+    {
+      "brand": "delmia",
+      "strength": "high",
+      "rationale": "Robot programming and cell simulation work with robot parts, poses and tasks."
+    },
+    {
+      "brand": "simulia",
+      "strength": "medium",
+      "rationale": "Multibody and control simulation could bind models to standard robot concepts."
+    }
+  ],
+  "publicEvidence": [],
+  "verification": {
+    "checkedOn": "2026-10-15",
+    "status": "verified",
+    "sources": [
+      {
+        "url": "https://standards.ieee.org/ieee/1872.2/7094/",
+        "title": "IEEE 1872.2-2021"
+      }
+    ],
+    "notes": ""
+  },
+  "corrections": [
+    {
+      "field": "stabilityStatus",
+      "from": "not stable",
+      "to": "standard",
+      "reason": "Published IEEE standard (board approval 2021-09-23).",
+      "source": "https://standards.ieee.org/ieee/1872.2/7094/"
+    },
+    {
+      "field": "publisher",
+      "from": "Research / Community",
+      "to": "IEEE Robotics and Automation Society",
+      "reason": "Sponsored by the IEEE RAS Standing Committee for Standards.",
+      "source": "https://standards.ieee.org/ieee/1872.2/7094/"
+    }
+  ],
+  "origin": "v1",
+  "legacy": {
+    "name": "Autonomous Robotics (AuR)",
+    "category": "General Purpose Robotics",
+    "publisher": "Research / Community",
+    "official": "",
+    "endObjects": [
+      "General Purpose Robotics"
+    ],
+    "imds": [
+      "Humanoid Robots",
+      "Robot AI Control",
+      "Robot MBSE Simulation"
+    ],
+    "description": "Ontology focused on autonomous robotics concepts, capabilities, and behavior.",
+    "parentOntology": "General Purpose Robotics (End-Object Ontology)",
+    "stabilityStatus": "not stable",
+    "usageStatus": "restricted",
+    "hasInternalWikiLink": true
+  }
+}

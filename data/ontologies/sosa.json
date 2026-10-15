@@ -1,0 +1,95 @@
+{
+  "id": "sosa",
+  "name": "SOSA",
+  "fullName": "Sensor, Observation, Sample, and Actuator (SOSA)",
+  "summary": "Lightweight core for sensors, observations, samples, and actuators.",
+  "publisher": "W3C/OGC",
+  "publisherType": "standards-body",
+  "kind": "ontology",
+  "layer": "cross-domain",
+  "topics": [
+    "sensors",
+    "observations",
+    "actuation",
+    "sampling"
+  ],
+  "version": {
+    "label": "W3C Recommendation / OGC 16-079",
+    "date": "2017-10-19",
+    "status": "published"
+  },
+  "maturity": "standard",
+  "license": {
+    "name": "W3C Document License",
+    "access": "open",
+    "url": "https://www.w3.org/copyright/document-license/"
+  },
+  "links": {
+    "official": "https://www.w3.org/TR/vocab-ssn/",
+    "namespace": "http://www.w3.org/ns/sosa/"
+  },
+  "formats": [
+    "OWL",
+    "RDF/Turtle"
+  ],
+  "industries": [
+    "high-tech",
+    "cross-industry"
+  ],
+  "useCases": [
+    "ai-factories",
+    "semiconductors",
+    "personal-electronics",
+    "general-purpose-robotics"
+  ],
+  "brandRelevance": [
+    {
+      "brand": "simulia",
+      "strength": "medium",
+      "rationale": "Linking physical test and sensor data with virtual models."
+    },
+    {
+      "brand": "delmia",
+      "strength": "medium",
+      "rationale": "Shop-floor sensing and operations data."
+    },
+    {
+      "brand": "netvibes",
+      "strength": "medium",
+      "rationale": "IoT data in knowledge graphs."
+    }
+  ],
+  "publicEvidence": [],
+  "verification": {
+    "checkedOn": "2026-10-15",
+    "status": "verified",
+    "sources": [
+      {
+        "url": "https://www.w3.org/TR/vocab-ssn/",
+        "title": "W3C Semantic Sensor Network Ontology"
+      }
+    ],
+    "notes": ""
+  },
+  "origin": "v1",
+  "legacy": {
+    "name": "SOSA",
+    "category": "High-Tech",
+    "publisher": "W3C/OGC",
+    "official": "https://www.w3.org/TR/vocab-ssn/",
+    "endObjects": [
+      "AI Factories",
+      "Semiconductors",
+      "Personal Electronics",
+      "General Purpose Robotics"
+    ],
+    "imds": [
+      "Cross-domain semantics"
+    ],
+    "description": "Lightweight core for sensors, observations, samples, and actuators.",
+    "parentOntology": "High-Tech (Core Ontology)",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "hasInternalWikiLink": true
+  }
+}

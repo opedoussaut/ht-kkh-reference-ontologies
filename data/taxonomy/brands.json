@@ -1,0 +1,14 @@
+{
+  "_note": "Brand descriptions are short, public, editorial summaries. Relevance mappings in ontology records are POTENTIAL unless backed by a public evidence entry.",
+  "items": [
+    { "id": "catia", "name": "CATIA", "focus": "Product design, systems engineering and MBSE" },
+    { "id": "simulia", "name": "SIMULIA", "focus": "Multiphysics simulation and virtual testing" },
+    { "id": "enovia", "name": "ENOVIA", "focus": "Collaborative product lifecycle and configuration management" },
+    { "id": "delmia", "name": "DELMIA", "focus": "Manufacturing, operations and supply chain" },
+    { "id": "netvibes", "name": "NETVIBES", "focus": "Information intelligence, knowledge graphs and data science" },
+    { "id": "biovia", "name": "BIOVIA", "focus": "Scientific informatics, chemistry and materials modelling" },
+    { "id": "geovia", "name": "GEOVIA", "focus": "Geospatial and natural-resource modelling" },
+    { "id": "3dexcite", "name": "3DEXCITE", "focus": "3D product experiences for marketing and sales" },
+    { "id": "solidworks", "name": "SOLIDWORKS", "focus": "3D design and engineering for product development teams" }
+  ]
+}

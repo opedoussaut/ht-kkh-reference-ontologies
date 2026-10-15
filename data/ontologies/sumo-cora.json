@@ -1,0 +1,89 @@
+{
+  "id": "sumo-cora",
+  "name": "SUMO-CORA",
+  "fullName": "SUMO–CORA alignment (IEEE 1872-2015)",
+  "summary": "Alignment layer between SUMO and CORA for robotics semantics.",
+  "publisher": "IEEE Robotics and Automation Society",
+  "publisherType": "standards-body",
+  "kind": "ontology",
+  "layer": "upper",
+  "topics": [
+    "alignment",
+    "upper ontology",
+    "robotics"
+  ],
+  "standardRef": "IEEE 1872-2015",
+  "version": {
+    "label": "IEEE 1872-2015 (revision P1872 in progress)",
+    "date": "2015",
+    "status": "published"
+  },
+  "maturity": "standard",
+  "license": {
+    "name": "IEEE standard (purchase required for the full text)",
+    "access": "licensed",
+    "url": "https://standards.ieee.org/standard/1872-2015.html"
+  },
+  "links": {
+    "official": "https://standards.ieee.org/standard/1872-2015.html"
+  },
+  "formats": [
+    "SUO-KIF",
+    "OWL (community conversion)"
+  ],
+  "industries": [
+    "high-tech",
+    "industrial-equipment"
+  ],
+  "useCases": [
+    "general-purpose-robotics"
+  ],
+  "brandRelevance": [
+    {
+      "brand": "netvibes",
+      "strength": "medium",
+      "rationale": "Formal grounding for reasoning over robotics knowledge."
+    }
+  ],
+  "publicEvidence": [],
+  "verification": {
+    "checkedOn": "2026-10-15",
+    "status": "partially-verified",
+    "sources": [
+      {
+        "url": "https://standards.ieee.org/standard/1872-2015.html",
+        "title": "IEEE 1872-2015 Standard Ontologies for Robotics and Automation"
+      }
+    ],
+    "notes": "IEEE 1872-2015 grounds CORA in SUMO. Confirm whether \"SUMO-CORA\" is published as a separate artefact."
+  },
+  "corrections": [
+    {
+      "field": "publisher",
+      "from": "Research / Community",
+      "to": "IEEE Robotics and Automation Society",
+      "reason": "Alignment is part of the IEEE 1872-2015 axiomatisation.",
+      "source": "https://standards.ieee.org/standard/1872-2015.html"
+    }
+  ],
+  "origin": "v1",
+  "legacy": {
+    "name": "SUMO-CORA",
+    "category": "General Purpose Robotics",
+    "publisher": "Research / Community",
+    "official": "",
+    "endObjects": [
+      "General Purpose Robotics"
+    ],
+    "imds": [
+      "Humanoid Robots",
+      "Robot AI Control",
+      "Robot MBSE Simulation"
+    ],
+    "description": "Alignment layer between SUMO and CORA for robotics semantics.",
+    "parentOntology": "General Purpose Robotics (End-Object Ontology)",
+    "stabilityStatus": "not stable",
+    "usageStatus": "restricted",
+    "hasInternalWikiLink": true
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "publicEvidence": [],
+  "id": "iof-core",
+  "name": "IOF Core",
+  "fullName": "Industrial Ontologies Foundry — Core Ontology",
+  "publisher": "OAGi Industrial Ontologies Foundry",
+  "publisherType": "consortium",
+  "summary": "Mid-level industrial ontology grounded in BFO 2020. Shared foundation for IOF domain ontologies such as maintenance, supply chain, production planning and product-service systems.",
+  "kind": "ontology",
+  "layer": "mid-level",
+  "topics": [
+    "manufacturing",
+    "maintenance",
+    "supply chain",
+    "product lifecycle"
+  ],
+  "version": {
+    "label": "IOF release 202603 (Core first released in 202401)",
+    "date": "2026-03",
+    "status": "published"
+  },
+  "maturity": "stable",
+  "license": {
+    "name": "MIT",
+    "access": "open",
+    "url": "https://spec.industrialontologies.org/"
+  },
+  "links": {
+    "official": "https://spec.industrialontologies.org/",
+    "specification": "https://spec.industrialontologies.org/portal/release/202603/core.html"
+  },
+  "formats": [
+    "OWL",
+    "RDF/Turtle"
+  ],
+  "industries": [
+    "industrial-equipment",
+    "aerospace-defense",
+    "transportation-mobility",
+    "life-sciences"
+  ],
+  "useCases": [
+    "semiconductors",
+    "general-purpose-robotics"
+  ],
+  "brandRelevance": [
+    {
+      "brand": "delmia",
+      "strength": "high",
+      "rationale": "Production planning, maintenance and supply-chain semantics."
+    },
+    {
+      "brand": "enovia",
+      "strength": "high",
+      "rationale": "Product lifecycle concepts with formal grounding."
+    },
+    {
+      "brand": "catia",
+      "strength": "medium",
+      "rationale": "Design artefacts and requirements."
+    }
+  ],
+  "verification": {
+    "checkedOn": "2026-10-15",
+    "status": "verified",
+    "sources": [
+      {
+        "url": "https://spec.industrialontologies.org/portal/release/202603/core.html",
+        "title": "IOF Core, release 202603"
+      },
+      {
+        "url": "https://spec.industrialontologies.org/portal/release/202401/core/CoreOntology.html",
+        "title": "IOF Core, release 202401"
+      }
+    ],
+    "notes": ""
+  },
+  "origin": "v2"
+}
