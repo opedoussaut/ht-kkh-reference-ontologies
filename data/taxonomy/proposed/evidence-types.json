@@ -1,0 +1,16 @@
+{
+  "_status": "proposed",
+  "_version": "0.1.0",
+  "_note": "Phase 2 draft. Type of a source or claim. A working link is not evidence of accuracy, maintenance, interoperability or industrial suitability.",
+  "items": [
+    { "id": "official-documentation", "label": "Official publisher documentation", "summary": "Pages, repositories or documents published by the resource's own publisher or maintainer." },
+    { "id": "published-specification", "label": "Published standard or specification", "summary": "A formally published standard or specification (catalogue entry or text)." },
+    { "id": "peer-reviewed", "label": "Peer-reviewed research", "summary": "Article or paper published after peer review." },
+    { "id": "project-documentation", "label": "Public project documentation", "summary": "Public outputs of a research or industrial project (for example CORDIS pages or deliverables)." },
+    { "id": "independent-verification", "label": "Independent verification", "summary": "A third party that has independently tested or reviewed the claim." },
+    { "id": "vendor-reported", "label": "Vendor-reported claim", "summary": "A claim made by a company about its own product or results, without independent replication." },
+    { "id": "third-party", "label": "Other third-party source", "summary": "Secondary sources such as registries, reseller pages or news. Used only as supporting context." },
+    { "id": "editorial", "label": "Editorial interpretation", "summary": "Statements written by atlas editors. Attributable and reviewable, but not a fact from a source." },
+    { "id": "unclassified", "label": "Not yet classified", "summary": "Migration placeholder for sources whose type has not been reviewed." }
+  ]
+}

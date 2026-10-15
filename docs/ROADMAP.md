@@ -31,6 +31,9 @@ merged.
   and the IOF Maintenance and Supply Chain modules.
 
 ### Phase 2 — Additional knowledge and technology assets
+
+> Detailed architecture: [PHASE2-ARCHITECTURE.md](PHASE2-ARCHITECTURE.md) (supersedes the outline below).
+
 Goal: describe resources beyond ontologies without mixing them up.
 
 **Proposed data-model change (substantial, so the migration comes first):**
