@@ -37,8 +37,8 @@
   ],
   "industries": [
     "high-tech",
-    "infrastructure-cities",
-    "energy-materials"
+    "infrastructure-energy-materials",
+    "architecture-engineering-construction"
   ],
   "useCases": [
     "ai-factories"

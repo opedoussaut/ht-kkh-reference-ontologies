@@ -36,7 +36,9 @@
     "RDF/Turtle"
   ],
   "industries": [
-    "consumer-goods",
+    "home-lifestyle",
+    "consumer-packaged-goods-retail",
+    "business-services",
     "cross-industry"
   ],
   "useCases": [

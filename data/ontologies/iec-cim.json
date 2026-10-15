@@ -33,7 +33,8 @@
     "RDF/XML (IEC 61970-501, CGMES)"
   ],
   "industries": [
-    "energy-materials"
+    "infrastructure-energy-materials",
+    "cities-public-services"
   ],
   "useCases": [
     "ai-factories",

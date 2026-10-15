@@ -34,10 +34,10 @@
     "RDF/Turtle"
   ],
   "industries": [
-    "energy-materials",
-    "high-tech",
     "transportation-mobility",
-    "life-sciences"
+    "high-tech",
+    "life-sciences-healthcare",
+    "infrastructure-energy-materials"
   ],
   "useCases": [
     "semiconductors",

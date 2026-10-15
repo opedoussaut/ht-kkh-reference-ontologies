@@ -34,7 +34,9 @@
   ],
   "industries": [
     "high-tech",
-    "consumer-goods"
+    "home-lifestyle",
+    "consumer-packaged-goods-retail",
+    "business-services"
   ],
   "useCases": [
     "ai-factories",

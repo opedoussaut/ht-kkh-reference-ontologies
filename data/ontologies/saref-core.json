@@ -35,10 +35,11 @@
     "RDF/Turtle"
   ],
   "industries": [
+    "industrial-equipment",
     "high-tech",
-    "infrastructure-cities",
-    "energy-materials",
-    "industrial-equipment"
+    "home-lifestyle",
+    "infrastructure-energy-materials",
+    "architecture-engineering-construction"
   ],
   "useCases": [
     "ai-factories",

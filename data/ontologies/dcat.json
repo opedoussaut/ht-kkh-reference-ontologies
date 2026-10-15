@@ -32,6 +32,8 @@
     "RDF/Turtle"
   ],
   "industries": [
+    "business-services",
+    "cities-public-services",
     "cross-industry"
   ],
   "useCases": [

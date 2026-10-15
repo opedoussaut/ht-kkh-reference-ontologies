@@ -1,6 +1,7 @@
 import { html, raw, esc, safeUrl } from './lib/html.js';
 import { buildIndex, query, facetCounts, FACETS, stateFromParams, paramsFromState, search } from './lib/search.js';
 import { buildGraph, renderGraph } from './lib/graph.js';
+import { icon } from './lib/icons.js';
 
 const REPO = 'https://github.com/opedoussaut/ht-kkh-reference-ontologies';
 
@@ -73,6 +74,16 @@ function emptyState(msg, action = '') {
   return html`<div class="empty"><p>${msg}</p>${action}</div>`;
 }
 
+function industryTiles(items) {
+  return html`<div class="ind-grid">${items.map((i) => {
+    const n = state.data.ontologies.filter((o) => o.industries.includes(i.id)).length;
+    return html`<a class="ind-tile${i.horizontal ? ' ind-horizontal' : ''}" href="#/industries/${i.id}" title="${i.summary}">
+      ${raw(icon(i.icon))}<span class="ind-name">${i.name}</span><span class="ind-n">${n} ontologies</span></a>`;
+  })}</div>`;
+}
+const sectorIndustries = () => state.data.industries.filter((i) => !i.horizontal);
+const horizontalIndustries = () => state.data.industries.filter((i) => i.horizontal);
+
 // ---------- views ----------
 function viewHome() {
   setTitle('');
@@ -82,7 +93,7 @@ function viewHome() {
     [d.ontologies.length, 'reference ontologies'],
     [verified, 'fully verified records'],
     [d.relations.length, 'evidence-backed relationships'],
-    [d.industries.length - 1, 'industries'],
+    [sectorIndustries().length, 'industries'],
   ];
   return html`
   <section class="hero">
@@ -113,12 +124,7 @@ function viewHome() {
 
   <section class="section">
     <div class="section-head"><h2>Explore by industry</h2>${link('#/industries', 'All industries →', 'more')}</div>
-    <div class="tile-grid">
-      ${d.industries.map((i) => {
-        const n = d.ontologies.filter((o) => o.industries.includes(i.id)).length;
-        return html`<a class="tile" href="#/industries/${i.id}"><span class="tile-n">${n}</span><span class="tile-t">${i.name}</span><span class="tile-s">${i.summary}</span></a>`;
-      })}
-    </div>
+    ${industryTiles(d.industries)}
   </section>
 
   <section class="section legend">
@@ -361,12 +367,8 @@ function viewIndustries() {
   setTitle('Industries');
   return html`
   <section class="page-head"><h1>Industries</h1><p class="lead small">Cross-industry discovery: see which public ontologies serve each industry segment.</p></section>
-  <div class="tile-grid large">
-    ${state.data.industries.map((i) => {
-      const list = state.data.ontologies.filter((o) => o.industries.includes(i.id));
-      return html`<a class="tile" href="#/industries/${i.id}"><span class="tile-n">${list.length}</span><span class="tile-t">${i.name}</span><span class="tile-s">${i.summary}</span></a>`;
-    })}
-  </div>`;
+  ${industryTiles(sectorIndustries())}
+  <section class="section"><h2>Horizontal foundations</h2><p class="muted">Ontologies that apply to every industry, such as provenance, units, time and metadata.</p>${industryTiles(horizontalIndustries())}</section>`;
 }
 
 function viewIndustry(id) {
@@ -377,8 +379,10 @@ function viewIndustry(id) {
   const ucs = state.data.useCases.filter((u) => u.industries.includes(id));
   return html`
   <nav class="crumbs">${link('#/industries', 'Industries')} <span>/</span> ${i.name}</nav>
-  <section class="page-head"><h1>${i.name}</h1><p class="lead small">${i.summary}</p>
-    <div class="btn-row"><a class="btn" href="#/catalog?industry=${id}">Filter in catalogue</a></div>
+  <section class="ind-hero">
+    <div class="ind-hero-icon">${raw(icon(i.icon))}</div>
+    <div><p class="eyebrow">Industry</p><h1>${i.name}</h1><p class="lead small">${i.summary}</p>
+    <div class="btn-row"><a class="btn btn-primary" href="#/catalog?industry=${id}">Filter ${list.length} ontologies in catalogue</a></div></div>
   </section>
   ${ucs.length ? html`<section class="section"><h2>Related use cases</h2><div class="chips">${ucs.map((u) => chip(`#/use-cases/${u.id}`, u.name))}</div></section>` : ''}
   ${groupByLayer(list).map(([layer, xs]) => html`
@@ -578,19 +582,18 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// Theme: follows the OS by default; the toggle stores an explicit choice.
+// Theme: navy by default; the toggle stores an explicit light choice.
 const themeBtn = document.getElementById('theme-toggle');
 function applyTheme(t) {
   if (t) document.documentElement.setAttribute('data-theme', t);
   else document.documentElement.removeAttribute('data-theme');
 }
-try { applyTheme(localStorage.getItem('atlas-theme')); } catch { /* storage unavailable */ }
+try { applyTheme(localStorage.getItem('atlas-theme') === 'light' ? 'light' : null); } catch { /* storage unavailable */ }
 themeBtn?.addEventListener('click', () => {
-  const dark = document.documentElement.getAttribute('data-theme') === 'dark' ||
-    (!document.documentElement.getAttribute('data-theme') && matchMedia('(prefers-color-scheme: dark)').matches);
-  const next = dark ? 'light' : 'dark';
+  // Navy is the default; the toggle switches to (or back from) the light variant.
+  const next = document.documentElement.getAttribute('data-theme') === 'light' ? null : 'light';
   applyTheme(next);
-  try { localStorage.setItem('atlas-theme', next); } catch { /* storage unavailable */ }
+  try { next ? localStorage.setItem('atlas-theme', next) : localStorage.removeItem('atlas-theme'); } catch { /* storage unavailable */ }
 });
 
 const menuBtn = document.getElementById('menu-toggle');

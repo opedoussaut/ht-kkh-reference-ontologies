@@ -9,8 +9,8 @@
       "summary": "AI factories combine dense GPU compute with power distribution, liquid cooling and building systems. Getting the facility, IT equipment and energy models to share one semantic backbone makes capacity planning, energy optimisation and digital-twin operations possible.",
       "industries": [
         "high-tech",
-        "infrastructure-cities",
-        "energy-materials"
+        "architecture-engineering-construction",
+        "infrastructure-energy-materials"
       ],
       "challenges": [
         "Linking the building model (spaces, racks, cooling loops) to the IT asset model (servers, accelerators, PDUs)",
@@ -143,7 +143,7 @@
       "summary": "Semiconductor value chains span design, front-end fabrication, back-end assembly and test, and highly distributed supply chains. Public ontologies cover supply-chain semantics, product classification, materials and units; fab-equipment standards are still mostly non-semantic.",
       "industries": [
         "high-tech",
-        "energy-materials"
+        "infrastructure-energy-materials"
       ],
       "challenges": [
         "Interoperable supply-chain data (products, lots, capacities, lead times)",
@@ -202,8 +202,8 @@
       "summary": "Sustainability engineering needs consistent lifecycle data, traceable provenance and links to regulation. Ontologies help connect product structures with impact indicators, materials, energy and legal requirements such as digital product passports.",
       "industries": [
         "cross-industry",
-        "consumer-goods",
-        "energy-materials",
+        "consumer-packaged-goods-retail",
+        "infrastructure-energy-materials",
         "high-tech"
       ],
       "challenges": [
@@ -262,7 +262,8 @@
       "summary": "Smart devices combine hardware, firmware and services. Device and product-data ontologies support interoperability, commerce and compliance.",
       "industries": [
         "high-tech",
-        "consumer-goods"
+        "consumer-packaged-goods-retail",
+        "home-lifestyle"
       ],
       "challenges": [
         "Device capability descriptions across ecosystems",

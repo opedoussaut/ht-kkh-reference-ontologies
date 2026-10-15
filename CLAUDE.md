@@ -64,6 +64,7 @@ Always run `npm run build && npm test` after touching `data/`, `schema/` or `scr
 
 ## Conventions
 
+- Design: navy is the default theme (`assets/css/atlas.css` tokens); `[data-theme="light"]` is the light variant and keeps the navy nav, hero, tiles and footer. Industry icons are original line drawings in `assets/js/lib/icons.js`.
 - No framework and no bundler: native ES modules, served as-is by GitHub Pages. No runtime CDN dependencies.
 - All markup goes through `html``…``` (escapes by default) and links through `safeUrl()`.
 - Keep `assets/js/lib/*` free of DOM access except `renderGraph`, so it stays testable in Node.

@@ -33,10 +33,10 @@
     "RDF/Turtle"
   ],
   "industries": [
-    "industrial-equipment",
-    "aerospace-defense",
     "transportation-mobility",
-    "life-sciences"
+    "aerospace-defense",
+    "industrial-equipment",
+    "life-sciences-healthcare"
   ],
   "useCases": [
     "semiconductors",

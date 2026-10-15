@@ -31,7 +31,8 @@
     "OWL 2"
   ],
   "industries": [
-    "energy-materials"
+    "marine-offshore",
+    "infrastructure-energy-materials"
   ],
   "useCases": [],
   "verification": {

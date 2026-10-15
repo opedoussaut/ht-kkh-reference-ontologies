@@ -46,12 +46,12 @@ test('empty query returns everything sorted by name', () => {
 });
 
 test('filters: OR within a facet, AND across facets', () => {
-  const energy = applyFilters(data.ontologies, { industry: ['energy-materials'] });
-  const either = applyFilters(data.ontologies, { industry: ['energy-materials', 'aerospace-defense'] });
+  const energy = applyFilters(data.ontologies, { industry: ['infrastructure-energy-materials'] });
+  const either = applyFilters(data.ontologies, { industry: ['infrastructure-energy-materials', 'aerospace-defense'] });
   assert.ok(either.length >= energy.length);
-  const both = applyFilters(data.ontologies, { industry: ['energy-materials'], access: ['licensed'] });
+  const both = applyFilters(data.ontologies, { industry: ['infrastructure-energy-materials'], access: ['licensed'] });
   for (const o of both) {
-    assert.ok(o.industries.includes('energy-materials'));
+    assert.ok(o.industries.includes('infrastructure-energy-materials'));
     assert.equal(o.license.access, 'licensed');
   }
 });
@@ -59,7 +59,7 @@ test('filters: OR within a facet, AND across facets', () => {
 
 test('facet counts ignore their own facet selection', () => {
   const counts = facetCounts(data.ontologies, { industry: ['high-tech'] }, 'industry');
-  assert.ok(counts['energy-materials'] > 0, 'other industry values remain countable');
+  assert.ok(counts['infrastructure-energy-materials'] > 0, 'other industry values remain countable');
 });
 
 test('search search() returns scores sorted descending', () => {
@@ -68,7 +68,7 @@ test('search search() returns scores sorted descending', () => {
 });
 
 test('URL state round-trips', () => {
-  const s = { q: 'sensor data', sort: 'name', filters: { industry: ['high-tech', 'energy-materials'], verification: ['verified'] } };
+  const s = { q: 'sensor data', sort: 'name', filters: { industry: ['high-tech', 'infrastructure-energy-materials'], verification: ['verified'] } };
   const back = stateFromParams(paramsFromState(s));
   assert.deepEqual(back, s);
 });

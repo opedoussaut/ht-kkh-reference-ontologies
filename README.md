@@ -5,8 +5,10 @@ An evidence-based, cross-industry atlas of **public** reference ontologies and s
 **→ https://opedoussaut.github.io/ht-kkh-reference-ontologies/**
 
 - **42 ontologies.** Each record carries its publisher, version, licence, official links and cited verification sources.
-- **Cross-industry discovery**: High-Tech, Industrial Equipment, Aerospace & Defense, Transportation & Mobility,
-  Energy & Materials, Infrastructure & Cities, Life Sciences, Consumer Goods, plus cross-industry foundations.
+- **Cross-industry discovery** across 12 industries: Transportation & Mobility, Aerospace & Defense, Marine & Offshore,
+  Industrial Equipment, High-Tech, Home & Lifestyle, Consumer Packaged Goods & Retail, Life Sciences & Healthcare,
+  Infrastructure, Energy & Materials, Architecture, Engineering & Construction, Business Services, and Cities & Public
+  Services, plus horizontal cross-industry foundations.
 - **Engineering use cases**: AI Factories, General Purpose Robotics, Semiconductors, Sustainability & Circularity
   and Personal Electronics, each described as a layered reference semantic stack.
 - **Interactive graph** that draws only relationships stated by the publisher or a primary source.

@@ -35,11 +35,11 @@
     "Common Logic"
   ],
   "industries": [
-    "cross-industry",
-    "industrial-equipment",
     "aerospace-defense",
-    "life-sciences",
-    "energy-materials"
+    "industrial-equipment",
+    "life-sciences-healthcare",
+    "infrastructure-energy-materials",
+    "cross-industry"
   ],
   "useCases": [
     "semiconductors"

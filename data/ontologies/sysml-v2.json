@@ -35,8 +35,9 @@
     "XMI"
   ],
   "industries": [
-    "aerospace-defense",
     "transportation-mobility",
+    "aerospace-defense",
+    "marine-offshore",
     "industrial-equipment",
     "high-tech"
   ],

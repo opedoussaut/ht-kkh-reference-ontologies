@@ -5,9 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Reference Ontology Atlas</title>
 <meta name="description" content="An evidence-based, cross-industry atlas of public reference ontologies and semantic standards: verified versions, sources and licences, use cases and verified relationships.">
-<meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#061428">
 <meta property="og:title" content="Reference Ontology Atlas">
 <meta property="og:description" content="Public semantic standards, mapped for engineering.">
 <meta property="og:type" content="website">
@@ -15,7 +14,7 @@
 <link rel="stylesheet" href="assets/css/atlas.css">
 <script>
   // Apply a stored theme before first paint to avoid a flash.
-  try { var t = localStorage.getItem('atlas-theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  try { var t = localStorage.getItem('atlas-theme'); if (t === 'light') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
 </script>
 </head>
 <body>
@@ -35,7 +34,7 @@
     </nav>
     <div class="nav-actions">
       <a class="icon-btn" href="#/catalog" aria-label="Search (press /)" title="Search (press /)"><svg viewBox="0 0 24 24" class="icon"><path d="M10.5 3a7.5 7.5 0 0 1 5.96 12.06l4.24 4.24-1.4 1.4-4.24-4.24A7.5 7.5 0 1 1 10.5 3Zm0 2a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11Z"/></svg></a>
-      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode"><svg viewBox="0 0 24 24" class="icon"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z"/></svg></button>
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch light/navy theme" title="Switch light/navy theme"><svg viewBox="0 0 24 24" class="icon"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z"/></svg></button>
       <button class="icon-btn menu-btn" id="menu-toggle" type="button" aria-label="Menu"><svg viewBox="0 0 24 24" class="icon"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg></button>
     </div>
   </div>

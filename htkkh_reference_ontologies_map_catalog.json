@@ -47,7 +47,7 @@
   {
     "id": "bfo",
     "name": "BFO",
-    "category": "Cross-Industry",
+    "category": "Aerospace & Defense",
     "publisher": "ISO/IEC JTC 1 · BFO maintainers",
     "official": "https://basic-formal-ontology.org/",
     "endObjects": [
@@ -176,7 +176,7 @@
   {
     "id": "dcat",
     "name": "DCAT",
-    "category": "Cross-Industry",
+    "category": "Business Services",
     "publisher": "W3C",
     "official": "https://www.w3.org/TR/vocab-dcat-3/",
     "endObjects": [
@@ -311,7 +311,7 @@
   {
     "id": "emmo",
     "name": "EMMO",
-    "category": "Energy & Materials",
+    "category": "Transportation & Mobility",
     "publisher": "EMMC / EMMO community",
     "official": "https://github.com/emmo-repo/EMMO",
     "endObjects": [
@@ -404,7 +404,7 @@
   {
     "id": "iec-cim",
     "name": "IEC CIM",
-    "category": "Energy & Materials",
+    "category": "Infrastructure, Energy & Materials",
     "publisher": "IEC TC 57",
     "official": "https://webstore.iec.ch/en/publication/6215",
     "endObjects": [
@@ -428,7 +428,7 @@
   {
     "id": "ifcowl",
     "name": "ifcOWL",
-    "category": "Infrastructure & Cities",
+    "category": "Architecture, Engineering & Construction",
     "publisher": "buildingSMART International",
     "official": "https://technical.buildingsmart.org/standards/ifc/ifc-formats/ifcowl/",
     "endObjects": [
@@ -451,7 +451,7 @@
   {
     "id": "iof-core",
     "name": "IOF Core",
-    "category": "Industrial Equipment",
+    "category": "Transportation & Mobility",
     "publisher": "OAGi Industrial Ontologies Foundry",
     "official": "https://spec.industrialontologies.org/",
     "endObjects": [
@@ -475,7 +475,7 @@
   {
     "id": "iso-15926-14",
     "name": "ISO 15926-14",
-    "category": "Energy & Materials",
+    "category": "Marine & Offshore",
     "publisher": "ISO TC 184/SC 4",
     "official": "https://15926.org/",
     "endObjects": [],
@@ -495,7 +495,7 @@
   {
     "id": "oeo",
     "name": "OEO",
-    "category": "Energy & Materials",
+    "category": "Infrastructure, Energy & Materials",
     "publisher": "Open Energy Platform community",
     "official": "https://openenergyplatform.org/ontology/",
     "endObjects": [
@@ -721,7 +721,7 @@
   {
     "id": "saref4ener",
     "name": "SAREF4ENER",
-    "category": "Energy & Materials",
+    "category": "High-Tech",
     "publisher": "ETSI",
     "official": "https://saref.etsi.org/saref4ener/",
     "endObjects": [
@@ -744,7 +744,7 @@
   {
     "id": "schema-org",
     "name": "Schema.org",
-    "category": "Consumer Goods & Retail",
+    "category": "Home & Lifestyle",
     "publisher": "Schema.org community (W3C Community Group)",
     "official": "https://schema.org/",
     "endObjects": [
@@ -769,7 +769,7 @@
   {
     "id": "skos",
     "name": "SKOS",
-    "category": "Cross-Industry",
+    "category": "Business Services",
     "publisher": "W3C",
     "official": "https://www.w3.org/TR/skos-reference/",
     "endObjects": [],
@@ -835,7 +835,7 @@
   {
     "id": "step-ap242",
     "name": "STEP AP242",
-    "category": "Aerospace & Defense",
+    "category": "Transportation & Mobility",
     "publisher": "ISO TC 184/SC 4",
     "official": "https://www.iso.org/standard/84300.html",
     "endObjects": [
@@ -903,7 +903,7 @@
   {
     "id": "sysml-v2",
     "name": "SysML v2 / KerML",
-    "category": "Aerospace & Defense",
+    "category": "Transportation & Mobility",
     "publisher": "Object Management Group (OMG)",
     "official": "https://www.omg.org/sysml/",
     "endObjects": [

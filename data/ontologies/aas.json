@@ -35,10 +35,11 @@
     "RDF"
   ],
   "industries": [
-    "high-tech",
+    "transportation-mobility",
+    "marine-offshore",
     "industrial-equipment",
-    "energy-materials",
-    "transportation-mobility"
+    "high-tech",
+    "infrastructure-energy-materials"
   ],
   "useCases": [
     "ai-factories",

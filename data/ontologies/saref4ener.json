@@ -33,9 +33,10 @@
     "RDF/Turtle"
   ],
   "industries": [
-    "energy-materials",
-    "infrastructure-cities",
-    "high-tech"
+    "high-tech",
+    "infrastructure-energy-materials",
+    "architecture-engineering-construction",
+    "cities-public-services"
   ],
   "useCases": [
     "ai-factories",

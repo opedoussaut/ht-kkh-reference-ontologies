@@ -7,7 +7,7 @@
     "counts": {
       "ontologies": 42,
       "relations": 18,
-      "industries": 9,
+      "industries": 13,
       "useCases": 5,
       "legacyRecords": 26
     },
@@ -51,10 +51,11 @@
         "RDF"
       ],
       "industries": [
-        "high-tech",
+        "transportation-mobility",
+        "marine-offshore",
         "industrial-equipment",
-        "energy-materials",
-        "transportation-mobility"
+        "high-tech",
+        "infrastructure-energy-materials"
       ],
       "useCases": [
         "ai-factories",
@@ -133,8 +134,8 @@
         "OWL"
       ],
       "industries": [
-        "high-tech",
-        "industrial-equipment"
+        "industrial-equipment",
+        "high-tech"
       ],
       "useCases": [
         "general-purpose-robotics"
@@ -224,11 +225,11 @@
         "Common Logic"
       ],
       "industries": [
-        "cross-industry",
-        "industrial-equipment",
         "aerospace-defense",
-        "life-sciences",
-        "energy-materials"
+        "industrial-equipment",
+        "life-sciences-healthcare",
+        "infrastructure-energy-materials",
+        "cross-industry"
       ],
       "useCases": [
         "semiconductors"
@@ -286,7 +287,7 @@
       ],
       "industries": [
         "high-tech",
-        "infrastructure-cities"
+        "architecture-engineering-construction"
       ],
       "useCases": [
         "ai-factories"
@@ -360,8 +361,8 @@
       ],
       "industries": [
         "high-tech",
-        "infrastructure-cities",
-        "energy-materials"
+        "infrastructure-energy-materials",
+        "architecture-engineering-construction"
       ],
       "useCases": [
         "ai-factories"
@@ -488,8 +489,8 @@
         "OWL (community conversion)"
       ],
       "industries": [
-        "high-tech",
-        "industrial-equipment"
+        "industrial-equipment",
+        "high-tech"
       ],
       "useCases": [
         "general-purpose-robotics"
@@ -584,8 +585,8 @@
         "OWL (community conversion)"
       ],
       "industries": [
-        "high-tech",
-        "industrial-equipment"
+        "industrial-equipment",
+        "high-tech"
       ],
       "useCases": [
         "general-purpose-robotics"
@@ -672,6 +673,8 @@
         "RDF/Turtle"
       ],
       "industries": [
+        "business-services",
+        "cities-public-services",
         "cross-industry"
       ],
       "useCases": [
@@ -727,6 +730,7 @@
       ],
       "industries": [
         "high-tech",
+        "business-services",
         "cross-industry"
       ],
       "useCases": [
@@ -952,10 +956,10 @@
         "RDF (ECLASS-as-RDF specification)"
       ],
       "industries": [
-        "high-tech",
         "industrial-equipment",
-        "energy-materials",
-        "consumer-goods"
+        "high-tech",
+        "consumer-packaged-goods-retail",
+        "infrastructure-energy-materials"
       ],
       "useCases": [
         "ai-factories",
@@ -1040,6 +1044,7 @@
       ],
       "industries": [
         "high-tech",
+        "cities-public-services",
         "cross-industry"
       ],
       "useCases": [
@@ -1122,10 +1127,10 @@
         "RDF/Turtle"
       ],
       "industries": [
-        "energy-materials",
-        "high-tech",
         "transportation-mobility",
-        "life-sciences"
+        "high-tech",
+        "life-sciences-healthcare",
+        "infrastructure-energy-materials"
       ],
       "useCases": [
         "semiconductors",
@@ -1186,8 +1191,9 @@
       ],
       "industries": [
         "high-tech",
-        "infrastructure-cities",
-        "energy-materials",
+        "infrastructure-energy-materials",
+        "architecture-engineering-construction",
+        "cities-public-services",
         "cross-industry"
       ],
       "useCases": [
@@ -1270,7 +1276,9 @@
       ],
       "industries": [
         "high-tech",
-        "consumer-goods"
+        "home-lifestyle",
+        "consumer-packaged-goods-retail",
+        "business-services"
       ],
       "useCases": [
         "ai-factories",
@@ -1352,8 +1360,9 @@
       ],
       "industries": [
         "high-tech",
-        "consumer-goods",
-        "life-sciences"
+        "home-lifestyle",
+        "consumer-packaged-goods-retail",
+        "life-sciences-healthcare"
       ],
       "useCases": [
         "ai-factories",
@@ -1447,7 +1456,8 @@
         "RDF/XML (IEC 61970-501, CGMES)"
       ],
       "industries": [
-        "energy-materials"
+        "infrastructure-energy-materials",
+        "cities-public-services"
       ],
       "useCases": [
         "ai-factories",
@@ -1506,7 +1516,7 @@
         "JSON-LD"
       ],
       "industries": [
-        "infrastructure-cities"
+        "architecture-engineering-construction"
       ],
       "useCases": [
         "ai-factories"
@@ -1563,10 +1573,10 @@
         "RDF/Turtle"
       ],
       "industries": [
-        "industrial-equipment",
-        "aerospace-defense",
         "transportation-mobility",
-        "life-sciences"
+        "aerospace-defense",
+        "industrial-equipment",
+        "life-sciences-healthcare"
       ],
       "useCases": [
         "semiconductors",
@@ -1622,7 +1632,8 @@
         "OWL 2"
       ],
       "industries": [
-        "energy-materials"
+        "marine-offshore",
+        "infrastructure-energy-materials"
       ],
       "useCases": [],
       "verification": {
@@ -1676,7 +1687,8 @@
         "OWL (Manchester syntax)"
       ],
       "industries": [
-        "energy-materials"
+        "infrastructure-energy-materials",
+        "cities-public-services"
       ],
       "useCases": [
         "ai-factories",
@@ -1886,8 +1898,8 @@
         "OWL (community conversion)"
       ],
       "industries": [
-        "high-tech",
-        "industrial-equipment"
+        "industrial-equipment",
+        "high-tech"
       ],
       "useCases": [
         "general-purpose-robotics"
@@ -1975,6 +1987,7 @@
       ],
       "industries": [
         "high-tech",
+        "business-services",
         "cross-industry"
       ],
       "useCases": [
@@ -2133,8 +2146,8 @@
         "OWL"
       ],
       "industries": [
-        "high-tech",
-        "industrial-equipment"
+        "industrial-equipment",
+        "high-tech"
       ],
       "useCases": [
         "general-purpose-robotics"
@@ -2221,8 +2234,8 @@
         "OWL (community conversion)"
       ],
       "industries": [
-        "high-tech",
-        "industrial-equipment"
+        "industrial-equipment",
+        "high-tech"
       ],
       "useCases": [
         "general-purpose-robotics"
@@ -2312,10 +2325,11 @@
         "RDF/Turtle"
       ],
       "industries": [
+        "industrial-equipment",
         "high-tech",
-        "infrastructure-cities",
-        "energy-materials",
-        "industrial-equipment"
+        "home-lifestyle",
+        "infrastructure-energy-materials",
+        "architecture-engineering-construction"
       ],
       "useCases": [
         "ai-factories",
@@ -2392,7 +2406,7 @@
       ],
       "industries": [
         "high-tech",
-        "infrastructure-cities"
+        "architecture-engineering-construction"
       ],
       "useCases": [
         "ai-factories"
@@ -2463,9 +2477,10 @@
         "RDF/Turtle"
       ],
       "industries": [
-        "energy-materials",
-        "infrastructure-cities",
-        "high-tech"
+        "high-tech",
+        "infrastructure-energy-materials",
+        "architecture-engineering-construction",
+        "cities-public-services"
       ],
       "useCases": [
         "ai-factories",
@@ -2522,7 +2537,9 @@
         "RDF/Turtle"
       ],
       "industries": [
-        "consumer-goods",
+        "home-lifestyle",
+        "consumer-packaged-goods-retail",
+        "business-services",
         "cross-industry"
       ],
       "useCases": [
@@ -2581,6 +2598,7 @@
         "RDF/Turtle"
       ],
       "industries": [
+        "business-services",
         "cross-industry"
       ],
       "useCases": [],
@@ -2787,8 +2805,9 @@
         "XML"
       ],
       "industries": [
-        "aerospace-defense",
         "transportation-mobility",
+        "aerospace-defense",
+        "marine-offshore",
         "industrial-equipment"
       ],
       "useCases": [
@@ -2926,8 +2945,8 @@
         "OWL (community conversion)"
       ],
       "industries": [
-        "high-tech",
-        "industrial-equipment"
+        "industrial-equipment",
+        "high-tech"
       ],
       "useCases": [
         "general-purpose-robotics"
@@ -3010,8 +3029,9 @@
         "XMI"
       ],
       "industries": [
-        "aerospace-defense",
         "transportation-mobility",
+        "aerospace-defense",
+        "marine-offshore",
         "industrial-equipment",
         "high-tech"
       ],
@@ -3089,48 +3109,82 @@
   ],
   "industries": [
     {
-      "id": "high-tech",
-      "name": "High-Tech",
-      "summary": "Electronics, semiconductors, computing, data centres and connected devices."
-    },
-    {
-      "id": "industrial-equipment",
-      "name": "Industrial Equipment",
-      "summary": "Machinery, automation, robotics and industrial asset lifecycles."
+      "id": "transportation-mobility",
+      "name": "Transportation & Mobility",
+      "icon": "car",
+      "summary": "Automotive, rail and mobility systems, including software-defined vehicles."
     },
     {
       "id": "aerospace-defense",
       "name": "Aerospace & Defense",
+      "icon": "plane",
       "summary": "Aircraft, space systems and defence programmes driven by systems engineering and certification."
     },
     {
-      "id": "transportation-mobility",
-      "name": "Transportation & Mobility",
-      "summary": "Automotive, rail and mobility systems, including software-defined vehicles."
+      "id": "marine-offshore",
+      "name": "Marine & Offshore",
+      "icon": "ship",
+      "summary": "Ships, offshore platforms and process installations at sea."
     },
     {
-      "id": "energy-materials",
-      "name": "Energy & Materials",
-      "summary": "Power generation, grids, process plants, oil & gas, chemicals and materials."
+      "id": "industrial-equipment",
+      "name": "Industrial Equipment",
+      "icon": "robot",
+      "summary": "Machinery, automation, robotics and industrial asset lifecycles."
     },
     {
-      "id": "infrastructure-cities",
-      "name": "Infrastructure & Cities",
-      "summary": "Buildings, construction, facilities and the built environment."
+      "id": "high-tech",
+      "name": "High-Tech",
+      "icon": "tablet",
+      "summary": "Electronics, semiconductors, computing, data centres and connected devices."
     },
     {
-      "id": "life-sciences",
+      "id": "home-lifestyle",
+      "name": "Home & Lifestyle",
+      "icon": "sofa",
+      "summary": "Furniture, appliances, smart-home devices and lifestyle products."
+    },
+    {
+      "id": "consumer-packaged-goods-retail",
+      "name": "Consumer Packaged Goods & Retail",
+      "icon": "bag",
+      "summary": "Packaged products, retail, e-commerce and product data exchange."
+    },
+    {
+      "id": "life-sciences-healthcare",
       "name": "Life Sciences & Healthcare",
+      "icon": "person",
       "summary": "Pharma, biotech, medical devices and scientific research."
     },
     {
-      "id": "consumer-goods",
-      "name": "Consumer Goods & Retail",
-      "summary": "Consumer products, packaging, retail and product data exchange."
+      "id": "infrastructure-energy-materials",
+      "name": "Infrastructure, Energy & Materials",
+      "icon": "turbine",
+      "summary": "Power generation and grids, process plants, oil & gas, chemicals and materials."
+    },
+    {
+      "id": "architecture-engineering-construction",
+      "name": "Architecture, Engineering & Construction",
+      "icon": "crane",
+      "summary": "Buildings, facilities, BIM and construction projects."
+    },
+    {
+      "id": "business-services",
+      "name": "Business Services",
+      "icon": "chart",
+      "summary": "Data management, cataloguing, commerce and knowledge services."
+    },
+    {
+      "id": "cities-public-services",
+      "name": "Cities & Public Services",
+      "icon": "city",
+      "summary": "Smart cities, geospatial data, public administration and regulation."
     },
     {
       "id": "cross-industry",
       "name": "Cross-Industry",
+      "icon": "network",
+      "horizontal": true,
       "summary": "Foundational and horizontal ontologies reusable in every industry."
     }
   ],
@@ -3143,8 +3197,8 @@
       "summary": "AI factories combine dense GPU compute with power distribution, liquid cooling and building systems. Getting the facility, IT equipment and energy models to share one semantic backbone makes capacity planning, energy optimisation and digital-twin operations possible.",
       "industries": [
         "high-tech",
-        "infrastructure-cities",
-        "energy-materials"
+        "architecture-engineering-construction",
+        "infrastructure-energy-materials"
       ],
       "challenges": [
         "Linking the building model (spaces, racks, cooling loops) to the IT asset model (servers, accelerators, PDUs)",
@@ -3277,7 +3331,7 @@
       "summary": "Semiconductor value chains span design, front-end fabrication, back-end assembly and test, and highly distributed supply chains. Public ontologies cover supply-chain semantics, product classification, materials and units; fab-equipment standards are still mostly non-semantic.",
       "industries": [
         "high-tech",
-        "energy-materials"
+        "infrastructure-energy-materials"
       ],
       "challenges": [
         "Interoperable supply-chain data (products, lots, capacities, lead times)",
@@ -3336,8 +3390,8 @@
       "summary": "Sustainability engineering needs consistent lifecycle data, traceable provenance and links to regulation. Ontologies help connect product structures with impact indicators, materials, energy and legal requirements such as digital product passports.",
       "industries": [
         "cross-industry",
-        "consumer-goods",
-        "energy-materials",
+        "consumer-packaged-goods-retail",
+        "infrastructure-energy-materials",
         "high-tech"
       ],
       "challenges": [
@@ -3396,7 +3450,8 @@
       "summary": "Smart devices combine hardware, firmware and services. Device and product-data ontologies support interoperability, commerce and compliance.",
       "industries": [
         "high-tech",
-        "consumer-goods"
+        "consumer-packaged-goods-retail",
+        "home-lifestyle"
       ],
       "challenges": [
         "Device capability descriptions across ecosystems",

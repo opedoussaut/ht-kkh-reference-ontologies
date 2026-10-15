@@ -32,14 +32,18 @@ atlas:superseded_by a owl:ObjectProperty ; rdfs:label "integrated into" ; rdfs:c
 atlas:references a owl:ObjectProperty ; rdfs:label "references" ; rdfs:comment "Uses identifiers or terms from the target." .
 atlas:follows_pattern_of a owl:ObjectProperty ; rdfs:label "follows pattern of" ; rdfs:comment "Reuses the target's design pattern." .
 
-atlas:industry-high-tech a atlas:Industry ; skos:prefLabel "High-Tech" ; dcterms:description "Electronics, semiconductors, computing, data centres and connected devices." .
-atlas:industry-industrial-equipment a atlas:Industry ; skos:prefLabel "Industrial Equipment" ; dcterms:description "Machinery, automation, robotics and industrial asset lifecycles." .
-atlas:industry-aerospace-defense a atlas:Industry ; skos:prefLabel "Aerospace & Defense" ; dcterms:description "Aircraft, space systems and defence programmes driven by systems engineering and certification." .
 atlas:industry-transportation-mobility a atlas:Industry ; skos:prefLabel "Transportation & Mobility" ; dcterms:description "Automotive, rail and mobility systems, including software-defined vehicles." .
-atlas:industry-energy-materials a atlas:Industry ; skos:prefLabel "Energy & Materials" ; dcterms:description "Power generation, grids, process plants, oil & gas, chemicals and materials." .
-atlas:industry-infrastructure-cities a atlas:Industry ; skos:prefLabel "Infrastructure & Cities" ; dcterms:description "Buildings, construction, facilities and the built environment." .
-atlas:industry-life-sciences a atlas:Industry ; skos:prefLabel "Life Sciences & Healthcare" ; dcterms:description "Pharma, biotech, medical devices and scientific research." .
-atlas:industry-consumer-goods a atlas:Industry ; skos:prefLabel "Consumer Goods & Retail" ; dcterms:description "Consumer products, packaging, retail and product data exchange." .
+atlas:industry-aerospace-defense a atlas:Industry ; skos:prefLabel "Aerospace & Defense" ; dcterms:description "Aircraft, space systems and defence programmes driven by systems engineering and certification." .
+atlas:industry-marine-offshore a atlas:Industry ; skos:prefLabel "Marine & Offshore" ; dcterms:description "Ships, offshore platforms and process installations at sea." .
+atlas:industry-industrial-equipment a atlas:Industry ; skos:prefLabel "Industrial Equipment" ; dcterms:description "Machinery, automation, robotics and industrial asset lifecycles." .
+atlas:industry-high-tech a atlas:Industry ; skos:prefLabel "High-Tech" ; dcterms:description "Electronics, semiconductors, computing, data centres and connected devices." .
+atlas:industry-home-lifestyle a atlas:Industry ; skos:prefLabel "Home & Lifestyle" ; dcterms:description "Furniture, appliances, smart-home devices and lifestyle products." .
+atlas:industry-consumer-packaged-goods-retail a atlas:Industry ; skos:prefLabel "Consumer Packaged Goods & Retail" ; dcterms:description "Packaged products, retail, e-commerce and product data exchange." .
+atlas:industry-life-sciences-healthcare a atlas:Industry ; skos:prefLabel "Life Sciences & Healthcare" ; dcterms:description "Pharma, biotech, medical devices and scientific research." .
+atlas:industry-infrastructure-energy-materials a atlas:Industry ; skos:prefLabel "Infrastructure, Energy & Materials" ; dcterms:description "Power generation and grids, process plants, oil & gas, chemicals and materials." .
+atlas:industry-architecture-engineering-construction a atlas:Industry ; skos:prefLabel "Architecture, Engineering & Construction" ; dcterms:description "Buildings, facilities, BIM and construction projects." .
+atlas:industry-business-services a atlas:Industry ; skos:prefLabel "Business Services" ; dcterms:description "Data management, cataloguing, commerce and knowledge services." .
+atlas:industry-cities-public-services a atlas:Industry ; skos:prefLabel "Cities & Public Services" ; dcterms:description "Smart cities, geospatial data, public administration and regulation." .
 atlas:industry-cross-industry a atlas:Industry ; skos:prefLabel "Cross-Industry" ; dcterms:description "Foundational and horizontal ontologies reusable in every industry." .
 atlas:usecase-ai-factories a atlas:UseCase ; skos:prefLabel "AI Factories" ; dcterms:description "AI factories combine dense GPU compute with power distribution, liquid cooling and building systems. Getting the facility, IT equipment and energy models to share one semantic backbone makes capacity planning, energy optimisation and digital-twin operations possible." .
 atlas:usecase-general-purpose-robotics a atlas:UseCase ; skos:prefLabel "General Purpose Robotics" ; dcterms:description "General-purpose robots need shared definitions of robot parts, poses, capabilities and tasks so that design, simulation, AI control and certification work from the same model. The IEEE 1872 family gives a standardised backbone on top of an upper ontology." .
@@ -64,10 +68,11 @@ atlas:aas a atlas:ReferenceOntology ;
     atlas:topic "industrial assets" ;
     atlas:topic "submodels" ;
     atlas:topic "Industry 4.0" ;
-    atlas:industry atlas:industry-high-tech ;
-    atlas:industry atlas:industry-industrial-equipment ;
-    atlas:industry atlas:industry-energy-materials ;
     atlas:industry atlas:industry-transportation-mobility ;
+    atlas:industry atlas:industry-marine-offshore ;
+    atlas:industry atlas:industry-industrial-equipment ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-infrastructure-energy-materials ;
     atlas:useCase atlas:usecase-ai-factories ;
     atlas:useCase atlas:usecase-semiconductors ;
     atlas:useCase atlas:usecase-personal-electronics ;
@@ -91,8 +96,8 @@ atlas:ieee-aur a atlas:ReferenceOntology ;
     atlas:topic "autonomy" ;
     atlas:topic "autonomous robots" ;
     atlas:topic "design patterns" ;
-    atlas:industry atlas:industry-high-tech ;
     atlas:industry atlas:industry-industrial-equipment ;
+    atlas:industry atlas:industry-high-tech ;
     atlas:useCase atlas:usecase-general-purpose-robotics ;
     rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/ieee-aur> .
 
@@ -113,11 +118,11 @@ atlas:bfo a atlas:ReferenceOntology ;
     atlas:topic "continuants" ;
     atlas:topic "occurrents" ;
     atlas:topic "formal relations" ;
-    atlas:industry atlas:industry-cross-industry ;
-    atlas:industry atlas:industry-industrial-equipment ;
     atlas:industry atlas:industry-aerospace-defense ;
-    atlas:industry atlas:industry-life-sciences ;
-    atlas:industry atlas:industry-energy-materials ;
+    atlas:industry atlas:industry-industrial-equipment ;
+    atlas:industry atlas:industry-life-sciences-healthcare ;
+    atlas:industry atlas:industry-infrastructure-energy-materials ;
+    atlas:industry atlas:industry-cross-industry ;
     atlas:useCase atlas:usecase-semiconductors ;
     rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/bfo> .
 
@@ -140,7 +145,7 @@ atlas:bot a atlas:ReferenceOntology ;
     atlas:topic "spaces" ;
     atlas:topic "storeys" ;
     atlas:industry atlas:industry-high-tech ;
-    atlas:industry atlas:industry-infrastructure-cities ;
+    atlas:industry atlas:industry-architecture-engineering-construction ;
     atlas:useCase atlas:usecase-ai-factories ;
     rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/bot> .
 
@@ -164,8 +169,8 @@ atlas:brick a atlas:ReferenceOntology ;
     atlas:topic "points" ;
     atlas:topic "telemetry" ;
     atlas:industry atlas:industry-high-tech ;
-    atlas:industry atlas:industry-infrastructure-cities ;
-    atlas:industry atlas:industry-energy-materials ;
+    atlas:industry atlas:industry-infrastructure-energy-materials ;
+    atlas:industry atlas:industry-architecture-engineering-construction ;
     atlas:useCase atlas:usecase-ai-factories ;
     rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/brick> .
 
@@ -206,8 +211,8 @@ atlas:ieee-cora a atlas:ReferenceOntology ;
     atlas:topic "robots" ;
     atlas:topic "robotic systems" ;
     atlas:topic "robotic environments" ;
-    atlas:industry atlas:industry-high-tech ;
     atlas:industry atlas:industry-industrial-equipment ;
+    atlas:industry atlas:industry-high-tech ;
     atlas:useCase atlas:usecase-general-purpose-robotics ;
     rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/ieee-cora> .
 
@@ -227,8 +232,8 @@ atlas:ieee-corax a atlas:ReferenceOntology ;
     atlas:topic "design" ;
     atlas:topic "interaction" ;
     atlas:topic "environment" ;
-    atlas:industry atlas:industry-high-tech ;
     atlas:industry atlas:industry-industrial-equipment ;
+    atlas:industry atlas:industry-high-tech ;
     atlas:useCase atlas:usecase-general-purpose-robotics ;
     rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/ieee-corax> .
 
@@ -249,6 +254,8 @@ atlas:dcat a atlas:ReferenceOntology ;
     atlas:topic "data catalogues" ;
     atlas:topic "datasets" ;
     atlas:topic "data spaces" ;
+    atlas:industry atlas:industry-business-services ;
+    atlas:industry atlas:industry-cities-public-services ;
     atlas:industry atlas:industry-cross-industry ;
     atlas:useCase atlas:usecase-ai-factories ;
     atlas:useCase atlas:usecase-sustainability ;
@@ -272,6 +279,7 @@ atlas:dcterms a atlas:ReferenceOntology ;
     atlas:topic "documents" ;
     atlas:topic "cataloguing" ;
     atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-business-services ;
     atlas:industry atlas:industry-cross-industry ;
     atlas:useCase atlas:usecase-ai-factories ;
     atlas:useCase atlas:usecase-semiconductors ;
@@ -338,10 +346,10 @@ atlas:eclass a atlas:ReferenceOntology ;
     atlas:topic "properties" ;
     atlas:topic "IRDI" ;
     atlas:topic "master data" ;
-    atlas:industry atlas:industry-high-tech ;
     atlas:industry atlas:industry-industrial-equipment ;
-    atlas:industry atlas:industry-energy-materials ;
-    atlas:industry atlas:industry-consumer-goods ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-consumer-packaged-goods-retail ;
+    atlas:industry atlas:industry-infrastructure-energy-materials ;
     atlas:useCase atlas:usecase-ai-factories ;
     atlas:useCase atlas:usecase-semiconductors ;
     atlas:useCase atlas:usecase-personal-electronics ;
@@ -366,6 +374,7 @@ atlas:eli a atlas:ReferenceOntology ;
     atlas:topic "regulation" ;
     atlas:topic "metadata" ;
     atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-cities-public-services ;
     atlas:industry atlas:industry-cross-industry ;
     atlas:useCase atlas:usecase-ai-factories ;
     atlas:useCase atlas:usecase-semiconductors ;
@@ -392,10 +401,10 @@ atlas:emmo a atlas:ReferenceOntology ;
     atlas:topic "physics" ;
     atlas:topic "models" ;
     atlas:topic "characterisation" ;
-    atlas:industry atlas:industry-energy-materials ;
-    atlas:industry atlas:industry-high-tech ;
     atlas:industry atlas:industry-transportation-mobility ;
-    atlas:industry atlas:industry-life-sciences ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-life-sciences-healthcare ;
+    atlas:industry atlas:industry-infrastructure-energy-materials ;
     atlas:useCase atlas:usecase-semiconductors ;
     atlas:useCase atlas:usecase-sustainability ;
     rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/emmo> .
@@ -418,8 +427,9 @@ atlas:geosparql a atlas:ReferenceOntology ;
     atlas:topic "spatial reasoning" ;
     atlas:topic "SPARQL" ;
     atlas:industry atlas:industry-high-tech ;
-    atlas:industry atlas:industry-infrastructure-cities ;
-    atlas:industry atlas:industry-energy-materials ;
+    atlas:industry atlas:industry-infrastructure-energy-materials ;
+    atlas:industry atlas:industry-architecture-engineering-construction ;
+    atlas:industry atlas:industry-cities-public-services ;
     atlas:industry atlas:industry-cross-industry ;
     atlas:useCase atlas:usecase-ai-factories ;
     atlas:useCase atlas:usecase-semiconductors ;
@@ -447,7 +457,9 @@ atlas:goodrelations a atlas:ReferenceOntology ;
     atlas:topic "products" ;
     atlas:topic "business entities" ;
     atlas:industry atlas:industry-high-tech ;
-    atlas:industry atlas:industry-consumer-goods ;
+    atlas:industry atlas:industry-home-lifestyle ;
+    atlas:industry atlas:industry-consumer-packaged-goods-retail ;
+    atlas:industry atlas:industry-business-services ;
     atlas:useCase atlas:usecase-ai-factories ;
     atlas:useCase atlas:usecase-semiconductors ;
     atlas:useCase atlas:usecase-personal-electronics ;
@@ -473,8 +485,9 @@ atlas:gs1-webvoc a atlas:ReferenceOntology ;
     atlas:topic "product master data" ;
     atlas:topic "digital product passport" ;
     atlas:industry atlas:industry-high-tech ;
-    atlas:industry atlas:industry-consumer-goods ;
-    atlas:industry atlas:industry-life-sciences ;
+    atlas:industry atlas:industry-home-lifestyle ;
+    atlas:industry atlas:industry-consumer-packaged-goods-retail ;
+    atlas:industry atlas:industry-life-sciences-healthcare ;
     atlas:useCase atlas:usecase-ai-factories ;
     atlas:useCase atlas:usecase-semiconductors ;
     atlas:useCase atlas:usecase-personal-electronics ;
@@ -499,7 +512,8 @@ atlas:iec-cim a atlas:ReferenceOntology ;
     atlas:topic "transmission" ;
     atlas:topic "distribution" ;
     atlas:topic "CGMES" ;
-    atlas:industry atlas:industry-energy-materials ;
+    atlas:industry atlas:industry-infrastructure-energy-materials ;
+    atlas:industry atlas:industry-cities-public-services ;
     atlas:useCase atlas:usecase-ai-factories ;
     atlas:useCase atlas:usecase-sustainability ;
     rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/iec-cim> .
@@ -521,7 +535,7 @@ atlas:ifcowl a atlas:ReferenceOntology ;
     atlas:topic "IFC" ;
     atlas:topic "buildings" ;
     atlas:topic "infrastructure" ;
-    atlas:industry atlas:industry-infrastructure-cities ;
+    atlas:industry atlas:industry-architecture-engineering-construction ;
     atlas:useCase atlas:usecase-ai-factories ;
     rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/ifcowl> .
 
@@ -542,10 +556,10 @@ atlas:iof-core a atlas:ReferenceOntology ;
     atlas:topic "maintenance" ;
     atlas:topic "supply chain" ;
     atlas:topic "product lifecycle" ;
-    atlas:industry atlas:industry-industrial-equipment ;
-    atlas:industry atlas:industry-aerospace-defense ;
     atlas:industry atlas:industry-transportation-mobility ;
-    atlas:industry atlas:industry-life-sciences ;
+    atlas:industry atlas:industry-aerospace-defense ;
+    atlas:industry atlas:industry-industrial-equipment ;
+    atlas:industry atlas:industry-life-sciences-healthcare ;
     atlas:useCase atlas:usecase-semiconductors ;
     atlas:useCase atlas:usecase-general-purpose-robotics ;
     rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/iof-core> .
@@ -566,7 +580,8 @@ atlas:iso-15926-14 a atlas:ReferenceOntology ;
     atlas:topic "process plants" ;
     atlas:topic "oil and gas" ;
     atlas:topic "asset lifecycle" ;
-    atlas:industry atlas:industry-energy-materials ;
+    atlas:industry atlas:industry-marine-offshore ;
+    atlas:industry atlas:industry-infrastructure-energy-materials ;
     rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/iso-15926-14> .
 
 atlas:oeo a atlas:ReferenceOntology ;
@@ -586,7 +601,8 @@ atlas:oeo a atlas:ReferenceOntology ;
     atlas:topic "scenarios" ;
     atlas:topic "emissions" ;
     atlas:topic "modelling" ;
-    atlas:industry atlas:industry-energy-materials ;
+    atlas:industry atlas:industry-infrastructure-energy-materials ;
+    atlas:industry atlas:industry-cities-public-services ;
     atlas:useCase atlas:usecase-ai-factories ;
     atlas:useCase atlas:usecase-sustainability ;
     rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/oeo> .
@@ -658,8 +674,8 @@ atlas:ieee-pos a atlas:ReferenceOntology ;
     atlas:topic "orientation" ;
     atlas:topic "pose" ;
     atlas:topic "coordinate systems" ;
-    atlas:industry atlas:industry-high-tech ;
     atlas:industry atlas:industry-industrial-equipment ;
+    atlas:industry atlas:industry-high-tech ;
     atlas:useCase atlas:usecase-general-purpose-robotics ;
     rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/ieee-pos> .
 
@@ -681,6 +697,7 @@ atlas:prov-o a atlas:ReferenceOntology ;
     atlas:topic "lineage" ;
     atlas:topic "traceability" ;
     atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-business-services ;
     atlas:industry atlas:industry-cross-industry ;
     atlas:useCase atlas:usecase-ai-factories ;
     atlas:useCase atlas:usecase-semiconductors ;
@@ -731,8 +748,8 @@ atlas:ieee-rtr a atlas:ReferenceOntology ;
     atlas:topic "tasks" ;
     atlas:topic "planning" ;
     atlas:topic "hierarchical task knowledge" ;
-    atlas:industry atlas:industry-high-tech ;
     atlas:industry atlas:industry-industrial-equipment ;
+    atlas:industry atlas:industry-high-tech ;
     atlas:useCase atlas:usecase-general-purpose-robotics ;
     rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/ieee-rtr> .
 
@@ -752,8 +769,8 @@ atlas:ieee-rparts a atlas:ReferenceOntology ;
     atlas:topic "robot parts" ;
     atlas:topic "components" ;
     atlas:topic "decomposition" ;
-    atlas:industry atlas:industry-high-tech ;
     atlas:industry atlas:industry-industrial-equipment ;
+    atlas:industry atlas:industry-high-tech ;
     atlas:useCase atlas:usecase-general-purpose-robotics ;
     rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/ieee-rparts> .
 
@@ -776,10 +793,11 @@ atlas:saref-core a atlas:ReferenceOntology ;
     atlas:topic "functions" ;
     atlas:topic "commands" ;
     atlas:topic "measurements" ;
-    atlas:industry atlas:industry-high-tech ;
-    atlas:industry atlas:industry-infrastructure-cities ;
-    atlas:industry atlas:industry-energy-materials ;
     atlas:industry atlas:industry-industrial-equipment ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-home-lifestyle ;
+    atlas:industry atlas:industry-infrastructure-energy-materials ;
+    atlas:industry atlas:industry-architecture-engineering-construction ;
     atlas:useCase atlas:usecase-ai-factories ;
     atlas:useCase atlas:usecase-semiconductors ;
     atlas:useCase atlas:usecase-personal-electronics ;
@@ -804,7 +822,7 @@ atlas:saref4bldg a atlas:ReferenceOntology ;
     atlas:topic "building devices" ;
     atlas:topic "IFC" ;
     atlas:industry atlas:industry-high-tech ;
-    atlas:industry atlas:industry-infrastructure-cities ;
+    atlas:industry atlas:industry-architecture-engineering-construction ;
     atlas:useCase atlas:usecase-ai-factories ;
     rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/saref4bldg> .
 
@@ -825,9 +843,10 @@ atlas:saref4ener a atlas:ReferenceOntology ;
     atlas:topic "energy flexibility" ;
     atlas:topic "demand response" ;
     atlas:topic "power profiles" ;
-    atlas:industry atlas:industry-energy-materials ;
-    atlas:industry atlas:industry-infrastructure-cities ;
     atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-infrastructure-energy-materials ;
+    atlas:industry atlas:industry-architecture-engineering-construction ;
+    atlas:industry atlas:industry-cities-public-services ;
     atlas:useCase atlas:usecase-ai-factories ;
     atlas:useCase atlas:usecase-sustainability ;
     rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/saref4ener> .
@@ -850,7 +869,9 @@ atlas:schema-org a atlas:ReferenceOntology ;
     atlas:topic "products" ;
     atlas:topic "organisations" ;
     atlas:topic "offers" ;
-    atlas:industry atlas:industry-consumer-goods ;
+    atlas:industry atlas:industry-home-lifestyle ;
+    atlas:industry atlas:industry-consumer-packaged-goods-retail ;
+    atlas:industry atlas:industry-business-services ;
     atlas:industry atlas:industry-cross-industry ;
     atlas:useCase atlas:usecase-personal-electronics ;
     atlas:useCase atlas:usecase-semiconductors ;
@@ -874,6 +895,7 @@ atlas:skos a atlas:ReferenceOntology ;
     atlas:topic "taxonomies" ;
     atlas:topic "thesauri" ;
     atlas:topic "classification schemes" ;
+    atlas:industry atlas:industry-business-services ;
     atlas:industry atlas:industry-cross-industry ;
     rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/skos> .
 
@@ -946,8 +968,9 @@ atlas:step-ap242 a atlas:ReferenceOntology ;
     atlas:topic "PMI" ;
     atlas:topic "model-based definition" ;
     atlas:topic "PDM" ;
-    atlas:industry atlas:industry-aerospace-defense ;
     atlas:industry atlas:industry-transportation-mobility ;
+    atlas:industry atlas:industry-aerospace-defense ;
+    atlas:industry atlas:industry-marine-offshore ;
     atlas:industry atlas:industry-industrial-equipment ;
     atlas:useCase atlas:usecase-general-purpose-robotics ;
     rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/step-ap242> .
@@ -992,8 +1015,8 @@ atlas:sumo-cora a atlas:ReferenceOntology ;
     atlas:topic "alignment" ;
     atlas:topic "upper ontology" ;
     atlas:topic "robotics" ;
-    atlas:industry atlas:industry-high-tech ;
     atlas:industry atlas:industry-industrial-equipment ;
+    atlas:industry atlas:industry-high-tech ;
     atlas:useCase atlas:usecase-general-purpose-robotics ;
     rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/sumo-cora> .
 
@@ -1015,8 +1038,9 @@ atlas:sysml-v2 a atlas:ReferenceOntology ;
     atlas:topic "architecture" ;
     atlas:topic "behaviour" ;
     atlas:topic "formal semantics" ;
-    atlas:industry atlas:industry-aerospace-defense ;
     atlas:industry atlas:industry-transportation-mobility ;
+    atlas:industry atlas:industry-aerospace-defense ;
+    atlas:industry atlas:industry-marine-offshore ;
     atlas:industry atlas:industry-industrial-equipment ;
     atlas:industry atlas:industry-high-tech ;
     atlas:useCase atlas:usecase-general-purpose-robotics ;

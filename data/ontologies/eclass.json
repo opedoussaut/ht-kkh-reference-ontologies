@@ -34,10 +34,10 @@
     "RDF (ECLASS-as-RDF specification)"
   ],
   "industries": [
-    "high-tech",
     "industrial-equipment",
-    "energy-materials",
-    "consumer-goods"
+    "high-tech",
+    "consumer-packaged-goods-retail",
+    "infrastructure-energy-materials"
   ],
   "useCases": [
     "ai-factories",

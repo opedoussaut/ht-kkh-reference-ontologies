@@ -36,8 +36,9 @@
   ],
   "industries": [
     "high-tech",
-    "infrastructure-cities",
-    "energy-materials",
+    "infrastructure-energy-materials",
+    "architecture-engineering-construction",
+    "cities-public-services",
     "cross-industry"
   ],
   "useCases": [

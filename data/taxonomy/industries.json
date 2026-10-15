@@ -1,14 +1,18 @@
 {
-  "_note": "Industry segments used for cross-industry discovery. Labels follow publicly listed industry names; descriptions are editorial.",
+  "_note": "Twelve industry segments for cross-industry discovery, plus a horizontal 'cross-industry' tag for foundational ontologies. Descriptions are editorial.",
   "items": [
-    { "id": "high-tech", "name": "High-Tech", "summary": "Electronics, semiconductors, computing, data centres and connected devices." },
-    { "id": "industrial-equipment", "name": "Industrial Equipment", "summary": "Machinery, automation, robotics and industrial asset lifecycles." },
-    { "id": "aerospace-defense", "name": "Aerospace & Defense", "summary": "Aircraft, space systems and defence programmes driven by systems engineering and certification." },
-    { "id": "transportation-mobility", "name": "Transportation & Mobility", "summary": "Automotive, rail and mobility systems, including software-defined vehicles." },
-    { "id": "energy-materials", "name": "Energy & Materials", "summary": "Power generation, grids, process plants, oil & gas, chemicals and materials." },
-    { "id": "infrastructure-cities", "name": "Infrastructure & Cities", "summary": "Buildings, construction, facilities and the built environment." },
-    { "id": "life-sciences", "name": "Life Sciences & Healthcare", "summary": "Pharma, biotech, medical devices and scientific research." },
-    { "id": "consumer-goods", "name": "Consumer Goods & Retail", "summary": "Consumer products, packaging, retail and product data exchange." },
-    { "id": "cross-industry", "name": "Cross-Industry", "summary": "Foundational and horizontal ontologies reusable in every industry." }
+    { "id": "transportation-mobility", "name": "Transportation & Mobility", "icon": "car", "summary": "Automotive, rail and mobility systems, including software-defined vehicles." },
+    { "id": "aerospace-defense", "name": "Aerospace & Defense", "icon": "plane", "summary": "Aircraft, space systems and defence programmes driven by systems engineering and certification." },
+    { "id": "marine-offshore", "name": "Marine & Offshore", "icon": "ship", "summary": "Ships, offshore platforms and process installations at sea." },
+    { "id": "industrial-equipment", "name": "Industrial Equipment", "icon": "robot", "summary": "Machinery, automation, robotics and industrial asset lifecycles." },
+    { "id": "high-tech", "name": "High-Tech", "icon": "tablet", "summary": "Electronics, semiconductors, computing, data centres and connected devices." },
+    { "id": "home-lifestyle", "name": "Home & Lifestyle", "icon": "sofa", "summary": "Furniture, appliances, smart-home devices and lifestyle products." },
+    { "id": "consumer-packaged-goods-retail", "name": "Consumer Packaged Goods & Retail", "icon": "bag", "summary": "Packaged products, retail, e-commerce and product data exchange." },
+    { "id": "life-sciences-healthcare", "name": "Life Sciences & Healthcare", "icon": "person", "summary": "Pharma, biotech, medical devices and scientific research." },
+    { "id": "infrastructure-energy-materials", "name": "Infrastructure, Energy & Materials", "icon": "turbine", "summary": "Power generation and grids, process plants, oil & gas, chemicals and materials." },
+    { "id": "architecture-engineering-construction", "name": "Architecture, Engineering & Construction", "icon": "crane", "summary": "Buildings, facilities, BIM and construction projects." },
+    { "id": "business-services", "name": "Business Services", "icon": "chart", "summary": "Data management, cataloguing, commerce and knowledge services." },
+    { "id": "cities-public-services", "name": "Cities & Public Services", "icon": "city", "summary": "Smart cities, geospatial data, public administration and regulation." },
+    { "id": "cross-industry", "name": "Cross-Industry", "icon": "network", "horizontal": true, "summary": "Foundational and horizontal ontologies reusable in every industry." }
   ]
 }
