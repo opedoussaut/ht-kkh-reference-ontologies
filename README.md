@@ -14,6 +14,7 @@ An evidence-based, cross-industry atlas of **public** reference ontologies and s
 - **Engineering use cases**: AI Factories, General Purpose Robotics, Semiconductors, Sustainability & Circularity
   and Personal Electronics, each described as a layered reference semantic stack.
 - **Interactive graph** that draws only relationships stated by the publisher or a primary source.
+- **Ontology Explorer**: browse the classes, properties, restrictions and definitions of selected ontologies (SAREF Core, SOSA, SSN, QUDT), parsed at build time from their official distributions.
 - **Faceted search** with typo tolerance and shareable URLs; a detail page for every ontology.
 - Downloads: [`data/atlas.json`](data/atlas.json), the v1-compatible
   [`htkkh_reference_ontologies_map_catalog.json`](htkkh_reference_ontologies_map_catalog.json) and

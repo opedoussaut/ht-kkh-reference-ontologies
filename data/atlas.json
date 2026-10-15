@@ -2219,8 +2219,8 @@
         "dimensions"
       ],
       "version": {
-        "label": "QUDT 3.1.x (3.1.10 published January 2026)",
-        "date": "2026-01",
+        "label": "QUDT schema 3.5.2 (as declared by the schema published at qudt.org)",
+        "date": null,
         "status": "published"
       },
       "maturity": "stable",
@@ -2261,9 +2261,13 @@
           {
             "url": "https://qudt.org/doc/2026/01/DOC_VOCAB-CONSTANTS.html",
             "title": "QUDT constants vocabulary, version 3.1.10"
+          },
+          {
+            "url": "https://qudt.org/schema/qudt/",
+            "title": "QUDT schema (Turtle), declares \"QUDT Schema - Version 3.5.2\""
           }
         ],
-        "notes": ""
+        "notes": "Version taken from the schema file itself on 2026-10-15; release date not stated in the file."
       },
       "origin": "v1",
       "legacy": {
@@ -2289,6 +2293,15 @@
       "engineeringUses": [
         "Attaching units and quantity kinds to engineering parameters to avoid unit errors",
         "Converting values between unit systems in data pipelines"
+      ],
+      "corrections": [
+        {
+          "field": "version",
+          "from": "QUDT 3.1.x (3.1.10 published January 2026)",
+          "to": "3.5.2",
+          "reason": "The published QUDT schema declares version 3.5.2; the earlier value came from a vocabulary documentation page.",
+          "source": "https://qudt.org/schema/qudt/"
+        }
       ]
     },
     {
@@ -3894,41 +3907,70 @@
       ]
     }
   ],
+  "relationCategories": [
+    {
+      "id": "formal",
+      "label": "Formal dependency",
+      "description": "Imports, extensions and modules stated by the publisher."
+    },
+    {
+      "id": "mapping",
+      "label": "Explicit mapping",
+      "description": "Alignments or mappings published by a publisher or primary source."
+    },
+    {
+      "id": "shared",
+      "label": "Shared standards & vocabularies",
+      "description": "References, reused patterns and lineage stated by a primary source."
+    },
+    {
+      "id": "editorial",
+      "label": "Editorially proposed",
+      "description": "Used together in the same layer of an atlas reference stack. Derived from use cases, not stated by publishers."
+    }
+  ],
   "relationTypes": [
     {
       "id": "extends",
       "label": "extends",
-      "description": "Specialises or builds on the target's concepts."
+      "description": "Specialises or builds on the target's concepts.",
+      "category": "formal"
     },
     {
       "id": "imports",
       "label": "imports",
-      "description": "Formally imports the target ontology."
+      "description": "Formally imports the target ontology.",
+      "category": "formal"
     },
     {
       "id": "part-of",
       "label": "part of",
-      "description": "Published as a module of the same standard or suite."
+      "description": "Published as a module of the same standard or suite.",
+      "category": "formal"
     },
     {
       "id": "aligns-with",
       "label": "aligns with",
-      "description": "Provides an alignment or mapping to the target."
+      "description": "Provides an alignment or mapping to the target.",
+      "category": "mapping"
     },
     {
       "id": "superseded-by",
       "label": "integrated into",
-      "description": "Content was integrated into, or is continued by, the target."
+      "description": "Content was integrated into, or is continued by, the target.",
+      "category": "shared"
     },
     {
       "id": "references",
       "label": "references",
-      "description": "Uses identifiers or terms from the target."
+      "description": "Uses identifiers or terms from the target.",
+      "category": "shared"
     },
     {
       "id": "follows-pattern-of",
       "label": "follows pattern of",
-      "description": "Reuses the target's design pattern."
+      "description": "Reuses the target's design pattern.",
+      "category": "shared"
     }
   ],
   "relations": [

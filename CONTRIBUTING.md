@@ -61,6 +61,13 @@ CI (`.github/workflows/ci.yml`) runs `npm run validate` and `npm test` on every 
 - generated files are up to date
 - no vendor, product or brand mappings
 
+## Adding an ontology to the Explorer
+
+1. Check that the publisher offers a machine-readable distribution (Turtle or N-Triples for now) under a licence that allows redistribution with attribution.
+2. Add it under `pilots` in `data/explorer/sources.json` with its official URL, licence and licence URL, and remove it from `availability`.
+3. Run `npm run graphs`, check the console summary, and commit the new `assets/graphs/<id>/<version>.json` and `data/explorer/manifest.json`.
+4. Run `npm test`. The asset-integrity tests check versioned paths, licences, hashes and that no edge points to a missing entity.
+
 ## Before a release
 
 Run `npm run links` to check every external URL in the data. It is not part of CI because some publishers block automated clients: treat 403/429 results as items to check by hand, and fix 404/410 results.

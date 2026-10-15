@@ -10,13 +10,16 @@
     "test": "node --test \"tests/*.test.mjs\"",
     "check": "npm run validate && npm test",
     "serve": "node scripts/serve.mjs",
-    "links": "node scripts/check-links.mjs"
+    "links": "node scripts/check-links.mjs",
+    "graphs": "node scripts/explorer/build-graphs.mjs"
   },
   "engines": {
     "node": ">=20"
   },
   "devDependencies": {
     "ajv": "^8.20.0",
-    "ajv-formats": "^3.0.1"
+    "ajv-formats": "^3.0.1",
+    "cytoscape": "3.30.4",
+    "n3": "1.17.5"
   }
 }

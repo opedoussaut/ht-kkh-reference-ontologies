@@ -2,6 +2,7 @@ import { html, raw, esc, safeUrl } from './lib/html.js';
 import { buildIndex, query, facetCounts, FACETS, stateFromParams, paramsFromState, search } from './lib/search.js';
 import { buildGraph, renderGraph } from './lib/graph.js';
 import { icon } from './lib/icons.js';
+import { explorerView, mountExplorer, AVAILABILITY } from './explorer.js';
 
 const REPO = 'https://github.com/opedoussaut/ht-kkh-reference-ontologies';
 
@@ -16,7 +17,9 @@ const LABELS = {
   status: { published: 'Published', candidate: 'Candidate', draft: 'Draft', superseded: 'Superseded', discontinued: 'Discontinued', unknown: 'Unknown' },
 };
 
-const state = { data: null, index: null, byId: new Map(), maps: {} };
+const state = { data: null, index: null, byId: new Map(), maps: {}, explorer: { ontologies: {} } };
+const explorerEntry = (id) => state.explorer.ontologies[id] || { status: 'not-assessed', reason: 'Not yet reviewed.' };
+const interactiveRecords = () => state.data.ontologies.filter((o) => explorerEntry(o.id).status === 'interactive');
 const app = document.getElementById('app');
 
 // ---------- helpers ----------
@@ -24,7 +27,23 @@ const label = (group, v) => LABELS[group]?.[v] || v;
 const ont = (id) => state.byId.get(id);
 const industryName = (id) => state.maps.industry[id]?.name || id;
 const useCaseName = (id) => state.maps.useCase[id]?.name || id;
-const relLabel = (t) => state.maps.relType[t]?.label || t;
+const relLabel = (t) => (t === 'used-together' ? 'used together (editorial)' : state.maps.relType[t]?.label || t);
+
+// Editorial overlay for the Atlas network: ontologies in the same layer of a use-case stack.
+// Never stored as relations and never shown unless requested.
+function editorialRelations() {
+  const formal = new Set(state.data.relations.flatMap((r) => [`${r.source}|${r.target}`, `${r.target}|${r.source}`]));
+  const out = new Map();
+  for (const u of state.data.useCases) for (const l of u.stack) {
+    const ids = l.ontologies;
+    for (let i = 0; i < ids.length; i++) for (let j = i + 1; j < ids.length; j++) {
+      const key = [ids[i], ids[j]].sort().join('|');
+      if (formal.has(`${ids[i]}|${ids[j]}`) || out.has(key)) continue;
+      out.set(key, { source: ids[i], target: ids[j], type: 'used-together', editorial: true, useCase: u.id, evidence: { url: `#/use-cases/${u.id}`, note: `Editorial: same layer (${l.layer}) of the ${u.name} reference stack.` } });
+    }
+  }
+  return [...out.values()];
+}
 
 function facetLabel(key, v) {
   if (key === 'industry') return industryName(v);
@@ -249,7 +268,8 @@ function viewOntology(id) {
     <p class="detail-summary">${o.summary}</p>
     <div class="btn-row">
       ${o.links.official ? html`<a class="btn btn-primary" href="${safeUrl(o.links.official)}" target="_blank" rel="noopener noreferrer">Official source ↗</a>` : html`<span class="btn btn-disabled" title="No authoritative public source identified">No official source yet</span>`}
-      ${out.length + inc.length ? html`<a class="btn" href="#/graph?focus=${o.id}">View in graph</a>` : ''}
+      ${explorerEntry(o.id).status === 'interactive' ? html`<a class="btn btn-explore" href="#/explore/${o.id}">Explore ontology</a>` : ''}
+      ${out.length + inc.length ? html`<a class="btn" href="#/graph?focus=${o.id}">View in Atlas network</a>` : ''}
       <a class="btn" href="${REPO}/blob/main/data/ontologies/${o.id}.json" target="_blank" rel="noopener noreferrer">Record JSON ↗</a>
     </div>
   </section>
@@ -268,6 +288,7 @@ function viewOntology(id) {
           ${factRow('Repository', o.links.repository ? ext(o.links.repository, o.links.repository) : null)}
           ${factRow('Related', o.links.related ? ext(o.links.related, o.links.related) : null)}
           ${factRow('Topics', o.topics.join(' · '))}
+          ${factRow('Ontology Explorer', html`<a href="#/explore/${o.id}"><span class="pill ${AVAILABILITY[explorerEntry(o.id).status].cls}">${AVAILABILITY[explorerEntry(o.id).status].label}</span></a> <span class="muted small">${explorerEntry(o.id).status === 'interactive' ? '' : explorerEntry(o.id).reason}</span>`)}
         </dl>
       </section>
 
@@ -332,19 +353,22 @@ function viewOntology(id) {
 }
 
 function viewGraph(params) {
-  setTitle('Relationship graph');
+  setTitle('Atlas network');
+  const editorial = params.get('editorial') === '1';
   const focus = params.get('focus');
   const types = params.get('types')?.split(',').filter(Boolean) || state.data.relationTypes.map((t) => t.id);
   const isolated = params.get('isolated') === '1';
   return html`
   <section class="page-head">
-    <h1>Relationship graph</h1>
-    <p class="lead small">Only relationships stated by the publisher or a primary source are drawn, and each edge cites its evidence. Drag nodes, scroll to zoom, and click a node for details.</p>
+    <h1>Atlas network</h1>
+    <p class="lead small">How the catalogued ontologies relate to each other. Formal, mapping and shared relationships are stated by a publisher or primary source and cite their evidence. Editorially proposed links are off by default and drawn dashed. No relationship implies functional interoperability. To look inside a single ontology, use the ${link('#/explore', 'Ontology Explorer')}.</p>
   </section>
   <div class="graph-wrap">
     <div class="graph-controls">
-      <div class="seg">
-        ${state.data.relationTypes.map((t) => html`<label class="toggle"><input type="checkbox" data-reltype="${t.id}" ${types.includes(t.id) ? raw('checked') : ''}><span class="swatch type-${t.id}"></span>${t.label}</label>`)}
+      <div class="rel-cats">
+        ${state.data.relationCategories.map((c) => html`<div class="rel-cat" title="${c.description}"><span class="rel-cat-name">${c.label}</span><div class="seg">${c.id === 'editorial'
+          ? html`<label class="toggle"><input type="checkbox" id="graph-editorial" ${editorial ? raw('checked') : ''}><span class="swatch type-used-together"></span>used together</label>`
+          : state.data.relationTypes.filter((t) => t.category === c.id).map((t) => html`<label class="toggle"><input type="checkbox" data-reltype="${t.id}" ${types.includes(t.id) ? raw('checked') : ''}><span class="swatch type-${t.id}"></span>${t.label}</label>`)}</div></div>`)}
       </div>
       <label class="toggle"><input type="checkbox" id="graph-isolated" ${isolated ? raw('checked') : ''}>Show unconnected ontologies</label>
       <div class="zoom-btns"><button class="btn small" data-zoom="1.2" aria-label="Zoom in">+</button><button class="btn small" data-zoom="0.83" aria-label="Zoom out">−</button><button class="btn small" data-zoom="reset">Reset</button></div>
@@ -380,7 +404,8 @@ function mountGraph(params) {
   if (!container) return;
   const types = [...document.querySelectorAll('[data-reltype]')].filter((c) => c.checked).map((c) => c.dataset.reltype);
   const includeIsolated = document.getElementById('graph-isolated').checked;
-  const graph = buildGraph(state.data.ontologies, state.data.relations, { types, includeIsolated });
+  const relations = document.getElementById('graph-editorial')?.checked ? [...state.data.relations, ...editorialRelations()] : state.data.relations;
+  const graph = buildGraph(state.data.ontologies, relations, { types: [...types, 'used-together'], includeIsolated });
   const panel = document.getElementById('graph-panel');
   const focus = container.dataset.focus || null;
   if (!graph.nodes.length) { container.innerHTML = '<div class="empty"><p>No relationships of the selected types.</p></div>'; return; }
@@ -480,6 +505,24 @@ function viewUseCase(id) {
   </div>`;
 }
 
+function viewExplorerIndex() {
+  setTitle('Ontology Explorer');
+  const groups = Object.keys(AVAILABILITY).map((s) => [s, state.data.ontologies.filter((o) => explorerEntry(o.id).status === s)]).filter(([, xs]) => xs.length);
+  return html`
+  <section class="page-head"><p class="eyebrow">Ontology Explorer</p><h1>Look inside an ontology</h1>
+    <p class="lead small">Navigate the classes, properties, restrictions and definitions published in an ontology's own machine-readable files, without needing to read OWL or RDF. Graphs are parsed from the official distributions at build time. The explorer never builds a graph from a description.</p></section>
+  <div class="card-grid">${interactiveRecords().map((o) => { const m = explorerEntry(o.id); return html`
+    <a class="card" href="#/explore/${o.id}"><div class="card-head"><div><div class="card-kicker">Interactive · ${m.version}</div><h3 class="card-title">${o.name}</h3></div>${pill('v-verified', 'Explore')}</div>
+      <p class="card-full">${o.fullName}</p>
+      <p class="card-summary">${m.stats.classes} classes · ${m.stats.objectProperties} object properties · ${m.stats.datatypeProperties} datatype properties · ${m.stats.individuals} individuals</p>
+      <div class="card-foot"><span class="card-publisher">${m.source.license}</span></div></a>`; })}</div>
+  <section class="section"><h2>Availability of all catalogue records</h2>
+    ${groups.filter(([s]) => s !== 'interactive').map(([s, xs]) => html`
+      <h3 class="sub">${pill(AVAILABILITY[s].cls, AVAILABILITY[s].label)} <span class="muted">${xs.length}</span></h3>
+      <ul class="ex-status-list">${xs.map((o) => html`<li>${link(`#/ontology/${o.id}`, o.name, 'rel-name')} <span class="muted small">${explorerEntry(o.id).reason}</span></li>`)}</ul>`)}
+  </section>`;
+}
+
 function viewAbout() {
   setTitle('About');
   const m = state.data.meta;
@@ -548,6 +591,7 @@ function route() {
     case 'industries': view = id ? viewIndustry(id) : viewIndustries(); break;
     case 'use-cases': view = id ? viewUseCase(id) : viewUseCases(); break;
     case 'about': view = viewAbout(); break;
+    case 'explore': view = id ? (ont(id) ? explorerView({ record: ont(id), entry: explorerEntry(id), interactive: interactiveRecords() }) : viewNotFound()) : viewExplorerIndex(); break;
     default: view = viewNotFound();
   }
   const path = parts.join('/');
@@ -558,6 +602,9 @@ function route() {
   if (path !== lastPath) window.scrollTo(0, 0);
   lastPath = path;
   if (section === 'graph') mountGraph(params);
+  if (section === 'explore' && id && explorerEntry(id).status === 'interactive') {
+    mountExplorer({ record: ont(id), entry: explorerEntry(id), concept: params.get('c'), onConceptChange: (iri) => history.replaceState(null, '', `#/explore/${id}?c=${encodeURIComponent(iri)}`) });
+  }
   if (focusSearch) {
     const q = document.getElementById('catalog-q');
     q.focus();
@@ -581,6 +628,7 @@ function updateGraphParams() {
   if (params.get('focus')) p.set('focus', params.get('focus'));
   if (types.length !== state.data.relationTypes.length) p.set('types', types.join(','));
   if (document.getElementById('graph-isolated').checked) p.set('isolated', '1');
+  if (document.getElementById('graph-editorial')?.checked) p.set('editorial', '1');
   history.replaceState(null, '', `#/graph${p.toString() ? '?' + p : ''}`);
   route();
 }
@@ -603,7 +651,8 @@ app.addEventListener('change', (e) => {
       s.filters[t.dataset.facet] = [...cur];
     });
   } else if (t.id === 'catalog-sort') updateCatalog((s) => { s.sort = t.value; });
-  else if (t.dataset.reltype || t.id === 'graph-isolated') updateGraphParams();
+  else if (t.dataset.reltype || t.id === 'graph-isolated' || t.id === 'graph-editorial') updateGraphParams();
+  else if (t.id === 'ex-switch') location.hash = `#/explore/${t.value}`;
 });
 app.addEventListener('click', (e) => {
   const rm = e.target.closest('[data-remove]');
@@ -655,6 +704,8 @@ async function boot() {
     const res = await fetch('data/atlas.json', { cache: 'no-cache' });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     state.data = await res.json();
+    // Explorer manifest is optional: the catalogue works without it.
+    state.explorer = await fetch('data/explorer/manifest.json', { cache: 'no-cache' }).then((r) => (r.ok ? r.json() : { ontologies: {} })).catch(() => ({ ontologies: {} }));
   } catch (err) {
     app.innerHTML = `<section class="page-head"><h1>Could not load the atlas data</h1><p class="lead small">${esc(err.message)}. If you opened the file directly, serve the folder over HTTP (<code>npm run serve</code>).</p></section>`;
     return;

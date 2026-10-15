@@ -733,7 +733,7 @@ atlas:qudt a atlas:ReferenceOntology ;
     atlas:publisher "QUDT" ;
     atlas:officialSource <https://qudt.org/> ;
     atlas:namespaceIri <http://qudt.org/schema/qudt/> ;
-    atlas:versionLabel "QUDT 3.1.x (3.1.10 published January 2026)" ;
+    atlas:versionLabel "QUDT schema 3.5.2 (as declared by the schema published at qudt.org)" ;
     atlas:licenseName "CC BY 4.0" ;
     atlas:licenseAccess "open" ;
     atlas:maturity "stable" ;

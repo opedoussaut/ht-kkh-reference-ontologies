@@ -48,6 +48,8 @@ export function validate(src) {
   const industryIds = new Set(src.industries.map((i) => i.id));
   const useCaseIds = new Set(src.useCases.map((u) => u.id));
   const relationTypes = new Set(src.relations.types.map((t) => t.id));
+  const relationCategories = new Set((src.relations.categories || []).map((c) => c.id));
+  for (const t of src.relations.types) if (!relationCategories.has(t.category) || t.category === 'editorial') err(`relation type ${t.id}`, `category must be a stored (non-editorial) category, got "${t.category}"`);
 
   for (const { file, record: r } of src.ontologies) {
     if (!check(r)) {
@@ -126,6 +128,7 @@ export function buildBundle(src, { generatedOn }) {
     ontologies,
     industries: src.industries,
     useCases: src.useCases,
+    relationCategories: src.relations.categories,
     relationTypes: src.relations.types,
     relations: src.relations.items,
   };

@@ -458,3 +458,78 @@ select { font: inherit; font-size: 13.5px; color: var(--fg); background: var(--b
 .together-row { display: grid; gap: 6px; padding: 12px 14px; border-radius: 12px; background: var(--bg-soft); border: 1px solid var(--line); }
 .criteria .fact { grid-template-columns: 170px 1fr; align-items: center; }
 @media (max-width: 560px) { .criteria .fact { grid-template-columns: 1fr; } }
+
+/* Ontology Explorer */
+.explorer-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; padding: 22px 0 18px; }
+.explorer-head h1 { font-size: clamp(30px, 4vw, 44px); letter-spacing: -0.04em; font-weight: 750; }
+.ex-version { font-size: 15px; font-weight: 500; letter-spacing: 0; }
+.explorer { display: grid; grid-template-columns: 280px minmax(0, 1fr) 360px; gap: 14px; align-items: stretch; height: calc(100vh - 210px); min-height: 560px; }
+.ex-panel { background: var(--bg-elev); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); min-height: 0; min-width: 0; }
+.ex-left, .ex-right { overflow: auto; padding: 14px; }
+.ex-center { display: flex; flex-direction: column; overflow: hidden; }
+.ex-search { padding: 8px 12px; box-shadow: none; }
+.ex-types { display: flex; flex-wrap: wrap; gap: 6px 12px; margin: 10px 2px; }
+.ex-ns { display: flex; margin: 0 2px 8px; }
+.ex-ns select { flex: 1; min-width: 0; font-size: 12.5px; padding: 6px 8px; }
+.ex-tree .sub { margin: 12px 0 6px; }
+.ex-list { list-style: none; margin: 0; padding: 0 0 0 12px; }
+.ex-tree > .ex-list, .ex-tree > p + .ex-list { padding-left: 0; }
+.ex-list details > summary { list-style: none; display: flex; align-items: center; cursor: pointer; }
+.ex-list details > summary::-webkit-details-marker { display: none; }
+.ex-list details > summary::before { content: "▸"; width: 14px; color: var(--fg-3); font-size: 11px; flex: none; transition: transform .12s; }
+.ex-list details[open] > summary::before { transform: rotate(90deg); }
+.ex-list > li > .ex-item { margin-left: 14px; }
+.ex-item { display: inline-flex; align-items: center; gap: 7px; max-width: 100%; border: 0; background: none; color: var(--fg-2); font: inherit; font-size: 13.5px; padding: 3px 7px; border-radius: 7px; cursor: pointer; text-align: left; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ex-item:hover { background: var(--bg-soft); color: var(--fg); }
+.ex-item.is-sel { background: var(--accent-soft); color: var(--fg); font-weight: 600; }
+.ex-item.is-ext { opacity: .7; }
+.ex-dot { width: 8px; height: 8px; border-radius: 50%; background: #4f9bff; flex: none; }
+.t-objectProperty .ex-dot { background: #42d392; border-radius: 2px; }
+.t-datatypeProperty .ex-dot { background: #ffb547; border-radius: 2px; }
+.t-annotationProperty .ex-dot { background: #8ba2c4; border-radius: 2px; }
+.t-individual .ex-dot { background: #b48cff; transform: rotate(45deg); border-radius: 1px; }
+.ex-group { margin-top: 8px; }
+.ex-group > summary { cursor: pointer; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--fg-3); font-weight: 600; padding: 6px 0; }
+.ex-toolbar { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; justify-content: space-between; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+.ex-actions { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.segmented { display: inline-flex; border: 1px solid var(--line-strong); border-radius: 999px; overflow: hidden; }
+.seg-btn { border: 0; background: transparent; color: var(--fg-2); font: inherit; font-size: 12.5px; padding: 5px 12px; cursor: pointer; }
+.seg-btn.is-on { background: var(--accent-soft); color: var(--fg); font-weight: 600; }
+.ex-cy { flex: 1; min-height: 320px; background: radial-gradient(circle at 50% 40%, rgba(47, 128, 255, 0.1), transparent 65%), var(--navy-950); }
+:root[data-theme="light"] .ex-cy { background: #f7f9fd; }
+.ex-hint { margin: 0; padding: 8px 12px; border-top: 1px solid var(--line); }
+.swatch.ex-hierarchy { background: #6fa8ff; } .swatch.ex-property { background: #42d392; } .swatch.ex-restriction { background: #ffb547; }
+.swatch.ex-axiom { background: #b48cff; } .swatch.ex-instance { background: #b48cff; }
+.ex-title { font-size: 24px; letter-spacing: -0.03em; margin: 2px 0 4px; }
+.ex-btns { margin-top: 10px; }
+.ex-block { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); }
+.ex-def { font-size: 15px; color: var(--fg); line-height: 1.55; }
+.ex-refs { display: flex; flex-wrap: wrap; gap: 4px 6px; }
+.ex-ref { border: 1px solid var(--line-strong); background: var(--bg-soft); color: var(--fg); font: inherit; font-size: 12.5px; padding: 2px 9px; border-radius: 999px; cursor: pointer; }
+.ex-ref:hover { border-color: var(--accent); color: var(--link); }
+.ex-ref.t-objectProperty { border-color: rgba(66, 211, 146, .5); } .ex-ref.t-datatypeProperty { border-color: rgba(255, 181, 71, .5); }
+.ex-restr { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; font-size: 13px; }
+.ex-ann summary { cursor: pointer; font-size: 13px; color: var(--fg-3); margin-top: 8px; }
+.ex-editorial { background: var(--violet-bg); border: 1px solid transparent; border-radius: 12px; padding: 12px 14px; }
+.ex-right .fact { grid-template-columns: 112px 1fr; gap: 10px; }
+.ex-status-list { list-style: none; padding: 0; margin: 0 0 8px; display: grid; gap: 6px; font-size: 14.5px; }
+.btn-explore { border-color: rgba(111, 211, 255, .5); }
+@media (max-width: 1180px) {
+  .explorer { grid-template-columns: 260px minmax(0, 1fr); height: auto; }
+  .ex-center { height: 620px; }
+  .ex-right { grid-column: 1 / -1; max-height: none; }
+  .ex-left { max-height: 620px; }
+}
+@media (max-width: 760px) {
+  .explorer { grid-template-columns: 1fr; }
+  .ex-left { max-height: 340px; }
+  .ex-center { height: 480px; }
+  .ex-actions .btn.small { padding: 5px 10px; }
+}
+.ex-layout-note { margin: 0; padding: 6px 12px; border-top: 1px solid var(--line); }
+
+/* Atlas network: relation categories */
+.rel-cats { display: flex; flex-wrap: wrap; gap: 10px 22px; flex: 1 1 100%; }
+.rel-cat { display: grid; gap: 4px; }
+.rel-cat-name { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--fg-3); font-weight: 600; }
+.type-used-together line, .swatch.type-used-together { stroke: #8ba2c4; background: repeating-linear-gradient(90deg, #8ba2c4 0 4px, transparent 4px 7px); stroke-dasharray: 3 5; stroke-width: 1.2; }

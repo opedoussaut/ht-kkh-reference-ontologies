@@ -1,40 +1,69 @@
 {
   "_note": "Only relationships stated by the publisher or a primary source are listed. Each edge must cite evidence. Types: extends, imports, part-of, aligns-with, superseded-by, references, follows-pattern-of.",
+  "categories": [
+    {
+      "id": "formal",
+      "label": "Formal dependency",
+      "description": "Imports, extensions and modules stated by the publisher."
+    },
+    {
+      "id": "mapping",
+      "label": "Explicit mapping",
+      "description": "Alignments or mappings published by a publisher or primary source."
+    },
+    {
+      "id": "shared",
+      "label": "Shared standards & vocabularies",
+      "description": "References, reused patterns and lineage stated by a primary source."
+    },
+    {
+      "id": "editorial",
+      "label": "Editorially proposed",
+      "description": "Used together in the same layer of an atlas reference stack. Derived from use cases, not stated by publishers."
+    }
+  ],
   "types": [
     {
       "id": "extends",
       "label": "extends",
-      "description": "Specialises or builds on the target's concepts."
+      "description": "Specialises or builds on the target's concepts.",
+      "category": "formal"
     },
     {
       "id": "imports",
       "label": "imports",
-      "description": "Formally imports the target ontology."
+      "description": "Formally imports the target ontology.",
+      "category": "formal"
     },
     {
       "id": "part-of",
       "label": "part of",
-      "description": "Published as a module of the same standard or suite."
+      "description": "Published as a module of the same standard or suite.",
+      "category": "formal"
     },
     {
       "id": "aligns-with",
       "label": "aligns with",
-      "description": "Provides an alignment or mapping to the target."
+      "description": "Provides an alignment or mapping to the target.",
+      "category": "mapping"
     },
     {
       "id": "superseded-by",
       "label": "integrated into",
-      "description": "Content was integrated into, or is continued by, the target."
+      "description": "Content was integrated into, or is continued by, the target.",
+      "category": "shared"
     },
     {
       "id": "references",
       "label": "references",
-      "description": "Uses identifiers or terms from the target."
+      "description": "Uses identifiers or terms from the target.",
+      "category": "shared"
     },
     {
       "id": "follows-pattern-of",
       "label": "follows pattern of",
-      "description": "Reuses the target's design pattern."
+      "description": "Reuses the target's design pattern.",
+      "category": "shared"
     }
   ],
   "items": [

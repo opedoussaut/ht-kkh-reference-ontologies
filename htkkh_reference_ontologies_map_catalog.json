@@ -647,7 +647,7 @@
     "parentOntology": "High-Tech (Core Ontology)",
     "stabilityStatus": "stable",
     "usageStatus": "open",
-    "version": "QUDT 3.1.x (3.1.10 published January 2026)",
+    "version": "QUDT schema 3.5.2 (as declared by the schema published at qudt.org)",
     "license": "CC BY 4.0",
     "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/qudt"
   },
