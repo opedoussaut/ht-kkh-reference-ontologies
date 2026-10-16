@@ -68,7 +68,7 @@ test('search search() returns scores sorted descending', () => {
 });
 
 test('URL state round-trips', () => {
-  const s = { q: 'sensor data', sort: 'name', filters: { industry: ['high-tech', 'infrastructure-energy-materials'], verification: ['verified'] } };
+  const s = { q: 'sensor data', sort: 'name', filters: { industry: ['high-tech', 'infrastructure-energy-materials'], verification: ['verified'] }, family: 'all', question: 'robot-development' };
   const back = stateFromParams(paramsFromState(s));
   assert.deepEqual(back, s);
 });

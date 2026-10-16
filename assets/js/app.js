@@ -14,6 +14,7 @@ const LABELS = {
   verification: { verified: 'Verified', 'partially-verified': 'Partially verified', unverified: 'Unverified' },
   format: { owl: 'OWL', rdf: 'RDF / JSON-LD', shacl: 'SHACL', xml: 'XML / XMI', json: 'JSON', uml: 'UML / MOF', express: 'EXPRESS / STEP', logic: 'Logic (KIF, CL)', csv: 'CSV' },
   publisherType: { 'standards-body': 'Standards body', 'industry-association': 'Industry association', consortium: 'Consortium', research: 'Research', government: 'Government', industry: 'Industry' },
+  reuse: { permitted: 'Permitted (after licence review)', restricted: 'Restricted', 'not-permitted': 'Not permitted', unknown: 'Unknown' },
   status: { published: 'Published', candidate: 'Candidate', draft: 'Draft', superseded: 'Superseded', discontinued: 'Discontinued', unknown: 'Unknown' },
 };
 
@@ -45,7 +46,22 @@ function editorialRelations() {
   return [...out.values()];
 }
 
+const typeLabel = (id) => state.maps.type[id]?.label || id;
+const capLabel = (id) => state.maps.capability[id]?.label || id;
+const evidenceLabel = (id) => state.maps.evidence[id]?.label || id;
+const evidenceSummary = (id) => state.maps.evidence[id]?.summary || '';
+function domainLabel(id, withParent = false) {
+  if (id === 'not-assessed') return 'Not assessed';
+  const d = state.maps.domain[id];
+  return d ? (withParent ? `${d.parent.label} › ${d.label}` : d.label) : id;
+}
+// Source/Editorial provenance tag used throughout the UI.
+const tag = (basis, tip = '') => html`<span class="pill ${basis === 'source' ? 'basis-source' : 'editorial'}" ${tip ? raw(`title="${esc(tip)}"`) : ''}>${basis === 'source' ? 'Source' : 'Editorial'}</span>`;
+
 function facetLabel(key, v) {
+  if (key === 'capability') return capLabel(v);
+  if (key === 'domain') return domainLabel(v);
+  if (key === 'type') return typeLabel(v);
   if (key === 'industry') return industryName(v);
   if (key === 'useCase') return useCaseName(v);
   return label(key, v);
@@ -82,10 +98,10 @@ function relationsOf(id) {
 // ---------- shared components ----------
 function card(o) {
   return html`
-  <a class="card" href="#/ontology/${o.id}">
+  <a class="card" href="#/resource/${o.id}">
     <div class="card-head">
       <div>
-        <div class="card-kicker">${label('layer', o.layer)} · ${label('kind', o.kind)}</div>
+        <div class="card-kicker">${typeLabel(o.resourceType)} · ${domainLabel(o.knowledge.domain)}</div>
         <h3 class="card-title">${o.name}</h3>
       </div>
       ${verifPill(o)}
@@ -110,7 +126,7 @@ function industryTiles(items) {
   return html`<div class="ind-grid">${items.map((i) => {
     const n = state.data.ontologies.filter((o) => o.industries.includes(i.id)).length;
     return html`<a class="ind-tile${i.horizontal ? ' ind-horizontal' : ''}" href="#/industries/${i.id}" title="${i.summary}">
-      ${raw(icon(i.icon))}<span class="ind-name">${i.name}</span><span class="ind-n">${n} ontologies</span></a>`;
+      ${raw(icon(i.icon))}<span class="ind-name">${i.name}</span><span class="ind-n">${n} resources</span></a>`;
   })}</div>`;
 }
 const sectorIndustries = () => state.data.industries.filter((i) => !i.horizontal);
@@ -122,7 +138,7 @@ function viewHome() {
   const d = state.data;
   const verified = d.ontologies.filter((o) => o.verification.status === 'verified').length;
   const stats = [
-    [d.ontologies.length, 'reference ontologies'],
+    [d.ontologies.length, 'public knowledge resources'],
     [verified, 'fully verified records'],
     [d.relations.length, 'evidence-backed relationships'],
     [sectorIndustries().length, 'industries'],
@@ -139,11 +155,11 @@ function viewHome() {
   </section>
   <section class="hero hero-with-cover">
     <p class="eyebrow">Reference Ontology Atlas</p>
-    <h1>Public semantic standards,<br><span class="grad">mapped for engineering.</span></h1>
-    <p class="lead">A curated, cited atlas of public reference ontologies and semantic standards across industries. Each record shows its version, licence and sources.</p>
+    <h1>Discover the knowledge foundations<br><span class="grad">of modern engineering.</span></h1>
+    <p class="lead">A curated, evidence-based map of public ontologies, semantic standards and information models. Each one is classified by industry, knowledge domain and engineering capability, and every fact traces back to its source.</p>
     <form class="hero-search" data-action="hero-search" role="search">
       <svg aria-hidden="true" viewBox="0 0 24 24" class="icon"><path d="M10.5 3a7.5 7.5 0 0 1 5.96 12.06l4.24 4.24-1.4 1.4-4.24-4.24A7.5 7.5 0 1 1 10.5 3Zm0 2a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11Z"/></svg>
-      <input name="q" type="search" placeholder="Search ontologies, standards, topics…  e.g. sensors, IEEE 1872, provenance" aria-label="Search the atlas" autocomplete="off">
+      <input name="q" type="search" placeholder="Search by topic: digital twin, robot tasks, units of measure, IEEE 1872…" aria-label="Search the atlas" autocomplete="off">
       <button type="submit" class="btn btn-primary">Search</button>
     </form>
     <div class="stats">
@@ -152,14 +168,23 @@ function viewHome() {
   </section>
 
   <section class="section">
-    <div class="section-head"><h2>Engineering use cases</h2>${link('#/use-cases', 'All use cases →', 'more')}</div>
-    <div class="uc-grid">
-      ${d.useCases.map((u) => html`
-        <a class="uc-card uc-${u.id}" href="#/use-cases/${u.id}">
-          <div class="uc-kicker">${u.stack.length} semantic layers · ${new Set(u.stack.flatMap((s) => s.ontologies)).size} ontologies</div>
-          <h3>${u.name}</h3>
-          <p>${u.tagline}</p>
+    <div class="section-head"><h2>Start from an engineering question ${tag('editorial', 'Curated by atlas editors; each question opens an ordinary, traceable catalogue filter.')}</h2></div>
+    <div class="q-grid">
+      ${d.questions.map((q) => html`
+        <a class="q-card" href="${questionHref(q)}">
+          <span class="q-text">${q.question}</span>
+          <span class="q-meta">${questionResults(q).length} resources →</span>
         </a>`)}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>Explore by engineering capability</h2>${link('#/catalog', 'Open the catalogue →', 'more')}</div>
+    <div class="cap-grid">
+      ${d.capabilities.map((c) => {
+        const n = d.ontologies.filter((o) => o.capabilities.includes(c.id)).length;
+        return n ? html`<a class="cap-tile" href="#/catalog?capability=${c.id}"><span class="cap-name">${c.label}</span><span class="cap-sum">${c.summary}</span><span class="cap-n">${n}</span></a>` : '';
+      })}
     </div>
   </section>
 
@@ -168,36 +193,70 @@ function viewHome() {
     ${industryTiles(d.industries)}
   </section>
 
+  <section class="section">
+    <div class="section-head"><h2>Engineering use cases</h2>${link('#/use-cases', 'All use cases →', 'more')}</div>
+    <div class="uc-grid">
+      ${d.useCases.map((u) => html`
+        <a class="uc-card uc-${u.id}" href="#/use-cases/${u.id}">
+          <div class="uc-kicker">${u.stack.length} semantic layers · ${new Set(u.stack.flatMap((s) => s.ontologies)).size} resources</div>
+          <h3>${u.name}</h3>
+          <p>${u.tagline}</p>
+        </a>`)}
+    </div>
+  </section>
+
   <section class="section legend">
     <h2>How to read this atlas</h2>
     <div class="legend-grid">
+      <div><h3>${tag('source')}</h3><p>A statement taken from a cited public source: publisher pages, published specifications or official repositories.</p></div>
+      <div><h3>${tag('editorial')}</h3><p>Classifications, engineering uses and use-case stacks written by atlas editors. They are reviewable and dated, but they are interpretation, not fact.</p></div>
       <div><h3>${pill('v-verified', 'Verified')}</h3><p>The publisher, version and licence were checked against the official source on the date shown.</p></div>
-      <div><h3>${pill('v-partially-verified', 'Partially verified')}</h3><p>The official source was confirmed, but at least one fact (such as the exact version or licence wording) is still open.</p></div>
-      <div><h3>${pill('v-unverified', 'Unverified')}</h3><p>A candidate with no authoritative public source yet. Flagged for review.</p></div>
-      <div><h3><span class="pill editorial">Editorial</span></h3><p>Practical uses and use-case stacks written by atlas editors. They are kept apart from verified facts. See ${link('#/about', 'label criteria')}.</p></div>
-      <div><h3><span class="pill">Relationships</span></h3><p>Only links stated by the publisher or a primary source are drawn in the graph, and each one cites its source.</p></div>
+      <div><h3>${pill('v-partially-verified', 'Partially verified')}</h3><p>The official source is confirmed, but at least one fact is still open. The record says which.</p></div>
+      <div><h3>${pill('', 'Not assessed')}</h3><p>Licence review and suitability for your application are not assessed by the atlas. Nothing here is a certification or an endorsement.</p></div>
+      <div><h3><span class="pill">Relationships</span></h3><p>Formal relationships cite their source. A relationship does not mean two resources interoperate. See ${link('#/about', 'label criteria')}.</p></div>
     </div>
   </section>`;
+}
+
+function questionHref(q) {
+  const p = paramsFromState({ q: '', sort: 'relevance', filters: q.filters, question: q.id });
+  return `#/catalog?${p}`;
+}
+function questionResults(q) {
+  return query(state.data.ontologies, state.index, { filters: q.filters });
+}
+
+function facetValues(key, counts, selected) {
+  const keep = (v) => counts[v] || selected?.includes(v);
+  if (key === 'industry') return state.data.industries.map((i) => i.id).filter(keep);
+  if (key === 'useCase') return state.data.useCases.map((u) => u.id).filter(keep);
+  if (key === 'capability') return state.data.capabilities.map((c) => c.id).filter(keep);
+  if (key === 'type') return state.data.resourceTypes.map((t) => t.id).filter(keep);
+  if (key === 'domain') return state.data.knowledgeDomains.flatMap((d) => d.children.map((c) => c.id)).filter(keep);
+  return Object.keys(LABELS[key] || {}).filter(keep);
 }
 
 function viewCatalog(params) {
   setTitle('Catalogue');
   const s = stateFromParams(params);
-  const all = state.data.ontologies;
-  const results = query(all, state.index, s);
+  const families = state.data.resourceFamilies;
+  const defaultFamily = families.find((f) => f.default).id;
+  const family = s.family || defaultFamily;
+  const familyOf = state.maps.familyOf;
+  const scope = state.data.ontologies.filter((o) => family === 'all' || familyOf[o.resourceType] === family);
+  const results = query(state.data.ontologies, state.index, { ...s, family, familyOf });
   const activeCount = Object.values(s.filters).reduce((n, v) => n + v.length, 0);
+  const question = s.question ? state.data.questions.find((q) => q.id === s.question) : null;
+  const inScope = new Set(scope.map((o) => o.id));
 
   const facets = FACETS.map((f) => {
-    const counts = facetCounts(search(state.index, s.q).map((h) => ont(h.id)), s.filters, f.key);
-    let values = Object.keys(counts);
-    if (f.key === 'industry') values = state.data.industries.map((i) => i.id).filter((v) => counts[v] || s.filters[f.key]?.includes(v));
-    else if (f.key === 'useCase') values = state.data.useCases.map((u) => u.id).filter((v) => counts[v] || s.filters[f.key]?.includes(v));
-    else values = Object.keys(LABELS[f.key] || {}).filter((v) => counts[v] || s.filters[f.key]?.includes(v));
+    const counts = facetCounts(search(state.index, s.q).map((h) => ont(h.id)).filter((o) => inScope.has(o.id)), s.filters, f.key);
+    const values = facetValues(f.key, counts, s.filters[f.key]);
     if (!values.length) return '';
-    const open = ['industry', 'useCase'].includes(f.key) || s.filters[f.key]?.length;
+    const open = ['capability', 'industry', 'domain', 'type'].includes(f.key) || s.filters[f.key]?.length;
     return html`
       <details class="facet" ${open ? raw('open') : ''}>
-        <summary>${f.label}${s.filters[f.key]?.length ? html` <span class="facet-active">${s.filters[f.key].length}</span>` : ''}</summary>
+        <summary>${f.label}${s.filters[f.key]?.length ? html` <span class="facet-active">${s.filters[f.key].length}</span>` : ''}${['capability', 'domain', 'industry'].includes(f.key) ? html` <span class="facet-ed" title="Editorial classification">ed.</span>` : ''}</summary>
         <div class="facet-body">
           ${values.map((v) => {
             const checked = s.filters[f.key]?.includes(v);
@@ -208,12 +267,19 @@ function viewCatalog(params) {
   });
 
   const activeChips = Object.entries(s.filters).flatMap(([k, vs]) => vs.map((v) => html`<button class="chip chip-x" data-remove="${k}:${v}" title="Remove filter">${facetLabel(k, v)} ✕</button>`));
+  const familyLabel = family === 'all' ? 'resources' : `resources · ${families.find((f) => f.id === family)?.label}`;
 
   return html`
   <section class="page-head">
     <h1>Catalogue</h1>
-    <p class="lead small">Search and filter ${all.length} public reference ontologies. Filters combine (AND across groups, OR within a group), and every view can be shared by its URL.</p>
+    <p class="lead small">Search and filter public engineering knowledge resources by capability, industry, knowledge domain and resource type. Filters combine (AND across groups, OR within a group), and every view can be shared by its URL.</p>
   </section>
+  ${question ? html`
+  <section class="q-banner" aria-label="Engineering question">
+    <div class="q-banner-head"><span class="q-text">${question.question}</span>${tag('editorial', 'Curated question; it resolves to the filters shown below.')}</div>
+    <p class="small">${question.explanation}</p>
+    ${question.note ? html`<p class="small muted">Known gap: ${question.note}</p>` : ''}
+  </section>` : ''}
   <div class="catalog">
     <aside class="filters" aria-label="Filters">
       <div class="filters-head"><strong>Filters</strong>${activeCount ? html`<button class="link-btn" data-action="clear">Clear all</button>` : ''}</div>
@@ -221,9 +287,14 @@ function viewCatalog(params) {
     </aside>
     <div class="results">
       <div class="toolbar">
+        <div class="segmented family-switch" role="group" aria-label="Resource family">
+          ${[...families, { id: 'all', label: 'All resources' }].map((f) => html`<button class="seg-btn ${family === f.id ? 'is-on' : ''}" data-family="${f.id}" aria-pressed="${family === f.id}">${f.label}</button>`)}
+        </div>
+      </div>
+      <div class="toolbar">
         <div class="search-box">
           <svg aria-hidden="true" viewBox="0 0 24 24" class="icon"><path d="M10.5 3a7.5 7.5 0 0 1 5.96 12.06l4.24 4.24-1.4 1.4-4.24-4.24A7.5 7.5 0 1 1 10.5 3Zm0 2a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11Z"/></svg>
-          <input id="catalog-q" type="search" value="${s.q}" placeholder="Search name, topic, publisher, standard number…" aria-label="Search" autocomplete="off">
+          <input id="catalog-q" type="search" value="${s.q}" placeholder="Search name, topic, capability, publisher, standard number…" aria-label="Search" autocomplete="off">
           <kbd>/</kbd>
         </div>
         <label class="sort">Sort
@@ -232,43 +303,59 @@ function viewCatalog(params) {
           </select>
         </label>
       </div>
-      <div class="result-meta" aria-live="polite"><strong>${results.length}</strong> of ${all.length} ontologies ${activeChips.length ? html`<span class="active-chips">${activeChips}</span>` : ''}</div>
-      ${results.length ? html`<div class="card-grid">${results.map(card)}</div>` : emptyState('No ontology matches these criteria.', html`<button class="btn" data-action="clear">Reset filters</button>`)}
+      <div class="result-meta" aria-live="polite"><strong>${results.length}</strong> of ${scope.length} ${familyLabel} ${activeChips.length ? html`<span class="active-chips">${activeChips}</span>` : ''}</div>
+      ${results.length ? html`<div class="card-grid">${results.map(card)}</div>` : emptyState(scope.length ? 'No resource matches these criteria.' : 'No resources of this family are catalogued yet.', html`<button class="btn" data-action="clear">Reset filters</button>`)}
     </div>
   </div>`;
 }
 
 function factRow(k, v) { return v ? html`<div class="fact"><dt>${k}</dt><dd>${v}</dd></div>` : ''; }
 
+function qualification(o) {
+  const host = (u) => { try { return new URL(u).host; } catch { return null; } };
+  const rows = [
+    ['What', html`${typeLabel(o.resourceType)} · ${domainLabel(o.knowledge.domain, true)}`],
+    ['Why', o.capabilities.length ? o.capabilities.slice(0, 3).map(capLabel).join(' · ') : html`<span class="muted">Not assessed</span>`],
+    ['Who', o.publisher],
+    ['How', html`${o.formats.length ? o.formats.slice(0, 3).join(', ') : html`<span class="muted">Formats not documented</span>`} · licence: ${label('access', o.license.access).toLowerCase()}`],
+    ['When', html`${o.version.label}${o.version.date ? ` (${o.version.date})` : ''} · checked ${o.verification.checkedOn}`],
+    ['Where', o.links.official ? ext(o.links.official, host(o.links.official)) : html`<span class="muted">No official source</span>`],
+  ];
+  return html`<dl class="qual">${rows.map(([k, v]) => html`<div class="qual-row"><dt>${k}</dt><dd>${v}</dd></div>`)}</dl>`;
+}
+
+function sectionHead(n, title, basis, tip) {
+  return html`<h2 class="sec-h"><span class="sec-n">${n}</span>${title} ${basis ? tag(basis, tip) : ''}</h2>`;
+}
+
 function viewOntology(id) {
   const o = ont(id);
   if (!o) return viewNotFound();
   setTitle(o.name);
   const { out, inc } = relationsOf(id);
+  const ex = explorerEntry(o.id);
+  const together = usedTogether(o.id);
 
   const relItem = (r, dir) => {
     const other = ont(dir === 'out' ? r.target : r.source);
-    const otherLink = link(`#/ontology/${other.id}`, other.name, 'rel-name');
+    const otherLink = link(`#/resource/${other.id}`, other.name, 'rel-name');
     const sentence = dir === 'out'
       ? html`<span class="rel-self">${o.name}</span> <span class="rel-type">${relLabel(r.type)}</span> ${otherLink}`
       : html`${otherLink} <span class="rel-type">${relLabel(r.type)}</span> <span class="rel-self">${o.name}</span>`;
-    return html`<li class="rel">
-      <div>${sentence}</div>
-      <span class="rel-ev">${r.evidence.note} ${ext(r.evidence.url, 'Source')}</span>
-    </li>`;
+    return html`<li class="rel"><div>${sentence}</div><span class="rel-ev">${r.evidence.note} ${ext(r.evidence.url, 'Source')}</span></li>`;
   };
 
   return html`
   <nav class="crumbs">${link('#/catalog', 'Catalogue')} <span>/</span> ${o.name}</nav>
   <section class="detail-hero">
-    <div class="detail-kicker">${label('layer', o.layer)} · ${label('kind', o.kind)}${o.standardRef ? html` · <span class="mono">${o.standardRef}</span>` : ''}</div>
+    <div class="detail-kicker">${typeLabel(o.resourceType)} · ${label('layer', o.layer)}${o.standardRef ? html` · <span class="mono">${o.standardRef}</span>` : ''}</div>
     <h1>${o.name}</h1>
     <p class="detail-full">${o.fullName}</p>
     <div class="pill-row">${verifPill(o)} ${maturityPill(o)} ${accessPill(o)} ${o.needsReview ? pill('warn', 'Needs review') : ''} ${o.origin === 'v1' ? pill('', 'Since v1') : pill('', 'Added in v2')}</div>
     <p class="detail-summary">${o.summary}</p>
     <div class="btn-row">
       ${o.links.official ? html`<a class="btn btn-primary" href="${safeUrl(o.links.official)}" target="_blank" rel="noopener noreferrer">Official source ↗</a>` : html`<span class="btn btn-disabled" title="No authoritative public source identified">No official source yet</span>`}
-      ${explorerEntry(o.id).status === 'interactive' ? html`<a class="btn btn-explore" href="#/explore/${o.id}">Explore ontology</a>` : ''}
+      ${ex.status === 'interactive' ? html`<a class="btn btn-explore" href="#/explore/${o.id}">Explore ontology</a>` : ''}
       ${out.length + inc.length ? html`<a class="btn" href="#/graph?focus=${o.id}">View in Atlas network</a>` : ''}
       <a class="btn" href="${REPO}/blob/main/data/ontologies/${o.id}.json" target="_blank" rel="noopener noreferrer">Record JSON ↗</a>
     </div>
@@ -276,44 +363,74 @@ function viewOntology(id) {
 
   <div class="detail-grid">
     <div class="detail-main">
-      <section class="panel">
-        <h2>Key facts</h2>
+      <section class="panel" id="what">
+        ${sectionHead(1, 'What this resource is', 'source', 'Facts from the cited sources (see section 6).')}
         <dl class="facts">
+          ${factRow('Resource type', html`${typeLabel(o.resourceType)}${label('kind', o.kind) !== typeLabel(o.resourceType) ? html` <span class="muted">· ${label('kind', o.kind)}</span>` : ''}`)}
+          ${factRow('Knowledge domain', html`${domainLabel(o.knowledge.domain, true)} ${tag(o.knowledge.basis)}`)}
           ${factRow('Publisher', html`${o.publisher} <span class="muted">· ${label('publisherType', o.publisherType)}</span>`)}
           ${factRow('Version', html`<span class="mono">${o.version.label}</span>${o.version.date ? html` <span class="muted">· ${o.version.date}</span>` : ''} <span class="muted">· ${label('status', o.version.status)}</span>`)}
-          ${factRow('Licence', html`${o.license.name}${o.license.url ? html` · ${ext(o.license.url, 'terms')}` : ''}`)}
-          ${factRow('Formats', o.formats.length ? o.formats.join(' · ') : null)}
-          ${factRow('Namespace', o.links.namespace ? html`<span class="mono break">${o.links.namespace}</span>` : null)}
-          ${factRow('Specification', o.links.specification ? ext(o.links.specification, o.links.specification) : null)}
-          ${factRow('Repository', o.links.repository ? ext(o.links.repository, o.links.repository) : null)}
-          ${factRow('Related', o.links.related ? ext(o.links.related, o.links.related) : null)}
+          ${factRow('Maturity', html`${label('maturity', o.maturity)} <span class="muted small">· ${link('#/about', 'criteria')}</span>`)}
           ${factRow('Topics', o.topics.join(' · '))}
-          ${factRow('Ontology Explorer', html`<a href="#/explore/${o.id}"><span class="pill ${AVAILABILITY[explorerEntry(o.id).status].cls}">${AVAILABILITY[explorerEntry(o.id).status].label}</span></a> <span class="muted small">${explorerEntry(o.id).status === 'interactive' ? '' : explorerEntry(o.id).reason}</span>`)}
+          ${factRow('Namespace', o.links.namespace ? html`<span class="mono break">${o.links.namespace}</span>` : null)}
         </dl>
       </section>
 
-      ${o.engineeringUses?.length ? html`
-      <section class="panel">
-        <h2>Practical engineering uses <span class="pill editorial" title="Written by atlas editors to illustrate typical uses. Not a claim of adoption.">Editorial</span></h2>
-        <ul class="bullets">${o.engineeringUses.map((x) => html`<li>${x}</li>`)}</ul>
-      </section>` : ''}
-
-      <section class="panel">
-        <h2>Relationships</h2>
-        ${out.length + inc.length ? html`<ul class="rels">${out.map((r) => relItem(r, 'out'))}${inc.map((r) => relItem(r, 'in'))}</ul>` : html`<p class="muted">No evidence-backed relationships recorded yet.</p>`}
-        ${usedTogether(o.id).length ? html`
-        <h3 class="sub">Used together in reference stacks</h3>
-        <p class="muted small">Grouped by the atlas use cases (editorial architecture suggestions), not stated by the publishers.</p>
-        <div class="together">${usedTogether(o.id).map(({ u, layers, peers }) => html`
-          <div class="together-row"><div>${link(`#/use-cases/${u.id}`, u.name, 'rel-name')} <span class="muted small">· ${layers.join(', ')}</span></div>
-          <div class="chips">${peers.map((pid) => html`<a class="chip chip-ont" href="#/ontology/${pid}">${ont(pid).name}</a>`)}</div></div>`)}</div>` : ''}
+      <section class="panel" id="why">
+        ${sectionHead(2, 'Engineering problems it helps address', 'editorial', 'Written by atlas editors; not a claim of adoption.')}
+        ${o.capabilities.length ? html`<div class="chips">${o.capabilities.map((c) => chip(`#/catalog?capability=${c}`, capLabel(c)))}</div>` : html`<p class="muted">Capabilities not assessed yet.</p>`}
+        ${o.engineeringUses?.length ? html`<h3 class="sub">Typical uses</h3><ul class="bullets">${o.engineeringUses.map((x) => html`<li>${x}</li>`)}</ul>` : ''}
       </section>
 
-      ${o.corrections?.length ? html`
-      <section class="panel">
-        <h2>Corrections made in v2</h2>
-        <ul class="corrections">${o.corrections.map((c) => html`<li><span class="mono">${c.field}</span>: <s>${c.from}</s> → <strong>${c.to}</strong><br><span class="muted">${c.reason} ${ext(c.source, 'Source')}</span></li>`)}</ul>
-      </section>` : ''}
+      <section class="panel" id="industries">
+        ${sectionHead(3, 'Industries that may benefit', o.classificationBasis.industries, 'Editorial mapping unless marked as source.')}
+        <div class="chips">${o.industries.map((i) => chip(`#/industries/${i}`, industryName(i)))}</div>
+        ${o.useCases.length ? html`<h3 class="sub">Appears in reference stacks</h3><div class="chips">${o.useCases.map((u) => chip(`#/use-cases/${u}`, useCaseName(u)))}</div>` : ''}
+      </section>
+
+      <section class="panel" id="how">
+        ${sectionHead(4, 'How it can be used', 'source')}
+        <dl class="facts">
+          ${factRow('Formats', o.formats.length ? o.formats.join(' · ') : html`<span class="muted">Not documented</span>`)}
+          ${factRow('Licence', html`${o.license.name}${o.license.url ? html` · ${ext(o.license.url, 'terms')}` : ''} <span class="muted">· ${label('access', o.license.access)}</span>`)}
+          ${factRow('Specification', o.links.specification ? ext(o.links.specification, o.links.specification) : null)}
+          ${factRow('Repository', o.links.repository ? ext(o.links.repository, o.links.repository) : null)}
+          ${factRow('Distributions', o.links.distributions?.length ? html`${o.links.distributions.map((x) => html`<div>${ext(x.url, x.format)}</div>`)}` : null)}
+          ${factRow('Related', o.links.related ? ext(o.links.related, o.links.related) : null)}
+          ${factRow('Ontology Explorer', html`<a href="#/explore/${o.id}"><span class="pill ${AVAILABILITY[ex.status].cls}">${AVAILABILITY[ex.status].label}</span></a> <span class="muted small">${ex.status === 'interactive' ? '' : ex.reason}</span>`)}
+        </dl>
+      </section>
+
+      <section class="panel" id="complements">
+        ${sectionHead(5, 'Complementary resources')}
+        <p class="muted small">A relationship does not mean the two resources interoperate functionally.</p>
+        <h3 class="sub">Formal relationships ${tag('source')}</h3>
+        ${out.length + inc.length ? html`<ul class="rels">${out.map((r) => relItem(r, 'out'))}${inc.map((r) => relItem(r, 'in'))}</ul>` : html`<p class="muted">No evidence-backed relationships recorded yet.</p>`}
+        ${together.length ? html`
+        <h3 class="sub">Used together in reference stacks ${tag('editorial')}</h3>
+        <div class="together">${together.map(({ u, layers, peers }) => html`
+          <div class="together-row"><div>${link(`#/use-cases/${u.id}`, u.name, 'rel-name')} <span class="muted small">· ${layers.join(', ')}</span></div>
+          <div class="chips">${peers.map((pid) => html`<a class="chip chip-ont" href="#/resource/${pid}">${ont(pid).name}</a>`)}</div></div>`)}</div>` : ''}
+      </section>
+
+      <section class="panel" id="evidence">
+        ${sectionHead(6, 'Evidence')}
+        <p>${verifPill(o)} <span class="muted">Facts checked ${o.verification.checkedOn} · editorial content reviewed ${o.editorialReview.reviewedOn} by ${o.editorialReview.reviewer}</span></p>
+        <ol class="sources">${o.verification.sources.map((s) => html`<li>${ext(s.url, s.title)} <span class="pill ev-${s.type}" title="${evidenceSummary(s.type)}">${evidenceLabel(s.type)}</span></li>`)}</ol>
+        ${o.corrections?.length ? html`<h3 class="sub">Corrections</h3>
+          <ul class="corrections">${o.corrections.map((c) => html`<li><span class="mono">${c.field}</span>: <s>${c.from}</s> → <strong>${c.to}</strong><br><span class="muted">${c.reason} ${ext(c.source, 'Source')}</span></li>`)}</ul>` : ''}
+      </section>
+
+      <section class="panel" id="limits">
+        ${sectionHead(7, 'Limitations, licence and uncertainty')}
+        ${o.limitations.length ? html`<ul class="bullets">${o.limitations.map((l) => html`<li>${l.text} ${tag(l.basis)}${l.sourceRef ? html` ${ext(l.sourceRef, 'Source')}` : ''}</li>`)}</ul>` : html`<p class="muted">No limitations recorded yet. That does not mean none exist.</p>`}
+        ${o.verification.notes ? html`<p class="small"><strong>Verification note:</strong> ${o.verification.notes}</p>` : ''}
+        <dl class="facts compact">
+          ${factRow('Licence review', html`${o.license.reviewStatus === 'reviewed' ? 'Reviewed' : 'Not assessed'} <span class="muted small">· the atlas does not give legal advice</span>`)}
+          ${factRow('Commercial reuse', o.license.commercialReuse === 'unknown' ? html`<span class="muted">Unknown: check the licence terms yourself</span>` : label('reuse', o.license.commercialReuse))}
+          ${factRow('Suitability', html`<span class="muted">Not assessed. Suitability for a specific engineering application is your own judgement.</span>`)}
+        </dl>
+      </section>
 
       ${o.legacy ? html`
       <section class="panel">
@@ -331,22 +448,13 @@ function viewOntology(id) {
     </div>
 
     <aside class="detail-side">
-      <section class="panel">
-        <h2>Verification</h2>
-        <p>${verifPill(o)} <span class="muted">Checked ${o.verification.checkedOn}</span></p>
-        ${o.verification.notes ? html`<p class="small">${o.verification.notes}</p>` : ''}
-        <h3 class="sub">Sources</h3>
-        <ol class="sources">${o.verification.sources.map((s) => html`<li>${ext(s.url, s.title)}</li>`)}</ol>
-      </section>
-      <section class="panel">
-        <h2>Industries</h2>
-        <div class="chips">${o.industries.map((i) => chip(`#/industries/${i}`, industryName(i)))}</div>
-        <h2 class="mt">Use cases</h2>
-        ${o.useCases.length ? html`<div class="chips">${o.useCases.map((u) => chip(`#/use-cases/${u}`, useCaseName(u)))}</div>` : html`<p class="muted small">Not mapped to a use case.</p>`}
-      </section>
-      <section class="panel">
-        <h2>Improve this record</h2>
-        <p class="small">Found a newer version or a better source? ${ext(`${REPO}/issues/new?template=correction.yml&title=${encodeURIComponent(`[Correction] ${o.name}`)}`, 'Open a correction request')}.</p>
+      <section class="panel sticky-side">
+        <h2>At a glance</h2>
+        ${qualification(o)}
+        <nav class="toc" aria-label="On this page">
+          ${[['what', 'What it is'], ['why', 'Problems addressed'], ['industries', 'Industries'], ['how', 'How to use it'], ['complements', 'Complementary resources'], ['evidence', 'Evidence'], ['limits', 'Limitations']].map(([a, t], n) => html`<a href="#/resource/${o.id}" data-scroll="${a}"><span class="sec-n small">${n + 1}</span>${t}</a>`)}
+        </nav>
+        <p class="small muted">Found a newer version or a better source? ${ext(`${REPO}/issues/new?template=correction.yml&title=${encodeURIComponent(`[Correction] ${o.name}`)}`, 'Open a correction request')}.</p>
       </section>
     </aside>
   </div>`;
@@ -396,7 +504,7 @@ function graphPanel(id) {
       ${out.map((r) => html`<li><span class="rel-type">${relLabel(r.type)}</span> ${link(`#/graph?focus=${r.target}`, ont(r.target).name)} ${ext(r.evidence.url, 'source')}</li>`)}
       ${inc.map((r) => html`<li>${link(`#/graph?focus=${r.source}`, ont(r.source).name)} <span class="rel-type">${relLabel(r.type)}</span> this ${ext(r.evidence.url, 'source')}</li>`)}
     </ul>
-    <a class="btn btn-primary small" href="#/ontology/${o.id}">Open details</a>`;
+    <a class="btn btn-primary small" href="#/resource/${o.id}">Open details</a>`;
 }
 
 function mountGraph(params) {
@@ -489,13 +597,13 @@ function viewUseCase(id) {
                 <p class="muted small">${s.role}</p>
                 <div class="chips">${s.ontologies.map((oid) => {
                   const o = ont(oid);
-                  return html`<a class="chip chip-ont v-${o.verification.status}" href="#/ontology/${oid}" title="${o.fullName}">${o.name}</a>`;
+                  return html`<a class="chip chip-ont v-${o.verification.status}" href="#/resource/${oid}" title="${o.fullName}">${o.name}</a>`;
                 })}</div>
               </div>
             </div>`)}
         </div>
       </section>
-      ${rels.length ? html`<section class="panel"><h2>Verified links inside this stack</h2><ul class="rels compact">${rels.map((r) => html`<li>${link(`#/ontology/${r.source}`, ont(r.source).name)} <span class="rel-type">${relLabel(r.type)}</span> ${link(`#/ontology/${r.target}`, ont(r.target).name)} ${ext(r.evidence.url, 'source')}</li>`)}</ul>
+      ${rels.length ? html`<section class="panel"><h2>Verified links inside this stack</h2><ul class="rels compact">${rels.map((r) => html`<li>${link(`#/resource/${r.source}`, ont(r.source).name)} <span class="rel-type">${relLabel(r.type)}</span> ${link(`#/resource/${r.target}`, ont(r.target).name)} ${ext(r.evidence.url, 'source')}</li>`)}</ul>
         <a class="btn small" href="#/graph">Open the full graph</a></section>` : ''}
     </div>
     <aside class="detail-side">
@@ -519,7 +627,7 @@ function viewExplorerIndex() {
   <section class="section"><h2>Availability of all catalogue records</h2>
     ${groups.filter(([s]) => s !== 'interactive').map(([s, xs]) => html`
       <h3 class="sub">${pill(AVAILABILITY[s].cls, AVAILABILITY[s].label)} <span class="muted">${xs.length}</span></h3>
-      <ul class="ex-status-list">${xs.map((o) => html`<li>${link(`#/ontology/${o.id}`, o.name, 'rel-name')} <span class="muted small">${explorerEntry(o.id).reason}</span></li>`)}</ul>`)}
+      <ul class="ex-status-list">${xs.map((o) => html`<li>${link(`#/resource/${o.id}`, o.name, 'rel-name')} <span class="muted small">${explorerEntry(o.id).reason}</span></li>`)}</ul>`)}
   </section>`;
 }
 
@@ -545,6 +653,18 @@ function viewAbout() {
         ['unverified', 'No authoritative public source yet; flagged for review.']].map(([k, v]) => factRow(pill(`v-${k}`, label('verification', k)), v))}
       ${factRow(html`<span class="pill editorial">Editorial</span>`, 'Content written by atlas editors, such as practical engineering uses and use-case stacks. It illustrates typical uses and does not state facts about adoption.')}
     </dl>
+    <h2>Discovery dimensions</h2>
+    <p>Every resource is described once and classified along independent dimensions. None is derived from another, and no resource is duplicated per industry.</p>
+    <dl class="facts criteria">
+      ${factRow('Resource type', html`What kind of artefact it is: ${state.data.resourceTypes.map((x) => x.label).join(', ')}. Derived from the record's own artefact type.`)}
+      ${factRow('Knowledge domain', html`What engineering knowledge it represents, as one primary sub-domain of: ${state.data.knowledgeDomains.map((d) => d.label).join(', ')}. ${tag('editorial')} The atlas's own public taxonomy.`)}
+      ${factRow('Engineering capability', html`What engineers and AI systems can do with it (several allowed). ${tag('editorial')}`)}
+      ${factRow('Industry', html`Which of the ${sectorIndustries().length} industries may benefit, plus cross-industry foundations. ${tag('editorial')}`)}
+      ${factRow('Physical AI', html`Proposed application categories (${state.data.physicalAi.items.map((x) => x.label).join(', ')}). No resource is assigned yet: an assignment needs documentation from the resource itself.`)}
+    </dl>
+    <h2>Evidence types</h2>
+    <p>Each verification source carries its type. A working link is not evidence of accuracy, maintenance, interoperability or industrial suitability.</p>
+    <dl class="facts criteria">${state.data.evidenceTypes.map((x) => factRow(html`<span class="pill ev-${x.id}">${x.label}</span>`, x.summary))}</dl>
     <h2>Relationships</h2>
     <p>Only relationships stated by a publisher or primary source are drawn, and each edge carries a citation. Relationship types: ${state.data.relationTypes.map((t) => t.label).join(', ')}.</p>
     <h2>Migration from v1</h2>
@@ -586,7 +706,8 @@ function route() {
   switch (section) {
     case '': view = viewHome(); break;
     case 'catalog': view = viewCatalog(params); break;
-    case 'ontology': view = viewOntology(id); break;
+    case 'ontology': // permanent alias of #/resource/<id>
+    case 'resource': view = viewOntology(id); break;
     case 'graph': view = viewGraph(params); break;
     case 'industries': view = id ? viewIndustry(id) : viewIndustries(); break;
     case 'use-cases': view = id ? viewUseCase(id) : viewUseCases(); break;
@@ -598,7 +719,7 @@ function route() {
   const focusSearch = section === 'catalog' && document.activeElement?.id === 'catalog-q';
   const caret = focusSearch ? document.activeElement.selectionStart : null;
   app.innerHTML = view.toString();
-  setNav(section === 'ontology' ? 'catalog' : section);
+  setNav(section === 'ontology' || section === 'resource' ? 'catalog' : section);
   if (path !== lastPath) window.scrollTo(0, 0);
   lastPath = path;
   if (section === 'graph') mountGraph(params);
@@ -616,6 +737,12 @@ function updateCatalog(mutator) {
   const { params } = parseHash();
   const s = stateFromParams(params);
   mutator(s);
+  // The question banner only stays while the filters still match that question exactly.
+  if (s.question) {
+    const q = state.data.questions.find((x) => x.id === s.question);
+    const norm = (f) => JSON.stringify(Object.entries(f).filter(([, v]) => v?.length).map(([k, v]) => [k, [...v].sort()]).sort());
+    if (!q || s.q || norm(q.filters) !== norm(s.filters)) s.question = null;
+  }
   const qs = paramsFromState(s).toString();
   history.replaceState(null, '', `#/catalog${qs ? '?' + qs : ''}`);
   route();
@@ -660,7 +787,11 @@ app.addEventListener('click', (e) => {
     const [k, v] = rm.dataset.remove.split(':');
     updateCatalog((s) => { s.filters[k] = (s.filters[k] || []).filter((x) => x !== v); });
   }
-  if (e.target.closest('[data-action="clear"]')) updateCatalog((s) => { s.filters = {}; s.q = ''; });
+  if (e.target.closest('[data-action="clear"]')) updateCatalog((s) => { s.filters = {}; s.q = ''; s.question = null; });
+  const fam = e.target.closest('[data-family]');
+  if (fam) updateCatalog((s) => { s.family = fam.dataset.family === state.data.resourceFamilies.find((x) => x.default).id ? null : fam.dataset.family; });
+  const jump = e.target.closest('[data-scroll]');
+  if (jump) { e.preventDefault(); document.getElementById(jump.dataset.scroll)?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
 });
 app.addEventListener('submit', (e) => {
   const f = e.target.closest('[data-action="hero-search"]');
@@ -704,6 +835,8 @@ async function boot() {
     const res = await fetch('data/atlas.json', { cache: 'no-cache' });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     state.data = await res.json();
+    // Schema v3: work on all resources; `ontologies` in the bundle is the default-family alias kept for old consumers.
+    if (state.data.resources) state.data.ontologies = state.data.resources;
     // Explorer manifest is optional: the catalogue works without it.
     state.explorer = await fetch('data/explorer/manifest.json', { cache: 'no-cache' }).then((r) => (r.ok ? r.json() : { ontologies: {} })).catch(() => ({ ontologies: {} }));
   } catch (err) {
@@ -714,6 +847,11 @@ async function boot() {
   state.byId = new Map(d.ontologies.map((o) => [o.id, o]));
   state.maps = {
     industry: Object.fromEntries(d.industries.map((x) => [x.id, x])),
+    type: Object.fromEntries(d.resourceTypes.map((x) => [x.id, x])),
+    familyOf: Object.fromEntries(d.resourceTypes.map((x) => [x.id, x.family])),
+    capability: Object.fromEntries(d.capabilities.map((x) => [x.id, x])),
+    evidence: Object.fromEntries(d.evidenceTypes.map((x) => [x.id, x])),
+    domain: Object.fromEntries(d.knowledgeDomains.flatMap((p) => p.children.map((c) => [c.id, { ...c, parent: p }]))),
     useCase: Object.fromEntries(d.useCases.map((x) => [x.id, x])),
     relType: Object.fromEntries(d.relationTypes.map((x) => [x.id, x])),
   };

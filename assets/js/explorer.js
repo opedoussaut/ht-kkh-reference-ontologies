@@ -29,14 +29,14 @@ export function explorerView({ record, entry, interactive }) {
   const av = AVAILABILITY[status];
   if (status !== 'interactive') {
     return html`
-    <nav class="crumbs"><a href="#/catalog">Catalogue</a> <span>/</span> <a href="#/ontology/${record.id}">${record.name}</a> <span>/</span> Explorer</nav>
+    <nav class="crumbs"><a href="#/catalog">Catalogue</a> <span>/</span> <a href="#/resource/${record.id}">${record.name}</a> <span>/</span> Explorer</nav>
     <section class="page-head"><p class="eyebrow">Ontology Explorer</p><h1>${record.name}</h1>
       <p class="pill-row"><span class="pill ${av.cls}">${av.label}</span></p>
       <p class="lead small">${entry?.reason || 'This record has not yet been assessed for the explorer.'}</p>
       <p class="muted">The explorer shows only structures parsed from the publisher's own machine-readable files. It never builds a graph from a description.</p>
       <div class="btn-row">
         ${record.links.official ? html`<a class="btn btn-primary" href="${safeUrl(record.links.official)}" target="_blank" rel="noopener noreferrer">Official source ↗</a>` : ''}
-        <a class="btn" href="#/ontology/${record.id}">Back to record</a>
+        <a class="btn" href="#/resource/${record.id}">Back to record</a>
       </div>
     </section>
     <section class="section"><h2>Ontologies you can explore now</h2>
@@ -44,7 +44,7 @@ export function explorerView({ record, entry, interactive }) {
     </section>`;
   }
   return html`
-  <nav class="crumbs"><a href="#/catalog">Catalogue</a> <span>/</span> <a href="#/ontology/${record.id}">${record.name}</a> <span>/</span> Explorer</nav>
+  <nav class="crumbs"><a href="#/catalog">Catalogue</a> <span>/</span> <a href="#/resource/${record.id}">${record.name}</a> <span>/</span> Explorer</nav>
   <section class="explorer-head">
     <div>
       <p class="eyebrow">Ontology Explorer</p>
@@ -97,7 +97,7 @@ export async function mountExplorer({ record, entry, concept, onConceptChange })
   try {
     graph = await loadAsset(entry.asset);
   } catch (err) {
-    root.innerHTML = `<div class="empty"><p>The graph file could not be loaded (${esc(err.message)}).</p><a class="btn" href="#/ontology/${esc(record.id)}">Back to record</a></div>`;
+    root.innerHTML = `<div class="empty"><p>The graph file could not be loaded (${esc(err.message)}).</p><a class="btn" href="#/resource/${esc(record.id)}">Back to record</a></div>`;
     return;
   }
   if (!document.body.contains(root)) return; // navigated away while loading
