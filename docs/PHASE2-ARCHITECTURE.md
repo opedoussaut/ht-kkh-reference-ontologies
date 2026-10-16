@@ -1,9 +1,9 @@
 # Phase 2 architecture — from ontology directory to engineering knowledge atlas
 
-Status: **proposal awaiting approval** · Branch: `feature/physical-ai-atlas-enrichment` · Baseline: `d1cdb86`
+Status: **approved 2026-10-16 and implemented** (schema v3, migration of all 46 records, discovery UI) · Branch: `feature/physical-ai-atlas-enrichment` · Baseline: `d1cdb86`
 
 Related documents: [RESOURCE-TAXONOMY.md](RESOURCE-TAXONOMY.md) · [KNOWLEDGE-QUALIFICATION.md](KNOWLEDGE-QUALIFICATION.md) ·
-[PUBLIC-DATA-GOVERNANCE.md](PUBLIC-DATA-GOVERNANCE.md) · [PHASE2-MIGRATION-PREVIEW.md](PHASE2-MIGRATION-PREVIEW.md) ·
+[PUBLIC-DATA-GOVERNANCE.md](PUBLIC-DATA-GOVERNANCE.md) · [PHASE2-CLASSIFICATION.md](PHASE2-CLASSIFICATION.md) ·
 [ONTOLOGY-EXPLORER.md](ONTOLOGY-EXPLORER.md)
 
 ## 1. Audit summary (Step A)
@@ -85,7 +85,7 @@ Existing fields keep their names and meaning. New fields are marked **new**.
 
 ## 6. Physical AI dimension — model, navigation, evidence (preparation only)
 
-- **Model**: `physicalAi[]` ids from `data/taxonomy/proposed/physical-ai.json`. It is an *application* taxonomy, not an established standard.
+- **Model**: `physicalAi[]` ids from `data/taxonomy/physical-ai.json`. It is an *application* taxonomy, not an established standard.
 - **Navigation**: an additional "Physical AI" entry, with one panel per category linking to the filtered catalogue. It appears only once at least three categories contain at least one resource.
 - **Evidence required to assign a category**: a source of type `official-documentation`, `published-specification` or `peer-reviewed` that describes the resource's role in that area. Editorial assignment is allowed only alongside the resource's own documentation, and must be marked `basis: "editorial"`. Vendor-reported performance claims never justify an assignment on their own.
 - **Out of scope in Phase 2**: adding Physical AI resources (models, simulators, datasets).
@@ -177,7 +177,10 @@ Dataset (**illustrative only**):
 
 The dataset example would currently fail validation (`sources` requires at least one item), and that is intentional: a dataset cannot be published without a source.
 
-## 9. Decisions requiring approval
+## 9. Decisions (approved 2026-10-16)
+
+All five decisions below were approved as proposed: generic public taxonomy plus a private crosswalk; resource types derived from `kind`; the editorial domain and capability mapping, including the tentative rows; `#/resource/<id>` with the `#/ontology/<id>` alias; and keeping `data/ontologies/`.
+
 
 1. **Reference classification publication.** The atlas uses a *generic public* knowledge taxonomy written in its own words. A crosswalk to the internal reference classification is kept outside the public repository (`private/`, git-ignored). Publishing an attributed mapping requires explicit authorisation.
 2. **Resource-type mapping** from `kind` (preview table).

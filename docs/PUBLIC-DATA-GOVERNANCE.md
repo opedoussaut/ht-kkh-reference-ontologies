@@ -27,7 +27,7 @@ content back into this repository.
 
 ## 2. Evidence model
 
-Every source and every claim has an evidence type (`data/taxonomy/proposed/evidence-types.json`):
+Every source and every claim has an evidence type (`data/taxonomy/evidence-types.json`):
 
 | Type | Examples | Can support |
 | --- | --- | --- |

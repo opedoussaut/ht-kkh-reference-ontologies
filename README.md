@@ -6,7 +6,8 @@ An evidence-based, cross-industry atlas of **public** reference ontologies and s
 
 **→ https://opedoussaut.github.io/ht-kkh-reference-ontologies/**
 
-- **42 ontologies.** Each record carries its publisher, version, licence, official links and cited verification sources.
+- **46 public knowledge resources** (34 ontologies, 7 vocabularies, 4 data schemas, 1 modelling language). Each one is described once, with its publisher, version, licence, official links and typed, cited verification sources.
+- **Four independent discovery dimensions**: industry, knowledge domain, resource type and engineering capability, plus curated engineering questions such as *Which resources help connect engineering requirements with verification evidence?*
 - **Cross-industry discovery** across 12 industries: Transportation & Mobility, Aerospace & Defense, Marine & Offshore,
   Industrial Equipment, High-Tech, Home & Lifestyle, Consumer Packaged Goods & Retail, Life Sciences & Healthcare,
   Infrastructure, Energy & Materials, Architecture, Engineering & Construction, Business Services, and Cities & Public

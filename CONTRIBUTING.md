@@ -27,11 +27,17 @@ Thank you for helping keep the atlas accurate. Two rules come first:
    | `kind`, `layer` | kind: `ontology`, `vocabulary`, `meta-model`, `information-model`, `modeling-language`, `classification`. layer: `upper`, `mid-level`, `cross-domain`, `domain` |
    | `version` | `label` as the publisher states it, ISO `date` (`YYYY`, `YYYY-MM` or `YYYY-MM-DD`) or `null`, `status` |
    | `maturity` | `standard`, `stable`, `emerging`, `research`, `legacy`, `discontinued` |
-   | `license` | `name`, `access` (`open`, `open-with-terms`, `licensed`, `unknown`), `url` |
+   | `license` | `name`, `access` (`open`, `open-with-terms`, `licensed`, `unknown`), `url`, `reviewStatus` (`not-assessed` until someone reviews it), `commercialReuse` (`unknown` unless reviewed) |
    | `links` | `official` (required, may be `null`), optional `specification`, `repository`, `namespace`, `related` |
    | `industries`, `useCases` | ids from `data/taxonomy/` |
+   | `resourceType` | from `data/taxonomy/resource-types.json` (derived from `kind` for semantic resources) |
+   | `knowledge` | `{ domain, basis }`: one primary sub-domain from `knowledge-domains.json`, or `not-assessed`. `basis: source` needs `sourceRef` |
+   | `capabilities`, `classificationBasis` | capability ids from `capabilities.json`; basis of the industry and capability mappings (`editorial` unless sourced) |
+   | `physicalAi` | keep `[]` while `physical-ai.json` is *proposed* |
+   | `limitations` | known limitations `{ text, basis, sourceRef? }`; leave empty rather than guess |
+   | `editorialReview` | `{ reviewedOn, reviewer }`; reviewer is a role or handle, never an email |
    | `engineeringUses` | 1–5 short **editorial** examples of practical engineering use. Shown with an *Editorial* label; never claims of adoption or certification |
-   | `verification` | `status` (`verified`, `partially-verified`, `unverified`), `checkedOn`, `sources[]`, `notes` |
+   | `verification` | `status` (`verified`, `partially-verified`, `unverified`), `checkedOn`, `sources[]` (each with `url`, `title`, `type` from `evidence-types.json`), `notes` |
    | `origin` | `v2` for new records |
 
 3. Run `npm run build` to validate and regenerate the outputs, then `npm test`.

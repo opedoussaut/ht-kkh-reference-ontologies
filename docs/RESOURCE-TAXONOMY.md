@@ -1,7 +1,7 @@
 # Resource taxonomy — discovery dimensions and controlled vocabularies
 
-Status: **proposed v0.1.0**. The files live in `data/taxonomy/proposed/`, are validated by tests, and are not yet
-referenced by records.
+Status: **active v1.0.0** (Physical AI categories remain *proposed* v0.2.0). The files live in `data/taxonomy/`, are
+referenced by every record (schema v3) and validated by `npm run validate`.
 
 The atlas classifies every resource along **independent** dimensions. None is derived from another, and a resource is
 never duplicated to appear in several places.
@@ -9,11 +9,11 @@ never duplicated to appear in several places.
 | Dimension | Question | Cardinality | File |
 | --- | --- | --- | --- |
 | Industry | Which industries can benefit? | 1..n | `data/taxonomy/industries.json` (in use) |
-| Knowledge domain | What engineering knowledge does it represent? | exactly 1 primary sub-domain (or `not-assessed`) | `proposed/knowledge-domains.json` |
-| Resource type | What kind of artefact is it? | exactly 1 | `proposed/resource-types.json` |
-| Engineering capability | What can engineers and AI systems do with it? | 0..n | `proposed/capabilities.json` |
-| Physical AI | Which Physical AI area does it serve? | 0..n (empty in Phase 2) | `proposed/physical-ai.json` |
-| Evidence type | What kind of source supports a statement? | per source or claim | `proposed/evidence-types.json` |
+| Knowledge domain | What engineering knowledge does it represent? | exactly 1 primary sub-domain (or `not-assessed`) | `data/taxonomy/knowledge-domains.json` |
+| Resource type | What kind of artefact is it? | exactly 1 | `data/taxonomy/resource-types.json` |
+| Engineering capability | What can engineers and AI systems do with it? | 0..n | `data/taxonomy/capabilities.json` |
+| Physical AI | Which Physical AI area does it serve? | 0..n (empty in Phase 2) | `data/taxonomy/physical-ai.json` |
+| Evidence type | What kind of source supports a statement? | per source or claim | `data/taxonomy/evidence-types.json` |
 
 Example: SAREF4INMA is an *ontology* (type) about *manufacturing processes & methods* (knowledge). It serves
 *Industrial Equipment* and *High-Tech* (industries) and supports *manufacturing & operations* and *supply chain &
