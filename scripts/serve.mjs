@@ -14,6 +14,8 @@ createServer(async (req, res) => {
   const url = decodeURIComponent(new URL(req.url, 'http://x').pathname);
   let file = normalize(join(ROOT, url));
   if (!file.startsWith(normalize(ROOT))) { res.writeHead(403).end(); return; }
+  // Never serve local-only material, even in development.
+  if (/^\/(private|\.cache|node_modules)(\/|$)/i.test(url)) { res.writeHead(404).end(); return; }
   try {
     if ((await stat(file)).isDirectory()) file = join(file, 'index.html');
     const body = await readFile(file);
