@@ -14,6 +14,8 @@ const LABELS = {
   verification: { verified: 'Verified', 'partially-verified': 'Partially verified', unverified: 'Unverified' },
   format: { owl: 'OWL', rdf: 'RDF / JSON-LD', shacl: 'SHACL', xml: 'XML / XMI', json: 'JSON', uml: 'UML / MOF', express: 'EXPRESS / STEP', logic: 'Logic (KIF, CL)', csv: 'CSV' },
   publisherType: { 'standards-body': 'Standards body', 'industry-association': 'Industry association', consortium: 'Consortium', research: 'Research', government: 'Government', industry: 'Industry' },
+  limitCat: { technical: 'Technical', scope: 'Scope', access: 'Access', 'unverified-claim': 'Unverified claim', 'catalogue-gap': 'Catalogue gap' },
+  licScope: { all: 'Everything', specification: 'Specification text', 'model-files': 'Model files', documentation: 'Documentation', software: 'Software', 'model-weights': 'Model weights', dataset: 'Dataset', 'file-format': 'File format' },
   reuse: { permitted: 'Permitted (after licence review)', restricted: 'Restricted', 'not-permitted': 'Not permitted', unknown: 'Unknown' },
   status: { published: 'Published', candidate: 'Candidate', draft: 'Draft', superseded: 'Superseded', discontinued: 'Discontinued', unknown: 'Unknown' },
 };
@@ -309,6 +311,19 @@ function viewCatalog(params) {
   </div>`;
 }
 
+function licenceTable(list) {
+  return html`<table class="lic-table"><thead><tr><th>Scope</th><th>Licence</th><th>Commercial use</th></tr></thead><tbody>${list.map((l) => html`<tr>
+    <td>${label('licScope', l.scope)}</td>
+    <td>${l.url ? ext(l.url, l.name) : l.name}${l.spdx ? html` <span class="mono small">${l.spdx}</span>` : ''}<div class="muted small">Stated at ${ext(l.statedAt, new URL(l.statedAt).host)}${l.reviewNote ? html` · ${l.reviewNote}` : ''}</div>${(l.restrictions || []).map((x) => html`<div class="small">⚠ ${x}</div>`)}</td>
+    <td>${l.commercialUse === 'unknown' ? html`<span class="muted">Unknown</span>` : label('reuse', l.commercialUse)}<div class="muted small">${l.reviewStatus === 'reviewed' ? 'Reviewed by atlas editors (not legal advice)' : 'Not assessed'}</div></td></tr>`)}</tbody></table>`;
+}
+
+// True when every source cited for a capability is the publisher's own material (vendor-stated capabilities).
+function publisherStated(o) {
+  const cap = o.verification.sources.filter((s) => s.supports.includes('capability'));
+  return o.publisherType === 'industry' && cap.length > 0 && cap.every((s) => ['official-documentation', 'publisher-repository', 'vendor-reported'].includes(s.type));
+}
+
 function factRow(k, v) { return v ? html`<div class="fact"><dt>${k}</dt><dd>${v}</dd></div>` : ''; }
 
 function qualification(o) {
@@ -342,7 +357,9 @@ function viewOntology(id) {
     const sentence = dir === 'out'
       ? html`<span class="rel-self">${o.name}</span> <span class="rel-type">${relLabel(r.type)}</span> ${otherLink}`
       : html`${otherLink} <span class="rel-type">${relLabel(r.type)}</span> <span class="rel-self">${o.name}</span>`;
-    return html`<li class="rel"><div>${sentence}</div><span class="rel-ev">${r.evidence.note} ${ext(r.evidence.url, 'Source')}</span></li>`;
+    return html`<li class="rel"><div>${sentence} ${r.status === 'partially-verified' ? pill('v-partially-verified', 'Partially verified') : ''}</div>
+      <span class="rel-ev">${r.evidence.note} ${ext(r.evidence.url, 'Source')} <span class="pill ev-${r.evidence.type}">${evidenceLabel(r.evidence.type)}</span></span>
+      ${r.conditions ? html`<span class="rel-ev"><strong>Applies when:</strong> ${r.conditions}</span>` : ''}</li>`;
   };
 
   return html`
@@ -367,7 +384,7 @@ function viewOntology(id) {
         ${sectionHead(1, 'What this resource is', 'source', 'Facts from the cited sources (see section 6).')}
         <dl class="facts">
           ${factRow('Resource type', html`${typeLabel(o.resourceType)}${label('kind', o.kind) !== typeLabel(o.resourceType) ? html` <span class="muted">· ${label('kind', o.kind)}</span>` : ''}`)}
-          ${factRow('Knowledge domain', html`${domainLabel(o.knowledge.domain, true)} ${tag(o.knowledge.basis)}`)}
+          ${factRow('Knowledge domain', html`${domainLabel(o.knowledge.domain, true)} ${tag(o.knowledge.basis)} ${o.knowledge.confidence === 'tentative' ? pill('v-partially-verified', 'Tentative', 'A single primary domain simplifies this resource; see the rationale.') : ''}${o.knowledge.rationale ? html`<div class="muted small">${o.knowledge.rationale}</div>` : ''}`)}
           ${factRow('Publisher', html`${o.publisher} <span class="muted">· ${label('publisherType', o.publisherType)}</span>`)}
           ${factRow('Version', html`<span class="mono">${o.version.label}</span>${o.version.date ? html` <span class="muted">· ${o.version.date}</span>` : ''} <span class="muted">· ${label('status', o.version.status)}</span>`)}
           ${factRow('Maturity', html`${label('maturity', o.maturity)} <span class="muted small">· ${link('#/about', 'criteria')}</span>`)}
@@ -393,6 +410,7 @@ function viewOntology(id) {
         <dl class="facts">
           ${factRow('Formats', o.formats.length ? o.formats.join(' · ') : html`<span class="muted">Not documented</span>`)}
           ${factRow('Licence', html`${o.license.name}${o.license.url ? html` · ${ext(o.license.url, 'terms')}` : ''} <span class="muted">· ${label('access', o.license.access)}</span>`)}
+          ${o.licenses?.length ? factRow('Licence by scope', licenceTable(o.licenses)) : ''}
           ${factRow('Specification', o.links.specification ? ext(o.links.specification, o.links.specification) : null)}
           ${factRow('Repository', o.links.repository ? ext(o.links.repository, o.links.repository) : null)}
           ${factRow('Distributions', o.links.distributions?.length ? html`${o.links.distributions.map((x) => html`<div>${ext(x.url, x.format)}</div>`)}` : null)}
@@ -416,14 +434,15 @@ function viewOntology(id) {
       <section class="panel" id="evidence">
         ${sectionHead(6, 'Evidence')}
         <p>${verifPill(o)} <span class="muted">Facts checked ${o.verification.checkedOn} · editorial content reviewed ${o.editorialReview.reviewedOn} by ${o.editorialReview.reviewer}</span></p>
-        <ol class="sources">${o.verification.sources.map((s) => html`<li>${ext(s.url, s.title)} <span class="pill ev-${s.type}" title="${evidenceSummary(s.type)}">${evidenceLabel(s.type)}</span></li>`)}</ol>
+        <ol class="sources">${o.verification.sources.map((s) => html`<li>${ext(s.url, s.title)} <span class="pill ev-${s.type}" title="${evidenceSummary(s.type)}">${evidenceLabel(s.type)}</span><div class="muted small">Cited for: ${s.supports.join(', ')}</div></li>`)}</ol>
+        ${publisherStated(o) ? html`<p class="small muted"><strong>Note:</strong> capability statements for this resource come from its publisher's own documentation. They describe what the publisher states, not independent verification.</p>` : ''}
         ${o.corrections?.length ? html`<h3 class="sub">Corrections</h3>
           <ul class="corrections">${o.corrections.map((c) => html`<li><span class="mono">${c.field}</span>: <s>${c.from}</s> → <strong>${c.to}</strong><br><span class="muted">${c.reason} ${ext(c.source, 'Source')}</span></li>`)}</ul>` : ''}
       </section>
 
       <section class="panel" id="limits">
         ${sectionHead(7, 'Limitations, licence and uncertainty')}
-        ${o.limitations.length ? html`<ul class="bullets">${o.limitations.map((l) => html`<li>${l.text} ${tag(l.basis)}${l.sourceRef ? html` ${ext(l.sourceRef, 'Source')}` : ''}</li>`)}</ul>` : html`<p class="muted">No limitations recorded yet. That does not mean none exist.</p>`}
+        ${o.limitations.length ? html`<ul class="bullets">${o.limitations.map((l) => html`<li><span class="lim-cat">${label('limitCat', l.category)}</span> ${l.text} ${tag(l.basis)}${l.sourceRef ? html` ${ext(l.sourceRef, 'Source')}` : ''}</li>`)}</ul>` : html`<p class="muted">No limitations recorded yet. That does not mean none exist.</p>`}
         ${o.verification.notes ? html`<p class="small"><strong>Verification note:</strong> ${o.verification.notes}</p>` : ''}
         <dl class="facts compact">
           ${factRow('Licence review', html`${o.license.reviewStatus === 'reviewed' ? 'Reviewed' : 'Not assessed'} <span class="muted small">· the atlas does not give legal advice</span>`)}
@@ -653,6 +672,17 @@ function viewAbout() {
         ['unverified', 'No authoritative public source yet; flagged for review.']].map(([k, v]) => factRow(pill(`v-${k}`, label('verification', k)), v))}
       ${factRow(html`<span class="pill editorial">Editorial</span>`, 'Content written by atlas editors, such as practical engineering uses and use-case stacks. It illustrates typical uses and does not state facts about adoption.')}
     </dl>
+    <h2>Inclusion and neutrality policy</h2>
+    <p>The atlas is <strong>vendor-neutral, not vendor-free</strong>. Open-source and commercial resources can both be included when they materially support a documented engineering use.</p>
+    <ul>
+      <li><strong>Inclusion</strong> requires a public, authoritative description of the resource: specification, official documentation or publisher repository. A resource is never included because of marketing material alone.</li>
+      <li><strong>Objective classification.</strong> Resource type, knowledge domain and capabilities use the same criteria for every publisher, and editorial classifications are labelled as such.</li>
+      <li><strong>Visible publisher.</strong> Every record names its publisher and publisher type, so commercial origin is never hidden.</li>
+      <li><strong>Vendor claims are labelled.</strong> Capabilities described only in a publisher's own material are shown as publisher-stated, and performance or results claims are typed <em>vendor-reported</em>. Neither counts as independent verification.</li>
+      <li><strong>No endorsement.</strong> Inclusion does not imply endorsement, certification or recommendation by the atlas, by any standards body or by any company.</li>
+      <li><strong>Comparisons</strong> are only published with transparent criteria applied identically to every compared resource. The atlas currently publishes no rankings.</li>
+      <li><strong>Rights.</strong> Licences are recorded per scope (specification, software, model weights, datasets). Commercial-use status stays <em>unknown</em> until a review cites the licence text, and an openly accessible website is not treated as permission to redistribute or reuse.</li>
+    </ul>
     <h2>Discovery dimensions</h2>
     <p>Every resource is described once and classified along independent dimensions. None is derived from another, and no resource is duplicated per industry.</p>
     <dl class="facts criteria">

@@ -16,8 +16,11 @@ discovery, engineering use cases and a verified relationship graph.
    `verification.sources`. Never add confidential or proprietary material, internal platform data, customer
    names, roadmaps, or links to internal or login-only systems (3DEXPERIENCE community pages, internal networks).
    `npm run validate` and the test suite reject known internal hosts; treat that as a safety net, not a licence.
-2. **Vendor-neutral.** The atlas is generic: no software-vendor, product or brand mappings, adoption claims or
-   vendor-specific views. Do not reintroduce them unless the owner explicitly asks (a test enforces this).
+2. **Vendor-neutral, not vendor-free** (owner decision, 2026-10-16). Commercial and open-source technologies may be
+   catalogued when they materially support an engineering use, under the inclusion policy on the About page and in
+   `docs/EDITORIAL-POLICY.md`: authoritative documentation required, publisher visible, vendor claims labelled,
+   no endorsement implied, comparisons only with transparent criteria. Never add brand-relevance mappings or
+   adoption claims for Dassault Systèmes products (a test enforces this), and never imply 3DS endorsement.
 3. **Relationships need evidence.** Only add an edge to `data/taxonomy/relations.json` when the publisher or a
    primary source states it; include `evidence.url` and a short note.
 4. **Never drop v1 records.** The 26 records of catalogue v1 live on as `origin: "v1"` with their `legacy` block

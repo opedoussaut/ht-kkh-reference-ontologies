@@ -1,78 +1,45 @@
-# Enrichment roadmap — towards a Physical AI Knowledge & Technology Atlas
+# Roadmap — Reference Ontology Atlas
 
-Status: proposal · Branch: `feature/physical-ai-atlas-enrichment` · Baseline: published `main` at `0200919`
+Status as of 2026-10-16 on `feature/physical-ai-atlas-enrichment`. The published site (`main`) still shows the release of
+2026-10-15. This file describes **what is actually in the repository**. The original phase plan is kept in git history.
 
-The atlas evolves **by enrichment, not replacement**. The published ontology catalogue, the 12-industry navigation and
-the navy design system stay in place. Each phase is shipped separately and needs the owner's approval before it is
-merged.
+## 1. Completed (merged to `main` and published)
 
-## 1. Audit of the published atlas (baseline)
+- Catalogue v2: 42 records, vendor-neutral, navy design system, 12 industries, Atlas network graph, use cases.
 
-| Area | State | Reuse / gap |
+## 2. Implemented on the feature branch, awaiting review
+
+| Area | What exists | Reference |
 | --- | --- | --- |
-| Data model | One JSON record per ontology (`data/ontologies/<id>.json`), JSON Schema, provenance (`verification`), v1 legacy blocks | **Reuse as is.** It extends cleanly by adding optional fields, and the schema has `additionalProperties: false`, so every addition is explicit. |
-| Taxonomies | 12 industries plus a horizontal *Cross-Industry* tag; 5 use cases; 7 relation types; 18 cited relations | **Reuse.** Coverage is uneven: Marine, Home & Lifestyle, CPG, Life Sciences and Cities had only 4–6 records each. |
-| Discovery | Faceted catalogue (8 facets), typo-tolerant search, shareable URLs, graph, industry and use-case pages | **Reuse.** No facet for formats (OWL/SHACL/XML…), and few cross-references between related records beyond explicit relations. |
-| Content | Each record has a factual summary and verified facts | Practical engineering uses were not described per record. |
-| Link reliability | 95 unique URLs | 2 dead links (AAS landing page, ifcOWL IFC4 page). 3 publishers block automated checks (ISO, SUMO, GS1 namespace), but those URLs are valid. |
-| Build / CI | `npm run build` / `validate` / `test`, GitHub Actions CI; Pages serves `main` root | **Reuse.** No link check existed. |
-| Labels | `maturity` and `verification.status` exist | Their criteria were not stated in the UI. |
+| Phase 1 enrichment | 46 records; link checker (`npm run links`); editorial engineering uses; Format facet; "used together" cross-references; label criteria | `docs/AUDIT-2026-10.md` |
+| Phase 2 data model | Schema v3 → **v3.1**: resource types, knowledge domains, capabilities, typed and scoped evidence, scoped licences, limitation categories, classification confidence | `docs/PHASE2-ARCHITECTURE.md`, `docs/PHASE2-CONSOLIDATION.md` |
+| Migration | 46 records migrated with a no-loss check; idempotent | `scripts/phase2/migrate.mjs` |
+| Data-quality review | 13 tentative classifications reviewed (2 revised, 6 still tentative); 67 unique source URLs (73 citations) typed and annotated; 32 limitations on 25 records; 1 editorial correction | `docs/DATA-QUALITY-REVIEW-2026-10.md` |
+| Discovery UI | Engineering questions; capability, knowledge-domain and resource-type facets; resource families; seven-section detail pages; `#/resource/<id>` route with `#/ontology/<id>` alias | `assets/js/app.js` |
+| Ontology Explorer pilot | 4 interactive ontologies (SAREF Core, SOSA, SSN, QUDT) parsed at build time; availability status for every record | `docs/ONTOLOGY-EXPLORER.md` |
+| Atlas network | Relation categories (formal, mapping, shared) with an editorial overlay | — |
+| Editorial policy | Inclusion, neutrality and rights policy on the About page | `docs/EDITORIAL-POLICY.md` |
+| Safeguards | Internal-host, vendor-product and internal-classification checks; `private/` ignored; no PDFs tracked | `docs/PUBLIC-DATA-GOVERNANCE.md` |
 
-## 2. Phases
+## 3. Remaining data-quality work
 
-### Phase 1 — Strengthen the ontology atlas *(started on this branch)*
-- Link-reliability tooling (`npm run links`) and fixes for dead links.
-- Fill under-represented industries with verified public ontologies only.
-- Add an editorial `engineeringUses` field per record, kept clearly apart from verified facts.
-- Discovery: a *Format* facet, a *Has relationships* facet, and "used together" cross-references derived from use-case stacks.
-- Publish explicit criteria for the maturity and verification labels.
-- Backlog of candidate ontologies to evaluate next, each needing an authoritative public source: SAREF4AGRI, SAREF4WATR,
-  ASHRAE 223P, RealEstateCore, OM 2, ODRL, ChEBI, the SSN/SOSA 2023 edition, SysML v2 semantic model mappings,
-  and the IOF Maintenance and Supply Chain modules.
+- 6 knowledge-domain classifications remain **tentative** by design: DMTF CIM, IEC CIM, ISO 15926-14, OEO, ORIONT, SAREF4CITY.
+- ORIONT is still **unverified** (no public source found).
+- 20 records have no evidence-backed relationship, and 15 have no version date (QUDT lost its date when corrected to 3.5.2: the schema file states no date).
+- Records with `limitations: []` have not been assessed for limitations. That does not mean they have none.
+- Licence `reviewStatus` is `not-assessed` for all existing semantic records.
+- Third-party-only identity evidence: ISO 15926-14 and STEP AP242 (the ISO catalogue blocks automated checks).
 
-### Phase 2 — Additional knowledge and technology assets
+## 4. Proposed (designed, not built)
 
-> Detailed architecture: [PHASE2-ARCHITECTURE.md](PHASE2-ARCHITECTURE.md) (supersedes the outline below).
+- Physical AI exploration axis (categories defined in `data/taxonomy/physical-ai.json`, plus evidence rules). See Checkpoint 3.
+- More Explorer ontologies (SAREF extensions, PROV-O, BFO) and RDF/XML and JSON-LD parsing.
+- An attributed alignment with an organisation's reference classification. This requires authorisation; the internal crosswalk stays private.
+- A periodic re-verification flag for records not checked for 12 months.
 
-Goal: describe resources beyond ontologies without mixing them up.
+## 5. Explicitly deferred
 
-**Proposed data-model change (substantial, so the migration comes first):**
-1. Add `assetType` to the schema with a controlled vocabulary. `ontology` covers the current records; new values are
-   `standard`, `reference-architecture`, `information-model`, `knowledge-graph`, `digital-twin-framework`,
-   `ai-framework`, `model`, `simulation-tool`, `dataset`, `benchmark` and `tooling`. The existing `kind` field stays as
-   a finer sub-type.
-2. Add `purpose` (one sentence) and `domain` tags, and keep the existing `industries`.
-3. For assets that are not purely specifications, record the licence per facet: `license.facets` with `code`,
-   `weights`, `data` and `specification`. Open code does not imply open weights or open data.
-4. Migration: a scripted, idempotent migration sets `assetType: "ontology"` on every existing record (no other
-   change). It is followed by a schema bump and a test asserting that all pre-existing ids are still present.
-   Generated exports keep their current shape. The v1-compatible JSON keeps listing ontologies only.
-5. UI: an *Asset type* facet, a type label on every card, and distinct card accents per type. The catalogue still
-   opens on ontologies by default, so the current experience is unchanged.
-
-### Phase 3 — Physical AI perspective
-An **additional exploration dimension** alongside industries:
-- `physicalAi` tags with a controlled vocabulary: *perception & world modelling, reasoning & planning, robot
-  capabilities & skills, embodied interaction, simulation & digital twins, safety / verification & validation,
-  knowledge representation & interoperability*.
-- A "Physical AI" landing page with one panel per entry point that links back into the catalogue. The General Purpose
-  Robotics use case becomes its first worked example.
-- Candidate assets come only from primary sources: standards bodies, official repositories and model cards. Vendor
-  performance claims are labelled as such (see Phase 4).
-
-### Phase 4 — Transparency and confidence indicators
-Two independent labels, each with explicit criteria. Neither is a certification or an endorsement.
-
-| Label | Values and criteria |
-| --- | --- |
-| **Maturity** (what the resource is) | *Standard*: published by a recognised standards body (ISO, IEC, IEEE, W3C, OGC, ETSI, OMG, DCMI). *Stable*: versioned public releases from a maintained community or consortium. *Emerging*: public and active but without stable releases or broad uptake. *Research*: described mainly in research publications or project outputs. *Legacy / Discontinued*: superseded or no longer maintained, according to its publisher. |
-| **Verification** (how well the atlas has checked it) | *Verified*: publisher, version and licence confirmed on official pages on the date shown. *Partially verified*: official source confirmed, with at least one fact open (noted on the record). *Unverified*: no authoritative source yet; flagged for review. |
-| **Evidence type** (Phase 3 assets) | *Specification* · *Peer-reviewed publication* · *Publisher-reported* (for example vendor results without independent replication) · *Community* (third-party implementation or benchmark). |
-
-Phase 1 publishes the first two sets of criteria on the About page.
-
-## 3. Principles
-- Only public, citable information; no vendor or brand mappings.
-- No invented ontologies, capabilities or ratings. When a fact cannot be confirmed, the record says so.
-- Verified facts and editorial interpretation are labelled separately in both data and UI.
-- Changes stay backward-compatible. Exports keep their shape, and the v1 records stay preserved.
+- Rankings or comparative scoring of resources.
+- SPARQL endpoint, side-by-side ontology comparison and cross-ontology concept mapping. These need published alignment files.
+- AI-assisted natural-language discovery.
+- Rewriting git history to remove internal links from pre-v2 commits (owner decision pending).
