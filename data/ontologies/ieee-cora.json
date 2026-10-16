@@ -2,7 +2,12 @@
   "id": "ieee-cora",
   "name": "CORA",
   "fullName": "Core Ontology for Robotics and Automation (CORA)",
+  "resourceType": "ontology",
   "summary": "Core ontology for robotics and automation concepts.",
+  "knowledge": {
+    "domain": "product.systems",
+    "basis": "editorial"
+  },
   "publisher": "IEEE Robotics and Automation Society",
   "publisherType": "standards-body",
   "kind": "ontology",
@@ -22,7 +27,9 @@
   "license": {
     "name": "IEEE standard (purchase required for the full text)",
     "access": "licensed",
-    "url": "https://standards.ieee.org/standard/1872-2015.html"
+    "url": "https://standards.ieee.org/standard/1872-2015.html",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://standards.ieee.org/standard/1872-2015.html",
@@ -39,24 +46,40 @@
   "useCases": [
     "general-purpose-robotics"
   ],
+  "capabilities": [
+    "robotics-autonomy",
+    "knowledge-graphs-ai"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",
     "sources": [
       {
         "url": "https://standards.ieee.org/standard/1872-2015.html",
-        "title": "IEEE 1872-2015 Standard Ontologies for Robotics and Automation"
+        "title": "IEEE 1872-2015 Standard Ontologies for Robotics and Automation",
+        "type": "official-documentation"
       },
       {
         "url": "https://github.com/srfiorini/IEEE1872-owl",
-        "title": "OWL version of CORA (IEEE 1872-2015), CC BY 4.0"
+        "title": "OWL version of CORA (IEEE 1872-2015), CC BY 4.0",
+        "type": "unclassified"
       },
       {
         "url": "https://standards.ieee.org/ieee/1872/12250",
-        "title": "IEEE P1872 revision project (active PAR)"
+        "title": "IEEE P1872 revision project (active PAR)",
+        "type": "official-documentation"
       }
     ],
     "notes": "An OWL conversion of CORA (taxonomy and selected axioms) is published under CC BY 4.0."
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
   },
   "corrections": [
     {
@@ -97,5 +120,6 @@
   "engineeringUses": [
     "Defining what counts as a robot, robotic system and robotic environment in a project glossary",
     "Giving robotics data and requirements a formal shared vocabulary"
-  ]
+  ],
+  "limitations": []
 }

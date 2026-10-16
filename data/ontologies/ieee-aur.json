@@ -2,7 +2,12 @@
   "id": "ieee-aur",
   "name": "Autonomous Robotics (AuR)",
   "fullName": "IEEE 1872.2 Autonomous Robotics (AuR) Ontology",
+  "resourceType": "ontology",
   "summary": "Ontology focused on autonomous robotics concepts, capabilities, and behavior.",
+  "knowledge": {
+    "domain": "product.systems",
+    "basis": "editorial"
+  },
   "publisher": "IEEE Robotics and Automation Society",
   "publisherType": "standards-body",
   "kind": "ontology",
@@ -22,7 +27,9 @@
   "license": {
     "name": "IEEE standard (purchase); ontology listed under the IEEE SA Open Source programme (BSD-3-Clause)",
     "access": "open-with-terms",
-    "url": "https://standards.ieee.org/ieee/1872.2/7094/"
+    "url": "https://standards.ieee.org/ieee/1872.2/7094/",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://standards.ieee.org/ieee/1872.2/7094/"
@@ -37,16 +44,29 @@
   "useCases": [
     "general-purpose-robotics"
   ],
+  "capabilities": [
+    "robotics-autonomy"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",
     "sources": [
       {
         "url": "https://standards.ieee.org/ieee/1872.2/7094/",
-        "title": "IEEE 1872.2-2021"
+        "title": "IEEE 1872.2-2021",
+        "type": "official-documentation"
       }
     ],
     "notes": ""
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
   },
   "corrections": [
     {
@@ -87,5 +107,6 @@
   "engineeringUses": [
     "Describing the architecture and autonomy functions of an autonomous robot in a shared vocabulary",
     "Comparing autonomous-system designs using common concepts"
-  ]
+  ],
+  "limitations": []
 }

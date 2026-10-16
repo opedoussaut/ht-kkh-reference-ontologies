@@ -2,9 +2,14 @@
   "id": "iof-core",
   "name": "IOF Core",
   "fullName": "Industrial Ontologies Foundry — Core Ontology",
+  "resourceType": "ontology",
   "publisher": "OAGi Industrial Ontologies Foundry",
   "publisherType": "consortium",
   "summary": "Mid-level industrial ontology grounded in BFO 2020. Shared foundation for IOF domain ontologies such as maintenance, supply chain, production planning and product-service systems.",
+  "knowledge": {
+    "domain": "product.manufacturing",
+    "basis": "editorial"
+  },
   "kind": "ontology",
   "layer": "mid-level",
   "topics": [
@@ -22,7 +27,9 @@
   "license": {
     "name": "MIT",
     "access": "open",
-    "url": "https://spec.industrialontologies.org/"
+    "url": "https://spec.industrialontologies.org/",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://spec.industrialontologies.org/",
@@ -42,24 +49,40 @@
     "semiconductors",
     "general-purpose-robotics"
   ],
+  "capabilities": [
+    "manufacturing-operations",
+    "knowledge-graphs-ai"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",
     "sources": [
       {
         "url": "https://spec.industrialontologies.org/portal/release/202603/core.html",
-        "title": "IOF Core, release 202603"
+        "title": "IOF Core, release 202603",
+        "type": "official-documentation"
       },
       {
         "url": "https://spec.industrialontologies.org/portal/release/202401/core/CoreOntology.html",
-        "title": "IOF Core, release 202401"
+        "title": "IOF Core, release 202401",
+        "type": "official-documentation"
       }
     ],
     "notes": ""
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
   },
   "origin": "v2",
   "engineeringUses": [
     "Modelling manufacturing processes, resources and products with a formal mid-level ontology",
     "Building maintenance or supply-chain ontologies on a shared industrial core"
-  ]
+  ],
+  "limitations": []
 }

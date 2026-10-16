@@ -2,9 +2,14 @@
   "id": "skos",
   "name": "SKOS",
   "fullName": "Simple Knowledge Organization System",
+  "resourceType": "vocabulary",
   "publisher": "W3C",
   "publisherType": "standards-body",
   "summary": "W3C standard for thesauri, taxonomies and classification schemes on the web: concepts, labels and broader/narrower relations.",
+  "knowledge": {
+    "domain": "foundations.languages",
+    "basis": "editorial"
+  },
   "kind": "vocabulary",
   "layer": "cross-domain",
   "topics": [
@@ -21,7 +26,9 @@
   "license": {
     "name": "W3C Document License",
     "access": "open",
-    "url": "https://www.w3.org/copyright/document-license/"
+    "url": "https://www.w3.org/copyright/document-license/",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://www.w3.org/TR/skos-reference/",
@@ -36,20 +43,35 @@
     "cross-industry"
   ],
   "useCases": [],
+  "capabilities": [
+    "knowledge-graphs-ai",
+    "data-governance"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",
     "sources": [
       {
         "url": "https://www.w3.org/TR/skos-reference/",
-        "title": "SKOS Reference (W3C Recommendation)"
+        "title": "SKOS Reference (W3C Recommendation)",
+        "type": "official-documentation"
       }
     ],
     "notes": ""
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
   },
   "origin": "v2",
   "engineeringUses": [
     "Managing controlled vocabularies, taxonomies and classification schemes",
     "Mapping between the terminologies used by different teams"
-  ]
+  ],
+  "limitations": []
 }

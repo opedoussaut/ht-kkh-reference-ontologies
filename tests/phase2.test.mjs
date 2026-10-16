@@ -9,13 +9,13 @@ import { PROPOSED } from '../scripts/phase2/proposed-mapping.mjs';
 
 const ROOT = fileURLToPath(new URL('..', import.meta.url));
 const src = loadSources(ROOT);
-const tax = (f) => JSON.parse(readFileSync(join(ROOT, 'data/taxonomy/proposed', f), 'utf8'));
+const tax = (f) => JSON.parse(readFileSync(join(ROOT, 'data/taxonomy', f), 'utf8'));
 const TAXONOMIES = ['resource-types.json', 'knowledge-domains.json', 'capabilities.json', 'physical-ai.json', 'evidence-types.json'];
 
-test('proposed taxonomies are versioned, flagged as proposed, with unique ids and labels', () => {
+test('taxonomies are versioned and active (Physical AI stays proposed), with unique ids and labels', () => {
   for (const f of TAXONOMIES) {
     const t = tax(f);
-    assert.equal(t._status, 'proposed', f);
+    assert.equal(t._status, f === 'physical-ai.json' ? 'proposed' : 'active', f);
     assert.match(t._version, /^\d+\.\d+\.\d+$/, f);
     const items = f === 'knowledge-domains.json' ? t.items.flatMap((d) => [d, ...d.children]) : t.items;
     const ids = items.map((i) => i.id);

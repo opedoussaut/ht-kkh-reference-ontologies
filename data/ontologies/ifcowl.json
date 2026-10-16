@@ -2,9 +2,14 @@
   "id": "ifcowl",
   "name": "ifcOWL",
   "fullName": "ifcOWL — OWL representation of IFC",
+  "resourceType": "ontology",
   "publisher": "buildingSMART International",
   "publisherType": "standards-body",
   "summary": "Direct OWL translation of the IFC EXPRESS schema (ISO 16739). buildingSMART now points semantic-web users to bSDD for most uses.",
+  "knowledge": {
+    "domain": "product.structure",
+    "basis": "editorial"
+  },
   "kind": "ontology",
   "layer": "domain",
   "topics": [
@@ -22,7 +27,9 @@
   "license": {
     "name": "CC BY 3.0",
     "access": "open",
-    "url": "https://technical.buildingsmart.org/standards/ifc/ifc-formats/ifcowl/"
+    "url": "https://technical.buildingsmart.org/standards/ifc/ifc-formats/ifcowl/",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://technical.buildingsmart.org/standards/ifc/ifc-formats/ifcowl/",
@@ -39,24 +46,40 @@
   "useCases": [
     "ai-factories"
   ],
+  "capabilities": [
+    "spatial-facility",
+    "data-exchange"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "partially-verified",
     "sources": [
       {
         "url": "https://technical.buildingsmart.org/standards/ifc/ifc-formats/ifcowl/",
-        "title": "buildingSMART — What is ifcOWL?"
+        "title": "buildingSMART — What is ifcOWL?",
+        "type": "official-documentation"
       },
       {
         "url": "https://technical.buildingsmart.org/standards/ifc/ifc-schema-specifications/",
-        "title": "buildingSMART IFC schema specifications"
+        "title": "buildingSMART IFC schema specifications",
+        "type": "official-documentation"
       }
     ],
     "notes": "The ifcOWL authors advise against production use; consider bSDD. The former IFC4 ADD2 ontology page (which stated CC BY 3.0) no longer resolves; confirm the licence on the current schema pages."
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
   },
   "origin": "v2",
   "engineeringUses": [
     "Querying IFC building models with SPARQL for research or prototyping",
     "Linking BIM elements to other linked-data models of a facility"
-  ]
+  ],
+  "limitations": []
 }

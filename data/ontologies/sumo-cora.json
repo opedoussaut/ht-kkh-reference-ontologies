@@ -2,7 +2,12 @@
   "id": "sumo-cora",
   "name": "SUMO-CORA",
   "fullName": "SUMO–CORA alignment (IEEE 1872-2015)",
+  "resourceType": "ontology",
   "summary": "Alignment layer between SUMO and CORA for robotics semantics.",
+  "knowledge": {
+    "domain": "foundations.formal",
+    "basis": "editorial"
+  },
   "publisher": "IEEE Robotics and Automation Society",
   "publisherType": "standards-body",
   "kind": "ontology",
@@ -22,7 +27,9 @@
   "license": {
     "name": "IEEE standard (purchase required for the full text)",
     "access": "licensed",
-    "url": "https://standards.ieee.org/standard/1872-2015.html"
+    "url": "https://standards.ieee.org/standard/1872-2015.html",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://standards.ieee.org/standard/1872-2015.html"
@@ -38,16 +45,30 @@
   "useCases": [
     "general-purpose-robotics"
   ],
+  "capabilities": [
+    "robotics-autonomy",
+    "knowledge-graphs-ai"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "partially-verified",
     "sources": [
       {
         "url": "https://standards.ieee.org/standard/1872-2015.html",
-        "title": "IEEE 1872-2015 Standard Ontologies for Robotics and Automation"
+        "title": "IEEE 1872-2015 Standard Ontologies for Robotics and Automation",
+        "type": "official-documentation"
       }
     ],
     "notes": "IEEE 1872-2015 grounds CORA in SUMO. Confirm whether \"SUMO-CORA\" is published as a separate artefact."
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
   },
   "corrections": [
     {
@@ -80,5 +101,6 @@
   },
   "engineeringUses": [
     "Grounding robotics concepts in SUMO for formal reasoning"
-  ]
+  ],
+  "limitations": []
 }

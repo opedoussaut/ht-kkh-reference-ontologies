@@ -2,7 +2,12 @@
   "id": "saref-core",
   "name": "SAREF Core",
   "fullName": "Smart Applications REFerence ontology (SAREF) — Core",
+  "resourceType": "ontology",
   "summary": "Smart Applications REFerence ontology for interoperable devices and services.",
+  "knowledge": {
+    "domain": "product.interfaces",
+    "basis": "editorial"
+  },
   "publisher": "ETSI",
   "publisherType": "standards-body",
   "kind": "ontology",
@@ -24,7 +29,9 @@
   "license": {
     "name": "ETSI Software License (BSD-3-Clause style)",
     "access": "open",
-    "url": "https://forge.etsi.org/etsi-software-license"
+    "url": "https://forge.etsi.org/etsi-software-license",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://saref.etsi.org/core/",
@@ -47,16 +54,30 @@
     "personal-electronics",
     "general-purpose-robotics"
   ],
+  "capabilities": [
+    "iot-monitoring",
+    "data-exchange"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",
     "sources": [
       {
         "url": "https://saref.etsi.org/core/",
-        "title": "ETSI SAREF Core"
+        "title": "ETSI SAREF Core",
+        "type": "official-documentation"
       }
     ],
     "notes": ""
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
   },
   "origin": "v1",
   "legacy": {
@@ -82,5 +103,6 @@
   "engineeringUses": [
     "Describing what a connected device does, its functions and the commands it accepts",
     "Making device data from different vendors interoperable"
-  ]
+  ],
+  "limitations": []
 }

@@ -2,7 +2,12 @@
   "id": "eli",
   "name": "ELI Ontology",
   "fullName": "European Legislation Identifier (ELI) Ontology",
+  "resourceType": "ontology",
   "summary": "Ontology for identifying and describing legal resources and legislation metadata.",
+  "knowledge": {
+    "domain": "foundations.regulation",
+    "basis": "editorial"
+  },
   "publisher": "Publications Office of the European Union",
   "publisherType": "government",
   "kind": "ontology",
@@ -21,7 +26,9 @@
   "license": {
     "name": "EU Publications Office open reuse terms (confirm per release)",
     "access": "open",
-    "url": "https://op.europa.eu/en/web/eu-vocabularies/eli"
+    "url": "https://op.europa.eu/en/web/eu-vocabularies/eli",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://op.europa.eu/en/web/eu-vocabularies/eli",
@@ -44,20 +51,34 @@
     "general-purpose-robotics",
     "sustainability"
   ],
+  "capabilities": [
+    "sustainability-compliance"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "partially-verified",
     "sources": [
       {
         "url": "https://op.europa.eu/en/web/eu-vocabularies/eli",
-        "title": "EU Vocabularies — ELI"
+        "title": "EU Vocabularies — ELI",
+        "type": "official-documentation"
       },
       {
         "url": "https://interoperable-europe.ec.europa.eu/collection/eli-european-legislation-identifier/solution/eli-ontology/releases",
-        "title": "Interoperable Europe — ELI ontology releases"
+        "title": "Interoperable Europe — ELI ontology releases",
+        "type": "unclassified"
       }
     ],
     "notes": "Release 1.3 is the latest listed on Interoperable Europe; EU Vocabularies may list newer releases. Confirm the exact licence statement for the ontology files."
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
   },
   "origin": "v1",
   "legacy": {
@@ -83,5 +104,6 @@
   "engineeringUses": [
     "Referencing the exact legal act behind a product requirement or compliance check",
     "Linking requirements management to the legislation they originate from"
-  ]
+  ],
+  "limitations": []
 }

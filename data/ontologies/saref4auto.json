@@ -2,7 +2,12 @@
   "id": "saref4auto",
   "name": "SAREF4AUTO",
   "fullName": "SAREF extension for the Automotive domain",
+  "resourceType": "ontology",
   "summary": "OWL-DL extension of SAREF for the automotive domain. It adapts the ETSI ITS common data dictionary and covers use cases such as platooning and automated valet parking.",
+  "knowledge": {
+    "domain": "product.interfaces",
+    "basis": "editorial"
+  },
   "publisher": "ETSI",
   "publisherType": "standards-body",
   "kind": "ontology",
@@ -23,7 +28,9 @@
   "license": {
     "name": "ETSI Software License (BSD-3-Clause style)",
     "access": "open",
-    "url": "https://forge.etsi.org/etsi-software-license"
+    "url": "https://forge.etsi.org/etsi-software-license",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://saref.etsi.org/saref4auto/",
@@ -37,20 +44,35 @@
     "transportation-mobility"
   ],
   "useCases": [],
+  "capabilities": [
+    "iot-monitoring",
+    "data-exchange"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "status": "verified",
     "checkedOn": "2026-10-15",
     "sources": [
       {
         "url": "https://saref.etsi.org/saref4auto/",
-        "title": "ETSI SAREF4AUTO"
+        "title": "ETSI SAREF4AUTO",
+        "type": "official-documentation"
       }
     ],
     "notes": "First published 2020-07-27; page last modified 2025-04-10."
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
   },
   "origin": "v2",
   "engineeringUses": [
     "Describing connected-vehicle data and ITS messages semantically",
     "Modelling cooperative driving scenarios such as platooning"
-  ]
+  ],
+  "limitations": []
 }

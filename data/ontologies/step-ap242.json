@@ -2,9 +2,14 @@
   "id": "step-ap242",
   "name": "STEP AP242",
   "fullName": "ISO 10303-242 Managed model-based 3D engineering",
+  "resourceType": "data-schema",
   "publisher": "ISO TC 184/SC 4",
   "publisherType": "standards-body",
   "summary": "STEP application protocol for exchanging 3D product data, PMI, PDM data and configuration. Defined in EXPRESS; the reference information model for model-based definition.",
+  "knowledge": {
+    "domain": "product.structure",
+    "basis": "editorial"
+  },
   "kind": "information-model",
   "layer": "domain",
   "topics": [
@@ -23,7 +28,9 @@
   "license": {
     "name": "ISO standard (purchase required)",
     "access": "licensed",
-    "url": "https://www.iso.org/standard/84300.html"
+    "url": "https://www.iso.org/standard/84300.html",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://www.iso.org/standard/84300.html"
@@ -42,24 +49,40 @@
   "useCases": [
     "general-purpose-robotics"
   ],
+  "capabilities": [
+    "data-exchange",
+    "digital-twin"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",
     "sources": [
       {
         "url": "https://www.evs.ee/en/iso-10303-242-2025",
-        "title": "ISO 10303-242:2025 listing"
+        "title": "ISO 10303-242:2025 listing",
+        "type": "unclassified"
       },
       {
         "url": "https://online.standard.no/en/iso-10303-242-2025",
-        "title": "ISO 10303-242:2025 (edition 4)"
+        "title": "ISO 10303-242:2025 (edition 4)",
+        "type": "unclassified"
       }
     ],
     "notes": "An information model in EXPRESS, not an OWL ontology. A further revision is at committee-draft stage."
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
   },
   "origin": "v2",
   "engineeringUses": [
     "Exchanging 3D CAD models with PMI between design and manufacturing partners",
     "Archiving model-based definition data in a neutral format"
-  ]
+  ],
+  "limitations": []
 }

@@ -2,7 +2,12 @@
   "id": "aas",
   "name": "AAS",
   "fullName": "Asset Administration Shell (AAS)",
+  "resourceType": "data-schema",
   "summary": "Asset Administration Shell meta-model for interoperable digital twins.",
+  "knowledge": {
+    "domain": "product.catalogues",
+    "basis": "editorial"
+  },
   "publisher": "Industrial Digital Twin Association",
   "publisherType": "industry-association",
   "kind": "meta-model",
@@ -23,7 +28,9 @@
   "license": {
     "name": "Specifications published openly by IDTA (see licence in each document)",
     "access": "open",
-    "url": "https://industrialdigitaltwin.org/en/content-hub/aasspecifications"
+    "url": "https://industrialdigitaltwin.org/en/content-hub/aasspecifications",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://industrialdigitaltwin.org/en/content-hub/aasspecifications",
@@ -48,20 +55,36 @@
     "general-purpose-robotics",
     "sustainability"
   ],
+  "capabilities": [
+    "digital-twin",
+    "data-exchange",
+    "manufacturing-operations"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",
     "sources": [
       {
         "url": "https://industrialdigitaltwin.org/wp-content/uploads/2025/08/IDTA-01001-3-1-1_AAS-Specification_Part1_Metamodel.pdf",
-        "title": "IDTA-01001-3-1-1 Part 1 Metamodel (PDF)"
+        "title": "IDTA-01001-3-1-1 Part 1 Metamodel (PDF)",
+        "type": "official-documentation"
       },
       {
         "url": "https://industrialdigitaltwin.org/en/content-hub/aasspecifications",
-        "title": "IDTA AAS specifications"
+        "title": "IDTA AAS specifications",
+        "type": "official-documentation"
       }
     ],
     "notes": "The IDTA Part 4 Security document (2026) references Part 1 v3.2; confirm whether v3.2 has been released."
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
   },
   "origin": "v1",
   "legacy": {
@@ -96,5 +119,6 @@
   "engineeringUses": [
     "Publishing a component digital nameplate and technical data alongside a delivered machine",
     "Exchanging asset information between engineering tools and operations through standard submodels"
-  ]
+  ],
+  "limitations": []
 }

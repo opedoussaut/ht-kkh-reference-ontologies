@@ -2,9 +2,14 @@
   "id": "vsso",
   "name": "VSSo",
   "fullName": "Vehicle Signal Specification Ontology",
+  "resourceType": "ontology",
   "publisher": "W3C Automotive WG / COVESA",
   "publisherType": "standards-body",
   "summary": "OWL ontology for COVESA Vehicle Signal Specification signals, following the SOSA/SSN pattern. The W3C draft was later discontinued.",
+  "knowledge": {
+    "domain": "product.operations",
+    "basis": "editorial"
+  },
   "kind": "ontology",
   "layer": "domain",
   "topics": [
@@ -21,7 +26,9 @@
   "license": {
     "name": "W3C Document License",
     "access": "open",
-    "url": "https://www.w3.org/TR/vsso-core/"
+    "url": "https://www.w3.org/TR/vsso-core/",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://www.w3.org/TR/vsso-core/",
@@ -35,19 +42,33 @@
     "transportation-mobility"
   ],
   "useCases": [],
+  "capabilities": [
+    "iot-monitoring"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",
     "sources": [
       {
         "url": "https://www.w3.org/TR/vsso-core/",
-        "title": "VSSo Core (W3C)"
+        "title": "VSSo Core (W3C)",
+        "type": "official-documentation"
       }
     ],
     "notes": "Listed for awareness; not maintained."
   },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
+  },
   "origin": "v2",
   "engineeringUses": [
     "Understanding semantic modelling of vehicle signals (historical reference; draft discontinued)"
-  ]
+  ],
+  "limitations": []
 }

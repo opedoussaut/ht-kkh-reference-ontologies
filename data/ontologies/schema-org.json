@@ -2,9 +2,14 @@
   "id": "schema-org",
   "name": "Schema.org",
   "fullName": "Schema.org vocabulary",
+  "resourceType": "vocabulary",
   "publisher": "Schema.org community (W3C Community Group)",
   "publisherType": "consortium",
   "summary": "Widely deployed vocabulary for structured data on the web: products, offers, organisations, events and more. Absorbed GoodRelations in 2012.",
+  "knowledge": {
+    "domain": "business.commerce",
+    "basis": "editorial"
+  },
   "kind": "vocabulary",
   "layer": "cross-domain",
   "topics": [
@@ -22,7 +27,9 @@
   "license": {
     "name": "CC BY-SA 3.0",
     "access": "open",
-    "url": "https://schema.org/docs/terms.html"
+    "url": "https://schema.org/docs/terms.html",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://schema.org/",
@@ -46,24 +53,39 @@
     "semiconductors",
     "sustainability"
   ],
+  "capabilities": [
+    "data-exchange"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",
     "sources": [
       {
         "url": "https://schema.org/docs/terms.html",
-        "title": "Schema.org terms"
+        "title": "Schema.org terms",
+        "type": "official-documentation"
       },
       {
         "url": "https://blog.schema.org/2012/11/08/good-relations-and-schema-org/",
-        "title": "GoodRelations integration announcement"
+        "title": "GoodRelations integration announcement",
+        "type": "unclassified"
       }
     ],
     "notes": ""
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
   },
   "origin": "v2",
   "engineeringUses": [
     "Publishing product and organisation data as structured data on the web",
     "Providing broadly understood baseline terms for linked data"
-  ]
+  ],
+  "limitations": []
 }

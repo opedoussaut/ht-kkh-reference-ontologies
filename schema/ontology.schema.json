@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/schema/ontology.schema.json",
-  "title": "Reference Ontology Atlas — ontology record",
+  "title": "Engineering Knowledge Atlas — resource record (schema v3)",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -22,7 +22,14 @@
     "industries",
     "useCases",
     "verification",
-    "origin"
+    "origin",
+    "resourceType",
+    "knowledge",
+    "capabilities",
+    "classificationBasis",
+    "physicalAi",
+    "limitations",
+    "editorialReview"
   ],
   "definitions": {
     "url": {
@@ -34,7 +41,8 @@
       "additionalProperties": false,
       "required": [
         "url",
-        "title"
+        "title",
+        "type"
       ],
       "properties": {
         "url": {
@@ -43,6 +51,10 @@
         "title": {
           "type": "string",
           "minLength": 3
+        },
+        "type": {
+          "description": "Evidence type id (data/taxonomy/evidence-types.json)",
+          "type": "string"
         }
       }
     }
@@ -154,7 +166,9 @@
       "required": [
         "name",
         "access",
-        "url"
+        "url",
+        "reviewStatus",
+        "commercialReuse"
       ],
       "properties": {
         "name": {
@@ -176,6 +190,20 @@
             {
               "type": "null"
             }
+          ]
+        },
+        "reviewStatus": {
+          "enum": [
+            "not-assessed",
+            "reviewed"
+          ]
+        },
+        "commercialReuse": {
+          "enum": [
+            "unknown",
+            "permitted",
+            "restricted",
+            "not-permitted"
           ]
         }
       }
@@ -208,6 +236,28 @@
         },
         "related": {
           "$ref": "#/definitions/url"
+        },
+        "distributions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "url",
+              "format"
+            ],
+            "properties": {
+              "url": {
+                "$ref": "#/definitions/url"
+              },
+              "format": {
+                "type": "string"
+              },
+              "mediaType": {
+                "type": "string"
+              }
+            }
+          }
         }
       }
     },
@@ -371,6 +421,125 @@
         "minLength": 20
       },
       "maxItems": 5
+    },
+    "resourceType": {
+      "description": "WHAT: controlled value from data/taxonomy/resource-types.json",
+      "type": "string",
+      "pattern": "^[a-z-]+$"
+    },
+    "knowledge": {
+      "description": "WHAT: one primary knowledge sub-domain (data/taxonomy/knowledge-domains.json) or not-assessed",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "domain",
+        "basis"
+      ],
+      "properties": {
+        "domain": {
+          "type": "string"
+        },
+        "basis": {
+          "enum": [
+            "editorial",
+            "source"
+          ]
+        },
+        "sourceRef": {
+          "$ref": "#/definitions/url"
+        }
+      }
+    },
+    "capabilities": {
+      "description": "WHY: engineering capability ids (data/taxonomy/capabilities.json)",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "classificationBasis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "industries",
+        "capabilities"
+      ],
+      "properties": {
+        "industries": {
+          "enum": [
+            "editorial",
+            "source"
+          ]
+        },
+        "capabilities": {
+          "enum": [
+            "editorial",
+            "source"
+          ]
+        }
+      }
+    },
+    "physicalAi": {
+      "description": "Proposed application categories (data/taxonomy/physical-ai.json). Empty until evidence rules are met.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "limitations": {
+      "description": "Known limitations and uncertainties. Empty = none recorded (not: none exist).",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "text",
+          "basis"
+        ],
+        "properties": {
+          "text": {
+            "type": "string",
+            "minLength": 10
+          },
+          "basis": {
+            "enum": [
+              "editorial",
+              "source"
+            ]
+          },
+          "sourceRef": {
+            "$ref": "#/definitions/url"
+          }
+        }
+      }
+    },
+    "editorialReview": {
+      "description": "WHEN: last review of editorial fields",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reviewedOn",
+        "reviewer"
+      ],
+      "properties": {
+        "reviewedOn": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "reviewer": {
+          "type": "string",
+          "minLength": 2,
+          "not": {
+            "pattern": "@"
+          }
+        }
+      }
+    },
+    "details": {
+      "description": "Type-specific extension keyed by resource type (e.g. dataset, standard).",
+      "type": "object"
     }
   }
 }

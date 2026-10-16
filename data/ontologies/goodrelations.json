@@ -2,7 +2,12 @@
   "id": "goodrelations",
   "name": "GoodRelations",
   "fullName": "GoodRelations Web Vocabulary for E-Commerce",
+  "resourceType": "vocabulary",
   "summary": "Ontology for products, offers, prices, and business entities.",
+  "knowledge": {
+    "domain": "business.commerce",
+    "basis": "editorial"
+  },
   "publisher": "Web Commerce Community",
   "publisherType": "research",
   "kind": "vocabulary",
@@ -22,7 +27,9 @@
   "license": {
     "name": "Open (see project site)",
     "access": "open",
-    "url": "http://www.heppnetz.de/projects/goodrelations/"
+    "url": "http://www.heppnetz.de/projects/goodrelations/",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "http://www.heppnetz.de/projects/goodrelations/",
@@ -44,20 +51,34 @@
     "personal-electronics",
     "general-purpose-robotics"
   ],
+  "capabilities": [
+    "data-exchange"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",
     "sources": [
       {
         "url": "http://www.heppnetz.de/projects/goodrelations/",
-        "title": "GoodRelations project"
+        "title": "GoodRelations project",
+        "type": "official-documentation"
       },
       {
         "url": "https://blog.schema.org/2012/11/08/good-relations-and-schema-org/",
-        "title": "schema.org blog: GoodRelations integrated into schema.org (2012)"
+        "title": "schema.org blog: GoodRelations integrated into schema.org (2012)",
+        "type": "unclassified"
       }
     ],
     "notes": "For new work, schema.org is the maintained successor."
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
   },
   "origin": "v1",
   "legacy": {
@@ -83,5 +104,6 @@
   "engineeringUses": [
     "Interpreting legacy e-commerce product and offer markup",
     "Understanding the origin of schema.org product and offer terms"
-  ]
+  ],
+  "limitations": []
 }

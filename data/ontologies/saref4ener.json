@@ -2,9 +2,14 @@
   "id": "saref4ener",
   "name": "SAREF4ENER",
   "fullName": "SAREF extension for Energy",
+  "resourceType": "ontology",
   "publisher": "ETSI",
   "publisherType": "standards-body",
   "summary": "SAREF extension for energy flexibility and demand response between smart devices, energy managers and the grid.",
+  "knowledge": {
+    "domain": "product.interfaces",
+    "basis": "editorial"
+  },
   "kind": "ontology",
   "layer": "domain",
   "topics": [
@@ -22,7 +27,9 @@
   "license": {
     "name": "ETSI Software License (BSD-3-Clause style)",
     "access": "open",
-    "url": "https://forge.etsi.org/etsi-software-license"
+    "url": "https://forge.etsi.org/etsi-software-license",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://saref.etsi.org/saref4ener/",
@@ -42,20 +49,35 @@
     "ai-factories",
     "sustainability"
   ],
+  "capabilities": [
+    "energy-management",
+    "iot-monitoring"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",
     "sources": [
       {
         "url": "https://saref.etsi.org/saref4ener/",
-        "title": "ETSI SAREF4ENER"
+        "title": "ETSI SAREF4ENER",
+        "type": "official-documentation"
       }
     ],
     "notes": ""
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
   },
   "origin": "v2",
   "engineeringUses": [
     "Exchanging flexibility and power profiles between appliances and energy managers",
     "Supporting demand response between facilities and the grid"
-  ]
+  ],
+  "limitations": []
 }

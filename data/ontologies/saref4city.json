@@ -2,7 +2,12 @@
   "id": "saref4city",
   "name": "SAREF4CITY",
   "fullName": "SAREF extension for Smart Cities",
+  "resourceType": "ontology",
   "summary": "OWL-DL extension of SAREF with general concepts for smart-city data in the IoT domain, such as city objects, administrative areas, public services and key performance indicators.",
+  "knowledge": {
+    "domain": "product.operations",
+    "basis": "editorial"
+  },
   "publisher": "ETSI",
   "publisherType": "standards-body",
   "kind": "ontology",
@@ -23,7 +28,9 @@
   "license": {
     "name": "ETSI Software License (BSD-3-Clause style)",
     "access": "open",
-    "url": "https://forge.etsi.org/etsi-software-license"
+    "url": "https://forge.etsi.org/etsi-software-license",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://saref.etsi.org/saref4city/",
@@ -40,20 +47,35 @@
   "useCases": [
     "sustainability"
   ],
+  "capabilities": [
+    "iot-monitoring",
+    "spatial-facility"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "status": "verified",
     "checkedOn": "2026-10-15",
     "sources": [
       {
         "url": "https://saref.etsi.org/saref4city/",
-        "title": "ETSI SAREF4CITY"
+        "title": "ETSI SAREF4CITY",
+        "type": "official-documentation"
       }
     ],
     "notes": "First published 2020-06-05; page last modified 2025-04-11."
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
   },
   "origin": "v2",
   "engineeringUses": [
     "Describing city objects, public services and KPIs for smart-city platforms",
     "Combining IoT data across city domains"
-  ]
+  ],
+  "limitations": []
 }

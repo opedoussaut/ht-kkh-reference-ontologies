@@ -2,7 +2,12 @@
   "id": "bot",
   "name": "BOT",
   "fullName": "Building Topology Ontology",
+  "resourceType": "ontology",
   "summary": "Building Topology Ontology (BOT) is a minimal OWL DL ontology for describing the core topological concepts of buildings and relationships between sub-components such as sites, buildings, storeys, spaces, and elements.",
+  "knowledge": {
+    "domain": "product.structure",
+    "basis": "editorial"
+  },
   "publisher": "Linked Building Data Community Group",
   "publisherType": "consortium",
   "kind": "ontology",
@@ -22,7 +27,9 @@
   "license": {
     "name": "Not stated on the specification page (community group draft)",
     "access": "open-with-terms",
-    "url": "https://w3c-lbd-cg.github.io/bot/"
+    "url": "https://w3c-lbd-cg.github.io/bot/",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://w3c-lbd-cg.github.io/bot/",
@@ -39,16 +46,30 @@
   "useCases": [
     "ai-factories"
   ],
+  "capabilities": [
+    "spatial-facility",
+    "digital-twin"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "partially-verified",
     "sources": [
       {
         "url": "https://w3c-lbd-cg.github.io/bot/",
-        "title": "BOT specification"
+        "title": "BOT specification",
+        "type": "official-documentation"
       }
     ],
     "notes": "W3C Community Group reports are not W3C standards. No licence statement is given on the specification page; confirm before redistribution."
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
   },
   "origin": "v1",
   "legacy": {
@@ -71,5 +92,6 @@
   "engineeringUses": [
     "Describing the site, building, storey and space hierarchy of a facility for a digital twin",
     "Locating equipment, such as racks or cooling units, within building zones"
-  ]
+  ],
+  "limitations": []
 }

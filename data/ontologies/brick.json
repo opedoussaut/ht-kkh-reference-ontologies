@@ -2,7 +2,12 @@
   "id": "brick",
   "name": "Brick Schema",
   "fullName": "Brick Schema",
+  "resourceType": "ontology",
   "summary": "Brick Schema is an open OWL ontology for modeling buildings, infrastructure, and their systems, including spaces, equipment, power distribution, cooling, HVAC, and sensors. It provides a formal semantic foundation to represent and reason over the physical and infrastructural structure of AI factories and data centers.",
+  "knowledge": {
+    "domain": "product.operations",
+    "basis": "editorial"
+  },
   "publisher": "Brick Consortium",
   "publisherType": "consortium",
   "kind": "ontology",
@@ -23,7 +28,9 @@
   "license": {
     "name": "BSD-3-Clause",
     "access": "open",
-    "url": "https://github.com/BrickSchema/Brick"
+    "url": "https://github.com/BrickSchema/Brick",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://brickschema.org/",
@@ -43,20 +50,37 @@
   "useCases": [
     "ai-factories"
   ],
+  "capabilities": [
+    "iot-monitoring",
+    "spatial-facility",
+    "digital-twin",
+    "energy-management"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",
     "sources": [
       {
         "url": "https://github.com/BrickSchema/Brick/releases",
-        "title": "Brick releases"
+        "title": "Brick releases",
+        "type": "unclassified"
       },
       {
         "url": "https://brickschema.org/",
-        "title": "Brick Schema"
+        "title": "Brick Schema",
+        "type": "official-documentation"
       }
     ],
     "notes": ""
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
   },
   "origin": "v1",
   "legacy": {
@@ -80,5 +104,6 @@
   "engineeringUses": [
     "Describing HVAC, electrical and metering points so analytics can run across buildings",
     "Linking sensor time series to the equipment and spaces they monitor"
-  ]
+  ],
+  "limitations": []
 }

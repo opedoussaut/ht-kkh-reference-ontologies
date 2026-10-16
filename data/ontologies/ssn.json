@@ -2,7 +2,12 @@
   "id": "ssn",
   "name": "SSN",
   "fullName": "Semantic Sensor Network Ontology",
+  "resourceType": "ontology",
   "summary": "Semantic Sensor Network ontology for sensors, observations, and systems.",
+  "knowledge": {
+    "domain": "product.operations",
+    "basis": "editorial"
+  },
   "publisher": "W3C/OGC",
   "publisherType": "standards-body",
   "kind": "ontology",
@@ -22,7 +27,9 @@
   "license": {
     "name": "W3C Document License",
     "access": "open",
-    "url": "https://www.w3.org/copyright/document-license/"
+    "url": "https://www.w3.org/copyright/document-license/",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://www.w3.org/TR/vocab-ssn/",
@@ -42,16 +49,29 @@
     "personal-electronics",
     "general-purpose-robotics"
   ],
+  "capabilities": [
+    "iot-monitoring"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",
     "sources": [
       {
         "url": "https://www.w3.org/TR/vocab-ssn/",
-        "title": "W3C Semantic Sensor Network Ontology"
+        "title": "W3C Semantic Sensor Network Ontology",
+        "type": "official-documentation"
       }
     ],
     "notes": ""
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
   },
   "origin": "v1",
   "legacy": {
@@ -77,5 +97,6 @@
   "engineeringUses": [
     "Describing sensing systems, their deployment and operating ranges",
     "Documenting measurement capabilities of test rigs and instruments"
-  ]
+  ],
+  "limitations": []
 }

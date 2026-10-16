@@ -2,7 +2,12 @@
   "id": "owl-time",
   "name": "OWL-time",
   "fullName": "Time Ontology in OWL",
+  "resourceType": "ontology",
   "summary": "Ontology of temporal concepts including intervals, instants, durations, and relations.",
+  "knowledge": {
+    "domain": "foundations.time-space",
+    "basis": "editorial"
+  },
   "publisher": "W3C",
   "publisherType": "standards-body",
   "kind": "ontology",
@@ -22,7 +27,9 @@
   "license": {
     "name": "W3C Document License",
     "access": "open",
-    "url": "https://www.w3.org/copyright/document-license/"
+    "url": "https://www.w3.org/copyright/document-license/",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://www.w3.org/TR/owl-time/",
@@ -42,16 +49,30 @@
     "personal-electronics",
     "general-purpose-robotics"
   ],
+  "capabilities": [
+    "data-exchange",
+    "knowledge-graphs-ai"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",
     "sources": [
       {
         "url": "https://www.w3.org/TR/owl-time/",
-        "title": "W3C Time Ontology in OWL"
+        "title": "W3C Time Ontology in OWL",
+        "type": "official-documentation"
       }
     ],
     "notes": ""
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
   },
   "origin": "v1",
   "legacy": {
@@ -77,5 +98,6 @@
   "engineeringUses": [
     "Representing instants, intervals and durations for schedules and operation logs",
     "Reasoning about the order and overlap of events"
-  ]
+  ],
+  "limitations": []
 }

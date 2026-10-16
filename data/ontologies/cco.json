@@ -2,9 +2,14 @@
   "id": "cco",
   "name": "CCO",
   "fullName": "Common Core Ontologies",
+  "resourceType": "ontology",
   "publisher": "CCO Governance Board",
   "publisherType": "consortium",
   "summary": "Suite of mid-level ontologies that extend BFO, covering agents, artefacts, events, information and qualities. Widely used in defence and intelligence programmes.",
+  "knowledge": {
+    "domain": "foundations.formal",
+    "basis": "editorial"
+  },
   "kind": "ontology",
   "layer": "mid-level",
   "topics": [
@@ -22,7 +27,9 @@
   "license": {
     "name": "BSD-3-Clause",
     "access": "open",
-    "url": "https://github.com/CommonCoreOntology/CommonCoreOntologies"
+    "url": "https://github.com/CommonCoreOntology/CommonCoreOntologies",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://github.com/CommonCoreOntology/CommonCoreOntologies",
@@ -37,20 +44,34 @@
     "cross-industry"
   ],
   "useCases": [],
+  "capabilities": [
+    "knowledge-graphs-ai"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",
     "sources": [
       {
         "url": "https://github.com/CommonCoreOntology/CommonCoreOntologies",
-        "title": "Common Core Ontologies repository"
+        "title": "Common Core Ontologies repository",
+        "type": "official-documentation"
       }
     ],
     "notes": ""
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
   },
   "origin": "v2",
   "engineeringUses": [
     "Modelling artefacts, their functions and the agents that use them in mission or systems analysis",
     "Extending BFO-based models with mid-level concepts instead of creating them from scratch"
-  ]
+  ],
+  "limitations": []
 }

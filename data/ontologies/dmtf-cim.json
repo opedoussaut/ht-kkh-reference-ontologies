@@ -2,7 +2,12 @@
   "id": "dmtf-cim",
   "name": "DMTF CIM",
   "fullName": "DMTF Common Information Model (CIM) Schema",
+  "resourceType": "data-schema",
   "summary": "The Common Information Model (CIM) is a formal object-oriented schema developed by the Distributed Management Task Force (DMTF) to represent managed elements in IT environments, including computer systems, racks, chassis, processors, memory, power supplies, networking components, and cooling subsystems. CIM provides a strong reference model for AI Factory physical and logical infrastructure components.",
+  "knowledge": {
+    "domain": "product.operations",
+    "basis": "editorial"
+  },
   "publisher": "DMTF (Distributed Management Task Force)",
   "publisherType": "standards-body",
   "kind": "information-model",
@@ -23,7 +28,9 @@
   "license": {
     "name": "Free download under DMTF terms",
     "access": "open-with-terms",
-    "url": "https://www.dmtf.org/standards/cim"
+    "url": "https://www.dmtf.org/standards/cim",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://www.dmtf.org/standards/cim"
@@ -39,20 +46,35 @@
   "useCases": [
     "ai-factories"
   ],
+  "capabilities": [
+    "digital-twin",
+    "iot-monitoring"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",
     "sources": [
       {
         "url": "https://dmtf.org/node/3585",
-        "title": "DMTF releases CIM 2.54"
+        "title": "DMTF releases CIM 2.54",
+        "type": "unclassified"
       },
       {
         "url": "https://www.dmtf.org/sites/default/files/cim/cim_schema_v2541/releasenotes.html",
-        "title": "CIM 2.54.1 release notes"
+        "title": "CIM 2.54.1 release notes",
+        "type": "official-documentation"
       }
     ],
     "notes": "CIM is a MOF/UML information model, not an OWL ontology."
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
   },
   "corrections": [
     {
@@ -92,5 +114,6 @@
   "engineeringUses": [
     "Inventorying servers, chassis, power supplies and cooling devices in a data centre",
     "Mapping infrastructure management data into a facility or operations model"
-  ]
+  ],
+  "limitations": []
 }

@@ -2,7 +2,12 @@
   "id": "gs1-webvoc",
   "name": "GS1 WebVoc",
   "fullName": "GS1 Web Vocabulary",
+  "resourceType": "vocabulary",
   "summary": "GS1 web vocabulary for product, organization, and identification semantics.",
+  "knowledge": {
+    "domain": "product.catalogues",
+    "basis": "editorial"
+  },
   "publisher": "GS1",
   "publisherType": "standards-body",
   "kind": "vocabulary",
@@ -22,7 +27,9 @@
   "license": {
     "name": "Apache-2.0 (per GS1 WebVoc repository)",
     "access": "open",
-    "url": "https://github.com/gs1/WebVoc"
+    "url": "https://github.com/gs1/WebVoc",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://ref.gs1.org/voc/",
@@ -46,24 +53,41 @@
     "general-purpose-robotics",
     "sustainability"
   ],
+  "capabilities": [
+    "supply-chain",
+    "sustainability-compliance",
+    "data-exchange"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",
     "sources": [
       {
         "url": "https://ref.gs1.org/voc/",
-        "title": "GS1 Web Vocabulary"
+        "title": "GS1 Web Vocabulary",
+        "type": "official-documentation"
       },
       {
         "url": "https://ref.gs1.org/voc/data/archive",
-        "title": "GS1 Web Vocabulary archive"
+        "title": "GS1 Web Vocabulary archive",
+        "type": "official-documentation"
       },
       {
         "url": "https://github.com/gs1/WebVoc",
-        "title": "GS1 WebVoc on GitHub"
+        "title": "GS1 WebVoc on GitHub",
+        "type": "unclassified"
       }
     ],
     "notes": "v1 marked this as \"licensed\"; the vocabulary is published under Apache 2.0."
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
   },
   "corrections": [
     {
@@ -98,5 +122,6 @@
   "engineeringUses": [
     "Publishing product master data (identifiers, dimensions, composition) on the web",
     "Linking product identity (GTIN) to traceability and passport data"
-  ]
+  ],
+  "limitations": []
 }

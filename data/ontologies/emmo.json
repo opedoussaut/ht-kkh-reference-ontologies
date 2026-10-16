@@ -2,9 +2,14 @@
   "id": "emmo",
   "name": "EMMO",
   "fullName": "Elementary Multiperspective Material Ontology",
+  "resourceType": "ontology",
   "publisher": "EMMC / EMMO community",
   "publisherType": "consortium",
   "summary": "Top-down ontology for materials science and engineering, from physical foundations to materials, models and characterisation.",
+  "knowledge": {
+    "domain": "foundations.materials",
+    "basis": "editorial"
+  },
   "kind": "ontology",
   "layer": "upper",
   "topics": [
@@ -22,7 +27,9 @@
   "license": {
     "name": "CC BY 4.0",
     "access": "open",
-    "url": "https://github.com/emmo-repo/EMMO"
+    "url": "https://github.com/emmo-repo/EMMO",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://github.com/emmo-repo/EMMO",
@@ -43,24 +50,40 @@
     "semiconductors",
     "sustainability"
   ],
+  "capabilities": [
+    "simulation-validation",
+    "knowledge-graphs-ai"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",
     "sources": [
       {
         "url": "https://github.com/emmo-repo/EMMO",
-        "title": "EMMO repository"
+        "title": "EMMO repository",
+        "type": "official-documentation"
       },
       {
         "url": "https://zenodo.org/records/8318236",
-        "title": "EMMO 1.0 on Zenodo"
+        "title": "EMMO 1.0 on Zenodo",
+        "type": "unclassified"
       }
     ],
     "notes": "Domain modules continue to evolve after 1.0.0."
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
   },
   "origin": "v2",
   "engineeringUses": [
     "Structuring materials characterisation and modelling data so it can be reused across tools",
     "Describing material models used in simulation with their physical quantities"
-  ]
+  ],
+  "limitations": []
 }

@@ -2,9 +2,14 @@
   "id": "digital-reference",
   "name": "Digital Reference (DR)",
   "fullName": "Digital Reference — semiconductor supply-chain ontology",
+  "resourceType": "ontology",
   "publisher": "Infineon Technologies & partners (Productive4.0, SC³)",
   "publisherType": "industry",
   "summary": "Ontology for the semiconductor industry and its supply chains, organised in thematic \"lobes\" (about 1,200 classes). Introduced in the ECSEL Productive4.0 project.",
+  "knowledge": {
+    "domain": "business.supply",
+    "basis": "editorial"
+  },
   "kind": "ontology",
   "layer": "domain",
   "topics": [
@@ -21,7 +26,9 @@
   "license": {
     "name": "See repository",
     "access": "unknown",
-    "url": "https://github.com/tibonto/dr"
+    "url": "https://github.com/tibonto/dr",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://ifx-dr.github.io/DigitalReference/",
@@ -37,24 +44,40 @@
   "useCases": [
     "semiconductors"
   ],
+  "capabilities": [
+    "supply-chain",
+    "manufacturing-operations"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "partially-verified",
     "sources": [
       {
         "url": "https://ifx-dr.github.io/DigitalReference/",
-        "title": "Digital Reference site"
+        "title": "Digital Reference site",
+        "type": "official-documentation"
       },
       {
         "url": "https://www.informs-sim.org/wsc25papers/con142.pdf",
-        "title": "Winter Simulation Conference 2025 paper using DR"
+        "title": "Winter Simulation Conference 2025 paper using DR",
+        "type": "unclassified"
       }
     ],
     "notes": "Confirm the licence in the repository before reuse."
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
   },
   "origin": "v2",
   "engineeringUses": [
     "Describing semiconductor products, production and supply-chain concepts in a shared vocabulary",
     "Supporting supply-chain data exchange between partners in the semiconductor value chain"
-  ]
+  ],
+  "limitations": []
 }

@@ -2,7 +2,12 @@
   "id": "qudt",
   "name": "QUDT",
   "fullName": "Quantities, Units, Dimensions and Data Types",
+  "resourceType": "ontology",
   "summary": "Ontology for quantities, units, dimensions, and datatypes.",
+  "knowledge": {
+    "domain": "foundations.quantities",
+    "basis": "editorial"
+  },
   "publisher": "QUDT",
   "publisherType": "consortium",
   "kind": "ontology",
@@ -21,7 +26,9 @@
   "license": {
     "name": "CC BY 4.0",
     "access": "open",
-    "url": "https://creativecommons.org/licenses/by/4.0/"
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://qudt.org/",
@@ -44,24 +51,40 @@
     "general-purpose-robotics",
     "sustainability"
   ],
+  "capabilities": [
+    "data-exchange",
+    "simulation-validation"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",
     "sources": [
       {
         "url": "https://qudt.org/",
-        "title": "QUDT"
+        "title": "QUDT",
+        "type": "official-documentation"
       },
       {
         "url": "https://qudt.org/doc/2026/01/DOC_VOCAB-CONSTANTS.html",
-        "title": "QUDT constants vocabulary, version 3.1.10"
+        "title": "QUDT constants vocabulary, version 3.1.10",
+        "type": "official-documentation"
       },
       {
         "url": "https://qudt.org/schema/qudt/",
-        "title": "QUDT schema (Turtle), declares \"QUDT Schema - Version 3.5.2\""
+        "title": "QUDT schema (Turtle), declares \"QUDT Schema - Version 3.5.2\"",
+        "type": "official-documentation"
       }
     ],
     "notes": "Version taken from the schema file itself on 2026-10-15; release date not stated in the file."
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
   },
   "origin": "v1",
   "legacy": {
@@ -88,6 +111,7 @@
     "Attaching units and quantity kinds to engineering parameters to avoid unit errors",
     "Converting values between unit systems in data pipelines"
   ],
+  "limitations": [],
   "corrections": [
     {
       "field": "version",
