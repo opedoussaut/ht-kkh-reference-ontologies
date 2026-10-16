@@ -8,7 +8,9 @@
   "summary": "UML information model for electric power systems (grid topology, equipment, measurements, markets). Exchanged as RDF through profiles such as ENTSO-E CGMES.",
   "knowledge": {
     "domain": "product.structure",
-    "basis": "editorial"
+    "basis": "editorial",
+    "confidence": "tentative",
+    "rationale": "IEC 61970-301 models the topology and equipment of power systems. Measurements and market profiles (IEC 62325) also exist, so a single primary domain is a simplification."
   },
   "kind": "information-model",
   "layer": "domain",
@@ -32,6 +34,16 @@
     "reviewStatus": "not-assessed",
     "commercialReuse": "unknown"
   },
+  "licenses": [
+    {
+      "scope": "specification",
+      "name": "IEC standard text (purchase required)",
+      "url": null,
+      "statedAt": "https://webstore.iec.ch/en/publication/6215",
+      "commercialUse": "unknown",
+      "reviewStatus": "not-assessed"
+    }
+  ],
   "links": {
     "official": "https://webstore.iec.ch/en/publication/6215"
   },
@@ -64,12 +76,19 @@
       {
         "url": "https://connect.snv.ch/en/iec-61970-301-2013-ed4",
         "title": "IEC 61970-301 edition history (SNV)",
-        "type": "unclassified"
+        "type": "third-party",
+        "supports": [
+          "version"
+        ]
       },
       {
         "url": "https://webstore.iec.ch/en/publication/6215",
         "title": "IEC webstore",
-        "type": "official-documentation"
+        "type": "published-specification",
+        "supports": [
+          "identity",
+          "licence"
+        ]
       }
     ],
     "notes": "Added in v2 to separate the power-system CIM from the DMTF CIM. Confirm the current CGMES version with ENTSO-E."
@@ -80,8 +99,20 @@
   },
   "origin": "v2",
   "engineeringUses": [
-    "Exchanging power-grid models between transmission and distribution operators (e.g. CGMES)",
+    "Exchanging power-grid models between transmission system operators (e.g. the ENTSO-E CGMES profiles)",
     "Connecting a facility’s grid connection to the utility network model"
   ],
-  "limitations": []
+  "limitations": [
+    {
+      "text": "IEC standard sold by IEC.",
+      "basis": "source",
+      "category": "access",
+      "sourceRef": "https://webstore.iec.ch/en/publication/6215"
+    },
+    {
+      "text": "The current ENTSO-E CGMES profile version has not been confirmed.",
+      "basis": "editorial",
+      "category": "catalogue-gap"
+    }
+  ]
 }

@@ -73,8 +73,10 @@
       "type": "imports",
       "evidence": {
         "url": "https://www.w3.org/TR/vocab-ssn/",
+        "type": "published-specification",
         "note": "The W3C/OGC Recommendation defines SOSA as the lightweight core that SSN builds on and imports."
-      }
+      },
+      "status": "verified"
     },
     {
       "source": "saref4bldg",
@@ -82,8 +84,10 @@
       "type": "extends",
       "evidence": {
         "url": "https://saref.etsi.org/saref4bldg/",
+        "type": "published-specification",
         "note": "ETSI TS 103 410-3: SAREF extension for buildings."
-      }
+      },
+      "status": "verified"
     },
     {
       "source": "saref4ener",
@@ -91,8 +95,10 @@
       "type": "extends",
       "evidence": {
         "url": "https://saref.etsi.org/saref4ener/",
+        "type": "published-specification",
         "note": "ETSI TS 103 410-1: SAREF extension for energy."
-      }
+      },
+      "status": "verified"
     },
     {
       "source": "ieee-cora",
@@ -100,8 +106,10 @@
       "type": "extends",
       "evidence": {
         "url": "https://standards.ieee.org/standard/1872-2015.html",
+        "type": "published-specification",
         "note": "IEEE 1872-2015 builds CORA on SUMO as its upper ontology."
-      }
+      },
+      "status": "verified"
     },
     {
       "source": "sumo-cora",
@@ -109,8 +117,10 @@
       "type": "aligns-with",
       "evidence": {
         "url": "https://standards.ieee.org/standard/1872-2015.html",
+        "type": "published-specification",
         "note": "The IEEE 1872-2015 axiomatisation grounds the robotics ontologies in SUMO."
-      }
+      },
+      "status": "verified"
     },
     {
       "source": "sumo-cora",
@@ -118,8 +128,10 @@
       "type": "aligns-with",
       "evidence": {
         "url": "https://standards.ieee.org/standard/1872-2015.html",
+        "type": "published-specification",
         "note": "Alignment layer between SUMO and CORA."
-      }
+      },
+      "status": "verified"
     },
     {
       "source": "ieee-corax",
@@ -127,8 +139,10 @@
       "type": "part-of",
       "evidence": {
         "url": "https://standards.ieee.org/standard/1872-2015.html",
+        "type": "published-specification",
         "note": "CORAX is specified in IEEE 1872-2015 together with CORA."
-      }
+      },
+      "status": "verified"
     },
     {
       "source": "ieee-rparts",
@@ -136,8 +150,10 @@
       "type": "part-of",
       "evidence": {
         "url": "https://standards.ieee.org/standard/1872-2015.html",
+        "type": "published-specification",
         "note": "RPARTS is specified in IEEE 1872-2015."
-      }
+      },
+      "status": "verified"
     },
     {
       "source": "ieee-pos",
@@ -145,8 +161,10 @@
       "type": "part-of",
       "evidence": {
         "url": "https://standards.ieee.org/standard/1872-2015.html",
+        "type": "published-specification",
         "note": "POS (position ontology) is specified in IEEE 1872-2015."
-      }
+      },
+      "status": "verified"
     },
     {
       "source": "ieee-aur",
@@ -154,8 +172,10 @@
       "type": "extends",
       "evidence": {
         "url": "https://standards.ieee.org/ieee/1872.2/7094/",
+        "type": "published-specification",
         "note": "IEEE 1872.2-2021 extends CORA with autonomous-robotics ontologies."
-      }
+      },
+      "status": "verified"
     },
     {
       "source": "iof-core",
@@ -163,8 +183,10 @@
       "type": "imports",
       "evidence": {
         "url": "https://spec.industrialontologies.org/portal/release/202401/core/CoreOntology.html",
+        "type": "published-specification",
         "note": "All IOF ontologies are grounded in BFO 2020."
-      }
+      },
+      "status": "verified"
     },
     {
       "source": "cco",
@@ -172,8 +194,10 @@
       "type": "extends",
       "evidence": {
         "url": "https://github.com/CommonCoreOntology/CommonCoreOntologies",
+        "type": "publisher-repository",
         "note": "The Common Core Ontologies are a mid-level extension of BFO."
-      }
+      },
+      "status": "verified"
     },
     {
       "source": "oeo",
@@ -181,8 +205,10 @@
       "type": "imports",
       "evidence": {
         "url": "https://github.com/OpenEnergyPlatform/ontology",
+        "type": "publisher-repository",
         "note": "The OEO README states that the ontology makes use of, and follows the principles of, the Basic Formal Ontology."
-      }
+      },
+      "status": "verified"
     },
     {
       "source": "goodrelations",
@@ -190,8 +216,10 @@
       "type": "superseded-by",
       "evidence": {
         "url": "https://blog.schema.org/2012/11/08/good-relations-and-schema-org/",
+        "type": "official-documentation",
         "note": "GoodRelations was integrated into schema.org in 2012."
-      }
+      },
+      "status": "verified"
     },
     {
       "source": "gs1-webvoc",
@@ -199,8 +227,10 @@
       "type": "extends",
       "evidence": {
         "url": "https://ref.gs1.org/voc/",
+        "type": "official-documentation",
         "note": "The GS1 Web Vocabulary is designed as an extension of schema.org product terms."
-      }
+      },
+      "status": "verified"
     },
     {
       "source": "vsso",
@@ -208,8 +238,10 @@
       "type": "follows-pattern-of",
       "evidence": {
         "url": "https://www.w3.org/TR/vsso-core/",
+        "type": "published-specification",
         "note": "VSSo follows the SOSA/SSN pattern for observations and actuations."
-      }
+      },
+      "status": "verified"
     },
     {
       "source": "aas",
@@ -217,8 +249,11 @@
       "type": "references",
       "evidence": {
         "url": "https://industrialdigitaltwin.org/en/content-hub/aasspecifications",
+        "type": "official-documentation",
         "note": "AAS semantic IDs commonly reference ECLASS IRDIs; see the AAS metamodel specification."
-      }
+      },
+      "status": "partially-verified",
+      "conditions": "The AAS metamodel allows semantic IDs from any dictionary; ECLASS IRDIs are a common choice, not a requirement."
     },
     {
       "source": "saref4bldg",
@@ -226,8 +261,11 @@
       "type": "aligns-with",
       "evidence": {
         "url": "https://saref.etsi.org/saref4bldg/",
+        "type": "published-specification",
         "note": "ETSI states SAREF4BLDG is created based on the Industry Foundation Classes (IFC) standard."
-      }
+      },
+      "status": "partially-verified",
+      "conditions": "SAREF4BLDG is derived from the IFC standard; the relation to the ifcOWL serialisation is indirect."
     },
     {
       "source": "saref4inma",
@@ -235,8 +273,10 @@
       "type": "extends",
       "evidence": {
         "url": "https://saref.etsi.org/saref4inma/",
+        "type": "published-specification",
         "note": "ETSI TS 103 410-5: SAREF extension."
-      }
+      },
+      "status": "verified"
     },
     {
       "source": "saref4city",
@@ -244,8 +284,10 @@
       "type": "extends",
       "evidence": {
         "url": "https://saref.etsi.org/saref4city/",
+        "type": "published-specification",
         "note": "ETSI TS 103 410-4: SAREF extension."
-      }
+      },
+      "status": "verified"
     },
     {
       "source": "saref4auto",
@@ -253,8 +295,10 @@
       "type": "extends",
       "evidence": {
         "url": "https://saref.etsi.org/saref4auto/",
+        "type": "published-specification",
         "note": "ETSI TS 103 410-7: SAREF extension."
-      }
+      },
+      "status": "verified"
     }
   ]
 }

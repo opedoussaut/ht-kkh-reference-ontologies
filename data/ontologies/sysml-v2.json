@@ -8,7 +8,8 @@
   "summary": "Next-generation MBSE language. KerML provides a formal semantic core and SysML v2 adds systems-engineering constructs, a textual notation and a standard API.",
   "knowledge": {
     "domain": "foundations.languages",
-    "basis": "editorial"
+    "basis": "editorial",
+    "confidence": "clear"
   },
   "kind": "modeling-language",
   "layer": "domain",
@@ -68,12 +69,19 @@
       {
         "url": "https://github.com/Systems-Modeling/SysML-v2-Release",
         "title": "SysML v2 release repository",
-        "type": "unclassified"
+        "type": "publisher-repository",
+        "supports": [
+          "version",
+          "status"
+        ]
       },
       {
         "url": "https://www.omg.org/sysml/sst_aiaa_award.htm",
         "title": "OMG SysML Submission Team page",
-        "type": "official-documentation"
+        "type": "official-documentation",
+        "supports": [
+          "status"
+        ]
       }
     ],
     "notes": "A modelling language with formal semantics rather than an OWL ontology."
@@ -87,5 +95,12 @@
     "Modelling requirements, architecture and behaviour of a system in a standard textual and graphical language",
     "Exchanging system models between tools through the standard API"
   ],
-  "limitations": []
+  "limitations": [
+    {
+      "text": "A modelling language with its own notation and API, not an RDF/OWL ontology.",
+      "basis": "source",
+      "category": "scope",
+      "sourceRef": "https://github.com/Systems-Modeling/SysML-v2-Release"
+    }
+  ]
 }

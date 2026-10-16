@@ -1,6 +1,6 @@
 {
   "_status": "active",
-  "_version": "1.0.0",
+  "_version": "2.0.0",
   "_note": "Type of a source or claim. A working link is not evidence of accuracy, maintenance, interoperability or industrial suitability.",
   "items": [
     {
@@ -14,9 +14,19 @@
       "summary": "A formally published standard or specification (catalogue entry or text)."
     },
     {
+      "id": "publisher-repository",
+      "label": "Publisher repository",
+      "summary": "Source repository, release page or data archive maintained by the publisher (e.g. its GitHub organisation or Zenodo record)."
+    },
+    {
       "id": "peer-reviewed",
       "label": "Peer-reviewed research",
       "summary": "Article or paper published after peer review."
+    },
+    {
+      "id": "research-publication",
+      "label": "Research publication (not peer-reviewed)",
+      "summary": "Preprint, technical report or project paper without formal peer review (e.g. arXiv)."
     },
     {
       "id": "project-documentation",
@@ -35,8 +45,8 @@
     },
     {
       "id": "third-party",
-      "label": "Other third-party source",
-      "summary": "Secondary sources such as registries, reseller pages or news. Used only as supporting context."
+      "label": "Third-party reference",
+      "summary": "Registries, standards resellers, mailing lists, reseller tutorials or news. Supporting context only; never sole evidence for a capability."
     },
     {
       "id": "editorial",

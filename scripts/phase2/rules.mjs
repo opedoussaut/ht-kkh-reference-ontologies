@@ -34,9 +34,10 @@ export function sourceTypeFor(record, url) {
 // Remove everything the migration adds, so the result can be compared with the original record.
 export function stripPhase2(r) {
   const c = structuredClone(r);
-  for (const k of ['resourceType', 'knowledge', 'capabilities', 'classificationBasis', 'physicalAi', 'limitations', 'editorialReview']) delete c[k];
+  // v3 + v3.1 additions (scoped licences, source `supports`).
+  for (const k of ['resourceType', 'knowledge', 'capabilities', 'classificationBasis', 'physicalAi', 'limitations', 'editorialReview', 'licenses']) delete c[k];
   delete c.license.reviewStatus;
   delete c.license.commercialReuse;
-  for (const s of c.verification.sources) delete s.type;
+  for (const s of c.verification.sources) { delete s.type; delete s.supports; }
   return c;
 }

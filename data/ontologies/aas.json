@@ -6,7 +6,8 @@
   "summary": "Asset Administration Shell meta-model for interoperable digital twins.",
   "knowledge": {
     "domain": "product.catalogues",
-    "basis": "editorial"
+    "basis": "editorial",
+    "confidence": "clear"
   },
   "publisher": "Industrial Digital Twin Association",
   "publisherType": "industry-association",
@@ -72,12 +73,22 @@
       {
         "url": "https://industrialdigitaltwin.org/wp-content/uploads/2025/08/IDTA-01001-3-1-1_AAS-Specification_Part1_Metamodel.pdf",
         "title": "IDTA-01001-3-1-1 Part 1 Metamodel (PDF)",
-        "type": "official-documentation"
+        "type": "published-specification",
+        "supports": [
+          "identity",
+          "version",
+          "scope"
+        ]
       },
       {
         "url": "https://industrialdigitaltwin.org/en/content-hub/aasspecifications",
         "title": "IDTA AAS specifications",
-        "type": "official-documentation"
+        "type": "official-documentation",
+        "supports": [
+          "identity",
+          "licence",
+          "version"
+        ]
       }
     ],
     "notes": "The IDTA Part 4 Security document (2026) references Part 1 v3.2; confirm whether v3.2 has been released."

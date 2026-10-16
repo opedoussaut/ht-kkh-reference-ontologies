@@ -6,7 +6,9 @@
   "summary": "Building Topology Ontology (BOT) is a minimal OWL DL ontology for describing the core topological concepts of buildings and relationships between sub-components such as sites, buildings, storeys, spaces, and elements.",
   "knowledge": {
     "domain": "product.structure",
-    "basis": "editorial"
+    "basis": "editorial",
+    "confidence": "clear",
+    "rationale": "BOT models the topological decomposition of buildings (sites, buildings, storeys, spaces, elements): the structure of built assets (BOT specification)."
   },
   "publisher": "Linked Building Data Community Group",
   "publisherType": "consortium",
@@ -62,7 +64,12 @@
       {
         "url": "https://w3c-lbd-cg.github.io/bot/",
         "title": "BOT specification",
-        "type": "official-documentation"
+        "type": "official-documentation",
+        "supports": [
+          "identity",
+          "version",
+          "status"
+        ]
       }
     ],
     "notes": "W3C Community Group reports are not W3C standards. No licence statement is given on the specification page; confirm before redistribution."
@@ -93,5 +100,11 @@
     "Describing the site, building, storey and space hierarchy of a facility for a digital twin",
     "Locating equipment, such as racks or cooling units, within building zones"
   ],
-  "limitations": []
+  "limitations": [
+    {
+      "text": "No licence statement on the specification page.",
+      "basis": "editorial",
+      "category": "catalogue-gap"
+    }
+  ]
 }

@@ -6,7 +6,8 @@
   "summary": "Ontology focused on autonomous robotics concepts, capabilities, and behavior.",
   "knowledge": {
     "domain": "product.systems",
-    "basis": "editorial"
+    "basis": "editorial",
+    "confidence": "clear"
   },
   "publisher": "IEEE Robotics and Automation Society",
   "publisherType": "standards-body",
@@ -59,7 +60,13 @@
       {
         "url": "https://standards.ieee.org/ieee/1872.2/7094/",
         "title": "IEEE 1872.2-2021",
-        "type": "official-documentation"
+        "type": "published-specification",
+        "supports": [
+          "identity",
+          "version",
+          "status",
+          "licence"
+        ]
       }
     ],
     "notes": ""
@@ -108,5 +115,17 @@
     "Describing the architecture and autonomy functions of an autonomous robot in a shared vocabulary",
     "Comparing autonomous-system designs using common concepts"
   ],
-  "limitations": []
+  "limitations": [
+    {
+      "text": "The normative text is sold by IEEE; only catalogue information is publicly available.",
+      "basis": "source",
+      "category": "access",
+      "sourceRef": "https://standards.ieee.org/ieee/1872.2/7094/"
+    },
+    {
+      "text": "Public availability of the OWL files under the IEEE SA open-source programme is not yet confirmed.",
+      "basis": "editorial",
+      "category": "catalogue-gap"
+    }
+  ]
 }

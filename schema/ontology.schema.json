@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/schema/ontology.schema.json",
-  "title": "Engineering Knowledge Atlas — resource record (schema v3)",
+  "title": "Reference Ontology Atlas — resource record (schema v3.1)",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -12,7 +12,6 @@
     "publisher",
     "publisherType",
     "kind",
-    "layer",
     "topics",
     "version",
     "maturity",
@@ -42,7 +41,8 @@
       "required": [
         "url",
         "title",
-        "type"
+        "type",
+        "supports"
       ],
       "properties": {
         "url": {
@@ -55,6 +55,23 @@
         "type": {
           "description": "Evidence type id (data/taxonomy/evidence-types.json)",
           "type": "string"
+        },
+        "supports": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "identity",
+              "scope",
+              "version",
+              "licence",
+              "status",
+              "capability",
+              "relationship",
+              "limitation"
+            ]
+          }
         }
       }
     }
@@ -91,13 +108,27 @@
       ]
     },
     "kind": {
+      "description": "Finer sub-type; determines resourceType via resource-types.json `fromKind`.",
       "enum": [
         "ontology",
         "vocabulary",
-        "meta-model",
+        "classification",
         "information-model",
+        "meta-model",
+        "file-format",
         "modeling-language",
-        "classification"
+        "specification",
+        "reference-architecture",
+        "software-framework",
+        "middleware",
+        "simulator",
+        "physics-engine",
+        "ai-framework",
+        "model-architecture",
+        "trained-model",
+        "dataset",
+        "benchmark",
+        "evaluation-protocol"
       ]
     },
     "layer": {
@@ -178,6 +209,7 @@
           "enum": [
             "open",
             "open-with-terms",
+            "registration",
             "licensed",
             "unknown"
           ]
@@ -433,7 +465,8 @@
       "additionalProperties": false,
       "required": [
         "domain",
-        "basis"
+        "basis",
+        "confidence"
       ],
       "properties": {
         "domain": {
@@ -447,6 +480,16 @@
         },
         "sourceRef": {
           "$ref": "#/definitions/url"
+        },
+        "confidence": {
+          "enum": [
+            "clear",
+            "tentative"
+          ]
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 10
         }
       }
     },
@@ -477,6 +520,12 @@
             "editorial",
             "source"
           ]
+        },
+        "physicalAi": {
+          "enum": [
+            "editorial",
+            "source"
+          ]
         }
       }
     },
@@ -496,7 +545,8 @@
         "additionalProperties": false,
         "required": [
           "text",
-          "basis"
+          "basis",
+          "category"
         ],
         "properties": {
           "text": {
@@ -511,6 +561,15 @@
           },
           "sourceRef": {
             "$ref": "#/definitions/url"
+          },
+          "category": {
+            "enum": [
+              "technical",
+              "scope",
+              "access",
+              "unverified-claim",
+              "catalogue-gap"
+            ]
           }
         }
       }
@@ -538,8 +597,175 @@
       }
     },
     "details": {
-      "description": "Type-specific extension keyed by resource type (e.g. dataset, standard).",
-      "type": "object"
+      "description": "Type-specific extension keyed by resource type.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "aiModel": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "artefact",
+            "weightsPublished"
+          ],
+          "properties": {
+            "artefact": {
+              "enum": [
+                "architecture",
+                "trained-model"
+              ]
+            },
+            "weightsPublished": {
+              "enum": [
+                "yes",
+                "no",
+                "unknown"
+              ]
+            },
+            "baseModel": {
+              "type": "string"
+            },
+            "trainingData": {
+              "type": "string"
+            },
+            "modalities": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "dataset": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "modalities": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "size": {
+              "type": "string"
+            },
+            "collection": {
+              "type": "string"
+            },
+            "embodiments": {
+              "type": "string"
+            }
+          }
+        },
+        "benchmark": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "evaluates": {
+              "type": "string"
+            },
+            "metrics": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "environment": {
+              "type": "string"
+            }
+          }
+        },
+        "standard": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "body": {
+              "type": "string"
+            },
+            "designation": {
+              "type": "string"
+            },
+            "edition": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "licenses": {
+      "description": "Scoped licence statements (A2). Required for non-semantic resources. Code, model weights, datasets and specification text are licensed separately.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "scope",
+          "name",
+          "statedAt",
+          "commercialUse",
+          "reviewStatus"
+        ],
+        "properties": {
+          "scope": {
+            "enum": [
+              "all",
+              "specification",
+              "model-files",
+              "documentation",
+              "software",
+              "model-weights",
+              "dataset",
+              "file-format"
+            ]
+          },
+          "name": {
+            "type": "string",
+            "minLength": 2
+          },
+          "spdx": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9.+-]+$"
+          },
+          "url": {
+            "oneOf": [
+              {
+                "$ref": "#/definitions/url"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "statedAt": {
+            "$ref": "#/definitions/url",
+            "description": "Where the publisher states this licence (evidence)."
+          },
+          "restrictions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 10
+            }
+          },
+          "commercialUse": {
+            "enum": [
+              "unknown",
+              "permitted",
+              "restricted",
+              "not-permitted"
+            ]
+          },
+          "reviewStatus": {
+            "enum": [
+              "not-assessed",
+              "reviewed"
+            ]
+          },
+          "reviewNote": {
+            "type": "string"
+          }
+        }
+      }
     }
   }
 }

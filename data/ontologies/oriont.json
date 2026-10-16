@@ -6,7 +6,9 @@
   "summary": "ORIENTING provides a structured ontology for Life Cycle Sustainability Assessment. It formalizes concepts related to environmental, social, and economic impacts across lifecycle stages. The ontology supports interoperability of LCSA data, impact indicators, system boundaries, and sustainability modeling workflows.",
   "knowledge": {
     "domain": "foundations.sustainability",
-    "basis": "editorial"
+    "basis": "editorial",
+    "confidence": "tentative",
+    "rationale": "Only the ORIENTING project description is public. The classification follows the stated LCSA scope and cannot be confirmed."
   },
   "publisher": "Research / Community",
   "publisherType": "research",
@@ -61,7 +63,10 @@
       {
         "url": "https://cordis.europa.eu/project/id/958231",
         "title": "CORDIS — ORIENTING project (H2020, 958231)",
-        "type": "unclassified"
+        "type": "project-documentation",
+        "supports": [
+          "scope"
+        ]
       }
     ],
     "notes": "No public ontology named \"ORIONT\" was found. The v1 description refers to the ORIENTING H2020 project (LCSA methodology, 2020-2024), whose public outputs do not clearly include a published ontology. Kept as a candidate pending a public source."
@@ -95,5 +100,11 @@
   "engineeringUses": [
     "Candidate vocabulary for life-cycle sustainability assessment indicators (pending a public source)"
   ],
-  "limitations": []
+  "limitations": [
+    {
+      "text": "No public ontology named ORIONT was found; only the ORIENTING project description is cited.",
+      "basis": "editorial",
+      "category": "catalogue-gap"
+    }
+  ]
 }

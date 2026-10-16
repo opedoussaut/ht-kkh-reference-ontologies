@@ -8,7 +8,8 @@
   "summary": "Mid-level industrial ontology grounded in BFO 2020. Shared foundation for IOF domain ontologies such as maintenance, supply chain, production planning and product-service systems.",
   "knowledge": {
     "domain": "product.manufacturing",
-    "basis": "editorial"
+    "basis": "editorial",
+    "confidence": "clear"
   },
   "kind": "ontology",
   "layer": "mid-level",
@@ -65,12 +66,21 @@
       {
         "url": "https://spec.industrialontologies.org/portal/release/202603/core.html",
         "title": "IOF Core, release 202603",
-        "type": "official-documentation"
+        "type": "published-specification",
+        "supports": [
+          "identity",
+          "version",
+          "licence"
+        ]
       },
       {
         "url": "https://spec.industrialontologies.org/portal/release/202401/core/CoreOntology.html",
         "title": "IOF Core, release 202401",
-        "type": "official-documentation"
+        "type": "published-specification",
+        "supports": [
+          "version",
+          "relationship"
+        ]
       }
     ],
     "notes": ""

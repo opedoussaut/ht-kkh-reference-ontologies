@@ -8,7 +8,9 @@
   "summary": "OWL 2 implementation of the ISO 15926-2 data model for integrating lifecycle data of process plants, including oil and gas facilities.",
   "knowledge": {
     "domain": "product.catalogues",
-    "basis": "editorial"
+    "basis": "editorial",
+    "confidence": "tentative",
+    "rationale": "ISO 15926-14 integrates process-plant lifecycle data. The standard text (sold by ISO) has not been reviewed, so the classification stays tentative."
   },
   "kind": "ontology",
   "layer": "domain",
@@ -58,12 +60,19 @@
       {
         "url": "https://knowledge.bsigroup.com/products/industrial-automation-systems-and-integration-integration-of-life-cycle-data-for-process-plants-including-oil-and-gas-production-facilities-implementation-methods-for-the-integration-of-distributed-systems-web-ontology-language-owl-1",
         "title": "BSI listing for ISO 15926-14",
-        "type": "unclassified"
+        "type": "third-party",
+        "supports": [
+          "identity",
+          "scope"
+        ]
       },
       {
         "url": "https://15926.org/",
         "title": "15926.org",
-        "type": "official-documentation"
+        "type": "third-party",
+        "supports": [
+          "scope"
+        ]
       }
     ],
     "notes": "Confirm the publication year in the ISO catalogue."
@@ -77,5 +86,17 @@
     "Integrating process-plant lifecycle data from design, construction and operations",
     "Handing over plant information between EPC contractors and owner-operators"
   ],
-  "limitations": []
+  "limitations": [
+    {
+      "text": "ISO technical specification sold by ISO.",
+      "basis": "source",
+      "category": "access",
+      "sourceRef": "https://knowledge.bsigroup.com/products/industrial-automation-systems-and-integration-integration-of-life-cycle-data-for-process-plants-including-oil-and-gas-production-facilities-implementation-methods-for-the-integration-of-distributed-systems-web-ontology-language-owl-1"
+    },
+    {
+      "text": "Only third-party listings are cited, and the publication year is not confirmed.",
+      "basis": "editorial",
+      "category": "catalogue-gap"
+    }
+  ]
 }

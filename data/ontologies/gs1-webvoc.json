@@ -6,7 +6,9 @@
   "summary": "GS1 web vocabulary for product, organization, and identification semantics.",
   "knowledge": {
     "domain": "product.catalogues",
-    "basis": "editorial"
+    "basis": "editorial",
+    "confidence": "clear",
+    "rationale": "The GS1 Web Vocabulary describes product master data and identifiers (GTIN, dimensions, composition), which is product information. Commerce use comes through schema.org."
   },
   "publisher": "GS1",
   "publisherType": "standards-body",
@@ -70,17 +72,28 @@
       {
         "url": "https://ref.gs1.org/voc/",
         "title": "GS1 Web Vocabulary",
-        "type": "official-documentation"
+        "type": "official-documentation",
+        "supports": [
+          "identity",
+          "scope",
+          "relationship"
+        ]
       },
       {
         "url": "https://ref.gs1.org/voc/data/archive",
         "title": "GS1 Web Vocabulary archive",
-        "type": "official-documentation"
+        "type": "official-documentation",
+        "supports": [
+          "version"
+        ]
       },
       {
         "url": "https://github.com/gs1/WebVoc",
         "title": "GS1 WebVoc on GitHub",
-        "type": "unclassified"
+        "type": "publisher-repository",
+        "supports": [
+          "licence"
+        ]
       }
     ],
     "notes": "v1 marked this as \"licensed\"; the vocabulary is published under Apache 2.0."

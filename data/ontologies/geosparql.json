@@ -6,7 +6,8 @@
   "summary": "Standard for spatial RDF representation and geospatial querying.",
   "knowledge": {
     "domain": "foundations.time-space",
-    "basis": "editorial"
+    "basis": "editorial",
+    "confidence": "clear"
   },
   "publisher": "OGC",
   "publisherType": "standards-body",
@@ -70,12 +71,20 @@
       {
         "url": "https://www.ogc.org/standard/geosparql/",
         "title": "OGC GeoSPARQL standard page",
-        "type": "official-documentation"
+        "type": "published-specification",
+        "supports": [
+          "identity",
+          "version",
+          "status"
+        ]
       },
       {
         "url": "https://lists.w3.org/Archives/Public/public-sdw-wg/2024Feb/0000.html",
         "title": "GeoSPARQL 1.1 published (W3C SDW list, Feb 2024)",
-        "type": "unclassified"
+        "type": "third-party",
+        "supports": [
+          "version"
+        ]
       }
     ],
     "notes": "Licence wording to confirm in document 22-047r1."

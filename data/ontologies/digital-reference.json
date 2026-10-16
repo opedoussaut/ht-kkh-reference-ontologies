@@ -8,7 +8,8 @@
   "summary": "Ontology for the semiconductor industry and its supply chains, organised in thematic \"lobes\" (about 1,200 classes). Introduced in the ECSEL Productive4.0 project.",
   "knowledge": {
     "domain": "business.supply",
-    "basis": "editorial"
+    "basis": "editorial",
+    "confidence": "clear"
   },
   "kind": "ontology",
   "layer": "domain",
@@ -60,12 +61,19 @@
       {
         "url": "https://ifx-dr.github.io/DigitalReference/",
         "title": "Digital Reference site",
-        "type": "official-documentation"
+        "type": "official-documentation",
+        "supports": [
+          "identity",
+          "scope"
+        ]
       },
       {
         "url": "https://www.informs-sim.org/wsc25papers/con142.pdf",
         "title": "Winter Simulation Conference 2025 paper using DR",
-        "type": "unclassified"
+        "type": "peer-reviewed",
+        "supports": [
+          "scope"
+        ]
       }
     ],
     "notes": "Confirm the licence in the repository before reuse."
@@ -79,5 +87,11 @@
     "Describing semiconductor products, production and supply-chain concepts in a shared vocabulary",
     "Supporting supply-chain data exchange between partners in the semiconductor value chain"
   ],
-  "limitations": []
+  "limitations": [
+    {
+      "text": "The licence of the ontology files has not been confirmed.",
+      "basis": "editorial",
+      "category": "catalogue-gap"
+    }
+  ]
 }

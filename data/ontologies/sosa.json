@@ -6,7 +6,8 @@
   "summary": "Lightweight core for sensors, observations, samples, and actuators.",
   "knowledge": {
     "domain": "product.operations",
-    "basis": "editorial"
+    "basis": "editorial",
+    "confidence": "clear"
   },
   "publisher": "W3C/OGC",
   "publisherType": "standards-body",
@@ -64,7 +65,12 @@
       {
         "url": "https://www.w3.org/TR/vocab-ssn/",
         "title": "W3C Semantic Sensor Network Ontology",
-        "type": "official-documentation"
+        "type": "published-specification",
+        "supports": [
+          "identity",
+          "version",
+          "status"
+        ]
       }
     ],
     "notes": ""
@@ -98,5 +104,12 @@
     "Describing sensor observations, the property observed and the feature of interest",
     "Recording actuations and samples in test or operations data"
   ],
-  "limitations": []
+  "limitations": [
+    {
+      "text": "Uses schema:domainIncludes / rangeIncludes instead of rdfs:domain / rdfs:range, so domains and ranges are non-binding.",
+      "basis": "source",
+      "category": "technical",
+      "sourceRef": "https://www.w3.org/ns/sosa/"
+    }
+  ]
 }

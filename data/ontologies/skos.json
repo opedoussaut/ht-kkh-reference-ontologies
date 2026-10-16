@@ -8,7 +8,8 @@
   "summary": "W3C standard for thesauri, taxonomies and classification schemes on the web: concepts, labels and broader/narrower relations.",
   "knowledge": {
     "domain": "foundations.languages",
-    "basis": "editorial"
+    "basis": "editorial",
+    "confidence": "clear"
   },
   "kind": "vocabulary",
   "layer": "cross-domain",
@@ -59,7 +60,12 @@
       {
         "url": "https://www.w3.org/TR/skos-reference/",
         "title": "SKOS Reference (W3C Recommendation)",
-        "type": "official-documentation"
+        "type": "published-specification",
+        "supports": [
+          "identity",
+          "version",
+          "status"
+        ]
       }
     ],
     "notes": ""

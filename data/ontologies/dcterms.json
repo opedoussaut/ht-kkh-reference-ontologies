@@ -6,7 +6,8 @@
   "summary": "Widely used metadata terms for title, creator, subject, date, and provenance-like description.",
   "knowledge": {
     "domain": "foundations.metadata",
-    "basis": "editorial"
+    "basis": "editorial",
+    "confidence": "clear"
   },
   "publisher": "Dublin Core Metadata Initiative",
   "publisherType": "standards-body",
@@ -65,7 +66,12 @@
       {
         "url": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/",
         "title": "DCMI Metadata Terms",
-        "type": "official-documentation"
+        "type": "published-specification",
+        "supports": [
+          "identity",
+          "version",
+          "licence"
+        ]
       }
     ],
     "notes": ""

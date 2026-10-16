@@ -6,7 +6,8 @@
   "summary": "Ontology for products, offers, prices, and business entities.",
   "knowledge": {
     "domain": "business.commerce",
-    "basis": "editorial"
+    "basis": "editorial",
+    "confidence": "clear"
   },
   "publisher": "Web Commerce Community",
   "publisherType": "research",
@@ -66,12 +67,20 @@
       {
         "url": "http://www.heppnetz.de/projects/goodrelations/",
         "title": "GoodRelations project",
-        "type": "official-documentation"
+        "type": "official-documentation",
+        "supports": [
+          "identity",
+          "licence"
+        ]
       },
       {
         "url": "https://blog.schema.org/2012/11/08/good-relations-and-schema-org/",
         "title": "schema.org blog: GoodRelations integrated into schema.org (2012)",
-        "type": "unclassified"
+        "type": "official-documentation",
+        "supports": [
+          "status",
+          "relationship"
+        ]
       }
     ],
     "notes": "For new work, schema.org is the maintained successor."
@@ -105,5 +114,12 @@
     "Interpreting legacy e-commerce product and offer markup",
     "Understanding the origin of schema.org product and offer terms"
   ],
-  "limitations": []
+  "limitations": [
+    {
+      "text": "Integrated into schema.org in 2012; new work should use schema.org.",
+      "basis": "source",
+      "category": "scope",
+      "sourceRef": "https://blog.schema.org/2012/11/08/good-relations-and-schema-org/"
+    }
+  ]
 }

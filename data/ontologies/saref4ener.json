@@ -8,7 +8,9 @@
   "summary": "SAREF extension for energy flexibility and demand response between smart devices, energy managers and the grid.",
   "knowledge": {
     "domain": "product.interfaces",
-    "basis": "editorial"
+    "basis": "editorial",
+    "confidence": "clear",
+    "rationale": "SAREF4ENER specifies the exchange of power profiles and flexibility between devices and energy managers, which is an interface between systems."
   },
   "kind": "ontology",
   "layer": "domain",
@@ -65,7 +67,12 @@
       {
         "url": "https://saref.etsi.org/saref4ener/",
         "title": "ETSI SAREF4ENER",
-        "type": "official-documentation"
+        "type": "published-specification",
+        "supports": [
+          "identity",
+          "version",
+          "licence"
+        ]
       }
     ],
     "notes": ""

@@ -1,19 +1,25 @@
 {
   "_status": "active",
-  "_version": "1.0.0",
-  "_note": "Resource type = the nature of the artefact. It is independent of standardisation status (see `maturity`) and of what knowledge it represents (see knowledge-domains.json).",
+  "_version": "2.0.0",
+  "_note": "Resource type = the nature of the artefact, independent of standardisation status (`maturity`) and of the knowledge it represents. v2.0.0: added specification family, reference-architecture, software-framework, ai-model, benchmark; removed the unused `framework` (split into reference-architecture and software-framework). `kind` is the finer sub-type from which the type is derived.",
   "families": [
     {
       "id": "semantic",
       "label": "Ontologies & semantic models",
       "default": true,
-      "summary": "Machine-readable models of meaning: ontologies, vocabularies, schemas and modelling languages. The catalogue opens on this family."
+      "summary": "Machine-readable models of meaning and structure: ontologies, vocabularies, data schemas and modelling languages. The catalogue opens on this family."
+    },
+    {
+      "id": "specification",
+      "label": "Standards & architectures",
+      "default": false,
+      "summary": "Normative documents and reference architectures that do not provide a machine-readable model of their own."
     },
     {
       "id": "technology",
       "label": "Engineering & AI technology",
       "default": false,
-      "summary": "Standards documents, datasets, frameworks, simulators and AI frameworks."
+      "summary": "Software frameworks, simulation platforms, AI frameworks, AI models, datasets and benchmarks."
     }
   ],
   "items": [
@@ -39,11 +45,12 @@
     {
       "id": "data-schema",
       "family": "semantic",
-      "label": "Data schema / information model",
-      "summary": "Structured information model or meta-model for exchanging data (e.g. EXPRESS, UML/MOF, AAS meta-model).",
+      "label": "Data schema / exchange format",
+      "summary": "Information model, meta-model or file format for describing and exchanging engineering data (e.g. EXPRESS, UML/MOF, URDF).",
       "fromKind": [
         "information-model",
-        "meta-model"
+        "meta-model",
+        "file-format"
       ]
     },
     {
@@ -57,38 +64,79 @@
     },
     {
       "id": "standard",
+      "family": "specification",
+      "label": "Technical standard / specification",
+      "summary": "Normative document (requirements, test methods, terminology) without a machine-readable model of its own.",
+      "fromKind": [
+        "specification"
+      ]
+    },
+    {
+      "id": "reference-architecture",
+      "family": "specification",
+      "label": "Reference architecture",
+      "summary": "Documented architecture pattern describing how components should be organised.",
+      "fromKind": [
+        "reference-architecture"
+      ]
+    },
+    {
+      "id": "software-framework",
       "family": "technology",
-      "label": "Standard / specification",
-      "summary": "Normative document without a machine-readable model of its own (e.g. a safety or test standard).",
-      "fromKind": []
+      "label": "Software framework / middleware",
+      "summary": "Reusable software libraries, middleware or runtime used to build engineering systems (e.g. robotics middleware).",
+      "fromKind": [
+        "software-framework",
+        "middleware"
+      ]
+    },
+    {
+      "id": "simulation",
+      "family": "technology",
+      "label": "Simulation platform / environment",
+      "summary": "Simulator, physics engine or simulation environment.",
+      "fromKind": [
+        "simulator",
+        "physics-engine"
+      ]
+    },
+    {
+      "id": "ai-framework",
+      "family": "technology",
+      "label": "AI framework / toolkit",
+      "summary": "Software for building, training or evaluating AI systems. Not a model itself.",
+      "fromKind": [
+        "ai-framework"
+      ]
+    },
+    {
+      "id": "ai-model",
+      "family": "technology",
+      "label": "AI model",
+      "summary": "A model architecture or a trained model (with or without published weights). `details.aiModel.artefact` says which; weights carry their own licence scope.",
+      "fromKind": [
+        "model-architecture",
+        "trained-model"
+      ]
     },
     {
       "id": "dataset",
       "family": "technology",
       "label": "Dataset",
       "summary": "Published collection of data with stated provenance and licence.",
-      "fromKind": []
+      "fromKind": [
+        "dataset"
+      ]
     },
     {
-      "id": "framework",
+      "id": "benchmark",
       "family": "technology",
-      "label": "Framework / reference architecture",
-      "summary": "Reference architecture or software framework, for example for digital twins.",
-      "fromKind": []
-    },
-    {
-      "id": "simulation",
-      "family": "technology",
-      "label": "Simulation resource",
-      "summary": "Simulator, physics engine or reusable simulation model.",
-      "fromKind": []
-    },
-    {
-      "id": "ai-framework",
-      "family": "technology",
-      "label": "AI framework",
-      "summary": "Framework, toolkit or model family for AI, including robotics and embodied AI.",
-      "fromKind": []
+      "label": "Benchmark / evaluation protocol",
+      "summary": "Task suite, metric set or test protocol used to evaluate systems. Not training data.",
+      "fromKind": [
+        "benchmark",
+        "evaluation-protocol"
+      ]
     }
   ]
 }

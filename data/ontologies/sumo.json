@@ -6,7 +6,8 @@
   "summary": "Suggested Upper Merged Ontology for broad upper-level semantic grounding.",
   "knowledge": {
     "domain": "foundations.formal",
-    "basis": "editorial"
+    "basis": "editorial",
+    "confidence": "clear"
   },
   "publisher": "IEEE / Teknowledge",
   "publisherType": "research",
@@ -30,6 +31,25 @@
     "reviewStatus": "not-assessed",
     "commercialReuse": "unknown"
   },
+  "licenses": [
+    {
+      "scope": "model-files",
+      "name": "IEEE licence stated in the source files",
+      "url": null,
+      "statedAt": "https://raw.githubusercontent.com/ontologyportal/sumo/master/Merge.kif",
+      "commercialUse": "unknown",
+      "reviewStatus": "not-assessed"
+    },
+    {
+      "scope": "model-files",
+      "name": "GNU GPL (SUMO extensions, as stated by the publisher)",
+      "url": null,
+      "statedAt": "https://www.ontologyportal.org/",
+      "commercialUse": "unknown",
+      "reviewStatus": "not-assessed",
+      "reviewNote": "Applies to ontologies extending SUMO, not to the core."
+    }
+  ],
   "links": {
     "official": "https://www.ontologyportal.org/",
     "repository": "https://github.com/ontologyportal/sumo"
@@ -64,12 +84,19 @@
       {
         "url": "https://www.ontologyportal.org/",
         "title": "SUMO — ontologyportal.org",
-        "type": "official-documentation"
+        "type": "official-documentation",
+        "supports": [
+          "identity",
+          "licence"
+        ]
       },
       {
         "url": "https://raw.githubusercontent.com/ontologyportal/sumo/master/Merge.kif",
         "title": "Merge.kif licence header",
-        "type": "unclassified"
+        "type": "publisher-repository",
+        "supports": [
+          "licence"
+        ]
       }
     ],
     "notes": "Originally developed by Teknowledge within the IEEE Standard Upper Ontology working group; now maintained by Adam Pease and contributors."

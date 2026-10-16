@@ -8,7 +8,8 @@
   "summary": "STEP application protocol for exchanging 3D product data, PMI, PDM data and configuration. Defined in EXPRESS; the reference information model for model-based definition.",
   "knowledge": {
     "domain": "product.structure",
-    "basis": "editorial"
+    "basis": "editorial",
+    "confidence": "clear"
   },
   "kind": "information-model",
   "layer": "domain",
@@ -65,12 +66,19 @@
       {
         "url": "https://www.evs.ee/en/iso-10303-242-2025",
         "title": "ISO 10303-242:2025 listing",
-        "type": "unclassified"
+        "type": "third-party",
+        "supports": [
+          "identity",
+          "version"
+        ]
       },
       {
         "url": "https://online.standard.no/en/iso-10303-242-2025",
         "title": "ISO 10303-242:2025 (edition 4)",
-        "type": "unclassified"
+        "type": "third-party",
+        "supports": [
+          "version"
+        ]
       }
     ],
     "notes": "An information model in EXPRESS, not an OWL ontology. A further revision is at committee-draft stage."
@@ -84,5 +92,17 @@
     "Exchanging 3D CAD models with PMI between design and manufacturing partners",
     "Archiving model-based definition data in a neutral format"
   ],
-  "limitations": []
+  "limitations": [
+    {
+      "text": "An EXPRESS information model, not an RDF/OWL ontology: using it requires STEP tooling.",
+      "basis": "source",
+      "category": "scope",
+      "sourceRef": "https://www.evs.ee/en/iso-10303-242-2025"
+    },
+    {
+      "text": "Only national-standards-body listings are cited; the ISO catalogue page blocks automated checks.",
+      "basis": "editorial",
+      "category": "catalogue-gap"
+    }
+  ]
 }

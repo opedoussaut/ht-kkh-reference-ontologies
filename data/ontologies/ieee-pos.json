@@ -6,7 +6,8 @@
   "summary": "Ontology used for positional, pose, or planning-oriented semantics in robotics contexts.",
   "knowledge": {
     "domain": "foundations.time-space",
-    "basis": "editorial"
+    "basis": "editorial",
+    "confidence": "clear"
   },
   "publisher": "IEEE Robotics and Automation Society",
   "publisherType": "standards-body",
@@ -61,7 +62,12 @@
       {
         "url": "https://standards.ieee.org/standard/1872-2015.html",
         "title": "IEEE 1872-2015 Standard Ontologies for Robotics and Automation",
-        "type": "official-documentation"
+        "type": "published-specification",
+        "supports": [
+          "identity",
+          "status",
+          "licence"
+        ]
       }
     ],
     "notes": "Specified within IEEE 1872-2015."
@@ -110,5 +116,12 @@
     "Describing positions, orientations and poses with explicit reference frames",
     "Exchanging spatial information between perception, planning and simulation components"
   ],
-  "limitations": []
+  "limitations": [
+    {
+      "text": "The normative text is sold by IEEE; only catalogue information is publicly available.",
+      "basis": "source",
+      "category": "access",
+      "sourceRef": "https://standards.ieee.org/standard/1872-2015.html"
+    }
+  ]
 }

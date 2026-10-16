@@ -60,6 +60,8 @@ export function validate(src) {
   const capIds = new Set(src.capabilities.items.map((x) => x.id));
   const paiIds = new Set(src.physicalAi.items.map((x) => x.id));
   const evidenceIds = new Set(src.evidenceTypes.items.map((x) => x.id));
+  const familyOf = Object.fromEntries(src.resourceTypes.items.map((t) => [t.id, t.family]));
+  const kindToType = Object.fromEntries(src.resourceTypes.items.flatMap((t) => t.fromKind.map((k) => [k, t.id])));
   for (const t of src.relations.types) if (!relationCategories.has(t.category) || t.category === 'editorial') err(`relation type ${t.id}`, `category must be a stored (non-editorial) category, got "${t.category}"`);
 
   for (const { file, record: r } of src.ontologies) {
@@ -81,10 +83,26 @@ export function validate(src) {
     for (const c of r.capabilities) if (!capIds.has(c)) err(file, `unknown capability "${c}"`);
     for (const p of r.physicalAi) if (!paiIds.has(p)) err(file, `unknown Physical AI category "${p}"`);
     if (r.physicalAi.length && src.physicalAi._status === 'proposed') err(file, 'Physical AI categories are still proposed: no assignments allowed');
+    if (r.physicalAi.length) {
+      // Assignment needs documentation from the resource itself that describes the capability.
+      if (!r.classificationBasis.physicalAi) err(file, 'physicalAi assignments need classificationBasis.physicalAi');
+      const strong = new Set(['official-documentation', 'published-specification', 'publisher-repository', 'peer-reviewed']);
+      if (!r.verification.sources.some((s) => strong.has(s.type) && s.supports.includes('capability'))) err(file, 'physicalAi assignments need a publisher, specification or peer-reviewed source supporting "capability"');
+    }
     for (const s of r.verification.sources) if (!evidenceIds.has(s.type)) err(file, `unknown source type "${s.type}" for ${s.url}`);
     if (r.license.commercialReuse !== 'unknown' && r.license.reviewStatus !== 'reviewed') err(file, 'commercialReuse may only be stated after a licence review');
     if (r.license.access === 'unknown' && r.license.commercialReuse !== 'unknown') err(file, 'unknown licence access implies unknown commercial reuse');
     for (const l of r.limitations) if (l.basis === 'source' && !l.sourceRef) err(file, 'limitations with basis "source" need a sourceRef');
+    // Schema v3.1: family-specific requirements and scoped licences.
+    const family = familyOf[r.resourceType];
+    if (family === 'semantic' && !r.layer) err(file, 'semantic resources need a layer');
+    if (family !== 'semantic' && !r.licenses?.length) err(file, 'non-semantic resources need at least one scoped licence in `licenses`');
+    if (r.resourceType === 'ai-model' && !r.details?.aiModel) err(file, 'AI models need details.aiModel (architecture vs trained model, weights published)');
+    if (kindToType[r.kind] !== r.resourceType) err(file, `kind "${r.kind}" implies resourceType "${kindToType[r.kind]}", not "${r.resourceType}"`);
+    for (const l of r.licenses || []) {
+      if (l.commercialUse !== 'unknown' && l.reviewStatus !== 'reviewed') err(file, `licenses[${l.scope}]: commercialUse may only be stated after a review`);
+      if (l.commercialUse === 'permitted' && !l.spdx) err(file, `licenses[${l.scope}]: "permitted" requires an identified (SPDX) licence`);
+    }
   }
 
   for (const [n, rel] of src.relations.items.entries()) {
@@ -93,6 +111,10 @@ export function validate(src) {
     if (!ids.has(rel.target)) err(where, `unknown target "${rel.target}"`);
     if (!relationTypes.has(rel.type)) err(where, `unknown type "${rel.type}"`);
     if (!rel.evidence || !/^https?:\/\//.test(rel.evidence.url || '')) err(where, 'evidence.url is required');
+    if (!evidenceIds.has(rel.evidence?.type)) err(where, 'evidence.type must be a known evidence type');
+    if (['editorial', 'unclassified', 'third-party'].includes(rel.evidence?.type)) err(where, `evidence of type "${rel.evidence?.type}" cannot establish a stored relationship`);
+    if (!['verified', 'partially-verified'].includes(rel.status)) err(where, 'status must be verified or partially-verified');
+    if (rel.status === 'partially-verified' && !rel.conditions) err(where, 'partially-verified relations must state their conditions');
     if (rel.source === rel.target) err(where, 'self-relation');
   }
 

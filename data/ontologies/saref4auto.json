@@ -6,7 +6,8 @@
   "summary": "OWL-DL extension of SAREF for the automotive domain. It adapts the ETSI ITS common data dictionary and covers use cases such as platooning and automated valet parking.",
   "knowledge": {
     "domain": "product.interfaces",
-    "basis": "editorial"
+    "basis": "editorial",
+    "confidence": "clear"
   },
   "publisher": "ETSI",
   "publisherType": "standards-body",
@@ -60,7 +61,12 @@
       {
         "url": "https://saref.etsi.org/saref4auto/",
         "title": "ETSI SAREF4AUTO",
-        "type": "official-documentation"
+        "type": "published-specification",
+        "supports": [
+          "identity",
+          "version",
+          "licence"
+        ]
       }
     ],
     "notes": "First published 2020-07-27; page last modified 2025-04-10."

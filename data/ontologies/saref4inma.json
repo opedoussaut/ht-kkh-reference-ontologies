@@ -6,7 +6,8 @@
   "summary": "SAREF extension for industry and manufacturing. It improves interoperability between production equipment and lets organisations trace produced items back to equipment, batches, materials and production times.",
   "knowledge": {
     "domain": "product.manufacturing",
-    "basis": "editorial"
+    "basis": "editorial",
+    "confidence": "clear"
   },
   "publisher": "ETSI",
   "publisherType": "standards-body",
@@ -64,7 +65,12 @@
       {
         "url": "https://saref.etsi.org/saref4inma/",
         "title": "ETSI SAREF4INMA",
-        "type": "official-documentation"
+        "type": "published-specification",
+        "supports": [
+          "identity",
+          "version",
+          "licence"
+        ]
       }
     ],
     "notes": ""

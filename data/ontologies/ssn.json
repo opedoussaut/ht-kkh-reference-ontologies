@@ -6,7 +6,8 @@
   "summary": "Semantic Sensor Network ontology for sensors, observations, and systems.",
   "knowledge": {
     "domain": "product.operations",
-    "basis": "editorial"
+    "basis": "editorial",
+    "confidence": "clear"
   },
   "publisher": "W3C/OGC",
   "publisherType": "standards-body",
@@ -64,7 +65,12 @@
       {
         "url": "https://www.w3.org/TR/vocab-ssn/",
         "title": "W3C Semantic Sensor Network Ontology",
-        "type": "official-documentation"
+        "type": "published-specification",
+        "supports": [
+          "identity",
+          "version",
+          "status"
+        ]
       }
     ],
     "notes": ""

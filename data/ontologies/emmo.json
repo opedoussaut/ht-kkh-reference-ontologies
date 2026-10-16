@@ -8,7 +8,8 @@
   "summary": "Top-down ontology for materials science and engineering, from physical foundations to materials, models and characterisation.",
   "knowledge": {
     "domain": "foundations.materials",
-    "basis": "editorial"
+    "basis": "editorial",
+    "confidence": "clear"
   },
   "kind": "ontology",
   "layer": "upper",
@@ -66,12 +67,20 @@
       {
         "url": "https://github.com/emmo-repo/EMMO",
         "title": "EMMO repository",
-        "type": "official-documentation"
+        "type": "publisher-repository",
+        "supports": [
+          "identity",
+          "licence",
+          "limitation"
+        ]
       },
       {
         "url": "https://zenodo.org/records/8318236",
         "title": "EMMO 1.0 on Zenodo",
-        "type": "unclassified"
+        "type": "publisher-repository",
+        "supports": [
+          "version"
+        ]
       }
     ],
     "notes": "Domain modules continue to evolve after 1.0.0."
@@ -85,5 +94,12 @@
     "Structuring materials characterisation and modelling data so it can be reused across tools",
     "Describing material models used in simulation with their physical quantities"
   ],
-  "limitations": []
+  "limitations": [
+    {
+      "text": "Modules below the reference level (discipline and domain levels) continue to evolve after 1.0.0.",
+      "basis": "source",
+      "category": "scope",
+      "sourceRef": "https://github.com/emmo-repo/EMMO"
+    }
+  ]
 }

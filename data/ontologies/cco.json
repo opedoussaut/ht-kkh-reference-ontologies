@@ -8,7 +8,8 @@
   "summary": "Suite of mid-level ontologies that extend BFO, covering agents, artefacts, events, information and qualities. Widely used in defence and intelligence programmes.",
   "knowledge": {
     "domain": "foundations.formal",
-    "basis": "editorial"
+    "basis": "editorial",
+    "confidence": "clear"
   },
   "kind": "ontology",
   "layer": "mid-level",
@@ -59,7 +60,14 @@
       {
         "url": "https://github.com/CommonCoreOntology/CommonCoreOntologies",
         "title": "Common Core Ontologies repository",
-        "type": "official-documentation"
+        "type": "publisher-repository",
+        "supports": [
+          "identity",
+          "licence",
+          "version",
+          "relationship",
+          "limitation"
+        ]
       }
     ],
     "notes": ""
@@ -73,5 +81,12 @@
     "Modelling artefacts, their functions and the agents that use them in mission or systems analysis",
     "Extending BFO-based models with mid-level concepts instead of creating them from scratch"
   ],
-  "limitations": []
+  "limitations": [
+    {
+      "text": "Under restructuring: version 3.0 is planned by 31 December 2026 and 4.0 by 30 June 2027, and maintainers recommend waiting for 4.0 before updating.",
+      "basis": "source",
+      "category": "scope",
+      "sourceRef": "https://github.com/CommonCoreOntology/CommonCoreOntologies"
+    }
+  ]
 }

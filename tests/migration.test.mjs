@@ -7,6 +7,7 @@ import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { loadSources, validate, buildBundle, toLegacyJson } from '../scripts/lib/atlas-data.mjs';
 import { PROPOSED } from '../scripts/phase2/proposed-mapping.mjs';
+import { REVIEW_B1, REVIEW_B2, REVIEW_B4 } from '../scripts/phase2/review-2026-10.mjs';
 import { resourceTypeFor, sourceTypeFor, loadTaxonomies, stripPhase2 } from '../scripts/phase2/rules.mjs';
 import { buildIndex, query, applyFilters, facetCounts } from '../assets/js/lib/search.js';
 
@@ -53,7 +54,11 @@ test('migration lost no data: stripping the Phase 2 fields restores the pre-migr
   try { execFileSync('git', ['cat-file', '-e', `${BASE}^{commit}`], { cwd: ROOT, stdio: 'ignore' }); } catch { t.skip('pre-migration commit not available (shallow clone)'); return; }
   for (const id of preIds) {
     const before = JSON.parse(execFileSync('git', ['show', `${BASE}:data/ontologies/${id}.json`], { cwd: ROOT, encoding: 'utf8' }));
-    assert.deepEqual(stripPhase2(byId.get(id)), before, id);
+    const now = stripPhase2(byId.get(id));
+    // The only permitted content change is a documented editorial correction (REVIEW_B4).
+    const b4 = REVIEW_B4[id];
+    if (b4) now.engineeringUses = now.engineeringUses.map((u) => (u === b4.to ? b4.from : u));
+    assert.deepEqual(now, before, id);
   }
 });
 
@@ -76,7 +81,7 @@ test('resource types follow the deterministic kind -> type rule', () => {
 
 test('knowledge domains and capabilities match the approved editorial mapping', () => {
   for (const r of records) {
-    assert.equal(r.knowledge.domain, PROPOSED[r.id].domain, r.id);
+    assert.equal(r.knowledge.domain, REVIEW_B1[r.id]?.domain ?? PROPOSED[r.id].domain, `${r.id}: only reviewed decisions may change the approved mapping`);
     assert.equal(r.knowledge.basis, 'editorial', r.id);
     assert.deepEqual(r.capabilities, PROPOSED[r.id].capabilities, r.id);
     assert.deepEqual(r.classificationBasis, { industries: 'editorial', capabilities: 'editorial' }, r.id);
@@ -85,10 +90,10 @@ test('knowledge domains and capabilities match the approved editorial mapping', 
 
 test('validation rejects unknown types, domains and capabilities', () => {
   assert.ok(validateWith('sosa', (r) => ({ ...r, resourceType: 'gadget' })).some((e) => e.includes('unknown resourceType')));
-  assert.ok(validateWith('sosa', (r) => ({ ...r, knowledge: { domain: 'product.magic', basis: 'editorial' } })).some((e) => e.includes('unknown knowledge sub-domain')));
+  assert.ok(validateWith('sosa', (r) => ({ ...r, knowledge: { domain: 'product.magic', basis: 'editorial', confidence: 'clear' } })).some((e) => e.includes('unknown knowledge sub-domain')));
   assert.ok(validateWith('sosa', (r) => ({ ...r, capabilities: ['teleportation'] })).some((e) => e.includes('unknown capability')));
-  assert.ok(validateWith('sosa', (r) => ({ ...r, knowledge: { domain: 'not-assessed', basis: 'editorial' } })).length === 0, 'not-assessed is allowed');
-  assert.ok(validateWith('sosa', (r) => ({ ...r, knowledge: { domain: 'product.operations', basis: 'source' } })).some((e) => e.includes('requires knowledge.sourceRef')));
+  assert.ok(validateWith('sosa', (r) => ({ ...r, knowledge: { domain: 'not-assessed', basis: 'editorial', confidence: 'tentative' } })).length === 0, 'not-assessed is allowed');
+  assert.ok(validateWith('sosa', (r) => ({ ...r, knowledge: { domain: 'product.operations', basis: 'source', confidence: 'clear' } })).some((e) => e.includes('requires knowledge.sourceRef')));
 });
 
 test('no duplicate identifiers across resources', () => {
@@ -97,14 +102,18 @@ test('no duplicate identifiers across resources', () => {
 });
 
 // ---------- evidence & licences ----------
-test('every source is attributed and typed; official-documentation only on the official host', () => {
+test('every source is attributed, typed by human review and states what it supports', () => {
   const evidenceIds = new Set(tax.evidenceTypes.items.map((x) => x.id));
   for (const r of records) {
     assert.ok(r.verification.sources.length >= 1, r.id);
     for (const s of r.verification.sources) {
       assert.ok(s.url && s.title, `${r.id}: source needs url and title`);
       assert.ok(evidenceIds.has(s.type), `${r.id}: ${s.type}`);
-      if (s.type === 'official-documentation') assert.equal(sourceTypeFor(r, s.url), 'official-documentation', `${r.id}: ${s.url}`);
+      // Every citation matches the human review (Checkpoint 1); nothing is left unclassified.
+      assert.ok(REVIEW_B2[s.url], `${r.id}: unreviewed source ${s.url}`);
+      assert.equal(s.type, REVIEW_B2[s.url].type, `${r.id}: ${s.url}`);
+      assert.deepEqual(s.supports, REVIEW_B2[s.url].supports, `${r.id}: ${s.url}`);
+      assert.notEqual(s.type, 'unclassified', `${r.id}: ${s.url}`);
     }
     assert.match(r.editorialReview.reviewedOn, /^\d{4}-\d{2}-\d{2}$/);
     assert.ok(!r.editorialReview.reviewer.includes('@'), 'no personal emails');
@@ -126,7 +135,7 @@ test('unknown licences are handled cautiously; no commercial-reuse claim without
 });
 
 test('limitations with a source basis need a source reference', () => {
-  assert.ok(validateWith('sosa', (r) => ({ ...r, limitations: [{ text: 'Soft domains only (schema:domainIncludes).', basis: 'source' }] })).some((e) => e.includes('need a sourceRef')));
+  assert.ok(validateWith('sosa', (r) => ({ ...r, limitations: [{ text: 'Soft domains only (schema:domainIncludes).', basis: 'source', category: 'technical' }] })).some((e) => e.includes('need a sourceRef')));
 });
 
 // ---------- discovery ----------

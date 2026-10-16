@@ -6,7 +6,8 @@
   "summary": "Provenance ontology for entities, activities, agents, and derivation relationships.",
   "knowledge": {
     "domain": "foundations.metadata",
-    "basis": "editorial"
+    "basis": "editorial",
+    "confidence": "clear"
   },
   "publisher": "W3C",
   "publisherType": "standards-body",
@@ -66,7 +67,12 @@
       {
         "url": "https://www.w3.org/TR/prov-o/",
         "title": "W3C PROV-O Recommendation",
-        "type": "official-documentation"
+        "type": "published-specification",
+        "supports": [
+          "identity",
+          "version",
+          "status"
+        ]
       }
     ],
     "notes": ""

@@ -30,7 +30,8 @@
       "summary": "Asset Administration Shell meta-model for interoperable digital twins.",
       "knowledge": {
         "domain": "product.catalogues",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "Industrial Digital Twin Association",
       "publisherType": "industry-association",
@@ -96,12 +97,22 @@
           {
             "url": "https://industrialdigitaltwin.org/wp-content/uploads/2025/08/IDTA-01001-3-1-1_AAS-Specification_Part1_Metamodel.pdf",
             "title": "IDTA-01001-3-1-1 Part 1 Metamodel (PDF)",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "version",
+              "scope"
+            ]
           },
           {
             "url": "https://industrialdigitaltwin.org/en/content-hub/aasspecifications",
             "title": "IDTA AAS specifications",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "identity",
+              "licence",
+              "version"
+            ]
           }
         ],
         "notes": "The IDTA Part 4 Security document (2026) references Part 1 v3.2; confirm whether v3.2 has been released."
@@ -154,7 +165,8 @@
       "summary": "Ontology focused on autonomous robotics concepts, capabilities, and behavior.",
       "knowledge": {
         "domain": "product.systems",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "IEEE Robotics and Automation Society",
       "publisherType": "standards-body",
@@ -207,7 +219,13 @@
           {
             "url": "https://standards.ieee.org/ieee/1872.2/7094/",
             "title": "IEEE 1872.2-2021",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "version",
+              "status",
+              "licence"
+            ]
           }
         ],
         "notes": ""
@@ -256,7 +274,19 @@
         "Describing the architecture and autonomy functions of an autonomous robot in a shared vocabulary",
         "Comparing autonomous-system designs using common concepts"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "The normative text is sold by IEEE; only catalogue information is publicly available.",
+          "basis": "source",
+          "category": "access",
+          "sourceRef": "https://standards.ieee.org/ieee/1872.2/7094/"
+        },
+        {
+          "text": "Public availability of the OWL files under the IEEE SA open-source programme is not yet confirmed.",
+          "basis": "editorial",
+          "category": "catalogue-gap"
+        }
+      ]
     },
     {
       "id": "bfo",
@@ -268,7 +298,8 @@
       "summary": "Top-level ontology standardised as ISO/IEC 21838-2. Provides the formal backbone for the IOF, CCO, OEO and many OBO ontologies.",
       "knowledge": {
         "domain": "foundations.formal",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "kind": "ontology",
       "layer": "upper",
@@ -327,12 +358,20 @@
           {
             "url": "https://github.com/BFO-ontology/BFO-2020",
             "title": "BFO-2020 repository (CC BY 4.0)",
-            "type": "unclassified"
+            "type": "publisher-repository",
+            "supports": [
+              "licence",
+              "version"
+            ]
           },
           {
             "url": "https://webstore.iec.ch/en/publication/72703",
             "title": "ISO/IEC 21838-2:2021",
-            "type": "unclassified"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "version"
+            ]
           }
         ],
         "notes": ""
@@ -356,7 +395,9 @@
       "summary": "Building Topology Ontology (BOT) is a minimal OWL DL ontology for describing the core topological concepts of buildings and relationships between sub-components such as sites, buildings, storeys, spaces, and elements.",
       "knowledge": {
         "domain": "product.structure",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear",
+        "rationale": "BOT models the topological decomposition of buildings (sites, buildings, storeys, spaces, elements): the structure of built assets (BOT specification)."
       },
       "publisher": "Linked Building Data Community Group",
       "publisherType": "consortium",
@@ -412,7 +453,12 @@
           {
             "url": "https://w3c-lbd-cg.github.io/bot/",
             "title": "BOT specification",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "identity",
+              "version",
+              "status"
+            ]
           }
         ],
         "notes": "W3C Community Group reports are not W3C standards. No licence statement is given on the specification page; confirm before redistribution."
@@ -443,7 +489,13 @@
         "Describing the site, building, storey and space hierarchy of a facility for a digital twin",
         "Locating equipment, such as racks or cooling units, within building zones"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "No licence statement on the specification page.",
+          "basis": "editorial",
+          "category": "catalogue-gap"
+        }
+      ]
     },
     {
       "id": "brick",
@@ -453,7 +505,8 @@
       "summary": "Brick Schema is an open OWL ontology for modeling buildings, infrastructure, and their systems, including spaces, equipment, power distribution, cooling, HVAC, and sensors. It provides a formal semantic foundation to represent and reason over the physical and infrastructural structure of AI factories and data centers.",
       "knowledge": {
         "domain": "product.operations",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "Brick Consortium",
       "publisherType": "consortium",
@@ -515,12 +568,20 @@
           {
             "url": "https://github.com/BrickSchema/Brick/releases",
             "title": "Brick releases",
-            "type": "unclassified"
+            "type": "publisher-repository",
+            "supports": [
+              "version"
+            ]
           },
           {
             "url": "https://brickschema.org/",
             "title": "Brick Schema",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "identity",
+              "scope",
+              "licence"
+            ]
           }
         ],
         "notes": ""
@@ -564,7 +625,8 @@
       "summary": "Suite of mid-level ontologies that extend BFO, covering agents, artefacts, events, information and qualities. Widely used in defence and intelligence programmes.",
       "knowledge": {
         "domain": "foundations.formal",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "kind": "ontology",
       "layer": "mid-level",
@@ -615,7 +677,14 @@
           {
             "url": "https://github.com/CommonCoreOntology/CommonCoreOntologies",
             "title": "Common Core Ontologies repository",
-            "type": "official-documentation"
+            "type": "publisher-repository",
+            "supports": [
+              "identity",
+              "licence",
+              "version",
+              "relationship",
+              "limitation"
+            ]
           }
         ],
         "notes": ""
@@ -629,7 +698,14 @@
         "Modelling artefacts, their functions and the agents that use them in mission or systems analysis",
         "Extending BFO-based models with mid-level concepts instead of creating them from scratch"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "Under restructuring: version 3.0 is planned by 31 December 2026 and 4.0 by 30 June 2027, and maintainers recommend waiting for 4.0 before updating.",
+          "basis": "source",
+          "category": "scope",
+          "sourceRef": "https://github.com/CommonCoreOntology/CommonCoreOntologies"
+        }
+      ]
     },
     {
       "id": "ieee-cora",
@@ -639,7 +715,8 @@
       "summary": "Core ontology for robotics and automation concepts.",
       "knowledge": {
         "domain": "product.systems",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "IEEE Robotics and Automation Society",
       "publisherType": "standards-body",
@@ -664,6 +741,26 @@
         "reviewStatus": "not-assessed",
         "commercialReuse": "unknown"
       },
+      "licenses": [
+        {
+          "scope": "specification",
+          "name": "IEEE standard text (purchase required)",
+          "url": null,
+          "statedAt": "https://standards.ieee.org/standard/1872-2015.html",
+          "commercialUse": "unknown",
+          "reviewStatus": "not-assessed"
+        },
+        {
+          "scope": "model-files",
+          "name": "CC BY 4.0 (community OWL conversion)",
+          "spdx": "CC-BY-4.0",
+          "url": "https://creativecommons.org/licenses/by/4.0/",
+          "statedAt": "https://github.com/srfiorini/IEEE1872-owl",
+          "commercialUse": "unknown",
+          "reviewStatus": "not-assessed",
+          "reviewNote": "Covers the conversion published by its authors, not the IEEE text."
+        }
+      ],
       "links": {
         "official": "https://standards.ieee.org/standard/1872-2015.html",
         "repository": "https://github.com/srfiorini/IEEE1872-owl"
@@ -695,17 +792,29 @@
           {
             "url": "https://standards.ieee.org/standard/1872-2015.html",
             "title": "IEEE 1872-2015 Standard Ontologies for Robotics and Automation",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "status",
+              "licence"
+            ]
           },
           {
             "url": "https://github.com/srfiorini/IEEE1872-owl",
             "title": "OWL version of CORA (IEEE 1872-2015), CC BY 4.0",
-            "type": "unclassified"
+            "type": "third-party",
+            "supports": [
+              "licence",
+              "limitation"
+            ]
           },
           {
             "url": "https://standards.ieee.org/ieee/1872/12250",
             "title": "IEEE P1872 revision project (active PAR)",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "status"
+            ]
           }
         ],
         "notes": "An OWL conversion of CORA (taxonomy and selected axioms) is published under CC BY 4.0."
@@ -754,7 +863,20 @@
         "Defining what counts as a robot, robotic system and robotic environment in a project glossary",
         "Giving robotics data and requirements a formal shared vocabulary"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "The normative text is sold by IEEE; only catalogue information is publicly available.",
+          "basis": "source",
+          "category": "access",
+          "sourceRef": "https://standards.ieee.org/standard/1872-2015.html"
+        },
+        {
+          "text": "The public OWL conversion is under-specified relative to the SUO-KIF axioms and allows models not consistent with IEEE 1872.",
+          "basis": "source",
+          "category": "technical",
+          "sourceRef": "https://github.com/srfiorini/IEEE1872-owl"
+        }
+      ]
     },
     {
       "id": "ieee-corax",
@@ -764,7 +886,8 @@
       "summary": "Reference ontology in the robotics corpus; kept as a governed candidate pending fuller validation.",
       "knowledge": {
         "domain": "product.systems",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "IEEE Robotics and Automation Society",
       "publisherType": "standards-body",
@@ -818,7 +941,12 @@
           {
             "url": "https://standards.ieee.org/standard/1872-2015.html",
             "title": "IEEE 1872-2015 Standard Ontologies for Robotics and Automation",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "status",
+              "licence"
+            ]
           }
         ],
         "notes": "Specified within IEEE 1872-2015 alongside CORA, RPARTS and POS."
@@ -867,7 +995,14 @@
         "Capturing design and interaction concepts that are shared across robotics sub-domains",
         "Complementing CORA when describing robot environments and interactions"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "The normative text is sold by IEEE; only catalogue information is publicly available.",
+          "basis": "source",
+          "category": "access",
+          "sourceRef": "https://standards.ieee.org/standard/1872-2015.html"
+        }
+      ]
     },
     {
       "id": "dcat",
@@ -879,7 +1014,8 @@
       "summary": "W3C vocabulary for describing datasets, data services and catalogues, the basis of many data-space and open-data catalogues.",
       "knowledge": {
         "domain": "foundations.metadata",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "kind": "vocabulary",
       "layer": "cross-domain",
@@ -933,7 +1069,12 @@
           {
             "url": "https://www.w3.org/TR/vocab-dcat-3/",
             "title": "DCAT 3 W3C Recommendation",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "version",
+              "status"
+            ]
           }
         ],
         "notes": ""
@@ -957,7 +1098,8 @@
       "summary": "Widely used metadata terms for title, creator, subject, date, and provenance-like description.",
       "knowledge": {
         "domain": "foundations.metadata",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "Dublin Core Metadata Initiative",
       "publisherType": "standards-body",
@@ -1016,7 +1158,12 @@
           {
             "url": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/",
             "title": "DCMI Metadata Terms",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "version",
+              "licence"
+            ]
           }
         ],
         "notes": ""
@@ -1062,7 +1209,8 @@
       "summary": "Ontology for the semiconductor industry and its supply chains, organised in thematic \"lobes\" (about 1,200 classes). Introduced in the ECSEL Productive4.0 project.",
       "knowledge": {
         "domain": "business.supply",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "kind": "ontology",
       "layer": "domain",
@@ -1114,12 +1262,19 @@
           {
             "url": "https://ifx-dr.github.io/DigitalReference/",
             "title": "Digital Reference site",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "identity",
+              "scope"
+            ]
           },
           {
             "url": "https://www.informs-sim.org/wsc25papers/con142.pdf",
             "title": "Winter Simulation Conference 2025 paper using DR",
-            "type": "unclassified"
+            "type": "peer-reviewed",
+            "supports": [
+              "scope"
+            ]
           }
         ],
         "notes": "Confirm the licence in the repository before reuse."
@@ -1133,7 +1288,13 @@
         "Describing semiconductor products, production and supply-chain concepts in a shared vocabulary",
         "Supporting supply-chain data exchange between partners in the semiconductor value chain"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "The licence of the ontology files has not been confirmed.",
+          "basis": "editorial",
+          "category": "catalogue-gap"
+        }
+      ]
     },
     {
       "id": "dmtf-cim",
@@ -1142,8 +1303,10 @@
       "resourceType": "data-schema",
       "summary": "The Common Information Model (CIM) is a formal object-oriented schema developed by the Distributed Management Task Force (DMTF) to represent managed elements in IT environments, including computer systems, racks, chassis, processors, memory, power supplies, networking components, and cooling subsystems. CIM provides a strong reference model for AI Factory physical and logical infrastructure components.",
       "knowledge": {
-        "domain": "product.operations",
-        "basis": "editorial"
+        "domain": "product.catalogues",
+        "basis": "editorial",
+        "confidence": "tentative",
+        "rationale": "DMTF CIM primarily describes managed IT elements and their configuration (systems, chassis, devices), which is asset information. It also covers metrics and events, so the classification stays tentative."
       },
       "publisher": "DMTF (Distributed Management Task Force)",
       "publisherType": "standards-body",
@@ -1199,12 +1362,18 @@
           {
             "url": "https://dmtf.org/node/3585",
             "title": "DMTF releases CIM 2.54",
-            "type": "unclassified"
+            "type": "official-documentation",
+            "supports": [
+              "version"
+            ]
           },
           {
             "url": "https://www.dmtf.org/sites/default/files/cim/cim_schema_v2541/releasenotes.html",
             "title": "CIM 2.54.1 release notes",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "version"
+            ]
           }
         ],
         "notes": "CIM is a MOF/UML information model, not an OWL ontology."
@@ -1252,7 +1421,14 @@
         "Inventorying servers, chassis, power supplies and cooling devices in a data centre",
         "Mapping infrastructure management data into a facility or operations model"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "A MOF/UML information model for IT management, not an RDF/OWL ontology.",
+          "basis": "source",
+          "category": "scope",
+          "sourceRef": "https://www.dmtf.org/sites/default/files/cim/cim_schema_v2541/releasenotes.html"
+        }
+      ]
     },
     {
       "id": "eclass",
@@ -1262,7 +1438,8 @@
       "summary": "Classification ontology for products, properties, and industrial semantics.",
       "knowledge": {
         "domain": "product.catalogues",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "ECLASS e.V.",
       "publisherType": "industry-association",
@@ -1324,17 +1501,28 @@
           {
             "url": "https://eclass.eu/shop/en/product/eclass-15-0",
             "title": "ECLASS 15.0 product page",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "version",
+              "licence"
+            ]
           },
           {
             "url": "https://eclass.eu/shop/en/product/eclass-16-0",
             "title": "ECLASS 16.0 product page",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "version",
+              "licence"
+            ]
           },
           {
             "url": "https://eclass.eu/en/news/news/first-eclass-as-rdf-specification",
             "title": "ECLASS as RDF specification announcement",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "scope"
+            ]
           }
         ],
         "notes": "ECLASS is primarily a classification system; an RDF serialisation is specified. Commercial licence required."
@@ -1368,7 +1556,14 @@
         "Classifying purchased parts and describing them with standard properties",
         "Giving AAS submodel elements standardised semantic identifiers (IRDIs)"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "All ECLASS releases, including the RDF serialisation, require a commercial licence.",
+          "basis": "source",
+          "category": "access",
+          "sourceRef": "https://eclass.eu/shop/en/product/eclass-16-0"
+        }
+      ]
     },
     {
       "id": "eli",
@@ -1378,7 +1573,8 @@
       "summary": "Ontology for identifying and describing legal resources and legislation metadata.",
       "knowledge": {
         "domain": "foundations.regulation",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "Publications Office of the European Union",
       "publisherType": "government",
@@ -1438,12 +1634,20 @@
           {
             "url": "https://op.europa.eu/en/web/eu-vocabularies/eli",
             "title": "EU Vocabularies — ELI",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "identity",
+              "scope",
+              "licence"
+            ]
           },
           {
             "url": "https://interoperable-europe.ec.europa.eu/collection/eli-european-legislation-identifier/solution/eli-ontology/releases",
             "title": "Interoperable Europe — ELI ontology releases",
-            "type": "unclassified"
+            "type": "official-documentation",
+            "supports": [
+              "version"
+            ]
           }
         ],
         "notes": "Release 1.3 is the latest listed on Interoperable Europe; EU Vocabularies may list newer releases. Confirm the exact licence statement for the ontology files."
@@ -1489,7 +1693,8 @@
       "summary": "Top-down ontology for materials science and engineering, from physical foundations to materials, models and characterisation.",
       "knowledge": {
         "domain": "foundations.materials",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "kind": "ontology",
       "layer": "upper",
@@ -1547,12 +1752,20 @@
           {
             "url": "https://github.com/emmo-repo/EMMO",
             "title": "EMMO repository",
-            "type": "official-documentation"
+            "type": "publisher-repository",
+            "supports": [
+              "identity",
+              "licence",
+              "limitation"
+            ]
           },
           {
             "url": "https://zenodo.org/records/8318236",
             "title": "EMMO 1.0 on Zenodo",
-            "type": "unclassified"
+            "type": "publisher-repository",
+            "supports": [
+              "version"
+            ]
           }
         ],
         "notes": "Domain modules continue to evolve after 1.0.0."
@@ -1566,7 +1779,14 @@
         "Structuring materials characterisation and modelling data so it can be reused across tools",
         "Describing material models used in simulation with their physical quantities"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "Modules below the reference level (discipline and domain levels) continue to evolve after 1.0.0.",
+          "basis": "source",
+          "category": "scope",
+          "sourceRef": "https://github.com/emmo-repo/EMMO"
+        }
+      ]
     },
     {
       "id": "geosparql",
@@ -1576,7 +1796,8 @@
       "summary": "Standard for spatial RDF representation and geospatial querying.",
       "knowledge": {
         "domain": "foundations.time-space",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "OGC",
       "publisherType": "standards-body",
@@ -1640,12 +1861,20 @@
           {
             "url": "https://www.ogc.org/standard/geosparql/",
             "title": "OGC GeoSPARQL standard page",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "version",
+              "status"
+            ]
           },
           {
             "url": "https://lists.w3.org/Archives/Public/public-sdw-wg/2024Feb/0000.html",
             "title": "GeoSPARQL 1.1 published (W3C SDW list, Feb 2024)",
-            "type": "unclassified"
+            "type": "third-party",
+            "supports": [
+              "version"
+            ]
           }
         ],
         "notes": "Licence wording to confirm in document 22-047r1."
@@ -1689,7 +1918,8 @@
       "summary": "Ontology for products, offers, prices, and business entities.",
       "knowledge": {
         "domain": "business.commerce",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "Web Commerce Community",
       "publisherType": "research",
@@ -1749,12 +1979,20 @@
           {
             "url": "http://www.heppnetz.de/projects/goodrelations/",
             "title": "GoodRelations project",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "identity",
+              "licence"
+            ]
           },
           {
             "url": "https://blog.schema.org/2012/11/08/good-relations-and-schema-org/",
             "title": "schema.org blog: GoodRelations integrated into schema.org (2012)",
-            "type": "unclassified"
+            "type": "official-documentation",
+            "supports": [
+              "status",
+              "relationship"
+            ]
           }
         ],
         "notes": "For new work, schema.org is the maintained successor."
@@ -1788,7 +2026,14 @@
         "Interpreting legacy e-commerce product and offer markup",
         "Understanding the origin of schema.org product and offer terms"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "Integrated into schema.org in 2012; new work should use schema.org.",
+          "basis": "source",
+          "category": "scope",
+          "sourceRef": "https://blog.schema.org/2012/11/08/good-relations-and-schema-org/"
+        }
+      ]
     },
     {
       "id": "gs1-webvoc",
@@ -1798,7 +2043,9 @@
       "summary": "GS1 web vocabulary for product, organization, and identification semantics.",
       "knowledge": {
         "domain": "product.catalogues",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear",
+        "rationale": "The GS1 Web Vocabulary describes product master data and identifiers (GTIN, dimensions, composition), which is product information. Commerce use comes through schema.org."
       },
       "publisher": "GS1",
       "publisherType": "standards-body",
@@ -1862,17 +2109,28 @@
           {
             "url": "https://ref.gs1.org/voc/",
             "title": "GS1 Web Vocabulary",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "identity",
+              "scope",
+              "relationship"
+            ]
           },
           {
             "url": "https://ref.gs1.org/voc/data/archive",
             "title": "GS1 Web Vocabulary archive",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "version"
+            ]
           },
           {
             "url": "https://github.com/gs1/WebVoc",
             "title": "GS1 WebVoc on GitHub",
-            "type": "unclassified"
+            "type": "publisher-repository",
+            "supports": [
+              "licence"
+            ]
           }
         ],
         "notes": "v1 marked this as \"licensed\"; the vocabulary is published under Apache 2.0."
@@ -1927,7 +2185,9 @@
       "summary": "UML information model for electric power systems (grid topology, equipment, measurements, markets). Exchanged as RDF through profiles such as ENTSO-E CGMES.",
       "knowledge": {
         "domain": "product.structure",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "tentative",
+        "rationale": "IEC 61970-301 models the topology and equipment of power systems. Measurements and market profiles (IEC 62325) also exist, so a single primary domain is a simplification."
       },
       "kind": "information-model",
       "layer": "domain",
@@ -1951,6 +2211,16 @@
         "reviewStatus": "not-assessed",
         "commercialReuse": "unknown"
       },
+      "licenses": [
+        {
+          "scope": "specification",
+          "name": "IEC standard text (purchase required)",
+          "url": null,
+          "statedAt": "https://webstore.iec.ch/en/publication/6215",
+          "commercialUse": "unknown",
+          "reviewStatus": "not-assessed"
+        }
+      ],
       "links": {
         "official": "https://webstore.iec.ch/en/publication/6215"
       },
@@ -1983,12 +2253,19 @@
           {
             "url": "https://connect.snv.ch/en/iec-61970-301-2013-ed4",
             "title": "IEC 61970-301 edition history (SNV)",
-            "type": "unclassified"
+            "type": "third-party",
+            "supports": [
+              "version"
+            ]
           },
           {
             "url": "https://webstore.iec.ch/en/publication/6215",
             "title": "IEC webstore",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "licence"
+            ]
           }
         ],
         "notes": "Added in v2 to separate the power-system CIM from the DMTF CIM. Confirm the current CGMES version with ENTSO-E."
@@ -1999,10 +2276,22 @@
       },
       "origin": "v2",
       "engineeringUses": [
-        "Exchanging power-grid models between transmission and distribution operators (e.g. CGMES)",
+        "Exchanging power-grid models between transmission system operators (e.g. the ENTSO-E CGMES profiles)",
         "Connecting a facility’s grid connection to the utility network model"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "IEC standard sold by IEC.",
+          "basis": "source",
+          "category": "access",
+          "sourceRef": "https://webstore.iec.ch/en/publication/6215"
+        },
+        {
+          "text": "The current ENTSO-E CGMES profile version has not been confirmed.",
+          "basis": "editorial",
+          "category": "catalogue-gap"
+        }
+      ]
     },
     {
       "id": "ifcowl",
@@ -2014,7 +2303,8 @@
       "summary": "Direct OWL translation of the IFC EXPRESS schema (ISO 16739). buildingSMART now points semantic-web users to bSDD for most uses.",
       "knowledge": {
         "domain": "product.structure",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "kind": "ontology",
       "layer": "domain",
@@ -2068,12 +2358,20 @@
           {
             "url": "https://technical.buildingsmart.org/standards/ifc/ifc-formats/ifcowl/",
             "title": "buildingSMART — What is ifcOWL?",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "identity",
+              "status",
+              "limitation"
+            ]
           },
           {
             "url": "https://technical.buildingsmart.org/standards/ifc/ifc-schema-specifications/",
             "title": "buildingSMART IFC schema specifications",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "scope"
+            ]
           }
         ],
         "notes": "The ifcOWL authors advise against production use; consider bSDD. The former IFC4 ADD2 ontology page (which stated CC BY 3.0) no longer resolves; confirm the licence on the current schema pages."
@@ -2087,7 +2385,19 @@
         "Querying IFC building models with SPARQL for research or prototyping",
         "Linking BIM elements to other linked-data models of a facility"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "The ifcOWL authors advise against production use and point semantic-web users to bSDD.",
+          "basis": "source",
+          "category": "scope",
+          "sourceRef": "https://technical.buildingsmart.org/standards/ifc/ifc-formats/ifcowl/"
+        },
+        {
+          "text": "The former IFC4 ADD2 ontology page no longer resolves; the licence statement could not be re-checked.",
+          "basis": "editorial",
+          "category": "catalogue-gap"
+        }
+      ]
     },
     {
       "id": "iof-core",
@@ -2099,7 +2409,8 @@
       "summary": "Mid-level industrial ontology grounded in BFO 2020. Shared foundation for IOF domain ontologies such as maintenance, supply chain, production planning and product-service systems.",
       "knowledge": {
         "domain": "product.manufacturing",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "kind": "ontology",
       "layer": "mid-level",
@@ -2156,12 +2467,21 @@
           {
             "url": "https://spec.industrialontologies.org/portal/release/202603/core.html",
             "title": "IOF Core, release 202603",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "version",
+              "licence"
+            ]
           },
           {
             "url": "https://spec.industrialontologies.org/portal/release/202401/core/CoreOntology.html",
             "title": "IOF Core, release 202401",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "version",
+              "relationship"
+            ]
           }
         ],
         "notes": ""
@@ -2187,7 +2507,9 @@
       "summary": "OWL 2 implementation of the ISO 15926-2 data model for integrating lifecycle data of process plants, including oil and gas facilities.",
       "knowledge": {
         "domain": "product.catalogues",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "tentative",
+        "rationale": "ISO 15926-14 integrates process-plant lifecycle data. The standard text (sold by ISO) has not been reviewed, so the classification stays tentative."
       },
       "kind": "ontology",
       "layer": "domain",
@@ -2237,12 +2559,19 @@
           {
             "url": "https://knowledge.bsigroup.com/products/industrial-automation-systems-and-integration-integration-of-life-cycle-data-for-process-plants-including-oil-and-gas-production-facilities-implementation-methods-for-the-integration-of-distributed-systems-web-ontology-language-owl-1",
             "title": "BSI listing for ISO 15926-14",
-            "type": "unclassified"
+            "type": "third-party",
+            "supports": [
+              "identity",
+              "scope"
+            ]
           },
           {
             "url": "https://15926.org/",
             "title": "15926.org",
-            "type": "official-documentation"
+            "type": "third-party",
+            "supports": [
+              "scope"
+            ]
           }
         ],
         "notes": "Confirm the publication year in the ISO catalogue."
@@ -2256,7 +2585,19 @@
         "Integrating process-plant lifecycle data from design, construction and operations",
         "Handing over plant information between EPC contractors and owner-operators"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "ISO technical specification sold by ISO.",
+          "basis": "source",
+          "category": "access",
+          "sourceRef": "https://knowledge.bsigroup.com/products/industrial-automation-systems-and-integration-integration-of-life-cycle-data-for-process-plants-including-oil-and-gas-production-facilities-implementation-methods-for-the-integration-of-distributed-systems-web-ontology-language-owl-1"
+        },
+        {
+          "text": "Only third-party listings are cited, and the publication year is not confirmed.",
+          "basis": "editorial",
+          "category": "catalogue-gap"
+        }
+      ]
     },
     {
       "id": "obi",
@@ -2266,7 +2607,8 @@
       "summary": "Community ontology for describing scientific investigations: assays, devices, protocols, objectives and data transformations. It defines more than 2,500 terms and is used for biomedical and laboratory data integration.",
       "knowledge": {
         "domain": "foundations.science",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "OBI Consortium",
       "publisherType": "consortium",
@@ -2318,12 +2660,19 @@
           {
             "url": "https://obi-ontology.org/",
             "title": "OBI website",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "identity",
+              "scope"
+            ]
           },
           {
             "url": "https://github.com/obi-ontology/obi",
             "title": "OBI repository (CC BY 4.0)",
-            "type": "unclassified"
+            "type": "publisher-repository",
+            "supports": [
+              "licence"
+            ]
           }
         ],
         "notes": "The current release version is not stated on the website or repository front page."
@@ -2337,7 +2686,13 @@
         "Describing laboratory assays, instruments and protocols consistently across studies",
         "Annotating experimental data for integration and reuse"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "The current release version is not stated on the website or repository front page.",
+          "basis": "editorial",
+          "category": "catalogue-gap"
+        }
+      ]
     },
     {
       "id": "oeo",
@@ -2349,7 +2704,9 @@
       "summary": "Community ontology for energy-system modelling (technologies, carriers, scenarios, emissions), built on BFO.",
       "knowledge": {
         "domain": "foundations.science",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "tentative",
+        "rationale": "The OEO describes energy-system models, scenarios and technologies used in research. \"Scientific methods & research data\" is the closest fit; a dedicated energy domain does not exist."
       },
       "kind": "ontology",
       "layer": "domain",
@@ -2403,12 +2760,20 @@
           {
             "url": "https://openenergyplatform.org/ontology/",
             "title": "OEO on the Open Energy Platform",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "identity",
+              "version"
+            ]
           },
           {
             "url": "https://github.com/OpenEnergyPlatform/ontology",
             "title": "OEO repository",
-            "type": "unclassified"
+            "type": "publisher-repository",
+            "supports": [
+              "licence",
+              "relationship"
+            ]
           }
         ],
         "notes": ""
@@ -2432,7 +2797,9 @@
       "summary": "ORIENTING provides a structured ontology for Life Cycle Sustainability Assessment. It formalizes concepts related to environmental, social, and economic impacts across lifecycle stages. The ontology supports interoperability of LCSA data, impact indicators, system boundaries, and sustainability modeling workflows.",
       "knowledge": {
         "domain": "foundations.sustainability",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "tentative",
+        "rationale": "Only the ORIENTING project description is public. The classification follows the stated LCSA scope and cannot be confirmed."
       },
       "publisher": "Research / Community",
       "publisherType": "research",
@@ -2487,7 +2854,10 @@
           {
             "url": "https://cordis.europa.eu/project/id/958231",
             "title": "CORDIS — ORIENTING project (H2020, 958231)",
-            "type": "unclassified"
+            "type": "project-documentation",
+            "supports": [
+              "scope"
+            ]
           }
         ],
         "notes": "No public ontology named \"ORIONT\" was found. The v1 description refers to the ORIENTING H2020 project (LCSA methodology, 2020-2024), whose public outputs do not clearly include a published ontology. Kept as a candidate pending a public source."
@@ -2521,7 +2891,13 @@
       "engineeringUses": [
         "Candidate vocabulary for life-cycle sustainability assessment indicators (pending a public source)"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "No public ontology named ORIONT was found; only the ORIENTING project description is cited.",
+          "basis": "editorial",
+          "category": "catalogue-gap"
+        }
+      ]
     },
     {
       "id": "owl-time",
@@ -2531,7 +2907,8 @@
       "summary": "Ontology of temporal concepts including intervals, instants, durations, and relations.",
       "knowledge": {
         "domain": "foundations.time-space",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "W3C",
       "publisherType": "standards-body",
@@ -2590,7 +2967,12 @@
           {
             "url": "https://www.w3.org/TR/owl-time/",
             "title": "W3C Time Ontology in OWL",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "version",
+              "status"
+            ]
           }
         ],
         "notes": ""
@@ -2624,7 +3006,14 @@
         "Representing instants, intervals and durations for schedules and operation logs",
         "Reasoning about the order and overlap of events"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "The current document is a W3C Candidate Recommendation Draft (2022) revising the 2017 Recommendation.",
+          "basis": "source",
+          "category": "scope",
+          "sourceRef": "https://www.w3.org/TR/owl-time/"
+        }
+      ]
     },
     {
       "id": "ieee-pos",
@@ -2634,7 +3023,8 @@
       "summary": "Ontology used for positional, pose, or planning-oriented semantics in robotics contexts.",
       "knowledge": {
         "domain": "foundations.time-space",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "IEEE Robotics and Automation Society",
       "publisherType": "standards-body",
@@ -2689,7 +3079,12 @@
           {
             "url": "https://standards.ieee.org/standard/1872-2015.html",
             "title": "IEEE 1872-2015 Standard Ontologies for Robotics and Automation",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "status",
+              "licence"
+            ]
           }
         ],
         "notes": "Specified within IEEE 1872-2015."
@@ -2738,7 +3133,14 @@
         "Describing positions, orientations and poses with explicit reference frames",
         "Exchanging spatial information between perception, planning and simulation components"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "The normative text is sold by IEEE; only catalogue information is publicly available.",
+          "basis": "source",
+          "category": "access",
+          "sourceRef": "https://standards.ieee.org/standard/1872-2015.html"
+        }
+      ]
     },
     {
       "id": "prov-o",
@@ -2748,7 +3150,8 @@
       "summary": "Provenance ontology for entities, activities, agents, and derivation relationships.",
       "knowledge": {
         "domain": "foundations.metadata",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "W3C",
       "publisherType": "standards-body",
@@ -2808,7 +3211,12 @@
           {
             "url": "https://www.w3.org/TR/prov-o/",
             "title": "W3C PROV-O Recommendation",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "version",
+              "status"
+            ]
           }
         ],
         "notes": ""
@@ -2852,7 +3260,8 @@
       "summary": "Ontology for quantities, units, dimensions, and datatypes.",
       "knowledge": {
         "domain": "foundations.quantities",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "QUDT",
       "publisherType": "consortium",
@@ -2913,17 +3322,27 @@
           {
             "url": "https://qudt.org/",
             "title": "QUDT",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "identity",
+              "licence"
+            ]
           },
           {
             "url": "https://qudt.org/doc/2026/01/DOC_VOCAB-CONSTANTS.html",
             "title": "QUDT constants vocabulary, version 3.1.10",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "version"
+            ]
           },
           {
             "url": "https://qudt.org/schema/qudt/",
             "title": "QUDT schema (Turtle), declares \"QUDT Schema - Version 3.5.2\"",
-            "type": "official-documentation"
+            "type": "publisher-repository",
+            "supports": [
+              "version"
+            ]
           }
         ],
         "notes": "Version taken from the schema file itself on 2026-10-15; release date not stated in the file."
@@ -2957,7 +3376,13 @@
         "Attaching units and quantity kinds to engineering parameters to avoid unit errors",
         "Converting values between unit systems in data pipelines"
       ],
-      "limitations": [],
+      "limitations": [
+        {
+          "text": "The release date of schema 3.5.2 is not stated in the schema file.",
+          "basis": "editorial",
+          "category": "catalogue-gap"
+        }
+      ],
       "corrections": [
         {
           "field": "version",
@@ -2976,7 +3401,9 @@
       "summary": "Ontology for describing robot tasks, actions, parameters, and execution context.",
       "knowledge": {
         "domain": "product.behaviour",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear",
+        "rationale": "IEEE 1872.1 represents robot tasks and their hierarchical decomposition: behaviour of a technical system, not organisational processes."
       },
       "publisher": "IEEE Robotics and Automation Society",
       "publisherType": "standards-body",
@@ -3029,7 +3456,13 @@
           {
             "url": "https://standards.ieee.org/ieee/1872.1/6993/",
             "title": "IEEE 1872.1-2024",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "version",
+              "status",
+              "licence"
+            ]
           }
         ],
         "notes": "Implementation guide P1872.1.1 is in development."
@@ -3078,7 +3511,14 @@
         "Representing tasks, sub-tasks and actions so planners and engineers share one task model",
         "Documenting robot tasks for reuse across different robot platforms"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "The normative text is sold by IEEE; only catalogue information is publicly available.",
+          "basis": "source",
+          "category": "access",
+          "sourceRef": "https://standards.ieee.org/ieee/1872.1/6993/"
+        }
+      ]
     },
     {
       "id": "ieee-rparts",
@@ -3088,7 +3528,8 @@
       "summary": "Reference ontology related to robot parts and component decomposition.",
       "knowledge": {
         "domain": "product.structure",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "IEEE Robotics and Automation Society",
       "publisherType": "standards-body",
@@ -3142,7 +3583,12 @@
           {
             "url": "https://standards.ieee.org/standard/1872-2015.html",
             "title": "IEEE 1872-2015 Standard Ontologies for Robotics and Automation",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "status",
+              "licence"
+            ]
           }
         ],
         "notes": "Specified within IEEE 1872-2015."
@@ -3191,7 +3637,14 @@
         "Describing a robot’s decomposition into parts such as actuators, sensors and links",
         "Mapping physical robot components to their functional roles"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "The normative text is sold by IEEE; only catalogue information is publicly available.",
+          "basis": "source",
+          "category": "access",
+          "sourceRef": "https://standards.ieee.org/standard/1872-2015.html"
+        }
+      ]
     },
     {
       "id": "saref-core",
@@ -3201,7 +3654,8 @@
       "summary": "Smart Applications REFerence ontology for interoperable devices and services.",
       "knowledge": {
         "domain": "product.interfaces",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "ETSI",
       "publisherType": "standards-body",
@@ -3265,7 +3719,12 @@
           {
             "url": "https://saref.etsi.org/core/",
             "title": "ETSI SAREF Core",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "version",
+              "licence"
+            ]
           }
         ],
         "notes": ""
@@ -3309,7 +3768,8 @@
       "summary": "OWL-DL extension of SAREF for the automotive domain. It adapts the ETSI ITS common data dictionary and covers use cases such as platooning and automated valet parking.",
       "knowledge": {
         "domain": "product.interfaces",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "ETSI",
       "publisherType": "standards-body",
@@ -3363,7 +3823,12 @@
           {
             "url": "https://saref.etsi.org/saref4auto/",
             "title": "ETSI SAREF4AUTO",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "version",
+              "licence"
+            ]
           }
         ],
         "notes": "First published 2020-07-27; page last modified 2025-04-10."
@@ -3387,7 +3852,9 @@
       "summary": "Building extension of SAREF for spaces, devices, and building systems.",
       "knowledge": {
         "domain": "product.structure",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear",
+        "rationale": "ETSI states SAREF4BLDG is based on IFC and describes building devices as elements within spaces: structure of the built asset."
       },
       "publisher": "ETSI",
       "publisherType": "standards-body",
@@ -3443,7 +3910,12 @@
           {
             "url": "https://saref.etsi.org/saref4bldg/",
             "title": "ETSI SAREF4BLDG",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "version",
+              "licence"
+            ]
           }
         ],
         "notes": ""
@@ -3485,7 +3957,9 @@
       "summary": "OWL-DL extension of SAREF with general concepts for smart-city data in the IoT domain, such as city objects, administrative areas, public services and key performance indicators.",
       "knowledge": {
         "domain": "product.operations",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "tentative",
+        "rationale": "SAREF4CITY covers city objects, administrative areas, public services and KPIs for IoT data. Operational data is the main use, but geographic and administrative concepts are also central."
       },
       "publisher": "ETSI",
       "publisherType": "standards-body",
@@ -3542,7 +4016,12 @@
           {
             "url": "https://saref.etsi.org/saref4city/",
             "title": "ETSI SAREF4CITY",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "version",
+              "licence"
+            ]
           }
         ],
         "notes": "First published 2020-06-05; page last modified 2025-04-11."
@@ -3568,7 +4047,9 @@
       "summary": "SAREF extension for energy flexibility and demand response between smart devices, energy managers and the grid.",
       "knowledge": {
         "domain": "product.interfaces",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear",
+        "rationale": "SAREF4ENER specifies the exchange of power profiles and flexibility between devices and energy managers, which is an interface between systems."
       },
       "kind": "ontology",
       "layer": "domain",
@@ -3625,7 +4106,12 @@
           {
             "url": "https://saref.etsi.org/saref4ener/",
             "title": "ETSI SAREF4ENER",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "version",
+              "licence"
+            ]
           }
         ],
         "notes": ""
@@ -3649,7 +4135,8 @@
       "summary": "SAREF extension for industry and manufacturing. It improves interoperability between production equipment and lets organisations trace produced items back to equipment, batches, materials and production times.",
       "knowledge": {
         "domain": "product.manufacturing",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "ETSI",
       "publisherType": "standards-body",
@@ -3707,7 +4194,12 @@
           {
             "url": "https://saref.etsi.org/saref4inma/",
             "title": "ETSI SAREF4INMA",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "version",
+              "licence"
+            ]
           }
         ],
         "notes": ""
@@ -3732,8 +4224,10 @@
       "publisherType": "consortium",
       "summary": "Widely deployed vocabulary for structured data on the web: products, offers, organisations, events and more. Absorbed GoodRelations in 2012.",
       "knowledge": {
-        "domain": "business.commerce",
-        "basis": "editorial"
+        "domain": "foundations.metadata",
+        "basis": "editorial",
+        "confidence": "clear",
+        "rationale": "Schema.org is a general-purpose vocabulary for describing things on the web. Commerce is one part of it, so metadata and cataloguing is the better primary domain."
       },
       "kind": "vocabulary",
       "layer": "cross-domain",
@@ -3793,12 +4287,19 @@
           {
             "url": "https://schema.org/docs/terms.html",
             "title": "Schema.org terms",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "licence"
+            ]
           },
           {
             "url": "https://blog.schema.org/2012/11/08/good-relations-and-schema-org/",
             "title": "GoodRelations integration announcement",
-            "type": "unclassified"
+            "type": "official-documentation",
+            "supports": [
+              "status",
+              "relationship"
+            ]
           }
         ],
         "notes": ""
@@ -3824,7 +4325,8 @@
       "summary": "W3C standard for thesauri, taxonomies and classification schemes on the web: concepts, labels and broader/narrower relations.",
       "knowledge": {
         "domain": "foundations.languages",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "kind": "vocabulary",
       "layer": "cross-domain",
@@ -3875,7 +4377,12 @@
           {
             "url": "https://www.w3.org/TR/skos-reference/",
             "title": "SKOS Reference (W3C Recommendation)",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "version",
+              "status"
+            ]
           }
         ],
         "notes": ""
@@ -3899,7 +4406,8 @@
       "summary": "Lightweight core for sensors, observations, samples, and actuators.",
       "knowledge": {
         "domain": "product.operations",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "W3C/OGC",
       "publisherType": "standards-body",
@@ -3957,7 +4465,12 @@
           {
             "url": "https://www.w3.org/TR/vocab-ssn/",
             "title": "W3C Semantic Sensor Network Ontology",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "version",
+              "status"
+            ]
           }
         ],
         "notes": ""
@@ -3991,7 +4504,14 @@
         "Describing sensor observations, the property observed and the feature of interest",
         "Recording actuations and samples in test or operations data"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "Uses schema:domainIncludes / rangeIncludes instead of rdfs:domain / rdfs:range, so domains and ranges are non-binding.",
+          "basis": "source",
+          "category": "technical",
+          "sourceRef": "https://www.w3.org/ns/sosa/"
+        }
+      ]
     },
     {
       "id": "ssn",
@@ -4001,7 +4521,8 @@
       "summary": "Semantic Sensor Network ontology for sensors, observations, and systems.",
       "knowledge": {
         "domain": "product.operations",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "W3C/OGC",
       "publisherType": "standards-body",
@@ -4059,7 +4580,12 @@
           {
             "url": "https://www.w3.org/TR/vocab-ssn/",
             "title": "W3C Semantic Sensor Network Ontology",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "version",
+              "status"
+            ]
           }
         ],
         "notes": ""
@@ -4105,7 +4631,8 @@
       "summary": "STEP application protocol for exchanging 3D product data, PMI, PDM data and configuration. Defined in EXPRESS; the reference information model for model-based definition.",
       "knowledge": {
         "domain": "product.structure",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "kind": "information-model",
       "layer": "domain",
@@ -4162,12 +4689,19 @@
           {
             "url": "https://www.evs.ee/en/iso-10303-242-2025",
             "title": "ISO 10303-242:2025 listing",
-            "type": "unclassified"
+            "type": "third-party",
+            "supports": [
+              "identity",
+              "version"
+            ]
           },
           {
             "url": "https://online.standard.no/en/iso-10303-242-2025",
             "title": "ISO 10303-242:2025 (edition 4)",
-            "type": "unclassified"
+            "type": "third-party",
+            "supports": [
+              "version"
+            ]
           }
         ],
         "notes": "An information model in EXPRESS, not an OWL ontology. A further revision is at committee-draft stage."
@@ -4181,7 +4715,19 @@
         "Exchanging 3D CAD models with PMI between design and manufacturing partners",
         "Archiving model-based definition data in a neutral format"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "An EXPRESS information model, not an RDF/OWL ontology: using it requires STEP tooling.",
+          "basis": "source",
+          "category": "scope",
+          "sourceRef": "https://www.evs.ee/en/iso-10303-242-2025"
+        },
+        {
+          "text": "Only national-standards-body listings are cited; the ISO catalogue page blocks automated checks.",
+          "basis": "editorial",
+          "category": "catalogue-gap"
+        }
+      ]
     },
     {
       "id": "sumo",
@@ -4191,7 +4737,8 @@
       "summary": "Suggested Upper Merged Ontology for broad upper-level semantic grounding.",
       "knowledge": {
         "domain": "foundations.formal",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "IEEE / Teknowledge",
       "publisherType": "research",
@@ -4215,6 +4762,25 @@
         "reviewStatus": "not-assessed",
         "commercialReuse": "unknown"
       },
+      "licenses": [
+        {
+          "scope": "model-files",
+          "name": "IEEE licence stated in the source files",
+          "url": null,
+          "statedAt": "https://raw.githubusercontent.com/ontologyportal/sumo/master/Merge.kif",
+          "commercialUse": "unknown",
+          "reviewStatus": "not-assessed"
+        },
+        {
+          "scope": "model-files",
+          "name": "GNU GPL (SUMO extensions, as stated by the publisher)",
+          "url": null,
+          "statedAt": "https://www.ontologyportal.org/",
+          "commercialUse": "unknown",
+          "reviewStatus": "not-assessed",
+          "reviewNote": "Applies to ontologies extending SUMO, not to the core."
+        }
+      ],
       "links": {
         "official": "https://www.ontologyportal.org/",
         "repository": "https://github.com/ontologyportal/sumo"
@@ -4249,12 +4815,19 @@
           {
             "url": "https://www.ontologyportal.org/",
             "title": "SUMO — ontologyportal.org",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "identity",
+              "licence"
+            ]
           },
           {
             "url": "https://raw.githubusercontent.com/ontologyportal/sumo/master/Merge.kif",
             "title": "Merge.kif licence header",
-            "type": "unclassified"
+            "type": "publisher-repository",
+            "supports": [
+              "licence"
+            ]
           }
         ],
         "notes": "Originally developed by Teknowledge within the IEEE Standard Upper Ontology working group; now maintained by Adam Pease and contributors."
@@ -4298,7 +4871,8 @@
       "summary": "Alignment layer between SUMO and CORA for robotics semantics.",
       "knowledge": {
         "domain": "foundations.formal",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "IEEE Robotics and Automation Society",
       "publisherType": "standards-body",
@@ -4353,7 +4927,12 @@
           {
             "url": "https://standards.ieee.org/standard/1872-2015.html",
             "title": "IEEE 1872-2015 Standard Ontologies for Robotics and Automation",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "status",
+              "licence"
+            ]
           }
         ],
         "notes": "IEEE 1872-2015 grounds CORA in SUMO. Confirm whether \"SUMO-CORA\" is published as a separate artefact."
@@ -4394,7 +4973,19 @@
       "engineeringUses": [
         "Grounding robotics concepts in SUMO for formal reasoning"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "The normative text is sold by IEEE; only catalogue information is publicly available.",
+          "basis": "source",
+          "category": "access",
+          "sourceRef": "https://standards.ieee.org/standard/1872-2015.html"
+        },
+        {
+          "text": "Not confirmed as a separately published artefact.",
+          "basis": "editorial",
+          "category": "catalogue-gap"
+        }
+      ]
     },
     {
       "id": "sysml-v2",
@@ -4406,7 +4997,8 @@
       "summary": "Next-generation MBSE language. KerML provides a formal semantic core and SysML v2 adds systems-engineering constructs, a textual notation and a standard API.",
       "knowledge": {
         "domain": "foundations.languages",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "kind": "modeling-language",
       "layer": "domain",
@@ -4466,12 +5058,19 @@
           {
             "url": "https://github.com/Systems-Modeling/SysML-v2-Release",
             "title": "SysML v2 release repository",
-            "type": "unclassified"
+            "type": "publisher-repository",
+            "supports": [
+              "version",
+              "status"
+            ]
           },
           {
             "url": "https://www.omg.org/sysml/sst_aiaa_award.htm",
             "title": "OMG SysML Submission Team page",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "status"
+            ]
           }
         ],
         "notes": "A modelling language with formal semantics rather than an OWL ontology."
@@ -4485,7 +5084,14 @@
         "Modelling requirements, architecture and behaviour of a system in a standard textual and graphical language",
         "Exchanging system models between tools through the standard API"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "A modelling language with its own notation and API, not an RDF/OWL ontology.",
+          "basis": "source",
+          "category": "scope",
+          "sourceRef": "https://github.com/Systems-Modeling/SysML-v2-Release"
+        }
+      ]
     },
     {
       "id": "vsso",
@@ -4497,7 +5103,9 @@
       "summary": "OWL ontology for COVESA Vehicle Signal Specification signals, following the SOSA/SSN pattern. The W3C draft was later discontinued.",
       "knowledge": {
         "domain": "product.operations",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear",
+        "rationale": "VSSo models vehicle signals as observable and actuatable properties following SOSA/SSN: operational data of a vehicle."
       },
       "kind": "ontology",
       "layer": "domain",
@@ -4546,7 +5154,12 @@
           {
             "url": "https://www.w3.org/TR/vsso-core/",
             "title": "VSSo Core (W3C)",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "status",
+              "limitation"
+            ]
           }
         ],
         "notes": "Listed for awareness; not maintained."
@@ -4559,7 +5172,14 @@
       "engineeringUses": [
         "Understanding semantic modelling of vehicle signals (historical reference; draft discontinued)"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "Published as a W3C Discontinued Draft: not maintained.",
+          "basis": "source",
+          "category": "scope",
+          "sourceRef": "https://www.w3.org/TR/vsso-core/"
+        }
+      ]
     }
   ],
   "ontologies": [
@@ -4571,7 +5191,8 @@
       "summary": "Asset Administration Shell meta-model for interoperable digital twins.",
       "knowledge": {
         "domain": "product.catalogues",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "Industrial Digital Twin Association",
       "publisherType": "industry-association",
@@ -4637,12 +5258,22 @@
           {
             "url": "https://industrialdigitaltwin.org/wp-content/uploads/2025/08/IDTA-01001-3-1-1_AAS-Specification_Part1_Metamodel.pdf",
             "title": "IDTA-01001-3-1-1 Part 1 Metamodel (PDF)",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "version",
+              "scope"
+            ]
           },
           {
             "url": "https://industrialdigitaltwin.org/en/content-hub/aasspecifications",
             "title": "IDTA AAS specifications",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "identity",
+              "licence",
+              "version"
+            ]
           }
         ],
         "notes": "The IDTA Part 4 Security document (2026) references Part 1 v3.2; confirm whether v3.2 has been released."
@@ -4695,7 +5326,8 @@
       "summary": "Ontology focused on autonomous robotics concepts, capabilities, and behavior.",
       "knowledge": {
         "domain": "product.systems",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "IEEE Robotics and Automation Society",
       "publisherType": "standards-body",
@@ -4748,7 +5380,13 @@
           {
             "url": "https://standards.ieee.org/ieee/1872.2/7094/",
             "title": "IEEE 1872.2-2021",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "version",
+              "status",
+              "licence"
+            ]
           }
         ],
         "notes": ""
@@ -4797,7 +5435,19 @@
         "Describing the architecture and autonomy functions of an autonomous robot in a shared vocabulary",
         "Comparing autonomous-system designs using common concepts"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "The normative text is sold by IEEE; only catalogue information is publicly available.",
+          "basis": "source",
+          "category": "access",
+          "sourceRef": "https://standards.ieee.org/ieee/1872.2/7094/"
+        },
+        {
+          "text": "Public availability of the OWL files under the IEEE SA open-source programme is not yet confirmed.",
+          "basis": "editorial",
+          "category": "catalogue-gap"
+        }
+      ]
     },
     {
       "id": "bfo",
@@ -4809,7 +5459,8 @@
       "summary": "Top-level ontology standardised as ISO/IEC 21838-2. Provides the formal backbone for the IOF, CCO, OEO and many OBO ontologies.",
       "knowledge": {
         "domain": "foundations.formal",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "kind": "ontology",
       "layer": "upper",
@@ -4868,12 +5519,20 @@
           {
             "url": "https://github.com/BFO-ontology/BFO-2020",
             "title": "BFO-2020 repository (CC BY 4.0)",
-            "type": "unclassified"
+            "type": "publisher-repository",
+            "supports": [
+              "licence",
+              "version"
+            ]
           },
           {
             "url": "https://webstore.iec.ch/en/publication/72703",
             "title": "ISO/IEC 21838-2:2021",
-            "type": "unclassified"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "version"
+            ]
           }
         ],
         "notes": ""
@@ -4897,7 +5556,9 @@
       "summary": "Building Topology Ontology (BOT) is a minimal OWL DL ontology for describing the core topological concepts of buildings and relationships between sub-components such as sites, buildings, storeys, spaces, and elements.",
       "knowledge": {
         "domain": "product.structure",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear",
+        "rationale": "BOT models the topological decomposition of buildings (sites, buildings, storeys, spaces, elements): the structure of built assets (BOT specification)."
       },
       "publisher": "Linked Building Data Community Group",
       "publisherType": "consortium",
@@ -4953,7 +5614,12 @@
           {
             "url": "https://w3c-lbd-cg.github.io/bot/",
             "title": "BOT specification",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "identity",
+              "version",
+              "status"
+            ]
           }
         ],
         "notes": "W3C Community Group reports are not W3C standards. No licence statement is given on the specification page; confirm before redistribution."
@@ -4984,7 +5650,13 @@
         "Describing the site, building, storey and space hierarchy of a facility for a digital twin",
         "Locating equipment, such as racks or cooling units, within building zones"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "No licence statement on the specification page.",
+          "basis": "editorial",
+          "category": "catalogue-gap"
+        }
+      ]
     },
     {
       "id": "brick",
@@ -4994,7 +5666,8 @@
       "summary": "Brick Schema is an open OWL ontology for modeling buildings, infrastructure, and their systems, including spaces, equipment, power distribution, cooling, HVAC, and sensors. It provides a formal semantic foundation to represent and reason over the physical and infrastructural structure of AI factories and data centers.",
       "knowledge": {
         "domain": "product.operations",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "Brick Consortium",
       "publisherType": "consortium",
@@ -5056,12 +5729,20 @@
           {
             "url": "https://github.com/BrickSchema/Brick/releases",
             "title": "Brick releases",
-            "type": "unclassified"
+            "type": "publisher-repository",
+            "supports": [
+              "version"
+            ]
           },
           {
             "url": "https://brickschema.org/",
             "title": "Brick Schema",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "identity",
+              "scope",
+              "licence"
+            ]
           }
         ],
         "notes": ""
@@ -5105,7 +5786,8 @@
       "summary": "Suite of mid-level ontologies that extend BFO, covering agents, artefacts, events, information and qualities. Widely used in defence and intelligence programmes.",
       "knowledge": {
         "domain": "foundations.formal",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "kind": "ontology",
       "layer": "mid-level",
@@ -5156,7 +5838,14 @@
           {
             "url": "https://github.com/CommonCoreOntology/CommonCoreOntologies",
             "title": "Common Core Ontologies repository",
-            "type": "official-documentation"
+            "type": "publisher-repository",
+            "supports": [
+              "identity",
+              "licence",
+              "version",
+              "relationship",
+              "limitation"
+            ]
           }
         ],
         "notes": ""
@@ -5170,7 +5859,14 @@
         "Modelling artefacts, their functions and the agents that use them in mission or systems analysis",
         "Extending BFO-based models with mid-level concepts instead of creating them from scratch"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "Under restructuring: version 3.0 is planned by 31 December 2026 and 4.0 by 30 June 2027, and maintainers recommend waiting for 4.0 before updating.",
+          "basis": "source",
+          "category": "scope",
+          "sourceRef": "https://github.com/CommonCoreOntology/CommonCoreOntologies"
+        }
+      ]
     },
     {
       "id": "ieee-cora",
@@ -5180,7 +5876,8 @@
       "summary": "Core ontology for robotics and automation concepts.",
       "knowledge": {
         "domain": "product.systems",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "IEEE Robotics and Automation Society",
       "publisherType": "standards-body",
@@ -5205,6 +5902,26 @@
         "reviewStatus": "not-assessed",
         "commercialReuse": "unknown"
       },
+      "licenses": [
+        {
+          "scope": "specification",
+          "name": "IEEE standard text (purchase required)",
+          "url": null,
+          "statedAt": "https://standards.ieee.org/standard/1872-2015.html",
+          "commercialUse": "unknown",
+          "reviewStatus": "not-assessed"
+        },
+        {
+          "scope": "model-files",
+          "name": "CC BY 4.0 (community OWL conversion)",
+          "spdx": "CC-BY-4.0",
+          "url": "https://creativecommons.org/licenses/by/4.0/",
+          "statedAt": "https://github.com/srfiorini/IEEE1872-owl",
+          "commercialUse": "unknown",
+          "reviewStatus": "not-assessed",
+          "reviewNote": "Covers the conversion published by its authors, not the IEEE text."
+        }
+      ],
       "links": {
         "official": "https://standards.ieee.org/standard/1872-2015.html",
         "repository": "https://github.com/srfiorini/IEEE1872-owl"
@@ -5236,17 +5953,29 @@
           {
             "url": "https://standards.ieee.org/standard/1872-2015.html",
             "title": "IEEE 1872-2015 Standard Ontologies for Robotics and Automation",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "status",
+              "licence"
+            ]
           },
           {
             "url": "https://github.com/srfiorini/IEEE1872-owl",
             "title": "OWL version of CORA (IEEE 1872-2015), CC BY 4.0",
-            "type": "unclassified"
+            "type": "third-party",
+            "supports": [
+              "licence",
+              "limitation"
+            ]
           },
           {
             "url": "https://standards.ieee.org/ieee/1872/12250",
             "title": "IEEE P1872 revision project (active PAR)",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "status"
+            ]
           }
         ],
         "notes": "An OWL conversion of CORA (taxonomy and selected axioms) is published under CC BY 4.0."
@@ -5295,7 +6024,20 @@
         "Defining what counts as a robot, robotic system and robotic environment in a project glossary",
         "Giving robotics data and requirements a formal shared vocabulary"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "The normative text is sold by IEEE; only catalogue information is publicly available.",
+          "basis": "source",
+          "category": "access",
+          "sourceRef": "https://standards.ieee.org/standard/1872-2015.html"
+        },
+        {
+          "text": "The public OWL conversion is under-specified relative to the SUO-KIF axioms and allows models not consistent with IEEE 1872.",
+          "basis": "source",
+          "category": "technical",
+          "sourceRef": "https://github.com/srfiorini/IEEE1872-owl"
+        }
+      ]
     },
     {
       "id": "ieee-corax",
@@ -5305,7 +6047,8 @@
       "summary": "Reference ontology in the robotics corpus; kept as a governed candidate pending fuller validation.",
       "knowledge": {
         "domain": "product.systems",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "IEEE Robotics and Automation Society",
       "publisherType": "standards-body",
@@ -5359,7 +6102,12 @@
           {
             "url": "https://standards.ieee.org/standard/1872-2015.html",
             "title": "IEEE 1872-2015 Standard Ontologies for Robotics and Automation",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "status",
+              "licence"
+            ]
           }
         ],
         "notes": "Specified within IEEE 1872-2015 alongside CORA, RPARTS and POS."
@@ -5408,7 +6156,14 @@
         "Capturing design and interaction concepts that are shared across robotics sub-domains",
         "Complementing CORA when describing robot environments and interactions"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "The normative text is sold by IEEE; only catalogue information is publicly available.",
+          "basis": "source",
+          "category": "access",
+          "sourceRef": "https://standards.ieee.org/standard/1872-2015.html"
+        }
+      ]
     },
     {
       "id": "dcat",
@@ -5420,7 +6175,8 @@
       "summary": "W3C vocabulary for describing datasets, data services and catalogues, the basis of many data-space and open-data catalogues.",
       "knowledge": {
         "domain": "foundations.metadata",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "kind": "vocabulary",
       "layer": "cross-domain",
@@ -5474,7 +6230,12 @@
           {
             "url": "https://www.w3.org/TR/vocab-dcat-3/",
             "title": "DCAT 3 W3C Recommendation",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "version",
+              "status"
+            ]
           }
         ],
         "notes": ""
@@ -5498,7 +6259,8 @@
       "summary": "Widely used metadata terms for title, creator, subject, date, and provenance-like description.",
       "knowledge": {
         "domain": "foundations.metadata",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "Dublin Core Metadata Initiative",
       "publisherType": "standards-body",
@@ -5557,7 +6319,12 @@
           {
             "url": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/",
             "title": "DCMI Metadata Terms",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "version",
+              "licence"
+            ]
           }
         ],
         "notes": ""
@@ -5603,7 +6370,8 @@
       "summary": "Ontology for the semiconductor industry and its supply chains, organised in thematic \"lobes\" (about 1,200 classes). Introduced in the ECSEL Productive4.0 project.",
       "knowledge": {
         "domain": "business.supply",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "kind": "ontology",
       "layer": "domain",
@@ -5655,12 +6423,19 @@
           {
             "url": "https://ifx-dr.github.io/DigitalReference/",
             "title": "Digital Reference site",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "identity",
+              "scope"
+            ]
           },
           {
             "url": "https://www.informs-sim.org/wsc25papers/con142.pdf",
             "title": "Winter Simulation Conference 2025 paper using DR",
-            "type": "unclassified"
+            "type": "peer-reviewed",
+            "supports": [
+              "scope"
+            ]
           }
         ],
         "notes": "Confirm the licence in the repository before reuse."
@@ -5674,7 +6449,13 @@
         "Describing semiconductor products, production and supply-chain concepts in a shared vocabulary",
         "Supporting supply-chain data exchange between partners in the semiconductor value chain"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "The licence of the ontology files has not been confirmed.",
+          "basis": "editorial",
+          "category": "catalogue-gap"
+        }
+      ]
     },
     {
       "id": "dmtf-cim",
@@ -5683,8 +6464,10 @@
       "resourceType": "data-schema",
       "summary": "The Common Information Model (CIM) is a formal object-oriented schema developed by the Distributed Management Task Force (DMTF) to represent managed elements in IT environments, including computer systems, racks, chassis, processors, memory, power supplies, networking components, and cooling subsystems. CIM provides a strong reference model for AI Factory physical and logical infrastructure components.",
       "knowledge": {
-        "domain": "product.operations",
-        "basis": "editorial"
+        "domain": "product.catalogues",
+        "basis": "editorial",
+        "confidence": "tentative",
+        "rationale": "DMTF CIM primarily describes managed IT elements and their configuration (systems, chassis, devices), which is asset information. It also covers metrics and events, so the classification stays tentative."
       },
       "publisher": "DMTF (Distributed Management Task Force)",
       "publisherType": "standards-body",
@@ -5740,12 +6523,18 @@
           {
             "url": "https://dmtf.org/node/3585",
             "title": "DMTF releases CIM 2.54",
-            "type": "unclassified"
+            "type": "official-documentation",
+            "supports": [
+              "version"
+            ]
           },
           {
             "url": "https://www.dmtf.org/sites/default/files/cim/cim_schema_v2541/releasenotes.html",
             "title": "CIM 2.54.1 release notes",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "version"
+            ]
           }
         ],
         "notes": "CIM is a MOF/UML information model, not an OWL ontology."
@@ -5793,7 +6582,14 @@
         "Inventorying servers, chassis, power supplies and cooling devices in a data centre",
         "Mapping infrastructure management data into a facility or operations model"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "A MOF/UML information model for IT management, not an RDF/OWL ontology.",
+          "basis": "source",
+          "category": "scope",
+          "sourceRef": "https://www.dmtf.org/sites/default/files/cim/cim_schema_v2541/releasenotes.html"
+        }
+      ]
     },
     {
       "id": "eclass",
@@ -5803,7 +6599,8 @@
       "summary": "Classification ontology for products, properties, and industrial semantics.",
       "knowledge": {
         "domain": "product.catalogues",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "ECLASS e.V.",
       "publisherType": "industry-association",
@@ -5865,17 +6662,28 @@
           {
             "url": "https://eclass.eu/shop/en/product/eclass-15-0",
             "title": "ECLASS 15.0 product page",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "version",
+              "licence"
+            ]
           },
           {
             "url": "https://eclass.eu/shop/en/product/eclass-16-0",
             "title": "ECLASS 16.0 product page",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "version",
+              "licence"
+            ]
           },
           {
             "url": "https://eclass.eu/en/news/news/first-eclass-as-rdf-specification",
             "title": "ECLASS as RDF specification announcement",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "scope"
+            ]
           }
         ],
         "notes": "ECLASS is primarily a classification system; an RDF serialisation is specified. Commercial licence required."
@@ -5909,7 +6717,14 @@
         "Classifying purchased parts and describing them with standard properties",
         "Giving AAS submodel elements standardised semantic identifiers (IRDIs)"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "All ECLASS releases, including the RDF serialisation, require a commercial licence.",
+          "basis": "source",
+          "category": "access",
+          "sourceRef": "https://eclass.eu/shop/en/product/eclass-16-0"
+        }
+      ]
     },
     {
       "id": "eli",
@@ -5919,7 +6734,8 @@
       "summary": "Ontology for identifying and describing legal resources and legislation metadata.",
       "knowledge": {
         "domain": "foundations.regulation",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "Publications Office of the European Union",
       "publisherType": "government",
@@ -5979,12 +6795,20 @@
           {
             "url": "https://op.europa.eu/en/web/eu-vocabularies/eli",
             "title": "EU Vocabularies — ELI",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "identity",
+              "scope",
+              "licence"
+            ]
           },
           {
             "url": "https://interoperable-europe.ec.europa.eu/collection/eli-european-legislation-identifier/solution/eli-ontology/releases",
             "title": "Interoperable Europe — ELI ontology releases",
-            "type": "unclassified"
+            "type": "official-documentation",
+            "supports": [
+              "version"
+            ]
           }
         ],
         "notes": "Release 1.3 is the latest listed on Interoperable Europe; EU Vocabularies may list newer releases. Confirm the exact licence statement for the ontology files."
@@ -6030,7 +6854,8 @@
       "summary": "Top-down ontology for materials science and engineering, from physical foundations to materials, models and characterisation.",
       "knowledge": {
         "domain": "foundations.materials",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "kind": "ontology",
       "layer": "upper",
@@ -6088,12 +6913,20 @@
           {
             "url": "https://github.com/emmo-repo/EMMO",
             "title": "EMMO repository",
-            "type": "official-documentation"
+            "type": "publisher-repository",
+            "supports": [
+              "identity",
+              "licence",
+              "limitation"
+            ]
           },
           {
             "url": "https://zenodo.org/records/8318236",
             "title": "EMMO 1.0 on Zenodo",
-            "type": "unclassified"
+            "type": "publisher-repository",
+            "supports": [
+              "version"
+            ]
           }
         ],
         "notes": "Domain modules continue to evolve after 1.0.0."
@@ -6107,7 +6940,14 @@
         "Structuring materials characterisation and modelling data so it can be reused across tools",
         "Describing material models used in simulation with their physical quantities"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "Modules below the reference level (discipline and domain levels) continue to evolve after 1.0.0.",
+          "basis": "source",
+          "category": "scope",
+          "sourceRef": "https://github.com/emmo-repo/EMMO"
+        }
+      ]
     },
     {
       "id": "geosparql",
@@ -6117,7 +6957,8 @@
       "summary": "Standard for spatial RDF representation and geospatial querying.",
       "knowledge": {
         "domain": "foundations.time-space",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "OGC",
       "publisherType": "standards-body",
@@ -6181,12 +7022,20 @@
           {
             "url": "https://www.ogc.org/standard/geosparql/",
             "title": "OGC GeoSPARQL standard page",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "version",
+              "status"
+            ]
           },
           {
             "url": "https://lists.w3.org/Archives/Public/public-sdw-wg/2024Feb/0000.html",
             "title": "GeoSPARQL 1.1 published (W3C SDW list, Feb 2024)",
-            "type": "unclassified"
+            "type": "third-party",
+            "supports": [
+              "version"
+            ]
           }
         ],
         "notes": "Licence wording to confirm in document 22-047r1."
@@ -6230,7 +7079,8 @@
       "summary": "Ontology for products, offers, prices, and business entities.",
       "knowledge": {
         "domain": "business.commerce",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "Web Commerce Community",
       "publisherType": "research",
@@ -6290,12 +7140,20 @@
           {
             "url": "http://www.heppnetz.de/projects/goodrelations/",
             "title": "GoodRelations project",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "identity",
+              "licence"
+            ]
           },
           {
             "url": "https://blog.schema.org/2012/11/08/good-relations-and-schema-org/",
             "title": "schema.org blog: GoodRelations integrated into schema.org (2012)",
-            "type": "unclassified"
+            "type": "official-documentation",
+            "supports": [
+              "status",
+              "relationship"
+            ]
           }
         ],
         "notes": "For new work, schema.org is the maintained successor."
@@ -6329,7 +7187,14 @@
         "Interpreting legacy e-commerce product and offer markup",
         "Understanding the origin of schema.org product and offer terms"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "Integrated into schema.org in 2012; new work should use schema.org.",
+          "basis": "source",
+          "category": "scope",
+          "sourceRef": "https://blog.schema.org/2012/11/08/good-relations-and-schema-org/"
+        }
+      ]
     },
     {
       "id": "gs1-webvoc",
@@ -6339,7 +7204,9 @@
       "summary": "GS1 web vocabulary for product, organization, and identification semantics.",
       "knowledge": {
         "domain": "product.catalogues",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear",
+        "rationale": "The GS1 Web Vocabulary describes product master data and identifiers (GTIN, dimensions, composition), which is product information. Commerce use comes through schema.org."
       },
       "publisher": "GS1",
       "publisherType": "standards-body",
@@ -6403,17 +7270,28 @@
           {
             "url": "https://ref.gs1.org/voc/",
             "title": "GS1 Web Vocabulary",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "identity",
+              "scope",
+              "relationship"
+            ]
           },
           {
             "url": "https://ref.gs1.org/voc/data/archive",
             "title": "GS1 Web Vocabulary archive",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "version"
+            ]
           },
           {
             "url": "https://github.com/gs1/WebVoc",
             "title": "GS1 WebVoc on GitHub",
-            "type": "unclassified"
+            "type": "publisher-repository",
+            "supports": [
+              "licence"
+            ]
           }
         ],
         "notes": "v1 marked this as \"licensed\"; the vocabulary is published under Apache 2.0."
@@ -6468,7 +7346,9 @@
       "summary": "UML information model for electric power systems (grid topology, equipment, measurements, markets). Exchanged as RDF through profiles such as ENTSO-E CGMES.",
       "knowledge": {
         "domain": "product.structure",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "tentative",
+        "rationale": "IEC 61970-301 models the topology and equipment of power systems. Measurements and market profiles (IEC 62325) also exist, so a single primary domain is a simplification."
       },
       "kind": "information-model",
       "layer": "domain",
@@ -6492,6 +7372,16 @@
         "reviewStatus": "not-assessed",
         "commercialReuse": "unknown"
       },
+      "licenses": [
+        {
+          "scope": "specification",
+          "name": "IEC standard text (purchase required)",
+          "url": null,
+          "statedAt": "https://webstore.iec.ch/en/publication/6215",
+          "commercialUse": "unknown",
+          "reviewStatus": "not-assessed"
+        }
+      ],
       "links": {
         "official": "https://webstore.iec.ch/en/publication/6215"
       },
@@ -6524,12 +7414,19 @@
           {
             "url": "https://connect.snv.ch/en/iec-61970-301-2013-ed4",
             "title": "IEC 61970-301 edition history (SNV)",
-            "type": "unclassified"
+            "type": "third-party",
+            "supports": [
+              "version"
+            ]
           },
           {
             "url": "https://webstore.iec.ch/en/publication/6215",
             "title": "IEC webstore",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "licence"
+            ]
           }
         ],
         "notes": "Added in v2 to separate the power-system CIM from the DMTF CIM. Confirm the current CGMES version with ENTSO-E."
@@ -6540,10 +7437,22 @@
       },
       "origin": "v2",
       "engineeringUses": [
-        "Exchanging power-grid models between transmission and distribution operators (e.g. CGMES)",
+        "Exchanging power-grid models between transmission system operators (e.g. the ENTSO-E CGMES profiles)",
         "Connecting a facility’s grid connection to the utility network model"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "IEC standard sold by IEC.",
+          "basis": "source",
+          "category": "access",
+          "sourceRef": "https://webstore.iec.ch/en/publication/6215"
+        },
+        {
+          "text": "The current ENTSO-E CGMES profile version has not been confirmed.",
+          "basis": "editorial",
+          "category": "catalogue-gap"
+        }
+      ]
     },
     {
       "id": "ifcowl",
@@ -6555,7 +7464,8 @@
       "summary": "Direct OWL translation of the IFC EXPRESS schema (ISO 16739). buildingSMART now points semantic-web users to bSDD for most uses.",
       "knowledge": {
         "domain": "product.structure",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "kind": "ontology",
       "layer": "domain",
@@ -6609,12 +7519,20 @@
           {
             "url": "https://technical.buildingsmart.org/standards/ifc/ifc-formats/ifcowl/",
             "title": "buildingSMART — What is ifcOWL?",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "identity",
+              "status",
+              "limitation"
+            ]
           },
           {
             "url": "https://technical.buildingsmart.org/standards/ifc/ifc-schema-specifications/",
             "title": "buildingSMART IFC schema specifications",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "scope"
+            ]
           }
         ],
         "notes": "The ifcOWL authors advise against production use; consider bSDD. The former IFC4 ADD2 ontology page (which stated CC BY 3.0) no longer resolves; confirm the licence on the current schema pages."
@@ -6628,7 +7546,19 @@
         "Querying IFC building models with SPARQL for research or prototyping",
         "Linking BIM elements to other linked-data models of a facility"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "The ifcOWL authors advise against production use and point semantic-web users to bSDD.",
+          "basis": "source",
+          "category": "scope",
+          "sourceRef": "https://technical.buildingsmart.org/standards/ifc/ifc-formats/ifcowl/"
+        },
+        {
+          "text": "The former IFC4 ADD2 ontology page no longer resolves; the licence statement could not be re-checked.",
+          "basis": "editorial",
+          "category": "catalogue-gap"
+        }
+      ]
     },
     {
       "id": "iof-core",
@@ -6640,7 +7570,8 @@
       "summary": "Mid-level industrial ontology grounded in BFO 2020. Shared foundation for IOF domain ontologies such as maintenance, supply chain, production planning and product-service systems.",
       "knowledge": {
         "domain": "product.manufacturing",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "kind": "ontology",
       "layer": "mid-level",
@@ -6697,12 +7628,21 @@
           {
             "url": "https://spec.industrialontologies.org/portal/release/202603/core.html",
             "title": "IOF Core, release 202603",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "version",
+              "licence"
+            ]
           },
           {
             "url": "https://spec.industrialontologies.org/portal/release/202401/core/CoreOntology.html",
             "title": "IOF Core, release 202401",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "version",
+              "relationship"
+            ]
           }
         ],
         "notes": ""
@@ -6728,7 +7668,9 @@
       "summary": "OWL 2 implementation of the ISO 15926-2 data model for integrating lifecycle data of process plants, including oil and gas facilities.",
       "knowledge": {
         "domain": "product.catalogues",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "tentative",
+        "rationale": "ISO 15926-14 integrates process-plant lifecycle data. The standard text (sold by ISO) has not been reviewed, so the classification stays tentative."
       },
       "kind": "ontology",
       "layer": "domain",
@@ -6778,12 +7720,19 @@
           {
             "url": "https://knowledge.bsigroup.com/products/industrial-automation-systems-and-integration-integration-of-life-cycle-data-for-process-plants-including-oil-and-gas-production-facilities-implementation-methods-for-the-integration-of-distributed-systems-web-ontology-language-owl-1",
             "title": "BSI listing for ISO 15926-14",
-            "type": "unclassified"
+            "type": "third-party",
+            "supports": [
+              "identity",
+              "scope"
+            ]
           },
           {
             "url": "https://15926.org/",
             "title": "15926.org",
-            "type": "official-documentation"
+            "type": "third-party",
+            "supports": [
+              "scope"
+            ]
           }
         ],
         "notes": "Confirm the publication year in the ISO catalogue."
@@ -6797,7 +7746,19 @@
         "Integrating process-plant lifecycle data from design, construction and operations",
         "Handing over plant information between EPC contractors and owner-operators"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "ISO technical specification sold by ISO.",
+          "basis": "source",
+          "category": "access",
+          "sourceRef": "https://knowledge.bsigroup.com/products/industrial-automation-systems-and-integration-integration-of-life-cycle-data-for-process-plants-including-oil-and-gas-production-facilities-implementation-methods-for-the-integration-of-distributed-systems-web-ontology-language-owl-1"
+        },
+        {
+          "text": "Only third-party listings are cited, and the publication year is not confirmed.",
+          "basis": "editorial",
+          "category": "catalogue-gap"
+        }
+      ]
     },
     {
       "id": "obi",
@@ -6807,7 +7768,8 @@
       "summary": "Community ontology for describing scientific investigations: assays, devices, protocols, objectives and data transformations. It defines more than 2,500 terms and is used for biomedical and laboratory data integration.",
       "knowledge": {
         "domain": "foundations.science",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "OBI Consortium",
       "publisherType": "consortium",
@@ -6859,12 +7821,19 @@
           {
             "url": "https://obi-ontology.org/",
             "title": "OBI website",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "identity",
+              "scope"
+            ]
           },
           {
             "url": "https://github.com/obi-ontology/obi",
             "title": "OBI repository (CC BY 4.0)",
-            "type": "unclassified"
+            "type": "publisher-repository",
+            "supports": [
+              "licence"
+            ]
           }
         ],
         "notes": "The current release version is not stated on the website or repository front page."
@@ -6878,7 +7847,13 @@
         "Describing laboratory assays, instruments and protocols consistently across studies",
         "Annotating experimental data for integration and reuse"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "The current release version is not stated on the website or repository front page.",
+          "basis": "editorial",
+          "category": "catalogue-gap"
+        }
+      ]
     },
     {
       "id": "oeo",
@@ -6890,7 +7865,9 @@
       "summary": "Community ontology for energy-system modelling (technologies, carriers, scenarios, emissions), built on BFO.",
       "knowledge": {
         "domain": "foundations.science",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "tentative",
+        "rationale": "The OEO describes energy-system models, scenarios and technologies used in research. \"Scientific methods & research data\" is the closest fit; a dedicated energy domain does not exist."
       },
       "kind": "ontology",
       "layer": "domain",
@@ -6944,12 +7921,20 @@
           {
             "url": "https://openenergyplatform.org/ontology/",
             "title": "OEO on the Open Energy Platform",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "identity",
+              "version"
+            ]
           },
           {
             "url": "https://github.com/OpenEnergyPlatform/ontology",
             "title": "OEO repository",
-            "type": "unclassified"
+            "type": "publisher-repository",
+            "supports": [
+              "licence",
+              "relationship"
+            ]
           }
         ],
         "notes": ""
@@ -6973,7 +7958,9 @@
       "summary": "ORIENTING provides a structured ontology for Life Cycle Sustainability Assessment. It formalizes concepts related to environmental, social, and economic impacts across lifecycle stages. The ontology supports interoperability of LCSA data, impact indicators, system boundaries, and sustainability modeling workflows.",
       "knowledge": {
         "domain": "foundations.sustainability",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "tentative",
+        "rationale": "Only the ORIENTING project description is public. The classification follows the stated LCSA scope and cannot be confirmed."
       },
       "publisher": "Research / Community",
       "publisherType": "research",
@@ -7028,7 +8015,10 @@
           {
             "url": "https://cordis.europa.eu/project/id/958231",
             "title": "CORDIS — ORIENTING project (H2020, 958231)",
-            "type": "unclassified"
+            "type": "project-documentation",
+            "supports": [
+              "scope"
+            ]
           }
         ],
         "notes": "No public ontology named \"ORIONT\" was found. The v1 description refers to the ORIENTING H2020 project (LCSA methodology, 2020-2024), whose public outputs do not clearly include a published ontology. Kept as a candidate pending a public source."
@@ -7062,7 +8052,13 @@
       "engineeringUses": [
         "Candidate vocabulary for life-cycle sustainability assessment indicators (pending a public source)"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "No public ontology named ORIONT was found; only the ORIENTING project description is cited.",
+          "basis": "editorial",
+          "category": "catalogue-gap"
+        }
+      ]
     },
     {
       "id": "owl-time",
@@ -7072,7 +8068,8 @@
       "summary": "Ontology of temporal concepts including intervals, instants, durations, and relations.",
       "knowledge": {
         "domain": "foundations.time-space",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "W3C",
       "publisherType": "standards-body",
@@ -7131,7 +8128,12 @@
           {
             "url": "https://www.w3.org/TR/owl-time/",
             "title": "W3C Time Ontology in OWL",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "version",
+              "status"
+            ]
           }
         ],
         "notes": ""
@@ -7165,7 +8167,14 @@
         "Representing instants, intervals and durations for schedules and operation logs",
         "Reasoning about the order and overlap of events"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "The current document is a W3C Candidate Recommendation Draft (2022) revising the 2017 Recommendation.",
+          "basis": "source",
+          "category": "scope",
+          "sourceRef": "https://www.w3.org/TR/owl-time/"
+        }
+      ]
     },
     {
       "id": "ieee-pos",
@@ -7175,7 +8184,8 @@
       "summary": "Ontology used for positional, pose, or planning-oriented semantics in robotics contexts.",
       "knowledge": {
         "domain": "foundations.time-space",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "IEEE Robotics and Automation Society",
       "publisherType": "standards-body",
@@ -7230,7 +8240,12 @@
           {
             "url": "https://standards.ieee.org/standard/1872-2015.html",
             "title": "IEEE 1872-2015 Standard Ontologies for Robotics and Automation",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "status",
+              "licence"
+            ]
           }
         ],
         "notes": "Specified within IEEE 1872-2015."
@@ -7279,7 +8294,14 @@
         "Describing positions, orientations and poses with explicit reference frames",
         "Exchanging spatial information between perception, planning and simulation components"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "The normative text is sold by IEEE; only catalogue information is publicly available.",
+          "basis": "source",
+          "category": "access",
+          "sourceRef": "https://standards.ieee.org/standard/1872-2015.html"
+        }
+      ]
     },
     {
       "id": "prov-o",
@@ -7289,7 +8311,8 @@
       "summary": "Provenance ontology for entities, activities, agents, and derivation relationships.",
       "knowledge": {
         "domain": "foundations.metadata",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "W3C",
       "publisherType": "standards-body",
@@ -7349,7 +8372,12 @@
           {
             "url": "https://www.w3.org/TR/prov-o/",
             "title": "W3C PROV-O Recommendation",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "version",
+              "status"
+            ]
           }
         ],
         "notes": ""
@@ -7393,7 +8421,8 @@
       "summary": "Ontology for quantities, units, dimensions, and datatypes.",
       "knowledge": {
         "domain": "foundations.quantities",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "QUDT",
       "publisherType": "consortium",
@@ -7454,17 +8483,27 @@
           {
             "url": "https://qudt.org/",
             "title": "QUDT",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "identity",
+              "licence"
+            ]
           },
           {
             "url": "https://qudt.org/doc/2026/01/DOC_VOCAB-CONSTANTS.html",
             "title": "QUDT constants vocabulary, version 3.1.10",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "version"
+            ]
           },
           {
             "url": "https://qudt.org/schema/qudt/",
             "title": "QUDT schema (Turtle), declares \"QUDT Schema - Version 3.5.2\"",
-            "type": "official-documentation"
+            "type": "publisher-repository",
+            "supports": [
+              "version"
+            ]
           }
         ],
         "notes": "Version taken from the schema file itself on 2026-10-15; release date not stated in the file."
@@ -7498,7 +8537,13 @@
         "Attaching units and quantity kinds to engineering parameters to avoid unit errors",
         "Converting values between unit systems in data pipelines"
       ],
-      "limitations": [],
+      "limitations": [
+        {
+          "text": "The release date of schema 3.5.2 is not stated in the schema file.",
+          "basis": "editorial",
+          "category": "catalogue-gap"
+        }
+      ],
       "corrections": [
         {
           "field": "version",
@@ -7517,7 +8562,9 @@
       "summary": "Ontology for describing robot tasks, actions, parameters, and execution context.",
       "knowledge": {
         "domain": "product.behaviour",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear",
+        "rationale": "IEEE 1872.1 represents robot tasks and their hierarchical decomposition: behaviour of a technical system, not organisational processes."
       },
       "publisher": "IEEE Robotics and Automation Society",
       "publisherType": "standards-body",
@@ -7570,7 +8617,13 @@
           {
             "url": "https://standards.ieee.org/ieee/1872.1/6993/",
             "title": "IEEE 1872.1-2024",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "version",
+              "status",
+              "licence"
+            ]
           }
         ],
         "notes": "Implementation guide P1872.1.1 is in development."
@@ -7619,7 +8672,14 @@
         "Representing tasks, sub-tasks and actions so planners and engineers share one task model",
         "Documenting robot tasks for reuse across different robot platforms"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "The normative text is sold by IEEE; only catalogue information is publicly available.",
+          "basis": "source",
+          "category": "access",
+          "sourceRef": "https://standards.ieee.org/ieee/1872.1/6993/"
+        }
+      ]
     },
     {
       "id": "ieee-rparts",
@@ -7629,7 +8689,8 @@
       "summary": "Reference ontology related to robot parts and component decomposition.",
       "knowledge": {
         "domain": "product.structure",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "IEEE Robotics and Automation Society",
       "publisherType": "standards-body",
@@ -7683,7 +8744,12 @@
           {
             "url": "https://standards.ieee.org/standard/1872-2015.html",
             "title": "IEEE 1872-2015 Standard Ontologies for Robotics and Automation",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "status",
+              "licence"
+            ]
           }
         ],
         "notes": "Specified within IEEE 1872-2015."
@@ -7732,7 +8798,14 @@
         "Describing a robot’s decomposition into parts such as actuators, sensors and links",
         "Mapping physical robot components to their functional roles"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "The normative text is sold by IEEE; only catalogue information is publicly available.",
+          "basis": "source",
+          "category": "access",
+          "sourceRef": "https://standards.ieee.org/standard/1872-2015.html"
+        }
+      ]
     },
     {
       "id": "saref-core",
@@ -7742,7 +8815,8 @@
       "summary": "Smart Applications REFerence ontology for interoperable devices and services.",
       "knowledge": {
         "domain": "product.interfaces",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "ETSI",
       "publisherType": "standards-body",
@@ -7806,7 +8880,12 @@
           {
             "url": "https://saref.etsi.org/core/",
             "title": "ETSI SAREF Core",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "version",
+              "licence"
+            ]
           }
         ],
         "notes": ""
@@ -7850,7 +8929,8 @@
       "summary": "OWL-DL extension of SAREF for the automotive domain. It adapts the ETSI ITS common data dictionary and covers use cases such as platooning and automated valet parking.",
       "knowledge": {
         "domain": "product.interfaces",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "ETSI",
       "publisherType": "standards-body",
@@ -7904,7 +8984,12 @@
           {
             "url": "https://saref.etsi.org/saref4auto/",
             "title": "ETSI SAREF4AUTO",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "version",
+              "licence"
+            ]
           }
         ],
         "notes": "First published 2020-07-27; page last modified 2025-04-10."
@@ -7928,7 +9013,9 @@
       "summary": "Building extension of SAREF for spaces, devices, and building systems.",
       "knowledge": {
         "domain": "product.structure",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear",
+        "rationale": "ETSI states SAREF4BLDG is based on IFC and describes building devices as elements within spaces: structure of the built asset."
       },
       "publisher": "ETSI",
       "publisherType": "standards-body",
@@ -7984,7 +9071,12 @@
           {
             "url": "https://saref.etsi.org/saref4bldg/",
             "title": "ETSI SAREF4BLDG",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "version",
+              "licence"
+            ]
           }
         ],
         "notes": ""
@@ -8026,7 +9118,9 @@
       "summary": "OWL-DL extension of SAREF with general concepts for smart-city data in the IoT domain, such as city objects, administrative areas, public services and key performance indicators.",
       "knowledge": {
         "domain": "product.operations",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "tentative",
+        "rationale": "SAREF4CITY covers city objects, administrative areas, public services and KPIs for IoT data. Operational data is the main use, but geographic and administrative concepts are also central."
       },
       "publisher": "ETSI",
       "publisherType": "standards-body",
@@ -8083,7 +9177,12 @@
           {
             "url": "https://saref.etsi.org/saref4city/",
             "title": "ETSI SAREF4CITY",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "version",
+              "licence"
+            ]
           }
         ],
         "notes": "First published 2020-06-05; page last modified 2025-04-11."
@@ -8109,7 +9208,9 @@
       "summary": "SAREF extension for energy flexibility and demand response between smart devices, energy managers and the grid.",
       "knowledge": {
         "domain": "product.interfaces",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear",
+        "rationale": "SAREF4ENER specifies the exchange of power profiles and flexibility between devices and energy managers, which is an interface between systems."
       },
       "kind": "ontology",
       "layer": "domain",
@@ -8166,7 +9267,12 @@
           {
             "url": "https://saref.etsi.org/saref4ener/",
             "title": "ETSI SAREF4ENER",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "version",
+              "licence"
+            ]
           }
         ],
         "notes": ""
@@ -8190,7 +9296,8 @@
       "summary": "SAREF extension for industry and manufacturing. It improves interoperability between production equipment and lets organisations trace produced items back to equipment, batches, materials and production times.",
       "knowledge": {
         "domain": "product.manufacturing",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "ETSI",
       "publisherType": "standards-body",
@@ -8248,7 +9355,12 @@
           {
             "url": "https://saref.etsi.org/saref4inma/",
             "title": "ETSI SAREF4INMA",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "version",
+              "licence"
+            ]
           }
         ],
         "notes": ""
@@ -8273,8 +9385,10 @@
       "publisherType": "consortium",
       "summary": "Widely deployed vocabulary for structured data on the web: products, offers, organisations, events and more. Absorbed GoodRelations in 2012.",
       "knowledge": {
-        "domain": "business.commerce",
-        "basis": "editorial"
+        "domain": "foundations.metadata",
+        "basis": "editorial",
+        "confidence": "clear",
+        "rationale": "Schema.org is a general-purpose vocabulary for describing things on the web. Commerce is one part of it, so metadata and cataloguing is the better primary domain."
       },
       "kind": "vocabulary",
       "layer": "cross-domain",
@@ -8334,12 +9448,19 @@
           {
             "url": "https://schema.org/docs/terms.html",
             "title": "Schema.org terms",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "licence"
+            ]
           },
           {
             "url": "https://blog.schema.org/2012/11/08/good-relations-and-schema-org/",
             "title": "GoodRelations integration announcement",
-            "type": "unclassified"
+            "type": "official-documentation",
+            "supports": [
+              "status",
+              "relationship"
+            ]
           }
         ],
         "notes": ""
@@ -8365,7 +9486,8 @@
       "summary": "W3C standard for thesauri, taxonomies and classification schemes on the web: concepts, labels and broader/narrower relations.",
       "knowledge": {
         "domain": "foundations.languages",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "kind": "vocabulary",
       "layer": "cross-domain",
@@ -8416,7 +9538,12 @@
           {
             "url": "https://www.w3.org/TR/skos-reference/",
             "title": "SKOS Reference (W3C Recommendation)",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "version",
+              "status"
+            ]
           }
         ],
         "notes": ""
@@ -8440,7 +9567,8 @@
       "summary": "Lightweight core for sensors, observations, samples, and actuators.",
       "knowledge": {
         "domain": "product.operations",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "W3C/OGC",
       "publisherType": "standards-body",
@@ -8498,7 +9626,12 @@
           {
             "url": "https://www.w3.org/TR/vocab-ssn/",
             "title": "W3C Semantic Sensor Network Ontology",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "version",
+              "status"
+            ]
           }
         ],
         "notes": ""
@@ -8532,7 +9665,14 @@
         "Describing sensor observations, the property observed and the feature of interest",
         "Recording actuations and samples in test or operations data"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "Uses schema:domainIncludes / rangeIncludes instead of rdfs:domain / rdfs:range, so domains and ranges are non-binding.",
+          "basis": "source",
+          "category": "technical",
+          "sourceRef": "https://www.w3.org/ns/sosa/"
+        }
+      ]
     },
     {
       "id": "ssn",
@@ -8542,7 +9682,8 @@
       "summary": "Semantic Sensor Network ontology for sensors, observations, and systems.",
       "knowledge": {
         "domain": "product.operations",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "W3C/OGC",
       "publisherType": "standards-body",
@@ -8600,7 +9741,12 @@
           {
             "url": "https://www.w3.org/TR/vocab-ssn/",
             "title": "W3C Semantic Sensor Network Ontology",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "version",
+              "status"
+            ]
           }
         ],
         "notes": ""
@@ -8646,7 +9792,8 @@
       "summary": "STEP application protocol for exchanging 3D product data, PMI, PDM data and configuration. Defined in EXPRESS; the reference information model for model-based definition.",
       "knowledge": {
         "domain": "product.structure",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "kind": "information-model",
       "layer": "domain",
@@ -8703,12 +9850,19 @@
           {
             "url": "https://www.evs.ee/en/iso-10303-242-2025",
             "title": "ISO 10303-242:2025 listing",
-            "type": "unclassified"
+            "type": "third-party",
+            "supports": [
+              "identity",
+              "version"
+            ]
           },
           {
             "url": "https://online.standard.no/en/iso-10303-242-2025",
             "title": "ISO 10303-242:2025 (edition 4)",
-            "type": "unclassified"
+            "type": "third-party",
+            "supports": [
+              "version"
+            ]
           }
         ],
         "notes": "An information model in EXPRESS, not an OWL ontology. A further revision is at committee-draft stage."
@@ -8722,7 +9876,19 @@
         "Exchanging 3D CAD models with PMI between design and manufacturing partners",
         "Archiving model-based definition data in a neutral format"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "An EXPRESS information model, not an RDF/OWL ontology: using it requires STEP tooling.",
+          "basis": "source",
+          "category": "scope",
+          "sourceRef": "https://www.evs.ee/en/iso-10303-242-2025"
+        },
+        {
+          "text": "Only national-standards-body listings are cited; the ISO catalogue page blocks automated checks.",
+          "basis": "editorial",
+          "category": "catalogue-gap"
+        }
+      ]
     },
     {
       "id": "sumo",
@@ -8732,7 +9898,8 @@
       "summary": "Suggested Upper Merged Ontology for broad upper-level semantic grounding.",
       "knowledge": {
         "domain": "foundations.formal",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "IEEE / Teknowledge",
       "publisherType": "research",
@@ -8756,6 +9923,25 @@
         "reviewStatus": "not-assessed",
         "commercialReuse": "unknown"
       },
+      "licenses": [
+        {
+          "scope": "model-files",
+          "name": "IEEE licence stated in the source files",
+          "url": null,
+          "statedAt": "https://raw.githubusercontent.com/ontologyportal/sumo/master/Merge.kif",
+          "commercialUse": "unknown",
+          "reviewStatus": "not-assessed"
+        },
+        {
+          "scope": "model-files",
+          "name": "GNU GPL (SUMO extensions, as stated by the publisher)",
+          "url": null,
+          "statedAt": "https://www.ontologyportal.org/",
+          "commercialUse": "unknown",
+          "reviewStatus": "not-assessed",
+          "reviewNote": "Applies to ontologies extending SUMO, not to the core."
+        }
+      ],
       "links": {
         "official": "https://www.ontologyportal.org/",
         "repository": "https://github.com/ontologyportal/sumo"
@@ -8790,12 +9976,19 @@
           {
             "url": "https://www.ontologyportal.org/",
             "title": "SUMO — ontologyportal.org",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "identity",
+              "licence"
+            ]
           },
           {
             "url": "https://raw.githubusercontent.com/ontologyportal/sumo/master/Merge.kif",
             "title": "Merge.kif licence header",
-            "type": "unclassified"
+            "type": "publisher-repository",
+            "supports": [
+              "licence"
+            ]
           }
         ],
         "notes": "Originally developed by Teknowledge within the IEEE Standard Upper Ontology working group; now maintained by Adam Pease and contributors."
@@ -8839,7 +10032,8 @@
       "summary": "Alignment layer between SUMO and CORA for robotics semantics.",
       "knowledge": {
         "domain": "foundations.formal",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "publisher": "IEEE Robotics and Automation Society",
       "publisherType": "standards-body",
@@ -8894,7 +10088,12 @@
           {
             "url": "https://standards.ieee.org/standard/1872-2015.html",
             "title": "IEEE 1872-2015 Standard Ontologies for Robotics and Automation",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "status",
+              "licence"
+            ]
           }
         ],
         "notes": "IEEE 1872-2015 grounds CORA in SUMO. Confirm whether \"SUMO-CORA\" is published as a separate artefact."
@@ -8935,7 +10134,19 @@
       "engineeringUses": [
         "Grounding robotics concepts in SUMO for formal reasoning"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "The normative text is sold by IEEE; only catalogue information is publicly available.",
+          "basis": "source",
+          "category": "access",
+          "sourceRef": "https://standards.ieee.org/standard/1872-2015.html"
+        },
+        {
+          "text": "Not confirmed as a separately published artefact.",
+          "basis": "editorial",
+          "category": "catalogue-gap"
+        }
+      ]
     },
     {
       "id": "sysml-v2",
@@ -8947,7 +10158,8 @@
       "summary": "Next-generation MBSE language. KerML provides a formal semantic core and SysML v2 adds systems-engineering constructs, a textual notation and a standard API.",
       "knowledge": {
         "domain": "foundations.languages",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear"
       },
       "kind": "modeling-language",
       "layer": "domain",
@@ -9007,12 +10219,19 @@
           {
             "url": "https://github.com/Systems-Modeling/SysML-v2-Release",
             "title": "SysML v2 release repository",
-            "type": "unclassified"
+            "type": "publisher-repository",
+            "supports": [
+              "version",
+              "status"
+            ]
           },
           {
             "url": "https://www.omg.org/sysml/sst_aiaa_award.htm",
             "title": "OMG SysML Submission Team page",
-            "type": "official-documentation"
+            "type": "official-documentation",
+            "supports": [
+              "status"
+            ]
           }
         ],
         "notes": "A modelling language with formal semantics rather than an OWL ontology."
@@ -9026,7 +10245,14 @@
         "Modelling requirements, architecture and behaviour of a system in a standard textual and graphical language",
         "Exchanging system models between tools through the standard API"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "A modelling language with its own notation and API, not an RDF/OWL ontology.",
+          "basis": "source",
+          "category": "scope",
+          "sourceRef": "https://github.com/Systems-Modeling/SysML-v2-Release"
+        }
+      ]
     },
     {
       "id": "vsso",
@@ -9038,7 +10264,9 @@
       "summary": "OWL ontology for COVESA Vehicle Signal Specification signals, following the SOSA/SSN pattern. The W3C draft was later discontinued.",
       "knowledge": {
         "domain": "product.operations",
-        "basis": "editorial"
+        "basis": "editorial",
+        "confidence": "clear",
+        "rationale": "VSSo models vehicle signals as observable and actuatable properties following SOSA/SSN: operational data of a vehicle."
       },
       "kind": "ontology",
       "layer": "domain",
@@ -9087,7 +10315,12 @@
           {
             "url": "https://www.w3.org/TR/vsso-core/",
             "title": "VSSo Core (W3C)",
-            "type": "official-documentation"
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "status",
+              "limitation"
+            ]
           }
         ],
         "notes": "Listed for awareness; not maintained."
@@ -9100,7 +10333,14 @@
       "engineeringUses": [
         "Understanding semantic modelling of vehicle signals (historical reference; draft discontinued)"
       ],
-      "limitations": []
+      "limitations": [
+        {
+          "text": "Published as a W3C Discontinued Draft: not maintained.",
+          "basis": "source",
+          "category": "scope",
+          "sourceRef": "https://www.w3.org/TR/vsso-core/"
+        }
+      ]
     }
   ],
   "resourceFamilies": [
@@ -9108,13 +10348,19 @@
       "id": "semantic",
       "label": "Ontologies & semantic models",
       "default": true,
-      "summary": "Machine-readable models of meaning: ontologies, vocabularies, schemas and modelling languages. The catalogue opens on this family."
+      "summary": "Machine-readable models of meaning and structure: ontologies, vocabularies, data schemas and modelling languages. The catalogue opens on this family."
+    },
+    {
+      "id": "specification",
+      "label": "Standards & architectures",
+      "default": false,
+      "summary": "Normative documents and reference architectures that do not provide a machine-readable model of their own."
     },
     {
       "id": "technology",
       "label": "Engineering & AI technology",
       "default": false,
-      "summary": "Standards documents, datasets, frameworks, simulators and AI frameworks."
+      "summary": "Software frameworks, simulation platforms, AI frameworks, AI models, datasets and benchmarks."
     }
   ],
   "resourceTypes": [
@@ -9140,11 +10386,12 @@
     {
       "id": "data-schema",
       "family": "semantic",
-      "label": "Data schema / information model",
-      "summary": "Structured information model or meta-model for exchanging data (e.g. EXPRESS, UML/MOF, AAS meta-model).",
+      "label": "Data schema / exchange format",
+      "summary": "Information model, meta-model or file format for describing and exchanging engineering data (e.g. EXPRESS, UML/MOF, URDF).",
       "fromKind": [
         "information-model",
-        "meta-model"
+        "meta-model",
+        "file-format"
       ]
     },
     {
@@ -9158,38 +10405,79 @@
     },
     {
       "id": "standard",
+      "family": "specification",
+      "label": "Technical standard / specification",
+      "summary": "Normative document (requirements, test methods, terminology) without a machine-readable model of its own.",
+      "fromKind": [
+        "specification"
+      ]
+    },
+    {
+      "id": "reference-architecture",
+      "family": "specification",
+      "label": "Reference architecture",
+      "summary": "Documented architecture pattern describing how components should be organised.",
+      "fromKind": [
+        "reference-architecture"
+      ]
+    },
+    {
+      "id": "software-framework",
       "family": "technology",
-      "label": "Standard / specification",
-      "summary": "Normative document without a machine-readable model of its own (e.g. a safety or test standard).",
-      "fromKind": []
+      "label": "Software framework / middleware",
+      "summary": "Reusable software libraries, middleware or runtime used to build engineering systems (e.g. robotics middleware).",
+      "fromKind": [
+        "software-framework",
+        "middleware"
+      ]
+    },
+    {
+      "id": "simulation",
+      "family": "technology",
+      "label": "Simulation platform / environment",
+      "summary": "Simulator, physics engine or simulation environment.",
+      "fromKind": [
+        "simulator",
+        "physics-engine"
+      ]
+    },
+    {
+      "id": "ai-framework",
+      "family": "technology",
+      "label": "AI framework / toolkit",
+      "summary": "Software for building, training or evaluating AI systems. Not a model itself.",
+      "fromKind": [
+        "ai-framework"
+      ]
+    },
+    {
+      "id": "ai-model",
+      "family": "technology",
+      "label": "AI model",
+      "summary": "A model architecture or a trained model (with or without published weights). `details.aiModel.artefact` says which; weights carry their own licence scope.",
+      "fromKind": [
+        "model-architecture",
+        "trained-model"
+      ]
     },
     {
       "id": "dataset",
       "family": "technology",
       "label": "Dataset",
       "summary": "Published collection of data with stated provenance and licence.",
-      "fromKind": []
+      "fromKind": [
+        "dataset"
+      ]
     },
     {
-      "id": "framework",
+      "id": "benchmark",
       "family": "technology",
-      "label": "Framework / reference architecture",
-      "summary": "Reference architecture or software framework, for example for digital twins.",
-      "fromKind": []
-    },
-    {
-      "id": "simulation",
-      "family": "technology",
-      "label": "Simulation resource",
-      "summary": "Simulator, physics engine or reusable simulation model.",
-      "fromKind": []
-    },
-    {
-      "id": "ai-framework",
-      "family": "technology",
-      "label": "AI framework",
-      "summary": "Framework, toolkit or model family for AI, including robotics and embodied AI.",
-      "fromKind": []
+      "label": "Benchmark / evaluation protocol",
+      "summary": "Task suite, metric set or test protocol used to evaluate systems. Not training data.",
+      "fromKind": [
+        "benchmark",
+        "evaluation-protocol"
+      ]
     }
   ],
   "knowledgeDomains": [
@@ -9476,9 +10764,19 @@
       "summary": "A formally published standard or specification (catalogue entry or text)."
     },
     {
+      "id": "publisher-repository",
+      "label": "Publisher repository",
+      "summary": "Source repository, release page or data archive maintained by the publisher (e.g. its GitHub organisation or Zenodo record)."
+    },
+    {
       "id": "peer-reviewed",
       "label": "Peer-reviewed research",
       "summary": "Article or paper published after peer review."
+    },
+    {
+      "id": "research-publication",
+      "label": "Research publication (not peer-reviewed)",
+      "summary": "Preprint, technical report or project paper without formal peer review (e.g. arXiv)."
     },
     {
       "id": "project-documentation",
@@ -9497,8 +10795,8 @@
     },
     {
       "id": "third-party",
-      "label": "Other third-party source",
-      "summary": "Secondary sources such as registries, reseller pages or news. Used only as supporting context."
+      "label": "Third-party reference",
+      "summary": "Registries, standards resellers, mailing lists, reseller tutorials or news. Supporting context only; never sole evidence for a capability."
     },
     {
       "id": "editorial",
@@ -10034,8 +11332,10 @@
       "type": "imports",
       "evidence": {
         "url": "https://www.w3.org/TR/vocab-ssn/",
+        "type": "published-specification",
         "note": "The W3C/OGC Recommendation defines SOSA as the lightweight core that SSN builds on and imports."
-      }
+      },
+      "status": "verified"
     },
     {
       "source": "saref4bldg",
@@ -10043,8 +11343,10 @@
       "type": "extends",
       "evidence": {
         "url": "https://saref.etsi.org/saref4bldg/",
+        "type": "published-specification",
         "note": "ETSI TS 103 410-3: SAREF extension for buildings."
-      }
+      },
+      "status": "verified"
     },
     {
       "source": "saref4ener",
@@ -10052,8 +11354,10 @@
       "type": "extends",
       "evidence": {
         "url": "https://saref.etsi.org/saref4ener/",
+        "type": "published-specification",
         "note": "ETSI TS 103 410-1: SAREF extension for energy."
-      }
+      },
+      "status": "verified"
     },
     {
       "source": "ieee-cora",
@@ -10061,8 +11365,10 @@
       "type": "extends",
       "evidence": {
         "url": "https://standards.ieee.org/standard/1872-2015.html",
+        "type": "published-specification",
         "note": "IEEE 1872-2015 builds CORA on SUMO as its upper ontology."
-      }
+      },
+      "status": "verified"
     },
     {
       "source": "sumo-cora",
@@ -10070,8 +11376,10 @@
       "type": "aligns-with",
       "evidence": {
         "url": "https://standards.ieee.org/standard/1872-2015.html",
+        "type": "published-specification",
         "note": "The IEEE 1872-2015 axiomatisation grounds the robotics ontologies in SUMO."
-      }
+      },
+      "status": "verified"
     },
     {
       "source": "sumo-cora",
@@ -10079,8 +11387,10 @@
       "type": "aligns-with",
       "evidence": {
         "url": "https://standards.ieee.org/standard/1872-2015.html",
+        "type": "published-specification",
         "note": "Alignment layer between SUMO and CORA."
-      }
+      },
+      "status": "verified"
     },
     {
       "source": "ieee-corax",
@@ -10088,8 +11398,10 @@
       "type": "part-of",
       "evidence": {
         "url": "https://standards.ieee.org/standard/1872-2015.html",
+        "type": "published-specification",
         "note": "CORAX is specified in IEEE 1872-2015 together with CORA."
-      }
+      },
+      "status": "verified"
     },
     {
       "source": "ieee-rparts",
@@ -10097,8 +11409,10 @@
       "type": "part-of",
       "evidence": {
         "url": "https://standards.ieee.org/standard/1872-2015.html",
+        "type": "published-specification",
         "note": "RPARTS is specified in IEEE 1872-2015."
-      }
+      },
+      "status": "verified"
     },
     {
       "source": "ieee-pos",
@@ -10106,8 +11420,10 @@
       "type": "part-of",
       "evidence": {
         "url": "https://standards.ieee.org/standard/1872-2015.html",
+        "type": "published-specification",
         "note": "POS (position ontology) is specified in IEEE 1872-2015."
-      }
+      },
+      "status": "verified"
     },
     {
       "source": "ieee-aur",
@@ -10115,8 +11431,10 @@
       "type": "extends",
       "evidence": {
         "url": "https://standards.ieee.org/ieee/1872.2/7094/",
+        "type": "published-specification",
         "note": "IEEE 1872.2-2021 extends CORA with autonomous-robotics ontologies."
-      }
+      },
+      "status": "verified"
     },
     {
       "source": "iof-core",
@@ -10124,8 +11442,10 @@
       "type": "imports",
       "evidence": {
         "url": "https://spec.industrialontologies.org/portal/release/202401/core/CoreOntology.html",
+        "type": "published-specification",
         "note": "All IOF ontologies are grounded in BFO 2020."
-      }
+      },
+      "status": "verified"
     },
     {
       "source": "cco",
@@ -10133,8 +11453,10 @@
       "type": "extends",
       "evidence": {
         "url": "https://github.com/CommonCoreOntology/CommonCoreOntologies",
+        "type": "publisher-repository",
         "note": "The Common Core Ontologies are a mid-level extension of BFO."
-      }
+      },
+      "status": "verified"
     },
     {
       "source": "oeo",
@@ -10142,8 +11464,10 @@
       "type": "imports",
       "evidence": {
         "url": "https://github.com/OpenEnergyPlatform/ontology",
+        "type": "publisher-repository",
         "note": "The OEO README states that the ontology makes use of, and follows the principles of, the Basic Formal Ontology."
-      }
+      },
+      "status": "verified"
     },
     {
       "source": "goodrelations",
@@ -10151,8 +11475,10 @@
       "type": "superseded-by",
       "evidence": {
         "url": "https://blog.schema.org/2012/11/08/good-relations-and-schema-org/",
+        "type": "official-documentation",
         "note": "GoodRelations was integrated into schema.org in 2012."
-      }
+      },
+      "status": "verified"
     },
     {
       "source": "gs1-webvoc",
@@ -10160,8 +11486,10 @@
       "type": "extends",
       "evidence": {
         "url": "https://ref.gs1.org/voc/",
+        "type": "official-documentation",
         "note": "The GS1 Web Vocabulary is designed as an extension of schema.org product terms."
-      }
+      },
+      "status": "verified"
     },
     {
       "source": "vsso",
@@ -10169,8 +11497,10 @@
       "type": "follows-pattern-of",
       "evidence": {
         "url": "https://www.w3.org/TR/vsso-core/",
+        "type": "published-specification",
         "note": "VSSo follows the SOSA/SSN pattern for observations and actuations."
-      }
+      },
+      "status": "verified"
     },
     {
       "source": "aas",
@@ -10178,8 +11508,11 @@
       "type": "references",
       "evidence": {
         "url": "https://industrialdigitaltwin.org/en/content-hub/aasspecifications",
+        "type": "official-documentation",
         "note": "AAS semantic IDs commonly reference ECLASS IRDIs; see the AAS metamodel specification."
-      }
+      },
+      "status": "partially-verified",
+      "conditions": "The AAS metamodel allows semantic IDs from any dictionary; ECLASS IRDIs are a common choice, not a requirement."
     },
     {
       "source": "saref4bldg",
@@ -10187,8 +11520,11 @@
       "type": "aligns-with",
       "evidence": {
         "url": "https://saref.etsi.org/saref4bldg/",
+        "type": "published-specification",
         "note": "ETSI states SAREF4BLDG is created based on the Industry Foundation Classes (IFC) standard."
-      }
+      },
+      "status": "partially-verified",
+      "conditions": "SAREF4BLDG is derived from the IFC standard; the relation to the ifcOWL serialisation is indirect."
     },
     {
       "source": "saref4inma",
@@ -10196,8 +11532,10 @@
       "type": "extends",
       "evidence": {
         "url": "https://saref.etsi.org/saref4inma/",
+        "type": "published-specification",
         "note": "ETSI TS 103 410-5: SAREF extension."
-      }
+      },
+      "status": "verified"
     },
     {
       "source": "saref4city",
@@ -10205,8 +11543,10 @@
       "type": "extends",
       "evidence": {
         "url": "https://saref.etsi.org/saref4city/",
+        "type": "published-specification",
         "note": "ETSI TS 103 410-4: SAREF extension."
-      }
+      },
+      "status": "verified"
     },
     {
       "source": "saref4auto",
@@ -10214,8 +11554,10 @@
       "type": "extends",
       "evidence": {
         "url": "https://saref.etsi.org/saref4auto/",
+        "type": "published-specification",
         "note": "ETSI TS 103 410-7: SAREF extension."
-      }
+      },
+      "status": "verified"
     }
   ]
 }

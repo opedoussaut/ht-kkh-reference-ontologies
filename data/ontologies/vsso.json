@@ -8,7 +8,9 @@
   "summary": "OWL ontology for COVESA Vehicle Signal Specification signals, following the SOSA/SSN pattern. The W3C draft was later discontinued.",
   "knowledge": {
     "domain": "product.operations",
-    "basis": "editorial"
+    "basis": "editorial",
+    "confidence": "clear",
+    "rationale": "VSSo models vehicle signals as observable and actuatable properties following SOSA/SSN: operational data of a vehicle."
   },
   "kind": "ontology",
   "layer": "domain",
@@ -57,7 +59,12 @@
       {
         "url": "https://www.w3.org/TR/vsso-core/",
         "title": "VSSo Core (W3C)",
-        "type": "official-documentation"
+        "type": "published-specification",
+        "supports": [
+          "identity",
+          "status",
+          "limitation"
+        ]
       }
     ],
     "notes": "Listed for awareness; not maintained."
@@ -70,5 +77,12 @@
   "engineeringUses": [
     "Understanding semantic modelling of vehicle signals (historical reference; draft discontinued)"
   ],
-  "limitations": []
+  "limitations": [
+    {
+      "text": "Published as a W3C Discontinued Draft: not maintained.",
+      "basis": "source",
+      "category": "scope",
+      "sourceRef": "https://www.w3.org/TR/vsso-core/"
+    }
+  ]
 }

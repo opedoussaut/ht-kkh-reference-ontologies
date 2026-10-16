@@ -6,7 +6,9 @@
   "summary": "OWL-DL extension of SAREF with general concepts for smart-city data in the IoT domain, such as city objects, administrative areas, public services and key performance indicators.",
   "knowledge": {
     "domain": "product.operations",
-    "basis": "editorial"
+    "basis": "editorial",
+    "confidence": "tentative",
+    "rationale": "SAREF4CITY covers city objects, administrative areas, public services and KPIs for IoT data. Operational data is the main use, but geographic and administrative concepts are also central."
   },
   "publisher": "ETSI",
   "publisherType": "standards-body",
@@ -63,7 +65,12 @@
       {
         "url": "https://saref.etsi.org/saref4city/",
         "title": "ETSI SAREF4CITY",
-        "type": "official-documentation"
+        "type": "published-specification",
+        "supports": [
+          "identity",
+          "version",
+          "licence"
+        ]
       }
     ],
     "notes": "First published 2020-06-05; page last modified 2025-04-11."

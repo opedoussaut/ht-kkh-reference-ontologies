@@ -8,7 +8,8 @@
   "summary": "W3C vocabulary for describing datasets, data services and catalogues, the basis of many data-space and open-data catalogues.",
   "knowledge": {
     "domain": "foundations.metadata",
-    "basis": "editorial"
+    "basis": "editorial",
+    "confidence": "clear"
   },
   "kind": "vocabulary",
   "layer": "cross-domain",
@@ -62,7 +63,12 @@
       {
         "url": "https://www.w3.org/TR/vocab-dcat-3/",
         "title": "DCAT 3 W3C Recommendation",
-        "type": "official-documentation"
+        "type": "published-specification",
+        "supports": [
+          "identity",
+          "version",
+          "status"
+        ]
       }
     ],
     "notes": ""

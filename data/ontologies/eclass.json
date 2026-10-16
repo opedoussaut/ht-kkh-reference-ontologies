@@ -6,7 +6,8 @@
   "summary": "Classification ontology for products, properties, and industrial semantics.",
   "knowledge": {
     "domain": "product.catalogues",
-    "basis": "editorial"
+    "basis": "editorial",
+    "confidence": "clear"
   },
   "publisher": "ECLASS e.V.",
   "publisherType": "industry-association",
@@ -68,17 +69,28 @@
       {
         "url": "https://eclass.eu/shop/en/product/eclass-15-0",
         "title": "ECLASS 15.0 product page",
-        "type": "official-documentation"
+        "type": "official-documentation",
+        "supports": [
+          "version",
+          "licence"
+        ]
       },
       {
         "url": "https://eclass.eu/shop/en/product/eclass-16-0",
         "title": "ECLASS 16.0 product page",
-        "type": "official-documentation"
+        "type": "official-documentation",
+        "supports": [
+          "version",
+          "licence"
+        ]
       },
       {
         "url": "https://eclass.eu/en/news/news/first-eclass-as-rdf-specification",
         "title": "ECLASS as RDF specification announcement",
-        "type": "official-documentation"
+        "type": "official-documentation",
+        "supports": [
+          "scope"
+        ]
       }
     ],
     "notes": "ECLASS is primarily a classification system; an RDF serialisation is specified. Commercial licence required."
@@ -112,5 +124,12 @@
     "Classifying purchased parts and describing them with standard properties",
     "Giving AAS submodel elements standardised semantic identifiers (IRDIs)"
   ],
-  "limitations": []
+  "limitations": [
+    {
+      "text": "All ECLASS releases, including the RDF serialisation, require a commercial licence.",
+      "basis": "source",
+      "category": "access",
+      "sourceRef": "https://eclass.eu/shop/en/product/eclass-16-0"
+    }
+  ]
 }

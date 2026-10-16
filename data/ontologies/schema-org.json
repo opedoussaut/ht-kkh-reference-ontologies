@@ -7,8 +7,10 @@
   "publisherType": "consortium",
   "summary": "Widely deployed vocabulary for structured data on the web: products, offers, organisations, events and more. Absorbed GoodRelations in 2012.",
   "knowledge": {
-    "domain": "business.commerce",
-    "basis": "editorial"
+    "domain": "foundations.metadata",
+    "basis": "editorial",
+    "confidence": "clear",
+    "rationale": "Schema.org is a general-purpose vocabulary for describing things on the web. Commerce is one part of it, so metadata and cataloguing is the better primary domain."
   },
   "kind": "vocabulary",
   "layer": "cross-domain",
@@ -68,12 +70,19 @@
       {
         "url": "https://schema.org/docs/terms.html",
         "title": "Schema.org terms",
-        "type": "official-documentation"
+        "type": "official-documentation",
+        "supports": [
+          "licence"
+        ]
       },
       {
         "url": "https://blog.schema.org/2012/11/08/good-relations-and-schema-org/",
         "title": "GoodRelations integration announcement",
-        "type": "unclassified"
+        "type": "official-documentation",
+        "supports": [
+          "status",
+          "relationship"
+        ]
       }
     ],
     "notes": ""

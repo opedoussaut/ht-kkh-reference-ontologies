@@ -6,7 +6,8 @@
   "summary": "Brick Schema is an open OWL ontology for modeling buildings, infrastructure, and their systems, including spaces, equipment, power distribution, cooling, HVAC, and sensors. It provides a formal semantic foundation to represent and reason over the physical and infrastructural structure of AI factories and data centers.",
   "knowledge": {
     "domain": "product.operations",
-    "basis": "editorial"
+    "basis": "editorial",
+    "confidence": "clear"
   },
   "publisher": "Brick Consortium",
   "publisherType": "consortium",
@@ -68,12 +69,20 @@
       {
         "url": "https://github.com/BrickSchema/Brick/releases",
         "title": "Brick releases",
-        "type": "unclassified"
+        "type": "publisher-repository",
+        "supports": [
+          "version"
+        ]
       },
       {
         "url": "https://brickschema.org/",
         "title": "Brick Schema",
-        "type": "official-documentation"
+        "type": "official-documentation",
+        "supports": [
+          "identity",
+          "scope",
+          "licence"
+        ]
       }
     ],
     "notes": ""

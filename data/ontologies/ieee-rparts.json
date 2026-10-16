@@ -6,7 +6,8 @@
   "summary": "Reference ontology related to robot parts and component decomposition.",
   "knowledge": {
     "domain": "product.structure",
-    "basis": "editorial"
+    "basis": "editorial",
+    "confidence": "clear"
   },
   "publisher": "IEEE Robotics and Automation Society",
   "publisherType": "standards-body",
@@ -60,7 +61,12 @@
       {
         "url": "https://standards.ieee.org/standard/1872-2015.html",
         "title": "IEEE 1872-2015 Standard Ontologies for Robotics and Automation",
-        "type": "official-documentation"
+        "type": "published-specification",
+        "supports": [
+          "identity",
+          "status",
+          "licence"
+        ]
       }
     ],
     "notes": "Specified within IEEE 1872-2015."
@@ -109,5 +115,12 @@
     "Describing a robot’s decomposition into parts such as actuators, sensors and links",
     "Mapping physical robot components to their functional roles"
   ],
-  "limitations": []
+  "limitations": [
+    {
+      "text": "The normative text is sold by IEEE; only catalogue information is publicly available.",
+      "basis": "source",
+      "category": "access",
+      "sourceRef": "https://standards.ieee.org/standard/1872-2015.html"
+    }
+  ]
 }

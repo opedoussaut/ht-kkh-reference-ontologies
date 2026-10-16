@@ -6,7 +6,8 @@
   "summary": "Ontology for quantities, units, dimensions, and datatypes.",
   "knowledge": {
     "domain": "foundations.quantities",
-    "basis": "editorial"
+    "basis": "editorial",
+    "confidence": "clear"
   },
   "publisher": "QUDT",
   "publisherType": "consortium",
@@ -67,17 +68,27 @@
       {
         "url": "https://qudt.org/",
         "title": "QUDT",
-        "type": "official-documentation"
+        "type": "official-documentation",
+        "supports": [
+          "identity",
+          "licence"
+        ]
       },
       {
         "url": "https://qudt.org/doc/2026/01/DOC_VOCAB-CONSTANTS.html",
         "title": "QUDT constants vocabulary, version 3.1.10",
-        "type": "official-documentation"
+        "type": "official-documentation",
+        "supports": [
+          "version"
+        ]
       },
       {
         "url": "https://qudt.org/schema/qudt/",
         "title": "QUDT schema (Turtle), declares \"QUDT Schema - Version 3.5.2\"",
-        "type": "official-documentation"
+        "type": "publisher-repository",
+        "supports": [
+          "version"
+        ]
       }
     ],
     "notes": "Version taken from the schema file itself on 2026-10-15; release date not stated in the file."
@@ -111,7 +122,13 @@
     "Attaching units and quantity kinds to engineering parameters to avoid unit errors",
     "Converting values between unit systems in data pipelines"
   ],
-  "limitations": [],
+  "limitations": [
+    {
+      "text": "The release date of schema 3.5.2 is not stated in the schema file.",
+      "basis": "editorial",
+      "category": "catalogue-gap"
+    }
+  ],
   "corrections": [
     {
       "field": "version",

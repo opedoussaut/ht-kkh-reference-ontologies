@@ -6,7 +6,8 @@
   "summary": "Smart Applications REFerence ontology for interoperable devices and services.",
   "knowledge": {
     "domain": "product.interfaces",
-    "basis": "editorial"
+    "basis": "editorial",
+    "confidence": "clear"
   },
   "publisher": "ETSI",
   "publisherType": "standards-body",
@@ -70,7 +71,12 @@
       {
         "url": "https://saref.etsi.org/core/",
         "title": "ETSI SAREF Core",
-        "type": "official-documentation"
+        "type": "published-specification",
+        "supports": [
+          "identity",
+          "version",
+          "licence"
+        ]
       }
     ],
     "notes": ""

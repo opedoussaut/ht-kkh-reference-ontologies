@@ -8,7 +8,9 @@
   "summary": "Community ontology for energy-system modelling (technologies, carriers, scenarios, emissions), built on BFO.",
   "knowledge": {
     "domain": "foundations.science",
-    "basis": "editorial"
+    "basis": "editorial",
+    "confidence": "tentative",
+    "rationale": "The OEO describes energy-system models, scenarios and technologies used in research. \"Scientific methods & research data\" is the closest fit; a dedicated energy domain does not exist."
   },
   "kind": "ontology",
   "layer": "domain",
@@ -62,12 +64,20 @@
       {
         "url": "https://openenergyplatform.org/ontology/",
         "title": "OEO on the Open Energy Platform",
-        "type": "official-documentation"
+        "type": "official-documentation",
+        "supports": [
+          "identity",
+          "version"
+        ]
       },
       {
         "url": "https://github.com/OpenEnergyPlatform/ontology",
         "title": "OEO repository",
-        "type": "unclassified"
+        "type": "publisher-repository",
+        "supports": [
+          "licence",
+          "relationship"
+        ]
       }
     ],
     "notes": ""

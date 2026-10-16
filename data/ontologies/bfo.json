@@ -8,7 +8,8 @@
   "summary": "Top-level ontology standardised as ISO/IEC 21838-2. Provides the formal backbone for the IOF, CCO, OEO and many OBO ontologies.",
   "knowledge": {
     "domain": "foundations.formal",
-    "basis": "editorial"
+    "basis": "editorial",
+    "confidence": "clear"
   },
   "kind": "ontology",
   "layer": "upper",
@@ -67,12 +68,20 @@
       {
         "url": "https://github.com/BFO-ontology/BFO-2020",
         "title": "BFO-2020 repository (CC BY 4.0)",
-        "type": "unclassified"
+        "type": "publisher-repository",
+        "supports": [
+          "licence",
+          "version"
+        ]
       },
       {
         "url": "https://webstore.iec.ch/en/publication/72703",
         "title": "ISO/IEC 21838-2:2021",
-        "type": "unclassified"
+        "type": "published-specification",
+        "supports": [
+          "identity",
+          "version"
+        ]
       }
     ],
     "notes": ""

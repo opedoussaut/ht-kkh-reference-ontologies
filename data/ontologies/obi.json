@@ -6,7 +6,8 @@
   "summary": "Community ontology for describing scientific investigations: assays, devices, protocols, objectives and data transformations. It defines more than 2,500 terms and is used for biomedical and laboratory data integration.",
   "knowledge": {
     "domain": "foundations.science",
-    "basis": "editorial"
+    "basis": "editorial",
+    "confidence": "clear"
   },
   "publisher": "OBI Consortium",
   "publisherType": "consortium",
@@ -58,12 +59,19 @@
       {
         "url": "https://obi-ontology.org/",
         "title": "OBI website",
-        "type": "official-documentation"
+        "type": "official-documentation",
+        "supports": [
+          "identity",
+          "scope"
+        ]
       },
       {
         "url": "https://github.com/obi-ontology/obi",
         "title": "OBI repository (CC BY 4.0)",
-        "type": "unclassified"
+        "type": "publisher-repository",
+        "supports": [
+          "licence"
+        ]
       }
     ],
     "notes": "The current release version is not stated on the website or repository front page."
@@ -77,5 +85,11 @@
     "Describing laboratory assays, instruments and protocols consistently across studies",
     "Annotating experimental data for integration and reuse"
   ],
-  "limitations": []
+  "limitations": [
+    {
+      "text": "The current release version is not stated on the website or repository front page.",
+      "basis": "editorial",
+      "category": "catalogue-gap"
+    }
+  ]
 }

@@ -6,7 +6,8 @@
   "summary": "Reference ontology in the robotics corpus; kept as a governed candidate pending fuller validation.",
   "knowledge": {
     "domain": "product.systems",
-    "basis": "editorial"
+    "basis": "editorial",
+    "confidence": "clear"
   },
   "publisher": "IEEE Robotics and Automation Society",
   "publisherType": "standards-body",
@@ -60,7 +61,12 @@
       {
         "url": "https://standards.ieee.org/standard/1872-2015.html",
         "title": "IEEE 1872-2015 Standard Ontologies for Robotics and Automation",
-        "type": "official-documentation"
+        "type": "published-specification",
+        "supports": [
+          "identity",
+          "status",
+          "licence"
+        ]
       }
     ],
     "notes": "Specified within IEEE 1872-2015 alongside CORA, RPARTS and POS."
@@ -109,5 +115,12 @@
     "Capturing design and interaction concepts that are shared across robotics sub-domains",
     "Complementing CORA when describing robot environments and interactions"
   ],
-  "limitations": []
+  "limitations": [
+    {
+      "text": "The normative text is sold by IEEE; only catalogue information is publicly available.",
+      "basis": "source",
+      "category": "access",
+      "sourceRef": "https://standards.ieee.org/standard/1872-2015.html"
+    }
+  ]
 }
