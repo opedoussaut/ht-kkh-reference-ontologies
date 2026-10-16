@@ -1,0 +1,125 @@
+{
+  "id": "ros2",
+  "name": "ROS 2",
+  "fullName": "Robot Operating System 2",
+  "resourceType": "software-framework",
+  "kind": "middleware",
+  "summary": "Open-source middleware, libraries and tools for building robot applications, with a publish/subscribe communication layer and a large package ecosystem. Distributions are released yearly; even-year releases are long-term support.",
+  "knowledge": {
+    "domain": "product.interfaces",
+    "basis": "editorial",
+    "confidence": "clear",
+    "rationale": "ROS 2 primarily defines how robot software components communicate (messages, services, actions)."
+  },
+  "publisher": "Open Robotics / ROS community",
+  "publisherType": "consortium",
+  "topics": [
+    "robot middleware",
+    "messaging",
+    "robot software"
+  ],
+  "version": {
+    "label": "Lyrical Luth (LTS), released 22 May 2026, supported to May 2031",
+    "date": "2026-05-22",
+    "status": "published"
+  },
+  "maturity": "stable",
+  "license": {
+    "name": "Apache-2.0 (core packages)",
+    "access": "open",
+    "url": "https://www.apache.org/licenses/LICENSE-2.0",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
+  },
+  "licenses": [
+    {
+      "scope": "software",
+      "name": "Apache License 2.0 (core client library rclcpp)",
+      "spdx": "Apache-2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0",
+      "statedAt": "https://github.com/ros2/rclcpp",
+      "commercialUse": "permitted",
+      "reviewStatus": "reviewed",
+      "reviewNote": "As granted by the licence text; dependencies and third-party components not assessed. Not legal advice."
+    }
+  ],
+  "links": {
+    "official": "https://docs.ros.org/",
+    "repository": "https://github.com/ros2"
+  },
+  "formats": [
+    "ROS messages (.msg/.srv/.action)",
+    "URDF (robot description)"
+  ],
+  "industries": [
+    "industrial-equipment",
+    "high-tech",
+    "transportation-mobility"
+  ],
+  "useCases": [
+    "robot-development"
+  ],
+  "capabilities": [
+    "robotics-autonomy",
+    "data-exchange"
+  ],
+  "physicalAi": [],
+  "limitations": [
+    {
+      "text": "docs.ros.org blocks automated retrieval; the Lyrical release date comes from a third-party listing, and its LTS status from the Gazebo compatibility documentation.",
+      "basis": "editorial",
+      "category": "catalogue-gap"
+    },
+    {
+      "text": "Packages in the ROS ecosystem carry their own licences; only the core client library licence is recorded here.",
+      "basis": "editorial",
+      "category": "scope"
+    }
+  ],
+  "engineeringUses": [
+    "Connecting perception, planning and control components of a robot through typed messages",
+    "Running the same robot software against a simulator or the real robot through standard interfaces"
+  ],
+  "verification": {
+    "checkedOn": "2026-10-16",
+    "status": "partially-verified",
+    "notes": "Official documentation could not be fetched automatically; version facts cross-checked with the Gazebo–ROS compatibility table.",
+    "sources": [
+      {
+        "url": "https://gazebosim.org/docs/latest/ros_installation/",
+        "title": "Gazebo: installing Gazebo with ROS (lists ROS 2 Lyrical as LTS)",
+        "type": "official-documentation",
+        "supports": [
+          "status",
+          "relationship"
+        ]
+      },
+      {
+        "url": "https://endoflife.date/ros-2",
+        "title": "endoflife.date — ROS 2 release and support dates",
+        "type": "third-party",
+        "supports": [
+          "version"
+        ]
+      },
+      {
+        "url": "https://github.com/ros2/rclcpp",
+        "title": "ROS 2 C++ client library (Apache-2.0)",
+        "type": "publisher-repository",
+        "supports": [
+          "identity",
+          "licence"
+        ]
+      }
+    ]
+  },
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
+  },
+  "origin": "v2"
+}

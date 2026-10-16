@@ -9,13 +9,15 @@ import { PROPOSED } from '../scripts/phase2/proposed-mapping.mjs';
 
 const ROOT = fileURLToPath(new URL('..', import.meta.url));
 const src = loadSources(ROOT);
+const preIds = new Set(JSON.parse(readFileSync(join(ROOT, 'tests/fixtures/pre-phase2-ids.json'), 'utf8')).ids);
+const preRecords = src.ontologies.filter((o) => preIds.has(o.record.id));
 const tax = (f) => JSON.parse(readFileSync(join(ROOT, 'data/taxonomy', f), 'utf8'));
 const TAXONOMIES = ['resource-types.json', 'knowledge-domains.json', 'capabilities.json', 'physical-ai.json', 'evidence-types.json'];
 
-test('taxonomies are versioned and active (Physical AI stays proposed), with unique ids and labels', () => {
+test('taxonomies are versioned and active, with unique ids and labels', () => {
   for (const f of TAXONOMIES) {
     const t = tax(f);
-    assert.equal(t._status, f === 'physical-ai.json' ? 'proposed' : 'active', f);
+    assert.equal(t._status, 'active', f);
     assert.match(t._version, /^\d+\.\d+\.\d+$/, f);
     const items = f === 'knowledge-domains.json' ? t.items.flatMap((d) => [d, ...d.children]) : t.items;
     const ids = items.map((i) => i.id);
@@ -27,7 +29,7 @@ test('taxonomies are versioned and active (Physical AI stays proposed), with uni
 test('every existing kind maps to exactly one resource type, in the default semantic family', () => {
   const types = tax('resource-types.json');
   const def = types.families.find((f) => f.default).id;
-  for (const { record } of src.ontologies) {
+  for (const { record } of preRecords) {
     const matches = types.items.filter((t) => t.fromKind.includes(record.kind));
     assert.equal(matches.length, 1, `${record.id} kind ${record.kind}`);
     assert.equal(matches[0].family, def, `${record.id} must stay in the default catalogue view`);
@@ -35,8 +37,8 @@ test('every existing kind maps to exactly one resource type, in the default sema
 });
 
 test('proposed mapping covers every record exactly, with valid domain and capability ids', () => {
-  const ids = src.ontologies.map((o) => o.record.id).sort();
-  assert.deepEqual(Object.keys(PROPOSED).sort(), ids);
+  const ids = preRecords.map((o) => o.record.id).sort();
+  assert.deepEqual(Object.keys(PROPOSED).sort(), ids, 'the approved mapping covers exactly the pre-migration records');
   const sub = new Set(tax('knowledge-domains.json').items.flatMap((d) => d.children.map((c) => c.id)));
   const caps = new Set(tax('capabilities.json').items.map((c) => c.id));
   for (const [id, p] of Object.entries(PROPOSED)) {
@@ -46,8 +48,8 @@ test('proposed mapping covers every record exactly, with valid domain and capabi
   }
 });
 
-test('no Physical AI assignments in Phase 2', () => {
-  for (const { record } of src.ontologies) assert.ok(!record.physicalAi?.length, record.id);
+test('no Physical AI assignments on the pre-migration records', () => {
+  for (const { record } of preRecords) assert.ok(!record.physicalAi?.length, record.id);
 });
 
 function* walk(dir) {

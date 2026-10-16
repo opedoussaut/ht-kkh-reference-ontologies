@@ -5,7 +5,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-# Reference Ontology Atlas — generated 2026-10-15. Do not edit by hand; run `npm run build`.
+# Reference Ontology Atlas — generated 2026-10-16. Do not edit by hand; run `npm run build`.
 # Public information only. Every fact is backed by a cited public source; verification status and date are shown on each record.
 
 atlas:ReferenceOntology a rdfs:Class ; rdfs:label "Reference ontology" .
@@ -35,6 +35,12 @@ atlas:aligns_with a owl:ObjectProperty ; rdfs:label "aligns with" ; rdfs:comment
 atlas:superseded_by a owl:ObjectProperty ; rdfs:label "integrated into" ; rdfs:comment "Content was integrated into, or is continued by, the target." .
 atlas:references a owl:ObjectProperty ; rdfs:label "references" ; rdfs:comment "Uses identifiers or terms from the target." .
 atlas:follows_pattern_of a owl:ObjectProperty ; rdfs:label "follows pattern of" ; rdfs:comment "Reuses the target's design pattern." .
+atlas:supports_format a owl:ObjectProperty ; rdfs:label "supports the format" ; rdfs:comment "Reads or writes the target format, as stated in the publisher's documentation." .
+atlas:implements_interface a owl:ObjectProperty ; rdfs:label "provides an interface to" ; rdfs:comment "Ships a documented bridge or interface to the target." .
+atlas:depends_on a owl:ObjectProperty ; rdfs:label "depends on" ; rdfs:comment "Requires the target to run, as stated by the publisher." .
+atlas:integrates_with a owl:ObjectProperty ; rdfs:label "documents integration with" ; rdfs:comment "Documents a supported integration with the target (e.g. a supported benchmark)." .
+atlas:trained_on a owl:ObjectProperty ; rdfs:label "was trained on" ; rdfs:comment "Model trained on the target dataset, as stated by its authors." .
+atlas:evaluated_with a owl:ObjectProperty ; rdfs:label "was evaluated with" ; rdfs:comment "Evaluated on the target benchmark, with results reported by its authors." .
 
 atlas:industry-transportation-mobility a atlas:Industry ; skos:prefLabel "Transportation & Mobility" ; dcterms:description "Automotive, rail and mobility systems, including software-defined vehicles." .
 atlas:industry-aerospace-defense a atlas:Industry ; skos:prefLabel "Aerospace & Defense" ; dcterms:description "Aircraft, space systems and defence programmes driven by systems engineering and certification." .
@@ -49,6 +55,7 @@ atlas:industry-architecture-engineering-construction a atlas:Industry ; skos:pre
 atlas:industry-business-services a atlas:Industry ; skos:prefLabel "Business Services" ; dcterms:description "Data management, cataloguing, commerce and knowledge services." .
 atlas:industry-cities-public-services a atlas:Industry ; skos:prefLabel "Cities & Public Services" ; dcterms:description "Smart cities, geospatial data, public administration and regulation." .
 atlas:industry-cross-industry a atlas:Industry ; skos:prefLabel "Cross-Industry" ; dcterms:description "Foundational and horizontal ontologies reusable in every industry." .
+atlas:usecase-robot-development a atlas:UseCase ; skos:prefLabel "Robot development reference ecosystem" ; dcterms:description "An editorial map of public resources that help an engineer understand, simulate and develop a robot. It is ordered from shared concepts, through engineering representations and frameworks, to data, AI models and validation. Documented technical connections are cited; the reference workflow is a suggestion, not a demonstrated integration." .
 atlas:usecase-ai-factories a atlas:UseCase ; skos:prefLabel "AI Factories" ; dcterms:description "AI factories combine dense GPU compute with power distribution, liquid cooling and building systems. Getting the facility, IT equipment and energy models to share one semantic backbone makes capacity planning, energy optimisation and digital-twin operations possible." .
 atlas:usecase-general-purpose-robotics a atlas:UseCase ; skos:prefLabel "General Purpose Robotics" ; dcterms:description "General-purpose robots need shared definitions of robot parts, poses, capabilities and tasks so that design, simulation, AI control and certification work from the same model. The IEEE 1872 family gives a standardised backbone on top of an upper ontology." .
 atlas:usecase-semiconductors a atlas:UseCase ; skos:prefLabel "Semiconductors" ; dcterms:description "Semiconductor value chains span design, front-end fabrication, back-end assembly and test, and highly distributed supply chains. Public ontologies cover supply-chain semantics, product classification, materials and units; fab-equipment standards are still mostly non-semantic." .
@@ -113,6 +120,7 @@ atlas:ieee-aur a atlas:ReferenceOntology ;
     atlas:industry atlas:industry-industrial-equipment ;
     atlas:industry atlas:industry-high-tech ;
     atlas:useCase atlas:usecase-general-purpose-robotics ;
+    atlas:useCase atlas:usecase-robot-development ;
     rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/ieee-aur> .
 
 atlas:bfo a atlas:ReferenceOntology ;
@@ -254,6 +262,7 @@ atlas:ieee-cora a atlas:ReferenceOntology ;
     atlas:industry atlas:industry-industrial-equipment ;
     atlas:industry atlas:industry-high-tech ;
     atlas:useCase atlas:usecase-general-purpose-robotics ;
+    atlas:useCase atlas:usecase-robot-development ;
     rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/ieee-cora> .
 
 atlas:ieee-corax a atlas:ReferenceOntology ;
@@ -485,6 +494,33 @@ atlas:emmo a atlas:ReferenceOntology ;
     atlas:useCase atlas:usecase-sustainability ;
     rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/emmo> .
 
+atlas:gazebo a atlas:ReferenceOntology ;
+    dcterms:title "Gazebo" ;
+    skos:altLabel "Gazebo open-source robotics simulator" ;
+    dcterms:description "Open-source robotics simulator with SDFormat models, sensors and plugins, integrated with ROS 2 through the ros_gz packages. Long-term-support releases pair with ROS 2 LTS distributions." ;
+    atlas:publisher "Open Robotics" ;
+    atlas:officialSource <https://gazebosim.org/> ;
+    atlas:versionLabel "Gazebo Jetty (LTS, September 2025 – May 2031)" ;
+    atlas:licenseName "Apache-2.0 (Gazebo Sim library)" ;
+    atlas:licenseAccess "open" ;
+    atlas:maturity "stable" ;
+    atlas:layer "undefined" ;
+    atlas:kind "simulator" ;
+    atlas:verificationStatus "verified" ;
+    atlas:resourceType "simulation" ;
+    atlas:knowledgeDomain "product.behaviour" ;
+    atlas:capability "simulation-validation" ;
+    atlas:capability "robotics-autonomy" ;
+    atlas:licenseReviewStatus "not-assessed" ;
+    atlas:topic "robot simulation" ;
+    atlas:topic "sensors" ;
+    atlas:topic "SDFormat" ;
+    atlas:industry atlas:industry-industrial-equipment ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-transportation-mobility ;
+    atlas:useCase atlas:usecase-robot-development ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/gazebo> .
+
 atlas:geosparql a atlas:ReferenceOntology ;
     dcterms:title "GeoSPARQL" ;
     skos:altLabel "OGC GeoSPARQL — A Geographic Query Language for RDF Data" ;
@@ -670,6 +706,33 @@ atlas:iof-core a atlas:ReferenceOntology ;
     atlas:useCase atlas:usecase-general-purpose-robotics ;
     rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/iof-core> .
 
+atlas:iso-10218-1 a atlas:ReferenceOntology ;
+    dcterms:title "ISO 10218-1:2025" ;
+    skos:altLabel "ISO 10218-1:2025 Robotics — Safety requirements — Part 1: Industrial robots" ;
+    dcterms:description "International standard specifying safety requirements for industrial robots as partly completed machinery. The 2025 edition makes functional-safety requirements explicit and integrates collaborative-robot requirements previously in ISO/TS 15066." ;
+    atlas:publisher "ISO TC 299 (Robotics)" ;
+    atlas:officialSource <https://www.iso.org/standard/73933.html> ;
+    atlas:versionLabel "Edition 3 (2025)" ;
+    atlas:licenseName "ISO standard (purchase required)" ;
+    atlas:licenseAccess "licensed" ;
+    atlas:maturity "standard" ;
+    atlas:layer "undefined" ;
+    atlas:kind "specification" ;
+    atlas:verificationStatus "partially-verified" ;
+    atlas:resourceType "standard" ;
+    atlas:knowledgeDomain "product.requirements" ;
+    atlas:capability "safety-assurance" ;
+    atlas:capability "robotics-autonomy" ;
+    atlas:licenseReviewStatus "not-assessed" ;
+    atlas:topic "robot safety" ;
+    atlas:topic "functional safety" ;
+    atlas:topic "collaborative robots" ;
+    atlas:industry atlas:industry-industrial-equipment ;
+    atlas:industry atlas:industry-transportation-mobility ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:useCase atlas:usecase-robot-development ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/iso-10218-1> .
+
 atlas:iso-15926-14 a atlas:ReferenceOntology ;
     dcterms:title "ISO 15926-14" ;
     skos:altLabel "ISO 15926-14 — OWL 2 ontology for process-plant lifecycle data" ;
@@ -694,6 +757,141 @@ atlas:iso-15926-14 a atlas:ReferenceOntology ;
     atlas:industry atlas:industry-marine-offshore ;
     atlas:industry atlas:industry-infrastructure-energy-materials ;
     rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/iso-15926-14> .
+
+atlas:lerobot a atlas:ReferenceOntology ;
+    dcterms:title "LeRobot" ;
+    skos:altLabel "Hugging Face LeRobot" ;
+    dcterms:description "PyTorch library providing models, datasets and tools for real-world robotics: the LeRobotDataset format, implementations of imitation-learning, reinforcement-learning and VLA policies, and evaluation in simulation or on hardware." ;
+    atlas:publisher "Hugging Face" ;
+    atlas:officialSource <https://github.com/huggingface/lerobot> ;
+    atlas:versionLabel "Version not stated on the project page" ;
+    atlas:licenseName "Apache-2.0" ;
+    atlas:licenseAccess "open" ;
+    atlas:maturity "emerging" ;
+    atlas:layer "undefined" ;
+    atlas:kind "ai-framework" ;
+    atlas:verificationStatus "partially-verified" ;
+    atlas:resourceType "ai-framework" ;
+    atlas:knowledgeDomain "product.behaviour" ;
+    atlas:capability "robotics-autonomy" ;
+    atlas:capability "ai-model-development" ;
+    atlas:licenseReviewStatus "not-assessed" ;
+    atlas:topic "robot learning" ;
+    atlas:topic "policies" ;
+    atlas:topic "robot datasets" ;
+    atlas:industry atlas:industry-industrial-equipment ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:useCase atlas:usecase-robot-development ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/lerobot> .
+
+atlas:libero a atlas:ReferenceOntology ;
+    dcterms:title "LIBERO" ;
+    skos:altLabel "LIBERO lifelong robot-learning benchmark" ;
+    dcterms:description "Benchmark for knowledge transfer in multitask and lifelong robot learning: 130 procedurally generated manipulation tasks in four suites (Spatial, Object, Goal, and LIBERO-100 split into 90 and 10)." ;
+    atlas:publisher "LIBERO authors (Lifelong-Robot-Learning)" ;
+    atlas:officialSource <https://github.com/Lifelong-Robot-Learning/LIBERO> ;
+    atlas:versionLabel "LIBERO (arXiv:2306.03310)" ;
+    atlas:licenseName "Code MIT; datasets CC BY 4.0" ;
+    atlas:licenseAccess "open" ;
+    atlas:maturity "research" ;
+    atlas:layer "undefined" ;
+    atlas:kind "benchmark" ;
+    atlas:verificationStatus "verified" ;
+    atlas:resourceType "benchmark" ;
+    atlas:knowledgeDomain "product.requirements" ;
+    atlas:capability "simulation-validation" ;
+    atlas:capability "ai-model-development" ;
+    atlas:capability "robotics-autonomy" ;
+    atlas:licenseReviewStatus "not-assessed" ;
+    atlas:topic "benchmark" ;
+    atlas:topic "lifelong learning" ;
+    atlas:topic "manipulation" ;
+    atlas:industry atlas:industry-industrial-equipment ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:useCase atlas:usecase-robot-development ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/libero> .
+
+atlas:mujoco a atlas:ReferenceOntology ;
+    dcterms:title "MuJoCo" ;
+    skos:altLabel "MuJoCo — Multi-Joint dynamics with Contact" ;
+    dcterms:description "General-purpose physics simulator for articulated systems with contact, widely used in robotics and robot-learning research. Loads its native MJCF format and URDF." ;
+    atlas:publisher "Google DeepMind" ;
+    atlas:officialSource <https://mujoco.readthedocs.io/> ;
+    atlas:versionLabel "MuJoCo 3.16.0" ;
+    atlas:licenseName "Apache-2.0" ;
+    atlas:licenseAccess "open" ;
+    atlas:maturity "stable" ;
+    atlas:layer "undefined" ;
+    atlas:kind "physics-engine" ;
+    atlas:verificationStatus "verified" ;
+    atlas:resourceType "simulation" ;
+    atlas:knowledgeDomain "product.behaviour" ;
+    atlas:capability "simulation-validation" ;
+    atlas:capability "robotics-autonomy" ;
+    atlas:licenseReviewStatus "not-assessed" ;
+    atlas:topic "physics simulation" ;
+    atlas:topic "contact dynamics" ;
+    atlas:topic "articulated bodies" ;
+    atlas:industry atlas:industry-industrial-equipment ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-life-sciences-healthcare ;
+    atlas:useCase atlas:usecase-robot-development ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/mujoco> .
+
+atlas:isaac-lab a atlas:ReferenceOntology ;
+    dcterms:title "NVIDIA Isaac Lab" ;
+    skos:altLabel "Isaac Lab robot-learning framework" ;
+    dcterms:description "Open-source framework for robot learning (reinforcement learning, imitation learning, motion planning) built on Isaac Sim, with ready-to-train environments and sensor models." ;
+    atlas:publisher "NVIDIA" ;
+    atlas:officialSource <https://github.com/isaac-sim/IsaacLab> ;
+    atlas:versionLabel "Isaac Lab 3.0.0 (targets Isaac Sim 6.2)" ;
+    atlas:licenseName "BSD-3-Clause (framework); depends on Isaac Sim terms" ;
+    atlas:licenseAccess "open-with-terms" ;
+    atlas:maturity "stable" ;
+    atlas:layer "undefined" ;
+    atlas:kind "ai-framework" ;
+    atlas:verificationStatus "verified" ;
+    atlas:resourceType "ai-framework" ;
+    atlas:knowledgeDomain "product.behaviour" ;
+    atlas:capability "robotics-autonomy" ;
+    atlas:capability "simulation-validation" ;
+    atlas:capability "ai-model-development" ;
+    atlas:licenseReviewStatus "not-assessed" ;
+    atlas:topic "robot learning" ;
+    atlas:topic "reinforcement learning" ;
+    atlas:topic "imitation learning" ;
+    atlas:industry atlas:industry-industrial-equipment ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:useCase atlas:usecase-robot-development ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/isaac-lab> .
+
+atlas:isaac-sim a atlas:ReferenceOntology ;
+    dcterms:title "NVIDIA Isaac Sim" ;
+    skos:altLabel "NVIDIA Isaac Sim robotics simulation platform" ;
+    dcterms:description "Robotics simulation platform built on NVIDIA Omniverse, with a USD-native scene representation, import of URDF, MJCF and CAD models, simulated sensors and a ROS bridge." ;
+    atlas:publisher "NVIDIA" ;
+    atlas:officialSource <https://docs.isaacsim.omniverse.nvidia.com/latest/index.html> ;
+    atlas:versionLabel "Isaac Sim 6.x (documentation covers 6.0 and 6.1 migrations; Isaac Lab 3.0 targets 6.2)" ;
+    atlas:licenseName "Source code Apache-2.0; building and running it requires NVIDIA Omniverse components under NVIDIA terms" ;
+    atlas:licenseAccess "open-with-terms" ;
+    atlas:maturity "stable" ;
+    atlas:layer "undefined" ;
+    atlas:kind "simulator" ;
+    atlas:verificationStatus "partially-verified" ;
+    atlas:resourceType "simulation" ;
+    atlas:knowledgeDomain "product.behaviour" ;
+    atlas:capability "simulation-validation" ;
+    atlas:capability "robotics-autonomy" ;
+    atlas:capability "digital-twin" ;
+    atlas:licenseReviewStatus "not-assessed" ;
+    atlas:topic "robot simulation" ;
+    atlas:topic "synthetic data" ;
+    atlas:topic "sensor simulation" ;
+    atlas:industry atlas:industry-industrial-equipment ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-transportation-mobility ;
+    atlas:useCase atlas:usecase-robot-development ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/isaac-sim> .
 
 atlas:obi a atlas:ReferenceOntology ;
     dcterms:title "OBI" ;
@@ -747,6 +945,86 @@ atlas:oeo a atlas:ReferenceOntology ;
     atlas:useCase atlas:usecase-ai-factories ;
     atlas:useCase atlas:usecase-sustainability ;
     rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/oeo> .
+
+atlas:open-x-embodiment a atlas:ReferenceOntology ;
+    dcterms:title "Open X-Embodiment" ;
+    skos:altLabel "Open X-Embodiment robot learning dataset" ;
+    dcterms:description "Collection of more than one million real-robot trajectories across 22 robot embodiments, pooled from 60 existing datasets of 34 research labs, released with the RT-X models." ;
+    atlas:publisher "Open X-Embodiment Collaboration" ;
+    atlas:officialSource <https://robotics-transformer-x.github.io/> ;
+    atlas:versionLabel "Dataset release accompanying arXiv:2310.08864" ;
+    atlas:licenseName "Not stated on the project page" ;
+    atlas:licenseAccess "unknown" ;
+    atlas:maturity "research" ;
+    atlas:layer "undefined" ;
+    atlas:kind "dataset" ;
+    atlas:verificationStatus "partially-verified" ;
+    atlas:resourceType "dataset" ;
+    atlas:knowledgeDomain "product.operations" ;
+    atlas:capability "robotics-autonomy" ;
+    atlas:capability "ai-model-development" ;
+    atlas:licenseReviewStatus "not-assessed" ;
+    atlas:topic "robot demonstrations" ;
+    atlas:topic "cross-embodiment learning" ;
+    atlas:industry atlas:industry-industrial-equipment ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:useCase atlas:usecase-robot-development ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/open-x-embodiment> .
+
+atlas:openusd a atlas:ReferenceOntology ;
+    dcterms:title "OpenUSD" ;
+    skos:altLabel "Universal Scene Description (OpenUSD)" ;
+    dcterms:description "Extensible software platform and file format for collaboratively constructing and exchanging 3D scenes, originally developed by Pixar. Used as the scene representation of several robotics simulators." ;
+    atlas:publisher "Pixar Animation Studios" ;
+    atlas:officialSource <https://openusd.org/release/index.html> ;
+    atlas:versionLabel "OpenUSD 26.08" ;
+    atlas:licenseName "Tomorrow Open Source Technology License 1.0 (Apache 2.0 with a modified trademark section)" ;
+    atlas:licenseAccess "open" ;
+    atlas:maturity "stable" ;
+    atlas:layer "domain" ;
+    atlas:kind "file-format" ;
+    atlas:verificationStatus "verified" ;
+    atlas:resourceType "data-schema" ;
+    atlas:knowledgeDomain "product.structure" ;
+    atlas:capability "digital-twin" ;
+    atlas:capability "data-exchange" ;
+    atlas:capability "simulation-validation" ;
+    atlas:licenseReviewStatus "not-assessed" ;
+    atlas:topic "3D scene description" ;
+    atlas:topic "composition" ;
+    atlas:topic "digital twins" ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-industrial-equipment ;
+    atlas:industry atlas:industry-architecture-engineering-construction ;
+    atlas:industry atlas:industry-cross-industry ;
+    atlas:useCase atlas:usecase-robot-development ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/openusd> .
+
+atlas:openvla a atlas:ReferenceOntology ;
+    dcterms:title "OpenVLA" ;
+    skos:altLabel "OpenVLA vision-language-action model (openvla-7b)" ;
+    dcterms:description "Open 7B-parameter vision-language-action model that maps camera images and language instructions to robot actions, trained on an Open X-Embodiment mixture. The code and the trained weights carry different terms." ;
+    atlas:publisher "OpenVLA authors (Stanford, UC Berkeley, Toyota Research Institute, Google DeepMind and others)" ;
+    atlas:officialSource <https://github.com/openvla/openvla> ;
+    atlas:versionLabel "openvla-7b" ;
+    atlas:licenseName "Code MIT; weights subject to the Llama Community License" ;
+    atlas:licenseAccess "open-with-terms" ;
+    atlas:maturity "research" ;
+    atlas:layer "undefined" ;
+    atlas:kind "trained-model" ;
+    atlas:verificationStatus "verified" ;
+    atlas:resourceType "ai-model" ;
+    atlas:knowledgeDomain "product.behaviour" ;
+    atlas:capability "robotics-autonomy" ;
+    atlas:capability "ai-model-development" ;
+    atlas:licenseReviewStatus "not-assessed" ;
+    atlas:topic "vision-language-action" ;
+    atlas:topic "robot policy" ;
+    atlas:topic "foundation model" ;
+    atlas:industry atlas:industry-industrial-equipment ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:useCase atlas:usecase-robot-development ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/openvla> .
 
 atlas:oriont a atlas:ReferenceOntology ;
     dcterms:title "ORIONT" ;
@@ -831,6 +1109,7 @@ atlas:ieee-pos a atlas:ReferenceOntology ;
     atlas:industry atlas:industry-industrial-equipment ;
     atlas:industry atlas:industry-high-tech ;
     atlas:useCase atlas:usecase-general-purpose-robotics ;
+    atlas:useCase atlas:usecase-robot-development ;
     rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/ieee-pos> .
 
 atlas:prov-o a atlas:ReferenceOntology ;
@@ -894,6 +1173,7 @@ atlas:qudt a atlas:ReferenceOntology ;
     atlas:useCase atlas:usecase-personal-electronics ;
     atlas:useCase atlas:usecase-general-purpose-robotics ;
     atlas:useCase atlas:usecase-sustainability ;
+    atlas:useCase atlas:usecase-robot-development ;
     rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/qudt> .
 
 atlas:ieee-rtr a atlas:ReferenceOntology ;
@@ -919,7 +1199,35 @@ atlas:ieee-rtr a atlas:ReferenceOntology ;
     atlas:industry atlas:industry-industrial-equipment ;
     atlas:industry atlas:industry-high-tech ;
     atlas:useCase atlas:usecase-general-purpose-robotics ;
+    atlas:useCase atlas:usecase-robot-development ;
     rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/ieee-rtr> .
+
+atlas:ros2 a atlas:ReferenceOntology ;
+    dcterms:title "ROS 2" ;
+    skos:altLabel "Robot Operating System 2" ;
+    dcterms:description "Open-source middleware, libraries and tools for building robot applications, with a publish/subscribe communication layer and a large package ecosystem. Distributions are released yearly; even-year releases are long-term support." ;
+    atlas:publisher "Open Robotics / ROS community" ;
+    atlas:officialSource <https://docs.ros.org/> ;
+    atlas:versionLabel "Lyrical Luth (LTS), released 22 May 2026, supported to May 2031" ;
+    atlas:licenseName "Apache-2.0 (core packages)" ;
+    atlas:licenseAccess "open" ;
+    atlas:maturity "stable" ;
+    atlas:layer "undefined" ;
+    atlas:kind "middleware" ;
+    atlas:verificationStatus "partially-verified" ;
+    atlas:resourceType "software-framework" ;
+    atlas:knowledgeDomain "product.interfaces" ;
+    atlas:capability "robotics-autonomy" ;
+    atlas:capability "data-exchange" ;
+    atlas:licenseReviewStatus "not-assessed" ;
+    atlas:topic "robot middleware" ;
+    atlas:topic "messaging" ;
+    atlas:topic "robot software" ;
+    atlas:industry atlas:industry-industrial-equipment ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-transportation-mobility ;
+    atlas:useCase atlas:usecase-robot-development ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/ros2> .
 
 atlas:ieee-rparts a atlas:ReferenceOntology ;
     dcterms:title "RPARTS" ;
@@ -944,6 +1252,7 @@ atlas:ieee-rparts a atlas:ReferenceOntology ;
     atlas:industry atlas:industry-industrial-equipment ;
     atlas:industry atlas:industry-high-tech ;
     atlas:useCase atlas:usecase-general-purpose-robotics ;
+    atlas:useCase atlas:usecase-robot-development ;
     rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/ieee-rparts> .
 
 atlas:saref-core a atlas:ReferenceOntology ;
@@ -1206,6 +1515,7 @@ atlas:sosa a atlas:ReferenceOntology ;
     atlas:useCase atlas:usecase-semiconductors ;
     atlas:useCase atlas:usecase-personal-electronics ;
     atlas:useCase atlas:usecase-general-purpose-robotics ;
+    atlas:useCase atlas:usecase-robot-development ;
     rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/sosa> .
 
 atlas:ssn a atlas:ReferenceOntology ;
@@ -1351,7 +1661,36 @@ atlas:sysml-v2 a atlas:ReferenceOntology ;
     atlas:industry atlas:industry-high-tech ;
     atlas:useCase atlas:usecase-general-purpose-robotics ;
     atlas:useCase atlas:usecase-ai-factories ;
+    atlas:useCase atlas:usecase-robot-development ;
     rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/sysml-v2> .
+
+atlas:urdf a atlas:ReferenceOntology ;
+    dcterms:title "URDF" ;
+    skos:altLabel "Unified Robot Description Format" ;
+    dcterms:description "XML format for describing a robot model: links, joints, inertial, visual and collision properties. It is the de facto robot description exchanged between ROS tools and many simulators." ;
+    atlas:publisher "ROS community" ;
+    atlas:officialSource <https://github.com/ros/urdfdom> ;
+    atlas:versionLabel "Specification maintained by the ROS community (no version number published)" ;
+    atlas:licenseName "Parser libraries BSD-3-Clause; licence of the specification text not stated" ;
+    atlas:licenseAccess "open" ;
+    atlas:maturity "stable" ;
+    atlas:layer "domain" ;
+    atlas:kind "file-format" ;
+    atlas:verificationStatus "partially-verified" ;
+    atlas:resourceType "data-schema" ;
+    atlas:knowledgeDomain "product.structure" ;
+    atlas:capability "robotics-autonomy" ;
+    atlas:capability "data-exchange" ;
+    atlas:capability "simulation-validation" ;
+    atlas:licenseReviewStatus "not-assessed" ;
+    atlas:topic "robot description" ;
+    atlas:topic "kinematics" ;
+    atlas:topic "links and joints" ;
+    atlas:industry atlas:industry-industrial-equipment ;
+    atlas:industry atlas:industry-high-tech ;
+    atlas:industry atlas:industry-transportation-mobility ;
+    atlas:useCase atlas:usecase-robot-development ;
+    rdfs:seeAlso <https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/urdf> .
 
 atlas:vsso a atlas:ReferenceOntology ;
     dcterms:title "VSSo" ;
@@ -1397,3 +1736,13 @@ atlas:saref4bldg atlas:aligns_with atlas:ifcowl .
 atlas:saref4inma atlas:extends atlas:saref-core .
 atlas:saref4city atlas:extends atlas:saref-core .
 atlas:saref4auto atlas:extends atlas:saref-core .
+atlas:isaac-sim atlas:supports_format atlas:urdf .
+atlas:isaac-sim atlas:supports_format atlas:openusd .
+atlas:isaac-sim atlas:implements_interface atlas:ros2 .
+atlas:isaac-lab atlas:depends_on atlas:isaac-sim .
+atlas:mujoco atlas:supports_format atlas:urdf .
+atlas:gazebo atlas:implements_interface atlas:ros2 .
+atlas:ros2 atlas:supports_format atlas:urdf .
+atlas:lerobot atlas:integrates_with atlas:libero .
+atlas:openvla atlas:trained_on atlas:open-x-embodiment .
+atlas:openvla atlas:evaluated_with atlas:libero .

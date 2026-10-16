@@ -1,0 +1,124 @@
+{
+  "id": "open-x-embodiment",
+  "name": "Open X-Embodiment",
+  "fullName": "Open X-Embodiment robot learning dataset",
+  "resourceType": "dataset",
+  "kind": "dataset",
+  "summary": "Collection of more than one million real-robot trajectories across 22 robot embodiments, pooled from 60 existing datasets of 34 research labs, released with the RT-X models.",
+  "knowledge": {
+    "domain": "product.operations",
+    "basis": "editorial",
+    "confidence": "tentative",
+    "rationale": "Recorded robot trajectories are operational data; the dataset is mainly used to train policies."
+  },
+  "publisher": "Open X-Embodiment Collaboration",
+  "publisherType": "research",
+  "topics": [
+    "robot demonstrations",
+    "cross-embodiment learning"
+  ],
+  "version": {
+    "label": "Dataset release accompanying arXiv:2310.08864",
+    "date": null,
+    "status": "published"
+  },
+  "maturity": "research",
+  "license": {
+    "name": "Not stated on the project page",
+    "access": "unknown",
+    "url": null,
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
+  },
+  "licenses": [
+    {
+      "scope": "dataset",
+      "name": "Not stated on the project page",
+      "url": null,
+      "statedAt": "https://robotics-transformer-x.github.io/",
+      "commercialUse": "unknown",
+      "reviewStatus": "not-assessed"
+    }
+  ],
+  "links": {
+    "official": "https://robotics-transformer-x.github.io/"
+  },
+  "formats": [
+    "Standardised episode format (see project page)"
+  ],
+  "industries": [
+    "industrial-equipment",
+    "high-tech"
+  ],
+  "useCases": [
+    "robot-development"
+  ],
+  "capabilities": [
+    "robotics-autonomy",
+    "ai-model-development"
+  ],
+  "physicalAi": [],
+  "details": {
+    "dataset": {
+      "modalities": [
+        "RGB images",
+        "robot state",
+        "actions",
+        "language instructions"
+      ],
+      "size": "1M+ trajectories",
+      "collection": "60 existing datasets from 34 robotic research labs",
+      "embodiments": "22"
+    }
+  },
+  "limitations": [
+    {
+      "text": "The licence is not stated on the project page; it aggregates 60 datasets whose individual terms were not assessed.",
+      "basis": "editorial",
+      "category": "catalogue-gap"
+    },
+    {
+      "text": "Real-robot demonstrations from research labs; coverage of industrial settings was not assessed.",
+      "basis": "editorial",
+      "category": "scope"
+    }
+  ],
+  "engineeringUses": [
+    "Pre-training generalist robot policies on data from many robot types",
+    "Studying how training data from one robot transfers to another"
+  ],
+  "verification": {
+    "checkedOn": "2026-10-16",
+    "status": "partially-verified",
+    "notes": "Licence not stated; preprint only.",
+    "sources": [
+      {
+        "url": "https://robotics-transformer-x.github.io/",
+        "title": "Open X-Embodiment project page",
+        "type": "official-documentation",
+        "supports": [
+          "identity",
+          "scope"
+        ]
+      },
+      {
+        "url": "https://arxiv.org/abs/2310.08864",
+        "title": "Open X-Embodiment: Robotic Learning Datasets and RT-X Models (arXiv)",
+        "type": "research-publication",
+        "supports": [
+          "identity",
+          "scope"
+        ]
+      }
+    ]
+  },
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
+  },
+  "origin": "v2"
+}

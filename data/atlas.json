@@ -3,20 +3,27 @@
     "title": "Reference Ontology Atlas",
     "version": "3.0.0",
     "schema": "v3",
-    "generatedOn": "2026-10-15",
+    "generatedOn": "2026-10-16",
     "site": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/",
     "counts": {
-      "resources": 46,
-      "ontologies": 46,
+      "resources": 58,
+      "ontologies": 48,
       "byResourceType": {
-        "data-schema": 4,
+        "data-schema": 6,
         "ontology": 34,
         "vocabulary": 7,
+        "simulation": 3,
+        "standard": 1,
+        "ai-framework": 2,
+        "benchmark": 1,
+        "dataset": 1,
+        "ai-model": 1,
+        "software-framework": 1,
         "modelling-language": 1
       },
-      "relations": 21,
+      "relations": 31,
       "industries": 13,
-      "useCases": 5,
+      "useCases": 6,
       "legacyRecords": 26
     },
     "disclaimer": "Public information only. Every fact is backed by a cited public source; verification status and date are shown on each record."
@@ -202,7 +209,8 @@
         "high-tech"
       ],
       "useCases": [
-        "general-purpose-robotics"
+        "general-purpose-robotics",
+        "robot-development"
       ],
       "capabilities": [
         "robotics-autonomy"
@@ -774,7 +782,8 @@
         "high-tech"
       ],
       "useCases": [
-        "general-purpose-robotics"
+        "general-purpose-robotics",
+        "robot-development"
       ],
       "capabilities": [
         "robotics-autonomy",
@@ -1789,6 +1798,131 @@
       ]
     },
     {
+      "id": "gazebo",
+      "name": "Gazebo",
+      "fullName": "Gazebo open-source robotics simulator",
+      "resourceType": "simulation",
+      "kind": "simulator",
+      "summary": "Open-source robotics simulator with SDFormat models, sensors and plugins, integrated with ROS 2 through the ros_gz packages. Long-term-support releases pair with ROS 2 LTS distributions.",
+      "knowledge": {
+        "domain": "product.behaviour",
+        "basis": "editorial",
+        "confidence": "clear",
+        "rationale": "Simulates robot behaviour, sensors and environments."
+      },
+      "publisher": "Open Robotics",
+      "publisherType": "consortium",
+      "topics": [
+        "robot simulation",
+        "sensors",
+        "SDFormat"
+      ],
+      "version": {
+        "label": "Gazebo Jetty (LTS, September 2025 – May 2031)",
+        "date": "2025-09",
+        "status": "published"
+      },
+      "maturity": "stable",
+      "license": {
+        "name": "Apache-2.0 (Gazebo Sim library)",
+        "access": "open",
+        "url": "https://www.apache.org/licenses/LICENSE-2.0",
+        "reviewStatus": "not-assessed",
+        "commercialReuse": "unknown"
+      },
+      "licenses": [
+        {
+          "scope": "software",
+          "name": "Apache License 2.0 (gz-sim)",
+          "spdx": "Apache-2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0",
+          "statedAt": "https://github.com/gazebosim/gz-sim",
+          "commercialUse": "permitted",
+          "reviewStatus": "reviewed",
+          "reviewNote": "As granted by the licence text; dependencies and third-party components not assessed. Not legal advice."
+        }
+      ],
+      "links": {
+        "official": "https://gazebosim.org/",
+        "repository": "https://github.com/gazebosim/gz-sim"
+      },
+      "formats": [
+        "SDFormat (SDF)"
+      ],
+      "industries": [
+        "industrial-equipment",
+        "high-tech",
+        "transportation-mobility"
+      ],
+      "useCases": [
+        "robot-development"
+      ],
+      "capabilities": [
+        "simulation-validation",
+        "robotics-autonomy"
+      ],
+      "physicalAi": [
+        "simulation-digital-twins"
+      ],
+      "limitations": [
+        {
+          "text": "Recommended ROS 2 pairings are release-specific (for example Jetty with Lyrical and Rolling, Harmonic with Jazzy).",
+          "basis": "source",
+          "category": "scope",
+          "sourceRef": "https://gazebosim.org/docs/latest/ros_installation/"
+        }
+      ],
+      "engineeringUses": [
+        "Testing ROS 2 robot software in simulated worlds with simulated sensors",
+        "Running regression tests of navigation or manipulation stacks in continuous integration"
+      ],
+      "verification": {
+        "checkedOn": "2026-10-16",
+        "status": "verified",
+        "notes": "",
+        "sources": [
+          {
+            "url": "https://gazebosim.org/docs/latest/releases/",
+            "title": "Gazebo releases",
+            "type": "official-documentation",
+            "supports": [
+              "version",
+              "status"
+            ]
+          },
+          {
+            "url": "https://github.com/gazebosim/gz-sim",
+            "title": "Gazebo Sim repository (Apache-2.0)",
+            "type": "publisher-repository",
+            "supports": [
+              "identity",
+              "licence",
+              "capability"
+            ]
+          },
+          {
+            "url": "https://gazebosim.org/docs/latest/ros_installation/",
+            "title": "Gazebo: installing Gazebo with ROS",
+            "type": "official-documentation",
+            "supports": [
+              "relationship",
+              "limitation"
+            ]
+          }
+        ]
+      },
+      "classificationBasis": {
+        "industries": "editorial",
+        "capabilities": "editorial",
+        "physicalAi": "editorial"
+      },
+      "editorialReview": {
+        "reviewedOn": "2026-10-16",
+        "reviewer": "atlas-editors"
+      },
+      "origin": "v2"
+    },
+    {
       "id": "geosparql",
       "name": "GeoSPARQL",
       "fullName": "OGC GeoSPARQL — A Geographic Query Language for RDF Data",
@@ -2498,6 +2632,132 @@
       "limitations": []
     },
     {
+      "id": "iso-10218-1",
+      "name": "ISO 10218-1:2025",
+      "fullName": "ISO 10218-1:2025 Robotics — Safety requirements — Part 1: Industrial robots",
+      "resourceType": "standard",
+      "kind": "specification",
+      "summary": "International standard specifying safety requirements for industrial robots as partly completed machinery. The 2025 edition makes functional-safety requirements explicit and integrates collaborative-robot requirements previously in ISO/TS 15066.",
+      "knowledge": {
+        "domain": "product.requirements",
+        "basis": "editorial",
+        "confidence": "clear",
+        "rationale": "Normative safety requirements."
+      },
+      "publisher": "ISO TC 299 (Robotics)",
+      "publisherType": "standards-body",
+      "topics": [
+        "robot safety",
+        "functional safety",
+        "collaborative robots"
+      ],
+      "standardRef": "ISO 10218-1:2025",
+      "version": {
+        "label": "Edition 3 (2025)",
+        "date": "2025-02",
+        "status": "published"
+      },
+      "maturity": "standard",
+      "license": {
+        "name": "ISO standard (purchase required)",
+        "access": "licensed",
+        "url": "https://www.iso.org/standard/73933.html",
+        "reviewStatus": "not-assessed",
+        "commercialReuse": "unknown"
+      },
+      "licenses": [
+        {
+          "scope": "specification",
+          "name": "ISO copyright; sold by ISO and national bodies",
+          "url": null,
+          "statedAt": "https://www.iso.org/standard/73933.html",
+          "commercialUse": "unknown",
+          "reviewStatus": "not-assessed"
+        }
+      ],
+      "links": {
+        "official": "https://www.iso.org/standard/73933.html"
+      },
+      "formats": [
+        "Document"
+      ],
+      "industries": [
+        "industrial-equipment",
+        "transportation-mobility",
+        "high-tech"
+      ],
+      "useCases": [
+        "robot-development"
+      ],
+      "capabilities": [
+        "safety-assurance",
+        "robotics-autonomy"
+      ],
+      "physicalAi": [
+        "safety-testing-validation"
+      ],
+      "details": {
+        "standard": {
+          "body": "ISO",
+          "designation": "ISO 10218-1:2025",
+          "edition": "3"
+        }
+      },
+      "limitations": [
+        {
+          "text": "The normative text is sold by ISO; only catalogue information is public.",
+          "basis": "source",
+          "category": "access",
+          "sourceRef": "https://www.iso.org/standard/73933.html"
+        },
+        {
+          "text": "The ISO catalogue blocks automated checks; edition and date confirmed through search results and industry announcements.",
+          "basis": "editorial",
+          "category": "catalogue-gap"
+        }
+      ],
+      "engineeringUses": [
+        "Deriving safety requirements for an industrial robot or robot cell design",
+        "Planning verification activities for collaborative robot applications"
+      ],
+      "verification": {
+        "checkedOn": "2026-10-16",
+        "status": "partially-verified",
+        "notes": "ISO page not retrievable automatically.",
+        "sources": [
+          {
+            "url": "https://www.iso.org/standard/73933.html",
+            "title": "ISO 10218-1:2025 catalogue entry",
+            "type": "published-specification",
+            "supports": [
+              "identity",
+              "version",
+              "status",
+              "capability"
+            ]
+          },
+          {
+            "url": "https://www.automate.org/robotics/news/updated-iso-10218-major-advancements-in-industrial-robot-safety-standards-now-available/aph",
+            "title": "A3: Updated ISO 10218 now available",
+            "type": "third-party",
+            "supports": [
+              "scope"
+            ]
+          }
+        ]
+      },
+      "classificationBasis": {
+        "industries": "editorial",
+        "capabilities": "editorial",
+        "physicalAi": "editorial"
+      },
+      "editorialReview": {
+        "reviewedOn": "2026-10-16",
+        "reviewer": "atlas-editors"
+      },
+      "origin": "v2"
+    },
+    {
       "id": "iso-15926-14",
       "name": "ISO 15926-14",
       "fullName": "ISO 15926-14 — OWL 2 ontology for process-plant lifecycle data",
@@ -2598,6 +2858,644 @@
           "category": "catalogue-gap"
         }
       ]
+    },
+    {
+      "id": "lerobot",
+      "name": "LeRobot",
+      "fullName": "Hugging Face LeRobot",
+      "resourceType": "ai-framework",
+      "kind": "ai-framework",
+      "summary": "PyTorch library providing models, datasets and tools for real-world robotics: the LeRobotDataset format, implementations of imitation-learning, reinforcement-learning and VLA policies, and evaluation in simulation or on hardware.",
+      "knowledge": {
+        "domain": "product.behaviour",
+        "basis": "editorial",
+        "confidence": "clear",
+        "rationale": "Trains, runs and evaluates robot policies."
+      },
+      "publisher": "Hugging Face",
+      "publisherType": "industry",
+      "topics": [
+        "robot learning",
+        "policies",
+        "robot datasets"
+      ],
+      "version": {
+        "label": "Version not stated on the project page",
+        "date": null,
+        "status": "published"
+      },
+      "maturity": "emerging",
+      "license": {
+        "name": "Apache-2.0",
+        "access": "open",
+        "url": "https://www.apache.org/licenses/LICENSE-2.0",
+        "reviewStatus": "not-assessed",
+        "commercialReuse": "unknown"
+      },
+      "licenses": [
+        {
+          "scope": "software",
+          "name": "Apache License 2.0",
+          "spdx": "Apache-2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0",
+          "statedAt": "https://github.com/huggingface/lerobot",
+          "commercialUse": "permitted",
+          "reviewStatus": "reviewed",
+          "reviewNote": "As granted by the licence text; dependencies and third-party components not assessed. Not legal advice."
+        },
+        {
+          "scope": "model-weights",
+          "name": "Per-model terms on the Hugging Face Hub (not assessed)",
+          "url": null,
+          "statedAt": "https://github.com/huggingface/lerobot",
+          "commercialUse": "unknown",
+          "reviewStatus": "not-assessed"
+        },
+        {
+          "scope": "dataset",
+          "name": "Per-dataset terms on the Hugging Face Hub (not assessed)",
+          "url": null,
+          "statedAt": "https://github.com/huggingface/lerobot",
+          "commercialUse": "unknown",
+          "reviewStatus": "not-assessed"
+        }
+      ],
+      "links": {
+        "official": "https://github.com/huggingface/lerobot",
+        "repository": "https://github.com/huggingface/lerobot"
+      },
+      "formats": [
+        "LeRobotDataset (Parquet + MP4)",
+        "Python"
+      ],
+      "industries": [
+        "industrial-equipment",
+        "high-tech"
+      ],
+      "useCases": [
+        "robot-development"
+      ],
+      "capabilities": [
+        "robotics-autonomy",
+        "ai-model-development"
+      ],
+      "physicalAi": [
+        "robot-capabilities-control"
+      ],
+      "limitations": [
+        {
+          "text": "Release version not stated on the project page; model checkpoints and datasets on the Hub carry their own terms.",
+          "basis": "editorial",
+          "category": "catalogue-gap"
+        }
+      ],
+      "engineeringUses": [
+        "Recording teleoperation demonstrations in a common dataset format",
+        "Training and comparing imitation-learning policies on low-cost or research robots"
+      ],
+      "verification": {
+        "checkedOn": "2026-10-16",
+        "status": "partially-verified",
+        "notes": "Version not stated by the publisher.",
+        "sources": [
+          {
+            "url": "https://github.com/huggingface/lerobot",
+            "title": "LeRobot repository (README)",
+            "type": "publisher-repository",
+            "supports": [
+              "identity",
+              "licence",
+              "capability",
+              "relationship"
+            ]
+          }
+        ]
+      },
+      "classificationBasis": {
+        "industries": "editorial",
+        "capabilities": "editorial",
+        "physicalAi": "editorial"
+      },
+      "editorialReview": {
+        "reviewedOn": "2026-10-16",
+        "reviewer": "atlas-editors"
+      },
+      "origin": "v2"
+    },
+    {
+      "id": "libero",
+      "name": "LIBERO",
+      "fullName": "LIBERO lifelong robot-learning benchmark",
+      "resourceType": "benchmark",
+      "kind": "benchmark",
+      "summary": "Benchmark for knowledge transfer in multitask and lifelong robot learning: 130 procedurally generated manipulation tasks in four suites (Spatial, Object, Goal, and LIBERO-100 split into 90 and 10).",
+      "knowledge": {
+        "domain": "product.requirements",
+        "basis": "editorial",
+        "confidence": "clear",
+        "rationale": "Defines evaluation tasks and success criteria for robot policies."
+      },
+      "publisher": "LIBERO authors (Lifelong-Robot-Learning)",
+      "publisherType": "research",
+      "topics": [
+        "benchmark",
+        "lifelong learning",
+        "manipulation"
+      ],
+      "version": {
+        "label": "LIBERO (arXiv:2306.03310)",
+        "date": null,
+        "status": "published"
+      },
+      "maturity": "research",
+      "license": {
+        "name": "Code MIT; datasets CC BY 4.0",
+        "access": "open",
+        "url": "https://github.com/Lifelong-Robot-Learning/LIBERO",
+        "reviewStatus": "not-assessed",
+        "commercialReuse": "unknown"
+      },
+      "licenses": [
+        {
+          "scope": "software",
+          "name": "MIT License (benchmark code)",
+          "spdx": "MIT",
+          "url": "https://opensource.org/license/mit",
+          "statedAt": "https://github.com/Lifelong-Robot-Learning/LIBERO",
+          "commercialUse": "permitted",
+          "reviewStatus": "reviewed",
+          "reviewNote": "As granted by the licence text; dependencies and third-party components not assessed. Not legal advice."
+        },
+        {
+          "scope": "dataset",
+          "name": "Creative Commons Attribution 4.0 (datasets)",
+          "spdx": "CC-BY-4.0",
+          "url": "https://creativecommons.org/licenses/by/4.0/",
+          "statedAt": "https://github.com/Lifelong-Robot-Learning/LIBERO",
+          "commercialUse": "permitted",
+          "reviewStatus": "reviewed",
+          "reviewNote": "As granted by the licence text; dependencies and third-party components not assessed. Not legal advice."
+        }
+      ],
+      "links": {
+        "official": "https://github.com/Lifelong-Robot-Learning/LIBERO",
+        "repository": "https://github.com/Lifelong-Robot-Learning/LIBERO"
+      },
+      "formats": [
+        "Python",
+        "HDF5 demonstrations"
+      ],
+      "industries": [
+        "industrial-equipment",
+        "high-tech"
+      ],
+      "useCases": [
+        "robot-development"
+      ],
+      "capabilities": [
+        "simulation-validation",
+        "ai-model-development",
+        "robotics-autonomy"
+      ],
+      "physicalAi": [
+        "safety-testing-validation"
+      ],
+      "details": {
+        "benchmark": {
+          "evaluates": "Knowledge transfer in multitask and lifelong robot learning (manipulation policies)",
+          "metrics": [
+            "task success rate"
+          ],
+          "environment": "Simulated tabletop manipulation"
+        }
+      },
+      "limitations": [
+        {
+          "text": "Evaluates simulated tabletop manipulation; results do not establish real-world or safety performance.",
+          "basis": "editorial",
+          "category": "scope"
+        },
+        {
+          "text": "The simulation back-end is not named on the project page.",
+          "basis": "editorial",
+          "category": "catalogue-gap"
+        }
+      ],
+      "engineeringUses": [
+        "Comparing manipulation policies on a shared, reproducible task suite",
+        "Testing whether a policy keeps earlier skills when trained on new tasks"
+      ],
+      "verification": {
+        "checkedOn": "2026-10-16",
+        "status": "verified",
+        "notes": "",
+        "sources": [
+          {
+            "url": "https://github.com/Lifelong-Robot-Learning/LIBERO",
+            "title": "LIBERO repository (README)",
+            "type": "publisher-repository",
+            "supports": [
+              "identity",
+              "licence",
+              "capability",
+              "scope"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/abs/2306.03310",
+            "title": "LIBERO: Benchmarking Knowledge Transfer for Lifelong Robot Learning (arXiv)",
+            "type": "research-publication",
+            "supports": [
+              "identity"
+            ]
+          }
+        ]
+      },
+      "classificationBasis": {
+        "industries": "editorial",
+        "capabilities": "editorial",
+        "physicalAi": "editorial"
+      },
+      "editorialReview": {
+        "reviewedOn": "2026-10-16",
+        "reviewer": "atlas-editors"
+      },
+      "origin": "v2"
+    },
+    {
+      "id": "mujoco",
+      "name": "MuJoCo",
+      "fullName": "MuJoCo — Multi-Joint dynamics with Contact",
+      "resourceType": "simulation",
+      "kind": "physics-engine",
+      "summary": "General-purpose physics simulator for articulated systems with contact, widely used in robotics and robot-learning research. Loads its native MJCF format and URDF.",
+      "knowledge": {
+        "domain": "product.behaviour",
+        "basis": "editorial",
+        "confidence": "clear",
+        "rationale": "Simulates the dynamic behaviour of articulated systems."
+      },
+      "publisher": "Google DeepMind",
+      "publisherType": "industry",
+      "topics": [
+        "physics simulation",
+        "contact dynamics",
+        "articulated bodies"
+      ],
+      "version": {
+        "label": "MuJoCo 3.16.0",
+        "date": "2026-10-14",
+        "status": "published"
+      },
+      "maturity": "stable",
+      "license": {
+        "name": "Apache-2.0",
+        "access": "open",
+        "url": "https://www.apache.org/licenses/LICENSE-2.0",
+        "reviewStatus": "not-assessed",
+        "commercialReuse": "unknown"
+      },
+      "licenses": [
+        {
+          "scope": "software",
+          "name": "Apache License 2.0",
+          "spdx": "Apache-2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0",
+          "statedAt": "https://github.com/google-deepmind/mujoco",
+          "commercialUse": "permitted",
+          "reviewStatus": "reviewed",
+          "reviewNote": "As granted by the licence text; dependencies and third-party components not assessed. Not legal advice."
+        }
+      ],
+      "links": {
+        "official": "https://mujoco.readthedocs.io/",
+        "repository": "https://github.com/google-deepmind/mujoco"
+      },
+      "formats": [
+        "MJCF (XML)",
+        "URDF",
+        "MJB"
+      ],
+      "industries": [
+        "industrial-equipment",
+        "high-tech",
+        "life-sciences-healthcare"
+      ],
+      "useCases": [
+        "robot-development"
+      ],
+      "capabilities": [
+        "simulation-validation",
+        "robotics-autonomy"
+      ],
+      "physicalAi": [
+        "simulation-digital-twins"
+      ],
+      "limitations": [],
+      "engineeringUses": [
+        "Simulating contact-rich manipulation and locomotion for controller design",
+        "Providing a fast physics back-end for robot-learning benchmarks"
+      ],
+      "verification": {
+        "checkedOn": "2026-10-16",
+        "status": "verified",
+        "notes": "",
+        "sources": [
+          {
+            "url": "https://github.com/google-deepmind/mujoco",
+            "title": "MuJoCo repository (Apache-2.0)",
+            "type": "publisher-repository",
+            "supports": [
+              "identity",
+              "licence",
+              "capability"
+            ]
+          },
+          {
+            "url": "https://mujoco.readthedocs.io/en/latest/changelog.html",
+            "title": "MuJoCo changelog (3.16.0, 2026-10-14)",
+            "type": "official-documentation",
+            "supports": [
+              "version"
+            ]
+          },
+          {
+            "url": "https://mujoco.readthedocs.io/en/3.3.1/modeling.html",
+            "title": "MuJoCo modeling chapter (MJCF and URDF)",
+            "type": "official-documentation",
+            "supports": [
+              "capability",
+              "relationship"
+            ]
+          }
+        ]
+      },
+      "classificationBasis": {
+        "industries": "editorial",
+        "capabilities": "editorial",
+        "physicalAi": "editorial"
+      },
+      "editorialReview": {
+        "reviewedOn": "2026-10-16",
+        "reviewer": "atlas-editors"
+      },
+      "origin": "v2"
+    },
+    {
+      "id": "isaac-lab",
+      "name": "NVIDIA Isaac Lab",
+      "fullName": "Isaac Lab robot-learning framework",
+      "resourceType": "ai-framework",
+      "kind": "ai-framework",
+      "summary": "Open-source framework for robot learning (reinforcement learning, imitation learning, motion planning) built on Isaac Sim, with ready-to-train environments and sensor models.",
+      "knowledge": {
+        "domain": "product.behaviour",
+        "basis": "editorial",
+        "confidence": "clear",
+        "rationale": "Trains and evaluates robot behaviours (policies)."
+      },
+      "publisher": "NVIDIA",
+      "publisherType": "industry",
+      "topics": [
+        "robot learning",
+        "reinforcement learning",
+        "imitation learning"
+      ],
+      "version": {
+        "label": "Isaac Lab 3.0.0 (targets Isaac Sim 6.2)",
+        "date": null,
+        "status": "published"
+      },
+      "maturity": "stable",
+      "license": {
+        "name": "BSD-3-Clause (framework); depends on Isaac Sim terms",
+        "access": "open-with-terms",
+        "url": "https://github.com/isaac-sim/IsaacLab",
+        "reviewStatus": "not-assessed",
+        "commercialReuse": "unknown"
+      },
+      "licenses": [
+        {
+          "scope": "software",
+          "name": "BSD 3-Clause (Isaac Lab framework)",
+          "spdx": "BSD-3-Clause",
+          "url": "https://opensource.org/license/bsd-3-clause",
+          "statedAt": "https://github.com/isaac-sim/IsaacLab",
+          "commercialUse": "permitted",
+          "reviewStatus": "reviewed",
+          "reviewNote": "As granted by the licence text; dependencies and third-party components not assessed. Not legal advice."
+        },
+        {
+          "scope": "software",
+          "name": "Apache License 2.0 (isaaclab_mimic extension)",
+          "spdx": "Apache-2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0",
+          "statedAt": "https://github.com/isaac-sim/IsaacLab",
+          "commercialUse": "permitted",
+          "reviewStatus": "reviewed",
+          "reviewNote": "As granted by the licence text; dependencies and third-party components not assessed. Not legal advice."
+        }
+      ],
+      "links": {
+        "official": "https://github.com/isaac-sim/IsaacLab",
+        "repository": "https://github.com/isaac-sim/IsaacLab"
+      },
+      "formats": [
+        "Python"
+      ],
+      "industries": [
+        "industrial-equipment",
+        "high-tech"
+      ],
+      "useCases": [
+        "robot-development"
+      ],
+      "capabilities": [
+        "robotics-autonomy",
+        "simulation-validation",
+        "ai-model-development"
+      ],
+      "physicalAi": [
+        "sim-to-real"
+      ],
+      "limitations": [
+        {
+          "text": "Full workflows require Isaac Sim (proprietary terms), and the isaaclab_mimic extension requires cuRobo (proprietary).",
+          "basis": "source",
+          "category": "access",
+          "sourceRef": "https://github.com/isaac-sim/IsaacLab"
+        }
+      ],
+      "engineeringUses": [
+        "Training locomotion or manipulation policies in parallel simulated environments",
+        "Evaluating learned policies in simulation before transfer to a physical robot"
+      ],
+      "verification": {
+        "checkedOn": "2026-10-16",
+        "status": "verified",
+        "notes": "Capabilities as described by the publisher.",
+        "sources": [
+          {
+            "url": "https://github.com/isaac-sim/IsaacLab",
+            "title": "Isaac Lab repository (README)",
+            "type": "publisher-repository",
+            "supports": [
+              "identity",
+              "version",
+              "licence",
+              "capability",
+              "relationship",
+              "limitation"
+            ]
+          }
+        ]
+      },
+      "classificationBasis": {
+        "industries": "editorial",
+        "capabilities": "editorial",
+        "physicalAi": "editorial"
+      },
+      "editorialReview": {
+        "reviewedOn": "2026-10-16",
+        "reviewer": "atlas-editors"
+      },
+      "origin": "v2"
+    },
+    {
+      "id": "isaac-sim",
+      "name": "NVIDIA Isaac Sim",
+      "fullName": "NVIDIA Isaac Sim robotics simulation platform",
+      "resourceType": "simulation",
+      "kind": "simulator",
+      "summary": "Robotics simulation platform built on NVIDIA Omniverse, with a USD-native scene representation, import of URDF, MJCF and CAD models, simulated sensors and a ROS bridge.",
+      "knowledge": {
+        "domain": "product.behaviour",
+        "basis": "editorial",
+        "confidence": "clear",
+        "rationale": "A simulator executes models of robot behaviour and sensing."
+      },
+      "publisher": "NVIDIA",
+      "publisherType": "industry",
+      "topics": [
+        "robot simulation",
+        "synthetic data",
+        "sensor simulation"
+      ],
+      "version": {
+        "label": "Isaac Sim 6.x (documentation covers 6.0 and 6.1 migrations; Isaac Lab 3.0 targets 6.2)",
+        "date": null,
+        "status": "published"
+      },
+      "maturity": "stable",
+      "license": {
+        "name": "Source code Apache-2.0; building and running it requires NVIDIA Omniverse components under NVIDIA terms",
+        "access": "open-with-terms",
+        "url": "https://github.com/isaac-sim/IsaacSim",
+        "reviewStatus": "not-assessed",
+        "commercialReuse": "unknown"
+      },
+      "licenses": [
+        {
+          "scope": "software",
+          "name": "Apache License 2.0 (Isaac Sim source code)",
+          "spdx": "Apache-2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0",
+          "statedAt": "https://github.com/isaac-sim/IsaacSim",
+          "commercialUse": "permitted",
+          "reviewStatus": "reviewed",
+          "reviewNote": "As granted by the licence text; dependencies and third-party components not assessed. Not legal advice."
+        },
+        {
+          "scope": "software",
+          "name": "NVIDIA Omniverse licensing terms (Kit SDK and extensions, accepted at first build)",
+          "url": null,
+          "statedAt": "https://github.com/isaac-sim/IsaacSim",
+          "commercialUse": "unknown",
+          "reviewStatus": "not-assessed",
+          "restrictions": [
+            "Building or running Isaac Sim requires accepting the NVIDIA Omniverse licensing terms and downloading the Kit SDK and extensions."
+          ]
+        }
+      ],
+      "links": {
+        "official": "https://docs.isaacsim.omniverse.nvidia.com/latest/index.html",
+        "repository": "https://github.com/isaac-sim/IsaacSim"
+      },
+      "formats": [
+        "USD",
+        "URDF (import)",
+        "MJCF (import)"
+      ],
+      "industries": [
+        "industrial-equipment",
+        "high-tech",
+        "transportation-mobility"
+      ],
+      "useCases": [
+        "robot-development"
+      ],
+      "capabilities": [
+        "simulation-validation",
+        "robotics-autonomy",
+        "digital-twin"
+      ],
+      "physicalAi": [
+        "simulation-digital-twins"
+      ],
+      "limitations": [
+        {
+          "text": "Requires accepting NVIDIA Omniverse licensing terms for runtime components; Isaac Lab describes Isaac Sim as having its own proprietary terms.",
+          "basis": "source",
+          "category": "access",
+          "sourceRef": "https://github.com/isaac-sim/IsaacLab"
+        },
+        {
+          "text": "The exact current release number is not stated on the documentation landing page.",
+          "basis": "editorial",
+          "category": "catalogue-gap"
+        }
+      ],
+      "engineeringUses": [
+        "Testing robot perception and control software against simulated sensors before hardware is available",
+        "Generating synthetic sensor data for training perception models"
+      ],
+      "verification": {
+        "checkedOn": "2026-10-16",
+        "status": "partially-verified",
+        "notes": "Capabilities as described by the publisher; exact version to confirm.",
+        "sources": [
+          {
+            "url": "https://docs.isaacsim.omniverse.nvidia.com/latest/index.html",
+            "title": "Isaac Sim documentation",
+            "type": "official-documentation",
+            "supports": [
+              "identity",
+              "capability",
+              "relationship"
+            ]
+          },
+          {
+            "url": "https://github.com/isaac-sim/IsaacSim",
+            "title": "Isaac Sim repository (README)",
+            "type": "publisher-repository",
+            "supports": [
+              "licence",
+              "capability",
+              "relationship"
+            ]
+          }
+        ]
+      },
+      "classificationBasis": {
+        "industries": "editorial",
+        "capabilities": "editorial",
+        "physicalAi": "editorial"
+      },
+      "editorialReview": {
+        "reviewedOn": "2026-10-16",
+        "reviewer": "atlas-editors"
+      },
+      "origin": "v2"
     },
     {
       "id": "obi",
@@ -2788,6 +3686,386 @@
         "Comparing results from different energy-system models"
       ],
       "limitations": []
+    },
+    {
+      "id": "open-x-embodiment",
+      "name": "Open X-Embodiment",
+      "fullName": "Open X-Embodiment robot learning dataset",
+      "resourceType": "dataset",
+      "kind": "dataset",
+      "summary": "Collection of more than one million real-robot trajectories across 22 robot embodiments, pooled from 60 existing datasets of 34 research labs, released with the RT-X models.",
+      "knowledge": {
+        "domain": "product.operations",
+        "basis": "editorial",
+        "confidence": "tentative",
+        "rationale": "Recorded robot trajectories are operational data; the dataset is mainly used to train policies."
+      },
+      "publisher": "Open X-Embodiment Collaboration",
+      "publisherType": "research",
+      "topics": [
+        "robot demonstrations",
+        "cross-embodiment learning"
+      ],
+      "version": {
+        "label": "Dataset release accompanying arXiv:2310.08864",
+        "date": null,
+        "status": "published"
+      },
+      "maturity": "research",
+      "license": {
+        "name": "Not stated on the project page",
+        "access": "unknown",
+        "url": null,
+        "reviewStatus": "not-assessed",
+        "commercialReuse": "unknown"
+      },
+      "licenses": [
+        {
+          "scope": "dataset",
+          "name": "Not stated on the project page",
+          "url": null,
+          "statedAt": "https://robotics-transformer-x.github.io/",
+          "commercialUse": "unknown",
+          "reviewStatus": "not-assessed"
+        }
+      ],
+      "links": {
+        "official": "https://robotics-transformer-x.github.io/"
+      },
+      "formats": [
+        "Standardised episode format (see project page)"
+      ],
+      "industries": [
+        "industrial-equipment",
+        "high-tech"
+      ],
+      "useCases": [
+        "robot-development"
+      ],
+      "capabilities": [
+        "robotics-autonomy",
+        "ai-model-development"
+      ],
+      "physicalAi": [],
+      "details": {
+        "dataset": {
+          "modalities": [
+            "RGB images",
+            "robot state",
+            "actions",
+            "language instructions"
+          ],
+          "size": "1M+ trajectories",
+          "collection": "60 existing datasets from 34 robotic research labs",
+          "embodiments": "22"
+        }
+      },
+      "limitations": [
+        {
+          "text": "The licence is not stated on the project page; it aggregates 60 datasets whose individual terms were not assessed.",
+          "basis": "editorial",
+          "category": "catalogue-gap"
+        },
+        {
+          "text": "Real-robot demonstrations from research labs; coverage of industrial settings was not assessed.",
+          "basis": "editorial",
+          "category": "scope"
+        }
+      ],
+      "engineeringUses": [
+        "Pre-training generalist robot policies on data from many robot types",
+        "Studying how training data from one robot transfers to another"
+      ],
+      "verification": {
+        "checkedOn": "2026-10-16",
+        "status": "partially-verified",
+        "notes": "Licence not stated; preprint only.",
+        "sources": [
+          {
+            "url": "https://robotics-transformer-x.github.io/",
+            "title": "Open X-Embodiment project page",
+            "type": "official-documentation",
+            "supports": [
+              "identity",
+              "scope"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/abs/2310.08864",
+            "title": "Open X-Embodiment: Robotic Learning Datasets and RT-X Models (arXiv)",
+            "type": "research-publication",
+            "supports": [
+              "identity",
+              "scope"
+            ]
+          }
+        ]
+      },
+      "classificationBasis": {
+        "industries": "editorial",
+        "capabilities": "editorial"
+      },
+      "editorialReview": {
+        "reviewedOn": "2026-10-16",
+        "reviewer": "atlas-editors"
+      },
+      "origin": "v2"
+    },
+    {
+      "id": "openusd",
+      "name": "OpenUSD",
+      "fullName": "Universal Scene Description (OpenUSD)",
+      "resourceType": "data-schema",
+      "kind": "file-format",
+      "layer": "domain",
+      "summary": "Extensible software platform and file format for collaboratively constructing and exchanging 3D scenes, originally developed by Pixar. Used as the scene representation of several robotics simulators.",
+      "knowledge": {
+        "domain": "product.structure",
+        "basis": "editorial",
+        "confidence": "tentative",
+        "rationale": "OpenUSD describes scene structure and composition; it also carries visual and simulation data, so a single domain is a simplification."
+      },
+      "publisher": "Pixar Animation Studios",
+      "publisherType": "industry",
+      "topics": [
+        "3D scene description",
+        "composition",
+        "digital twins"
+      ],
+      "version": {
+        "label": "OpenUSD 26.08",
+        "date": null,
+        "status": "published"
+      },
+      "maturity": "stable",
+      "license": {
+        "name": "Tomorrow Open Source Technology License 1.0 (Apache 2.0 with a modified trademark section)",
+        "access": "open",
+        "url": "https://raw.githubusercontent.com/PixarAnimationStudios/OpenUSD/release/LICENSE.txt",
+        "reviewStatus": "not-assessed",
+        "commercialReuse": "unknown"
+      },
+      "licenses": [
+        {
+          "scope": "software",
+          "name": "Tomorrow Open Source Technology License 1.0",
+          "url": "https://raw.githubusercontent.com/PixarAnimationStudios/OpenUSD/release/LICENSE.txt",
+          "statedAt": "https://raw.githubusercontent.com/PixarAnimationStudios/OpenUSD/release/LICENSE.txt",
+          "commercialUse": "unknown",
+          "reviewStatus": "not-assessed",
+          "restrictions": [
+            "Differs from Apache 2.0 in Section 6 (Trademarks)."
+          ]
+        }
+      ],
+      "links": {
+        "official": "https://openusd.org/release/index.html",
+        "repository": "https://github.com/PixarAnimationStudios/OpenUSD"
+      },
+      "formats": [
+        "USD (.usd, .usda, .usdc)"
+      ],
+      "industries": [
+        "high-tech",
+        "industrial-equipment",
+        "architecture-engineering-construction",
+        "cross-industry"
+      ],
+      "useCases": [
+        "robot-development"
+      ],
+      "capabilities": [
+        "digital-twin",
+        "data-exchange",
+        "simulation-validation"
+      ],
+      "physicalAi": [],
+      "limitations": [],
+      "engineeringUses": [
+        "Assembling robot, workcell and environment assets into one layered scene for simulation",
+        "Exchanging 3D scene data between content tools and simulators"
+      ],
+      "verification": {
+        "checkedOn": "2026-10-16",
+        "status": "verified",
+        "notes": "",
+        "sources": [
+          {
+            "url": "https://openusd.org/release/index.html",
+            "title": "OpenUSD documentation (26.08)",
+            "type": "official-documentation",
+            "supports": [
+              "identity",
+              "version",
+              "scope"
+            ]
+          },
+          {
+            "url": "https://raw.githubusercontent.com/PixarAnimationStudios/OpenUSD/release/LICENSE.txt",
+            "title": "OpenUSD LICENSE.txt",
+            "type": "publisher-repository",
+            "supports": [
+              "licence"
+            ]
+          }
+        ]
+      },
+      "classificationBasis": {
+        "industries": "editorial",
+        "capabilities": "editorial"
+      },
+      "editorialReview": {
+        "reviewedOn": "2026-10-16",
+        "reviewer": "atlas-editors"
+      },
+      "origin": "v2"
+    },
+    {
+      "id": "openvla",
+      "name": "OpenVLA",
+      "fullName": "OpenVLA vision-language-action model (openvla-7b)",
+      "resourceType": "ai-model",
+      "kind": "trained-model",
+      "summary": "Open 7B-parameter vision-language-action model that maps camera images and language instructions to robot actions, trained on an Open X-Embodiment mixture. The code and the trained weights carry different terms.",
+      "knowledge": {
+        "domain": "product.behaviour",
+        "basis": "editorial",
+        "confidence": "clear",
+        "rationale": "A trained policy that produces robot behaviour (actions)."
+      },
+      "publisher": "OpenVLA authors (Stanford, UC Berkeley, Toyota Research Institute, Google DeepMind and others)",
+      "publisherType": "research",
+      "topics": [
+        "vision-language-action",
+        "robot policy",
+        "foundation model"
+      ],
+      "version": {
+        "label": "openvla-7b",
+        "date": null,
+        "status": "published"
+      },
+      "maturity": "research",
+      "license": {
+        "name": "Code MIT; weights subject to the Llama Community License",
+        "access": "open-with-terms",
+        "url": "https://github.com/openvla/openvla",
+        "reviewStatus": "not-assessed",
+        "commercialReuse": "unknown"
+      },
+      "licenses": [
+        {
+          "scope": "software",
+          "name": "MIT License (all code in the repository)",
+          "spdx": "MIT",
+          "url": "https://opensource.org/license/mit",
+          "statedAt": "https://github.com/openvla/openvla",
+          "commercialUse": "permitted",
+          "reviewStatus": "reviewed",
+          "reviewNote": "As granted by the licence text; dependencies and third-party components not assessed. Not legal advice."
+        },
+        {
+          "scope": "model-weights",
+          "name": "Llama Community License (inherited from the Llama 2 base model)",
+          "url": null,
+          "statedAt": "https://github.com/openvla/openvla",
+          "commercialUse": "unknown",
+          "reviewStatus": "not-assessed",
+          "restrictions": [
+            "The authors state the pretrained models may inherit restrictions from their base models and are subject to the Llama Community License."
+          ]
+        }
+      ],
+      "links": {
+        "official": "https://github.com/openvla/openvla",
+        "repository": "https://github.com/openvla/openvla"
+      },
+      "formats": [
+        "PyTorch / Hugging Face checkpoints"
+      ],
+      "industries": [
+        "industrial-equipment",
+        "high-tech"
+      ],
+      "useCases": [
+        "robot-development"
+      ],
+      "capabilities": [
+        "robotics-autonomy",
+        "ai-model-development"
+      ],
+      "physicalAi": [
+        "robot-capabilities-control"
+      ],
+      "details": {
+        "aiModel": {
+          "artefact": "trained-model",
+          "weightsPublished": "yes",
+          "baseModel": "Prismatic prism-dinosiglip-224px VLM (DINOv2 + SigLIP vision, Llama 2 language model)",
+          "trainingData": "Open X-Embodiment mixture, 970K trajectories",
+          "modalities": [
+            "RGB image",
+            "language instruction",
+            "robot action"
+          ]
+        }
+      },
+      "limitations": [
+        {
+          "text": "LIBERO success rates are reported by the model authors after fine-tuning (3 seeds × 500 rollouts) and have not been independently replicated here.",
+          "basis": "source",
+          "category": "unverified-claim",
+          "sourceRef": "https://github.com/openvla/openvla"
+        },
+        {
+          "text": "Weights are subject to the Llama Community License, which differs from the MIT licence of the code.",
+          "basis": "source",
+          "category": "access",
+          "sourceRef": "https://github.com/openvla/openvla"
+        }
+      ],
+      "engineeringUses": [
+        "Prototyping language-conditioned manipulation on a new robot by fine-tuning a pretrained policy",
+        "Serving as a baseline when comparing robot-learning approaches on a benchmark"
+      ],
+      "verification": {
+        "checkedOn": "2026-10-16",
+        "status": "verified",
+        "notes": "Performance figures are author-reported.",
+        "sources": [
+          {
+            "url": "https://github.com/openvla/openvla",
+            "title": "OpenVLA repository (README)",
+            "type": "publisher-repository",
+            "supports": [
+              "identity",
+              "licence",
+              "capability",
+              "relationship",
+              "limitation"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/abs/2406.09246",
+            "title": "OpenVLA: An Open-Source Vision-Language-Action Model (arXiv)",
+            "type": "research-publication",
+            "supports": [
+              "identity",
+              "scope"
+            ]
+          }
+        ]
+      },
+      "classificationBasis": {
+        "industries": "editorial",
+        "capabilities": "editorial",
+        "physicalAi": "editorial"
+      },
+      "editorialReview": {
+        "reviewedOn": "2026-10-16",
+        "reviewer": "atlas-editors"
+      },
+      "origin": "v2"
     },
     {
       "id": "oriont",
@@ -3062,7 +4340,8 @@
         "high-tech"
       ],
       "useCases": [
-        "general-purpose-robotics"
+        "general-purpose-robotics",
+        "robot-development"
       ],
       "capabilities": [
         "robotics-autonomy"
@@ -3304,7 +4583,8 @@
         "semiconductors",
         "personal-electronics",
         "general-purpose-robotics",
-        "sustainability"
+        "sustainability",
+        "robot-development"
       ],
       "capabilities": [
         "data-exchange",
@@ -3439,7 +4719,8 @@
         "high-tech"
       ],
       "useCases": [
-        "general-purpose-robotics"
+        "general-purpose-robotics",
+        "robot-development"
       ],
       "capabilities": [
         "robotics-autonomy"
@@ -3521,6 +4802,131 @@
       ]
     },
     {
+      "id": "ros2",
+      "name": "ROS 2",
+      "fullName": "Robot Operating System 2",
+      "resourceType": "software-framework",
+      "kind": "middleware",
+      "summary": "Open-source middleware, libraries and tools for building robot applications, with a publish/subscribe communication layer and a large package ecosystem. Distributions are released yearly; even-year releases are long-term support.",
+      "knowledge": {
+        "domain": "product.interfaces",
+        "basis": "editorial",
+        "confidence": "clear",
+        "rationale": "ROS 2 primarily defines how robot software components communicate (messages, services, actions)."
+      },
+      "publisher": "Open Robotics / ROS community",
+      "publisherType": "consortium",
+      "topics": [
+        "robot middleware",
+        "messaging",
+        "robot software"
+      ],
+      "version": {
+        "label": "Lyrical Luth (LTS), released 22 May 2026, supported to May 2031",
+        "date": "2026-05-22",
+        "status": "published"
+      },
+      "maturity": "stable",
+      "license": {
+        "name": "Apache-2.0 (core packages)",
+        "access": "open",
+        "url": "https://www.apache.org/licenses/LICENSE-2.0",
+        "reviewStatus": "not-assessed",
+        "commercialReuse": "unknown"
+      },
+      "licenses": [
+        {
+          "scope": "software",
+          "name": "Apache License 2.0 (core client library rclcpp)",
+          "spdx": "Apache-2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0",
+          "statedAt": "https://github.com/ros2/rclcpp",
+          "commercialUse": "permitted",
+          "reviewStatus": "reviewed",
+          "reviewNote": "As granted by the licence text; dependencies and third-party components not assessed. Not legal advice."
+        }
+      ],
+      "links": {
+        "official": "https://docs.ros.org/",
+        "repository": "https://github.com/ros2"
+      },
+      "formats": [
+        "ROS messages (.msg/.srv/.action)",
+        "URDF (robot description)"
+      ],
+      "industries": [
+        "industrial-equipment",
+        "high-tech",
+        "transportation-mobility"
+      ],
+      "useCases": [
+        "robot-development"
+      ],
+      "capabilities": [
+        "robotics-autonomy",
+        "data-exchange"
+      ],
+      "physicalAi": [],
+      "limitations": [
+        {
+          "text": "docs.ros.org blocks automated retrieval; the Lyrical release date comes from a third-party listing, and its LTS status from the Gazebo compatibility documentation.",
+          "basis": "editorial",
+          "category": "catalogue-gap"
+        },
+        {
+          "text": "Packages in the ROS ecosystem carry their own licences; only the core client library licence is recorded here.",
+          "basis": "editorial",
+          "category": "scope"
+        }
+      ],
+      "engineeringUses": [
+        "Connecting perception, planning and control components of a robot through typed messages",
+        "Running the same robot software against a simulator or the real robot through standard interfaces"
+      ],
+      "verification": {
+        "checkedOn": "2026-10-16",
+        "status": "partially-verified",
+        "notes": "Official documentation could not be fetched automatically; version facts cross-checked with the Gazebo–ROS compatibility table.",
+        "sources": [
+          {
+            "url": "https://gazebosim.org/docs/latest/ros_installation/",
+            "title": "Gazebo: installing Gazebo with ROS (lists ROS 2 Lyrical as LTS)",
+            "type": "official-documentation",
+            "supports": [
+              "status",
+              "relationship"
+            ]
+          },
+          {
+            "url": "https://endoflife.date/ros-2",
+            "title": "endoflife.date — ROS 2 release and support dates",
+            "type": "third-party",
+            "supports": [
+              "version"
+            ]
+          },
+          {
+            "url": "https://github.com/ros2/rclcpp",
+            "title": "ROS 2 C++ client library (Apache-2.0)",
+            "type": "publisher-repository",
+            "supports": [
+              "identity",
+              "licence"
+            ]
+          }
+        ]
+      },
+      "classificationBasis": {
+        "industries": "editorial",
+        "capabilities": "editorial"
+      },
+      "editorialReview": {
+        "reviewedOn": "2026-10-16",
+        "reviewer": "atlas-editors"
+      },
+      "origin": "v2"
+    },
+    {
       "id": "ieee-rparts",
       "name": "RPARTS",
       "fullName": "RPARTS — Robot parts ontology (IEEE 1872-2015)",
@@ -3566,7 +4972,8 @@
         "high-tech"
       ],
       "useCases": [
-        "general-purpose-robotics"
+        "general-purpose-robotics",
+        "robot-development"
       ],
       "capabilities": [
         "robotics-autonomy"
@@ -4448,7 +5855,8 @@
         "ai-factories",
         "semiconductors",
         "personal-electronics",
-        "general-purpose-robotics"
+        "general-purpose-robotics",
+        "robot-development"
       ],
       "capabilities": [
         "iot-monitoring"
@@ -5040,7 +6448,8 @@
       ],
       "useCases": [
         "general-purpose-robotics",
-        "ai-factories"
+        "ai-factories",
+        "robot-development"
       ],
       "capabilities": [
         "systems-engineering",
@@ -5092,6 +6501,127 @@
           "sourceRef": "https://github.com/Systems-Modeling/SysML-v2-Release"
         }
       ]
+    },
+    {
+      "id": "urdf",
+      "name": "URDF",
+      "fullName": "Unified Robot Description Format",
+      "resourceType": "data-schema",
+      "kind": "file-format",
+      "layer": "domain",
+      "summary": "XML format for describing a robot model: links, joints, inertial, visual and collision properties. It is the de facto robot description exchanged between ROS tools and many simulators.",
+      "knowledge": {
+        "domain": "product.structure",
+        "basis": "editorial",
+        "confidence": "clear",
+        "rationale": "URDF describes the kinematic and physical structure of a robot."
+      },
+      "publisher": "ROS community",
+      "publisherType": "consortium",
+      "topics": [
+        "robot description",
+        "kinematics",
+        "links and joints"
+      ],
+      "version": {
+        "label": "Specification maintained by the ROS community (no version number published)",
+        "date": null,
+        "status": "published"
+      },
+      "maturity": "stable",
+      "license": {
+        "name": "Parser libraries BSD-3-Clause; licence of the specification text not stated",
+        "access": "open",
+        "url": null,
+        "reviewStatus": "not-assessed",
+        "commercialReuse": "unknown"
+      },
+      "licenses": [
+        {
+          "scope": "software",
+          "name": "BSD 3-Clause (ROS 2 URDF parsing packages)",
+          "spdx": "BSD-3-Clause",
+          "url": "https://opensource.org/license/bsd-3-clause",
+          "statedAt": "https://github.com/ros2/urdf",
+          "commercialUse": "permitted",
+          "reviewStatus": "reviewed",
+          "reviewNote": "As granted by the licence text; dependencies and third-party components not assessed. Not legal advice."
+        },
+        {
+          "scope": "file-format",
+          "name": "Specification licence not stated",
+          "url": null,
+          "statedAt": "https://github.com/ros/urdfdom",
+          "commercialUse": "unknown",
+          "reviewStatus": "not-assessed"
+        }
+      ],
+      "links": {
+        "official": "https://github.com/ros/urdfdom",
+        "repository": "https://github.com/ros2/urdf"
+      },
+      "formats": [
+        "XML"
+      ],
+      "industries": [
+        "industrial-equipment",
+        "high-tech",
+        "transportation-mobility"
+      ],
+      "useCases": [
+        "robot-development"
+      ],
+      "capabilities": [
+        "robotics-autonomy",
+        "data-exchange",
+        "simulation-validation"
+      ],
+      "physicalAi": [],
+      "limitations": [
+        {
+          "text": "The specification pages on the ROS wiki block automated checks; identity is confirmed through the reference parser repositories.",
+          "basis": "editorial",
+          "category": "catalogue-gap"
+        }
+      ],
+      "engineeringUses": [
+        "Exchanging a robot’s kinematic structure between design tools, ROS and simulators",
+        "Describing links, joints and collision geometry for motion planning"
+      ],
+      "verification": {
+        "checkedOn": "2026-10-16",
+        "status": "partially-verified",
+        "notes": "Specification page not retrievable automatically.",
+        "sources": [
+          {
+            "url": "https://github.com/ros/urdfdom",
+            "title": "urdfdom — URDF parser (robot model: links, joints, materials)",
+            "type": "publisher-repository",
+            "supports": [
+              "identity",
+              "scope"
+            ]
+          },
+          {
+            "url": "https://github.com/ros2/urdf",
+            "title": "ros2/urdf — packages for working with URDF files (BSD-3-Clause)",
+            "type": "publisher-repository",
+            "supports": [
+              "licence",
+              "relationship"
+            ]
+          }
+        ]
+      },
+      "classificationBasis": {
+        "industries": "editorial",
+        "capabilities": "editorial"
+      },
+      "editorialReview": {
+        "reviewedOn": "2026-10-16",
+        "reviewer": "atlas-editors"
+      },
+      "origin": "v2"
     },
     {
       "id": "vsso",
@@ -5363,7 +6893,8 @@
         "high-tech"
       ],
       "useCases": [
-        "general-purpose-robotics"
+        "general-purpose-robotics",
+        "robot-development"
       ],
       "capabilities": [
         "robotics-autonomy"
@@ -5935,7 +7466,8 @@
         "high-tech"
       ],
       "useCases": [
-        "general-purpose-robotics"
+        "general-purpose-robotics",
+        "robot-development"
       ],
       "capabilities": [
         "robotics-autonomy",
@@ -7951,6 +9483,115 @@
       "limitations": []
     },
     {
+      "id": "openusd",
+      "name": "OpenUSD",
+      "fullName": "Universal Scene Description (OpenUSD)",
+      "resourceType": "data-schema",
+      "kind": "file-format",
+      "layer": "domain",
+      "summary": "Extensible software platform and file format for collaboratively constructing and exchanging 3D scenes, originally developed by Pixar. Used as the scene representation of several robotics simulators.",
+      "knowledge": {
+        "domain": "product.structure",
+        "basis": "editorial",
+        "confidence": "tentative",
+        "rationale": "OpenUSD describes scene structure and composition; it also carries visual and simulation data, so a single domain is a simplification."
+      },
+      "publisher": "Pixar Animation Studios",
+      "publisherType": "industry",
+      "topics": [
+        "3D scene description",
+        "composition",
+        "digital twins"
+      ],
+      "version": {
+        "label": "OpenUSD 26.08",
+        "date": null,
+        "status": "published"
+      },
+      "maturity": "stable",
+      "license": {
+        "name": "Tomorrow Open Source Technology License 1.0 (Apache 2.0 with a modified trademark section)",
+        "access": "open",
+        "url": "https://raw.githubusercontent.com/PixarAnimationStudios/OpenUSD/release/LICENSE.txt",
+        "reviewStatus": "not-assessed",
+        "commercialReuse": "unknown"
+      },
+      "licenses": [
+        {
+          "scope": "software",
+          "name": "Tomorrow Open Source Technology License 1.0",
+          "url": "https://raw.githubusercontent.com/PixarAnimationStudios/OpenUSD/release/LICENSE.txt",
+          "statedAt": "https://raw.githubusercontent.com/PixarAnimationStudios/OpenUSD/release/LICENSE.txt",
+          "commercialUse": "unknown",
+          "reviewStatus": "not-assessed",
+          "restrictions": [
+            "Differs from Apache 2.0 in Section 6 (Trademarks)."
+          ]
+        }
+      ],
+      "links": {
+        "official": "https://openusd.org/release/index.html",
+        "repository": "https://github.com/PixarAnimationStudios/OpenUSD"
+      },
+      "formats": [
+        "USD (.usd, .usda, .usdc)"
+      ],
+      "industries": [
+        "high-tech",
+        "industrial-equipment",
+        "architecture-engineering-construction",
+        "cross-industry"
+      ],
+      "useCases": [
+        "robot-development"
+      ],
+      "capabilities": [
+        "digital-twin",
+        "data-exchange",
+        "simulation-validation"
+      ],
+      "physicalAi": [],
+      "limitations": [],
+      "engineeringUses": [
+        "Assembling robot, workcell and environment assets into one layered scene for simulation",
+        "Exchanging 3D scene data between content tools and simulators"
+      ],
+      "verification": {
+        "checkedOn": "2026-10-16",
+        "status": "verified",
+        "notes": "",
+        "sources": [
+          {
+            "url": "https://openusd.org/release/index.html",
+            "title": "OpenUSD documentation (26.08)",
+            "type": "official-documentation",
+            "supports": [
+              "identity",
+              "version",
+              "scope"
+            ]
+          },
+          {
+            "url": "https://raw.githubusercontent.com/PixarAnimationStudios/OpenUSD/release/LICENSE.txt",
+            "title": "OpenUSD LICENSE.txt",
+            "type": "publisher-repository",
+            "supports": [
+              "licence"
+            ]
+          }
+        ]
+      },
+      "classificationBasis": {
+        "industries": "editorial",
+        "capabilities": "editorial"
+      },
+      "editorialReview": {
+        "reviewedOn": "2026-10-16",
+        "reviewer": "atlas-editors"
+      },
+      "origin": "v2"
+    },
+    {
       "id": "oriont",
       "name": "ORIONT",
       "fullName": "ORIONT — life-cycle sustainability assessment ontology (candidate)",
@@ -8223,7 +9864,8 @@
         "high-tech"
       ],
       "useCases": [
-        "general-purpose-robotics"
+        "general-purpose-robotics",
+        "robot-development"
       ],
       "capabilities": [
         "robotics-autonomy"
@@ -8465,7 +10107,8 @@
         "semiconductors",
         "personal-electronics",
         "general-purpose-robotics",
-        "sustainability"
+        "sustainability",
+        "robot-development"
       ],
       "capabilities": [
         "data-exchange",
@@ -8600,7 +10243,8 @@
         "high-tech"
       ],
       "useCases": [
-        "general-purpose-robotics"
+        "general-purpose-robotics",
+        "robot-development"
       ],
       "capabilities": [
         "robotics-autonomy"
@@ -8727,7 +10371,8 @@
         "high-tech"
       ],
       "useCases": [
-        "general-purpose-robotics"
+        "general-purpose-robotics",
+        "robot-development"
       ],
       "capabilities": [
         "robotics-autonomy"
@@ -9609,7 +11254,8 @@
         "ai-factories",
         "semiconductors",
         "personal-electronics",
-        "general-purpose-robotics"
+        "general-purpose-robotics",
+        "robot-development"
       ],
       "capabilities": [
         "iot-monitoring"
@@ -10201,7 +11847,8 @@
       ],
       "useCases": [
         "general-purpose-robotics",
-        "ai-factories"
+        "ai-factories",
+        "robot-development"
       ],
       "capabilities": [
         "systems-engineering",
@@ -10253,6 +11900,127 @@
           "sourceRef": "https://github.com/Systems-Modeling/SysML-v2-Release"
         }
       ]
+    },
+    {
+      "id": "urdf",
+      "name": "URDF",
+      "fullName": "Unified Robot Description Format",
+      "resourceType": "data-schema",
+      "kind": "file-format",
+      "layer": "domain",
+      "summary": "XML format for describing a robot model: links, joints, inertial, visual and collision properties. It is the de facto robot description exchanged between ROS tools and many simulators.",
+      "knowledge": {
+        "domain": "product.structure",
+        "basis": "editorial",
+        "confidence": "clear",
+        "rationale": "URDF describes the kinematic and physical structure of a robot."
+      },
+      "publisher": "ROS community",
+      "publisherType": "consortium",
+      "topics": [
+        "robot description",
+        "kinematics",
+        "links and joints"
+      ],
+      "version": {
+        "label": "Specification maintained by the ROS community (no version number published)",
+        "date": null,
+        "status": "published"
+      },
+      "maturity": "stable",
+      "license": {
+        "name": "Parser libraries BSD-3-Clause; licence of the specification text not stated",
+        "access": "open",
+        "url": null,
+        "reviewStatus": "not-assessed",
+        "commercialReuse": "unknown"
+      },
+      "licenses": [
+        {
+          "scope": "software",
+          "name": "BSD 3-Clause (ROS 2 URDF parsing packages)",
+          "spdx": "BSD-3-Clause",
+          "url": "https://opensource.org/license/bsd-3-clause",
+          "statedAt": "https://github.com/ros2/urdf",
+          "commercialUse": "permitted",
+          "reviewStatus": "reviewed",
+          "reviewNote": "As granted by the licence text; dependencies and third-party components not assessed. Not legal advice."
+        },
+        {
+          "scope": "file-format",
+          "name": "Specification licence not stated",
+          "url": null,
+          "statedAt": "https://github.com/ros/urdfdom",
+          "commercialUse": "unknown",
+          "reviewStatus": "not-assessed"
+        }
+      ],
+      "links": {
+        "official": "https://github.com/ros/urdfdom",
+        "repository": "https://github.com/ros2/urdf"
+      },
+      "formats": [
+        "XML"
+      ],
+      "industries": [
+        "industrial-equipment",
+        "high-tech",
+        "transportation-mobility"
+      ],
+      "useCases": [
+        "robot-development"
+      ],
+      "capabilities": [
+        "robotics-autonomy",
+        "data-exchange",
+        "simulation-validation"
+      ],
+      "physicalAi": [],
+      "limitations": [
+        {
+          "text": "The specification pages on the ROS wiki block automated checks; identity is confirmed through the reference parser repositories.",
+          "basis": "editorial",
+          "category": "catalogue-gap"
+        }
+      ],
+      "engineeringUses": [
+        "Exchanging a robot’s kinematic structure between design tools, ROS and simulators",
+        "Describing links, joints and collision geometry for motion planning"
+      ],
+      "verification": {
+        "checkedOn": "2026-10-16",
+        "status": "partially-verified",
+        "notes": "Specification page not retrievable automatically.",
+        "sources": [
+          {
+            "url": "https://github.com/ros/urdfdom",
+            "title": "urdfdom — URDF parser (robot model: links, joints, materials)",
+            "type": "publisher-repository",
+            "supports": [
+              "identity",
+              "scope"
+            ]
+          },
+          {
+            "url": "https://github.com/ros2/urdf",
+            "title": "ros2/urdf — packages for working with URDF files (BSD-3-Clause)",
+            "type": "publisher-repository",
+            "supports": [
+              "licence",
+              "relationship"
+            ]
+          }
+        ]
+      },
+      "classificationBasis": {
+        "industries": "editorial",
+        "capabilities": "editorial"
+      },
+      "editorialReview": {
+        "reviewedOn": "2026-10-16",
+        "reviewer": "atlas-editors"
+      },
+      "origin": "v2"
     },
     {
       "id": "vsso",
@@ -10705,10 +12473,20 @@
       "id": "energy-management",
       "label": "Energy systems & flexibility",
       "summary": "Modelling energy systems, grids, demand and flexibility."
+    },
+    {
+      "id": "ai-model-development",
+      "label": "AI model training & evaluation",
+      "summary": "Training, fine-tuning and evaluating machine-learning models, including robot policies."
+    },
+    {
+      "id": "safety-assurance",
+      "label": "Safety & assurance",
+      "summary": "Safety requirements, risk reduction and the evidence needed to show a system is acceptably safe."
     }
   ],
   "physicalAi": {
-    "status": "proposed",
+    "status": "active",
     "items": [
       {
         "id": "perception-world-modelling",
@@ -10812,14 +12590,15 @@
   "questions": [
     {
       "id": "robot-development",
-      "question": "Which knowledge resources can help me develop an industrial robot?",
-      "explanation": "Robot structure, positions, tasks and autonomy vocabularies, plus the units and sensor semantics robots depend on.",
+      "question": "What knowledge, models, tools and validation resources would help me understand, simulate and develop a robot?",
+      "explanation": "A reference ecosystem from robot concepts and descriptions, through middleware, simulators and learning frameworks, to datasets, AI models, benchmarks and safety requirements.",
       "filters": {
-        "capability": [
-          "robotics-autonomy"
+        "useCase": [
+          "robot-development"
         ]
       },
-      "note": "Robot software frameworks, simulators and datasets are not catalogued yet."
+      "ecosystem": "robot-development",
+      "note": "The ecosystem is a discovery aid. Its documented connections are cited; its reference workflow is a suggestion, not a tested integration."
     },
     {
       "id": "digital-twin-interoperability",
@@ -10868,15 +12647,16 @@
     {
       "id": "physical-ai-sim-to-real",
       "question": "Which public resources support Physical AI and sim-to-real workflows?",
-      "explanation": "Today the atlas covers the semantic foundations: robotics, sensing and simulation-related semantics.",
+      "explanation": "Simulation platforms, sim-to-real frameworks, robot policies and validation resources, classified under the atlas Physical AI categories.",
       "filters": {
-        "capability": [
-          "robotics-autonomy",
-          "simulation-validation",
-          "iot-monitoring"
+        "physicalAi": [
+          "simulation-digital-twins",
+          "sim-to-real",
+          "robot-capabilities-control",
+          "safety-testing-validation"
         ]
       },
-      "note": "Physical AI frameworks, simulators and datasets are planned for a later phase and are not catalogued yet."
+      "note": "A first, deliberately small set of documented resources; Physical AI categories are atlas application categories, not a formal external taxonomy."
     }
   ],
   "industries": [
@@ -10961,6 +12741,144 @@
     }
   ],
   "useCases": [
+    {
+      "id": "robot-development",
+      "kind": "ecosystem",
+      "name": "Robot development reference ecosystem",
+      "legacyEndObject": null,
+      "tagline": "From robot concepts to simulation, learning and validation.",
+      "summary": "An editorial map of public resources that help an engineer understand, simulate and develop a robot. It is ordered from shared concepts, through engineering representations and frameworks, to data, AI models and validation. Documented technical connections are cited; the reference workflow is a suggestion, not a demonstrated integration.",
+      "industries": [
+        "industrial-equipment",
+        "high-tech",
+        "transportation-mobility"
+      ],
+      "challenges": [
+        "Keeping one consistent description of the robot (structure, kinematics, sensors) across design, simulation and software",
+        "Choosing simulation and learning tools whose formats and interfaces actually connect",
+        "Knowing which data and models can legally be reused, and on what terms",
+        "Separating benchmark results from safety and validation evidence"
+      ],
+      "stack": [
+        {
+          "layer": "Concepts & semantics",
+          "ontologies": [
+            "ieee-cora",
+            "ieee-rparts",
+            "ieee-pos",
+            "ieee-rtr",
+            "ieee-aur",
+            "qudt",
+            "sosa"
+          ],
+          "role": "Shared vocabulary for robots, parts, poses, tasks, autonomy, units and sensing.",
+          "notes": {
+            "ieee-cora": "Defines robot, robotic system and environment.",
+            "ieee-rparts": "Names robot parts and their roles.",
+            "ieee-pos": "Positions, orientations and poses with reference frames.",
+            "ieee-rtr": "Task and sub-task representation for planners.",
+            "ieee-aur": "Autonomy concepts and design patterns.",
+            "qudt": "Units for joint limits, torques and sensor data.",
+            "sosa": "Observations and actuations from sensors and actuators."
+          }
+        },
+        {
+          "layer": "Engineering representations & models",
+          "ontologies": [
+            "urdf",
+            "openusd",
+            "sysml-v2"
+          ],
+          "role": "Machine-readable descriptions of the robot, its scene and its system architecture.",
+          "notes": {
+            "urdf": "Kinematic and physical robot description used by ROS and simulators.",
+            "openusd": "Scene and asset composition for simulation and visualisation.",
+            "sysml-v2": "System requirements and architecture."
+          }
+        },
+        {
+          "layer": "Frameworks & environments",
+          "ontologies": [
+            "ros2",
+            "gazebo",
+            "mujoco",
+            "isaac-sim",
+            "isaac-lab",
+            "lerobot"
+          ],
+          "role": "Middleware, simulators and learning frameworks to build and exercise robot software.",
+          "notes": {
+            "ros2": "Communication backbone of the robot software.",
+            "gazebo": "Open-source simulator integrated with ROS 2.",
+            "mujoco": "Fast contact physics for control and learning.",
+            "isaac-sim": "GPU simulator with USD scenes and sensor simulation.",
+            "isaac-lab": "Robot-learning framework on top of Isaac Sim.",
+            "lerobot": "Datasets, policies and evaluation tools for real robots."
+          }
+        },
+        {
+          "layer": "Datasets & AI models",
+          "ontologies": [
+            "open-x-embodiment",
+            "openvla"
+          ],
+          "role": "Training data and pretrained policies; each carries its own terms.",
+          "notes": {
+            "open-x-embodiment": "Cross-robot demonstration data (licence not stated).",
+            "openvla": "Pretrained vision-language-action policy (code MIT, weights under the Llama licence)."
+          }
+        },
+        {
+          "layer": "Testing, verification & validation",
+          "ontologies": [
+            "libero",
+            "iso-10218-1"
+          ],
+          "role": "Benchmarks that compare policies, and the safety requirements a real robot must meet. These are different kinds of evidence.",
+          "notes": {
+            "libero": "Simulated benchmark for comparing learned policies.",
+            "iso-10218-1": "Normative safety requirements for industrial robots."
+          }
+        }
+      ],
+      "workflow": [
+        {
+          "from": "ieee-rparts",
+          "to": "urdf",
+          "label": "concepts can guide the robot description"
+        },
+        {
+          "from": "urdf",
+          "to": "gazebo",
+          "label": "describe the robot for simulation"
+        },
+        {
+          "from": "openusd",
+          "to": "isaac-sim",
+          "label": "compose the simulated scene"
+        },
+        {
+          "from": "ros2",
+          "to": "gazebo",
+          "label": "test robot software in simulation"
+        },
+        {
+          "from": "mujoco",
+          "to": "libero",
+          "label": "simulate evaluation tasks"
+        },
+        {
+          "from": "open-x-embodiment",
+          "to": "lerobot",
+          "label": "train policies on demonstration data"
+        },
+        {
+          "from": "openvla",
+          "to": "iso-10218-1",
+          "label": "safety requirements still apply to any deployed policy"
+        }
+      ]
+    },
     {
       "id": "ai-factories",
       "name": "AI Factories",
@@ -11276,6 +13194,11 @@
       "description": "References, reused patterns and lineage stated by a primary source."
     },
     {
+      "id": "technical",
+      "label": "Documented technical connection",
+      "description": "Format support, interfaces, dependencies, training data and evaluation stated in publisher documentation. Not a demonstrated integration in your context."
+    },
+    {
       "id": "editorial",
       "label": "Editorially proposed",
       "description": "Used together in the same layer of an atlas reference stack. Derived from use cases, not stated by publishers."
@@ -11323,6 +13246,42 @@
       "label": "follows pattern of",
       "description": "Reuses the target's design pattern.",
       "category": "shared"
+    },
+    {
+      "id": "supports-format",
+      "label": "supports the format",
+      "description": "Reads or writes the target format, as stated in the publisher's documentation.",
+      "category": "technical"
+    },
+    {
+      "id": "implements-interface",
+      "label": "provides an interface to",
+      "description": "Ships a documented bridge or interface to the target.",
+      "category": "technical"
+    },
+    {
+      "id": "depends-on",
+      "label": "depends on",
+      "description": "Requires the target to run, as stated by the publisher.",
+      "category": "technical"
+    },
+    {
+      "id": "integrates-with",
+      "label": "documents integration with",
+      "description": "Documents a supported integration with the target (e.g. a supported benchmark).",
+      "category": "technical"
+    },
+    {
+      "id": "trained-on",
+      "label": "was trained on",
+      "description": "Model trained on the target dataset, as stated by its authors.",
+      "category": "technical"
+    },
+    {
+      "id": "evaluated-with",
+      "label": "was evaluated with",
+      "description": "Evaluated on the target benchmark, with results reported by its authors.",
+      "category": "technical"
     }
   ],
   "relations": [
@@ -11558,6 +13517,121 @@
         "note": "ETSI TS 103 410-7: SAREF extension."
       },
       "status": "verified"
+    },
+    {
+      "source": "isaac-sim",
+      "target": "urdf",
+      "type": "supports-format",
+      "evidence": {
+        "url": "https://github.com/isaac-sim/IsaacSim",
+        "type": "publisher-repository",
+        "note": "README: imports robotic systems from URDF, MJCF and CAD."
+      },
+      "status": "verified",
+      "conditions": "Import (conversion into USD); not round-trip export."
+    },
+    {
+      "source": "isaac-sim",
+      "target": "openusd",
+      "type": "supports-format",
+      "evidence": {
+        "url": "https://docs.isaacsim.omniverse.nvidia.com/latest/index.html",
+        "type": "official-documentation",
+        "note": "Documentation: \"USD-native — one scene representation from asset import to deployment\"."
+      },
+      "status": "verified"
+    },
+    {
+      "source": "isaac-sim",
+      "target": "ros2",
+      "type": "implements-interface",
+      "evidence": {
+        "url": "https://docs.isaacsim.omniverse.nvidia.com/latest/index.html",
+        "type": "official-documentation",
+        "note": "Documentation includes a ROS 2 bridge."
+      },
+      "status": "verified",
+      "conditions": "Supported ROS 2 distributions depend on the Isaac Sim release."
+    },
+    {
+      "source": "isaac-lab",
+      "target": "isaac-sim",
+      "type": "depends-on",
+      "evidence": {
+        "url": "https://github.com/isaac-sim/IsaacLab",
+        "type": "publisher-repository",
+        "note": "README: \"Built on NVIDIA Isaac Sim\"; each branch requires a specific Isaac Sim release."
+      },
+      "status": "verified"
+    },
+    {
+      "source": "mujoco",
+      "target": "urdf",
+      "type": "supports-format",
+      "evidence": {
+        "url": "https://mujoco.readthedocs.io/en/3.3.1/modeling.html",
+        "type": "official-documentation",
+        "note": "Modeling chapter: MuJoCo reads MJCF and the more limited URDF format."
+      },
+      "status": "verified",
+      "conditions": "Only URDF features that MuJoCo maps are supported; MuJoCo-specific extensions apply."
+    },
+    {
+      "source": "gazebo",
+      "target": "ros2",
+      "type": "implements-interface",
+      "evidence": {
+        "url": "https://gazebosim.org/docs/latest/ros_installation/",
+        "type": "official-documentation",
+        "note": "Integration through the ros_gz packages, with a documented compatibility table."
+      },
+      "status": "verified",
+      "conditions": "Recommended pairings: Jetty with Lyrical/Rolling, Harmonic with Jazzy, Ionic with Kilted."
+    },
+    {
+      "source": "ros2",
+      "target": "urdf",
+      "type": "supports-format",
+      "evidence": {
+        "url": "https://github.com/ros2/urdf",
+        "type": "publisher-repository",
+        "note": "The ROS 2 organisation maintains packages for working with URDF files."
+      },
+      "status": "verified"
+    },
+    {
+      "source": "lerobot",
+      "target": "libero",
+      "type": "integrates-with",
+      "evidence": {
+        "url": "https://github.com/huggingface/lerobot",
+        "type": "publisher-repository",
+        "note": "README lists LIBERO among supported simulation benchmarks."
+      },
+      "status": "verified"
+    },
+    {
+      "source": "openvla",
+      "target": "open-x-embodiment",
+      "type": "trained-on",
+      "evidence": {
+        "url": "https://github.com/openvla/openvla",
+        "type": "publisher-repository",
+        "note": "openvla-7b was trained on an Open X-Embodiment mixture of 970K trajectories."
+      },
+      "status": "verified"
+    },
+    {
+      "source": "openvla",
+      "target": "libero",
+      "type": "evaluated-with",
+      "evidence": {
+        "url": "https://github.com/openvla/openvla",
+        "type": "publisher-repository",
+        "note": "Authors report fine-tuned LIBERO success rates (average 76.5%)."
+      },
+      "status": "verified",
+      "conditions": "Results reported by the model authors; not independently replicated."
     }
   ]
 }

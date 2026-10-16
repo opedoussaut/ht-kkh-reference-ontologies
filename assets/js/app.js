@@ -8,7 +8,7 @@ const REPO = 'https://github.com/opedoussaut/ht-kkh-reference-ontologies';
 
 const LABELS = {
   layer: { upper: 'Upper', 'mid-level': 'Mid-level', 'cross-domain': 'Cross-domain', domain: 'Domain' },
-  kind: { ontology: 'Ontology', vocabulary: 'Vocabulary', 'meta-model': 'Meta-model', 'information-model': 'Information model', 'modeling-language': 'Modelling language', classification: 'Classification' },
+  kind: { 'file-format': 'File format', specification: 'Specification', 'reference-architecture': 'Reference architecture', 'software-framework': 'Software framework', middleware: 'Middleware', simulator: 'Simulator', 'physics-engine': 'Physics engine', 'ai-framework': 'AI framework', 'model-architecture': 'Model architecture', 'trained-model': 'Trained model', dataset: 'Dataset', benchmark: 'Benchmark', 'evaluation-protocol': 'Evaluation protocol', ontology: 'Ontology', vocabulary: 'Vocabulary', 'meta-model': 'Meta-model', 'information-model': 'Information model', 'modeling-language': 'Modelling language', classification: 'Classification' },
   maturity: { standard: 'Standard', stable: 'Stable', emerging: 'Emerging', research: 'Research', legacy: 'Legacy', discontinued: 'Discontinued' },
   access: { open: 'Open', 'open-with-terms': 'Open with terms', licensed: 'Licensed', unknown: 'Unknown' },
   verification: { verified: 'Verified', 'partially-verified': 'Partially verified', unverified: 'Unverified' },
@@ -30,7 +30,7 @@ const label = (group, v) => LABELS[group]?.[v] || v;
 const ont = (id) => state.byId.get(id);
 const industryName = (id) => state.maps.industry[id]?.name || id;
 const useCaseName = (id) => state.maps.useCase[id]?.name || id;
-const relLabel = (t) => (t === 'used-together' ? 'used together (editorial)' : state.maps.relType[t]?.label || t);
+const relLabel = (t) => (t === 'used-together' ? 'used together (editorial)' : t === 'reference-workflow' ? 'reference workflow (editorial)' : state.maps.relType[t]?.label || t);
 
 // Editorial overlay for the Atlas network: ontologies in the same layer of a use-case stack.
 // Never stored as relations and never shown unless requested.
@@ -64,6 +64,7 @@ function facetLabel(key, v) {
   if (key === 'capability') return capLabel(v);
   if (key === 'domain') return domainLabel(v);
   if (key === 'type') return typeLabel(v);
+  if (key === 'physicalAi') return state.maps.pai[v]?.label || v;
   if (key === 'industry') return industryName(v);
   if (key === 'useCase') return useCaseName(v);
   return label(key, v);
@@ -173,9 +174,9 @@ function viewHome() {
     <div class="section-head"><h2>Start from an engineering question ${tag('editorial', 'Curated by atlas editors; each question opens an ordinary, traceable catalogue filter.')}</h2></div>
     <div class="q-grid">
       ${d.questions.map((q) => html`
-        <a class="q-card" href="${questionHref(q)}">
+        <a class="q-card${q.ecosystem ? ' q-eco' : ''}" href="${q.ecosystem ? `#/use-cases/${q.ecosystem}` : questionHref(q)}">
           <span class="q-text">${q.question}</span>
-          <span class="q-meta">${questionResults(q).length} resources →</span>
+          <span class="q-meta">${q.ecosystem ? `Reference ecosystem · ${new Set(state.maps.useCase[q.ecosystem].stack.flatMap((s) => s.ontologies)).size} resources →` : `${questionResults(q).length} resources →`}</span>
         </a>`)}
     </div>
   </section>
@@ -235,6 +236,7 @@ function facetValues(key, counts, selected) {
   if (key === 'capability') return state.data.capabilities.map((c) => c.id).filter(keep);
   if (key === 'type') return state.data.resourceTypes.map((t) => t.id).filter(keep);
   if (key === 'domain') return state.data.knowledgeDomains.flatMap((d) => d.children.map((c) => c.id)).filter(keep);
+  if (key === 'physicalAi') return state.data.physicalAi.items.map((p) => p.id).filter(keep);
   return Object.keys(LABELS[key] || {}).filter(keep);
 }
 
@@ -311,6 +313,31 @@ function viewCatalog(params) {
   </div>`;
 }
 
+function detailRows(o) {
+  const d = o.details || {};
+  const rows = [];
+  if (d.aiModel) {
+    rows.push(factRow('Model artefact', html`${d.aiModel.artefact === 'trained-model' ? 'Trained model' : 'Model architecture'} · weights published: ${d.aiModel.weightsPublished}`));
+    if (d.aiModel.baseModel) rows.push(factRow('Base model', d.aiModel.baseModel));
+    if (d.aiModel.trainingData) rows.push(factRow('Training data', d.aiModel.trainingData));
+    if (d.aiModel.modalities) rows.push(factRow('Modalities', d.aiModel.modalities.join(' · ')));
+  }
+  if (d.dataset) {
+    if (d.dataset.size) rows.push(factRow('Size', d.dataset.size));
+    if (d.dataset.embodiments) rows.push(factRow('Robot embodiments', d.dataset.embodiments));
+    if (d.dataset.collection) rows.push(factRow('Collection', d.dataset.collection));
+    if (d.dataset.modalities) rows.push(factRow('Modalities', d.dataset.modalities.join(' · ')));
+  }
+  if (d.benchmark) {
+    if (d.benchmark.evaluates) rows.push(factRow('Evaluates', d.benchmark.evaluates));
+    if (d.benchmark.metrics) rows.push(factRow('Metrics', d.benchmark.metrics.join(' · ')));
+    if (d.benchmark.environment) rows.push(factRow('Environment', d.benchmark.environment));
+  }
+  if (d.standard?.designation) rows.push(factRow('Designation', html`${d.standard.designation}${d.standard.edition ? ` · edition ${d.standard.edition}` : ''}`));
+  if (o.physicalAi?.length) rows.push(factRow('Physical AI', html`${o.physicalAi.map((p) => state.maps.pai[p]?.label || p).join(' · ')} ${tag(o.classificationBasis.physicalAi || 'editorial')}`));
+  return rows;
+}
+
 function licenceTable(list) {
   return html`<table class="lic-table"><thead><tr><th>Scope</th><th>Licence</th><th>Commercial use</th></tr></thead><tbody>${list.map((l) => html`<tr>
     <td>${label('licScope', l.scope)}</td>
@@ -365,7 +392,7 @@ function viewOntology(id) {
   return html`
   <nav class="crumbs">${link('#/catalog', 'Catalogue')} <span>/</span> ${o.name}</nav>
   <section class="detail-hero">
-    <div class="detail-kicker">${typeLabel(o.resourceType)} · ${label('layer', o.layer)}${o.standardRef ? html` · <span class="mono">${o.standardRef}</span>` : ''}</div>
+    <div class="detail-kicker">${typeLabel(o.resourceType)}${o.layer ? ` · ${label('layer', o.layer)}` : ''}${o.standardRef ? html` · <span class="mono">${o.standardRef}</span>` : ''}</div>
     <h1>${o.name}</h1>
     <p class="detail-full">${o.fullName}</p>
     <div class="pill-row">${verifPill(o)} ${maturityPill(o)} ${accessPill(o)} ${o.needsReview ? pill('warn', 'Needs review') : ''} ${o.origin === 'v1' ? pill('', 'Since v1') : pill('', 'Added in v2')}</div>
@@ -389,6 +416,7 @@ function viewOntology(id) {
           ${factRow('Version', html`<span class="mono">${o.version.label}</span>${o.version.date ? html` <span class="muted">· ${o.version.date}</span>` : ''} <span class="muted">· ${label('status', o.version.status)}</span>`)}
           ${factRow('Maturity', html`${label('maturity', o.maturity)} <span class="muted small">· ${link('#/about', 'criteria')}</span>`)}
           ${factRow('Topics', o.topics.join(' · '))}
+          ${detailRows(o)}
           ${factRow('Namespace', o.links.namespace ? html`<span class="mono break">${o.links.namespace}</span>` : null)}
         </dl>
       </section>
@@ -415,7 +443,7 @@ function viewOntology(id) {
           ${factRow('Repository', o.links.repository ? ext(o.links.repository, o.links.repository) : null)}
           ${factRow('Distributions', o.links.distributions?.length ? html`${o.links.distributions.map((x) => html`<div>${ext(x.url, x.format)}</div>`)}` : null)}
           ${factRow('Related', o.links.related ? ext(o.links.related, o.links.related) : null)}
-          ${factRow('Ontology Explorer', html`<a href="#/explore/${o.id}"><span class="pill ${AVAILABILITY[ex.status].cls}">${AVAILABILITY[ex.status].label}</span></a> <span class="muted small">${ex.status === 'interactive' ? '' : ex.reason}</span>`)}
+          ${state.maps.familyOf[o.resourceType] !== 'semantic' ? '' : factRow('Ontology Explorer', html`<a href="#/explore/${o.id}"><span class="pill ${AVAILABILITY[ex.status].cls}">${AVAILABILITY[ex.status].label}</span></a> <span class="muted small">${ex.status === 'interactive' ? '' : ex.reason}</span>`)}
         </dl>
       </section>
 
@@ -589,9 +617,105 @@ function viewUseCases() {
   </div>`;
 }
 
+// Resources whose terms need attention before reuse (any scoped licence not known to permit commercial use).
+function termsToCheck(o) {
+  return (o.licenses || []).filter((l) => l.commercialUse !== 'permitted');
+}
+
+function viewEcosystem(u) {
+  setTitle(u.name);
+  const ids = new Set(u.stack.flatMap((s) => s.ontologies));
+  const rels = state.data.relations.filter((r) => ids.has(r.source) && ids.has(r.target));
+  const technical = rels.filter((r) => state.maps.relType[r.type]?.category === 'technical');
+  const semantic = rels.filter((r) => state.maps.relType[r.type]?.category !== 'technical');
+  const relLi = (r) => html`<li class="rel"><div>${link(`#/resource/${r.source}`, ont(r.source).name, 'rel-name')} <span class="rel-type">${relLabel(r.type)}</span> ${link(`#/resource/${r.target}`, ont(r.target).name, 'rel-name')}</div>
+    <span class="rel-ev">${r.evidence.note} ${ext(r.evidence.url, 'Source')} <span class="pill ev-${r.evidence.type}">${evidenceLabel(r.evidence.type)}</span></span>
+    ${r.conditions ? html`<span class="rel-ev"><strong>Applies when:</strong> ${r.conditions}</span>` : ''}</li>`;
+  const check = [...ids].map(ont).filter((o) => termsToCheck(o).length);
+  return html`
+  <nav class="crumbs">${link('#/use-cases', 'Use cases')} <span>/</span> ${u.name}</nav>
+  <section class="uc-hero uc-${u.id}">
+    <p class="eyebrow">Reference ecosystem</p>
+    <h1>${u.name}</h1>
+    <p class="lead">${u.summary}</p>
+    <div class="chips">${u.industries.map((i) => chip(`#/industries/${i}`, industryName(i)))}</div>
+  </section>
+  <section class="eco-scope" aria-label="Scope of this ecosystem">
+    ${tag('editorial', 'Selection, ordering and the reference workflow are editorial.')}
+    <p><strong>A discovery and architecture aid, not a tested integration.</strong> Connections marked <em>Source</em> are stated in the publishers' documentation. The reference workflow is an editorial suggestion, and nothing here shows that these resources work together in your context.</p>
+  </section>
+  <nav class="eco-stages" aria-label="Stages">
+    ${u.stack.map((s, n) => html`<a href="#/use-cases/${u.id}" data-scroll="stage-${n + 1}"><span class="sec-n small">${n + 1}</span>${s.layer}</a>`)}
+  </nav>
+  <div class="detail-grid">
+    <div class="detail-main">
+      ${u.stack.map((s, n) => html`
+      <section class="panel" id="stage-${n + 1}">
+        ${sectionHead(n + 1, s.layer, 'editorial', 'Why each resource matters is an editorial note.')}
+        <p class="muted">${s.role}</p>
+        <div class="eco-list">${s.ontologies.map((oid) => {
+          const o = ont(oid);
+          return html`<a class="eco-row" href="#/resource/${oid}">
+            <div class="eco-main"><span class="eco-name">${o.name}</span> <span class="eco-type">${typeLabel(o.resourceType)}</span>
+              <div class="eco-why">${s.notes?.[oid] || o.summary}</div>
+              <div class="eco-pub muted small">${o.publisher}</div></div>
+            <div class="eco-badges">${verifPill(o)} ${accessPill(o)} ${termsToCheck(o).length ? pill('a-licensed', 'Check terms', termsToCheck(o).map((l) => `${label('licScope', l.scope)}: ${l.name}`).join(' · ')) : ''}</div>
+          </a>`;
+        })}</div>
+      </section>`)}
+
+      <section class="panel" id="connections">
+        <h2 class="sec-h">How these resources connect</h2>
+        <p class="muted small">A relationship does not mean a working integration in your context. Check each publisher's documentation for versions and conditions.</p>
+        <h3 class="sub">Documented technical connections ${tag('source')}</h3>
+        ${technical.length ? html`<ul class="rels">${technical.map(relLi)}</ul>` : html`<p class="muted">None recorded.</p>`}
+        ${semantic.length ? html`<h3 class="sub">Formal semantic relationships ${tag('source')}</h3><ul class="rels compact">${semantic.map(relLi)}</ul>` : ''}
+        <h3 class="sub">Reference workflow ${tag('editorial')}</h3>
+        <ol class="eco-flow">${(u.workflow || []).map((w) => html`<li>${link(`#/resource/${w.from}`, ont(w.from).name)} <span class="muted">→</span> ${link(`#/resource/${w.to}`, ont(w.to).name)} <span class="muted small">· ${w.label}</span></li>`)}</ol>
+      </section>
+
+      <section class="panel">
+        <div class="section-head"><h2 class="sec-h">Ecosystem map</h2>
+          <label class="toggle"><input type="checkbox" id="eco-workflow">Show the reference workflow (editorial, dashed gold)</label></div>
+        <div id="eco-graph" class="graph-canvas eco-graph" data-eco="${u.id}" role="img" aria-label="Map of the resources in this ecosystem and their documented connections. The lists above give the same information as text."></div>
+        <div class="graph-legend">
+          ${Object.entries(LABELS.layer).map(([k, v]) => html`<span><i class="dot layer-${k}"></i>${v} semantic</span>`)}
+          <span><i class="dot layer-technology"></i>Technology / standard</span>
+        </div>
+      </section>
+    </div>
+    <aside class="detail-side">
+      <section class="panel sticky-side">
+        <h2>Engineering challenges</h2>
+        <ul class="bullets">${u.challenges.map((c) => html`<li>${c}</li>`)}</ul>
+        <h3 class="sub">Rights to check before reuse</h3>
+        ${check.length ? html`<ul class="rights-list">${check.map((o) => html`<li>${link(`#/resource/${o.id}`, o.name)}<span class="muted small">${termsToCheck(o).map((l) => `${label('licScope', l.scope)}: ${l.name}`).join(' · ')}</span></li>`)}</ul>` : html`<p class="muted small">None flagged.</p>`}
+        <p class="small muted">"Permitted" appears only where the licence text was reviewed. Everything else needs your own review.</p>
+        <a class="btn" href="#/catalog?useCase=${u.id}&family=all">Open all ${ids.size} resources in the catalogue →</a>
+      </section>
+    </aside>
+  </div>`;
+}
+
+function mountEcosystemGraph() {
+  const box = document.getElementById('eco-graph');
+  if (!box) return;
+  const u = state.maps.useCase[box.dataset.eco];
+  const ids = new Set(u.stack.flatMap((s) => s.ontologies));
+  const draw = () => {
+    const nodes = state.data.ontologies.filter((o) => ids.has(o.id));
+    let rels = state.data.relations.filter((r) => ids.has(r.source) && ids.has(r.target));
+    if (document.getElementById('eco-workflow')?.checked) rels = [...rels, ...(u.workflow || []).map((w) => ({ source: w.from, target: w.to, type: 'reference-workflow' }))];
+    renderGraph(box, buildGraph(nodes, rels, { includeIsolated: true }), { relationLabel: relLabel, onSelect: (rid) => { location.hash = `#/resource/${rid}`; } });
+  };
+  draw();
+  document.getElementById('eco-workflow')?.addEventListener('change', draw);
+}
+
 function viewUseCase(id) {
   const u = state.maps.useCase[id];
   if (!u) return viewNotFound();
+  if (u.kind === 'ecosystem') return viewEcosystem(u);
   setTitle(u.name);
   const ids = new Set(u.stack.flatMap((s) => s.ontologies));
   const rels = state.data.relations.filter((r) => ids.has(r.source) && ids.has(r.target));
@@ -753,6 +877,7 @@ function route() {
   if (path !== lastPath) window.scrollTo(0, 0);
   lastPath = path;
   if (section === 'graph') mountGraph(params);
+  if (section === 'use-cases' && id && state.maps.useCase[id]?.kind === 'ecosystem') mountEcosystemGraph();
   if (section === 'explore' && id && explorerEntry(id).status === 'interactive') {
     mountExplorer({ record: ont(id), entry: explorerEntry(id), concept: params.get('c'), onConceptChange: (iri) => history.replaceState(null, '', `#/explore/${id}?c=${encodeURIComponent(iri)}`) });
   }
@@ -881,6 +1006,7 @@ async function boot() {
     familyOf: Object.fromEntries(d.resourceTypes.map((x) => [x.id, x.family])),
     capability: Object.fromEntries(d.capabilities.map((x) => [x.id, x])),
     evidence: Object.fromEntries(d.evidenceTypes.map((x) => [x.id, x])),
+    pai: Object.fromEntries(d.physicalAi.items.map((x) => [x.id, x])),
     domain: Object.fromEntries(d.knowledgeDomains.flatMap((p) => p.children.map((c) => [c.id, { ...c, parent: p }]))),
     useCase: Object.fromEntries(d.useCases.map((x) => [x.id, x])),
     relType: Object.fromEntries(d.relationTypes.map((x) => [x.id, x])),

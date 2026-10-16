@@ -1,47 +1,77 @@
 {
   "_status": "active",
-  "_version": "1.0.0",
+  "_version": "1.1.0",
   "_note": "EDITORIAL entry points. Each question resolves to ordinary catalogue filters (OR within a filter, AND across filters), so every result is traceable to record data. `note` states known gaps honestly.",
   "items": [
     {
       "id": "robot-development",
-      "question": "Which knowledge resources can help me develop an industrial robot?",
-      "explanation": "Robot structure, positions, tasks and autonomy vocabularies, plus the units and sensor semantics robots depend on.",
-      "filters": { "capability": ["robotics-autonomy"] },
-      "note": "Robot software frameworks, simulators and datasets are not catalogued yet."
+      "question": "What knowledge, models, tools and validation resources would help me understand, simulate and develop a robot?",
+      "explanation": "A reference ecosystem from robot concepts and descriptions, through middleware, simulators and learning frameworks, to datasets, AI models, benchmarks and safety requirements.",
+      "filters": {
+        "useCase": [
+          "robot-development"
+        ]
+      },
+      "ecosystem": "robot-development",
+      "note": "The ecosystem is a discovery aid. Its documented connections are cited; its reference workflow is a suggestion, not a tested integration."
     },
     {
       "id": "digital-twin-interoperability",
       "question": "What semantic standards support digital-twin interoperability?",
       "explanation": "Asset information models and ontologies used to describe assets consistently across their lifecycle.",
-      "filters": { "capability": ["digital-twin"] }
+      "filters": {
+        "capability": [
+          "digital-twin"
+        ]
+      }
     },
     {
       "id": "requirements-to-evidence",
       "question": "Which resources help connect engineering requirements with verification evidence?",
       "explanation": "Systems-modelling languages, simulation-related semantics and provenance vocabularies that can trace results back to their inputs.",
-      "filters": { "capability": ["systems-engineering", "simulation-validation", "data-governance"] },
+      "filters": {
+        "capability": [
+          "systems-engineering",
+          "simulation-validation",
+          "data-governance"
+        ]
+      },
       "note": "Few public ontologies cover requirement-to-evidence traceability end to end; these resources each cover part of it."
     },
     {
       "id": "semiconductor-manufacturing",
       "question": "Which reference ontologies are relevant to semiconductor manufacturing?",
       "explanation": "Resources mapped to the atlas Semiconductors use case, from supply-chain and classification semantics to materials, units and manufacturing ontologies.",
-      "filters": { "useCase": ["semiconductors"] }
+      "filters": {
+        "useCase": [
+          "semiconductors"
+        ]
+      }
     },
     {
       "id": "lca-dpp",
       "question": "What resources exist for lifecycle assessment and Digital Product Passports?",
       "explanation": "Product identification, provenance, regulation and sustainability-related semantics.",
-      "filters": { "capability": ["sustainability-compliance"] },
+      "filters": {
+        "capability": [
+          "sustainability-compliance"
+        ]
+      },
       "note": "No published, verified LCA ontology is catalogued yet (one candidate is under review)."
     },
     {
       "id": "physical-ai-sim-to-real",
       "question": "Which public resources support Physical AI and sim-to-real workflows?",
-      "explanation": "Today the atlas covers the semantic foundations: robotics, sensing and simulation-related semantics.",
-      "filters": { "capability": ["robotics-autonomy", "simulation-validation", "iot-monitoring"] },
-      "note": "Physical AI frameworks, simulators and datasets are planned for a later phase and are not catalogued yet."
+      "explanation": "Simulation platforms, sim-to-real frameworks, robot policies and validation resources, classified under the atlas Physical AI categories.",
+      "filters": {
+        "physicalAi": [
+          "simulation-digital-twins",
+          "sim-to-real",
+          "robot-capabilities-control",
+          "safety-testing-validation"
+        ]
+      },
+      "note": "A first, deliberately small set of documented resources; Physical AI categories are atlas application categories, not a formal external taxonomy."
     }
   ]
 }

@@ -12,7 +12,10 @@ import { loadSources } from '../lib/atlas-data.mjs';
 const ROOT = fileURLToPath(new URL('../..', import.meta.url));
 const offline = process.argv.includes('--offline');
 const cfg = JSON.parse(readFileSync(join(ROOT, 'data/explorer/sources.json'), 'utf8'));
-const atlasIds = loadSources(ROOT).ontologies.map((o) => o.record.id);
+// The Explorer covers the semantic family only (ontologies, vocabularies, schemas, modelling languages).
+const srcs = loadSources(ROOT);
+const semanticTypes = new Set(srcs.resourceTypes.items.filter((t) => t.family === 'semantic').map((t) => t.id));
+const atlasIds = srcs.ontologies.map((o) => o.record).filter((r) => semanticTypes.has(r.resourceType)).map((r) => r.id);
 const today = new Date().toISOString().slice(0, 10);
 const manifestPath = join(ROOT, 'data/explorer/manifest.json');
 const previous = existsSync(manifestPath) ? JSON.parse(readFileSync(manifestPath, 'utf8')) : { ontologies: {} };

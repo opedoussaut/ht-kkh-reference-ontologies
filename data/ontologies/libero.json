@@ -1,0 +1,140 @@
+{
+  "id": "libero",
+  "name": "LIBERO",
+  "fullName": "LIBERO lifelong robot-learning benchmark",
+  "resourceType": "benchmark",
+  "kind": "benchmark",
+  "summary": "Benchmark for knowledge transfer in multitask and lifelong robot learning: 130 procedurally generated manipulation tasks in four suites (Spatial, Object, Goal, and LIBERO-100 split into 90 and 10).",
+  "knowledge": {
+    "domain": "product.requirements",
+    "basis": "editorial",
+    "confidence": "clear",
+    "rationale": "Defines evaluation tasks and success criteria for robot policies."
+  },
+  "publisher": "LIBERO authors (Lifelong-Robot-Learning)",
+  "publisherType": "research",
+  "topics": [
+    "benchmark",
+    "lifelong learning",
+    "manipulation"
+  ],
+  "version": {
+    "label": "LIBERO (arXiv:2306.03310)",
+    "date": null,
+    "status": "published"
+  },
+  "maturity": "research",
+  "license": {
+    "name": "Code MIT; datasets CC BY 4.0",
+    "access": "open",
+    "url": "https://github.com/Lifelong-Robot-Learning/LIBERO",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
+  },
+  "licenses": [
+    {
+      "scope": "software",
+      "name": "MIT License (benchmark code)",
+      "spdx": "MIT",
+      "url": "https://opensource.org/license/mit",
+      "statedAt": "https://github.com/Lifelong-Robot-Learning/LIBERO",
+      "commercialUse": "permitted",
+      "reviewStatus": "reviewed",
+      "reviewNote": "As granted by the licence text; dependencies and third-party components not assessed. Not legal advice."
+    },
+    {
+      "scope": "dataset",
+      "name": "Creative Commons Attribution 4.0 (datasets)",
+      "spdx": "CC-BY-4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/",
+      "statedAt": "https://github.com/Lifelong-Robot-Learning/LIBERO",
+      "commercialUse": "permitted",
+      "reviewStatus": "reviewed",
+      "reviewNote": "As granted by the licence text; dependencies and third-party components not assessed. Not legal advice."
+    }
+  ],
+  "links": {
+    "official": "https://github.com/Lifelong-Robot-Learning/LIBERO",
+    "repository": "https://github.com/Lifelong-Robot-Learning/LIBERO"
+  },
+  "formats": [
+    "Python",
+    "HDF5 demonstrations"
+  ],
+  "industries": [
+    "industrial-equipment",
+    "high-tech"
+  ],
+  "useCases": [
+    "robot-development"
+  ],
+  "capabilities": [
+    "simulation-validation",
+    "ai-model-development",
+    "robotics-autonomy"
+  ],
+  "physicalAi": [
+    "safety-testing-validation"
+  ],
+  "details": {
+    "benchmark": {
+      "evaluates": "Knowledge transfer in multitask and lifelong robot learning (manipulation policies)",
+      "metrics": [
+        "task success rate"
+      ],
+      "environment": "Simulated tabletop manipulation"
+    }
+  },
+  "limitations": [
+    {
+      "text": "Evaluates simulated tabletop manipulation; results do not establish real-world or safety performance.",
+      "basis": "editorial",
+      "category": "scope"
+    },
+    {
+      "text": "The simulation back-end is not named on the project page.",
+      "basis": "editorial",
+      "category": "catalogue-gap"
+    }
+  ],
+  "engineeringUses": [
+    "Comparing manipulation policies on a shared, reproducible task suite",
+    "Testing whether a policy keeps earlier skills when trained on new tasks"
+  ],
+  "verification": {
+    "checkedOn": "2026-10-16",
+    "status": "verified",
+    "notes": "",
+    "sources": [
+      {
+        "url": "https://github.com/Lifelong-Robot-Learning/LIBERO",
+        "title": "LIBERO repository (README)",
+        "type": "publisher-repository",
+        "supports": [
+          "identity",
+          "licence",
+          "capability",
+          "scope"
+        ]
+      },
+      {
+        "url": "https://arxiv.org/abs/2306.03310",
+        "title": "LIBERO: Benchmarking Knowledge Transfer for Lifelong Robot Learning (arXiv)",
+        "type": "research-publication",
+        "supports": [
+          "identity"
+        ]
+      }
+    ]
+  },
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial",
+    "physicalAi": "editorial"
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
+  },
+  "origin": "v2"
+}

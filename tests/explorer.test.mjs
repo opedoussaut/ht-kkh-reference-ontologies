@@ -101,8 +101,10 @@ test('view model: search ranks exact and prefix matches first and filters by typ
 const manifest = JSON.parse(readFileSync(join(ROOT, 'data/explorer/manifest.json'), 'utf8'));
 const STATUSES = ['interactive', 'source-available', 'documentation-only', 'unavailable', 'not-assessed'];
 
-test('manifest covers every catalogue record exactly once with a valid status and reason', () => {
-  const ids = loadSources(ROOT).ontologies.map((o) => o.record.id).sort();
+test('manifest covers every semantic-family record exactly once (and no technology resource) with a valid status and reason', () => {
+  const src = loadSources(ROOT);
+  const semantic = new Set(src.resourceTypes.items.filter((t) => t.family === 'semantic').map((t) => t.id));
+  const ids = src.ontologies.map((o) => o.record).filter((r) => semantic.has(r.resourceType)).map((r) => r.id).sort();
   assert.deepEqual(Object.keys(manifest.ontologies).sort(), ids);
   for (const [id, e] of Object.entries(manifest.ontologies)) {
     assert.ok(STATUSES.includes(e.status), id);

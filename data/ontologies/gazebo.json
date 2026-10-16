@@ -1,0 +1,125 @@
+{
+  "id": "gazebo",
+  "name": "Gazebo",
+  "fullName": "Gazebo open-source robotics simulator",
+  "resourceType": "simulation",
+  "kind": "simulator",
+  "summary": "Open-source robotics simulator with SDFormat models, sensors and plugins, integrated with ROS 2 through the ros_gz packages. Long-term-support releases pair with ROS 2 LTS distributions.",
+  "knowledge": {
+    "domain": "product.behaviour",
+    "basis": "editorial",
+    "confidence": "clear",
+    "rationale": "Simulates robot behaviour, sensors and environments."
+  },
+  "publisher": "Open Robotics",
+  "publisherType": "consortium",
+  "topics": [
+    "robot simulation",
+    "sensors",
+    "SDFormat"
+  ],
+  "version": {
+    "label": "Gazebo Jetty (LTS, September 2025 – May 2031)",
+    "date": "2025-09",
+    "status": "published"
+  },
+  "maturity": "stable",
+  "license": {
+    "name": "Apache-2.0 (Gazebo Sim library)",
+    "access": "open",
+    "url": "https://www.apache.org/licenses/LICENSE-2.0",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
+  },
+  "licenses": [
+    {
+      "scope": "software",
+      "name": "Apache License 2.0 (gz-sim)",
+      "spdx": "Apache-2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0",
+      "statedAt": "https://github.com/gazebosim/gz-sim",
+      "commercialUse": "permitted",
+      "reviewStatus": "reviewed",
+      "reviewNote": "As granted by the licence text; dependencies and third-party components not assessed. Not legal advice."
+    }
+  ],
+  "links": {
+    "official": "https://gazebosim.org/",
+    "repository": "https://github.com/gazebosim/gz-sim"
+  },
+  "formats": [
+    "SDFormat (SDF)"
+  ],
+  "industries": [
+    "industrial-equipment",
+    "high-tech",
+    "transportation-mobility"
+  ],
+  "useCases": [
+    "robot-development"
+  ],
+  "capabilities": [
+    "simulation-validation",
+    "robotics-autonomy"
+  ],
+  "physicalAi": [
+    "simulation-digital-twins"
+  ],
+  "limitations": [
+    {
+      "text": "Recommended ROS 2 pairings are release-specific (for example Jetty with Lyrical and Rolling, Harmonic with Jazzy).",
+      "basis": "source",
+      "category": "scope",
+      "sourceRef": "https://gazebosim.org/docs/latest/ros_installation/"
+    }
+  ],
+  "engineeringUses": [
+    "Testing ROS 2 robot software in simulated worlds with simulated sensors",
+    "Running regression tests of navigation or manipulation stacks in continuous integration"
+  ],
+  "verification": {
+    "checkedOn": "2026-10-16",
+    "status": "verified",
+    "notes": "",
+    "sources": [
+      {
+        "url": "https://gazebosim.org/docs/latest/releases/",
+        "title": "Gazebo releases",
+        "type": "official-documentation",
+        "supports": [
+          "version",
+          "status"
+        ]
+      },
+      {
+        "url": "https://github.com/gazebosim/gz-sim",
+        "title": "Gazebo Sim repository (Apache-2.0)",
+        "type": "publisher-repository",
+        "supports": [
+          "identity",
+          "licence",
+          "capability"
+        ]
+      },
+      {
+        "url": "https://gazebosim.org/docs/latest/ros_installation/",
+        "title": "Gazebo: installing Gazebo with ROS",
+        "type": "official-documentation",
+        "supports": [
+          "relationship",
+          "limitation"
+        ]
+      }
+    ]
+  },
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial",
+    "physicalAi": "editorial"
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
+  },
+  "origin": "v2"
+}

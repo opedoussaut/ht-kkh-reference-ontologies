@@ -1,54 +1,215 @@
 {
   "_note": "Ontology Explorer configuration. `pilots` are processed by `npm run graphs`. `availability` records the explorer status of every other catalogue record and why. See docs/ONTOLOGY-EXPLORER.md.",
-  "limits": { "maxBytes": 5000000, "timeoutMs": 60000 },
+  "limits": {
+    "maxBytes": 5000000,
+    "timeoutMs": 60000
+  },
   "pilots": {
-    "saref-core": { "url": "https://saref.etsi.org/core/v4.1.1/saref.ttl", "format": "text/turtle", "license": "ETSI Software License (BSD-3-Clause style)", "licenseUrl": "https://forge.etsi.org/etsi-software-license", "documentation": "https://saref.etsi.org/core/" },
-    "sosa": { "url": "https://www.w3.org/ns/sosa/", "format": "text/turtle", "license": "W3C Software and Document License", "licenseUrl": "https://www.w3.org/copyright/software-license/", "documentation": "https://www.w3.org/TR/vocab-ssn/" },
-    "ssn": { "url": "https://www.w3.org/ns/ssn/", "format": "text/turtle", "license": "W3C Software and Document License", "licenseUrl": "https://www.w3.org/copyright/software-license/", "documentation": "https://www.w3.org/TR/vocab-ssn/" },
-    "qudt": { "url": "https://qudt.org/schema/qudt/", "format": "text/turtle", "license": "CC BY 4.0", "licenseUrl": "https://creativecommons.org/licenses/by/4.0/", "documentation": "https://qudt.org/" }
+    "saref-core": {
+      "url": "https://saref.etsi.org/core/v4.1.1/saref.ttl",
+      "format": "text/turtle",
+      "license": "ETSI Software License (BSD-3-Clause style)",
+      "licenseUrl": "https://forge.etsi.org/etsi-software-license",
+      "documentation": "https://saref.etsi.org/core/"
+    },
+    "sosa": {
+      "url": "https://www.w3.org/ns/sosa/",
+      "format": "text/turtle",
+      "license": "W3C Software and Document License",
+      "licenseUrl": "https://www.w3.org/copyright/software-license/",
+      "documentation": "https://www.w3.org/TR/vocab-ssn/"
+    },
+    "ssn": {
+      "url": "https://www.w3.org/ns/ssn/",
+      "format": "text/turtle",
+      "license": "W3C Software and Document License",
+      "licenseUrl": "https://www.w3.org/copyright/software-license/",
+      "documentation": "https://www.w3.org/TR/vocab-ssn/"
+    },
+    "qudt": {
+      "url": "https://qudt.org/schema/qudt/",
+      "format": "text/turtle",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "documentation": "https://qudt.org/"
+    }
   },
   "availability": {
-    "saref4bldg": { "status": "source-available", "reason": "ETSI publishes the ontology in Turtle at its namespace." },
-    "saref4ener": { "status": "source-available", "reason": "ETSI publishes the ontology in Turtle at its namespace." },
-    "saref4inma": { "status": "source-available", "reason": "ETSI publishes the ontology in Turtle at its namespace." },
-    "saref4city": { "status": "source-available", "reason": "ETSI publishes the ontology in Turtle at its namespace." },
-    "saref4auto": { "status": "source-available", "reason": "ETSI publishes the ontology in Turtle at its namespace." },
-    "prov-o": { "status": "source-available", "reason": "W3C publishes PROV-O as OWL at its namespace." },
-    "dcterms": { "status": "source-available", "reason": "DCMI publishes the terms as RDF." },
-    "dcat": { "status": "source-available", "reason": "W3C publishes DCAT 3 as RDF at its namespace." },
-    "skos": { "status": "source-available", "reason": "W3C publishes SKOS as RDF at its namespace." },
-    "owl-time": { "status": "source-available", "reason": "W3C publishes OWL-Time as OWL at its namespace." },
-    "geosparql": { "status": "source-available", "reason": "OGC publishes the GeoSPARQL ontology as RDF." },
-    "bot": { "status": "source-available", "reason": "BOT is published as OWL at its w3id namespace." },
-    "brick": { "status": "source-available", "reason": "Brick releases include the ontology in Turtle (repository)." },
-    "bfo": { "status": "source-available", "reason": "BFO 2020 OWL files are published in the BFO-2020 repository." },
-    "iof-core": { "status": "source-available", "reason": "IOF publishes OWL files for each release." },
-    "cco": { "status": "source-available", "reason": "CCO OWL files are published in its repository." },
-    "emmo": { "status": "source-available", "reason": "EMMO OWL/Turtle files are published in its repository." },
-    "oeo": { "status": "source-available", "reason": "OEO OWL files are published in its repository." },
-    "obi": { "status": "source-available", "reason": "OBI OWL files are published in its repository." },
-    "gs1-webvoc": { "status": "source-available", "reason": "GS1 publishes the vocabulary as JSON-LD (requires a JSON-LD parser)." },
-    "schema-org": { "status": "source-available", "reason": "Schema.org publishes Turtle/JSON-LD releases. Large: requires the incremental loading planned for later." },
-    "ieee-cora": { "status": "source-available", "reason": "A CC BY 4.0 OWL conversion of CORA is published in a public repository; the standard itself is sold by IEEE." },
-    "digital-reference": { "status": "source-available", "reason": "OWL/Turtle files are published in its repository; licence to confirm before processing." },
-    "vsso": { "status": "source-available", "reason": "Turtle files are published in the W3C repository (discontinued draft)." },
-    "goodrelations": { "status": "source-available", "reason": "GoodRelations is published as OWL at its namespace (legacy)." },
-    "ieee-corax": { "status": "documentation-only", "reason": "Specified in the IEEE 1872-2015 text (sold by IEEE); no public machine-readable module known." },
-    "ieee-pos": { "status": "documentation-only", "reason": "Specified in the IEEE 1872-2015 text (sold by IEEE); no public machine-readable module known." },
-    "ieee-rparts": { "status": "documentation-only", "reason": "Specified in the IEEE 1872-2015 text (sold by IEEE); no public machine-readable module known." },
-    "sumo-cora": { "status": "documentation-only", "reason": "Part of the IEEE 1872-2015 axiomatisation; no separate public artefact known." },
-    "ieee-rtr": { "status": "documentation-only", "reason": "IEEE 1872.1-2024 text is sold by IEEE; no public machine-readable ontology known." },
-    "iso-15926-14": { "status": "documentation-only", "reason": "ISO technical specification sold by ISO; no public OWL distribution known." },
-    "eclass": { "status": "documentation-only", "reason": "ECLASS releases, including the RDF serialisation, require a commercial licence." },
-    "iec-cim": { "status": "documentation-only", "reason": "IEC standard (UML information model) sold by IEC; profiles such as CGMES are not OWL ontologies." },
-    "step-ap242": { "status": "unavailable", "reason": "STEP AP242 is an EXPRESS information model, not an RDF/OWL ontology." },
-    "dmtf-cim": { "status": "unavailable", "reason": "DMTF CIM is a MOF/UML schema, not an RDF/OWL ontology." },
-    "sysml-v2": { "status": "unavailable", "reason": "SysML v2 / KerML is a modelling language with its own notation, not an RDF/OWL ontology." },
-    "oriont": { "status": "unavailable", "reason": "No public source identified (see the record's verification notes)." },
-    "ieee-aur": { "status": "not-assessed", "reason": "Public OWL availability under the IEEE SA open-source programme not yet confirmed." },
-    "aas": { "status": "not-assessed", "reason": "IDTA specifies an RDF serialisation; the published ontology file has not yet been reviewed." },
-    "eli": { "status": "not-assessed", "reason": "Distribution format and licence of the ontology files not yet reviewed." },
-    "sumo": { "status": "not-assessed", "reason": "SUMO is authored in SUO-KIF; the OWL translation has not yet been reviewed." },
-    "ifcowl": { "status": "not-assessed", "reason": "The former IFC4 ontology page no longer resolves; current distribution not yet reviewed." }
+    "saref4bldg": {
+      "status": "source-available",
+      "reason": "ETSI publishes the ontology in Turtle at its namespace."
+    },
+    "saref4ener": {
+      "status": "source-available",
+      "reason": "ETSI publishes the ontology in Turtle at its namespace."
+    },
+    "saref4inma": {
+      "status": "source-available",
+      "reason": "ETSI publishes the ontology in Turtle at its namespace."
+    },
+    "saref4city": {
+      "status": "source-available",
+      "reason": "ETSI publishes the ontology in Turtle at its namespace."
+    },
+    "saref4auto": {
+      "status": "source-available",
+      "reason": "ETSI publishes the ontology in Turtle at its namespace."
+    },
+    "prov-o": {
+      "status": "source-available",
+      "reason": "W3C publishes PROV-O as OWL at its namespace."
+    },
+    "dcterms": {
+      "status": "source-available",
+      "reason": "DCMI publishes the terms as RDF."
+    },
+    "dcat": {
+      "status": "source-available",
+      "reason": "W3C publishes DCAT 3 as RDF at its namespace."
+    },
+    "skos": {
+      "status": "source-available",
+      "reason": "W3C publishes SKOS as RDF at its namespace."
+    },
+    "owl-time": {
+      "status": "source-available",
+      "reason": "W3C publishes OWL-Time as OWL at its namespace."
+    },
+    "geosparql": {
+      "status": "source-available",
+      "reason": "OGC publishes the GeoSPARQL ontology as RDF."
+    },
+    "bot": {
+      "status": "source-available",
+      "reason": "BOT is published as OWL at its w3id namespace."
+    },
+    "brick": {
+      "status": "source-available",
+      "reason": "Brick releases include the ontology in Turtle (repository)."
+    },
+    "bfo": {
+      "status": "source-available",
+      "reason": "BFO 2020 OWL files are published in the BFO-2020 repository."
+    },
+    "iof-core": {
+      "status": "source-available",
+      "reason": "IOF publishes OWL files for each release."
+    },
+    "cco": {
+      "status": "source-available",
+      "reason": "CCO OWL files are published in its repository."
+    },
+    "emmo": {
+      "status": "source-available",
+      "reason": "EMMO OWL/Turtle files are published in its repository."
+    },
+    "oeo": {
+      "status": "source-available",
+      "reason": "OEO OWL files are published in its repository."
+    },
+    "obi": {
+      "status": "source-available",
+      "reason": "OBI OWL files are published in its repository."
+    },
+    "gs1-webvoc": {
+      "status": "source-available",
+      "reason": "GS1 publishes the vocabulary as JSON-LD (requires a JSON-LD parser)."
+    },
+    "schema-org": {
+      "status": "source-available",
+      "reason": "Schema.org publishes Turtle/JSON-LD releases. Large: requires the incremental loading planned for later."
+    },
+    "ieee-cora": {
+      "status": "source-available",
+      "reason": "A CC BY 4.0 OWL conversion of CORA is published in a public repository; the standard itself is sold by IEEE."
+    },
+    "digital-reference": {
+      "status": "source-available",
+      "reason": "OWL/Turtle files are published in its repository; licence to confirm before processing."
+    },
+    "vsso": {
+      "status": "source-available",
+      "reason": "Turtle files are published in the W3C repository (discontinued draft)."
+    },
+    "goodrelations": {
+      "status": "source-available",
+      "reason": "GoodRelations is published as OWL at its namespace (legacy)."
+    },
+    "ieee-corax": {
+      "status": "documentation-only",
+      "reason": "Specified in the IEEE 1872-2015 text (sold by IEEE); no public machine-readable module known."
+    },
+    "ieee-pos": {
+      "status": "documentation-only",
+      "reason": "Specified in the IEEE 1872-2015 text (sold by IEEE); no public machine-readable module known."
+    },
+    "ieee-rparts": {
+      "status": "documentation-only",
+      "reason": "Specified in the IEEE 1872-2015 text (sold by IEEE); no public machine-readable module known."
+    },
+    "sumo-cora": {
+      "status": "documentation-only",
+      "reason": "Part of the IEEE 1872-2015 axiomatisation; no separate public artefact known."
+    },
+    "ieee-rtr": {
+      "status": "documentation-only",
+      "reason": "IEEE 1872.1-2024 text is sold by IEEE; no public machine-readable ontology known."
+    },
+    "iso-15926-14": {
+      "status": "documentation-only",
+      "reason": "ISO technical specification sold by ISO; no public OWL distribution known."
+    },
+    "eclass": {
+      "status": "documentation-only",
+      "reason": "ECLASS releases, including the RDF serialisation, require a commercial licence."
+    },
+    "iec-cim": {
+      "status": "documentation-only",
+      "reason": "IEC standard (UML information model) sold by IEC; profiles such as CGMES are not OWL ontologies."
+    },
+    "step-ap242": {
+      "status": "unavailable",
+      "reason": "STEP AP242 is an EXPRESS information model, not an RDF/OWL ontology."
+    },
+    "dmtf-cim": {
+      "status": "unavailable",
+      "reason": "DMTF CIM is a MOF/UML schema, not an RDF/OWL ontology."
+    },
+    "sysml-v2": {
+      "status": "unavailable",
+      "reason": "SysML v2 / KerML is a modelling language with its own notation, not an RDF/OWL ontology."
+    },
+    "oriont": {
+      "status": "unavailable",
+      "reason": "No public source identified (see the record's verification notes)."
+    },
+    "ieee-aur": {
+      "status": "not-assessed",
+      "reason": "Public OWL availability under the IEEE SA open-source programme not yet confirmed."
+    },
+    "aas": {
+      "status": "not-assessed",
+      "reason": "IDTA specifies an RDF serialisation; the published ontology file has not yet been reviewed."
+    },
+    "eli": {
+      "status": "not-assessed",
+      "reason": "Distribution format and licence of the ontology files not yet reviewed."
+    },
+    "sumo": {
+      "status": "not-assessed",
+      "reason": "SUMO is authored in SUO-KIF; the OWL translation has not yet been reviewed."
+    },
+    "ifcowl": {
+      "status": "not-assessed",
+      "reason": "The former IFC4 ontology page no longer resolves; current distribution not yet reviewed."
+    },
+    "urdf": {
+      "status": "unavailable",
+      "reason": "URDF is an XML robot description format, not an RDF/OWL ontology."
+    },
+    "openusd": {
+      "status": "unavailable",
+      "reason": "OpenUSD is a 3D scene description format and platform, not an RDF/OWL ontology."
+    }
   }
 }

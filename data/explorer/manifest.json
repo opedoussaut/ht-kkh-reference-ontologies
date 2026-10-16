@@ -109,6 +109,10 @@
       "status": "source-available",
       "reason": "OEO OWL files are published in its repository."
     },
+    "openusd": {
+      "status": "unavailable",
+      "reason": "OpenUSD is a 3D scene description format and platform, not an RDF/OWL ontology."
+    },
     "oriont": {
       "status": "unavailable",
       "reason": "No public source identified (see the record's verification notes)."
@@ -276,6 +280,10 @@
     "sysml-v2": {
       "status": "unavailable",
       "reason": "SysML v2 / KerML is a modelling language with its own notation, not an RDF/OWL ontology."
+    },
+    "urdf": {
+      "status": "unavailable",
+      "reason": "URDF is an XML robot description format, not an RDF/OWL ontology."
     },
     "vsso": {
       "status": "source-available",

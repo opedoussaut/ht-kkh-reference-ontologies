@@ -1,0 +1,147 @@
+{
+  "id": "openvla",
+  "name": "OpenVLA",
+  "fullName": "OpenVLA vision-language-action model (openvla-7b)",
+  "resourceType": "ai-model",
+  "kind": "trained-model",
+  "summary": "Open 7B-parameter vision-language-action model that maps camera images and language instructions to robot actions, trained on an Open X-Embodiment mixture. The code and the trained weights carry different terms.",
+  "knowledge": {
+    "domain": "product.behaviour",
+    "basis": "editorial",
+    "confidence": "clear",
+    "rationale": "A trained policy that produces robot behaviour (actions)."
+  },
+  "publisher": "OpenVLA authors (Stanford, UC Berkeley, Toyota Research Institute, Google DeepMind and others)",
+  "publisherType": "research",
+  "topics": [
+    "vision-language-action",
+    "robot policy",
+    "foundation model"
+  ],
+  "version": {
+    "label": "openvla-7b",
+    "date": null,
+    "status": "published"
+  },
+  "maturity": "research",
+  "license": {
+    "name": "Code MIT; weights subject to the Llama Community License",
+    "access": "open-with-terms",
+    "url": "https://github.com/openvla/openvla",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
+  },
+  "licenses": [
+    {
+      "scope": "software",
+      "name": "MIT License (all code in the repository)",
+      "spdx": "MIT",
+      "url": "https://opensource.org/license/mit",
+      "statedAt": "https://github.com/openvla/openvla",
+      "commercialUse": "permitted",
+      "reviewStatus": "reviewed",
+      "reviewNote": "As granted by the licence text; dependencies and third-party components not assessed. Not legal advice."
+    },
+    {
+      "scope": "model-weights",
+      "name": "Llama Community License (inherited from the Llama 2 base model)",
+      "url": null,
+      "statedAt": "https://github.com/openvla/openvla",
+      "commercialUse": "unknown",
+      "reviewStatus": "not-assessed",
+      "restrictions": [
+        "The authors state the pretrained models may inherit restrictions from their base models and are subject to the Llama Community License."
+      ]
+    }
+  ],
+  "links": {
+    "official": "https://github.com/openvla/openvla",
+    "repository": "https://github.com/openvla/openvla"
+  },
+  "formats": [
+    "PyTorch / Hugging Face checkpoints"
+  ],
+  "industries": [
+    "industrial-equipment",
+    "high-tech"
+  ],
+  "useCases": [
+    "robot-development"
+  ],
+  "capabilities": [
+    "robotics-autonomy",
+    "ai-model-development"
+  ],
+  "physicalAi": [
+    "robot-capabilities-control"
+  ],
+  "details": {
+    "aiModel": {
+      "artefact": "trained-model",
+      "weightsPublished": "yes",
+      "baseModel": "Prismatic prism-dinosiglip-224px VLM (DINOv2 + SigLIP vision, Llama 2 language model)",
+      "trainingData": "Open X-Embodiment mixture, 970K trajectories",
+      "modalities": [
+        "RGB image",
+        "language instruction",
+        "robot action"
+      ]
+    }
+  },
+  "limitations": [
+    {
+      "text": "LIBERO success rates are reported by the model authors after fine-tuning (3 seeds × 500 rollouts) and have not been independently replicated here.",
+      "basis": "source",
+      "category": "unverified-claim",
+      "sourceRef": "https://github.com/openvla/openvla"
+    },
+    {
+      "text": "Weights are subject to the Llama Community License, which differs from the MIT licence of the code.",
+      "basis": "source",
+      "category": "access",
+      "sourceRef": "https://github.com/openvla/openvla"
+    }
+  ],
+  "engineeringUses": [
+    "Prototyping language-conditioned manipulation on a new robot by fine-tuning a pretrained policy",
+    "Serving as a baseline when comparing robot-learning approaches on a benchmark"
+  ],
+  "verification": {
+    "checkedOn": "2026-10-16",
+    "status": "verified",
+    "notes": "Performance figures are author-reported.",
+    "sources": [
+      {
+        "url": "https://github.com/openvla/openvla",
+        "title": "OpenVLA repository (README)",
+        "type": "publisher-repository",
+        "supports": [
+          "identity",
+          "licence",
+          "capability",
+          "relationship",
+          "limitation"
+        ]
+      },
+      {
+        "url": "https://arxiv.org/abs/2406.09246",
+        "title": "OpenVLA: An Open-Source Vision-Language-Action Model (arXiv)",
+        "type": "research-publication",
+        "supports": [
+          "identity",
+          "scope"
+        ]
+      }
+    ]
+  },
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial",
+    "physicalAi": "editorial"
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
+  },
+  "origin": "v2"
+}

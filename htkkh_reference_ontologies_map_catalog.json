@@ -538,6 +538,28 @@
     "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/oeo"
   },
   {
+    "id": "openusd",
+    "name": "OpenUSD",
+    "category": "High-Tech",
+    "publisher": "Pixar Animation Studios",
+    "official": "https://openusd.org/release/index.html",
+    "endObjects": [
+      "Robot development reference ecosystem"
+    ],
+    "imds": [
+      "3D scene description",
+      "composition",
+      "digital twins"
+    ],
+    "description": "Extensible software platform and file format for collaboratively constructing and exchanging 3D scenes, originally developed by Pixar. Used as the scene representation of several robotics simulators.",
+    "parentOntology": "",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "version": "OpenUSD 26.08",
+    "license": "Tomorrow Open Source Technology License 1.0 (Apache 2.0 with a modified trademark section)",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/openusd"
+  },
+  {
     "id": "oriont",
     "name": "ORIONT",
     "category": "Circularity / Sustainability",
@@ -997,7 +1019,8 @@
     "official": "https://www.omg.org/sysml/",
     "endObjects": [
       "General Purpose Robotics",
-      "AI Factories"
+      "AI Factories",
+      "Robot development reference ecosystem"
     ],
     "imds": [
       "MBSE",
@@ -1013,6 +1036,28 @@
     "version": "KerML 1.0, SysML 2.0, Systems Modeling API 1.0 — formally adopted",
     "license": "OMG specification (freely available)",
     "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/sysml-v2"
+  },
+  {
+    "id": "urdf",
+    "name": "URDF",
+    "category": "Industrial Equipment",
+    "publisher": "ROS community",
+    "official": "https://github.com/ros/urdfdom",
+    "endObjects": [
+      "Robot development reference ecosystem"
+    ],
+    "imds": [
+      "robot description",
+      "kinematics",
+      "links and joints"
+    ],
+    "description": "XML format for describing a robot model: links, joints, inertial, visual and collision properties. It is the de facto robot description exchanged between ROS tools and many simulators.",
+    "parentOntology": "",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "version": "Specification maintained by the ROS community (no version number published)",
+    "license": "Parser libraries BSD-3-Clause; licence of the specification text not stated",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/urdf"
   },
   {
     "id": "vsso",

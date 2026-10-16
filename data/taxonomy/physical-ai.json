@@ -1,7 +1,7 @@
 {
-  "_status": "proposed",
-  "_version": "0.2.0",
-  "_note": "Phase 2 draft. Proposed atlas application categories for Physical AI. This is NOT an established formal taxonomy. No resources are assigned in Phase 2; see docs/PHASE2-ARCHITECTURE.md for the evidence required before assignment.",
+  "_status": "active",
+  "_version": "1.0.0",
+  "_note": "Atlas application categories for Physical AI (defined by the atlas, not an established external taxonomy). Assignment requires classificationBasis.physicalAi and a publisher, specification or peer-reviewed source cited for `capability`.",
   "items": [
     {
       "id": "perception-world-modelling",

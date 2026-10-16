@@ -1,0 +1,126 @@
+{
+  "id": "iso-10218-1",
+  "name": "ISO 10218-1:2025",
+  "fullName": "ISO 10218-1:2025 Robotics — Safety requirements — Part 1: Industrial robots",
+  "resourceType": "standard",
+  "kind": "specification",
+  "summary": "International standard specifying safety requirements for industrial robots as partly completed machinery. The 2025 edition makes functional-safety requirements explicit and integrates collaborative-robot requirements previously in ISO/TS 15066.",
+  "knowledge": {
+    "domain": "product.requirements",
+    "basis": "editorial",
+    "confidence": "clear",
+    "rationale": "Normative safety requirements."
+  },
+  "publisher": "ISO TC 299 (Robotics)",
+  "publisherType": "standards-body",
+  "topics": [
+    "robot safety",
+    "functional safety",
+    "collaborative robots"
+  ],
+  "standardRef": "ISO 10218-1:2025",
+  "version": {
+    "label": "Edition 3 (2025)",
+    "date": "2025-02",
+    "status": "published"
+  },
+  "maturity": "standard",
+  "license": {
+    "name": "ISO standard (purchase required)",
+    "access": "licensed",
+    "url": "https://www.iso.org/standard/73933.html",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
+  },
+  "licenses": [
+    {
+      "scope": "specification",
+      "name": "ISO copyright; sold by ISO and national bodies",
+      "url": null,
+      "statedAt": "https://www.iso.org/standard/73933.html",
+      "commercialUse": "unknown",
+      "reviewStatus": "not-assessed"
+    }
+  ],
+  "links": {
+    "official": "https://www.iso.org/standard/73933.html"
+  },
+  "formats": [
+    "Document"
+  ],
+  "industries": [
+    "industrial-equipment",
+    "transportation-mobility",
+    "high-tech"
+  ],
+  "useCases": [
+    "robot-development"
+  ],
+  "capabilities": [
+    "safety-assurance",
+    "robotics-autonomy"
+  ],
+  "physicalAi": [
+    "safety-testing-validation"
+  ],
+  "details": {
+    "standard": {
+      "body": "ISO",
+      "designation": "ISO 10218-1:2025",
+      "edition": "3"
+    }
+  },
+  "limitations": [
+    {
+      "text": "The normative text is sold by ISO; only catalogue information is public.",
+      "basis": "source",
+      "category": "access",
+      "sourceRef": "https://www.iso.org/standard/73933.html"
+    },
+    {
+      "text": "The ISO catalogue blocks automated checks; edition and date confirmed through search results and industry announcements.",
+      "basis": "editorial",
+      "category": "catalogue-gap"
+    }
+  ],
+  "engineeringUses": [
+    "Deriving safety requirements for an industrial robot or robot cell design",
+    "Planning verification activities for collaborative robot applications"
+  ],
+  "verification": {
+    "checkedOn": "2026-10-16",
+    "status": "partially-verified",
+    "notes": "ISO page not retrievable automatically.",
+    "sources": [
+      {
+        "url": "https://www.iso.org/standard/73933.html",
+        "title": "ISO 10218-1:2025 catalogue entry",
+        "type": "published-specification",
+        "supports": [
+          "identity",
+          "version",
+          "status",
+          "capability"
+        ]
+      },
+      {
+        "url": "https://www.automate.org/robotics/news/updated-iso-10218-major-advancements-in-industrial-robot-safety-standards-now-available/aph",
+        "title": "A3: Updated ISO 10218 now available",
+        "type": "third-party",
+        "supports": [
+          "scope"
+        ]
+      }
+    ]
+  },
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial",
+    "physicalAi": "editorial"
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
+  },
+  "origin": "v2"
+}

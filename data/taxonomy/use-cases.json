@@ -2,6 +2,144 @@
   "_note": "Engineering use cases. Each stack layer names public ontologies and the role they could play. Roles are editorial architecture suggestions, not statements of adoption.",
   "items": [
     {
+      "id": "robot-development",
+      "kind": "ecosystem",
+      "name": "Robot development reference ecosystem",
+      "legacyEndObject": null,
+      "tagline": "From robot concepts to simulation, learning and validation.",
+      "summary": "An editorial map of public resources that help an engineer understand, simulate and develop a robot. It is ordered from shared concepts, through engineering representations and frameworks, to data, AI models and validation. Documented technical connections are cited; the reference workflow is a suggestion, not a demonstrated integration.",
+      "industries": [
+        "industrial-equipment",
+        "high-tech",
+        "transportation-mobility"
+      ],
+      "challenges": [
+        "Keeping one consistent description of the robot (structure, kinematics, sensors) across design, simulation and software",
+        "Choosing simulation and learning tools whose formats and interfaces actually connect",
+        "Knowing which data and models can legally be reused, and on what terms",
+        "Separating benchmark results from safety and validation evidence"
+      ],
+      "stack": [
+        {
+          "layer": "Concepts & semantics",
+          "ontologies": [
+            "ieee-cora",
+            "ieee-rparts",
+            "ieee-pos",
+            "ieee-rtr",
+            "ieee-aur",
+            "qudt",
+            "sosa"
+          ],
+          "role": "Shared vocabulary for robots, parts, poses, tasks, autonomy, units and sensing.",
+          "notes": {
+            "ieee-cora": "Defines robot, robotic system and environment.",
+            "ieee-rparts": "Names robot parts and their roles.",
+            "ieee-pos": "Positions, orientations and poses with reference frames.",
+            "ieee-rtr": "Task and sub-task representation for planners.",
+            "ieee-aur": "Autonomy concepts and design patterns.",
+            "qudt": "Units for joint limits, torques and sensor data.",
+            "sosa": "Observations and actuations from sensors and actuators."
+          }
+        },
+        {
+          "layer": "Engineering representations & models",
+          "ontologies": [
+            "urdf",
+            "openusd",
+            "sysml-v2"
+          ],
+          "role": "Machine-readable descriptions of the robot, its scene and its system architecture.",
+          "notes": {
+            "urdf": "Kinematic and physical robot description used by ROS and simulators.",
+            "openusd": "Scene and asset composition for simulation and visualisation.",
+            "sysml-v2": "System requirements and architecture."
+          }
+        },
+        {
+          "layer": "Frameworks & environments",
+          "ontologies": [
+            "ros2",
+            "gazebo",
+            "mujoco",
+            "isaac-sim",
+            "isaac-lab",
+            "lerobot"
+          ],
+          "role": "Middleware, simulators and learning frameworks to build and exercise robot software.",
+          "notes": {
+            "ros2": "Communication backbone of the robot software.",
+            "gazebo": "Open-source simulator integrated with ROS 2.",
+            "mujoco": "Fast contact physics for control and learning.",
+            "isaac-sim": "GPU simulator with USD scenes and sensor simulation.",
+            "isaac-lab": "Robot-learning framework on top of Isaac Sim.",
+            "lerobot": "Datasets, policies and evaluation tools for real robots."
+          }
+        },
+        {
+          "layer": "Datasets & AI models",
+          "ontologies": [
+            "open-x-embodiment",
+            "openvla"
+          ],
+          "role": "Training data and pretrained policies; each carries its own terms.",
+          "notes": {
+            "open-x-embodiment": "Cross-robot demonstration data (licence not stated).",
+            "openvla": "Pretrained vision-language-action policy (code MIT, weights under the Llama licence)."
+          }
+        },
+        {
+          "layer": "Testing, verification & validation",
+          "ontologies": [
+            "libero",
+            "iso-10218-1"
+          ],
+          "role": "Benchmarks that compare policies, and the safety requirements a real robot must meet. These are different kinds of evidence.",
+          "notes": {
+            "libero": "Simulated benchmark for comparing learned policies.",
+            "iso-10218-1": "Normative safety requirements for industrial robots."
+          }
+        }
+      ],
+      "workflow": [
+        {
+          "from": "ieee-rparts",
+          "to": "urdf",
+          "label": "concepts can guide the robot description"
+        },
+        {
+          "from": "urdf",
+          "to": "gazebo",
+          "label": "describe the robot for simulation"
+        },
+        {
+          "from": "openusd",
+          "to": "isaac-sim",
+          "label": "compose the simulated scene"
+        },
+        {
+          "from": "ros2",
+          "to": "gazebo",
+          "label": "test robot software in simulation"
+        },
+        {
+          "from": "mujoco",
+          "to": "libero",
+          "label": "simulate evaluation tasks"
+        },
+        {
+          "from": "open-x-embodiment",
+          "to": "lerobot",
+          "label": "train policies on demonstration data"
+        },
+        {
+          "from": "openvla",
+          "to": "iso-10218-1",
+          "label": "safety requirements still apply to any deployed policy"
+        }
+      ]
+    },
+    {
       "id": "ai-factories",
       "name": "AI Factories",
       "legacyEndObject": "AI Factories",

@@ -1,0 +1,136 @@
+{
+  "id": "isaac-sim",
+  "name": "NVIDIA Isaac Sim",
+  "fullName": "NVIDIA Isaac Sim robotics simulation platform",
+  "resourceType": "simulation",
+  "kind": "simulator",
+  "summary": "Robotics simulation platform built on NVIDIA Omniverse, with a USD-native scene representation, import of URDF, MJCF and CAD models, simulated sensors and a ROS bridge.",
+  "knowledge": {
+    "domain": "product.behaviour",
+    "basis": "editorial",
+    "confidence": "clear",
+    "rationale": "A simulator executes models of robot behaviour and sensing."
+  },
+  "publisher": "NVIDIA",
+  "publisherType": "industry",
+  "topics": [
+    "robot simulation",
+    "synthetic data",
+    "sensor simulation"
+  ],
+  "version": {
+    "label": "Isaac Sim 6.x (documentation covers 6.0 and 6.1 migrations; Isaac Lab 3.0 targets 6.2)",
+    "date": null,
+    "status": "published"
+  },
+  "maturity": "stable",
+  "license": {
+    "name": "Source code Apache-2.0; building and running it requires NVIDIA Omniverse components under NVIDIA terms",
+    "access": "open-with-terms",
+    "url": "https://github.com/isaac-sim/IsaacSim",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
+  },
+  "licenses": [
+    {
+      "scope": "software",
+      "name": "Apache License 2.0 (Isaac Sim source code)",
+      "spdx": "Apache-2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0",
+      "statedAt": "https://github.com/isaac-sim/IsaacSim",
+      "commercialUse": "permitted",
+      "reviewStatus": "reviewed",
+      "reviewNote": "As granted by the licence text; dependencies and third-party components not assessed. Not legal advice."
+    },
+    {
+      "scope": "software",
+      "name": "NVIDIA Omniverse licensing terms (Kit SDK and extensions, accepted at first build)",
+      "url": null,
+      "statedAt": "https://github.com/isaac-sim/IsaacSim",
+      "commercialUse": "unknown",
+      "reviewStatus": "not-assessed",
+      "restrictions": [
+        "Building or running Isaac Sim requires accepting the NVIDIA Omniverse licensing terms and downloading the Kit SDK and extensions."
+      ]
+    }
+  ],
+  "links": {
+    "official": "https://docs.isaacsim.omniverse.nvidia.com/latest/index.html",
+    "repository": "https://github.com/isaac-sim/IsaacSim"
+  },
+  "formats": [
+    "USD",
+    "URDF (import)",
+    "MJCF (import)"
+  ],
+  "industries": [
+    "industrial-equipment",
+    "high-tech",
+    "transportation-mobility"
+  ],
+  "useCases": [
+    "robot-development"
+  ],
+  "capabilities": [
+    "simulation-validation",
+    "robotics-autonomy",
+    "digital-twin"
+  ],
+  "physicalAi": [
+    "simulation-digital-twins"
+  ],
+  "limitations": [
+    {
+      "text": "Requires accepting NVIDIA Omniverse licensing terms for runtime components; Isaac Lab describes Isaac Sim as having its own proprietary terms.",
+      "basis": "source",
+      "category": "access",
+      "sourceRef": "https://github.com/isaac-sim/IsaacLab"
+    },
+    {
+      "text": "The exact current release number is not stated on the documentation landing page.",
+      "basis": "editorial",
+      "category": "catalogue-gap"
+    }
+  ],
+  "engineeringUses": [
+    "Testing robot perception and control software against simulated sensors before hardware is available",
+    "Generating synthetic sensor data for training perception models"
+  ],
+  "verification": {
+    "checkedOn": "2026-10-16",
+    "status": "partially-verified",
+    "notes": "Capabilities as described by the publisher; exact version to confirm.",
+    "sources": [
+      {
+        "url": "https://docs.isaacsim.omniverse.nvidia.com/latest/index.html",
+        "title": "Isaac Sim documentation",
+        "type": "official-documentation",
+        "supports": [
+          "identity",
+          "capability",
+          "relationship"
+        ]
+      },
+      {
+        "url": "https://github.com/isaac-sim/IsaacSim",
+        "title": "Isaac Sim repository (README)",
+        "type": "publisher-repository",
+        "supports": [
+          "licence",
+          "capability",
+          "relationship"
+        ]
+      }
+    ]
+  },
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial",
+    "physicalAi": "editorial"
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
+  },
+  "origin": "v2"
+}

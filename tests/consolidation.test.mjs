@@ -6,6 +6,8 @@ import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { loadSources, validate } from '../scripts/lib/atlas-data.mjs';
 import { REVIEW_B1, REVIEW_B3, REVIEW_B4 } from '../scripts/phase2/review-2026-10.mjs';
+import { RECORDS as ECO } from '../scripts/phase2/ecosystem-robotics.mjs';
+const preIds = new Set(JSON.parse(readFileSync(new URL('./fixtures/pre-phase2-ids.json', import.meta.url), 'utf8')).ids);
 
 const ROOT = fileURLToPath(new URL('..', import.meta.url));
 const src = loadSources(ROOT);
@@ -66,12 +68,13 @@ test('all 13 reviewed classifications are applied, with rationale; uncertainty i
     assert.equal(k.rationale, d.rationale, id);
     assert.equal(k.basis, 'editorial', `${id} stays editorial`);
   }
-  assert.equal(records.filter((r) => r.knowledge.confidence === 'tentative').length, 6);
+  assert.equal(records.filter((r) => preIds.has(r.id) && r.knowledge.confidence === 'tentative').length, 6);
 });
 
 test('limitations come only from the review, are categorised, and sourced ones cite a URL', () => {
+  const ecoLim = Object.fromEntries(ECO.map((r) => [r.id, r.limitations]));
   for (const r of records) {
-    assert.deepEqual(r.limitations, REVIEW_B3[r.id] || [], r.id);
+    assert.deepEqual(r.limitations, preIds.has(r.id) ? REVIEW_B3[r.id] || [] : ecoLim[r.id], r.id);
     for (const l of r.limitations) if (l.basis === 'source') assert.match(l.sourceRef, /^https?:\/\//, r.id);
   }
 });

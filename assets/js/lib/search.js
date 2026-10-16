@@ -119,6 +119,7 @@ export const FACETS = [
   { key: 'industry', label: 'Industry', get: (o) => o.industries },
   { key: 'domain', label: 'Knowledge domain', get: (o) => (o.knowledge ? [o.knowledge.domain] : []) },
   { key: 'type', label: 'Resource type', get: (o) => (o.resourceType ? [o.resourceType] : []) },
+  { key: 'physicalAi', label: 'Physical AI', get: (o) => o.physicalAi || [] },
   { key: 'useCase', label: 'Use case', get: (o) => o.useCases },
   { key: 'layer', label: 'Layer', get: (o) => [o.layer] },
   { key: 'format', label: 'Format', get: formatFamilies },

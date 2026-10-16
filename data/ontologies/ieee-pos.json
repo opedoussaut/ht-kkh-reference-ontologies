@@ -45,7 +45,8 @@
     "high-tech"
   ],
   "useCases": [
-    "general-purpose-robotics"
+    "general-purpose-robotics",
+    "robot-development"
   ],
   "capabilities": [
     "robotics-autonomy"

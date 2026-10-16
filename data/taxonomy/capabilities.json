@@ -1,6 +1,6 @@
 {
   "_status": "active",
-  "_version": "1.0.0",
+  "_version": "1.1.0",
   "_note": "Engineering capabilities: what engineers and AI systems can do with a resource. A resource may have several. Independent of industry, resource type and knowledge domain.",
   "items": [
     {
@@ -67,6 +67,16 @@
       "id": "energy-management",
       "label": "Energy systems & flexibility",
       "summary": "Modelling energy systems, grids, demand and flexibility."
+    },
+    {
+      "id": "ai-model-development",
+      "label": "AI model training & evaluation",
+      "summary": "Training, fine-tuning and evaluating machine-learning models, including robot policies."
+    },
+    {
+      "id": "safety-assurance",
+      "label": "Safety & assurance",
+      "summary": "Safety requirements, risk reduction and the evidence needed to show a system is acceptably safe."
     }
   ]
 }

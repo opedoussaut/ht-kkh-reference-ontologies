@@ -4,7 +4,9 @@ import { readFileSync } from 'node:fs';
 import { buildGraph, layout, neighbours } from '../assets/js/lib/graph.js';
 import { html, raw, esc, safeUrl } from '../assets/js/lib/html.js';
 
-const data = JSON.parse(readFileSync(new URL('../data/atlas.json', import.meta.url), 'utf8'));
+const bundle = JSON.parse(readFileSync(new URL('../data/atlas.json', import.meta.url), 'utf8'));
+// The app works on all resources (the bundle's `ontologies` key is the semantic-family alias).
+const data = { ...bundle, ontologies: bundle.resources };
 
 test('graph contains only connected nodes by default', () => {
   const g = buildGraph(data.ontologies, data.relations);

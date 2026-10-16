@@ -51,7 +51,8 @@
   ],
   "useCases": [
     "general-purpose-robotics",
-    "ai-factories"
+    "ai-factories",
+    "robot-development"
   ],
   "capabilities": [
     "systems-engineering",

@@ -17,6 +17,11 @@
       "description": "References, reused patterns and lineage stated by a primary source."
     },
     {
+      "id": "technical",
+      "label": "Documented technical connection",
+      "description": "Format support, interfaces, dependencies, training data and evaluation stated in publisher documentation. Not a demonstrated integration in your context."
+    },
+    {
       "id": "editorial",
       "label": "Editorially proposed",
       "description": "Used together in the same layer of an atlas reference stack. Derived from use cases, not stated by publishers."
@@ -64,6 +69,42 @@
       "label": "follows pattern of",
       "description": "Reuses the target's design pattern.",
       "category": "shared"
+    },
+    {
+      "id": "supports-format",
+      "label": "supports the format",
+      "description": "Reads or writes the target format, as stated in the publisher's documentation.",
+      "category": "technical"
+    },
+    {
+      "id": "implements-interface",
+      "label": "provides an interface to",
+      "description": "Ships a documented bridge or interface to the target.",
+      "category": "technical"
+    },
+    {
+      "id": "depends-on",
+      "label": "depends on",
+      "description": "Requires the target to run, as stated by the publisher.",
+      "category": "technical"
+    },
+    {
+      "id": "integrates-with",
+      "label": "documents integration with",
+      "description": "Documents a supported integration with the target (e.g. a supported benchmark).",
+      "category": "technical"
+    },
+    {
+      "id": "trained-on",
+      "label": "was trained on",
+      "description": "Model trained on the target dataset, as stated by its authors.",
+      "category": "technical"
+    },
+    {
+      "id": "evaluated-with",
+      "label": "was evaluated with",
+      "description": "Evaluated on the target benchmark, with results reported by its authors.",
+      "category": "technical"
     }
   ],
   "items": [
@@ -299,6 +340,121 @@
         "note": "ETSI TS 103 410-7: SAREF extension."
       },
       "status": "verified"
+    },
+    {
+      "source": "isaac-sim",
+      "target": "urdf",
+      "type": "supports-format",
+      "evidence": {
+        "url": "https://github.com/isaac-sim/IsaacSim",
+        "type": "publisher-repository",
+        "note": "README: imports robotic systems from URDF, MJCF and CAD."
+      },
+      "status": "verified",
+      "conditions": "Import (conversion into USD); not round-trip export."
+    },
+    {
+      "source": "isaac-sim",
+      "target": "openusd",
+      "type": "supports-format",
+      "evidence": {
+        "url": "https://docs.isaacsim.omniverse.nvidia.com/latest/index.html",
+        "type": "official-documentation",
+        "note": "Documentation: \"USD-native — one scene representation from asset import to deployment\"."
+      },
+      "status": "verified"
+    },
+    {
+      "source": "isaac-sim",
+      "target": "ros2",
+      "type": "implements-interface",
+      "evidence": {
+        "url": "https://docs.isaacsim.omniverse.nvidia.com/latest/index.html",
+        "type": "official-documentation",
+        "note": "Documentation includes a ROS 2 bridge."
+      },
+      "status": "verified",
+      "conditions": "Supported ROS 2 distributions depend on the Isaac Sim release."
+    },
+    {
+      "source": "isaac-lab",
+      "target": "isaac-sim",
+      "type": "depends-on",
+      "evidence": {
+        "url": "https://github.com/isaac-sim/IsaacLab",
+        "type": "publisher-repository",
+        "note": "README: \"Built on NVIDIA Isaac Sim\"; each branch requires a specific Isaac Sim release."
+      },
+      "status": "verified"
+    },
+    {
+      "source": "mujoco",
+      "target": "urdf",
+      "type": "supports-format",
+      "evidence": {
+        "url": "https://mujoco.readthedocs.io/en/3.3.1/modeling.html",
+        "type": "official-documentation",
+        "note": "Modeling chapter: MuJoCo reads MJCF and the more limited URDF format."
+      },
+      "status": "verified",
+      "conditions": "Only URDF features that MuJoCo maps are supported; MuJoCo-specific extensions apply."
+    },
+    {
+      "source": "gazebo",
+      "target": "ros2",
+      "type": "implements-interface",
+      "evidence": {
+        "url": "https://gazebosim.org/docs/latest/ros_installation/",
+        "type": "official-documentation",
+        "note": "Integration through the ros_gz packages, with a documented compatibility table."
+      },
+      "status": "verified",
+      "conditions": "Recommended pairings: Jetty with Lyrical/Rolling, Harmonic with Jazzy, Ionic with Kilted."
+    },
+    {
+      "source": "ros2",
+      "target": "urdf",
+      "type": "supports-format",
+      "evidence": {
+        "url": "https://github.com/ros2/urdf",
+        "type": "publisher-repository",
+        "note": "The ROS 2 organisation maintains packages for working with URDF files."
+      },
+      "status": "verified"
+    },
+    {
+      "source": "lerobot",
+      "target": "libero",
+      "type": "integrates-with",
+      "evidence": {
+        "url": "https://github.com/huggingface/lerobot",
+        "type": "publisher-repository",
+        "note": "README lists LIBERO among supported simulation benchmarks."
+      },
+      "status": "verified"
+    },
+    {
+      "source": "openvla",
+      "target": "open-x-embodiment",
+      "type": "trained-on",
+      "evidence": {
+        "url": "https://github.com/openvla/openvla",
+        "type": "publisher-repository",
+        "note": "openvla-7b was trained on an Open X-Embodiment mixture of 970K trajectories."
+      },
+      "status": "verified"
+    },
+    {
+      "source": "openvla",
+      "target": "libero",
+      "type": "evaluated-with",
+      "evidence": {
+        "url": "https://github.com/openvla/openvla",
+        "type": "publisher-repository",
+        "note": "Authors report fine-tuned LIBERO success rates (average 76.5%)."
+      },
+      "status": "verified",
+      "conditions": "Results reported by the model authors; not independently replicated."
     }
   ]
 }

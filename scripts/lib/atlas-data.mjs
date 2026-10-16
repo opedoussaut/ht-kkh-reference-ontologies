@@ -120,6 +120,12 @@ export function validate(src) {
 
   for (const uc of src.useCases) {
     for (const layer of uc.stack) for (const o of layer.ontologies) if (!ids.has(o)) err(`use case ${uc.id}`, `unknown ontology "${o}"`);
+    // Ecosystem extras (editorial): per-resource notes must refer to the layer's resources; workflow ends must exist.
+    for (const layer of uc.stack) for (const k of Object.keys(layer.notes || {})) if (!layer.ontologies.includes(k)) err(`use case ${uc.id}`, `note for "${k}" outside layer "${layer.layer}"`);
+    for (const w of uc.workflow || []) {
+      if (!ids.has(w.from) || !ids.has(w.to)) err(`use case ${uc.id}`, `workflow edge ${w.from} -> ${w.to} refers to an unknown resource`);
+      if (!w.label) err(`use case ${uc.id}`, `workflow edge ${w.from} -> ${w.to} needs a label`);
+    }
     for (const i of uc.industries) if (!industryIds.has(i)) err(`use case ${uc.id}`, `unknown industry "${i}"`);
   }
 
@@ -128,7 +134,8 @@ export function validate(src) {
   for (const q of src.questions.items) {
     if (questionIds.has(q.id)) err(`question ${q.id}`, 'duplicate id');
     questionIds.add(q.id);
-    const known = { capability: capIds, industry: industryIds, useCase: useCaseIds, type: typeIds, domain: subDomains };
+    const known = { capability: capIds, industry: industryIds, useCase: useCaseIds, type: typeIds, domain: subDomains, physicalAi: paiIds };
+    if (q.ecosystem && !useCaseIds.has(q.ecosystem)) err(`question ${q.id}`, `unknown ecosystem "${q.ecosystem}"`);
     for (const [k, vs] of Object.entries(q.filters)) {
       if (!known[k]) { err(`question ${q.id}`, `unsupported filter "${k}"`); continue; }
       for (const v of vs) if (!known[k].has(v)) err(`question ${q.id}`, `unknown ${k} "${v}"`);
