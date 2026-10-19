@@ -19,9 +19,14 @@ Status as of 2026-10-16 on `feature/physical-ai-atlas-enrichment`. The published
 | Ontology Explorer pilot | 4 interactive ontologies (SAREF Core, SOSA, SSN, QUDT) parsed at build time; availability status for every record | `docs/ONTOLOGY-EXPLORER.md` |
 | Atlas network | Relation categories (formal, mapping, shared) with an editorial overlay | — |
 | Editorial policy | Inclusion, neutrality and rights policy on the About page | `docs/EDITORIAL-POLICY.md` |
+| Robot development ecosystem | 12 researched technology and format resources, 10 documented technical relations, five-stage ecosystem page with editorial reference workflow, rights-to-check panel and map; Physical AI categories active | `docs/ROBOT-ECOSYSTEM.md` |
+| Homepage | Text-free background illustration (WebP, 14–62 KB) behind an HTML "Ontology Atlas" wordmark; old text cover removed | `scripts/optimise-images.mjs` |
 | Safeguards | Internal-host, vendor-product and internal-classification checks; `private/` ignored; no PDFs tracked | `docs/PUBLIC-DATA-GOVERNANCE.md` |
 
 ## 3. Remaining data-quality work
+
+- Private reference-classification alignment: waiting for the three internal reference documents in the git-ignored `private/` folder (not on this machine yet).
+- ROS 2, URDF, Isaac Sim, LeRobot, Open X-Embodiment and ISO 10218-1 are partially verified (official pages block automated checks, or the publisher does not state a version or licence).
 
 - 6 knowledge-domain classifications remain **tentative** by design: DMTF CIM, IEC CIM, ISO 15926-14, OEO, ORIONT, SAREF4CITY.
 - ORIONT is still **unverified** (no public source found).
@@ -32,7 +37,8 @@ Status as of 2026-10-16 on `feature/physical-ai-atlas-enrichment`. The published
 
 ## 4. Proposed (designed, not built)
 
-- Physical AI exploration axis (categories defined in `data/taxonomy/physical-ai.json`, plus evidence rules). See Checkpoint 3.
+- Physical AI landing page (the categories are now active and used as a catalogue facet and in the robot ecosystem).
+- Further ecosystems (for example AI factories or semiconductor fabs) built in the same way as the robot ecosystem.
 - More Explorer ontologies (SAREF extensions, PROV-O, BFO) and RDF/XML and JSON-LD parsing.
 - An attributed alignment with an organisation's reference classification. This requires authorisation; the internal crosswalk stays private.
 - A periodic re-verification flag for records not checked for 12 months.
