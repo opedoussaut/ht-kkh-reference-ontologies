@@ -147,18 +147,15 @@ function viewHome() {
     [sectorIndustries().length, 'industries'],
   ];
   return html`
-  <section class="atlas-cover" aria-label="Reference Ontology Atlas illustrated cover">
-    <img src="assets/images/reference-ontology-atlas-cover.png"
-         alt="Reference Ontology Atlas — Updated & Enriched. A connected globe links aerospace, energy, biology, manufacturing, infrastructure and other engineering domains."
-         width="1536" height="864" fetchpriority="high" decoding="async">
-    <div class="atlas-cover-mobile-title" aria-hidden="true">
-      <strong>REFERENCE<br>ONTOLOGY ATLAS</strong>
-      <span>Updated &amp; Enriched</span>
-    </div>
-  </section>
-  <section class="hero hero-with-cover">
-    <p class="eyebrow">Reference Ontology Atlas</p>
-    <h1>Discover the knowledge foundations<br><span class="grad">of modern engineering.</span></h1>
+  <section class="hero hero-atlas">
+    <picture class="hero-bg" aria-hidden="true">
+      <source type="image/webp" sizes="100vw"
+              srcset="assets/images/atlas-background-768.webp 768w, assets/images/atlas-background-1280.webp 1280w, assets/images/atlas-background-2056.webp 2056w">
+      <img src="assets/images/atlas-background-1280.jpg" alt="" width="2056" height="765" fetchpriority="high" decoding="async">
+    </picture>
+    <div class="hero-inner">
+      <p class="wordmark">Ontology Atlas</p>
+      <h1>Discover the knowledge foundations<br><span class="grad">of modern engineering.</span></h1>
     <p class="lead">A curated, evidence-based map of public ontologies, semantic standards and information models. Each one is classified by industry, knowledge domain and engineering capability, and every fact traces back to its source.</p>
     <form class="hero-search" data-action="hero-search" role="search">
       <svg aria-hidden="true" viewBox="0 0 24 24" class="icon"><path d="M10.5 3a7.5 7.5 0 0 1 5.96 12.06l4.24 4.24-1.4 1.4-4.24-4.24A7.5 7.5 0 1 1 10.5 3Zm0 2a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11Z"/></svg>
@@ -167,6 +164,7 @@ function viewHome() {
     </form>
     <div class="stats">
       ${stats.map(([n, t]) => html`<div class="stat"><div class="stat-n">${n}</div><div class="stat-t">${t}</div></div>`)}
+    </div>
     </div>
   </section>
 

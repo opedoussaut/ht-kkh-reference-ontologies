@@ -116,18 +116,39 @@ kbd { font: 12px var(--mono); border: 1px solid var(--line-strong); border-botto
 
 main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px 96px; min-height: 70vh; outline: none; }
 
-/* Atlas illustrated cover — prominent on desktop, readable on mobile. */
-.atlas-cover {
-  position: relative; margin: 0 calc(50% - 50vw);
-  background: var(--navy-950); overflow: hidden; isolation: isolate;
+/* Home hero: the text-free illustration is a discreet background, not a banner.
+   It sits to the right, fades into the navy towards the text and the page, and carries no text of its own. */
+.hero.hero-atlas { text-align: left; padding: 112px 24px 84px; background: var(--navy-900); }
+.hero.hero-atlas::before { display: none; }
+.hero-atlas > .hero-inner { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+.hero-atlas .hero-inner > * { max-width: 720px; margin-left: 0; margin-right: 0; }
+.hero-atlas > .hero-bg { position: absolute; inset: 0; z-index: -1; pointer-events: none; max-width: none; margin: 0; overflow: hidden; }
+/* Natural aspect ratio, anchored top-right: the composition is shown as designed, never zoomed in. */
+.hero-bg img {
+  position: absolute; top: 0; right: 0; width: 100%; max-width: 2056px; height: auto;
+  opacity: .6;
+  -webkit-mask-image: linear-gradient(90deg, transparent 22%, rgba(0, 0, 0, .5) 45%, #000 70%), linear-gradient(180deg, #000 55%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(90deg, transparent 22%, rgba(0, 0, 0, .5) 45%, #000 70%), linear-gradient(180deg, #000 55%, transparent 100%);
+  mask-composite: intersect;
 }
-.atlas-cover img {
-  display: block; width: 100%; height: auto; max-height: 680px;
-  object-fit: cover; object-position: center;
+.hero-bg::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(6, 20, 40, .35) 0%, transparent 30%, transparent 70%, var(--navy-900) 100%),
+    radial-gradient(600px 320px at 18% 30%, rgba(47, 128, 255, .14), transparent 70%);
 }
-.atlas-cover-mobile-title { display: none; }
-.hero-with-cover { padding-top: 54px; }
-.hero-with-cover .eyebrow { display: none; }
+.wordmark {
+  margin: 0 0 22px; font-size: 13px; font-weight: 600; letter-spacing: .32em; text-transform: uppercase;
+  color: rgba(214, 228, 246, .78);
+  display: inline-flex; align-items: center; gap: 14px;
+}
+.wordmark::before { content: ""; width: 28px; height: 1px; background: linear-gradient(90deg, #e0b562, rgba(224, 181, 98, .2)); }
+.hero-atlas h1 { font-size: clamp(38px, 5.4vw, 66px); }
+.hero-atlas .lead { margin: 22px 0 0; max-width: 620px; }
+.hero-atlas .hero-search { margin: 34px 0 0; max-width: 620px; }
+.hero-atlas .stats { margin: 52px 0 0; max-width: 720px; background: rgba(142, 178, 232, .12); }
+.hero-atlas .stat { background: rgba(6, 20, 40, .72); backdrop-filter: blur(6px); }
 
 /* Hero (full-bleed navy) */
 .hero {
@@ -425,19 +446,14 @@ select { font: inherit; font-size: 13.5px; color: var(--fg); background: var(--b
   main { padding: 0 16px 64px; }
   .nav-inner { padding: 0 16px; }
   .hero { padding: 64px 16px 44px; }
-  .atlas-cover img { height: 320px; max-height: none; object-fit: cover; object-position: right center; }
-  .atlas-cover::after {
-    content: ""; position: absolute; inset: 0; pointer-events: none;
-    background: linear-gradient(90deg, rgba(3, 12, 26, .97), rgba(3, 12, 26, .64) 52%, rgba(3, 12, 26, .08));
-  }
-  .atlas-cover-mobile-title {
-    display: flex; flex-direction: column; gap: 12px; position: absolute;
-    z-index: 1; left: 18px; right: 16px; top: 50%; transform: translateY(-50%);
-    color: #fff; text-shadow: 0 2px 16px rgba(0, 0, 0, .5); pointer-events: none;
-  }
-  .atlas-cover-mobile-title strong { font-size: clamp(28px, 7.4vw, 40px); line-height: 1.03; letter-spacing: -.04em; }
-  .atlas-cover-mobile-title span { font-size: clamp(18px, 5vw, 25px); color: #12d5ed; font-weight: 700; }
-  .hero-with-cover { padding-top: 40px; }
+  .hero.hero-atlas { padding: 64px 0 44px; }
+  .hero-atlas > .hero-inner { padding: 0 16px; }
+  /* On phones the illustration recedes further behind the text. */
+  /* Show the right-hand third of the illustration behind the top of the hero, quietly. */
+  .hero-bg img { width: 260%; max-width: none; opacity: .3;
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, .5) 60%, transparent 100%);
+    mask-image: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, .5) 60%, transparent 100%); }
+  .wordmark { letter-spacing: .26em; font-size: 12px; }
 
   .hero-search { padding-left: 14px; }
   .hero-search .btn { padding: 8px 14px; }
