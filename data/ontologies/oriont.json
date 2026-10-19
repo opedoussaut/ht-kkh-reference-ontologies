@@ -2,7 +2,14 @@
   "id": "oriont",
   "name": "ORIONT",
   "fullName": "ORIONT — life-cycle sustainability assessment ontology (candidate)",
+  "resourceType": "ontology",
   "summary": "ORIENTING provides a structured ontology for Life Cycle Sustainability Assessment. It formalizes concepts related to environmental, social, and economic impacts across lifecycle stages. The ontology supports interoperability of LCSA data, impact indicators, system boundaries, and sustainability modeling workflows.",
+  "knowledge": {
+    "domain": "foundations.sustainability",
+    "basis": "editorial",
+    "confidence": "tentative",
+    "rationale": "Only the ORIENTING project description is public. The classification follows the stated LCSA scope and cannot be confirmed."
+  },
   "publisher": "Research / Community",
   "publisherType": "research",
   "kind": "ontology",
@@ -21,7 +28,9 @@
   "license": {
     "name": "Unknown",
     "access": "unknown",
-    "url": null
+    "url": null,
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": null,
@@ -39,16 +48,32 @@
     "general-purpose-robotics",
     "sustainability"
   ],
+  "capabilities": [
+    "sustainability-compliance"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "unverified",
     "sources": [
       {
         "url": "https://cordis.europa.eu/project/id/958231",
-        "title": "CORDIS — ORIENTING project (H2020, 958231)"
+        "title": "CORDIS — ORIENTING project (H2020, 958231)",
+        "type": "project-documentation",
+        "supports": [
+          "scope"
+        ]
       }
     ],
     "notes": "No public ontology named \"ORIONT\" was found. The v1 description refers to the ORIENTING H2020 project (LCSA methodology, 2020-2024), whose public outputs do not clearly include a published ontology. Kept as a candidate pending a public source."
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
   },
   "needsReview": true,
   "origin": "v1",
@@ -71,5 +96,15 @@
     "stabilityStatus": "not stable",
     "usageStatus": "restricted",
     "hasInternalWikiLink": true
-  }
+  },
+  "engineeringUses": [
+    "Candidate vocabulary for life-cycle sustainability assessment indicators (pending a public source)"
+  ],
+  "limitations": [
+    {
+      "text": "No public ontology named ORIONT was found; only the ORIENTING project description is cited.",
+      "basis": "editorial",
+      "category": "catalogue-gap"
+    }
+  ]
 }

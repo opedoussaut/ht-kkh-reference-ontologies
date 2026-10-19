@@ -1,0 +1,109 @@
+{
+  "id": "openusd",
+  "name": "OpenUSD",
+  "fullName": "Universal Scene Description (OpenUSD)",
+  "resourceType": "data-schema",
+  "kind": "file-format",
+  "layer": "domain",
+  "summary": "Extensible software platform and file format for collaboratively constructing and exchanging 3D scenes, originally developed by Pixar. Used as the scene representation of several robotics simulators.",
+  "knowledge": {
+    "domain": "product.structure",
+    "basis": "editorial",
+    "confidence": "tentative",
+    "rationale": "OpenUSD describes scene structure and composition; it also carries visual and simulation data, so a single domain is a simplification."
+  },
+  "publisher": "Pixar Animation Studios",
+  "publisherType": "industry",
+  "topics": [
+    "3D scene description",
+    "composition",
+    "digital twins"
+  ],
+  "version": {
+    "label": "OpenUSD 26.08",
+    "date": null,
+    "status": "published"
+  },
+  "maturity": "stable",
+  "license": {
+    "name": "Tomorrow Open Source Technology License 1.0 (Apache 2.0 with a modified trademark section)",
+    "access": "open",
+    "url": "https://raw.githubusercontent.com/PixarAnimationStudios/OpenUSD/release/LICENSE.txt",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
+  },
+  "licenses": [
+    {
+      "scope": "software",
+      "name": "Tomorrow Open Source Technology License 1.0",
+      "url": "https://raw.githubusercontent.com/PixarAnimationStudios/OpenUSD/release/LICENSE.txt",
+      "statedAt": "https://raw.githubusercontent.com/PixarAnimationStudios/OpenUSD/release/LICENSE.txt",
+      "commercialUse": "unknown",
+      "reviewStatus": "not-assessed",
+      "restrictions": [
+        "Differs from Apache 2.0 in Section 6 (Trademarks)."
+      ]
+    }
+  ],
+  "links": {
+    "official": "https://openusd.org/release/index.html",
+    "repository": "https://github.com/PixarAnimationStudios/OpenUSD"
+  },
+  "formats": [
+    "USD (.usd, .usda, .usdc)"
+  ],
+  "industries": [
+    "high-tech",
+    "industrial-equipment",
+    "architecture-engineering-construction",
+    "cross-industry"
+  ],
+  "useCases": [
+    "robot-development"
+  ],
+  "capabilities": [
+    "digital-twin",
+    "data-exchange",
+    "simulation-validation"
+  ],
+  "physicalAi": [],
+  "limitations": [],
+  "engineeringUses": [
+    "Assembling robot, workcell and environment assets into one layered scene for simulation",
+    "Exchanging 3D scene data between content tools and simulators"
+  ],
+  "verification": {
+    "checkedOn": "2026-10-16",
+    "status": "verified",
+    "notes": "",
+    "sources": [
+      {
+        "url": "https://openusd.org/release/index.html",
+        "title": "OpenUSD documentation (26.08)",
+        "type": "official-documentation",
+        "supports": [
+          "identity",
+          "version",
+          "scope"
+        ]
+      },
+      {
+        "url": "https://raw.githubusercontent.com/PixarAnimationStudios/OpenUSD/release/LICENSE.txt",
+        "title": "OpenUSD LICENSE.txt",
+        "type": "publisher-repository",
+        "supports": [
+          "licence"
+        ]
+      }
+    ]
+  },
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
+  },
+  "origin": "v2"
+}

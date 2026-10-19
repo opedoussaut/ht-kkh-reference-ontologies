@@ -1,0 +1,88 @@
+{
+  "id": "saref4city",
+  "name": "SAREF4CITY",
+  "fullName": "SAREF extension for Smart Cities",
+  "resourceType": "ontology",
+  "summary": "OWL-DL extension of SAREF with general concepts for smart-city data in the IoT domain, such as city objects, administrative areas, public services and key performance indicators.",
+  "knowledge": {
+    "domain": "product.operations",
+    "basis": "editorial",
+    "confidence": "tentative",
+    "rationale": "SAREF4CITY covers city objects, administrative areas, public services and KPIs for IoT data. Operational data is the main use, but geographic and administrative concepts are also central."
+  },
+  "publisher": "ETSI",
+  "publisherType": "standards-body",
+  "kind": "ontology",
+  "layer": "domain",
+  "topics": [
+    "smart city",
+    "IoT",
+    "public services",
+    "KPIs"
+  ],
+  "standardRef": "ETSI TS 103 410-4",
+  "version": {
+    "label": "SAREF4CITY v2.1.1 (ETSI TS 103 410-4 V2.1.1)",
+    "date": "2020-06-05",
+    "status": "published"
+  },
+  "maturity": "standard",
+  "license": {
+    "name": "ETSI Software License (BSD-3-Clause style)",
+    "access": "open",
+    "url": "https://forge.etsi.org/etsi-software-license",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
+  },
+  "links": {
+    "official": "https://saref.etsi.org/saref4city/",
+    "namespace": "https://saref.etsi.org/saref4city/"
+  },
+  "formats": [
+    "OWL",
+    "RDF/Turtle"
+  ],
+  "industries": [
+    "cities-public-services",
+    "infrastructure-energy-materials"
+  ],
+  "useCases": [
+    "sustainability"
+  ],
+  "capabilities": [
+    "iot-monitoring",
+    "spatial-facility"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
+  "verification": {
+    "status": "verified",
+    "checkedOn": "2026-10-15",
+    "sources": [
+      {
+        "url": "https://saref.etsi.org/saref4city/",
+        "title": "ETSI SAREF4CITY",
+        "type": "published-specification",
+        "supports": [
+          "identity",
+          "version",
+          "licence"
+        ]
+      }
+    ],
+    "notes": "First published 2020-06-05; page last modified 2025-04-11."
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
+  },
+  "origin": "v2",
+  "engineeringUses": [
+    "Describing city objects, public services and KPIs for smart-city platforms",
+    "Combining IoT data across city domains"
+  ],
+  "limitations": []
+}

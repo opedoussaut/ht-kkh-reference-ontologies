@@ -2,7 +2,13 @@
   "id": "dcterms",
   "name": "DCTERMS",
   "fullName": "DCMI Metadata Terms",
+  "resourceType": "vocabulary",
   "summary": "Widely used metadata terms for title, creator, subject, date, and provenance-like description.",
+  "knowledge": {
+    "domain": "foundations.metadata",
+    "basis": "editorial",
+    "confidence": "clear"
+  },
   "publisher": "Dublin Core Metadata Initiative",
   "publisherType": "standards-body",
   "kind": "vocabulary",
@@ -22,7 +28,9 @@
   "license": {
     "name": "CC BY 4.0",
     "access": "open",
-    "url": "https://creativecommons.org/licenses/by/4.0/"
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/",
@@ -43,16 +51,34 @@
     "personal-electronics",
     "general-purpose-robotics"
   ],
+  "capabilities": [
+    "data-governance"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",
     "sources": [
       {
         "url": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/",
-        "title": "DCMI Metadata Terms"
+        "title": "DCMI Metadata Terms",
+        "type": "published-specification",
+        "supports": [
+          "identity",
+          "version",
+          "licence"
+        ]
       }
     ],
     "notes": ""
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
   },
   "origin": "v1",
   "legacy": {
@@ -74,5 +100,10 @@
     "stabilityStatus": "stable",
     "usageStatus": "open",
     "hasInternalWikiLink": true
-  }
+  },
+  "engineeringUses": [
+    "Adding title, creator, date and licence metadata to documents and models",
+    "Using a common metadata baseline across repositories"
+  ],
+  "limitations": []
 }

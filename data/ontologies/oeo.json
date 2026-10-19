@@ -2,9 +2,16 @@
   "id": "oeo",
   "name": "OEO",
   "fullName": "Open Energy Ontology",
+  "resourceType": "ontology",
   "publisher": "Open Energy Platform community",
   "publisherType": "research",
   "summary": "Community ontology for energy-system modelling (technologies, carriers, scenarios, emissions), built on BFO.",
+  "knowledge": {
+    "domain": "foundations.science",
+    "basis": "editorial",
+    "confidence": "tentative",
+    "rationale": "The OEO describes energy-system models, scenarios and technologies used in research. \"Scientific methods & research data\" is the closest fit; a dedicated energy domain does not exist."
+  },
   "kind": "ontology",
   "layer": "domain",
   "topics": [
@@ -22,7 +29,9 @@
   "license": {
     "name": "CC0-1.0 or MIT (dual)",
     "access": "open",
-    "url": "https://github.com/OpenEnergyPlatform/ontology"
+    "url": "https://github.com/OpenEnergyPlatform/ontology",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://openenergyplatform.org/ontology/",
@@ -39,20 +48,48 @@
     "ai-factories",
     "sustainability"
   ],
+  "capabilities": [
+    "energy-management",
+    "sustainability-compliance"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",
     "sources": [
       {
         "url": "https://openenergyplatform.org/ontology/",
-        "title": "OEO on the Open Energy Platform"
+        "title": "OEO on the Open Energy Platform",
+        "type": "official-documentation",
+        "supports": [
+          "identity",
+          "version"
+        ]
       },
       {
         "url": "https://github.com/OpenEnergyPlatform/ontology",
-        "title": "OEO repository"
+        "title": "OEO repository",
+        "type": "publisher-repository",
+        "supports": [
+          "licence",
+          "relationship"
+        ]
       }
     ],
     "notes": ""
   },
-  "origin": "v2"
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
+  },
+  "origin": "v2",
+  "engineeringUses": [
+    "Describing energy-system models, scenarios and their assumptions consistently",
+    "Comparing results from different energy-system models"
+  ],
+  "limitations": []
 }

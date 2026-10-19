@@ -1,0 +1,121 @@
+{
+  "id": "urdf",
+  "name": "URDF",
+  "fullName": "Unified Robot Description Format",
+  "resourceType": "data-schema",
+  "kind": "file-format",
+  "layer": "domain",
+  "summary": "XML format for describing a robot model: links, joints, inertial, visual and collision properties. It is the de facto robot description exchanged between ROS tools and many simulators.",
+  "knowledge": {
+    "domain": "product.structure",
+    "basis": "editorial",
+    "confidence": "clear",
+    "rationale": "URDF describes the kinematic and physical structure of a robot."
+  },
+  "publisher": "ROS community",
+  "publisherType": "consortium",
+  "topics": [
+    "robot description",
+    "kinematics",
+    "links and joints"
+  ],
+  "version": {
+    "label": "Specification maintained by the ROS community (no version number published)",
+    "date": null,
+    "status": "published"
+  },
+  "maturity": "stable",
+  "license": {
+    "name": "Parser libraries BSD-3-Clause; licence of the specification text not stated",
+    "access": "open",
+    "url": null,
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
+  },
+  "licenses": [
+    {
+      "scope": "software",
+      "name": "BSD 3-Clause (ROS 2 URDF parsing packages)",
+      "spdx": "BSD-3-Clause",
+      "url": "https://opensource.org/license/bsd-3-clause",
+      "statedAt": "https://github.com/ros2/urdf",
+      "commercialUse": "permitted",
+      "reviewStatus": "reviewed",
+      "reviewNote": "As granted by the licence text; dependencies and third-party components not assessed. Not legal advice."
+    },
+    {
+      "scope": "file-format",
+      "name": "Specification licence not stated",
+      "url": null,
+      "statedAt": "https://github.com/ros/urdfdom",
+      "commercialUse": "unknown",
+      "reviewStatus": "not-assessed"
+    }
+  ],
+  "links": {
+    "official": "https://github.com/ros/urdfdom",
+    "repository": "https://github.com/ros2/urdf"
+  },
+  "formats": [
+    "XML"
+  ],
+  "industries": [
+    "industrial-equipment",
+    "high-tech",
+    "transportation-mobility"
+  ],
+  "useCases": [
+    "robot-development"
+  ],
+  "capabilities": [
+    "robotics-autonomy",
+    "data-exchange",
+    "simulation-validation"
+  ],
+  "physicalAi": [],
+  "limitations": [
+    {
+      "text": "The specification pages on the ROS wiki block automated checks; identity is confirmed through the reference parser repositories.",
+      "basis": "editorial",
+      "category": "catalogue-gap"
+    }
+  ],
+  "engineeringUses": [
+    "Exchanging a robot’s kinematic structure between design tools, ROS and simulators",
+    "Describing links, joints and collision geometry for motion planning"
+  ],
+  "verification": {
+    "checkedOn": "2026-10-16",
+    "status": "partially-verified",
+    "notes": "Specification page not retrievable automatically.",
+    "sources": [
+      {
+        "url": "https://github.com/ros/urdfdom",
+        "title": "urdfdom — URDF parser (robot model: links, joints, materials)",
+        "type": "publisher-repository",
+        "supports": [
+          "identity",
+          "scope"
+        ]
+      },
+      {
+        "url": "https://github.com/ros2/urdf",
+        "title": "ros2/urdf — packages for working with URDF files (BSD-3-Clause)",
+        "type": "publisher-repository",
+        "supports": [
+          "licence",
+          "relationship"
+        ]
+      }
+    ]
+  },
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
+  },
+  "origin": "v2"
+}

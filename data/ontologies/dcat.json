@@ -2,9 +2,15 @@
   "id": "dcat",
   "name": "DCAT",
   "fullName": "Data Catalog Vocabulary (DCAT) Version 3",
+  "resourceType": "vocabulary",
   "publisher": "W3C",
   "publisherType": "standards-body",
   "summary": "W3C vocabulary for describing datasets, data services and catalogues, the basis of many data-space and open-data catalogues.",
+  "knowledge": {
+    "domain": "foundations.metadata",
+    "basis": "editorial",
+    "confidence": "clear"
+  },
   "kind": "vocabulary",
   "layer": "cross-domain",
   "topics": [
@@ -21,7 +27,9 @@
   "license": {
     "name": "W3C Document License",
     "access": "open",
-    "url": "https://www.w3.org/copyright/document-license/"
+    "url": "https://www.w3.org/copyright/document-license/",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://www.w3.org/TR/vocab-dcat-3/",
@@ -40,16 +48,39 @@
     "ai-factories",
     "sustainability"
   ],
+  "capabilities": [
+    "data-governance"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",
     "sources": [
       {
         "url": "https://www.w3.org/TR/vocab-dcat-3/",
-        "title": "DCAT 3 W3C Recommendation"
+        "title": "DCAT 3 W3C Recommendation",
+        "type": "published-specification",
+        "supports": [
+          "identity",
+          "version",
+          "status"
+        ]
       }
     ],
     "notes": ""
   },
-  "origin": "v2"
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
+  },
+  "origin": "v2",
+  "engineeringUses": [
+    "Publishing a catalogue of engineering datasets with distributions, licences and contact points",
+    "Describing datasets offered in a data space so partners can discover them"
+  ],
+  "limitations": []
 }

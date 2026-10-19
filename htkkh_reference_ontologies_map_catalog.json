@@ -4,7 +4,7 @@
     "name": "AAS",
     "category": "High-Tech",
     "publisher": "Industrial Digital Twin Association",
-    "official": "https://industrialdigitaltwin.org/en/content-hub/aas",
+    "official": "https://industrialdigitaltwin.org/en/content-hub/aasspecifications",
     "endObjects": [
       "AI Factories",
       "Semiconductors",
@@ -493,6 +493,27 @@
     "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/iso-15926-14"
   },
   {
+    "id": "obi",
+    "name": "OBI",
+    "category": "Life Sciences & Healthcare",
+    "publisher": "OBI Consortium",
+    "official": "https://obi-ontology.org/",
+    "endObjects": [],
+    "imds": [
+      "scientific investigations",
+      "assays",
+      "laboratory devices",
+      "protocols"
+    ],
+    "description": "Community ontology for describing scientific investigations: assays, devices, protocols, objectives and data transformations. It defines more than 2,500 terms and is used for biomedical and laboratory data integration.",
+    "parentOntology": "",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "version": "Continuously released (see repository)",
+    "license": "CC BY 4.0",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/obi"
+  },
+  {
     "id": "oeo",
     "name": "OEO",
     "category": "Infrastructure, Energy & Materials",
@@ -515,6 +536,28 @@
     "version": "OEO 2.13.0",
     "license": "CC0-1.0 or MIT (dual)",
     "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/oeo"
+  },
+  {
+    "id": "openusd",
+    "name": "OpenUSD",
+    "category": "High-Tech",
+    "publisher": "Pixar Animation Studios",
+    "official": "https://openusd.org/release/index.html",
+    "endObjects": [
+      "Robot development reference ecosystem"
+    ],
+    "imds": [
+      "3D scene description",
+      "composition",
+      "digital twins"
+    ],
+    "description": "Extensible software platform and file format for collaboratively constructing and exchanging 3D scenes, originally developed by Pixar. Used as the scene representation of several robotics simulators.",
+    "parentOntology": "",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "version": "OpenUSD 26.08",
+    "license": "Tomorrow Open Source Technology License 1.0 (Apache 2.0 with a modified trademark section)",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/openusd"
   },
   {
     "id": "oriont",
@@ -626,7 +669,7 @@
     "parentOntology": "High-Tech (Core Ontology)",
     "stabilityStatus": "stable",
     "usageStatus": "open",
-    "version": "QUDT 3.1.x (3.1.10 published January 2026)",
+    "version": "QUDT schema 3.5.2 (as declared by the schema published at qudt.org)",
     "license": "CC BY 4.0",
     "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/qudt"
   },
@@ -698,6 +741,27 @@
     "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/saref-core"
   },
   {
+    "id": "saref4auto",
+    "name": "SAREF4AUTO",
+    "category": "Transportation & Mobility",
+    "publisher": "ETSI",
+    "official": "https://saref.etsi.org/saref4auto/",
+    "endObjects": [],
+    "imds": [
+      "connected vehicles",
+      "ITS",
+      "platooning",
+      "automated parking"
+    ],
+    "description": "OWL-DL extension of SAREF for the automotive domain. It adapts the ETSI ITS common data dictionary and covers use cases such as platooning and automated valet parking.",
+    "parentOntology": "",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "version": "SAREF4AUTO v2.1.1 (ETSI TS 103 410-7 V2.1.1)",
+    "license": "ETSI Software License (BSD-3-Clause style)",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/saref4auto"
+  },
+  {
     "id": "saref4bldg",
     "name": "SAREF4BLDG",
     "category": "AI Factory",
@@ -717,6 +781,29 @@
     "version": "SAREF4BLDG v2.1.1 (ETSI TS 103 410-3 V2.1.1)",
     "license": "ETSI Software License (BSD-3-Clause style)",
     "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/saref4bldg"
+  },
+  {
+    "id": "saref4city",
+    "name": "SAREF4CITY",
+    "category": "Cities & Public Services",
+    "publisher": "ETSI",
+    "official": "https://saref.etsi.org/saref4city/",
+    "endObjects": [
+      "Sustainability & Circularity"
+    ],
+    "imds": [
+      "smart city",
+      "IoT",
+      "public services",
+      "KPIs"
+    ],
+    "description": "OWL-DL extension of SAREF with general concepts for smart-city data in the IoT domain, such as city objects, administrative areas, public services and key performance indicators.",
+    "parentOntology": "",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "version": "SAREF4CITY v2.1.1 (ETSI TS 103 410-4 V2.1.1)",
+    "license": "ETSI Software License (BSD-3-Clause style)",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/saref4city"
   },
   {
     "id": "saref4ener",
@@ -740,6 +827,30 @@
     "version": "SAREF4ENER v2.1.1 (ETSI TS 103 410-1 V2.1.1)",
     "license": "ETSI Software License (BSD-3-Clause style)",
     "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/saref4ener"
+  },
+  {
+    "id": "saref4inma",
+    "name": "SAREF4INMA",
+    "category": "Industrial Equipment",
+    "publisher": "ETSI",
+    "official": "https://saref.etsi.org/saref4inma/",
+    "endObjects": [
+      "Semiconductors",
+      "General Purpose Robotics"
+    ],
+    "imds": [
+      "manufacturing",
+      "production equipment",
+      "traceability",
+      "batches"
+    ],
+    "description": "SAREF extension for industry and manufacturing. It improves interoperability between production equipment and lets organisations trace produced items back to equipment, batches, materials and production times.",
+    "parentOntology": "",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "version": "SAREF4INMA v2.1.1 (ETSI TS 103 410-5 V2.1.1)",
+    "license": "ETSI Software License (BSD-3-Clause style)",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/saref4inma"
   },
   {
     "id": "schema-org",
@@ -908,7 +1019,8 @@
     "official": "https://www.omg.org/sysml/",
     "endObjects": [
       "General Purpose Robotics",
-      "AI Factories"
+      "AI Factories",
+      "Robot development reference ecosystem"
     ],
     "imds": [
       "MBSE",
@@ -924,6 +1036,28 @@
     "version": "KerML 1.0, SysML 2.0, Systems Modeling API 1.0 — formally adopted",
     "license": "OMG specification (freely available)",
     "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/sysml-v2"
+  },
+  {
+    "id": "urdf",
+    "name": "URDF",
+    "category": "Industrial Equipment",
+    "publisher": "ROS community",
+    "official": "https://github.com/ros/urdfdom",
+    "endObjects": [
+      "Robot development reference ecosystem"
+    ],
+    "imds": [
+      "robot description",
+      "kinematics",
+      "links and joints"
+    ],
+    "description": "XML format for describing a robot model: links, joints, inertial, visual and collision properties. It is the de facto robot description exchanged between ROS tools and many simulators.",
+    "parentOntology": "",
+    "stabilityStatus": "stable",
+    "usageStatus": "open",
+    "version": "Specification maintained by the ROS community (no version number published)",
+    "license": "Parser libraries BSD-3-Clause; licence of the specification text not stated",
+    "atlasUrl": "https://opedoussaut.github.io/ht-kkh-reference-ontologies/#/ontology/urdf"
   },
   {
     "id": "vsso",

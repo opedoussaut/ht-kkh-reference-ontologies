@@ -2,9 +2,15 @@
   "id": "bfo",
   "name": "BFO",
   "fullName": "Basic Formal Ontology (BFO 2020)",
+  "resourceType": "ontology",
   "publisher": "ISO/IEC JTC 1 · BFO maintainers",
   "publisherType": "standards-body",
   "summary": "Top-level ontology standardised as ISO/IEC 21838-2. Provides the formal backbone for the IOF, CCO, OEO and many OBO ontologies.",
+  "knowledge": {
+    "domain": "foundations.formal",
+    "basis": "editorial",
+    "confidence": "clear"
+  },
   "kind": "ontology",
   "layer": "upper",
   "topics": [
@@ -23,7 +29,9 @@
   "license": {
     "name": "BFO OWL files CC BY 4.0; ISO text licensed",
     "access": "open",
-    "url": "https://github.com/BFO-ontology/BFO-2020"
+    "url": "https://github.com/BFO-ontology/BFO-2020",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://basic-formal-ontology.org/",
@@ -44,20 +52,48 @@
   "useCases": [
     "semiconductors"
   ],
+  "capabilities": [
+    "knowledge-graphs-ai",
+    "data-exchange"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",
     "sources": [
       {
         "url": "https://github.com/BFO-ontology/BFO-2020",
-        "title": "BFO-2020 repository (CC BY 4.0)"
+        "title": "BFO-2020 repository (CC BY 4.0)",
+        "type": "publisher-repository",
+        "supports": [
+          "licence",
+          "version"
+        ]
       },
       {
         "url": "https://webstore.iec.ch/en/publication/72703",
-        "title": "ISO/IEC 21838-2:2021"
+        "title": "ISO/IEC 21838-2:2021",
+        "type": "published-specification",
+        "supports": [
+          "identity",
+          "version"
+        ]
       }
     ],
     "notes": ""
   },
-  "origin": "v2"
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
+  },
+  "origin": "v2",
+  "engineeringUses": [
+    "Providing a shared top-level structure when integrating ontologies from different engineering domains",
+    "Distinguishing objects, their qualities and the processes they take part in when modelling a system"
+  ],
+  "limitations": []
 }

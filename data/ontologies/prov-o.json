@@ -2,7 +2,13 @@
   "id": "prov-o",
   "name": "PROV-O",
   "fullName": "PROV Ontology",
+  "resourceType": "ontology",
   "summary": "Provenance ontology for entities, activities, agents, and derivation relationships.",
+  "knowledge": {
+    "domain": "foundations.metadata",
+    "basis": "editorial",
+    "confidence": "clear"
+  },
   "publisher": "W3C",
   "publisherType": "standards-body",
   "kind": "ontology",
@@ -21,7 +27,9 @@
   "license": {
     "name": "W3C Document License",
     "access": "open",
-    "url": "https://www.w3.org/copyright/document-license/"
+    "url": "https://www.w3.org/copyright/document-license/",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://www.w3.org/TR/prov-o/",
@@ -43,16 +51,35 @@
     "general-purpose-robotics",
     "sustainability"
   ],
+  "capabilities": [
+    "data-governance",
+    "sustainability-compliance"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",
     "sources": [
       {
         "url": "https://www.w3.org/TR/prov-o/",
-        "title": "W3C PROV-O Recommendation"
+        "title": "W3C PROV-O Recommendation",
+        "type": "published-specification",
+        "supports": [
+          "identity",
+          "version",
+          "status"
+        ]
       }
     ],
     "notes": ""
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
   },
   "origin": "v1",
   "legacy": {
@@ -74,5 +101,10 @@
     "stabilityStatus": "stable",
     "usageStatus": "open",
     "hasInternalWikiLink": true
-  }
+  },
+  "engineeringUses": [
+    "Recording which data, tools and people produced a simulation result or report",
+    "Tracing a sustainability or quality claim back to its source data"
+  ],
+  "limitations": []
 }

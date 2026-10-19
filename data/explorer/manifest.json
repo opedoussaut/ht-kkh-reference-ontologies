@@ -1,0 +1,293 @@
+{
+  "format": "atlas-explorer-manifest/1",
+  "ontologies": {
+    "aas": {
+      "status": "not-assessed",
+      "reason": "IDTA specifies an RDF serialisation; the published ontology file has not yet been reviewed."
+    },
+    "bfo": {
+      "status": "source-available",
+      "reason": "BFO 2020 OWL files are published in the BFO-2020 repository."
+    },
+    "bot": {
+      "status": "source-available",
+      "reason": "BOT is published as OWL at its w3id namespace."
+    },
+    "brick": {
+      "status": "source-available",
+      "reason": "Brick releases include the ontology in Turtle (repository)."
+    },
+    "cco": {
+      "status": "source-available",
+      "reason": "CCO OWL files are published in its repository."
+    },
+    "dcat": {
+      "status": "source-available",
+      "reason": "W3C publishes DCAT 3 as RDF at its namespace."
+    },
+    "dcterms": {
+      "status": "source-available",
+      "reason": "DCMI publishes the terms as RDF."
+    },
+    "digital-reference": {
+      "status": "source-available",
+      "reason": "OWL/Turtle files are published in its repository; licence to confirm before processing."
+    },
+    "dmtf-cim": {
+      "status": "unavailable",
+      "reason": "DMTF CIM is a MOF/UML schema, not an RDF/OWL ontology."
+    },
+    "eclass": {
+      "status": "documentation-only",
+      "reason": "ECLASS releases, including the RDF serialisation, require a commercial licence."
+    },
+    "eli": {
+      "status": "not-assessed",
+      "reason": "Distribution format and licence of the ontology files not yet reviewed."
+    },
+    "emmo": {
+      "status": "source-available",
+      "reason": "EMMO OWL/Turtle files are published in its repository."
+    },
+    "geosparql": {
+      "status": "source-available",
+      "reason": "OGC publishes the GeoSPARQL ontology as RDF."
+    },
+    "goodrelations": {
+      "status": "source-available",
+      "reason": "GoodRelations is published as OWL at its namespace (legacy)."
+    },
+    "gs1-webvoc": {
+      "status": "source-available",
+      "reason": "GS1 publishes the vocabulary as JSON-LD (requires a JSON-LD parser)."
+    },
+    "iec-cim": {
+      "status": "documentation-only",
+      "reason": "IEC standard (UML information model) sold by IEC; profiles such as CGMES are not OWL ontologies."
+    },
+    "ieee-aur": {
+      "status": "not-assessed",
+      "reason": "Public OWL availability under the IEEE SA open-source programme not yet confirmed."
+    },
+    "ieee-cora": {
+      "status": "source-available",
+      "reason": "A CC BY 4.0 OWL conversion of CORA is published in a public repository; the standard itself is sold by IEEE."
+    },
+    "ieee-corax": {
+      "status": "documentation-only",
+      "reason": "Specified in the IEEE 1872-2015 text (sold by IEEE); no public machine-readable module known."
+    },
+    "ieee-pos": {
+      "status": "documentation-only",
+      "reason": "Specified in the IEEE 1872-2015 text (sold by IEEE); no public machine-readable module known."
+    },
+    "ieee-rparts": {
+      "status": "documentation-only",
+      "reason": "Specified in the IEEE 1872-2015 text (sold by IEEE); no public machine-readable module known."
+    },
+    "ieee-rtr": {
+      "status": "documentation-only",
+      "reason": "IEEE 1872.1-2024 text is sold by IEEE; no public machine-readable ontology known."
+    },
+    "ifcowl": {
+      "status": "not-assessed",
+      "reason": "The former IFC4 ontology page no longer resolves; current distribution not yet reviewed."
+    },
+    "iof-core": {
+      "status": "source-available",
+      "reason": "IOF publishes OWL files for each release."
+    },
+    "iso-15926-14": {
+      "status": "documentation-only",
+      "reason": "ISO technical specification sold by ISO; no public OWL distribution known."
+    },
+    "obi": {
+      "status": "source-available",
+      "reason": "OBI OWL files are published in its repository."
+    },
+    "oeo": {
+      "status": "source-available",
+      "reason": "OEO OWL files are published in its repository."
+    },
+    "openusd": {
+      "status": "unavailable",
+      "reason": "OpenUSD is a 3D scene description format and platform, not an RDF/OWL ontology."
+    },
+    "oriont": {
+      "status": "unavailable",
+      "reason": "No public source identified (see the record's verification notes)."
+    },
+    "owl-time": {
+      "status": "source-available",
+      "reason": "W3C publishes OWL-Time as OWL at its namespace."
+    },
+    "prov-o": {
+      "status": "source-available",
+      "reason": "W3C publishes PROV-O as OWL at its namespace."
+    },
+    "qudt": {
+      "status": "interactive",
+      "asset": "assets/graphs/qudt/3.5.2.json",
+      "version": "3.5.2",
+      "format": "atlas-ontology-graph/1",
+      "source": {
+        "url": "https://qudt.org/schema/qudt/",
+        "sha256": "c25ab7e8a65f06f3a6c8fbb91f926eb8f8842a443fb3b9473cf82b8c6ba9e4ab",
+        "bytes": 115706,
+        "retrievedOn": "2026-10-15",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "documentation": "https://qudt.org/"
+      },
+      "stats": {
+        "triples": 2153,
+        "classes": 75,
+        "objectProperties": 60,
+        "datatypeProperties": 54,
+        "annotationProperties": 58,
+        "individuals": 0,
+        "externalReferences": 8,
+        "edges": 346
+      },
+      "notes": {
+        "complexExpressions": 0
+      }
+    },
+    "saref-core": {
+      "status": "interactive",
+      "asset": "assets/graphs/saref-core/v4.1.1.json",
+      "version": "v4.1.1",
+      "format": "atlas-ontology-graph/1",
+      "source": {
+        "url": "https://saref.etsi.org/core/v4.1.1/saref.ttl",
+        "sha256": "28189acd8cfb49bf6b7e5709275a1162d943576f643b2cffdccfe20cc00ad701",
+        "bytes": 100491,
+        "retrievedOn": "2026-10-15",
+        "license": "ETSI Software License (BSD-3-Clause style)",
+        "licenseUrl": "https://forge.etsi.org/etsi-software-license",
+        "documentation": "https://saref.etsi.org/core/"
+      },
+      "stats": {
+        "triples": 1324,
+        "classes": 32,
+        "objectProperties": 64,
+        "datatypeProperties": 8,
+        "annotationProperties": 14,
+        "individuals": 0,
+        "externalReferences": 2,
+        "edges": 281
+      },
+      "notes": {
+        "complexExpressions": 6
+      }
+    },
+    "saref4auto": {
+      "status": "source-available",
+      "reason": "ETSI publishes the ontology in Turtle at its namespace."
+    },
+    "saref4bldg": {
+      "status": "source-available",
+      "reason": "ETSI publishes the ontology in Turtle at its namespace."
+    },
+    "saref4city": {
+      "status": "source-available",
+      "reason": "ETSI publishes the ontology in Turtle at its namespace."
+    },
+    "saref4ener": {
+      "status": "source-available",
+      "reason": "ETSI publishes the ontology in Turtle at its namespace."
+    },
+    "saref4inma": {
+      "status": "source-available",
+      "reason": "ETSI publishes the ontology in Turtle at its namespace."
+    },
+    "schema-org": {
+      "status": "source-available",
+      "reason": "Schema.org publishes Turtle/JSON-LD releases. Large: requires the incremental loading planned for later."
+    },
+    "skos": {
+      "status": "source-available",
+      "reason": "W3C publishes SKOS as RDF at its namespace."
+    },
+    "sosa": {
+      "status": "interactive",
+      "asset": "assets/graphs/sosa/sha-c70b0d1c843c.json",
+      "version": "sha-c70b0d1c843c",
+      "format": "atlas-ontology-graph/1",
+      "source": {
+        "url": "https://www.w3.org/ns/sosa/",
+        "sha256": "c70b0d1c843c0047e4c98e0a89392e46a05752ff6365bda7f7f55303905a0392",
+        "bytes": 27326,
+        "retrievedOn": "2026-10-15",
+        "license": "W3C Software and Document License",
+        "licenseUrl": "https://www.w3.org/copyright/software-license/",
+        "documentation": "https://www.w3.org/TR/vocab-ssn/"
+      },
+      "stats": {
+        "triples": 345,
+        "classes": 16,
+        "objectProperties": 21,
+        "datatypeProperties": 2,
+        "annotationProperties": 14,
+        "individuals": 1,
+        "externalReferences": 1,
+        "edges": 90
+      },
+      "notes": {
+        "complexExpressions": 0
+      }
+    },
+    "ssn": {
+      "status": "interactive",
+      "asset": "assets/graphs/ssn/sha-184d86189191.json",
+      "version": "sha-184d86189191",
+      "format": "atlas-ontology-graph/1",
+      "source": {
+        "url": "https://www.w3.org/ns/ssn/",
+        "sha256": "184d86189191146e314cc52b1bceb96fca11e70aacbc160d71588102a5153eb9",
+        "bytes": 22714,
+        "retrievedOn": "2026-10-15",
+        "license": "W3C Software and Document License",
+        "licenseUrl": "https://www.w3.org/copyright/software-license/",
+        "documentation": "https://www.w3.org/TR/vocab-ssn/"
+      },
+      "stats": {
+        "triples": 520,
+        "classes": 16,
+        "objectProperties": 24,
+        "datatypeProperties": 0,
+        "annotationProperties": 11,
+        "individuals": 1,
+        "externalReferences": 7,
+        "edges": 33
+      },
+      "notes": {
+        "complexExpressions": 7
+      }
+    },
+    "step-ap242": {
+      "status": "unavailable",
+      "reason": "STEP AP242 is an EXPRESS information model, not an RDF/OWL ontology."
+    },
+    "sumo": {
+      "status": "not-assessed",
+      "reason": "SUMO is authored in SUO-KIF; the OWL translation has not yet been reviewed."
+    },
+    "sumo-cora": {
+      "status": "documentation-only",
+      "reason": "Part of the IEEE 1872-2015 axiomatisation; no separate public artefact known."
+    },
+    "sysml-v2": {
+      "status": "unavailable",
+      "reason": "SysML v2 / KerML is a modelling language with its own notation, not an RDF/OWL ontology."
+    },
+    "urdf": {
+      "status": "unavailable",
+      "reason": "URDF is an XML robot description format, not an RDF/OWL ontology."
+    },
+    "vsso": {
+      "status": "source-available",
+      "reason": "Turtle files are published in the W3C repository (discontinued draft)."
+    }
+  }
+}

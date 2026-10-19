@@ -2,7 +2,13 @@
   "id": "sosa",
   "name": "SOSA",
   "fullName": "Sensor, Observation, Sample, and Actuator (SOSA)",
+  "resourceType": "ontology",
   "summary": "Lightweight core for sensors, observations, samples, and actuators.",
+  "knowledge": {
+    "domain": "product.operations",
+    "basis": "editorial",
+    "confidence": "clear"
+  },
   "publisher": "W3C/OGC",
   "publisherType": "standards-body",
   "kind": "ontology",
@@ -22,7 +28,9 @@
   "license": {
     "name": "W3C Document License",
     "access": "open",
-    "url": "https://www.w3.org/copyright/document-license/"
+    "url": "https://www.w3.org/copyright/document-license/",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://www.w3.org/TR/vocab-ssn/",
@@ -40,18 +48,37 @@
     "ai-factories",
     "semiconductors",
     "personal-electronics",
-    "general-purpose-robotics"
+    "general-purpose-robotics",
+    "robot-development"
   ],
+  "capabilities": [
+    "iot-monitoring"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",
     "sources": [
       {
         "url": "https://www.w3.org/TR/vocab-ssn/",
-        "title": "W3C Semantic Sensor Network Ontology"
+        "title": "W3C Semantic Sensor Network Ontology",
+        "type": "published-specification",
+        "supports": [
+          "identity",
+          "version",
+          "status"
+        ]
       }
     ],
     "notes": ""
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
   },
   "origin": "v1",
   "legacy": {
@@ -73,5 +100,17 @@
     "stabilityStatus": "stable",
     "usageStatus": "open",
     "hasInternalWikiLink": true
-  }
+  },
+  "engineeringUses": [
+    "Describing sensor observations, the property observed and the feature of interest",
+    "Recording actuations and samples in test or operations data"
+  ],
+  "limitations": [
+    {
+      "text": "Uses schema:domainIncludes / rangeIncludes instead of rdfs:domain / rdfs:range, so domains and ranges are non-binding.",
+      "basis": "source",
+      "category": "technical",
+      "sourceRef": "https://www.w3.org/ns/sosa/"
+    }
+  ]
 }

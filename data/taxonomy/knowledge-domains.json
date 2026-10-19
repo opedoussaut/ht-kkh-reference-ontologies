@@ -1,0 +1,165 @@
+{
+  "_status": "active",
+  "_version": "1.0.0",
+  "_note": "Generic public knowledge taxonomy: what engineering knowledge a resource represents. Each resource gets exactly one primary domain and sub-domain. Wording is the atlas's own; it is not a reproduction of any organisation's internal classification.",
+  "items": [
+    {
+      "id": "product",
+      "label": "Products, systems & assets",
+      "summary": "Knowledge about engineered things across their lifecycle.",
+      "children": [
+        {
+          "id": "product.structure",
+          "label": "Product & asset structure",
+          "summary": "Geometry, decomposition, topology and configuration of products, plants and buildings."
+        },
+        {
+          "id": "product.catalogues",
+          "label": "Product & asset information",
+          "summary": "Catalogues, classifications, nameplates and properties of parts, products and assets."
+        },
+        {
+          "id": "product.requirements",
+          "label": "Requirements & performance indicators",
+          "summary": "Requirements, specifications, KPIs and acceptance criteria."
+        },
+        {
+          "id": "product.systems",
+          "label": "Systems, functions & autonomy",
+          "summary": "Functional and logical architecture of systems, including autonomous and robotic systems."
+        },
+        {
+          "id": "product.behaviour",
+          "label": "Behaviour, tasks & simulation",
+          "summary": "Behaviour, tasks and simulation or analysis models."
+        },
+        {
+          "id": "product.manufacturing",
+          "label": "Manufacturing processes & methods",
+          "summary": "Production processes, resources, routings and traceability of produced items."
+        },
+        {
+          "id": "product.interfaces",
+          "label": "Interfaces & communication",
+          "summary": "Device functions, commands, protocols and data interfaces."
+        },
+        {
+          "id": "product.operations",
+          "label": "Operational & sensor data",
+          "summary": "Observations, telemetry, IoT and usage data from products and assets in operation."
+        },
+        {
+          "id": "product.documentation",
+          "label": "Technical documentation & visuals",
+          "summary": "Manuals, technical documents, drawings and visual representations."
+        }
+      ]
+    },
+    {
+      "id": "organisation",
+      "label": "Organisations, people & processes",
+      "summary": "Knowledge about who does what, how and with which skills.",
+      "children": [
+        {
+          "id": "organisation.entities",
+          "label": "Organisations & people",
+          "summary": "Companies, teams, roles and persons."
+        },
+        {
+          "id": "organisation.processes",
+          "label": "Business processes & workflows",
+          "summary": "Processes, procedures and workflows of organisations."
+        },
+        {
+          "id": "organisation.competences",
+          "label": "Skills & competences",
+          "summary": "Skills, qualifications and know-how."
+        },
+        {
+          "id": "organisation.projects",
+          "label": "Projects & programmes",
+          "summary": "Projects, programmes, plans and their deliverables."
+        }
+      ]
+    },
+    {
+      "id": "business",
+      "label": "Business, commerce & supply",
+      "summary": "Knowledge about markets, trade and supply.",
+      "children": [
+        {
+          "id": "business.commerce",
+          "label": "Commerce & offers",
+          "summary": "Offers, prices, products for sale and e-commerce data."
+        },
+        {
+          "id": "business.supply",
+          "label": "Supply chain & logistics",
+          "summary": "Suppliers, capacities, logistics and supply-chain events."
+        },
+        {
+          "id": "business.market",
+          "label": "Markets & economics",
+          "summary": "Market analysis, economic and financial information."
+        },
+        {
+          "id": "business.contracts",
+          "label": "Contracts & agreements",
+          "summary": "Contracts, licences and commercial agreements."
+        }
+      ]
+    },
+    {
+      "id": "foundations",
+      "label": "Foundational & scientific knowledge",
+      "summary": "Cross-cutting knowledge that other domains build on.",
+      "children": [
+        {
+          "id": "foundations.formal",
+          "label": "Upper & formal ontologies",
+          "summary": "Top-level and mid-level ontologies that ground other models."
+        },
+        {
+          "id": "foundations.quantities",
+          "label": "Units, quantities & measurement",
+          "summary": "Units of measure, quantity kinds and dimensions."
+        },
+        {
+          "id": "foundations.materials",
+          "label": "Materials & physical science",
+          "summary": "Materials, their properties and physical phenomena."
+        },
+        {
+          "id": "foundations.time-space",
+          "label": "Time, space & geography",
+          "summary": "Temporal concepts, positions, geometry and geospatial information."
+        },
+        {
+          "id": "foundations.regulation",
+          "label": "Regulation & legislation",
+          "summary": "Legal acts, regulatory requirements and their identifiers."
+        },
+        {
+          "id": "foundations.sustainability",
+          "label": "Sustainability & environment",
+          "summary": "Environmental, social and lifecycle impact knowledge."
+        },
+        {
+          "id": "foundations.metadata",
+          "label": "Metadata, provenance & cataloguing",
+          "summary": "Describing, cataloguing and tracing data and documents."
+        },
+        {
+          "id": "foundations.languages",
+          "label": "Representation & modelling languages",
+          "summary": "Languages and frameworks for representing knowledge and models."
+        },
+        {
+          "id": "foundations.science",
+          "label": "Scientific methods & research data",
+          "summary": "Scientific investigations, experiments and research models."
+        }
+      ]
+    }
+  ]
+}

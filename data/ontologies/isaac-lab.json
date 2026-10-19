@@ -1,0 +1,120 @@
+{
+  "id": "isaac-lab",
+  "name": "NVIDIA Isaac Lab",
+  "fullName": "Isaac Lab robot-learning framework",
+  "resourceType": "ai-framework",
+  "kind": "ai-framework",
+  "summary": "Open-source framework for robot learning (reinforcement learning, imitation learning, motion planning) built on Isaac Sim, with ready-to-train environments and sensor models.",
+  "knowledge": {
+    "domain": "product.behaviour",
+    "basis": "editorial",
+    "confidence": "clear",
+    "rationale": "Trains and evaluates robot behaviours (policies)."
+  },
+  "publisher": "NVIDIA",
+  "publisherType": "industry",
+  "topics": [
+    "robot learning",
+    "reinforcement learning",
+    "imitation learning"
+  ],
+  "version": {
+    "label": "Isaac Lab 3.0.0 (targets Isaac Sim 6.2)",
+    "date": null,
+    "status": "published"
+  },
+  "maturity": "stable",
+  "license": {
+    "name": "BSD-3-Clause (framework); depends on Isaac Sim terms",
+    "access": "open-with-terms",
+    "url": "https://github.com/isaac-sim/IsaacLab",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
+  },
+  "licenses": [
+    {
+      "scope": "software",
+      "name": "BSD 3-Clause (Isaac Lab framework)",
+      "spdx": "BSD-3-Clause",
+      "url": "https://opensource.org/license/bsd-3-clause",
+      "statedAt": "https://github.com/isaac-sim/IsaacLab",
+      "commercialUse": "permitted",
+      "reviewStatus": "reviewed",
+      "reviewNote": "As granted by the licence text; dependencies and third-party components not assessed. Not legal advice."
+    },
+    {
+      "scope": "software",
+      "name": "Apache License 2.0 (isaaclab_mimic extension)",
+      "spdx": "Apache-2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0",
+      "statedAt": "https://github.com/isaac-sim/IsaacLab",
+      "commercialUse": "permitted",
+      "reviewStatus": "reviewed",
+      "reviewNote": "As granted by the licence text; dependencies and third-party components not assessed. Not legal advice."
+    }
+  ],
+  "links": {
+    "official": "https://github.com/isaac-sim/IsaacLab",
+    "repository": "https://github.com/isaac-sim/IsaacLab"
+  },
+  "formats": [
+    "Python"
+  ],
+  "industries": [
+    "industrial-equipment",
+    "high-tech"
+  ],
+  "useCases": [
+    "robot-development"
+  ],
+  "capabilities": [
+    "robotics-autonomy",
+    "simulation-validation",
+    "ai-model-development"
+  ],
+  "physicalAi": [
+    "sim-to-real"
+  ],
+  "limitations": [
+    {
+      "text": "Full workflows require Isaac Sim (proprietary terms), and the isaaclab_mimic extension requires cuRobo (proprietary).",
+      "basis": "source",
+      "category": "access",
+      "sourceRef": "https://github.com/isaac-sim/IsaacLab"
+    }
+  ],
+  "engineeringUses": [
+    "Training locomotion or manipulation policies in parallel simulated environments",
+    "Evaluating learned policies in simulation before transfer to a physical robot"
+  ],
+  "verification": {
+    "checkedOn": "2026-10-16",
+    "status": "verified",
+    "notes": "Capabilities as described by the publisher.",
+    "sources": [
+      {
+        "url": "https://github.com/isaac-sim/IsaacLab",
+        "title": "Isaac Lab repository (README)",
+        "type": "publisher-repository",
+        "supports": [
+          "identity",
+          "version",
+          "licence",
+          "capability",
+          "relationship",
+          "limitation"
+        ]
+      }
+    ]
+  },
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial",
+    "physicalAi": "editorial"
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
+  },
+  "origin": "v2"
+}

@@ -2,7 +2,14 @@
   "id": "dmtf-cim",
   "name": "DMTF CIM",
   "fullName": "DMTF Common Information Model (CIM) Schema",
+  "resourceType": "data-schema",
   "summary": "The Common Information Model (CIM) is a formal object-oriented schema developed by the Distributed Management Task Force (DMTF) to represent managed elements in IT environments, including computer systems, racks, chassis, processors, memory, power supplies, networking components, and cooling subsystems. CIM provides a strong reference model for AI Factory physical and logical infrastructure components.",
+  "knowledge": {
+    "domain": "product.catalogues",
+    "basis": "editorial",
+    "confidence": "tentative",
+    "rationale": "DMTF CIM primarily describes managed IT elements and their configuration (systems, chassis, devices), which is asset information. It also covers metrics and events, so the classification stays tentative."
+  },
   "publisher": "DMTF (Distributed Management Task Force)",
   "publisherType": "standards-body",
   "kind": "information-model",
@@ -23,7 +30,9 @@
   "license": {
     "name": "Free download under DMTF terms",
     "access": "open-with-terms",
-    "url": "https://www.dmtf.org/standards/cim"
+    "url": "https://www.dmtf.org/standards/cim",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://www.dmtf.org/standards/cim"
@@ -39,20 +48,41 @@
   "useCases": [
     "ai-factories"
   ],
+  "capabilities": [
+    "digital-twin",
+    "iot-monitoring"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",
     "sources": [
       {
         "url": "https://dmtf.org/node/3585",
-        "title": "DMTF releases CIM 2.54"
+        "title": "DMTF releases CIM 2.54",
+        "type": "official-documentation",
+        "supports": [
+          "version"
+        ]
       },
       {
         "url": "https://www.dmtf.org/sites/default/files/cim/cim_schema_v2541/releasenotes.html",
-        "title": "CIM 2.54.1 release notes"
+        "title": "CIM 2.54.1 release notes",
+        "type": "official-documentation",
+        "supports": [
+          "version"
+        ]
       }
     ],
     "notes": "CIM is a MOF/UML information model, not an OWL ontology."
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
   },
   "corrections": [
     {
@@ -88,5 +118,17 @@
     "stabilityStatus": "stable",
     "usageStatus": "licensed",
     "hasInternalWikiLink": true
-  }
+  },
+  "engineeringUses": [
+    "Inventorying servers, chassis, power supplies and cooling devices in a data centre",
+    "Mapping infrastructure management data into a facility or operations model"
+  ],
+  "limitations": [
+    {
+      "text": "A MOF/UML information model for IT management, not an RDF/OWL ontology.",
+      "basis": "source",
+      "category": "scope",
+      "sourceRef": "https://www.dmtf.org/sites/default/files/cim/cim_schema_v2541/releasenotes.html"
+    }
+  ]
 }

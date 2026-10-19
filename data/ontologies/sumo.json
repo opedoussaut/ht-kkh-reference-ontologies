@@ -2,7 +2,13 @@
   "id": "sumo",
   "name": "SUMO",
   "fullName": "Suggested Upper Merged Ontology",
+  "resourceType": "ontology",
   "summary": "Suggested Upper Merged Ontology for broad upper-level semantic grounding.",
+  "knowledge": {
+    "domain": "foundations.formal",
+    "basis": "editorial",
+    "confidence": "clear"
+  },
   "publisher": "IEEE / Teknowledge",
   "publisherType": "research",
   "kind": "ontology",
@@ -21,8 +27,29 @@
   "license": {
     "name": "Free under the IEEE licence in the source files; extensions under GNU GPL",
     "access": "open-with-terms",
-    "url": "https://www.ontologyportal.org/"
+    "url": "https://www.ontologyportal.org/",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
+  "licenses": [
+    {
+      "scope": "model-files",
+      "name": "IEEE licence stated in the source files",
+      "url": null,
+      "statedAt": "https://raw.githubusercontent.com/ontologyportal/sumo/master/Merge.kif",
+      "commercialUse": "unknown",
+      "reviewStatus": "not-assessed"
+    },
+    {
+      "scope": "model-files",
+      "name": "GNU GPL (SUMO extensions, as stated by the publisher)",
+      "url": null,
+      "statedAt": "https://www.ontologyportal.org/",
+      "commercialUse": "unknown",
+      "reviewStatus": "not-assessed",
+      "reviewNote": "Applies to ontologies extending SUMO, not to the core."
+    }
+  ],
   "links": {
     "official": "https://www.ontologyportal.org/",
     "repository": "https://github.com/ontologyportal/sumo"
@@ -42,20 +69,41 @@
     "personal-electronics",
     "general-purpose-robotics"
   ],
+  "capabilities": [
+    "knowledge-graphs-ai"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",
     "sources": [
       {
         "url": "https://www.ontologyportal.org/",
-        "title": "SUMO — ontologyportal.org"
+        "title": "SUMO — ontologyportal.org",
+        "type": "official-documentation",
+        "supports": [
+          "identity",
+          "licence"
+        ]
       },
       {
         "url": "https://raw.githubusercontent.com/ontologyportal/sumo/master/Merge.kif",
-        "title": "Merge.kif licence header"
+        "title": "Merge.kif licence header",
+        "type": "publisher-repository",
+        "supports": [
+          "licence"
+        ]
       }
     ],
     "notes": "Originally developed by Teknowledge within the IEEE Standard Upper Ontology working group; now maintained by Adam Pease and contributors."
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
   },
   "origin": "v1",
   "legacy": {
@@ -77,5 +125,10 @@
     "stabilityStatus": "stable",
     "usageStatus": "open",
     "hasInternalWikiLink": true
-  }
+  },
+  "engineeringUses": [
+    "Providing formal definitions of general concepts for reasoning systems",
+    "Serving as the upper ontology for the IEEE 1872 robotics ontologies"
+  ],
+  "limitations": []
 }

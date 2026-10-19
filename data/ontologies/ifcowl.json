@@ -2,9 +2,15 @@
   "id": "ifcowl",
   "name": "ifcOWL",
   "fullName": "ifcOWL — OWL representation of IFC",
+  "resourceType": "ontology",
   "publisher": "buildingSMART International",
   "publisherType": "standards-body",
   "summary": "Direct OWL translation of the IFC EXPRESS schema (ISO 16739). buildingSMART now points semantic-web users to bSDD for most uses.",
+  "knowledge": {
+    "domain": "product.structure",
+    "basis": "editorial",
+    "confidence": "clear"
+  },
   "kind": "ontology",
   "layer": "domain",
   "topics": [
@@ -22,11 +28,13 @@
   "license": {
     "name": "CC BY 3.0",
     "access": "open",
-    "url": "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2/OWL/index.html"
+    "url": "https://technical.buildingsmart.org/standards/ifc/ifc-formats/ifcowl/",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://technical.buildingsmart.org/standards/ifc/ifc-formats/ifcowl/",
-    "specification": "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2/OWL/index.html"
+    "specification": "https://technical.buildingsmart.org/standards/ifc/ifc-schema-specifications/"
   },
   "formats": [
     "OWL",
@@ -39,20 +47,60 @@
   "useCases": [
     "ai-factories"
   ],
+  "capabilities": [
+    "spatial-facility",
+    "data-exchange"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
-    "status": "verified",
+    "status": "partially-verified",
     "sources": [
       {
         "url": "https://technical.buildingsmart.org/standards/ifc/ifc-formats/ifcowl/",
-        "title": "buildingSMART — What is ifcOWL?"
+        "title": "buildingSMART — What is ifcOWL?",
+        "type": "official-documentation",
+        "supports": [
+          "identity",
+          "status",
+          "limitation"
+        ]
       },
       {
-        "url": "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2/OWL/index.html",
-        "title": "ifcOWL IFC4 ADD2"
+        "url": "https://technical.buildingsmart.org/standards/ifc/ifc-schema-specifications/",
+        "title": "buildingSMART IFC schema specifications",
+        "type": "official-documentation",
+        "supports": [
+          "scope"
+        ]
       }
     ],
-    "notes": "The ifcOWL authors advise against production use; consider bSDD."
+    "notes": "The ifcOWL authors advise against production use; consider bSDD. The former IFC4 ADD2 ontology page (which stated CC BY 3.0) no longer resolves; confirm the licence on the current schema pages."
   },
-  "origin": "v2"
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
+  },
+  "origin": "v2",
+  "engineeringUses": [
+    "Querying IFC building models with SPARQL for research or prototyping",
+    "Linking BIM elements to other linked-data models of a facility"
+  ],
+  "limitations": [
+    {
+      "text": "The ifcOWL authors advise against production use and point semantic-web users to bSDD.",
+      "basis": "source",
+      "category": "scope",
+      "sourceRef": "https://technical.buildingsmart.org/standards/ifc/ifc-formats/ifcowl/"
+    },
+    {
+      "text": "The former IFC4 ADD2 ontology page no longer resolves; the licence statement could not be re-checked.",
+      "basis": "editorial",
+      "category": "catalogue-gap"
+    }
+  ]
 }

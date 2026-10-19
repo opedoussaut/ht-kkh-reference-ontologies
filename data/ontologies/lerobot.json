@@ -1,0 +1,123 @@
+{
+  "id": "lerobot",
+  "name": "LeRobot",
+  "fullName": "Hugging Face LeRobot",
+  "resourceType": "ai-framework",
+  "kind": "ai-framework",
+  "summary": "PyTorch library providing models, datasets and tools for real-world robotics: the LeRobotDataset format, implementations of imitation-learning, reinforcement-learning and VLA policies, and evaluation in simulation or on hardware.",
+  "knowledge": {
+    "domain": "product.behaviour",
+    "basis": "editorial",
+    "confidence": "clear",
+    "rationale": "Trains, runs and evaluates robot policies."
+  },
+  "publisher": "Hugging Face",
+  "publisherType": "industry",
+  "topics": [
+    "robot learning",
+    "policies",
+    "robot datasets"
+  ],
+  "version": {
+    "label": "Version not stated on the project page",
+    "date": null,
+    "status": "published"
+  },
+  "maturity": "emerging",
+  "license": {
+    "name": "Apache-2.0",
+    "access": "open",
+    "url": "https://www.apache.org/licenses/LICENSE-2.0",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
+  },
+  "licenses": [
+    {
+      "scope": "software",
+      "name": "Apache License 2.0",
+      "spdx": "Apache-2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0",
+      "statedAt": "https://github.com/huggingface/lerobot",
+      "commercialUse": "permitted",
+      "reviewStatus": "reviewed",
+      "reviewNote": "As granted by the licence text; dependencies and third-party components not assessed. Not legal advice."
+    },
+    {
+      "scope": "model-weights",
+      "name": "Per-model terms on the Hugging Face Hub (not assessed)",
+      "url": null,
+      "statedAt": "https://github.com/huggingface/lerobot",
+      "commercialUse": "unknown",
+      "reviewStatus": "not-assessed"
+    },
+    {
+      "scope": "dataset",
+      "name": "Per-dataset terms on the Hugging Face Hub (not assessed)",
+      "url": null,
+      "statedAt": "https://github.com/huggingface/lerobot",
+      "commercialUse": "unknown",
+      "reviewStatus": "not-assessed"
+    }
+  ],
+  "links": {
+    "official": "https://github.com/huggingface/lerobot",
+    "repository": "https://github.com/huggingface/lerobot"
+  },
+  "formats": [
+    "LeRobotDataset (Parquet + MP4)",
+    "Python"
+  ],
+  "industries": [
+    "industrial-equipment",
+    "high-tech"
+  ],
+  "useCases": [
+    "robot-development"
+  ],
+  "capabilities": [
+    "robotics-autonomy",
+    "ai-model-development"
+  ],
+  "physicalAi": [
+    "robot-capabilities-control"
+  ],
+  "limitations": [
+    {
+      "text": "Release version not stated on the project page; model checkpoints and datasets on the Hub carry their own terms.",
+      "basis": "editorial",
+      "category": "catalogue-gap"
+    }
+  ],
+  "engineeringUses": [
+    "Recording teleoperation demonstrations in a common dataset format",
+    "Training and comparing imitation-learning policies on low-cost or research robots"
+  ],
+  "verification": {
+    "checkedOn": "2026-10-16",
+    "status": "partially-verified",
+    "notes": "Version not stated by the publisher.",
+    "sources": [
+      {
+        "url": "https://github.com/huggingface/lerobot",
+        "title": "LeRobot repository (README)",
+        "type": "publisher-repository",
+        "supports": [
+          "identity",
+          "licence",
+          "capability",
+          "relationship"
+        ]
+      }
+    ]
+  },
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial",
+    "physicalAi": "editorial"
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
+  },
+  "origin": "v2"
+}

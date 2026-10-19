@@ -2,7 +2,13 @@
   "id": "sumo-cora",
   "name": "SUMO-CORA",
   "fullName": "SUMO–CORA alignment (IEEE 1872-2015)",
+  "resourceType": "ontology",
   "summary": "Alignment layer between SUMO and CORA for robotics semantics.",
+  "knowledge": {
+    "domain": "foundations.formal",
+    "basis": "editorial",
+    "confidence": "clear"
+  },
   "publisher": "IEEE Robotics and Automation Society",
   "publisherType": "standards-body",
   "kind": "ontology",
@@ -22,7 +28,9 @@
   "license": {
     "name": "IEEE standard (purchase required for the full text)",
     "access": "licensed",
-    "url": "https://standards.ieee.org/standard/1872-2015.html"
+    "url": "https://standards.ieee.org/standard/1872-2015.html",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://standards.ieee.org/standard/1872-2015.html"
@@ -38,16 +46,35 @@
   "useCases": [
     "general-purpose-robotics"
   ],
+  "capabilities": [
+    "robotics-autonomy",
+    "knowledge-graphs-ai"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "partially-verified",
     "sources": [
       {
         "url": "https://standards.ieee.org/standard/1872-2015.html",
-        "title": "IEEE 1872-2015 Standard Ontologies for Robotics and Automation"
+        "title": "IEEE 1872-2015 Standard Ontologies for Robotics and Automation",
+        "type": "published-specification",
+        "supports": [
+          "identity",
+          "status",
+          "licence"
+        ]
       }
     ],
     "notes": "IEEE 1872-2015 grounds CORA in SUMO. Confirm whether \"SUMO-CORA\" is published as a separate artefact."
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
   },
   "corrections": [
     {
@@ -77,5 +104,21 @@
     "stabilityStatus": "not stable",
     "usageStatus": "restricted",
     "hasInternalWikiLink": true
-  }
+  },
+  "engineeringUses": [
+    "Grounding robotics concepts in SUMO for formal reasoning"
+  ],
+  "limitations": [
+    {
+      "text": "The normative text is sold by IEEE; only catalogue information is publicly available.",
+      "basis": "source",
+      "category": "access",
+      "sourceRef": "https://standards.ieee.org/standard/1872-2015.html"
+    },
+    {
+      "text": "Not confirmed as a separately published artefact.",
+      "basis": "editorial",
+      "category": "catalogue-gap"
+    }
+  ]
 }

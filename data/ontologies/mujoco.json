@@ -1,0 +1,119 @@
+{
+  "id": "mujoco",
+  "name": "MuJoCo",
+  "fullName": "MuJoCo — Multi-Joint dynamics with Contact",
+  "resourceType": "simulation",
+  "kind": "physics-engine",
+  "summary": "General-purpose physics simulator for articulated systems with contact, widely used in robotics and robot-learning research. Loads its native MJCF format and URDF.",
+  "knowledge": {
+    "domain": "product.behaviour",
+    "basis": "editorial",
+    "confidence": "clear",
+    "rationale": "Simulates the dynamic behaviour of articulated systems."
+  },
+  "publisher": "Google DeepMind",
+  "publisherType": "industry",
+  "topics": [
+    "physics simulation",
+    "contact dynamics",
+    "articulated bodies"
+  ],
+  "version": {
+    "label": "MuJoCo 3.16.0",
+    "date": "2026-10-14",
+    "status": "published"
+  },
+  "maturity": "stable",
+  "license": {
+    "name": "Apache-2.0",
+    "access": "open",
+    "url": "https://www.apache.org/licenses/LICENSE-2.0",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
+  },
+  "licenses": [
+    {
+      "scope": "software",
+      "name": "Apache License 2.0",
+      "spdx": "Apache-2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0",
+      "statedAt": "https://github.com/google-deepmind/mujoco",
+      "commercialUse": "permitted",
+      "reviewStatus": "reviewed",
+      "reviewNote": "As granted by the licence text; dependencies and third-party components not assessed. Not legal advice."
+    }
+  ],
+  "links": {
+    "official": "https://mujoco.readthedocs.io/",
+    "repository": "https://github.com/google-deepmind/mujoco"
+  },
+  "formats": [
+    "MJCF (XML)",
+    "URDF",
+    "MJB"
+  ],
+  "industries": [
+    "industrial-equipment",
+    "high-tech",
+    "life-sciences-healthcare"
+  ],
+  "useCases": [
+    "robot-development"
+  ],
+  "capabilities": [
+    "simulation-validation",
+    "robotics-autonomy"
+  ],
+  "physicalAi": [
+    "simulation-digital-twins"
+  ],
+  "limitations": [],
+  "engineeringUses": [
+    "Simulating contact-rich manipulation and locomotion for controller design",
+    "Providing a fast physics back-end for robot-learning benchmarks"
+  ],
+  "verification": {
+    "checkedOn": "2026-10-16",
+    "status": "verified",
+    "notes": "",
+    "sources": [
+      {
+        "url": "https://github.com/google-deepmind/mujoco",
+        "title": "MuJoCo repository (Apache-2.0)",
+        "type": "publisher-repository",
+        "supports": [
+          "identity",
+          "licence",
+          "capability"
+        ]
+      },
+      {
+        "url": "https://mujoco.readthedocs.io/en/latest/changelog.html",
+        "title": "MuJoCo changelog (3.16.0, 2026-10-14)",
+        "type": "official-documentation",
+        "supports": [
+          "version"
+        ]
+      },
+      {
+        "url": "https://mujoco.readthedocs.io/en/3.3.1/modeling.html",
+        "title": "MuJoCo modeling chapter (MJCF and URDF)",
+        "type": "official-documentation",
+        "supports": [
+          "capability",
+          "relationship"
+        ]
+      }
+    ]
+  },
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial",
+    "physicalAi": "editorial"
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
+  },
+  "origin": "v2"
+}

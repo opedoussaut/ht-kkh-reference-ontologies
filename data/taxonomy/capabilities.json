@@ -1,0 +1,82 @@
+{
+  "_status": "active",
+  "_version": "1.1.0",
+  "_note": "Engineering capabilities: what engineers and AI systems can do with a resource. A resource may have several. Independent of industry, resource type and knowledge domain.",
+  "items": [
+    {
+      "id": "data-exchange",
+      "label": "Interoperability & data exchange",
+      "summary": "Exchanging data between tools, partners and systems with shared meaning."
+    },
+    {
+      "id": "digital-twin",
+      "label": "Digital twins & asset information",
+      "summary": "Representing assets and their information across the lifecycle."
+    },
+    {
+      "id": "systems-engineering",
+      "label": "Requirements & systems engineering",
+      "summary": "Capturing requirements and architectures, and tracing them to verification."
+    },
+    {
+      "id": "simulation-validation",
+      "label": "Simulation, verification & validation",
+      "summary": "Building, parameterising and validating virtual models."
+    },
+    {
+      "id": "manufacturing-operations",
+      "label": "Manufacturing & operations",
+      "summary": "Planning, executing and tracing production and operations."
+    },
+    {
+      "id": "supply-chain",
+      "label": "Supply chain & traceability",
+      "summary": "Identifying products and tracing them through supply chains."
+    },
+    {
+      "id": "sustainability-compliance",
+      "label": "Sustainability & compliance",
+      "summary": "Lifecycle assessment, product passports and regulatory compliance."
+    },
+    {
+      "id": "iot-monitoring",
+      "label": "IoT, sensing & monitoring",
+      "summary": "Describing devices, sensors, observations and actuations."
+    },
+    {
+      "id": "knowledge-graphs-ai",
+      "label": "Knowledge graphs & AI reasoning",
+      "summary": "Building knowledge graphs and grounding AI reasoning in shared semantics."
+    },
+    {
+      "id": "data-governance",
+      "label": "Data cataloguing & provenance",
+      "summary": "Describing, cataloguing and tracing datasets and documents."
+    },
+    {
+      "id": "spatial-facility",
+      "label": "Spatial, building & facility modelling",
+      "summary": "Modelling sites, buildings, spaces and geographic features."
+    },
+    {
+      "id": "robotics-autonomy",
+      "label": "Robotics & autonomy",
+      "summary": "Describing robots, their parts, tasks and autonomous behaviour."
+    },
+    {
+      "id": "energy-management",
+      "label": "Energy systems & flexibility",
+      "summary": "Modelling energy systems, grids, demand and flexibility."
+    },
+    {
+      "id": "ai-model-development",
+      "label": "AI model training & evaluation",
+      "summary": "Training, fine-tuning and evaluating machine-learning models, including robot policies."
+    },
+    {
+      "id": "safety-assurance",
+      "label": "Safety & assurance",
+      "summary": "Safety requirements, risk reduction and the evidence needed to show a system is acceptably safe."
+    }
+  ]
+}

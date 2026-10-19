@@ -2,7 +2,13 @@
   "id": "qudt",
   "name": "QUDT",
   "fullName": "Quantities, Units, Dimensions and Data Types",
+  "resourceType": "ontology",
   "summary": "Ontology for quantities, units, dimensions, and datatypes.",
+  "knowledge": {
+    "domain": "foundations.quantities",
+    "basis": "editorial",
+    "confidence": "clear"
+  },
   "publisher": "QUDT",
   "publisherType": "consortium",
   "kind": "ontology",
@@ -13,15 +19,17 @@
     "dimensions"
   ],
   "version": {
-    "label": "QUDT 3.1.x (3.1.10 published January 2026)",
-    "date": "2026-01",
+    "label": "QUDT schema 3.5.2 (as declared by the schema published at qudt.org)",
+    "date": null,
     "status": "published"
   },
   "maturity": "stable",
   "license": {
     "name": "CC BY 4.0",
     "access": "open",
-    "url": "https://creativecommons.org/licenses/by/4.0/"
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://qudt.org/",
@@ -42,22 +50,53 @@
     "semiconductors",
     "personal-electronics",
     "general-purpose-robotics",
-    "sustainability"
+    "sustainability",
+    "robot-development"
   ],
+  "capabilities": [
+    "data-exchange",
+    "simulation-validation"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",
     "sources": [
       {
         "url": "https://qudt.org/",
-        "title": "QUDT"
+        "title": "QUDT",
+        "type": "official-documentation",
+        "supports": [
+          "identity",
+          "licence"
+        ]
       },
       {
         "url": "https://qudt.org/doc/2026/01/DOC_VOCAB-CONSTANTS.html",
-        "title": "QUDT constants vocabulary, version 3.1.10"
+        "title": "QUDT constants vocabulary, version 3.1.10",
+        "type": "official-documentation",
+        "supports": [
+          "version"
+        ]
+      },
+      {
+        "url": "https://qudt.org/schema/qudt/",
+        "title": "QUDT schema (Turtle), declares \"QUDT Schema - Version 3.5.2\"",
+        "type": "publisher-repository",
+        "supports": [
+          "version"
+        ]
       }
     ],
-    "notes": ""
+    "notes": "Version taken from the schema file itself on 2026-10-15; release date not stated in the file."
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
   },
   "origin": "v1",
   "legacy": {
@@ -79,5 +118,25 @@
     "stabilityStatus": "stable",
     "usageStatus": "open",
     "hasInternalWikiLink": true
-  }
+  },
+  "engineeringUses": [
+    "Attaching units and quantity kinds to engineering parameters to avoid unit errors",
+    "Converting values between unit systems in data pipelines"
+  ],
+  "limitations": [
+    {
+      "text": "The release date of schema 3.5.2 is not stated in the schema file.",
+      "basis": "editorial",
+      "category": "catalogue-gap"
+    }
+  ],
+  "corrections": [
+    {
+      "field": "version",
+      "from": "QUDT 3.1.x (3.1.10 published January 2026)",
+      "to": "3.5.2",
+      "reason": "The published QUDT schema declares version 3.5.2; the earlier value came from a vocabulary documentation page.",
+      "source": "https://qudt.org/schema/qudt/"
+    }
+  ]
 }

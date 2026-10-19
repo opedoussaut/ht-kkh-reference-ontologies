@@ -1,32 +1,460 @@
 {
   "_note": "Only relationships stated by the publisher or a primary source are listed. Each edge must cite evidence. Types: extends, imports, part-of, aligns-with, superseded-by, references, follows-pattern-of.",
+  "categories": [
+    {
+      "id": "formal",
+      "label": "Formal dependency",
+      "description": "Imports, extensions and modules stated by the publisher."
+    },
+    {
+      "id": "mapping",
+      "label": "Explicit mapping",
+      "description": "Alignments or mappings published by a publisher or primary source."
+    },
+    {
+      "id": "shared",
+      "label": "Shared standards & vocabularies",
+      "description": "References, reused patterns and lineage stated by a primary source."
+    },
+    {
+      "id": "technical",
+      "label": "Documented technical connection",
+      "description": "Format support, interfaces, dependencies, training data and evaluation stated in publisher documentation. Not a demonstrated integration in your context."
+    },
+    {
+      "id": "editorial",
+      "label": "Editorially proposed",
+      "description": "Used together in the same layer of an atlas reference stack. Derived from use cases, not stated by publishers."
+    }
+  ],
   "types": [
-    { "id": "extends", "label": "extends", "description": "Specialises or builds on the target's concepts." },
-    { "id": "imports", "label": "imports", "description": "Formally imports the target ontology." },
-    { "id": "part-of", "label": "part of", "description": "Published as a module of the same standard or suite." },
-    { "id": "aligns-with", "label": "aligns with", "description": "Provides an alignment or mapping to the target." },
-    { "id": "superseded-by", "label": "integrated into", "description": "Content was integrated into, or is continued by, the target." },
-    { "id": "references", "label": "references", "description": "Uses identifiers or terms from the target." },
-    { "id": "follows-pattern-of", "label": "follows pattern of", "description": "Reuses the target's design pattern." }
+    {
+      "id": "extends",
+      "label": "extends",
+      "description": "Specialises or builds on the target's concepts.",
+      "category": "formal"
+    },
+    {
+      "id": "imports",
+      "label": "imports",
+      "description": "Formally imports the target ontology.",
+      "category": "formal"
+    },
+    {
+      "id": "part-of",
+      "label": "part of",
+      "description": "Published as a module of the same standard or suite.",
+      "category": "formal"
+    },
+    {
+      "id": "aligns-with",
+      "label": "aligns with",
+      "description": "Provides an alignment or mapping to the target.",
+      "category": "mapping"
+    },
+    {
+      "id": "superseded-by",
+      "label": "integrated into",
+      "description": "Content was integrated into, or is continued by, the target.",
+      "category": "shared"
+    },
+    {
+      "id": "references",
+      "label": "references",
+      "description": "Uses identifiers or terms from the target.",
+      "category": "shared"
+    },
+    {
+      "id": "follows-pattern-of",
+      "label": "follows pattern of",
+      "description": "Reuses the target's design pattern.",
+      "category": "shared"
+    },
+    {
+      "id": "supports-format",
+      "label": "supports the format",
+      "description": "Reads or writes the target format, as stated in the publisher's documentation.",
+      "category": "technical"
+    },
+    {
+      "id": "implements-interface",
+      "label": "provides an interface to",
+      "description": "Ships a documented bridge or interface to the target.",
+      "category": "technical"
+    },
+    {
+      "id": "depends-on",
+      "label": "depends on",
+      "description": "Requires the target to run, as stated by the publisher.",
+      "category": "technical"
+    },
+    {
+      "id": "integrates-with",
+      "label": "documents integration with",
+      "description": "Documents a supported integration with the target (e.g. a supported benchmark).",
+      "category": "technical"
+    },
+    {
+      "id": "trained-on",
+      "label": "was trained on",
+      "description": "Model trained on the target dataset, as stated by its authors.",
+      "category": "technical"
+    },
+    {
+      "id": "evaluated-with",
+      "label": "was evaluated with",
+      "description": "Evaluated on the target benchmark, with results reported by its authors.",
+      "category": "technical"
+    }
   ],
   "items": [
-    { "source": "ssn", "target": "sosa", "type": "imports", "evidence": { "url": "https://www.w3.org/TR/vocab-ssn/", "note": "The W3C/OGC Recommendation defines SOSA as the lightweight core that SSN builds on and imports." } },
-    { "source": "saref4bldg", "target": "saref-core", "type": "extends", "evidence": { "url": "https://saref.etsi.org/saref4bldg/", "note": "ETSI TS 103 410-3: SAREF extension for buildings." } },
-    { "source": "saref4ener", "target": "saref-core", "type": "extends", "evidence": { "url": "https://saref.etsi.org/saref4ener/", "note": "ETSI TS 103 410-1: SAREF extension for energy." } },
-    { "source": "ieee-cora", "target": "sumo", "type": "extends", "evidence": { "url": "https://standards.ieee.org/standard/1872-2015.html", "note": "IEEE 1872-2015 builds CORA on SUMO as its upper ontology." } },
-    { "source": "sumo-cora", "target": "sumo", "type": "aligns-with", "evidence": { "url": "https://standards.ieee.org/standard/1872-2015.html", "note": "The IEEE 1872-2015 axiomatisation grounds the robotics ontologies in SUMO." } },
-    { "source": "sumo-cora", "target": "ieee-cora", "type": "aligns-with", "evidence": { "url": "https://standards.ieee.org/standard/1872-2015.html", "note": "Alignment layer between SUMO and CORA." } },
-    { "source": "ieee-corax", "target": "ieee-cora", "type": "part-of", "evidence": { "url": "https://standards.ieee.org/standard/1872-2015.html", "note": "CORAX is specified in IEEE 1872-2015 together with CORA." } },
-    { "source": "ieee-rparts", "target": "ieee-cora", "type": "part-of", "evidence": { "url": "https://standards.ieee.org/standard/1872-2015.html", "note": "RPARTS is specified in IEEE 1872-2015." } },
-    { "source": "ieee-pos", "target": "ieee-cora", "type": "part-of", "evidence": { "url": "https://standards.ieee.org/standard/1872-2015.html", "note": "POS (position ontology) is specified in IEEE 1872-2015." } },
-    { "source": "ieee-aur", "target": "ieee-cora", "type": "extends", "evidence": { "url": "https://standards.ieee.org/ieee/1872.2/7094/", "note": "IEEE 1872.2-2021 extends CORA with autonomous-robotics ontologies." } },
-    { "source": "iof-core", "target": "bfo", "type": "imports", "evidence": { "url": "https://spec.industrialontologies.org/portal/release/202401/core/CoreOntology.html", "note": "All IOF ontologies are grounded in BFO 2020." } },
-    { "source": "cco", "target": "bfo", "type": "extends", "evidence": { "url": "https://github.com/CommonCoreOntology/CommonCoreOntologies", "note": "The Common Core Ontologies are a mid-level extension of BFO." } },
-    { "source": "oeo", "target": "bfo", "type": "imports", "evidence": { "url": "https://github.com/OpenEnergyPlatform/ontology", "note": "The OEO README states that the ontology makes use of, and follows the principles of, the Basic Formal Ontology." } },
-    { "source": "goodrelations", "target": "schema-org", "type": "superseded-by", "evidence": { "url": "https://blog.schema.org/2012/11/08/good-relations-and-schema-org/", "note": "GoodRelations was integrated into schema.org in 2012." } },
-    { "source": "gs1-webvoc", "target": "schema-org", "type": "extends", "evidence": { "url": "https://ref.gs1.org/voc/", "note": "The GS1 Web Vocabulary is designed as an extension of schema.org product terms." } },
-    { "source": "vsso", "target": "sosa", "type": "follows-pattern-of", "evidence": { "url": "https://www.w3.org/TR/vsso-core/", "note": "VSSo follows the SOSA/SSN pattern for observations and actuations." } },
-    { "source": "aas", "target": "eclass", "type": "references", "evidence": { "url": "https://industrialdigitaltwin.org/en/content-hub/aasspecifications", "note": "AAS semantic IDs commonly reference ECLASS IRDIs; see the AAS metamodel specification." } },
-    { "source": "saref4bldg", "target": "ifcowl", "type": "aligns-with", "evidence": { "url": "https://saref.etsi.org/saref4bldg/", "note": "ETSI states SAREF4BLDG is created based on the Industry Foundation Classes (IFC) standard." } }
+    {
+      "source": "ssn",
+      "target": "sosa",
+      "type": "imports",
+      "evidence": {
+        "url": "https://www.w3.org/TR/vocab-ssn/",
+        "type": "published-specification",
+        "note": "The W3C/OGC Recommendation defines SOSA as the lightweight core that SSN builds on and imports."
+      },
+      "status": "verified"
+    },
+    {
+      "source": "saref4bldg",
+      "target": "saref-core",
+      "type": "extends",
+      "evidence": {
+        "url": "https://saref.etsi.org/saref4bldg/",
+        "type": "published-specification",
+        "note": "ETSI TS 103 410-3: SAREF extension for buildings."
+      },
+      "status": "verified"
+    },
+    {
+      "source": "saref4ener",
+      "target": "saref-core",
+      "type": "extends",
+      "evidence": {
+        "url": "https://saref.etsi.org/saref4ener/",
+        "type": "published-specification",
+        "note": "ETSI TS 103 410-1: SAREF extension for energy."
+      },
+      "status": "verified"
+    },
+    {
+      "source": "ieee-cora",
+      "target": "sumo",
+      "type": "extends",
+      "evidence": {
+        "url": "https://standards.ieee.org/standard/1872-2015.html",
+        "type": "published-specification",
+        "note": "IEEE 1872-2015 builds CORA on SUMO as its upper ontology."
+      },
+      "status": "verified"
+    },
+    {
+      "source": "sumo-cora",
+      "target": "sumo",
+      "type": "aligns-with",
+      "evidence": {
+        "url": "https://standards.ieee.org/standard/1872-2015.html",
+        "type": "published-specification",
+        "note": "The IEEE 1872-2015 axiomatisation grounds the robotics ontologies in SUMO."
+      },
+      "status": "verified"
+    },
+    {
+      "source": "sumo-cora",
+      "target": "ieee-cora",
+      "type": "aligns-with",
+      "evidence": {
+        "url": "https://standards.ieee.org/standard/1872-2015.html",
+        "type": "published-specification",
+        "note": "Alignment layer between SUMO and CORA."
+      },
+      "status": "verified"
+    },
+    {
+      "source": "ieee-corax",
+      "target": "ieee-cora",
+      "type": "part-of",
+      "evidence": {
+        "url": "https://standards.ieee.org/standard/1872-2015.html",
+        "type": "published-specification",
+        "note": "CORAX is specified in IEEE 1872-2015 together with CORA."
+      },
+      "status": "verified"
+    },
+    {
+      "source": "ieee-rparts",
+      "target": "ieee-cora",
+      "type": "part-of",
+      "evidence": {
+        "url": "https://standards.ieee.org/standard/1872-2015.html",
+        "type": "published-specification",
+        "note": "RPARTS is specified in IEEE 1872-2015."
+      },
+      "status": "verified"
+    },
+    {
+      "source": "ieee-pos",
+      "target": "ieee-cora",
+      "type": "part-of",
+      "evidence": {
+        "url": "https://standards.ieee.org/standard/1872-2015.html",
+        "type": "published-specification",
+        "note": "POS (position ontology) is specified in IEEE 1872-2015."
+      },
+      "status": "verified"
+    },
+    {
+      "source": "ieee-aur",
+      "target": "ieee-cora",
+      "type": "extends",
+      "evidence": {
+        "url": "https://standards.ieee.org/ieee/1872.2/7094/",
+        "type": "published-specification",
+        "note": "IEEE 1872.2-2021 extends CORA with autonomous-robotics ontologies."
+      },
+      "status": "verified"
+    },
+    {
+      "source": "iof-core",
+      "target": "bfo",
+      "type": "imports",
+      "evidence": {
+        "url": "https://spec.industrialontologies.org/portal/release/202401/core/CoreOntology.html",
+        "type": "published-specification",
+        "note": "All IOF ontologies are grounded in BFO 2020."
+      },
+      "status": "verified"
+    },
+    {
+      "source": "cco",
+      "target": "bfo",
+      "type": "extends",
+      "evidence": {
+        "url": "https://github.com/CommonCoreOntology/CommonCoreOntologies",
+        "type": "publisher-repository",
+        "note": "The Common Core Ontologies are a mid-level extension of BFO."
+      },
+      "status": "verified"
+    },
+    {
+      "source": "oeo",
+      "target": "bfo",
+      "type": "imports",
+      "evidence": {
+        "url": "https://github.com/OpenEnergyPlatform/ontology",
+        "type": "publisher-repository",
+        "note": "The OEO README states that the ontology makes use of, and follows the principles of, the Basic Formal Ontology."
+      },
+      "status": "verified"
+    },
+    {
+      "source": "goodrelations",
+      "target": "schema-org",
+      "type": "superseded-by",
+      "evidence": {
+        "url": "https://blog.schema.org/2012/11/08/good-relations-and-schema-org/",
+        "type": "official-documentation",
+        "note": "GoodRelations was integrated into schema.org in 2012."
+      },
+      "status": "verified"
+    },
+    {
+      "source": "gs1-webvoc",
+      "target": "schema-org",
+      "type": "extends",
+      "evidence": {
+        "url": "https://ref.gs1.org/voc/",
+        "type": "official-documentation",
+        "note": "The GS1 Web Vocabulary is designed as an extension of schema.org product terms."
+      },
+      "status": "verified"
+    },
+    {
+      "source": "vsso",
+      "target": "sosa",
+      "type": "follows-pattern-of",
+      "evidence": {
+        "url": "https://www.w3.org/TR/vsso-core/",
+        "type": "published-specification",
+        "note": "VSSo follows the SOSA/SSN pattern for observations and actuations."
+      },
+      "status": "verified"
+    },
+    {
+      "source": "aas",
+      "target": "eclass",
+      "type": "references",
+      "evidence": {
+        "url": "https://industrialdigitaltwin.org/en/content-hub/aasspecifications",
+        "type": "official-documentation",
+        "note": "AAS semantic IDs commonly reference ECLASS IRDIs; see the AAS metamodel specification."
+      },
+      "status": "partially-verified",
+      "conditions": "The AAS metamodel allows semantic IDs from any dictionary; ECLASS IRDIs are a common choice, not a requirement."
+    },
+    {
+      "source": "saref4bldg",
+      "target": "ifcowl",
+      "type": "aligns-with",
+      "evidence": {
+        "url": "https://saref.etsi.org/saref4bldg/",
+        "type": "published-specification",
+        "note": "ETSI states SAREF4BLDG is created based on the Industry Foundation Classes (IFC) standard."
+      },
+      "status": "partially-verified",
+      "conditions": "SAREF4BLDG is derived from the IFC standard; the relation to the ifcOWL serialisation is indirect."
+    },
+    {
+      "source": "saref4inma",
+      "target": "saref-core",
+      "type": "extends",
+      "evidence": {
+        "url": "https://saref.etsi.org/saref4inma/",
+        "type": "published-specification",
+        "note": "ETSI TS 103 410-5: SAREF extension."
+      },
+      "status": "verified"
+    },
+    {
+      "source": "saref4city",
+      "target": "saref-core",
+      "type": "extends",
+      "evidence": {
+        "url": "https://saref.etsi.org/saref4city/",
+        "type": "published-specification",
+        "note": "ETSI TS 103 410-4: SAREF extension."
+      },
+      "status": "verified"
+    },
+    {
+      "source": "saref4auto",
+      "target": "saref-core",
+      "type": "extends",
+      "evidence": {
+        "url": "https://saref.etsi.org/saref4auto/",
+        "type": "published-specification",
+        "note": "ETSI TS 103 410-7: SAREF extension."
+      },
+      "status": "verified"
+    },
+    {
+      "source": "isaac-sim",
+      "target": "urdf",
+      "type": "supports-format",
+      "evidence": {
+        "url": "https://github.com/isaac-sim/IsaacSim",
+        "type": "publisher-repository",
+        "note": "README: imports robotic systems from URDF, MJCF and CAD."
+      },
+      "status": "verified",
+      "conditions": "Import (conversion into USD); not round-trip export."
+    },
+    {
+      "source": "isaac-sim",
+      "target": "openusd",
+      "type": "supports-format",
+      "evidence": {
+        "url": "https://docs.isaacsim.omniverse.nvidia.com/latest/index.html",
+        "type": "official-documentation",
+        "note": "Documentation: \"USD-native — one scene representation from asset import to deployment\"."
+      },
+      "status": "verified"
+    },
+    {
+      "source": "isaac-sim",
+      "target": "ros2",
+      "type": "implements-interface",
+      "evidence": {
+        "url": "https://docs.isaacsim.omniverse.nvidia.com/latest/index.html",
+        "type": "official-documentation",
+        "note": "Documentation includes a ROS 2 bridge."
+      },
+      "status": "verified",
+      "conditions": "Supported ROS 2 distributions depend on the Isaac Sim release."
+    },
+    {
+      "source": "isaac-lab",
+      "target": "isaac-sim",
+      "type": "depends-on",
+      "evidence": {
+        "url": "https://github.com/isaac-sim/IsaacLab",
+        "type": "publisher-repository",
+        "note": "README: \"Built on NVIDIA Isaac Sim\"; each branch requires a specific Isaac Sim release."
+      },
+      "status": "verified"
+    },
+    {
+      "source": "mujoco",
+      "target": "urdf",
+      "type": "supports-format",
+      "evidence": {
+        "url": "https://mujoco.readthedocs.io/en/3.3.1/modeling.html",
+        "type": "official-documentation",
+        "note": "Modeling chapter: MuJoCo reads MJCF and the more limited URDF format."
+      },
+      "status": "verified",
+      "conditions": "Only URDF features that MuJoCo maps are supported; MuJoCo-specific extensions apply."
+    },
+    {
+      "source": "gazebo",
+      "target": "ros2",
+      "type": "implements-interface",
+      "evidence": {
+        "url": "https://gazebosim.org/docs/latest/ros_installation/",
+        "type": "official-documentation",
+        "note": "Integration through the ros_gz packages, with a documented compatibility table."
+      },
+      "status": "verified",
+      "conditions": "Recommended pairings: Jetty with Lyrical/Rolling, Harmonic with Jazzy, Ionic with Kilted."
+    },
+    {
+      "source": "ros2",
+      "target": "urdf",
+      "type": "supports-format",
+      "evidence": {
+        "url": "https://github.com/ros2/urdf",
+        "type": "publisher-repository",
+        "note": "The ROS 2 organisation maintains packages for working with URDF files."
+      },
+      "status": "verified"
+    },
+    {
+      "source": "lerobot",
+      "target": "libero",
+      "type": "integrates-with",
+      "evidence": {
+        "url": "https://github.com/huggingface/lerobot",
+        "type": "publisher-repository",
+        "note": "README lists LIBERO among supported simulation benchmarks."
+      },
+      "status": "verified"
+    },
+    {
+      "source": "openvla",
+      "target": "open-x-embodiment",
+      "type": "trained-on",
+      "evidence": {
+        "url": "https://github.com/openvla/openvla",
+        "type": "publisher-repository",
+        "note": "openvla-7b was trained on an Open X-Embodiment mixture of 970K trajectories."
+      },
+      "status": "verified"
+    },
+    {
+      "source": "openvla",
+      "target": "libero",
+      "type": "evaluated-with",
+      "evidence": {
+        "url": "https://github.com/openvla/openvla",
+        "type": "publisher-repository",
+        "note": "Authors report fine-tuned LIBERO success rates (average 76.5%)."
+      },
+      "status": "verified",
+      "conditions": "Results reported by the model authors; not independently replicated."
+    }
   ]
 }

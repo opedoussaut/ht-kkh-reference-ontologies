@@ -6,7 +6,7 @@ export function buildGraph(ontologies, relations, { types = null, includeIsolate
   const linked = new Set(edges.flatMap((e) => [e.source, e.target]));
   const nodes = ontologies
     .filter((o) => includeIsolated || linked.has(o.id))
-    .map((o) => ({ id: o.id, label: o.name, layer: o.layer, maturity: o.maturity, degree: 0 }));
+    .map((o) => ({ id: o.id, label: o.name, layer: o.layer || 'technology', maturity: o.maturity, degree: 0 }));
   const ids = new Set(nodes.map((n) => n.id));
   const links = edges.filter((e) => ids.has(e.source) && ids.has(e.target)).map((e) => ({ ...e }));
   const byId = new Map(nodes.map((n) => [n.id, n]));

@@ -2,7 +2,13 @@
   "id": "ieee-cora",
   "name": "CORA",
   "fullName": "Core Ontology for Robotics and Automation (CORA)",
+  "resourceType": "ontology",
   "summary": "Core ontology for robotics and automation concepts.",
+  "knowledge": {
+    "domain": "product.systems",
+    "basis": "editorial",
+    "confidence": "clear"
+  },
   "publisher": "IEEE Robotics and Automation Society",
   "publisherType": "standards-body",
   "kind": "ontology",
@@ -22,8 +28,30 @@
   "license": {
     "name": "IEEE standard (purchase required for the full text)",
     "access": "licensed",
-    "url": "https://standards.ieee.org/standard/1872-2015.html"
+    "url": "https://standards.ieee.org/standard/1872-2015.html",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
+  "licenses": [
+    {
+      "scope": "specification",
+      "name": "IEEE standard text (purchase required)",
+      "url": null,
+      "statedAt": "https://standards.ieee.org/standard/1872-2015.html",
+      "commercialUse": "unknown",
+      "reviewStatus": "not-assessed"
+    },
+    {
+      "scope": "model-files",
+      "name": "CC BY 4.0 (community OWL conversion)",
+      "spdx": "CC-BY-4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/",
+      "statedAt": "https://github.com/srfiorini/IEEE1872-owl",
+      "commercialUse": "unknown",
+      "reviewStatus": "not-assessed",
+      "reviewNote": "Covers the conversion published by its authors, not the IEEE text."
+    }
+  ],
   "links": {
     "official": "https://standards.ieee.org/standard/1872-2015.html",
     "repository": "https://github.com/srfiorini/IEEE1872-owl"
@@ -37,26 +65,55 @@
     "high-tech"
   ],
   "useCases": [
-    "general-purpose-robotics"
+    "general-purpose-robotics",
+    "robot-development"
   ],
+  "capabilities": [
+    "robotics-autonomy",
+    "knowledge-graphs-ai"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",
     "sources": [
       {
         "url": "https://standards.ieee.org/standard/1872-2015.html",
-        "title": "IEEE 1872-2015 Standard Ontologies for Robotics and Automation"
+        "title": "IEEE 1872-2015 Standard Ontologies for Robotics and Automation",
+        "type": "published-specification",
+        "supports": [
+          "identity",
+          "status",
+          "licence"
+        ]
       },
       {
         "url": "https://github.com/srfiorini/IEEE1872-owl",
-        "title": "OWL version of CORA (IEEE 1872-2015), CC BY 4.0"
+        "title": "OWL version of CORA (IEEE 1872-2015), CC BY 4.0",
+        "type": "third-party",
+        "supports": [
+          "licence",
+          "limitation"
+        ]
       },
       {
         "url": "https://standards.ieee.org/ieee/1872/12250",
-        "title": "IEEE P1872 revision project (active PAR)"
+        "title": "IEEE P1872 revision project (active PAR)",
+        "type": "official-documentation",
+        "supports": [
+          "status"
+        ]
       }
     ],
     "notes": "An OWL conversion of CORA (taxonomy and selected axioms) is published under CC BY 4.0."
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
   },
   "corrections": [
     {
@@ -93,5 +150,23 @@
     "stabilityStatus": "stable",
     "usageStatus": "restricted",
     "hasInternalWikiLink": true
-  }
+  },
+  "engineeringUses": [
+    "Defining what counts as a robot, robotic system and robotic environment in a project glossary",
+    "Giving robotics data and requirements a formal shared vocabulary"
+  ],
+  "limitations": [
+    {
+      "text": "The normative text is sold by IEEE; only catalogue information is publicly available.",
+      "basis": "source",
+      "category": "access",
+      "sourceRef": "https://standards.ieee.org/standard/1872-2015.html"
+    },
+    {
+      "text": "The public OWL conversion is under-specified relative to the SUO-KIF axioms and allows models not consistent with IEEE 1872.",
+      "basis": "source",
+      "category": "technical",
+      "sourceRef": "https://github.com/srfiorini/IEEE1872-owl"
+    }
+  ]
 }

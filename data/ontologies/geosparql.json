@@ -2,7 +2,13 @@
   "id": "geosparql",
   "name": "GeoSPARQL",
   "fullName": "OGC GeoSPARQL — A Geographic Query Language for RDF Data",
+  "resourceType": "ontology",
   "summary": "Standard for spatial RDF representation and geospatial querying.",
+  "knowledge": {
+    "domain": "foundations.time-space",
+    "basis": "editorial",
+    "confidence": "clear"
+  },
   "publisher": "OGC",
   "publisherType": "standards-body",
   "kind": "ontology",
@@ -22,7 +28,9 @@
   "license": {
     "name": "OGC document licence (royalty-free)",
     "access": "open",
-    "url": "https://www.ogc.org/standard/geosparql/"
+    "url": "https://www.ogc.org/standard/geosparql/",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://www.ogc.org/standard/geosparql/",
@@ -48,20 +56,42 @@
     "general-purpose-robotics",
     "sustainability"
   ],
+  "capabilities": [
+    "spatial-facility"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",
     "sources": [
       {
         "url": "https://www.ogc.org/standard/geosparql/",
-        "title": "OGC GeoSPARQL standard page"
+        "title": "OGC GeoSPARQL standard page",
+        "type": "published-specification",
+        "supports": [
+          "identity",
+          "version",
+          "status"
+        ]
       },
       {
         "url": "https://lists.w3.org/Archives/Public/public-sdw-wg/2024Feb/0000.html",
-        "title": "GeoSPARQL 1.1 published (W3C SDW list, Feb 2024)"
+        "title": "GeoSPARQL 1.1 published (W3C SDW list, Feb 2024)",
+        "type": "third-party",
+        "supports": [
+          "version"
+        ]
       }
     ],
     "notes": "Licence wording to confirm in document 22-047r1."
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
   },
   "origin": "v1",
   "legacy": {
@@ -83,5 +113,10 @@
     "stabilityStatus": "stable",
     "usageStatus": "open",
     "hasInternalWikiLink": true
-  }
+  },
+  "engineeringUses": [
+    "Representing site footprints, assets and networks with geometries that can be queried spatially",
+    "Running spatial queries such as \"assets within this zone\" over a knowledge graph"
+  ],
+  "limitations": []
 }

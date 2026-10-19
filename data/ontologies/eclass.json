@@ -2,7 +2,13 @@
   "id": "eclass",
   "name": "ECLASS Ontology",
   "fullName": "ECLASS classification and product description standard",
+  "resourceType": "vocabulary",
   "summary": "Classification ontology for products, properties, and industrial semantics.",
+  "knowledge": {
+    "domain": "product.catalogues",
+    "basis": "editorial",
+    "confidence": "clear"
+  },
   "publisher": "ECLASS e.V.",
   "publisherType": "industry-association",
   "kind": "classification",
@@ -22,7 +28,9 @@
   "license": {
     "name": "Commercial ECLASS licence",
     "access": "licensed",
-    "url": "https://eclass.eu/shop/en/products"
+    "url": "https://eclass.eu/shop/en/products",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://eclass.eu/",
@@ -45,24 +53,51 @@
     "personal-electronics",
     "general-purpose-robotics"
   ],
+  "capabilities": [
+    "data-exchange",
+    "supply-chain"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",
     "sources": [
       {
         "url": "https://eclass.eu/shop/en/product/eclass-15-0",
-        "title": "ECLASS 15.0 product page"
+        "title": "ECLASS 15.0 product page",
+        "type": "official-documentation",
+        "supports": [
+          "version",
+          "licence"
+        ]
       },
       {
         "url": "https://eclass.eu/shop/en/product/eclass-16-0",
-        "title": "ECLASS 16.0 product page"
+        "title": "ECLASS 16.0 product page",
+        "type": "official-documentation",
+        "supports": [
+          "version",
+          "licence"
+        ]
       },
       {
         "url": "https://eclass.eu/en/news/news/first-eclass-as-rdf-specification",
-        "title": "ECLASS as RDF specification announcement"
+        "title": "ECLASS as RDF specification announcement",
+        "type": "official-documentation",
+        "supports": [
+          "scope"
+        ]
       }
     ],
     "notes": "ECLASS is primarily a classification system; an RDF serialisation is specified. Commercial licence required."
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
   },
   "origin": "v1",
   "legacy": {
@@ -84,5 +119,17 @@
     "stabilityStatus": "stable",
     "usageStatus": "licensed",
     "hasInternalWikiLink": true
-  }
+  },
+  "engineeringUses": [
+    "Classifying purchased parts and describing them with standard properties",
+    "Giving AAS submodel elements standardised semantic identifiers (IRDIs)"
+  ],
+  "limitations": [
+    {
+      "text": "All ECLASS releases, including the RDF serialisation, require a commercial licence.",
+      "basis": "source",
+      "category": "access",
+      "sourceRef": "https://eclass.eu/shop/en/product/eclass-16-0"
+    }
+  ]
 }

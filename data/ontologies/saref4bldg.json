@@ -2,7 +2,14 @@
   "id": "saref4bldg",
   "name": "SAREF4BLDG",
   "fullName": "SAREF extension for Buildings",
+  "resourceType": "ontology",
   "summary": "Building extension of SAREF for spaces, devices, and building systems.",
+  "knowledge": {
+    "domain": "product.structure",
+    "basis": "editorial",
+    "confidence": "clear",
+    "rationale": "ETSI states SAREF4BLDG is based on IFC and describes building devices as elements within spaces: structure of the built asset."
+  },
   "publisher": "ETSI",
   "publisherType": "standards-body",
   "kind": "ontology",
@@ -22,7 +29,9 @@
   "license": {
     "name": "ETSI Software License (BSD-3-Clause style)",
     "access": "open",
-    "url": "https://forge.etsi.org/etsi-software-license"
+    "url": "https://forge.etsi.org/etsi-software-license",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://saref.etsi.org/saref4bldg/",
@@ -39,16 +48,35 @@
   "useCases": [
     "ai-factories"
   ],
+  "capabilities": [
+    "spatial-facility",
+    "iot-monitoring"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",
     "sources": [
       {
         "url": "https://saref.etsi.org/saref4bldg/",
-        "title": "ETSI SAREF4BLDG"
+        "title": "ETSI SAREF4BLDG",
+        "type": "published-specification",
+        "supports": [
+          "identity",
+          "version",
+          "licence"
+        ]
       }
     ],
     "notes": ""
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
   },
   "origin": "v1",
   "legacy": {
@@ -68,5 +96,10 @@
     "stabilityStatus": "stable",
     "usageStatus": "open",
     "hasInternalWikiLink": true
-  }
+  },
+  "engineeringUses": [
+    "Describing building devices, such as sensors and actuators, aligned with IFC element types",
+    "Linking BIM objects to the IoT devices installed in a building"
+  ],
+  "limitations": []
 }

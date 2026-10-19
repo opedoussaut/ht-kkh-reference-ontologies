@@ -2,7 +2,14 @@
   "id": "ieee-rtr",
   "name": "Robot Task Representation",
   "fullName": "IEEE 1872.1 Robot Task Representation",
+  "resourceType": "ontology",
   "summary": "Ontology for describing robot tasks, actions, parameters, and execution context.",
+  "knowledge": {
+    "domain": "product.behaviour",
+    "basis": "editorial",
+    "confidence": "clear",
+    "rationale": "IEEE 1872.1 represents robot tasks and their hierarchical decomposition: behaviour of a technical system, not organisational processes."
+  },
   "publisher": "IEEE Robotics and Automation Society",
   "publisherType": "standards-body",
   "kind": "ontology",
@@ -22,7 +29,9 @@
   "license": {
     "name": "IEEE standard (purchase required for the full text)",
     "access": "licensed",
-    "url": "https://standards.ieee.org/ieee/1872.1/6993/"
+    "url": "https://standards.ieee.org/ieee/1872.1/6993/",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://standards.ieee.org/ieee/1872.1/6993/"
@@ -35,18 +44,38 @@
     "high-tech"
   ],
   "useCases": [
-    "general-purpose-robotics"
+    "general-purpose-robotics",
+    "robot-development"
   ],
+  "capabilities": [
+    "robotics-autonomy"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",
     "sources": [
       {
         "url": "https://standards.ieee.org/ieee/1872.1/6993/",
-        "title": "IEEE 1872.1-2024"
+        "title": "IEEE 1872.1-2024",
+        "type": "published-specification",
+        "supports": [
+          "identity",
+          "version",
+          "status",
+          "licence"
+        ]
       }
     ],
     "notes": "Implementation guide P1872.1.1 is in development."
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
   },
   "corrections": [
     {
@@ -83,5 +112,17 @@
     "stabilityStatus": "not stable",
     "usageStatus": "restricted",
     "hasInternalWikiLink": true
-  }
+  },
+  "engineeringUses": [
+    "Representing tasks, sub-tasks and actions so planners and engineers share one task model",
+    "Documenting robot tasks for reuse across different robot platforms"
+  ],
+  "limitations": [
+    {
+      "text": "The normative text is sold by IEEE; only catalogue information is publicly available.",
+      "basis": "source",
+      "category": "access",
+      "sourceRef": "https://standards.ieee.org/ieee/1872.1/6993/"
+    }
+  ]
 }

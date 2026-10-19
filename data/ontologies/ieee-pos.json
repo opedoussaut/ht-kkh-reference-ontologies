@@ -2,7 +2,13 @@
   "id": "ieee-pos",
   "name": "POS",
   "fullName": "POS — Position ontology (IEEE 1872-2015)",
+  "resourceType": "ontology",
   "summary": "Ontology used for positional, pose, or planning-oriented semantics in robotics contexts.",
+  "knowledge": {
+    "domain": "foundations.time-space",
+    "basis": "editorial",
+    "confidence": "clear"
+  },
   "publisher": "IEEE Robotics and Automation Society",
   "publisherType": "standards-body",
   "kind": "ontology",
@@ -23,7 +29,9 @@
   "license": {
     "name": "IEEE standard (purchase required for the full text)",
     "access": "licensed",
-    "url": "https://standards.ieee.org/standard/1872-2015.html"
+    "url": "https://standards.ieee.org/standard/1872-2015.html",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
   },
   "links": {
     "official": "https://standards.ieee.org/standard/1872-2015.html"
@@ -37,18 +45,37 @@
     "high-tech"
   ],
   "useCases": [
-    "general-purpose-robotics"
+    "general-purpose-robotics",
+    "robot-development"
   ],
+  "capabilities": [
+    "robotics-autonomy"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
   "verification": {
     "checkedOn": "2026-10-15",
     "status": "verified",
     "sources": [
       {
         "url": "https://standards.ieee.org/standard/1872-2015.html",
-        "title": "IEEE 1872-2015 Standard Ontologies for Robotics and Automation"
+        "title": "IEEE 1872-2015 Standard Ontologies for Robotics and Automation",
+        "type": "published-specification",
+        "supports": [
+          "identity",
+          "status",
+          "licence"
+        ]
       }
     ],
     "notes": "Specified within IEEE 1872-2015."
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
   },
   "corrections": [
     {
@@ -85,5 +112,17 @@
     "stabilityStatus": "not stable",
     "usageStatus": "restricted",
     "hasInternalWikiLink": true
-  }
+  },
+  "engineeringUses": [
+    "Describing positions, orientations and poses with explicit reference frames",
+    "Exchanging spatial information between perception, planning and simulation components"
+  ],
+  "limitations": [
+    {
+      "text": "The normative text is sold by IEEE; only catalogue information is publicly available.",
+      "basis": "source",
+      "category": "access",
+      "sourceRef": "https://standards.ieee.org/standard/1872-2015.html"
+    }
+  ]
 }

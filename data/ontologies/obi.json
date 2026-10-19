@@ -1,0 +1,95 @@
+{
+  "id": "obi",
+  "name": "OBI",
+  "fullName": "Ontology for Biomedical Investigations",
+  "resourceType": "ontology",
+  "summary": "Community ontology for describing scientific investigations: assays, devices, protocols, objectives and data transformations. It defines more than 2,500 terms and is used for biomedical and laboratory data integration.",
+  "knowledge": {
+    "domain": "foundations.science",
+    "basis": "editorial",
+    "confidence": "clear"
+  },
+  "publisher": "OBI Consortium",
+  "publisherType": "consortium",
+  "kind": "ontology",
+  "layer": "domain",
+  "topics": [
+    "scientific investigations",
+    "assays",
+    "laboratory devices",
+    "protocols"
+  ],
+  "version": {
+    "label": "Continuously released (see repository)",
+    "date": null,
+    "status": "published"
+  },
+  "maturity": "stable",
+  "license": {
+    "name": "CC BY 4.0",
+    "access": "open",
+    "url": "https://github.com/obi-ontology/obi",
+    "reviewStatus": "not-assessed",
+    "commercialReuse": "unknown"
+  },
+  "links": {
+    "official": "https://obi-ontology.org/",
+    "repository": "https://github.com/obi-ontology/obi"
+  },
+  "formats": [
+    "OWL"
+  ],
+  "industries": [
+    "life-sciences-healthcare"
+  ],
+  "useCases": [],
+  "capabilities": [
+    "data-governance",
+    "knowledge-graphs-ai"
+  ],
+  "classificationBasis": {
+    "industries": "editorial",
+    "capabilities": "editorial"
+  },
+  "physicalAi": [],
+  "verification": {
+    "status": "partially-verified",
+    "checkedOn": "2026-10-15",
+    "sources": [
+      {
+        "url": "https://obi-ontology.org/",
+        "title": "OBI website",
+        "type": "official-documentation",
+        "supports": [
+          "identity",
+          "scope"
+        ]
+      },
+      {
+        "url": "https://github.com/obi-ontology/obi",
+        "title": "OBI repository (CC BY 4.0)",
+        "type": "publisher-repository",
+        "supports": [
+          "licence"
+        ]
+      }
+    ],
+    "notes": "The current release version is not stated on the website or repository front page."
+  },
+  "editorialReview": {
+    "reviewedOn": "2026-10-16",
+    "reviewer": "atlas-editors"
+  },
+  "origin": "v2",
+  "engineeringUses": [
+    "Describing laboratory assays, instruments and protocols consistently across studies",
+    "Annotating experimental data for integration and reuse"
+  ],
+  "limitations": [
+    {
+      "text": "The current release version is not stated on the website or repository front page.",
+      "basis": "editorial",
+      "category": "catalogue-gap"
+    }
+  ]
+}

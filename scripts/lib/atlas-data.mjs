@@ -31,6 +31,12 @@ export function loadSources(root) {
     industries: readJson(join(root, 'data/taxonomy/industries.json')).items,
     useCases: readJson(join(root, 'data/taxonomy/use-cases.json')).items,
     relations: readJson(join(root, 'data/taxonomy/relations.json')),
+    resourceTypes: readJson(join(root, 'data/taxonomy/resource-types.json')),
+    knowledgeDomains: readJson(join(root, 'data/taxonomy/knowledge-domains.json')),
+    capabilities: readJson(join(root, 'data/taxonomy/capabilities.json')),
+    physicalAi: readJson(join(root, 'data/taxonomy/physical-ai.json')),
+    evidenceTypes: readJson(join(root, 'data/taxonomy/evidence-types.json')),
+    questions: readJson(join(root, 'data/taxonomy/questions.json')),
     legacy: readJson(join(root, 'data/legacy/catalog-v1.json')).records,
     schema: readJson(join(root, 'schema/ontology.schema.json')),
   };
@@ -48,6 +54,15 @@ export function validate(src) {
   const industryIds = new Set(src.industries.map((i) => i.id));
   const useCaseIds = new Set(src.useCases.map((u) => u.id));
   const relationTypes = new Set(src.relations.types.map((t) => t.id));
+  const relationCategories = new Set((src.relations.categories || []).map((c) => c.id));
+  const typeIds = new Set(src.resourceTypes.items.map((x) => x.id));
+  const subDomains = new Set(src.knowledgeDomains.items.flatMap((d) => d.children.map((c) => c.id)));
+  const capIds = new Set(src.capabilities.items.map((x) => x.id));
+  const paiIds = new Set(src.physicalAi.items.map((x) => x.id));
+  const evidenceIds = new Set(src.evidenceTypes.items.map((x) => x.id));
+  const familyOf = Object.fromEntries(src.resourceTypes.items.map((t) => [t.id, t.family]));
+  const kindToType = Object.fromEntries(src.resourceTypes.items.flatMap((t) => t.fromKind.map((k) => [k, t.id])));
+  for (const t of src.relations.types) if (!relationCategories.has(t.category) || t.category === 'editorial') err(`relation type ${t.id}`, `category must be a stored (non-editorial) category, got "${t.category}"`);
 
   for (const { file, record: r } of src.ontologies) {
     if (!check(r)) {
@@ -61,6 +76,33 @@ export function validate(src) {
     for (const u of r.useCases) if (!useCaseIds.has(u)) err(file, `unknown use case "${u}"`);
     if (r.origin === 'v1' && !r.legacy) err(file, 'v1 records must keep their legacy block');
     if (r.verification.status === 'unverified' && !r.needsReview) err(file, 'unverified records must set needsReview: true');
+    // Phase 2 (schema v3) classification and evidence rules.
+    if (!typeIds.has(r.resourceType)) err(file, `unknown resourceType "${r.resourceType}"`);
+    if (r.knowledge.domain !== 'not-assessed' && !subDomains.has(r.knowledge.domain)) err(file, `unknown knowledge sub-domain "${r.knowledge.domain}"`);
+    if (r.knowledge.basis === 'source' && !r.knowledge.sourceRef) err(file, 'knowledge.basis "source" requires knowledge.sourceRef');
+    for (const c of r.capabilities) if (!capIds.has(c)) err(file, `unknown capability "${c}"`);
+    for (const p of r.physicalAi) if (!paiIds.has(p)) err(file, `unknown Physical AI category "${p}"`);
+    if (r.physicalAi.length && src.physicalAi._status === 'proposed') err(file, 'Physical AI categories are still proposed: no assignments allowed');
+    if (r.physicalAi.length) {
+      // Assignment needs documentation from the resource itself that describes the capability.
+      if (!r.classificationBasis.physicalAi) err(file, 'physicalAi assignments need classificationBasis.physicalAi');
+      const strong = new Set(['official-documentation', 'published-specification', 'publisher-repository', 'peer-reviewed']);
+      if (!r.verification.sources.some((s) => strong.has(s.type) && s.supports.includes('capability'))) err(file, 'physicalAi assignments need a publisher, specification or peer-reviewed source supporting "capability"');
+    }
+    for (const s of r.verification.sources) if (!evidenceIds.has(s.type)) err(file, `unknown source type "${s.type}" for ${s.url}`);
+    if (r.license.commercialReuse !== 'unknown' && r.license.reviewStatus !== 'reviewed') err(file, 'commercialReuse may only be stated after a licence review');
+    if (r.license.access === 'unknown' && r.license.commercialReuse !== 'unknown') err(file, 'unknown licence access implies unknown commercial reuse');
+    for (const l of r.limitations) if (l.basis === 'source' && !l.sourceRef) err(file, 'limitations with basis "source" need a sourceRef');
+    // Schema v3.1: family-specific requirements and scoped licences.
+    const family = familyOf[r.resourceType];
+    if (family === 'semantic' && !r.layer) err(file, 'semantic resources need a layer');
+    if (family !== 'semantic' && !r.licenses?.length) err(file, 'non-semantic resources need at least one scoped licence in `licenses`');
+    if (r.resourceType === 'ai-model' && !r.details?.aiModel) err(file, 'AI models need details.aiModel (architecture vs trained model, weights published)');
+    if (kindToType[r.kind] !== r.resourceType) err(file, `kind "${r.kind}" implies resourceType "${kindToType[r.kind]}", not "${r.resourceType}"`);
+    for (const l of r.licenses || []) {
+      if (l.commercialUse !== 'unknown' && l.reviewStatus !== 'reviewed') err(file, `licenses[${l.scope}]: commercialUse may only be stated after a review`);
+      if (l.commercialUse === 'permitted' && !l.spdx) err(file, `licenses[${l.scope}]: "permitted" requires an identified (SPDX) licence`);
+    }
   }
 
   for (const [n, rel] of src.relations.items.entries()) {
@@ -69,12 +111,35 @@ export function validate(src) {
     if (!ids.has(rel.target)) err(where, `unknown target "${rel.target}"`);
     if (!relationTypes.has(rel.type)) err(where, `unknown type "${rel.type}"`);
     if (!rel.evidence || !/^https?:\/\//.test(rel.evidence.url || '')) err(where, 'evidence.url is required');
+    if (!evidenceIds.has(rel.evidence?.type)) err(where, 'evidence.type must be a known evidence type');
+    if (['editorial', 'unclassified', 'third-party'].includes(rel.evidence?.type)) err(where, `evidence of type "${rel.evidence?.type}" cannot establish a stored relationship`);
+    if (!['verified', 'partially-verified'].includes(rel.status)) err(where, 'status must be verified or partially-verified');
+    if (rel.status === 'partially-verified' && !rel.conditions) err(where, 'partially-verified relations must state their conditions');
     if (rel.source === rel.target) err(where, 'self-relation');
   }
 
   for (const uc of src.useCases) {
     for (const layer of uc.stack) for (const o of layer.ontologies) if (!ids.has(o)) err(`use case ${uc.id}`, `unknown ontology "${o}"`);
+    // Ecosystem extras (editorial): per-resource notes must refer to the layer's resources; workflow ends must exist.
+    for (const layer of uc.stack) for (const k of Object.keys(layer.notes || {})) if (!layer.ontologies.includes(k)) err(`use case ${uc.id}`, `note for "${k}" outside layer "${layer.layer}"`);
+    for (const w of uc.workflow || []) {
+      if (!ids.has(w.from) || !ids.has(w.to)) err(`use case ${uc.id}`, `workflow edge ${w.from} -> ${w.to} refers to an unknown resource`);
+      if (!w.label) err(`use case ${uc.id}`, `workflow edge ${w.from} -> ${w.to} needs a label`);
+    }
     for (const i of uc.industries) if (!industryIds.has(i)) err(`use case ${uc.id}`, `unknown industry "${i}"`);
+  }
+
+  // Curated engineering questions resolve to ordinary filters over existing taxonomy ids.
+  const questionIds = new Set();
+  for (const q of src.questions.items) {
+    if (questionIds.has(q.id)) err(`question ${q.id}`, 'duplicate id');
+    questionIds.add(q.id);
+    const known = { capability: capIds, industry: industryIds, useCase: useCaseIds, type: typeIds, domain: subDomains, physicalAi: paiIds };
+    if (q.ecosystem && !useCaseIds.has(q.ecosystem)) err(`question ${q.id}`, `unknown ecosystem "${q.ecosystem}"`);
+    for (const [k, vs] of Object.entries(q.filters)) {
+      if (!known[k]) { err(`question ${q.id}`, `unsupported filter "${k}"`); continue; }
+      for (const v of vs) if (!known[k].has(v)) err(`question ${q.id}`, `unknown ${k} "${v}"`);
+    }
   }
 
   // Every v1 record must survive the migration, unchanged.
@@ -103,19 +168,29 @@ export function findForbidden(src) {
   scan('data/taxonomy/use-cases.json', src.useCases);
   scan('data/taxonomy/relations.json', src.relations);
   scan('data/legacy/catalog-v1.json', src.legacy);
+  scan('data/taxonomy/questions.json', src.questions);
+  for (const k of ['resourceTypes', 'knowledgeDomains', 'capabilities', 'physicalAi', 'evidenceTypes']) scan(`taxonomy ${k}`, src[k]);
   return hits;
 }
 
 export function buildBundle(src, { generatedOn }) {
-  const ontologies = src.ontologies.map((o) => o.record).sort((a, b) => a.name.localeCompare(b.name));
+  const resources = src.ontologies.map((o) => o.record).sort((a, b) => a.name.localeCompare(b.name));
+  const defaultFamily = src.resourceTypes.families.find((f) => f.default).id;
+  const familyOf = Object.fromEntries(src.resourceTypes.items.map((t) => [t.id, t.family]));
+  // `ontologies` stays as a backward-compatible alias: the default (semantic) family.
+  const ontologies = resources.filter((r) => familyOf[r.resourceType] === defaultFamily);
+  const byType = resources.reduce((m, r) => ((m[r.resourceType] = (m[r.resourceType] || 0) + 1), m), {});
   return {
     meta: {
       title: 'Reference Ontology Atlas',
-      version: '2.0.0',
+      version: '3.0.0',
+      schema: 'v3',
       generatedOn,
       site: SITE_URL,
       counts: {
+        resources: resources.length,
         ontologies: ontologies.length,
+        byResourceType: byType,
         relations: src.relations.items.length,
         industries: src.industries.length,
         useCases: src.useCases.length,
@@ -123,9 +198,18 @@ export function buildBundle(src, { generatedOn }) {
       },
       disclaimer: 'Public information only. Every fact is backed by a cited public source; verification status and date are shown on each record.',
     },
+    resources,
     ontologies,
+    resourceFamilies: src.resourceTypes.families,
+    resourceTypes: src.resourceTypes.items,
+    knowledgeDomains: src.knowledgeDomains.items,
+    capabilities: src.capabilities.items,
+    physicalAi: { status: src.physicalAi._status, items: src.physicalAi.items },
+    evidenceTypes: src.evidenceTypes.items,
+    questions: src.questions.items,
     industries: src.industries,
     useCases: src.useCases,
+    relationCategories: src.relations.categories,
     relationTypes: src.relations.types,
     relations: src.relations.items,
   };
@@ -174,7 +258,7 @@ export function toTurtle(bundle) {
   out.push('atlas:ReferenceOntology a rdfs:Class ; rdfs:label "Reference ontology" .');
   out.push('atlas:Industry a rdfs:Class ; rdfs:label "Industry" .');
   out.push('atlas:UseCase a rdfs:Class ; rdfs:label "Engineering use case" .');
-  for (const p of ['publisher', 'officialSource', 'namespaceIri', 'versionLabel', 'licenseName', 'licenseAccess', 'maturity', 'layer', 'kind', 'industry', 'useCase', 'verificationStatus', 'topic']) {
+  for (const p of ['resourceType', 'knowledgeDomain', 'capability', 'licenseReviewStatus', 'publisher', 'officialSource', 'namespaceIri', 'versionLabel', 'licenseName', 'licenseAccess', 'maturity', 'layer', 'kind', 'industry', 'useCase', 'verificationStatus', 'topic']) {
     out.push(`atlas:${p} a rdf:Property .`);
   }
   for (const t of bundle.relationTypes) out.push(`atlas:${t.id.replace(/-/g, '_')} a owl:ObjectProperty ; rdfs:label ${lit(t.label)} ; rdfs:comment ${lit(t.description)} .`);
@@ -182,7 +266,7 @@ export function toTurtle(bundle) {
   for (const i of bundle.industries) out.push(`${local('industry-' + i.id)} a atlas:Industry ; skos:prefLabel ${lit(i.name)} ; dcterms:description ${lit(i.summary)} .`);
   for (const u of bundle.useCases) out.push(`${local('usecase-' + u.id)} a atlas:UseCase ; skos:prefLabel ${lit(u.name)} ; dcterms:description ${lit(u.summary)} .`);
   out.push('');
-  for (const o of bundle.ontologies) {
+  for (const o of bundle.resources) {
     const t = [`${local(o.id)} a atlas:ReferenceOntology`];
     t.push(`dcterms:title ${lit(o.name)}`);
     t.push(`skos:altLabel ${lit(o.fullName)}`);
@@ -197,6 +281,10 @@ export function toTurtle(bundle) {
     t.push(`atlas:layer ${lit(o.layer)}`);
     t.push(`atlas:kind ${lit(o.kind)}`);
     t.push(`atlas:verificationStatus ${lit(o.verification.status)}`);
+    t.push(`atlas:resourceType ${lit(o.resourceType)}`);
+    t.push(`atlas:knowledgeDomain ${lit(o.knowledge.domain)}`);
+    for (const c of o.capabilities) t.push(`atlas:capability ${lit(c)}`);
+    t.push(`atlas:licenseReviewStatus ${lit(o.license.reviewStatus)}`);
     for (const topic of o.topics) t.push(`atlas:topic ${lit(topic)}`);
     for (const i of o.industries) t.push(`atlas:industry ${local('industry-' + i)}`);
     for (const u of o.useCases) t.push(`atlas:useCase ${local('usecase-' + u)}`);
